@@ -1,296 +1,759 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Qucs project: download</title>
-<link href="qucsweb.css" rel="stylesheet"  type="text/css">
-<!-- header and footer include scripts -->
-<script src="headerfooter.js" type="text/javascript"></script>
-<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 25 March 2009), see www.w3.org" />
+  <meta http-equiv="content-type" content=
+  "text/html; charset=us-ascii" />
+
+  <title>Qucs project: download</title>
+  <link href="qucsweb.css" rel="stylesheet" type="text/css" />
+  <!-- header and footer include scripts -->
+
+  <script src="headerfooter.js" type="text/javascript">
+</script>
+</head>
 
 <body>
-<!-- include the common web page header -->
-<script>header()</script>
+  <!-- include the common web page header -->
+  <script type="text/javascript">
+//<![CDATA[
+  header()
+  //]]>
+  </script>
 
-<div id="main">
-<hr>
-<center>
-[
-<a href="download.html">packages</a> -
-examples -
-<a href="related.html">related</a> -
-<a href="press.html">press/education</a>
-]
-</center>
+  <div id="main">
+    <hr />
 
+    <center>
+      [ <a href="download.html">packages</a> - examples - <a href=
+      "related.html">related</a> - <a href=
+      "press.html">press/education</a> ]
+    </center>
 
-<a name="example">
-<h3>Example Circuits</h3>
-</a>
-<p>
-Here you can download some schematics to test with Qucs.
-(Qucs schematic files are plain text files!)  All users of Qucs are invited
-to contribute to these examples.  If you want to share a schematic or circuit
-model do not hesitate to do so.
-</p>
-<h4>Simulation Examples</h4>
-<p>
-<table border=1>
-<tr><td><b>DC simulation</b></td>
-    <td><a href="examples/bridge.sch">bridge.sch</a></td>
-    <td>two-dimensional DC sweep</td></tr>
-<tr><td></td>
-    <td><a href="examples/Mirrors_prj.tar.gz">Mirrors_prj.tar.gz</a></td>
-    <td>collection of current mirror schematics using mos and bipolar</td></tr>
-<tr><td></td>
-    <td><a href="examples/charac.sch">charac.sch</a></td>
-    <td>output characteristics of a bipolar transistor</td></tr>
-<tr><td></td>
-    <td><a href="examples/diff1.sch">diff1.sch</a></td>
-    <td>large-signal characteristic of a differential amplifier</td></tr>
-<tr><td></td>
-    <td><a href="examples/fgummel.sch">fgummel.sch</a></td>
-    <td>forward gummel characteristic of a bipolar transistor</td></tr>
-<tr><td></td>
-    <td><a href="examples/rgummel.sch">rgummel.sch</a></td>
-    <td>reverse gummel characteristic of a bipolar transistor</td></tr>
-<tr><td></td>
-    <td><a href="examples/preregulator.sch">preregulator.sch</a></td>
-    <td>simple series pre-regulator circuit</td></tr>
+    <h3><a name="example" id="example">Example Circuits</a></h3>
 
-<tr><td><b>AC simulation</b></td>
-    <td><a href="examples/swr_meter.sch">swr_meter.sch</a></td>
-    <td>circuit of an SWR meter</td></tr>
-<tr><td></td>
-    <td><a href="examples/gyrator.sch">gyrator.sch</a></td>
-    <td>a primitive gyrator circuit</td></tr>
-<tr><td></td>
-    <td><a href="examples/resonance.sch">resonance.sch</a></td>
-    <td>shows voltage overshot of series resonance circuit</td></tr>
-<tr><td></td>
-    <td><a href="examples/stab.sch">stab.sch</a></td>
-    <td>simulates stability of feedback circuit</td></tr>
-<tr><td></td>
-    <td><a href="examples/active_bp.sch">active_bp.sch</a></td>
-    <td>a simple bandpass filter with OpAmp</td></tr>
-<tr><td></td>
-    <td><a href="examples/active_lp.sch">active_lp.sch</a></td>
-    <td>active 6th order Chebyshev low-pass filter</td></tr>
-<tr><td></td>
-    <td><a href="examples/bbv.sch">bbv.sch</a></td>
-    <td>a BJT broadband amplifier circuit</td></tr>
-<tr><td></td>
-    <td><a href="examples/singleOPV.sch">singleOPV.sch</a></td>
-    <td>subcircuit of an small, internally compensated MOS OpAmp</td></tr>
-<tr><td></td>
-    <td><a href="examples/gain.sch">gain.sch</a></td>
-    <td>simple example for "singleOPV.sch" (needs the circuit above to be run)</td></tr>
-<tr><td></td>
-    <td><a href="examples/notch.sch">notch.sch</a></td>
-    <td>a 50Hz notch filter realized with OpAmp gyrator</td></tr>
-<tr><td></td>
-    <td><a href="examples/selective_amp.sch">selective_amp.sch</a></td>
-    <td>classic selective RF amplifier</td></tr>
-<tr><td></td>
-    <td><a href="examples/Amp4.zip">Amp4.zip</a></td>
-    <td>audio amplifier provided by John H. Ludwig</td></tr>
-<tr><td></td>
-    <td><a href="examples/MillerAmp_prj.zip">MillerAmp_prj.zip</a></td>
-    <td>general purpose amplifier provided by John H. Ludwig</td></tr>
-<tr><td></td>
-    <td><a href="examples/bjt_noise.zip">bjt_noise.zip</a></td>
-    <td>simple flicker noise simulation for a BJT provided by Antonio</td></tr>
-<tr><td></td>
-    <td><a href="examples/1838MHz_PLL_prj.tar.gz">1838MHz_PLL_prj.tar.gz</a></td>
-    <td>1838MHz PLL modelling including noise provided by M.J. Head</td></tr>
-<tr><td></td>
-    <td><a href="examples/groupdelay_ac.sch">groupdelay_ac.sch</a></td>
-    <td>group delay of a Butterworth filter using AC simulation</td></tr>
-<tr><td></td>
-    <td><a href="examples/qucs-radiometer-model.tgz">qucs-radiometer-model.tgz</a></td>
-    <td>radiometer model provided by Andrea Zonca</td></tr>
+    <p>Here you can download some schematics to test with Qucs.
+    (Qucs schematic files are plain text files!) All users of Qucs
+    are invited to contribute to these examples. If you want to
+    share a schematic or circuit model do not hesitate to do
+    so.</p>
 
-<tr><td><b>Transient simulation</b></td>
-    <td><a href="examples/mixer.sch">mixer.sch</a></td>
-    <td>a double-balanced mixer</td></tr>
-<tr><td></td>
-    <td><a href="examples/lf_osci.sch">lf_osci.sch</a></td>
-    <td>an oscillator for low-frequencies</td></tr>
-<tr><td></td>
-    <td><a href="examples/rf_osci.sch">rf_osci.sch</a></td>
-    <td>a Peltz oscillator</td></tr>
-<tr><td></td>
-    <td><a href="examples/colpitts.sch">colpitts.sch</a></td>
-    <td>a colpitts oscillator with JFET</td></tr>
-<tr><td></td>
-    <td><a href="examples/classic_osci.sch">classic_osci.sch</a></td>
-    <td>a classic oscillator design</td></tr>
-<tr><td></td>
-    <td><a href="examples/multiplier.sch">multiplier.sch</a></td>
-    <td>a charge-pumped voltage multiplier</td></tr>
-<tr><td></td>
-    <td><a href="examples/active_mixer.sch">active_mixer.sch</a></td>
-    <td>an active, single-balanced mixer</td></tr>
-<tr><td></td>
-    <td><a href="examples/gilbert.sch">gilbert.sch</a></td>
-    <td>a gilbert cell mixer</td></tr>
-<tr><td></td>
-    <td><a href="examples/sym_osci.sch">sym_osci.sch</a></td>
-    <td>a symmetrical MOSFET oscillator</td></tr>
-<tr><td></td>
-    <td><a href="examples/schmitt.sch">schmitt.sch</a></td>
-    <td>a schmitt trigger circuit</td></tr>
-<tr><td></td>
-    <td><a href="examples/colpitts_base.sch">colpitts_base.sch</a></td>
-    <td>a colpitts oscillator in common-base circuit</td></tr>
-<tr><td></td>
-    <td><a href="examples/supply.sch">supply.sch</a></td>
-    <td>a conventional power supply</td></tr>
-<tr><td></td>
-    <td><a href="examples/chargepump.sch">chargepump.sch</a></td>
-    <td>a charge-pump circuit doubling the voltage</td></tr>
-<tr><td></td>
-    <td><a href="examples/lc_osc.sch">lc_osc.sch</a></td>
-    <td>a symmetrical LC CMOS oscillator</td></tr>
-<tr><td></td>
-    <td><a href="examples/single_balanced.sch">single_balanced.sch</a></td>
-    <td>single-balanced CMOS mixer</td></tr>
-<tr><td></td>
-    <td><a href="examples/Puls3b.sch">Puls3b.sch</a></td>
-    <td>fast transient pulse generation</td></tr>
-<tr><td></td>
-    <td><a href="examples/sawtooth-1.sch">sawtooth-1.sch</a></td>
-    <td>sawtooth generator using simple thyristor, thanks to Oswald</td></tr>
-<tr><td></td>
-    <td><a href="examples/sawtooth-2.sch">sawtooth-2.sch</a></td>
-    <td>sawtooth generator using opamp integrator, thanks to Oswald</td></tr>
-<tr><td></td>
-    <td><a href="examples/sawtooth-3.sch">sawtooth-3.sch</a></td>
-    <td>sawtooth generator using flip-flop</td></tr>
-<tr><td></td>
-    <td><a href="examples/sawtooth-discreet.sch">sawtooth-discreet.sch</a></td>
-    <td>sawtooth generator using thyristor, thanks to Oswald</td></tr>
-<tr><td></td>
-    <td><a href="examples/time_resistor.sch">time_resistor.sch</a></td>
-    <td>time-dependent variable resistor</td></tr>
-<tr><td></td>
-    <td><a href="examples/vfile_test_tran.tar.gz">vfile_test_tran.tar.gz</a></td>
-    <td>test of file-based voltage source</td></tr>
-<tr><td></td>
-    <td><a href="examples/fullwaverectifier_1.sch">fullwaverectifier_1.sch</a></td>
-    <td>full-wave rectifier using a transformer and 2 diodes</td></tr>
-<tr><td></td>
-    <td><a href="examples/fullwaverectifier_2.sch">fullwaverectifier_2.sch</a></td>
-    <td>Gratz bridge rectifier: a full-wave rectifier using 4 diodes</td></tr>
-<tr><td></td>
-    <td><a href="examples/buckconverter.sch">buckconverter.sch</a></td>
-    <td>buck converter (step-down DC-DC converter) circuit</td></tr>
-<tr><td></td>
-    <td><a href="examples/boostconverter.sch">boostconverter.sch</a></td>
-    <td>boost converter (step-up DC-DC converter) circuit</td></tr>
-<tr><td></td>
-    <td><a href="examples/buckboost.sch">buckboost.sch</a></td>
-    <td>inverting buck/boost converter circuit</td></tr>
+    <h4>Simulation Examples</h4>
 
-<tr><td><b>S-parameter simulation</b></td>
-    <td><a href="examples/elliptic_5th.sch">elliptic_5th.sch</a></td>
-    <td>a 5th order low pass elliptic filter</td></tr>
-<tr><td></td>
-    <td><a href="examples/chebyshev1_5th.sch">chebyshev1_5th.sch</a></td>
-    <td>a 5th order low pass Chebyshev type 1 filter</td></tr>
-<tr><td></td>
-    <td><a href="examples/fhr01fh.sch">fhr01fh.sch</a></td>
-    <td>small-signal model of a Fujitsu HEMT (including noise analysis)</td></tr>
-<tr><td></td>
-    <td><a href="examples/giacoletto.sch">giacoletto.sch</a></td>
-    <td>modified Giacoletto equivalent circuit</td></tr>
-<tr><td></td>
-    <td><a href="examples/fet.sch">fet.sch</a></td>
-    <td>small-signal model of a high gain FET (subcircuit)</td></tr>
-<tr><td></td>
-    <td><a href="examples/fet_noise.sch">fet_noise.sch</a></td>
-    <td>noise matching of the FET in <i>fet.sch</i></td></tr>
-<tr><td></td>
-    <td><a href="examples/microstrip.sch">microstrip.sch</a></td>
-    <td>simple examples how to use microstrip components</td></tr>
-<tr><td></td>
-    <td><a href="examples/bpf_10Ghz.sch">bpf_10Ghz.sch</a></td>
-    <td>a microstrip band pass filter created by Toyoyuki Ishikawa</td></tr>
-<tr><td></td>
-    <td><a href="examples/opamp_gyrator.sch">opamp_gyrator.sch</a></td>
-    <td>gyrator with operational amplifier</td></tr>
-<tr><td></td>
-    <td><a href="examples/wilkinson.sch">wilkinson.sch</a></td>
-    <td>an ideal Wilkinson divider</td></tr>
-<tr><td></td>
-    <td><a href="examples/2StageAmplifier_prj.tar.gz">2StageAmplifier_prj.tar.gz</a></td>
-    <td>building a two-stage RF amplifier with stabilization, noise and power matching</td></tr>
-<tr><td></td>
-    <td><a href="examples/groupdelay_sp.sch">groupdelay_sp.sch</a></td>
-    <td>group delay of a Butterworth filter using S-parameter simulation</td></tr>
-<tr><td></td>
-    <td><a href="examples/SmithChartTest.sch">SmithChartTest.sch</a></td>
-    <td>Smith chart example test with a band pass filter</td></tr>
+    <table border="1">
+      <tr>
+        <td><b>DC simulation</b></td>
 
-<tr><td><b>Digital simulation</b></td>
-    <td><a href="examples/DigitalAdder_prj.tar.gz">DigitalAdder_prj.tar.gz</a></td>
-    <td>four-bit adder using one-bit halfadders and fulladders</td></tr>
-<tr><td></td>
-    <td><a href="examples/flip_flops_models_tran_prj.zip">flip_flops_models_tran_prj.zip</a></td>
-    <td>collection of flip-flop models usable for digital as well as transient simulation</td></tr>
-<tr><td></td>
-    <td><a href="examples/BCD_prj.tar.gz">BCD_prj.tar.gz</a></td>
-    <td>four-bit synchronous BCD counter</td></tr>
-<tr><td><b>Harmonic balance</b></td>
-    <td><a href="examples/diode_hb.sch">diode_hb.sch</a></td>
-    <td>very simple diode setup for demonstration purposes only</td></tr>
-</table>
-</p>
+        <td><a href="examples/bridge.sch">bridge.sch</a></td>
 
-<h4>Simulation Models</h4>
-<p>
-<table border=1>
-<tr><td><b>Macro and circuit models</b></td>
-    <td><a href="examples/LM317_prj.tar.gz">LM317_prj.tar.gz</a></td>
-    <td>LM317 voltage regulator(s) using different SPICE models</td></tr>
-<tr><td></td>
-    <td><a href="examples/555_examples_prj.tar.gz">555_examples_prj.tar.gz</a></td>
-    <td>famous 555 timer macromodel and examples</td></tr>
-<tr><td></td>
-    <td><a href="examples/IdealBalun.sch">IdealBalun.sch</a></td>
-    <td>ideal balun model</td></tr>
-<tr><td></td>
-    <td><a href="examples/LPF-Balun2.sch">LPF-Balun2.sch</a></td>
-    <td>low-pass filter using ideal balun</td></tr>
-<tr><td></td>
-    <td><a href="examples/LPF-Balun3.sch">LPF-Balun3.sch</a></td>
-    <td>another low-pass filter using ideal balun</td></tr>
-<tr><td><b>Device models</b></td>
-    <td><a href="examples/curtice1_MESFET_prj.tar.gz">curtice1_MESFET_prj.tar.gz</a></td>
-    <td>Curtice level 1 MESFET model</td></tr>
-<tr><td></td>
-    <td><a href="examples/shot.sch">shot.sch</a></td>
-    <td>universal shot noise subcircuit</td></tr>
-<tr><td></td>
-    <td><a href="examples/flicker.sch">flicker.sch</a></td>
-    <td>flicker noise subcircuit</td></tr>
-<tr><td></td>
-    <td><a href="examples/triode.sch">triode.sch</a></td>
-    <td>triode tube model</td></tr>
-<tr><td></td>
-    <td><a href="examples/pentode.sch">pentode.sch</a></td>
-    <td>pentode tube model</td></tr>
-<tr><td><b>Complete projects</b></td>
-    <td><a href="examples/RADAR2010_prj.zip">RADAR2010_prj.zip</a></td>
-    <td>project on radar circuits (attenuators, duplexers,
-      limiters, phase shifters)<br>and subsystems (T/R modules and reflect
-      arrays) for a tutorial<br>given at the 2010 IEEE Radar Conference</td></tr>
-</table>
+        <td>two-dimensional DC sweep</td>
+      </tr>
 
-<hr>
-</div>
-<!-- include the common web page header -->
-<script>footer()</script>
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/Mirrors_prj.tar.gz">Mirrors_prj.tar.gz</a></td>
+
+        <td>collection of current mirror schematics using mos and
+        bipolar</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/charac.sch">charac.sch</a></td>
+
+        <td>output characteristics of a bipolar transistor</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/diff1.sch">diff1.sch</a></td>
+
+        <td>large-signal characteristic of a differential
+        amplifier</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/fgummel.sch">fgummel.sch</a></td>
+
+        <td>forward gummel characteristic of a bipolar
+        transistor</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/rgummel.sch">rgummel.sch</a></td>
+
+        <td>reverse gummel characteristic of a bipolar
+        transistor</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/preregulator.sch">preregulator.sch</a></td>
+
+        <td>simple series pre-regulator circuit</td>
+      </tr>
+
+      <tr>
+        <td><b>AC simulation</b></td>
+
+        <td><a href="examples/swr_meter.sch">swr_meter.sch</a></td>
+
+        <td>circuit of an SWR meter</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/gyrator.sch">gyrator.sch</a></td>
+
+        <td>a primitive gyrator circuit</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/resonance.sch">resonance.sch</a></td>
+
+        <td>shows voltage overshot of series resonance circuit</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/stab.sch">stab.sch</a></td>
+
+        <td>simulates stability of feedback circuit</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/active_bp.sch">active_bp.sch</a></td>
+
+        <td>a simple bandpass filter with OpAmp</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/active_lp.sch">active_lp.sch</a></td>
+
+        <td>active 6th order Chebyshev low-pass filter</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/bbv.sch">bbv.sch</a></td>
+
+        <td>a BJT broadband amplifier circuit</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/singleOPV.sch">singleOPV.sch</a></td>
+
+        <td>subcircuit of an small, internally compensated MOS
+        OpAmp</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/gain.sch">gain.sch</a></td>
+
+        <td>simple example for "singleOPV.sch" (needs the circuit
+        above to be run)</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/notch.sch">notch.sch</a></td>
+
+        <td>a 50Hz notch filter realized with OpAmp gyrator</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/selective_amp.sch">selective_amp.sch</a></td>
+
+        <td>classic selective RF amplifier</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/Amp4.zip">Amp4.zip</a></td>
+
+        <td>audio amplifier provided by John H. Ludwig</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/MillerAmp_prj.zip">MillerAmp_prj.zip</a></td>
+
+        <td>general purpose amplifier provided by John H.
+        Ludwig</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/bjt_noise.zip">bjt_noise.zip</a></td>
+
+        <td>simple flicker noise simulation for a BJT provided by
+        Antonio</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/1838MHz_PLL_prj.tar.gz">1838MHz_PLL_prj.tar.gz</a></td>
+
+        <td>1838MHz PLL modelling including noise provided by M.J.
+        Head</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/groupdelay_ac.sch">groupdelay_ac.sch</a></td>
+
+        <td>group delay of a Butterworth filter using AC
+        simulation</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/qucs-radiometer-model.tgz">qucs-radiometer-model.tgz</a></td>
+
+        <td>radiometer model provided by Andrea Zonca</td>
+      </tr>
+
+      <tr>
+        <td><b>Transient simulation</b></td>
+
+        <td><a href="examples/mixer.sch">mixer.sch</a></td>
+
+        <td>a double-balanced mixer</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/lf_osci.sch">lf_osci.sch</a></td>
+
+        <td>an oscillator for low-frequencies</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/rf_osci.sch">rf_osci.sch</a></td>
+
+        <td>a Peltz oscillator</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/colpitts.sch">colpitts.sch</a></td>
+
+        <td>a colpitts oscillator with JFET</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/classic_osci.sch">classic_osci.sch</a></td>
+
+        <td>a classic oscillator design</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/multiplier.sch">multiplier.sch</a></td>
+
+        <td>a charge-pumped voltage multiplier</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/active_mixer.sch">active_mixer.sch</a></td>
+
+        <td>an active, single-balanced mixer</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/gilbert.sch">gilbert.sch</a></td>
+
+        <td>a gilbert cell mixer</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/sym_osci.sch">sym_osci.sch</a></td>
+
+        <td>a symmetrical MOSFET oscillator</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/schmitt.sch">schmitt.sch</a></td>
+
+        <td>a schmitt trigger circuit</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/colpitts_base.sch">colpitts_base.sch</a></td>
+
+        <td>a colpitts oscillator in common-base circuit</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/supply.sch">supply.sch</a></td>
+
+        <td>a conventional power supply</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/chargepump.sch">chargepump.sch</a></td>
+
+        <td>a charge-pump circuit doubling the voltage</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/lc_osc.sch">lc_osc.sch</a></td>
+
+        <td>a symmetrical LC CMOS oscillator</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/single_balanced.sch">single_balanced.sch</a></td>
+
+        <td>single-balanced CMOS mixer</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/Puls3b.sch">Puls3b.sch</a></td>
+
+        <td>fast transient pulse generation</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/sawtooth-1.sch">sawtooth-1.sch</a></td>
+
+        <td>sawtooth generator using simple thyristor, thanks to
+        Oswald</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/sawtooth-2.sch">sawtooth-2.sch</a></td>
+
+        <td>sawtooth generator using opamp integrator, thanks to
+        Oswald</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/sawtooth-3.sch">sawtooth-3.sch</a></td>
+
+        <td>sawtooth generator using flip-flop</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/sawtooth-discreet.sch">sawtooth-discreet.sch</a></td>
+
+        <td>sawtooth generator using thyristor, thanks to
+        Oswald</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/time_resistor.sch">time_resistor.sch</a></td>
+
+        <td>time-dependent variable resistor</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/vfile_test_tran.tar.gz">vfile_test_tran.tar.gz</a></td>
+
+        <td>test of file-based voltage source</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/fullwaverectifier_1.sch">fullwaverectifier_1.sch</a></td>
+
+        <td>full-wave rectifier using a transformer and 2
+        diodes</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/fullwaverectifier_2.sch">fullwaverectifier_2.sch</a></td>
+
+        <td>Gratz bridge rectifier: a full-wave rectifier using 4
+        diodes</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/buckconverter.sch">buckconverter.sch</a></td>
+
+        <td>buck converter (step-down DC-DC converter) circuit</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/boostconverter.sch">boostconverter.sch</a></td>
+
+        <td>boost converter (step-up DC-DC converter) circuit</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/buckboost.sch">buckboost.sch</a></td>
+
+        <td>inverting buck/boost converter circuit</td>
+      </tr>
+
+      <tr>
+        <td><b>S-parameter simulation</b></td>
+
+        <td><a href=
+        "examples/elliptic_5th.sch">elliptic_5th.sch</a></td>
+
+        <td>a 5th order low pass elliptic filter</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/chebyshev1_5th.sch">chebyshev1_5th.sch</a></td>
+
+        <td>a 5th order low pass Chebyshev type 1 filter</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/fhr01fh.sch">fhr01fh.sch</a></td>
+
+        <td>small-signal model of a Fujitsu HEMT (including noise
+        analysis)</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/giacoletto.sch">giacoletto.sch</a></td>
+
+        <td>modified Giacoletto equivalent circuit</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/fet.sch">fet.sch</a></td>
+
+        <td>small-signal model of a high gain FET (subcircuit)</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/fet_noise.sch">fet_noise.sch</a></td>
+
+        <td>noise matching of the FET in <i>fet.sch</i></td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/microstrip.sch">microstrip.sch</a></td>
+
+        <td>simple examples how to use microstrip components</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/bpf_10Ghz.sch">bpf_10Ghz.sch</a></td>
+
+        <td>a microstrip band pass filter created by Toyoyuki
+        Ishikawa</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/opamp_gyrator.sch">opamp_gyrator.sch</a></td>
+
+        <td>gyrator with operational amplifier</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/wilkinson.sch">wilkinson.sch</a></td>
+
+        <td>an ideal Wilkinson divider</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/2StageAmplifier_prj.tar.gz">2StageAmplifier_prj.tar.gz</a></td>
+
+        <td>building a two-stage RF amplifier with stabilization,
+        noise and power matching</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/groupdelay_sp.sch">groupdelay_sp.sch</a></td>
+
+        <td>group delay of a Butterworth filter using S-parameter
+        simulation</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/SmithChartTest.sch">SmithChartTest.sch</a></td>
+
+        <td>Smith chart example test with a band pass filter</td>
+      </tr>
+
+      <tr>
+        <td><b>Digital simulation</b></td>
+
+        <td><a href=
+        "examples/DigitalAdder_prj.tar.gz">DigitalAdder_prj.tar.gz</a></td>
+
+        <td>four-bit adder using one-bit halfadders and
+        fulladders</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/flip_flops_models_tran_prj.zip">flip_flops_models_tran_prj.zip</a></td>
+
+        <td>collection of flip-flop models usable for digital as
+        well as transient simulation</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/BCD_prj.tar.gz">BCD_prj.tar.gz</a></td>
+
+        <td>four-bit synchronous BCD counter</td>
+      </tr>
+
+      <tr>
+        <td><b>Harmonic balance</b></td>
+
+        <td><a href="examples/diode_hb.sch">diode_hb.sch</a></td>
+
+        <td>very simple diode setup for demonstration purposes
+        only</td>
+      </tr>
+    </table>
+
+    <h4>Simulation Models</h4>
+
+    <table border="1">
+      <tr>
+        <td><b>Macro and circuit models</b></td>
+
+        <td><a href=
+        "examples/LM317_prj.tar.gz">LM317_prj.tar.gz</a></td>
+
+        <td>LM317 voltage regulator(s) using different SPICE
+        models</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/555_examples_prj.tar.gz">555_examples_prj.tar.gz</a></td>
+
+        <td>famous 555 timer macromodel and examples</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/IdealBalun.sch">IdealBalun.sch</a></td>
+
+        <td>ideal balun model</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/LPF-Balun2.sch">LPF-Balun2.sch</a></td>
+
+        <td>low-pass filter using ideal balun</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href=
+        "examples/LPF-Balun3.sch">LPF-Balun3.sch</a></td>
+
+        <td>another low-pass filter using ideal balun</td>
+      </tr>
+
+      <tr>
+        <td><b>Device models</b></td>
+
+        <td><a href=
+        "examples/curtice1_MESFET_prj.tar.gz">curtice1_MESFET_prj.tar.gz</a></td>
+
+        <td>Curtice level 1 MESFET model</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/shot.sch">shot.sch</a></td>
+
+        <td>universal shot noise subcircuit</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/flicker.sch">flicker.sch</a></td>
+
+        <td>flicker noise subcircuit</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/triode.sch">triode.sch</a></td>
+
+        <td>triode tube model</td>
+      </tr>
+
+      <tr>
+        <td></td>
+
+        <td><a href="examples/pentode.sch">pentode.sch</a></td>
+
+        <td>pentode tube model</td>
+      </tr>
+
+      <tr>
+        <td><b>Complete projects</b></td>
+
+        <td><a href=
+        "examples/RADAR2010_prj.zip">RADAR2010_prj.zip</a></td>
+
+        <td>project on radar circuits (attenuators, duplexers,
+        limiters, phase shifters)<br />
+        and subsystems (T/R modules and reflect arrays) for a
+        tutorial<br />
+        given at the 2010 IEEE Radar Conference</td>
+      </tr>
+    </table>
+    <hr />
+  </div><!-- include the common web page header -->
+  <script type="text/javascript">
+//<![CDATA[
+  footer()
+  //]]>
+  </script>
 </body>
 </html>

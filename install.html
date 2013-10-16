@@ -1,282 +1,330 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Qucs project: documentation</title>
-<link href="qucsweb.css" rel="stylesheet"  type="text/css">
-<!-- header and footer include scripts -->
-<script src="headerfooter.js" type="text/javascript"></script>
-<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 25 March 2009), see www.w3.org" />
+
+  <title>Qucs project: documentation</title>
+  <link href="qucsweb.css" rel="stylesheet" type="text/css" />
+  <!-- header and footer include scripts -->
+
+  <script src="headerfooter.js" type="text/javascript">
+</script>
+</head>
+
 <body>
+  <!-- include the common web page header -->
+  <script type="text/javascript">
+//<![CDATA[
+  header()
+  //]]>
+  </script>
 
-<!-- include the common web page header -->
-<script>header()</script>
+  <div id="main">
+    <hr />
 
+    <center>
+      [ <a href="docs.html">user manual</a> - <a href=
+      "thirdparty.html">third party</a> - <a href=
+      "technical.html">technical papers</a> - <a href=
+      "components.html">components</a> - <a href="build.html">build
+      instructions</a> - install instructions ]
+    </center>
 
-<div id="main">
-<hr>
-<center>
-[
-<a href="docs.html">user manual</a> -
-<a href="thirdparty.html">third party</a> -
-<a href="technical.html">technical papers</a> -
-<a href="components.html">components</a> -
-<a href="build.html">build instructions</a> -
-install instructions
-]
-</center>
+    <h3><a name="#install">Installation Instructions</a></h3>
 
-<a name="#install">
-<h3>Installation Instructions</h3>
-</a>
+    <ul>
+      <li>
+        <h4>Requirements</h4>
+      </li>
 
-<ul>
-<li>
-<h4>Requirements</h4></li>
-<p>
-Qucs needs Qt&reg; by
-<a href="http://qt.digia.com/">Digia</a>&reg;.
-The current version is known to work with Qt 4.6.3 and later.
-</p>
+      <li style="list-style: none; display: inline">
+        <p>Qucs needs Qt&reg; by <a href=
+        "http://qt.digia.com/">Digia</a>&reg;. The current version
+        is known to work with Qt 4.6.3 and later.</p>
+      </li>
 
-<li>
-<h4>Usual GNU/Linux installation</h4></li>
-<p>
-Unpack the distribution tarball:
+      <li>
+        <h4>Usual GNU/Linux installation</h4>
+      </li>
 
-<pre>
+      <li style="list-style: none; display: inline">
+        <p>Unpack the distribution tarball:</p>
+        <pre>
     $ tar xvzf qucs-&lt;version&gt;.tar.gz               (using GNU tar)
     $ gzip -cd qucs-&lt;version&gt;.tar.gz | tar xvf -   (using another tar)
-</pre>
-Change into the source directory:
-
-<pre>
+</pre>Change into the source directory:
+        <pre>
     $ cd qucs-&lt;version&gt;
-</pre>
-Configure the source package for your system:
-
-<pre>
+</pre>Configure the source package for your system:
+        <pre>
     $ ./configure
-</pre>
-Now compile the package:
-
-<pre>
+</pre>Now compile the package:
+        <pre>
     $ make
-</pre>
-Install Qucs:
-
-<pre>
+</pre>Install Qucs:
+        <pre>
     $ make install
+</pre>You must have root privileges if you want to install the
+package in the standard location (/usr/local) or in any location
+that is only writable by root. For further information on
+installing the package, please consult the file INSTALL included in
+the distribution.<br />
+        <br />
+        <b>Please note</b>: Users of the FreeBSD OS may use a GNU
+        make (probably gmake) to compile and install the package.
+      </li>
+
+      <li>
+        <h4><a name="#install_Win32">Install instructions for
+        Win32</a></h4>
+      </li>
+
+      <li style="list-style: none">There is an installer package
+      for Qucs for Win32 systems named
+        <pre>
+        qucs-&lt;version&gt;-setup.exe
+</pre>The relocations of the package (the location where the
+package gets installed) is mainly steered by environment variables.
+During a normal installation the appropriate environment variables
+are automatically set for the user who installed the package.<br />
+
+        <br />
+        One of them must be emphasised: <b>HOME</b>. During
+        installation an appropriate file system location will be
+        found. When it was already set then the previous value is
+        assumed. The location decides where the project,
+        intermediate and configuration files will be saved. So when
+        the user wonders about missing project files or lost
+        configuration it's worth to have a look at the environment
+        variables.<br />
+        <br />
+        If <b>FreeHDL</b> is meant to be used for digital
+        simulation then also the binary installer package named
+        <pre>
+        freehdl-&lt;version&gt;-setup.exe
+</pre>must be downloaded and installed. It requires the
+<b>MinGW32</b> compiler. If it is not already installed, it's
+possible to install a prepared binary package for this, too.
+        <pre>
+        mingw32-g++-&lt;version&gt;-setup.exe
+</pre>It contains the minimal MinGW32 installation required to work
+with FreeHDL and should be installed proir to the FreeHDL
+package.<br />
+        <br />
+        If <b>Icarus Verilog</b> is used for digital Verilog-HDL
+        simulation the installer script
+        <pre>
+        iverilog-&lt;version&gt;_setup.exe
+</pre>must be installed on the computer additionally. Please note
+that it is necessary to install it in a <u>path location without
+spaces</u> due to a limitation in the software. Current versions
+can be obtained at <a href=
+"http://bleyer.org/icarus/">http://bleyer.org/icarus/</a>.<br />
+
+        <br />
+        In order to use the SPICE preprocessor <b>ps2sp</b>
+        successfully a <b>TinyPerl</b> installation is required. It
+        can be obtained at <a href=
+        "http://tinyperl.sourceforge.net/">http://tinyperl.sourceforge.net/</a>.
+        It must be ensured that the <b>tinyperl.exe</b> is
+        accessible via the PATH environment variable.
+      </li>
+
+      <li>
+        <h4><a name="#install_MacOS">Install instructions for
+        MacOSX</a></h4>
+      </li>
+
+      <li style="list-style: none">There are several ways to
+      install Qucs under MacOSX.<br />
+        <br />
+
+        <ul>
+          <li><b>Building Qucs from downloaded source
+          tarball</b></li>
+
+          <li style="list-style: none">
+            <br />
+            To build Qucs from source, you need to install X11 and
+            Qt first.<br />
+            <br />
+
+            <ol>
+              <li>
+                <i>Installing X11</i>
+
+                <p>To install X11 (if you do not already have it),
+                insert your MacOS installation DVD, scroll down,
+                open "Optional Installs" and choose the package
+                "X11" for installation. Finish the
+                installation.</p>
+              </li>
+
+              <li>
+                <i>Installing Qt</i>
+
+                <p>An easy way of installing Qt3 is using
+                DarwinPorts. With DarwinPorts you can install MacOS
+                versions of many known open source projects by
+                using simple commands.<br />
+                <br />
+                Get it here: <a href=
+                "http://darwinports.com/">http://darwinports.com/</a><br />
+
+                <br />
+                Download the .dmg file from there, open it and
+                install the DarwinPorts package. After that,
+                DarwinPorts needs to be updated to the most recent
+                version. Open a shell and type the following
+                commmand (you will be asked for your password):</p>
+                <pre>
+        $ sudo port -d selfupdate
+</pre>Now it is time to get Qt3. In the shell, type this command:
+                <pre>
+        $ sudo port install qt3
+</pre>Now DarwinPorts will fetch a lot of packages which are needed
+to install Qt3. Be patient, this will take some time. Once
+finished, you need to export a new environment variable. Do this by
+typing the following two lines into your shell:
+                <pre>
+        $ QTDIR=/opt/local/lib/qt3
+        $ export QTDIR
+</pre>Do not close the shell, we'll need it with the above
+environment variable for the installation of Qucs.
+              </li>
+
+              <li>
+                <i>Compiling Qucs</i>
+
+                <p>You should get the latest version of Qucs now. I
+                wrote this article using qucs-0.0.11, but this
+                should work for future versions, too.<br />
+                <br />
+                I assume you have downloaded the Qucs source code
+                to Documents/qucs-0.0.11.tar.gz, so we can use our
+                shell to extract the source files with the
+                following commands:</p>
+                <pre>
+        $ cd Documents
+        $ tar &shy;xvzf qucs-0.0.11.tar.gz
+</pre>Now compile Qucs:
+                <pre>
+        $ cd qucs-0.0.11
+        $ ./configure
+        $ make
+        $ sudo make install
+        $ sudo ln -s /usr/local/bin/qucs /Applications/qucs
 </pre>
+              </li>
+            </ol>If everything went ok, you should now have a link
+            to the binary "qucs" in your Applications. You're done!
+          </li>
 
-You must have root privileges if you want to install the package in the
-standard location (/usr/local) or in any location that is only writable 
-by root.
+          <li><b>Building using MacPorts</b></li>
 
-For further information on installing the package, please consult the
-file INSTALL included in the distribution.<br><br>
+          <li style="list-style: none">
+            <br />
+            To install Qucs, you need to install X11, XCode and
+            MacPorts first.<br />
+            <br />
 
-<b>Please note</b>:  Users of the FreeBSD OS may use a GNU make (probably
-gmake) to compile and install the package.
+            <ol>
+              <li><i>Installing X11</i><br />
+              To install X11 (if you do not already have it),
+              insert your MacOS installation DVD, scroll down, open
+              "Optional Installs" and choose the package "X11" for
+              installation. Finish the installation.<br />
+              <br /></li>
 
-<li>
-<a name="#install_Win32">
-<h4>Install instructions for Win32</h4></li>
-</a>
+              <li>
+                <i>Installing XCode</i><br />
+                XCode is a mighty package for software developers.
+                It comes with a fully fledged GUI, several
+                programming languages and lots of documentation. We
+                only need the C compiler (gcc) and its support
+                files which come with this installation.<br />
+                <br />
+                To check if XCode is already installed, open your
+                Finder, then your "Macintosh HD" and look for a
+                folder "Developer". If it's there, XCode is
+                installed and you can skip the following
+                step.<br />
+                <br />
+                You have two choices:
 
-There is an installer package for Qucs for Win32 systems named
-<pre>
-	qucs-&lt;version&gt;-setup.exe
+                <ol type="a">
+                  <li>download the newest version (over 900 MB for
+                  v2.4.1!)Goto <a href=
+                  "http://developer.apple.com/tools/xcode/index.html">
+                  http://developer.apple.com/tools/xcode/index.html</a>.
+                  After download, open the .dmg image and run the
+                  installer.<br /></li>
+
+                  <li>use the older version from DVDLook through
+                  your Tiger installation media for "XCode tools".
+                  Install it.</li>
+                </ol><br />
+              </li>
+
+              <li>
+                <i>Installing MacPorts and Qucs</i><br />
+                With MacPorts (formerly DarwinPorts) you can
+                install MacOS versions of many known open source
+                projects by using simple commands.<br />
+                <br />
+                Get it here: <a href=
+                "http://www.macports.org/">http://www.macports.org/</a><br />
+
+                <br />
+                Download the latest .dmg file from there, open it
+                and install the MacPorts package. After that,
+                MacPorts needs to be updated to the most recent
+                version. Open a shell and type the following
+                commmand (you will be asked for your password):
+                <pre>
+        $ sudo port -d selfupdate
+</pre>Now it is time to get Qucs. In the shell, type this command:
+                <pre>
+        $ sudo port install qucs
+</pre>MacPorts will fetch, decompress, compile and install a lot of
+packages which are needed to install Qucs. Be patient, this will
+take some time.<br />
+                <br />
+                After installation Qucs will be placed into
+                /opt/local/bin. If you want, you can create a link
+                to your Applications folder with the following
+                command:
+                <pre>
+        $ sudo ln -s /opt/local/bin/qucs /Applications/qucs
 </pre>
-The relocations
-of the package (the location where the package gets installed) is mainly
-steered by environment variables. During a normal installation the
-appropriate environment variables are automatically set for the user who
-installed the package.<br><br>
+              </li>
+            </ol>You're done!<br />
+            <br />
+          </li>
 
-One of them must be emphasised: <b>HOME</b>. During installation an appropriate
-file system location will be found. When it was already set then the
-previous value is assumed. The location decides where the project,
-intermediate and configuration files will be saved. So when the user
-wonders about missing project files or lost configuration it's worth to
-have a look at the environment variables.<br><br>
+          <li><b>Binary installer package</b></li>
 
-If <b>FreeHDL</b> is meant to be used for digital simulation then also
-the binary installer package named
-<pre>
-	freehdl-&lt;version&gt;-setup.exe
-</pre>
-must be downloaded and installed. It requires the <b>MinGW32</b>
-compiler. If it is not already installed, it's possible to install a
-prepared binary package for this, too.
-<pre>
- 	mingw32-g++-&lt;version&gt;-setup.exe
-</pre>
-It contains the minimal MinGW32 installation required to work with FreeHDL
-and should be installed proir to the FreeHDL package.<br><br>
-
-If <b>Icarus Verilog</b> is used for digital Verilog-HDL simulation the
-installer script
-<pre>
- 	iverilog-&lt;version&gt;_setup.exe
-</pre>
-must be installed on the computer additionally.  Please note that it is necessary to
-install it in a <u>path location without spaces</u> due to a limitation in the
-software.  Current versions can be obtained at <a href="http://bleyer.org/icarus/">
-http://bleyer.org/icarus/</a>.<br><br>
-
-In order to use the SPICE preprocessor <b>ps2sp</b> successfully a <b>TinyPerl</b>
-installation is required.  It can be obtained at <a href="http://tinyperl.sourceforge.net/">
-http://tinyperl.sourceforge.net/</a>.  It must be ensured that the <b>tinyperl.exe</b>
-is accessible via the PATH environment variable.
-
-<li>
-<a name="#install_MacOS">
-<h4>Install instructions for MacOSX</h4></li>
-</a>
-There are several ways to install Qucs under MacOSX.
-<br><br>
-<ul>
-<li><b>Building Qucs from downloaded source tarball</b></li><br>
-To build Qucs from source, you need to install X11 and Qt first.<br><br>
-<ol>
-<li><i>Installing X11</i></li>
-<p>
-To install X11 (if you do not already have it), insert your MacOS
-installation DVD, scroll down, open "Optional Installs" and choose
-the package "X11" for installation. Finish the installation.
-</p>
-<li><i>Installing Qt</i></li>
-<p>
-An easy way of installing Qt3 is using DarwinPorts. With DarwinPorts
-you can install MacOS versions of many known open source
-projects by using simple commands.<br><br>
-
-Get it here: <a href="http://darwinports.com/">http://darwinports.com/</a>
-<br><br>
-Download the .dmg file from there, open it and install the DarwinPorts
-package. After that, DarwinPorts needs to be updated to the
-most recent version. Open a shell and type the following commmand
-(you will be asked for your password):
-<pre>
-	$ sudo port -d selfupdate
-</pre>
-Now it is time to get Qt3. In the shell, type this command:
-<pre>
-	$ sudo port install qt3
-</pre>
-Now DarwinPorts will fetch a lot of packages which are needed to
-install Qt3. Be patient, this will take some time. Once finished,
-you need to export a new environment variable. Do this by typing
-the following two lines into your shell:
-<pre>
-	$ QTDIR=/opt/local/lib/qt3
-	$ export QTDIR
-</pre>
-Do not close the shell, we'll need it with the above environment
-variable for the installation of Qucs.
-</p>
-<li><i>Compiling Qucs</i></li>
-<p>
-You should get the latest version of Qucs now. I wrote this article
-using qucs-0.0.11, but this should work for future versions, too.
-<br><br>
-I assume you have downloaded the Qucs source code to
-Documents/qucs-0.0.11.tar.gz, so we can use our shell to extract
-the source files with the following commands:
-<pre>
-	$ cd Documents
-	$ tar ­xvzf qucs-0.0.11.tar.gz
-</pre>
-Now compile Qucs:
-<pre>
-	$ cd qucs-0.0.11
-	$ ./configure
-	$ make
-	$ sudo make install
-	$ sudo ln -s /usr/local/bin/qucs /Applications/qucs
-</pre>
-</ol>
-If everything went ok, you should now have a link to the binary "qucs"
-in your Applications. You're done!
-</p>
-
-<li><b>Building using MacPorts</b></li><br>
-To install Qucs, you need to install X11, XCode and MacPorts first.
-<br><br>
-<ol>
-<li><i>Installing X11</i></li><br>
-To install X11 (if you do not already have it), insert your MacOS
-installation DVD, scroll down, open "Optional Installs" and choose the
-package "X11" for installation. Finish the installation.
-<br><br>
-<li><i>Installing XCode</i></li><br>
-XCode is a mighty package for software developers. It comes with a fully
-fledged GUI, several programming languages and lots of documentation. We
-only need the C compiler (gcc) and its support files which come with this
-installation.<br><br>
-
-To check if XCode is already installed, open your Finder, then your
-"Macintosh HD" and look for a folder "Developer". If it's there, XCode is
-installed and you can skip the following step.<br><br>
-
-You have two choices:
-<ol type="a">
-<li>download the newest version (over 900 MB for v2.4.1!)</li>
-Goto <a href="http://developer.apple.com/tools/xcode/index.html">
-http://developer.apple.com/tools/xcode/index.html</a>.
-After download, open the .dmg image and run the installer.
-<br>
-<li>use the older version from DVD</li>
-Look through your Tiger installation media for "XCode tools". Install it.
-</ol>
-<br>
-<li><i>Installing MacPorts and Qucs</i></li><br>
-With MacPorts (formerly DarwinPorts) you can install MacOS versions of many
-known open source projects by using simple commands.<br>
-<br>
-Get it here: <a href="http://www.macports.org/">http://www.macports.org/</a>
-<br><br>
-Download the latest .dmg file from there, open it and install the MacPorts
-package. After that, MacPorts needs to be updated to the most recent version.
-Open a shell and type the following commmand (you will be asked for your
-password):
-<pre>
-	$ sudo port -d selfupdate
-</pre>
-Now it is time to get Qucs. In the shell, type this command:
-<pre>
-	$ sudo port install qucs
-</pre>
-MacPorts will fetch, decompress, compile and install a lot of packages which
-are needed to install Qucs. Be patient, this will take some time.
-<br><br>
-After installation Qucs will be placed into /opt/local/bin. If you want, you
-can create a link to your Applications folder with the following command:
-<pre>
-	$ sudo ln -s /opt/local/bin/qucs /Applications/qucs
-</pre>
-</ol>
-You're done!<br><br>
-
-<li><b>Binary installer package</b></li><br>
-There is also an installer package for Qucs for MacOSX systems named
-<pre>
-	qucs-&lt;version&gt;-macosx-&lt;platform&gt;.pkg
-</pre>
-Copy this file onto your desktop and double-click it.  Follow the
-installer instructions.
-</ul>
-</ul>
-</p>
-
-<p>
-</p>
-
-<hr>
-</div>
-<!-- include the common web page header -->
-<script>footer()</script>
+          <li style="list-style: none">
+            <br />
+            There is also an installer package for Qucs for MacOSX
+            systems named
+            <pre>
+        qucs-&lt;version&gt;-macosx-&lt;platform&gt;.pkg
+</pre>Copy this file onto your desktop and double-click it. Follow
+the installer instructions.
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <hr />
+  </div><!-- include the common web page header -->
+  <script type="text/javascript">
+//<![CDATA[
+  footer()
+  //]]>
+  </script>
 </body>
 </html>
