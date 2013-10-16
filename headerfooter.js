@@ -7,14 +7,14 @@ function header()
   <div id="header"></div> \
   <div id="navpane" class="nav"> \
     <ul class="nav"> \
-      <li><a class="navbutton" href="index.shtml">home</a></li> \
-      <li><a class="navbutton" href="screenshots.shtml">screenshots</a></li> \
-      <li><a class="navbutton" href="docs.shtml">support</a><li> \
-      <li><a class="navbutton" href="download.shtml">download</a></li> \
-      <li><a class="navbutton" href="road.shtml">roadmap</a></li> \
-      <li><a class="navbutton" href="devs.shtml">developers</a></li> \
-      <li><a class="navbutton" href="faq.shtml">FAQ</a></li> \
-      <li><a class="navbutton" href="contact.shtml">contact</a></li> \
+      <li><a class="navbutton" href="index.html">home</a></li> \
+      <li><a class="navbutton" href="screenshots.html">screenshots</a></li> \
+      <li><a class="navbutton" href="docs.html">support</a><li> \
+      <li><a class="navbutton" href="download.html">download</a></li> \
+      <li><a class="navbutton" href="road.html">roadmap</a></li> \
+      <li><a class="navbutton" href="devs.html">developers</a></li> \
+      <li><a class="navbutton" href="faq.html">FAQ</a></li> \
+      <li><a class="navbutton" href="contact.html">contact</a></li> \
     </ul> \
   </div>';
 

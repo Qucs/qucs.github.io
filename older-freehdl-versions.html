@@ -4,20 +4,22 @@
 <head>
 <title>Qucs project: download</title>
 <link href="qucsweb.css" rel="stylesheet"  type="text/css">
+<!-- header and footer include scripts -->
+<script src="headerfooter.js" type="text/javascript"></script>
 <head>
 <body>
 
-<!-- include the common web page header using Apache Server-Side Includes (SSI) -->
-<!--#include virtual="/qucs-header.html" -->
+<!-- include the common web page header -->
+<script>header()</script>
 
 <div id="main">
 <hr>
 <center>
 [
-<a href="download.shtml">packages</a> -
-<a href="examples.shtml">examples</a> -
-<a href="related.shtml">related</a> -
-<a href="press.shtml">press/education</a>
+<a href="download.html">packages</a> -
+<a href="examples.html">examples</a> -
+<a href="related.html">related</a> -
+<a href="press.html">press/education</a>
 ]
 </center>
 
@@ -50,7 +52,7 @@ FreeHDL  version
 
 <hr>
 </div>
-<!-- include the common web page footer using Apache Server-Side Includes (SSI) -->
-  <!--#include virtual="/qucs-footer.html" -->
+<!-- include the common web page header -->
+<script>footer()</script>
 </body>
 </html>
