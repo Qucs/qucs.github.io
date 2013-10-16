@@ -1,14 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-<head>
-<title>Qucs project: documentation</title>
-<link href="qucsweb.css" rel="stylesheet"  type="text/css">
-<head>
-<body>
+  <head>
+    <title>Qucs project: documentation</title>
+    <link href="qucsweb.css" rel="stylesheet"  type="text/css">
+    <!-- header and footer include scripts -->
+    <script src="headerfooter.js" type="text/javascript"></script>
+    <head>
 
-<!-- include the common web page header using Apache Server-Side Includes (SSI) -->
-<!--#include virtual="/qucs-header.html" -->
+<body>
+    <!-- include the common web page header -->
+    <script>header()</script>
+
 <div id="main">
 <hr>
 <center>
@@ -2016,7 +2019,7 @@ supported</td>
 
 <hr>
 </div>
-<!-- include the common web page footer using Apache Server-Side Includes (SSI) -->
-  <!--#include virtual="/qucs-footer.html" -->
+      <!-- include the common web page header -->
+      <script>footer()</script>
 </body>
 </html>
