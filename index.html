@@ -13,25 +13,14 @@
   "Qucs, circuit, simulation, S-parameter, DC, AC, harmonic balance, transient, noise" />
   <meta name="author" content="Stefan Jahn" />
   <link href="qucsweb.css" rel="stylesheet" type="text/css" />
+
+  <!-- header and footer include scripts -->
+  <script src="headerfooter.js" type="text/javascript"></script>
 </head>
 
 <body>
-  <!-- include the common web page header using Apache Server-Side Includes (SSI) -->
-  <!--#include virtual="/qucs-header.html" -->
-<!-- <div id="header"></div>
-
-<div id="navpane" class="nav">
-  <ul class="nav">
-    <li><a class="navbutton" href="index.html">home</a></li>
-    <li><a class="navbutton" href="screenshots.html">screenshots</a></li>
-    <li><a class="navbutton" href="docs.html">support</a><li>
-    <li><a class="navbutton" href="download.html">download</a></li>
-    <li><a class="navbutton" href="road.html">roadmap</a></li>
-    <li><a class="navbutton" href="devs.html">developers</a></li>
-    <li><a class="navbutton" href="faq.html">FAQ</a></li>
-    <li><a class="navbutton" href="contact.html">contact</a></li>
-  </ul>
-</div> -->
+  <!-- include the common web page header -->
+  <script>header()</script>
 
   <div id="main">
     <hr />
@@ -237,8 +226,8 @@
     <hr />
   </div>
   
-  <!-- include the common web page footer using Apache Server-Side Includes (SSI) -->
-  <!--#include virtual="/qucs-footer.html" -->
+  <!-- include the common web page header -->
+  <script>footer()</script>
 
 </body>
 </html>
