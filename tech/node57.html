@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Gyrator</TITLE>
+<META NAME="description" CONTENT="Gyrator">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node58.html">
+<LINK REL="previous" HREF="node56.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node58.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1479"
+  HREF="node58.html">Voltage and current sources</A>
+<B>Up:</B> <A NAME="tex2html1475"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1469"
+  HREF="node56.html">Coupler</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION0010160000000000000000">
+Gyrator</A>
+</H1>
+
+<P>
+A gyrator is an impedance inverter.  Thus, for example, it converts a
+capacitance into an inductance and vice versa.
+The ideal gyrator, as shown in fig. <A HREF="#fig:gyrator">9.6</A>, is determined
+by the following equations which introduce two more unknowns in the
+MNA matrix.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:gyrator"></A><A NAME="9726"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 9.6:</STRONG>
+ideal gyrator</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="178" HEIGHT="108" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1047.png"
+ ALT="\includegraphics[width=4cm]{gyrator}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_{in} = \frac{1}{R}\cdot\left(V_{2} - V_{3}\right)
+\quad \rightarrow \quad
+\frac{1}{R}\cdot V_{2} - \frac{1}{R}\cdot V_{3} - I_{in} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="367" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1048.png"
+ ALT="$\displaystyle I_{in} = \frac{1}{R}\cdot\left(V_{2} - V_{3}\right) \quad \rightarrow \quad \frac{1}{R}\cdot V_{2} - \frac{1}{R}\cdot V_{3} - I_{in} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">133</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:gyrator"></A><!-- MATH
+ \begin{equation}
+I_{out} = -\frac{1}{R}\cdot\left(V_{1} - V_{4}\right)
+\quad \rightarrow \quad
+-\frac{1}{R}\cdot V_{1} + \frac{1}{R}\cdot V_{4} - I_{out} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="404" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1049.png"
+ ALT="$\displaystyle I_{out} = -\frac{1}{R}\cdot\left(V_{1} - V_{4}\right) \quad \rightarrow \quad -\frac{1}{R}\cdot V_{1} + \frac{1}{R}\cdot V_{4} - I_{out} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">134</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The new unknown variables <SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1050.png"
+ ALT="$ I_{out}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1051.png"
+ ALT="$ I_{in}$"></SPAN> must be considered by
+the four remaining simple equations.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_{1} = I_{in} \quad I_{2} = I_{out} \quad I_{3} = -I_{out} \quad I_{4} = -I_{in}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="311" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1052.png"
+ ALT="$\displaystyle I_{1} = I_{in} \quad I_{2} = I_{out} \quad I_{3} = -I_{out} \quad I_{4} = -I_{in}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">135</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+As can be seen, a gyrator consists of two cross-connected VCCS
+(section <A HREF="node60.html#sec:vccs">9.19.1</A>). Hence, its y-parameter matrix is:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{Y}) =
+\begin{bmatrix}
+0&\frac{1}{R}&-\frac{1}{R}&0\\
+-\frac{1}{R}&0&0&\frac{1}{R}\\
+\frac{1}{R}&0&0&-\frac{1}{R}\\
+0&-\frac{1}{R}&\frac{1}{R}&0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="222" HEIGHT="93" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1053.png"
+ ALT="$\displaystyle (\underline{Y}) = \begin{bmatrix}0&amp;\frac{1}{R}&amp;-\frac{1}{R}&amp;0\\ -...
+...{R}\\ \frac{1}{R}&amp;0&amp;0&amp;-\frac{1}{R}\\ 0&amp;-\frac{1}{R}&amp;\frac{1}{R}&amp;0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">136</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The scattering matrix
+of an ideal gyrator with the ratio <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img360.png"
+ ALT="$ R$"></SPAN> writes as follows.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+r = \frac{R}{Z_{ref}} = \frac{1}{G\cdot Z_{ref}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="146" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1054.png"
+ ALT="$\displaystyle r = \frac{R}{Z_{ref}} = \frac{1}{G\cdot Z_{ref}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">137</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{11} = S_{22} = S_{33} = S_{44} = \frac{R^2}{4\cdot Z_{ref}^2 + R^2} = \frac{r^2}{r^2+4}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="340" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1055.png"
+ ALT="$\displaystyle S_{11} = S_{22} = S_{33} = S_{44} = \frac{R^2}{4\cdot Z_{ref}^2 + R^2} = \frac{r^2}{r^2+4}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">138</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{14} = S_{23} = S_{32} = S_{41} = 1-S_{11}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="232" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1056.png"
+ ALT="$\displaystyle S_{14} = S_{23} = S_{32} = S_{41} = 1-S_{11}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">139</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{12} = -S_{13} = -S_{21} = S_{24} = S_{31} = -S_{34} = -S_{42} = S_{43} = \frac{2\cdot r}{r^2+4}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="455" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1057.png"
+ ALT="$\displaystyle S_{12} = -S_{13} = -S_{21} = S_{24} = S_{31} = -S_{34} = -S_{42} = S_{43} = \frac{2\cdot r}{r^2+4}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">140</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1479"
+  HREF="node58.html">Voltage and current sources</A>
+<B>Up:</B> <A NAME="tex2html1475"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1469"
+  HREF="node56.html">Coupler</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

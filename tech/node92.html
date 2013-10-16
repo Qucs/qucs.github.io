@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Coaxial cable</TITLE>
+<META NAME="description" CONTENT="Coaxial cable">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node93.html">
+<LINK REL="previous" HREF="node91.html">
+<LINK REL="up" HREF="node91.html">
+<LINK REL="next" HREF="node93.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html2052"
+  HREF="node93.html">Twisted pair</A>
+<B>Up:</B> <A NAME="tex2html2048"
+  HREF="node91.html">Other types of transmission</A>
+<B> Previous:</B> <A NAME="tex2html2042"
+  HREF="node91.html">Other types of transmission</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html2053"
+  HREF="node92.html#SECTION001411000000000000000">Characteristic impedance</A>
+<LI><A NAME="tex2html2054"
+  HREF="node92.html#SECTION001412000000000000000">Losses</A>
+<LI><A NAME="tex2html2055"
+  HREF="node92.html#SECTION001413000000000000000">Cutoff frequencies</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION001410000000000000000">
+Coaxial cable</A>
+</H1>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:coax"></A><A NAME="21682"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 13.1:</STRONG>
+coaxial line</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+ 
+<IMG
+ WIDTH="247" HEIGHT="234" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2519.png"
+ ALT="\includegraphics[width=0.35\linewidth]{coax}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<H2><A NAME="SECTION001411000000000000000">
+Characteristic impedance</A>
+</H2>
+
+<P>
+The characteristic impedance of a coaxial line can be calculated as follows:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Z_L = \dfrac{Z_{F0}}{2\pi\cdot\sqrt{\varepsilon_r}}\cdot\ln{\left(\dfrac{D}{d}\right)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="173" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2520.png"
+ ALT="$\displaystyle Z_L = \dfrac{Z_{F0}}{2\pi\cdot\sqrt{\varepsilon_r}}\cdot\ln{\left(\dfrac{D}{d}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION001412000000000000000">
+Losses</A>
+</H2>
+
+<P>
+Overall losses in a coaxial cable consist of dielectric and conductor
+losses.  The dielectric losses compute as follows:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\alpha_d = \dfrac{\pi}{c_0}\cdot f\cdot \sqrt{\varepsilon_r} \cdot \tan{\delta}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="163" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2521.png"
+ ALT="$\displaystyle \alpha_d = \dfrac{\pi}{c_0}\cdot f\cdot \sqrt{\varepsilon_r} \cdot \tan{\delta}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The conductor (i.e. ohmic) losses are specified by
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\alpha_c = \dfrac{1}{2}\cdot \sqrt{\varepsilon_r} \cdot\left(\dfrac{\dfrac{1}{D} + \dfrac{1}{d}}{\ln{\left(\dfrac{D}{d}\right)}}\right)\cdot\dfrac{R_S}{Z_{F0}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="235" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2522.png"
+ ALT="$\displaystyle \alpha_c = \dfrac{1}{2}\cdot \sqrt{\varepsilon_r} \cdot\left(\dfr...
+... + \dfrac{1}{d}}{\ln{\left(\dfrac{D}{d}\right)}}\right)\cdot\dfrac{R_S}{Z_{F0}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$ R_S$"></SPAN> denoting the sheet resistance of the conductor material,
+i.e. the skin resistance
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+R_S = \sqrt{\pi\cdot f\cdot \mu_r \cdot \mu_o \cdot \rho}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="162" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2523.png"
+ ALT="$\displaystyle R_S = \sqrt{\pi\cdot f\cdot \mu_r \cdot \mu_o \cdot \rho}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">4</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION001413000000000000000">
+Cutoff frequencies</A>
+</H2>
+
+<P>
+In normal operation a signal wave passes through the coaxial line as a
+TEM wave with no electrical or magnetic field component in the
+direction of propagation.  Beyond a certain cutoff frequency
+additional (unwanted) higher order modes are excited.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2524.png"
+ ALT="$\displaystyle f_{TE}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="258" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2525.png"
+ ALT="$\displaystyle \approx \dfrac{c_0}{\pi\cdot\left(D + d\right)} \;\;\;\;\rightarrow\;\;\;\; \textrm{TE(1,1) mode}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">5</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2526.png"
+ ALT="$\displaystyle f_{TM}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="261" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2527.png"
+ ALT="$\displaystyle \approx \dfrac{c_0}{2\cdot\left(D - d\right)} \;\;\;\;\rightarrow\;\;\;\; \textrm{TM(n,1) mode}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">6</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html2052"
+  HREF="node93.html">Twisted pair</A>
+<B>Up:</B> <A NAME="tex2html2048"
+  HREF="node91.html">Other types of transmission</A>
+<B> Previous:</B> <A NAME="tex2html2042"
+  HREF="node91.html">Other types of transmission</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

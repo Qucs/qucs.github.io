@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+
+<title>Qucs project: screenshots</title>
+<link href="qucsweb.css" rel="stylesheet"  type="text/css">
+
+<head>
+
+<body>
+
+<!-- include the common web page header using Apache Server-Side Includes (SSI) -->
+<!--#include virtual="/qucs-header.html" -->
+
+<div id="main">
+<hr>
+
+<center>
+
+[
+
+schematic area -
+
+<a href="dialogs.shtml">dialogs</a> -
+
+<a href="languages.shtml">languages</a> -
+
+<a href="miscellaneous.shtml">miscellaneous</a> -
+
+<a href="tools.shtml">tools</a>
+
+]
+
+
+
+</center>
+
+
+
+<h3>Screenshots of schematic and data display areas</h3>
+
+
+
+The screenshots below show the main schematic and data display area
+
+of the Qucs GUI on the lower right corner, the menus and icons at
+
+the upper part and the project/contents/component/action/diagram selection
+
+on the left hand side.
+
+
+
+<center>
+
+<div class="screenshot">
+
+<img class="absoluteCenter" src="images/qucs-qt4.png" alt="Simple filter in qucs-qt4"><br>
+
+Simple filter in qucs-qt4
+
+</div>
+
+<div class="screenshot">
+
+<img class="absoluteCenter" src="images/q14.png" alt="Combined Qucs Schematic"><br>
+
+Combined schematic and data visualisation.
+
+</div>
+
+<div class="screenshot">
+
+<img class="absoluteCenter" src="images/q15.png" alt="Qucs Schematic"><br>
+
+Simple schematic area.
+
+</div>
+
+<img class="absoluteCenter" src="images/q16.png" alt="Qucs Data Display"><br>
+
+Data display with different kinds of data representations (diagrams) and data markers.
+
+<div class="screenshot">
+
+<img class="absoluteCenter" src="images/qucs3d.png" alt="Qucs 3D diagram"><br>
+
+Data display with 3D diagram.
+
+</div>
+
+</center>
+
+
+
+Please note that the actual appearance depends on the window manager (window
+
+decorations), the selected type of font and its size and the widget set can
+
+be selected by the <tt>qtconfig</tt> program.
+
+<br><br>
+
+
+
+<hr>
+
+</div>
+<!-- include the common web page footer using Apache Server-Side Includes (SSI) -->
+  <!--#include virtual="/qucs-footer.html" -->
+
+</body>
+
+</html>
+

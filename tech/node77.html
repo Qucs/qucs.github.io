@@ -1,0 +1,1721 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Parallel coupled microstrip lines</TITLE>
+<META NAME="description" CONTENT="Parallel coupled microstrip lines">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node78.html">
+<LINK REL="previous" HREF="node76.html">
+<LINK REL="up" HREF="node74.html">
+<LINK REL="next" HREF="node78.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1842"
+  HREF="node78.html">Microstrip open</A>
+<B>Up:</B> <A NAME="tex2html1838"
+  HREF="node74.html">Microstrip components</A>
+<B> Previous:</B> <A NAME="tex2html1832"
+  HREF="node76.html">Microstrip corner</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1843"
+  HREF="node77.html#SECTION001231000000000000000">Characteristic impedance and effective dielectric constant</A>
+<UL>
+<LI><A NAME="tex2html1844"
+  HREF="node77.html#SECTION001231100000000000000">Kirschning and Jansen</A>
+<LI><A NAME="tex2html1845"
+  HREF="node77.html#SECTION001231200000000000000">Hammerstad and Jensen</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1846"
+  HREF="node77.html#SECTION001232000000000000000">Strip thickness correction</A>
+<LI><A NAME="tex2html1847"
+  HREF="node77.html#SECTION001233000000000000000">Transmission losses</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION001230000000000000000">
+Parallel coupled microstrip lines</A>
+</H1>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:McoupledPhys"></A><A NAME="18534"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 11.5:</STRONG>
+parallel coupled microstrip lines</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="541" HEIGHT="318" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2129.png"
+ ALT="\includegraphics[width=12cm]{mscoupledphys}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<H2><A NAME="SECTION001231000000000000000">
+Characteristic impedance and effective dielectric constant</A>
+</H2>
+
+<P>
+Parallel coupled microstrip lines are defined by the characteristic
+impedance and the effective permittivity of the even and the odd mode.
+The y- and S-parameters are depicted in section <A HREF="node63.html#sec:coupledtline">9.22</A>.
+
+<P>
+
+<H3><A NAME="SECTION001231100000000000000">
+Kirschning and Jansen</A>
+</H3>
+
+<P>
+These quantities can very precisely be modeled by the following
+equations [<A
+ HREF="node103.html#Kirschning2">31</A>], [<A
+ HREF="node103.html#Kirschning6">32</A>].
+
+<P>
+<P>
+Beforehand some normalised quantities (with microstrip line width <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1664.png"
+ ALT="$ W$"></SPAN>,
+spacing <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2130.png"
+ ALT="$ s$"></SPAN> between the lines and substrate height <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img442.png"
+ ALT="$ h$"></SPAN>) are
+introduced:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+u = \dfrac{W}{h} \quad,\quad g = \dfrac{s}{h} \quad,\quad
+f_n = \dfrac{f}{\giga\hertz}\cdot\dfrac{h}{\milli\meter} = \dfrac{f}{\mega\hertz}\cdot h
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="366" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2131.png"
+ ALT="$\displaystyle u = \dfrac{W}{h} \quad,\quad g = \dfrac{s}{h} \quad,\quad f_n = \dfrac{f}{\giga\hertz}\cdot\dfrac{h}{\milli\meter} = \dfrac{f}{\mega\hertz}\cdot h$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">89</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The applicability of the described model is
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+0.1\le u\le 10 \qquad,\qquad 0.1\le g\le 10 \qquad,\qquad 1\le \varepsilon_r\le 18
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="400" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2132.png"
+ ALT="$\displaystyle 0.1\le u\le 10 \qquad,\qquad 0.1\le g\le 10 \qquad,\qquad 1\le \varepsilon_r\le 18$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">90</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The accuracies of the formulas holds for these ranges.
+
+<P>
+<P>
+Static effective permittivity of even mode:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{eff,e}(0) = 0.5\cdot (\varepsilon_r+1) + 0.5\cdot (\varepsilon_r-1)\cdot
+      \left( 1+\dfrac{10}{v} \right) ^{-a_e\left(v\right)\cdot b_e\left(\varepsilon_r\right)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="438" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2133.png"
+ ALT="$\displaystyle \varepsilon_{eff,e}(0) = 0.5\cdot (\varepsilon_r+1) + 0.5\cdot (\...
+...+\dfrac{10}{v} \right) ^{-a_e\left(v\right)\cdot b_e\left(\varepsilon_r\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">91</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2134.png"
+ ALT="$\displaystyle v$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="194" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2135.png"
+ ALT="$\displaystyle = u\cdot\frac{20+g^2}{10+g^2} + g\cdot\exp{\left(-g\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">92</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2136.png"
+ ALT="$\displaystyle a_e\left(v\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="400" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2137.png"
+ ALT="$\displaystyle = 1 + \frac{1}{49}\cdot\ln\left( \frac{v^4 + \left( v/52 \right)^...
+...ht) + \frac{1}{18.7}\cdot\ln\left( 1 + \left( \dfrac{v}{18.1} \right)^3 \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">93</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2138.png"
+ ALT="$\displaystyle b_e\left(\varepsilon_r\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="180" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2139.png"
+ ALT="$\displaystyle = 0.564\cdot\left( \frac{\varepsilon_r-0.9}{\varepsilon_r+3} \right)^{0.053}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">94</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Static effective permittivity of odd mode:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{eff,o}(0) = \left(0.5\cdot \left(\varepsilon_r+1\right) + a_o\left(u,\varepsilon_r\right) - \varepsilon_{eff}(0) \right) \cdot
+      \exp{\left(-c_o\cdot g^{d_o}\right)} + \varepsilon_{eff}(0)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="516" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2140.png"
+ ALT="$\displaystyle \varepsilon_{eff,o}(0) = \left(0.5\cdot \left(\varepsilon_r+1\rig...
+...f}(0) \right) \cdot \exp{\left(-c_o\cdot g^{d_o}\right)} + \varepsilon_{eff}(0)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">95</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2141.png"
+ ALT="$\displaystyle a_o\left(u,\varepsilon_r\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="407" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2142.png"
+ ALT="$\displaystyle = 0.7287\cdot\left( \varepsilon_{eff}(0) - 0.5\cdot \left( \varepsilon_r + 1\right) \right) \cdot \left(1-\exp{\left(-0.179\cdot u\right)}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">96</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2143.png"
+ ALT="$\displaystyle b_o\left(\varepsilon_r\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="132" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2144.png"
+ ALT="$\displaystyle = 0.747\cdot\dfrac{\varepsilon_r}{0.15+\varepsilon_r}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">97</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2145.png"
+ ALT="$\displaystyle c_o$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="314" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2146.png"
+ ALT="$\displaystyle = b_o(\varepsilon_r) - \left(b_o\left(\varepsilon_r\right)-0.207\right)\cdot\exp{\left(-0.414\cdot u\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">98</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2147.png"
+ ALT="$\displaystyle d_o$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="231" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2148.png"
+ ALT="$\displaystyle = 0.593+0.694\cdot\exp{\left(-0.562\cdot u\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">99</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+whence <!-- MATH
+ $\varepsilon_{eff}(0)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2149.png"
+ ALT="$ \varepsilon_{eff}(0)$"></SPAN> refers to the zero-thickness single
+microstrip line of width <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1664.png"
+ ALT="$ W$"></SPAN> according to [<A
+ HREF="node103.html#Hammerstad">18</A>] (see also
+eq. (<A HREF="node75.html#eq:HandJErEff">11.15</A>)).
+
+<P>
+<P>
+The dispersion formulae for the odd and even mode write as follows.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{eff,e,o}\left(f_n\right) = \varepsilon_r - \dfrac{\varepsilon_r - \varepsilon_{eff,e,o}(0)}{1+F_{e,o}\left(f_n\right)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="245" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2150.png"
+ ALT="$\displaystyle \varepsilon_{eff,e,o}\left(f_n\right) = \varepsilon_r - \dfrac{\varepsilon_r - \varepsilon_{eff,e,o}(0)}{1+F_{e,o}\left(f_n\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">100</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The frequency dependence for the even mode is
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+F_e\left(f_n\right) = P_1\cdot P_2\cdot \left(\left(P_3\cdot P_4 + 0.1844\cdot P_7\right)\cdot f_n\right)^{1.5763}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="355" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2151.png"
+ ALT="$\displaystyle F_e\left(f_n\right) = P_1\cdot P_2\cdot \left(\left(P_3\cdot P_4 + 0.1844\cdot P_7\right)\cdot f_n\right)^{1.5763}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">101</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2152.png"
+ ALT="$\displaystyle P_1$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="535" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2153.png"
+ ALT="$\displaystyle = 0.27488 + \left( 0.6315 + \dfrac{0.525}{(1+0.0157\cdot f_n)^{20}} \right) \cdot u -0.065683\cdot\exp{\left(-8.7513\cdot u\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">102</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2154.png"
+ ALT="$\displaystyle P_2$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="253" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2155.png"
+ ALT="$\displaystyle = 0.33622\cdot \left(1-\exp{\left(-0.03442\cdot\varepsilon_r\right)}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">103</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2156.png"
+ ALT="$\displaystyle P_3$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="376" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2157.png"
+ ALT="$\displaystyle = 0.0363\cdot\exp{\left(-4.6\cdot u\right)}\cdot\left( 1-\exp\left( -\left( f_n / 38.7\right) ^{4.97} \right) \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">104</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2158.png"
+ ALT="$\displaystyle P_4$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="290" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2159.png"
+ ALT="$\displaystyle = 1 + 2.751\cdot\left( 1-\exp\left( -\left( \varepsilon_r/15.916\right) ^8 \right) \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">105</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2160.png"
+ ALT="$\displaystyle P_5$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="274" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2161.png"
+ ALT="$\displaystyle = 0.334\cdot\exp\left( -3.3\cdot\left( \varepsilon_r/15\right) ^3 \right) + 0.746$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">106</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2162.png"
+ ALT="$\displaystyle P_6$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="194" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2163.png"
+ ALT="$\displaystyle = P_5\cdot\exp\left( -\left( f_n/18\right) ^{0.368} \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">107</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2164.png"
+ ALT="$\displaystyle P_7$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="392" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2165.png"
+ ALT="$\displaystyle = 1 + 4.069\cdot P_6 \cdot g^{0.479}\cdot\exp\left(-1.347\cdot g^{0.595} - 0.17\cdot g^{2.5} \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">108</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The frequency dependence for the odd mode is
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+F_o\left(f_n\right) = P_1\cdot P_2\cdot \left(\left(P_3\cdot P_4 + 0.1844\right)\cdot f_n\cdot P_{15}\right)^{1.5763}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="362" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2166.png"
+ ALT="$\displaystyle F_o\left(f_n\right) = P_1\cdot P_2\cdot \left(\left(P_3\cdot P_4 + 0.1844\right)\cdot f_n\cdot P_{15}\right)^{1.5763}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">109</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2167.png"
+ ALT="$\displaystyle P_8$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="270" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2168.png"
+ ALT="$\displaystyle = 0.7168\cdot \left(1 + \frac{1.076}{1+0.0576\cdot \left(\varepsilon_r-1\right)} \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">110</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2169.png"
+ ALT="$\displaystyle P_9$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="506" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2170.png"
+ ALT="$\displaystyle = P_8 - 0.7913\cdot\left( 1-\exp\left( -\left( f_n/20\right) ^{1....
+...ht) \cdot\arctan\left( 2.481\cdot\left( \varepsilon_r/8\right) ^{0.946} \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">111</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2171.png"
+ ALT="$\displaystyle P_{10}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="147" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2172.png"
+ ALT="$\displaystyle = 0.242\cdot \left(\varepsilon_r-1\right)^{0.55}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">112</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2173.png"
+ ALT="$\displaystyle P_{11}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="436" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2174.png"
+ ALT="$\displaystyle = 0.6366\cdot \left(\exp\left(-0.3401\cdot f_n\right)-1\right) \cdot \arctan\left(1.263\cdot\left( u/3 \right) ^{1.629} \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">113</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2175.png"
+ ALT="$\displaystyle P_{12}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="173" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2176.png"
+ ALT="$\displaystyle = P_9 + \dfrac{1-P_9}{1+1.183\cdot u^{1.376}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">114</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2177.png"
+ ALT="$\displaystyle P_{13}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="196" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2178.png"
+ ALT="$\displaystyle = 1.695\cdot \dfrac{P_{10}}{0.414+1.605\cdot P_{10}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">115</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2179.png"
+ ALT="$\displaystyle P_{14}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="369" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2180.png"
+ ALT="$\displaystyle = 0.8928 + 0.1072\cdot \left( 1-\exp\left(-0.42\cdot\left( f_n/20 \right) ^{3.215} \right)\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">116</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2181.png"
+ ALT="$\displaystyle P_{15}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="387" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2182.png"
+ ALT="$\displaystyle = \left\vert 1 - 0.8928\cdot \left(1+P_{11}\right) \cdot \exp\left(-P_{13}\cdot g^{1.092}\right)\cdot P_{12}/P_{14} \right\vert$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">117</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Up to <SPAN CLASS="MATH"><IMG
+ WIDTH="57" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2183.png"
+ ALT="$ f_n=25$"></SPAN> the maximum error of these equations is 1.4%.
+
+<P>
+<P>
+The static characteristic impedance for the even mode writes as follows.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Z_{L,e}(0) = \sqrt{\dfrac{\varepsilon_{eff}(0)}{\varepsilon_{eff,e}(0)}} \cdot
+             \dfrac{Z_L(0)}{1 - \dfrac{Z_L(0)}{377\ohm} \cdot \sqrt{\varepsilon_{eff}(0)} \cdot Q_4}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="344" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2184.png"
+ ALT="$\displaystyle Z_{L,e}(0) = \sqrt{\dfrac{\varepsilon_{eff}(0)}{\varepsilon_{eff,...
+..._L(0)}{1 - \dfrac{Z_L(0)}{377\ohm} \cdot \sqrt{\varepsilon_{eff}(0)} \cdot Q_4}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">118</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2185.png"
+ ALT="$\displaystyle Q_1$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="113" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2186.png"
+ ALT="$\displaystyle = 0.8695\cdot u^{0.194}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">119</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2187.png"
+ ALT="$\displaystyle Q_2$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="207" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2188.png"
+ ALT="$\displaystyle = 1 + 0.7519\cdot g + 0.189\cdot g^{2.31}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">120</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2189.png"
+ ALT="$\displaystyle Q_3$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="441" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2190.png"
+ ALT="$\displaystyle = 0.1975 + \left( 16.6 + \left( 8.4/g \right) ^6 \right) ^{-0.387...
+...rac{1}{241} \cdot \ln\left( \dfrac{g^{10}}{1+\left( g/3.4\right) ^{10}} \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">121</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2191.png"
+ ALT="$\displaystyle Q_4$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="321" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2192.png"
+ ALT="$\displaystyle = \frac{Q_1}{Q_2}\cdot \frac{2}{ \exp\left(-g\right)\cdot u^{Q_3} + (2-\exp\left(-g\right))\cdot u^{-Q_3} }$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">122</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with <SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2055.png"
+ ALT="$ Z_L(0)$"></SPAN> and <!-- MATH
+ $\varepsilon_{eff}(0)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2149.png"
+ ALT="$ \varepsilon_{eff}(0)$"></SPAN> being again quantities for a
+zero-thickness single microstrip line of width <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1664.png"
+ ALT="$ W$"></SPAN> according to
+[<A
+ HREF="node103.html#Hammerstad">18</A>] (see also eq. (<A HREF="node75.html#eq:HandJErEff">11.15</A>) and
+(<A HREF="node75.html#eq:HandJZL0Er">11.5</A>)).
+
+<P>
+<P>
+The static characteristic impedance for the odd mode writes as follows.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Z_{L,o}(0) = \sqrt{\dfrac{\varepsilon_{eff}(0)}{\varepsilon_{eff,o}(0)}} \cdot
+             \dfrac{Z_L(0)}{1 - \dfrac{Z_L(0)}{377\Omega} \cdot \sqrt{\varepsilon_{eff}(0)} \cdot Q_{10}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="351" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2193.png"
+ ALT="$\displaystyle Z_{L,o}(0) = \sqrt{\dfrac{\varepsilon_{eff}(0)}{\varepsilon_{eff,...
+...}{1 - \dfrac{Z_L(0)}{377\Omega} \cdot \sqrt{\varepsilon_{eff}(0)} \cdot Q_{10}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">123</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2194.png"
+ ALT="$\displaystyle Q_5$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="293" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2195.png"
+ ALT="$\displaystyle = 1.794 +1.14\cdot\ln\left( 1 + \frac{0.638}{g+0.517\cdot g^{2.43}} \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">124</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2196.png"
+ ALT="$\displaystyle Q_6$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="469" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2197.png"
+ ALT="$\displaystyle = 0.2305 + \frac{1}{281.3}\cdot \ln\left( \frac{g^{10}}{1+\left( ...
+...ght) ^{10}} \right) + \frac{1}{5.1}\cdot \ln\left(1+0.598\cdot g^{1.154}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">125</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2198.png"
+ ALT="$\displaystyle Q_7$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="108" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2199.png"
+ ALT="$\displaystyle = \frac{10+190\cdot g^2}{1+82.3\cdot g^3}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">126</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2200.png"
+ ALT="$\displaystyle Q_8$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="279" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2201.png"
+ ALT="$\displaystyle = \exp\left( -6.5 - 0.95\cdot\ln\left(g\right) - \left(g/0.15\right)^5 \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">127</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2202.png"
+ ALT="$\displaystyle Q_9$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="179" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2203.png"
+ ALT="$\displaystyle = \ln\left(Q_7\right)\cdot \left( Q_8 + 1/16.5 \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">128</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2204.png"
+ ALT="$\displaystyle Q_{10}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="442" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2205.png"
+ ALT="$\displaystyle = \frac{Q_2\cdot Q_4 - Q_5\cdot\exp\left( \ln\left(u\right)\cdot Q_6\cdot u^{-Q_9} \right)}{Q_2} = Q_4 - \frac{Q_5}{Q_2}\cdot u^{Q_6\cdot u^{-Q_9}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">129</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The accuracy of the static impedances is better than 0.6%.
+
+<P>
+<P>
+Dispersion of the characteristic impedance for the even mode can be
+modeled by the following equations.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Z_{L,e}(f_n) = Z_{L,e}(0)\cdot \left( \dfrac{0.9408\cdot (\varepsilon_{eff}(f_n))^{C_e} - 0.9603}
+                        {\left(0.9408-d_e\right)\cdot \left(\varepsilon_{eff}(0)\right)^{C_e} - 0.9603} \right) ^{Q_0}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="441" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2206.png"
+ ALT="$\displaystyle Z_{L,e}(f_n) = Z_{L,e}(0)\cdot \left( \dfrac{0.9408\cdot (\vareps...
+..._e\right)\cdot \left(\varepsilon_{eff}(0)\right)^{C_e} - 0.9603} \right) ^{Q_0}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">130</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{split}
+C_e = 1 + 1.275\cdot \left( 1-\exp\left( -0.004625\cdot p_e\cdot \varepsilon_r^{1.674}\cdot
+      \left( f_n/18.365 \right) ^{2.745} \right) \right)\\
+      - Q_{12}+Q_{16}-Q_{17}+Q_{18}+Q_{20}
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="474" HEIGHT="61" BORDER="0"
+ SRC="img2207.png"
+ ALT="\begin{displaymath}\begin{split}C_e = 1 + 1.275\cdot \left( 1-\exp\left( -0.0046...
+...ght) \right)\\ - Q_{12}+Q_{16}-Q_{17}+Q_{18}+Q_{20} \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">131</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2208.png"
+ ALT="$\displaystyle d_e$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="484" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2209.png"
+ ALT="$\displaystyle = 5.086\cdot q_e\cdot\dfrac{r_e}{0.3838+0.386\cdot q_e}\cdot \dfr...
+...992\cdot r_e}\cdot \dfrac{(\varepsilon_r-1)^6}{1 + 10\cdot (\varepsilon_r-1)^6}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">132</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2210.png"
+ ALT="$\displaystyle p_e$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="208" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2211.png"
+ ALT="$\displaystyle = 4.766\cdot \exp \left(-3.228\cdot u^{0.641}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">133</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2212.png"
+ ALT="$\displaystyle q_e$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="223" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2213.png"
+ ALT="$\displaystyle = 0.016 + \left(0.0514\cdot \varepsilon_r\cdot Q_{21}\right)^{4.524}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">134</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2214.png"
+ ALT="$\displaystyle r_e$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="115" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2215.png"
+ ALT="$\displaystyle = \left( f_n/28.843 \right) ^{12}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">135</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+and
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2216.png"
+ ALT="$\displaystyle Q_{11}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="238" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2217.png"
+ ALT="$\displaystyle = 0.893\cdot \left( 1 - \frac{0.3}{1+0.7\cdot\left(\varepsilon_r-1\right)} \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">136</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2218.png"
+ ALT="$\displaystyle Q_{12}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="373" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2219.png"
+ ALT="$\displaystyle = 2.121\cdot \frac{\left( f_n/20\right) ^{4.91}} {1+Q_{11}\cdot\left( f_n/20\right) ^{4.91}} \cdot \exp\left(-2.87\cdot g\right)\cdot g^{0.902}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">137</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2220.png"
+ ALT="$\displaystyle Q_{13}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="156" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2221.png"
+ ALT="$\displaystyle = 1 + 0.038\cdot \left( \varepsilon_r/8 \right) ^{5.1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">138</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2222.png"
+ ALT="$\displaystyle Q_{14}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="195" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2223.png"
+ ALT="$\displaystyle = 1 + 1.203\cdot \dfrac{ \left( \varepsilon_r/15 \right) ^4} {1 + \cdot \left( \varepsilon_r/15 \right) ^4}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">139</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2224.png"
+ ALT="$\displaystyle Q_{15}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="291" HEIGHT="81" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2225.png"
+ ALT="$\displaystyle = \dfrac{ 1.887\cdot \exp\left(-1.5\cdot g^{0.84}\right)\cdot g^{...
+... \left( f_n/15 \right) ^3 \cdot \dfrac{u^{2/Q_{13}}}{0.125 + u^{1.626/Q_{13}}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">140</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2226.png"
+ ALT="$\displaystyle Q_{16}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="253" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2227.png"
+ ALT="$\displaystyle = Q_{15}\cdot \left( 1 + \frac{9}{1+0.403\cdot \left(\varepsilon_r-1\right)^2} \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">141</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2228.png"
+ ALT="$\displaystyle Q_{17}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="509" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2229.png"
+ ALT="$\displaystyle = 0.394\cdot \left( 1-\exp\left( -1.47\cdot\left( u/7 \right) ^{0...
+...t) \cdot \left( 1-\exp\left( -4.25\left( f_n/20 \right) ^{1.87} \right) \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">142</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2230.png"
+ ALT="$\displaystyle Q_{18}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="256" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2231.png"
+ ALT="$\displaystyle = 0.61\cdot\frac{1-\exp\left( -2.13\cdot\left( u/8 \right) ^{1.593} \right)} {1+6.544\cdot g^{4.17}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">143</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2232.png"
+ ALT="$\displaystyle Q_{19}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="350" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2233.png"
+ ALT="$\displaystyle = \frac{ 0.21\cdot g^4 }{\left(1+0.18\cdot g^{4.9}\right)\cdot \left(1+0.1\cdot u^2\right) \cdot \left( 1+\left( f_n/24 \right) ^3 \right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">144</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2234.png"
+ ALT="$\displaystyle Q_{20}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="267" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2235.png"
+ ALT="$\displaystyle = Q_{19}\cdot \left( 0.09 + \frac{1}{1+0.1\cdot \left(\varepsilon_r-1\right)^{2.7}} \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">145</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2236.png"
+ ALT="$\displaystyle Q_{21}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="377" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2237.png"
+ ALT="$\displaystyle = \left\vert 1-42.54\cdot g^{0.133}\cdot \exp\left(-0.812\cdot g\right) \cdot\frac{u^{2.5}}{1+0.033\cdot u^{2.5}} \right\vert$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">146</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+With <!-- MATH
+ $\varepsilon_{eff}(f_n)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="62" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2238.png"
+ ALT="$ \varepsilon_{eff}(f_n)$"></SPAN> being the single microstrip effective
+dielectric constant according to [<A
+ HREF="node103.html#Kirschning3">20</A>] (see eq.
+(<A HREF="node75.html#eq:KandJErEff_disp">11.26</A>)) and <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2239.png"
+ ALT="$ Q_0$"></SPAN> single microstrip impedance
+dispersion according to [<A
+ HREF="node103.html#Kirschning1">21</A>] (there denoted as <SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2240.png"
+ ALT="$ R_{17}$"></SPAN>,
+see eq. (<A HREF="node75.html#eq:KirschningR17">11.49</A>)).
+
+<P>
+<P>
+Dispersion of the characteristic impedance for the odd mode can be
+modeled by the following equations.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Z_{L,o}(f_n) = Z_L(f_n) + \dfrac{ Z_{L,o}(0)\cdot
+               \left( \dfrac{\varepsilon_{eff,o}(f_n)}{\varepsilon_{eff,o}(0)} \right) ^{Q_{22}}
+	     - Z_L(f_n)\cdot Q_{23} }{ 1+Q_{24}+\left(0.46\cdot g\right)^{2.2} \cdot Q_{25} }
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="441" HEIGHT="105" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2241.png"
+ ALT="$\displaystyle Z_{L,o}(f_n) = Z_L(f_n) + \dfrac{ Z_{L,o}(0)\cdot \left( \dfrac{\...
+... Z_L(f_n)\cdot Q_{23} }{ 1+Q_{24}+\left(0.46\cdot g\right)^{2.2} \cdot Q_{25} }$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">147</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2242.png"
+ ALT="$\displaystyle Q_{22}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="213" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2243.png"
+ ALT="$\displaystyle = 0.925\cdot \frac{ \left( f_n/Q_{26} \right) ^{1.536} } { 1+0.3\cdot \left( f_n/30 \right)^{1.536} }$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">148</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2244.png"
+ ALT="$\displaystyle Q_{23}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="334" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2245.png"
+ ALT="$\displaystyle = 1+ \frac{ 0.005\cdot f_n\cdot Q_{27} } { \left( 1+0.812\cdot\left( f_n/15 \right) ^{1.9} \right) \cdot \left(1 + 0.025\cdot u^2\right) }$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">149</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2246.png"
+ ALT="$\displaystyle Q_{24}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="313" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2247.png"
+ ALT="$\displaystyle = \frac{2.506\cdot Q_{28}\cdot u^{0.894}}{3.575+u^{0.894}} \cdot \left( \frac{ (1+1.3\cdot u)\cdot f_n}{99.25} \right)^{4.29}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">150</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2248.png"
+ ALT="$\displaystyle Q_{25}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="255" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2249.png"
+ ALT="$\displaystyle = \frac{0.3\cdot f_n^2}{10+f_n^2}\cdot \left( 1+ \frac{2.333\cdot \left(\varepsilon_r-1\right)^2}{5+\left(\varepsilon_r-1\right)^2} \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">151</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2250.png"
+ ALT="$\displaystyle Q_{26}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="235" HEIGHT="105" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2251.png"
+ ALT="$\displaystyle = 30 - \frac{ 22.2\cdot \left( \dfrac{\varepsilon_r-1}{13} \right)^{12} } { 1+ 3\cdot \left( \dfrac{\varepsilon_r-1}{13} \right)^{12} } - Q_{29}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">152</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2252.png"
+ ALT="$\displaystyle Q_{27}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="255" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2253.png"
+ ALT="$\displaystyle = 0.4\cdot g^{0.84}\cdot \left( 1+ \frac{2.5\cdot \left(\varepsilon_r-1\right)^{1.5}}{5+\left(\varepsilon_r-1\right)^{1.5}} \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">153</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2254.png"
+ ALT="$\displaystyle Q_{28}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="228" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2255.png"
+ ALT="$\displaystyle = 0.149\cdot \frac{\left(\varepsilon_r-1\right)^3}{94.5+0.038\cdot \left(\varepsilon_r-1\right)^3}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">154</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2256.png"
+ ALT="$\displaystyle Q_{29}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="162" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2257.png"
+ ALT="$\displaystyle = \frac{15.16}{1+0.196\cdot \left(\varepsilon_r-1\right)^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">155</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with <SPAN CLASS="MATH"><IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2258.png"
+ ALT="$ Z_L(f_n)$"></SPAN> being the frequency-dependent power-current
+characteristic impedance formulation of a single microstrip with width
+<SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1664.png"
+ ALT="$ W$"></SPAN> according to [<A
+ HREF="node103.html#Kirschning1">21</A>] (see
+eq. (<A HREF="node75.html#eq:KirschningZLdisp">11.50</A>)).  Up to <SPAN CLASS="MATH"><IMG
+ WIDTH="57" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2259.png"
+ ALT="$ f_n=20$"></SPAN>, the numerical error
+of <!-- MATH
+ $Z_{L,o}(f_n)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="63" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2260.png"
+ ALT="$ Z_{L,o}(f_n)$"></SPAN> and <!-- MATH
+ $Z_{L,e}(f_n)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="63" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2261.png"
+ ALT="$ Z_{L,e}(f_n)$"></SPAN> is less than 2.5%.
+
+<P>
+
+<H3><A NAME="SECTION001231200000000000000">
+Hammerstad and Jensen</A>
+</H3>
+
+<P>
+The equations given by E. Hammerstad and &#216;. Jensen
+[<A
+ HREF="node103.html#Hammerstad">18</A>] represent the first generally valid model of coupled
+microstrips with an acceptable accuracy.  The model equations have
+been validated in the range <!-- MATH
+ $0.1 \le u \le 10$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="91" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2262.png"
+ ALT="$ 0.1 \le u \le 10$"></SPAN> and <!-- MATH
+ $g \ge 0.01$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="61" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2263.png"
+ ALT="$ g \ge 0.01$"></SPAN>, a
+range which should cover that used in practice.
+
+<P>
+<P>
+The homogeneous mode impedances are
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:HandJZLeo"></A><!-- MATH
+ \begin{equation}
+Z_{L,e,o}\left(u, g\right) = \dfrac{Z_{L}(u)}{1 - Z_{L}(u)\cdot \Phi_{e,o}\left(u,g\right) / Z_{F0}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="293" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2264.png"
+ ALT="$\displaystyle Z_{L,e,o}\left(u, g\right) = \dfrac{Z_{L}(u)}{1 - Z_{L}(u)\cdot \Phi_{e,o}\left(u,g\right) / Z_{F0}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">156</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The effective dielectric constants are
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{eff,e,o}\left(u,g,\varepsilon_r\right) = \dfrac{\varepsilon_r+1}{2} + \dfrac{\varepsilon_r-1}{2}\cdot F_{e,o}\left(u,g,\varepsilon_r\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="343" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2265.png"
+ ALT="$\displaystyle \varepsilon_{eff,e,o}\left(u,g,\varepsilon_r\right) = \dfrac{\var...
+...r+1}{2} + \dfrac{\varepsilon_r-1}{2}\cdot F_{e,o}\left(u,g,\varepsilon_r\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">157</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="82" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2266.png"
+ ALT="$\displaystyle F_{e}\left(u,g,\varepsilon_r\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="196" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2267.png"
+ ALT="$\displaystyle = \left(1+\dfrac{10}{\mu\left(u,g\right)}\right)^{-a(\mu)\cdot b\left(\varepsilon_r\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">158</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="82" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2268.png"
+ ALT="$\displaystyle F_{o}\left(u,g,\varepsilon_r\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="254" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2269.png"
+ ALT="$\displaystyle = f_o\left(u,g,\varepsilon_r\right)\cdot \left(1+\dfrac{10}{u}\right)^{-a\left(u\right)\cdot b\left(\varepsilon_r\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">159</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+whence <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2270.png"
+ ALT="$ a(u)$"></SPAN> and <!-- MATH
+ $b\left(\varepsilon_r\right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2271.png"
+ ALT="$ b\left(\varepsilon_r\right)$"></SPAN> denote
+eqs. (<A HREF="node75.html#eq:HandJa">11.16</A>) and (<A HREF="node75.html#eq:HandJb">11.17</A>) of the single microstrip
+line.  The characteristic impedance of the single microstrip line
+<!-- MATH
+ $Z_L\left(u\right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="48" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2272.png"
+ ALT="$ Z_L\left(u\right)$"></SPAN> also defined in [<A
+ HREF="node103.html#Hammerstad">18</A>] is given by
+eq. (<A HREF="node75.html#eq:HandJZL0Er">11.5</A>).  The modifying equations for the even mode
+are as follows
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="61" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2273.png"
+ ALT="$\displaystyle \Phi_e\left(u,g\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="312" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2274.png"
+ ALT="$\displaystyle = \dfrac{\varphi(u)}{\Psi(g)\cdot \left(\alpha(g)\cdot u^{m(g)} +\left(1-\alpha(g)\right)\cdot u^{-m(g)}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">160</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="35" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2275.png"
+ ALT="$\displaystyle \varphi(u)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="113" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2276.png"
+ ALT="$\displaystyle = 0.8645\cdot u^{0.172}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">161</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2277.png"
+ ALT="$\displaystyle \Psi(g)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="135" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2278.png"
+ ALT="$\displaystyle = 1 + \dfrac{g}{1.45} + \dfrac{g^{2.09}}{3.95}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">162</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2279.png"
+ ALT="$\displaystyle \alpha(g)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="75" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2280.png"
+ ALT="$\displaystyle = 0.5\cdot e^{-g}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">163</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2281.png"
+ ALT="$\displaystyle m(g)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="473" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2282.png"
+ ALT="$\displaystyle = 0.2175+\left(4.113+\left(20.36/g\right)^6\right)^{-0.251} +\dfrac{1}{323}\cdot\ln{\left(\dfrac{g^{10}}{1+\left(g/13.8\right)^{10}}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">164</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The modifying equations for the odd mode are as follows
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="62" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2283.png"
+ ALT="$\displaystyle \Phi_o\left(u,g\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="314" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2284.png"
+ ALT="$\displaystyle = \Phi_e\left(u,g\right)-\dfrac{\theta(g)}{\Psi(g)}\cdot \exp{\left(\beta(g)\cdot u^{-n(g)}\cdot\ln{u}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">165</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2285.png"
+ ALT="$\displaystyle \theta(g)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="301" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2286.png"
+ ALT="$\displaystyle = 1.729+1.175\cdot\ln{\left(1+\dfrac{0.627}{g+0.327\cdot g^{2.17}}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">166</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2287.png"
+ ALT="$\displaystyle \beta(g)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="477" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2288.png"
+ ALT="$\displaystyle = 0.2306+\dfrac{1}{301.8}\cdot\ln{\left(\dfrac{g^{10}}{1+\left(g/...
+...ght)^{10}}\right)} +\dfrac{1}{5.3}\cdot\ln{\left(1+0.646\cdot g^{1.175}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">167</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2289.png"
+ ALT="$\displaystyle n(g)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="519" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2290.png"
+ ALT="$\displaystyle = \left(\dfrac{1}{17.7} + \exp{\left(-6.424 - 0.76\cdot \ln{g} - ...
+...right)\cdot \ln{\left(\dfrac{10 + 68.3\cdot g^2}{1+32.5\cdot g^{3.093}}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">168</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Furthermore
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2291.png"
+ ALT="$\displaystyle \mu\left(u,g\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="156" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2292.png"
+ ALT="$\displaystyle = g\cdot e^{-g}+ u\cdot \dfrac{20+g^2}{10+g^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">169</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="79" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2293.png"
+ ALT="$\displaystyle f_o\left(u,g,\varepsilon_r\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="356" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2294.png"
+ ALT="$\displaystyle = f_{o1}\left(g,\varepsilon_r\right)\cdot \exp{\left(p(g)\cdot \ln{u} + q(g)\cdot \sin{\left(\pi\cdot\log{u}\right)}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">170</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2295.png"
+ ALT="$\displaystyle p(g)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="162" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2296.png"
+ ALT="$\displaystyle = \dfrac{\exp{\left(-0.745\cdot g^{0.295}\right)}}{\cosh{\left(g^{0.68}\right)}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">171</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2297.png"
+ ALT="$\displaystyle q(g)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="136" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2298.png"
+ ALT="$\displaystyle = \exp{\left(-1.366-g\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">172</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="70" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2299.png"
+ ALT="$\displaystyle f_{o1}\left(g,\varepsilon_r\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="331" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2300.png"
+ ALT="$\displaystyle = 1 - \exp{\left(-0.179\cdot g^{0.15} - \dfrac{0.328\cdot g^{r\left(g,\varepsilon_r\right)}}{\ln{\left(e + \left(g/7\right)^{2.8}\right)}}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">173</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="56" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2301.png"
+ ALT="$\displaystyle r\left(g,\varepsilon_r\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="313" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2302.png"
+ ALT="$\displaystyle = 1+0.15\cdot\left(1 - \dfrac{\exp{\left(1-\left(\varepsilon_r - 1\right)^2/8.2\right)}}{1+g^{-6}}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">174</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The quasi-static characteristic impedance <SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2303.png"
+ ALT="$ Z_L(u)$"></SPAN> of a zero-thickness
+single microstrip line denoted in eq. (<A HREF="#eq:HandJZLeo">11.156</A>) can either
+be calculated using the below equations with <!-- MATH
+ $\varepsilon_{r_{eff}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1971.png"
+ ALT="$ \varepsilon_{r_{eff}}$"></SPAN>
+being the quasi-static effective dielectric constant defined by
+eq. (<A HREF="node75.html#eq:HandJErEff">11.15</A>) or using eqs. (<A HREF="node75.html#eq:HandJZL0Er">11.5</A>) and
+(<A HREF="node75.html#eq:HandJErEff">11.15</A>).
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2304.png"
+ ALT="$\displaystyle Z_{L1}(u)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="130" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2305.png"
+ ALT="$\displaystyle = \dfrac{Z_{F0}}{u + 1.98\cdot u^{0.172}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">175</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2306.png"
+ ALT="$\displaystyle Z_{L}(u)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="72" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2307.png"
+ ALT="$\displaystyle = \dfrac{Z_{L1}(u)}{\sqrt{\varepsilon_{r_{eff}}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">176</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The errors in the even and odd mode impedances <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2308.png"
+ ALT="$ Z_{L,e}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2308.png"
+ ALT="$ Z_{L,e}$"></SPAN>
+were found to be less than 0.8% and less than 0.3% for the
+wavelengths.
+
+<P>
+<P>
+The model does not include the effect of non-zero strip thickness or
+asymmetry.  Dispersion is also not included.  W. J. Getsinger
+[<A
+ HREF="node103.html#Getsinger4">33</A>] has proposed modifications to his single strip
+dispersion model, but unfortunately it is easily shown that the
+results are asymptotically wrong for extreme values of gap width.
+
+<P>
+<P>
+In fact he correctly assumes that in the even mode the two strips are
+at the same potential, and the total current is twice that on a single
+strip, and dispersion for even-mode propagation is computed by
+substituting <SPAN CLASS="MATH"><IMG
+ WIDTH="50" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2309.png"
+ ALT="$ Z_{L,e}/2$"></SPAN> for <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img684.png"
+ ALT="$ Z_L$"></SPAN> in eqs. (<A HREF="node75.html#eq:GetFp">11.60</A>) and
+(<A HREF="node75.html#eq:GetG">11.61</A>).  In the odd mode the two strips are at opposite
+potentials, and the voltage between strips is twice that of a single
+strip to ground.  Thus the total mode impedance is twice that of a
+single strip, and the dispersion for odd-mode propagation is computed
+substituting <SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2310.png"
+ ALT="$ 2Z_{L,o}$"></SPAN> for <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img684.png"
+ ALT="$ Z_L$"></SPAN> in eqs. (<A HREF="node75.html#eq:GetFp">11.60</A>) and
+(<A HREF="node75.html#eq:GetG">11.61</A>).
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{r,e,o}\left(f\right) = \varepsilon_{r} - \frac{\varepsilon_{r} - \varepsilon_{r_{eff,e,o}}}{1 + G\cdot \left(\dfrac{f}{f_{p}}\right)^{2}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="223" HEIGHT="88" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2311.png"
+ ALT="$\displaystyle \varepsilon_{r,e,o}\left(f\right) = \varepsilon_{r} - \frac{\vare...
+..._{r} - \varepsilon_{r_{eff,e,o}}}{1 + G\cdot \left(\dfrac{f}{f_{p}}\right)^{2}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">177</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2078.png"
+ ALT="$\displaystyle f_{p}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="206" HEIGHT="113" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2312.png"
+ ALT="$\displaystyle = \begin{cases}\begin{array}{ll} \dfrac{Z_{L,e}}{4\mu_{0} h} &amp; \t...
+... &amp;\\ \dfrac{Z_{L,o}}{\mu_{0} h} &amp; \textrm{ odd mode }\\ \end{array} \end{cases}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">178</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2080.png"
+ ALT="$\displaystyle G$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="293" HEIGHT="85" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2313.png"
+ ALT="$\displaystyle = \begin{cases}\begin{array}{ll} 0.6 + Z_{L,e}\cdot 0.0045 &amp; \tex...
+...\\ &amp;\\ 0.6 + Z_{L,o}\cdot 0.018 &amp; \textrm{ odd mode }\\ \end{array} \end{cases}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">179</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION001232000000000000000">
+Strip thickness correction</A>
+</H2>
+
+<P>
+According to R.H. Jansen [<A
+ HREF="node103.html#Jansen">34</A>] corrected strip width values
+have been found in the range of technologically meaningful geometries
+to be
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2314.png"
+ ALT="$\displaystyle W_{t,e}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="319" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2315.png"
+ ALT="$\displaystyle = W + \Delta W\cdot \left(1 - 0.5\cdot \exp{\left(-0.69\cdot\dfrac{\Delta W}{\Delta t}\right)}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">180</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2316.png"
+ ALT="$\displaystyle W_{t,o}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="89" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2317.png"
+ ALT="$\displaystyle = W_{t,e} + \Delta t$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">181</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\Delta t = \dfrac{2\cdot t\cdot h}{s\cdot \varepsilon_r}
+\;\;\;\; \textrm{ for } \;\;\;\; s \gg 2 t
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="201" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2318.png"
+ ALT="$\displaystyle \Delta t = \dfrac{2\cdot t\cdot h}{s\cdot \varepsilon_r} \;\;\;\; \textrm{ for } \;\;\;\; s \gg 2 t$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">182</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The author refers to the modifications of the strip width of a single
+microstrip line <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2319.png"
+ ALT="$ \Delta W$"></SPAN> given by Hammerstad and Bekkadal.  See also
+eq. (<A HREF="node75.html#eq:DeltaSchneider">11.21</A>) on page <A HREF="node75.html#eq:DeltaSchneider"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:DeltaHammerstad"></A><!-- MATH
+ \begin{equation}
+\Delta W =
+\begin{cases}
+\begin{array}{ll}
+\dfrac{t}{\pi}\cdot\left(1 + \ln{\left(\dfrac{2h}{t}\right)}\right) & \textrm{ for } W > \dfrac{h}{2\pi} > 2 t\\
+&\\
+\dfrac{t}{\pi}\cdot\left(1 + \ln{\left(\dfrac{4\pi W}{t}\right)}\right) & \textrm{ for } \dfrac{h}{2\pi} \ge W > 2 t
+\end{array}
+\end{cases}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="398" HEIGHT="117" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2320.png"
+ ALT="$\displaystyle \Delta W = \begin{cases}\begin{array}{ll} \dfrac{t}{\pi}\cdot\lef...
+...t)}\right) &amp; \textrm{ for } \dfrac{h}{2\pi} \ge W &gt; 2 t \end{array} \end{cases}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">183</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+For large spacings <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2130.png"
+ ALT="$ s$"></SPAN> the single line formulae
+(<A HREF="#eq:DeltaHammerstad">11.183</A>) applies.
+
+<P>
+
+<H2><A NAME="SECTION001233000000000000000">
+Transmission losses</A>
+</H2>
+
+<P>
+The loss equations given by E. Hammerstad and &#216;. Jensen
+[<A
+ HREF="node103.html#Hammerstad">18</A>] for the single microstrip line are also valid for
+coupled microstrips, provided that the dielectric filling factor,
+homogeneous impedance, and current distribution factor of the actual
+mode are used.  The following approximation gives good results for odd
+and even current distribution factors (modification of
+eq. (<A HREF="node75.html#eq:HandJKi">11.82</A>)).
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+K_{i,e} = K_{i,o} = \exp{\left(-1.2\cdot\left(\dfrac{Z_{L,e} + Z_{L,o}}{2\cdot Z_{F0}}\right)^{0.7}\right)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="325" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2321.png"
+ ALT="$\displaystyle K_{i,e} = K_{i,o} = \exp{\left(-1.2\cdot\left(\dfrac{Z_{L,e} + Z_{L,o}}{2\cdot Z_{F0}}\right)^{0.7}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">184</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1842"
+  HREF="node78.html">Microstrip open</A>
+<B>Up:</B> <A NAME="tex2html1838"
+  HREF="node74.html">Microstrip components</A>
+<B> Previous:</B> <A NAME="tex2html1832"
+  HREF="node76.html">Microstrip corner</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

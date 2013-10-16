@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Qucs project: download</title>
+<link href="qucsweb.css" rel="stylesheet"  type="text/css">
+<head>
+<body>
+
+<!-- include the common web page header using Apache Server-Side Includes (SSI) -->
+<!--#include virtual="/qucs-header.html" -->
+
+<div id="main">
+<hr>
+<center>
+[
+<a href="download.shtml">packages</a> -
+<a href="examples.shtml">examples</a> -
+related -
+<a href="press.shtml">press/education</a>
+]
+</center>
+
+
+<a name="related">
+<h3>Related Software</h3>
+</a>
+The following list of software is related to Qucs.  Each package is used
+by Qucs.
+
+<ul>
+<li>
+<a href="http://trolltech.com/products/qt/qt3">Qt3&reg;</a>
+-- for the GUI</li>
+<li>
+<a href="http://sourceforge.net/projects/qtwin">Q.../Free for Windows</a></li>
+<li>
+<a href="http://sourceforge.net/projects/mot-adms">ADMS -- Verilog-A translator</a></li>
+<li>
+<a href="http://members.aon.at/fschmid7/">ps2sp.pl -- A SPICE preprocessor</a></li>
+<li>
+<a href="http://asco.sourceforge.net/">ASCO (A SPICE Circuit Optimizer)</a></li>
+<li>
+<a href="http://freehdl.seul.org/">FreeHDL</a>
+-- for VHDL digital simulations</li>
+<li>
+<a href="http://icarus.com/eda/verilog/">Icarus Verilog</a>
+-- for Verilog-HDL digital simulations</li>
+<li>
+<a href="http://tinyperl.sourceforge.net/">TinyPerl for Windows</a>
+-- necessary for SPICE preprocessor on Win32 platforms</li>
+<li>
+<a href="http://bleyer.org/icarus/">Icarus Verilog for Windows</a></li>
+<li>
+<a href="http://www.gnu.org/software/octave/">GNU Octave</a>
+-- for Octave interactive interface</li>
+<li>
+<a href="http://octave.sourceforge.net/">GNU Octave for Windows and MacOS</a>
+-- Octave installer</li>
+</ul>
+</p>
+
+<hr>
+</div>
+<!-- include the common web page footer using Apache Server-Side Includes (SSI) -->
+  <!--#include virtual="/qucs-footer.html" -->
+</body>
+</html>

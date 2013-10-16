@@ -1,0 +1,603 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Filters</TITLE>
+<META NAME="description" CONTENT="Filters">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="previous" HREF="node95.html">
+<LINK REL="up" HREF="node94.html">
+<LINK REL="next" HREF="node97.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html2110"
+  HREF="node97.html">Mathematical background</A>
+<B>Up:</B> <A NAME="tex2html2106"
+  HREF="node94.html">Synthesizing circuits</A>
+<B> Previous:</B> <A NAME="tex2html2102"
+  HREF="node95.html">Attenuators</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html2111"
+  HREF="node96.html#SECTION001521000000000000000">LC ladder filters</A>
+<UL>
+<LI><A NAME="tex2html2112"
+  HREF="node96.html#SECTION001521100000000000000">Butterworth</A>
+<LI><A NAME="tex2html2113"
+  HREF="node96.html#SECTION001521200000000000000">Chebyshev I</A>
+<LI><A NAME="tex2html2114"
+  HREF="node96.html#SECTION001521300000000000000">Chebyshev II</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION001520000000000000000">
+Filters</A>
+</H1>
+
+<P>
+One of the most common tasks in microwave technologies is to
+extract a frequency band from others. Optimized filters exist
+in order to easily create a filter with an appropriate characteristic.
+The most popular ones are:
+
+<P>
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT">Name</TD>
+<TD ALIGN="LEFT">Property</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Bessel filter (Thomson filter)</TD>
+<TD ALIGN="LEFT">as constant group delay as possible</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Butterworth filter (power-term filter)</TD>
+<TD ALIGN="LEFT">as constant amplitude transfer function as possible</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Chebychev filter type I</TD>
+<TD ALIGN="LEFT">constant ripple in pass band</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Chebychev filter type II</TD>
+<TD ALIGN="LEFT">constant ripple in stop band</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Cauer filter (elliptical filter)</TD>
+<TD ALIGN="LEFT">constant ripple in pass and stop band</TD>
+</TR>
+</TABLE> 
+
+<P>
+<P>
+From top to bottom the following properties increase:
+
+<UL>
+<LI>ringing of step response
+</LI>
+<LI>phase distortion
+</LI>
+<LI>steepness of amplitude transfer function at the beginning of the pass band
+</LI>
+</UL>
+
+<P>
+<P>
+The order <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img383.png"
+ ALT="$ n$"></SPAN> of a filter denotes the number of poles of its (voltage)
+transfer function. It is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\text{slope of asymptote} = \pm\, n\cdot 20 \text{dB/decade}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH">slope of asymptote<IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2581.png"
+ ALT="$\displaystyle = \pm\, n\cdot 20$">&nbsp; &nbsp;dB/decade</SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">11</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Note that this equation holds for all filter characteristics, but
+there are big differences concerning the attenuation near the pass
+band.
+
+<P>
+
+<H2><A NAME="SECTION001521000000000000000">
+LC ladder filters</A>
+</H2>
+
+<P>
+The best possibility to realize a filters in VHF and UHF bands are
+LC ladder filters. The usual way to synthesize them is to first
+calculate a low-pass (LP) filter and afterwards transform it into a
+high-pass (HP), band-pass (BP) or band-stop (BS) filter. To do so,
+each component must be transformed into another.
+
+<P>
+<P>
+In a low-pass filter, there are  parallel capacitors <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2582.png"
+ ALT="$ C_{LP}$"></SPAN> and
+series inductors <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2583.png"
+ ALT="$ L_{LP}$"></SPAN> in alternating order. The other filter
+classes can be derived from it:
+
+<P>
+<P>
+In a high-pass filter:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="86" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2584.png"
+ ALT="$\displaystyle C_{LP} \quad \rightarrow \quad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="123" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2585.png"
+ ALT="$\displaystyle L_{HP} = \dfrac{1}{\omega_B^2\cdot C_{LP}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">12</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="86" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2586.png"
+ ALT="$\displaystyle L_{LP} \quad \rightarrow \quad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="123" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2587.png"
+ ALT="$\displaystyle C_{HP} = \dfrac{1}{\omega_B^2\cdot L_{LP}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">13</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+<P>
+In a band-pass filter:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="86" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2584.png"
+ ALT="$\displaystyle C_{LP} \quad \rightarrow \quad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH">parallel resonance circuit with</SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">14</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="91" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2588.png"
+ ALT="$\displaystyle C_{BP} = \dfrac{C_{LP}}{\Delta\Omega}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">15</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="144" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2589.png"
+ ALT="$\displaystyle L_{BP} = \dfrac{\Delta\Omega}{\omega_1\cdot \omega_2\cdot C_{LP}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">16</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="86" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2586.png"
+ ALT="$\displaystyle L_{LP} \quad \rightarrow \quad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH">series resonance circuit with</SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">17</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="144" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2590.png"
+ ALT="$\displaystyle C_{BP} = \dfrac{\Delta\Omega}{\omega_1\cdot \omega_2\cdot L_{LP}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">18</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="90" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2591.png"
+ ALT="$\displaystyle L_{BP} = \dfrac{L_{LP}}{\Delta\Omega}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">19</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+<P>
+In a band-stop filter:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="86" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2584.png"
+ ALT="$\displaystyle C_{LP} \quad \rightarrow \quad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH">series resonance circuit with</SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">20</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="153" HEIGHT="81" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2592.png"
+ ALT="$\displaystyle C_{BP} = \dfrac{C_{LP}}{2\cdot\left\vert \dfrac{\omega_2}{\omega_1} - \dfrac{\omega_1}{\omega_2} \right\vert }$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">21</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="153" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2593.png"
+ ALT="$\displaystyle L_{BP} = \dfrac{1}{\omega^2\cdot \Delta\Omega\cdot C_{LP}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">22</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="86" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2586.png"
+ ALT="$\displaystyle L_{LP} \quad \rightarrow \quad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH">parallel resonance circuit with</SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">23</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="153" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2594.png"
+ ALT="$\displaystyle C_{BP} = \dfrac{1}{\omega^2\cdot \Delta\Omega\cdot L_{LP}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">24</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="152" HEIGHT="81" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2595.png"
+ ALT="$\displaystyle L_{BP} = \dfrac{L_{LP}}{2\cdot\left\vert \dfrac{\omega_2}{\omega_1} - \dfrac{\omega_1}{\omega_2} \right\vert }$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">25</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+<P>
+Where
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2596.png"
+ ALT="$\displaystyle \omega_1 \quad\rightarrow\quad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH">lower corner frequency of frequency band</SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">26</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2597.png"
+ ALT="$\displaystyle \omega_2 \quad\rightarrow\quad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH">upper corner frequency of frequency band</SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">27</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="66" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2598.png"
+ ALT="$\displaystyle \omega \quad\rightarrow\quad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH">center frequency of frequency band<IMG
+ WIDTH="147" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2599.png"
+ ALT="$\displaystyle \quad \omega = 0.5\cdot (\omega_1 + \omega_2)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">28</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="80" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2600.png"
+ ALT="$\displaystyle \Delta\Omega \quad\rightarrow\quad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="116" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2601.png"
+ ALT="$\displaystyle \Delta\Omega = \dfrac{\vert\omega_2 - \omega_1\vert}{\omega}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">29</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H3><A NAME="SECTION001521100000000000000">
+Butterworth</A>
+</H3>
+
+<P>
+The <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN>-th element of an <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img383.png"
+ ALT="$ n$"></SPAN> order Butterworth low-pass ladder filter is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH">capacitance:<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2602.png"
+ ALT="$\displaystyle C_k =$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2603.png"
+ ALT="$\displaystyle \dfrac{X_k}{Z_0}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">30</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH">inductance:<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2604.png"
+ ALT="$\displaystyle L_k =$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2605.png"
+ ALT="$\displaystyle X_k \cdot Z_0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">31</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH">with<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2606.png"
+ ALT="$\displaystyle X_k =$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="152" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2607.png"
+ ALT="$\displaystyle \dfrac{2}{\omega_B} \cdot \sin \dfrac{(2\cdot k + 1)\cdot\pi}{2\cdot n}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">32</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The order of the Butterworth filter is dependent on the specifications
+provided by the user.  These specifications include the edge
+frequencies and gains.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:ButtOrder"></A><!-- MATH
+ \begin{equation}
+n = \dfrac{\log{\left(\dfrac{10^{-0.1\cdot \alpha_{stop}} - 1}{10^{-0.1\cdot \alpha_{pass}} - 1}\right)}}{2\cdot\log{\left(\dfrac{\omega_{stop}}{\omega_{pass}}\right)}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="200" HEIGHT="98" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2608.png"
+ ALT="$\displaystyle n = \dfrac{\log{\left(\dfrac{10^{-0.1\cdot \alpha_{stop}} - 1}{10...
+...}} - 1}\right)}}{2\cdot\log{\left(\dfrac{\omega_{stop}}{\omega_{pass}}\right)}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">33</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H3><A NAME="SECTION001521200000000000000">
+Chebyshev I</A>
+</H3>
+
+<P>
+The equations for a Chebyshev type I filter are defined recursivly.
+With <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2609.png"
+ ALT="$ R_{dB}$"></SPAN> being the passband ripple in decibel, the <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN>-th
+element of an <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img383.png"
+ ALT="$ n$"></SPAN> order low-pass ladder filter is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH">capacitance:<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2610.png"
+ ALT="$\displaystyle C_k$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2611.png"
+ ALT="$\displaystyle = \dfrac{X_k}{Z_0}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">34</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH">inductance:<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2612.png"
+ ALT="$\displaystyle L_k$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="69" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2613.png"
+ ALT="$\displaystyle = X_k \cdot Z_0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">35</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH">with<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2614.png"
+ ALT="$\displaystyle X_k$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="70" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2615.png"
+ ALT="$\displaystyle = \dfrac{2}{\omega_B}\cdot g_k$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">36</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1037.png"
+ ALT="$\displaystyle r$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="246" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2616.png"
+ ALT="$\displaystyle = \sinh\left( \frac{1}{n}\cdot\text{arsinh}\dfrac{1}{\sqrt{10^{R_{dB}/10} - 1}} \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">37</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2617.png"
+ ALT="$\displaystyle a_k$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="132" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2618.png"
+ ALT="$\displaystyle = \sin \dfrac{(2\cdot k + 1)\cdot\pi}{2\cdot n}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">38</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2619.png"
+ ALT="$\displaystyle g_k$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="335" HEIGHT="99" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2620.png"
+ ALT="$\displaystyle = \begin{cases}\begin{array}{ll} \dfrac{a_k}{r} &amp; \textrm{ for } ...
+...ac{k\cdot\pi}{n} \right)} &amp; \textrm{ for } \quad k\ge 1 \end{array} \end{cases}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">39</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2614.png"
+ ALT="$\displaystyle X_k$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="70" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2615.png"
+ ALT="$\displaystyle = \dfrac{2}{\omega_B}\cdot g_k$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">40</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The order of the Chebychev filter is dependent on the specifications
+provided by the user.  The general form of the calculation for the
+order is the same as for the Butterworth, except that the inverse
+hyperbolic cosine function is used in place of the common logarithm
+function.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:ChebOrder"></A><!-- MATH
+ \begin{equation}
+n = \dfrac{\textrm{sech}\left(\dfrac{10^{-0.1\cdot \alpha_{stop}} - 1}{10^{-0.1\cdot \alpha_{pass}} - 1}\right)}{2\cdot\textrm{sech}\left(\dfrac{\omega_{stop}}{\omega_{pass}}\right)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="208" HEIGHT="98" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2621.png"
+ ALT="$\displaystyle n = \dfrac{\textrm{sech}\left(\dfrac{10^{-0.1\cdot \alpha_{stop}}...
+...}\right)}{2\cdot\textrm{sech}\left(\dfrac{\omega_{stop}}{\omega_{pass}}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">41</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H3><A NAME="SECTION001521300000000000000">
+Chebyshev II</A>
+</H3>
+
+<P>
+Because of the nature of the derivation of the inverse Chebychev approxiation function from the standard Chebychev approximation the calculation of the order (<A HREF="#eq:ChebOrder">14.41</A>) is the same.
+
+<P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html2110"
+  HREF="node97.html">Mathematical background</A>
+<B>Up:</B> <A NAME="tex2html2106"
+  HREF="node94.html">Synthesizing circuits</A>
+<B> Previous:</B> <A NAME="tex2html2102"
+  HREF="node95.html">Attenuators</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

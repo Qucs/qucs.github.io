@@ -1,0 +1,584 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Twisted pair</TITLE>
+<META NAME="description" CONTENT="Twisted pair">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="previous" HREF="node92.html">
+<LINK REL="up" HREF="node91.html">
+<LINK REL="next" HREF="node94.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html2065"
+  HREF="node94.html">Synthesizing circuits</A>
+<B>Up:</B> <A NAME="tex2html2061"
+  HREF="node91.html">Other types of transmission</A>
+<B> Previous:</B> <A NAME="tex2html2057"
+  HREF="node92.html">Coaxial cable</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html2066"
+  HREF="node93.html#SECTION001421000000000000000">Quasi-static model</A>
+<LI><A NAME="tex2html2067"
+  HREF="node93.html#SECTION001422000000000000000">Transmission losses</A>
+<UL>
+<LI><A NAME="tex2html2068"
+  HREF="node93.html#SECTION001422100000000000000">Conductor losses</A>
+<LI><A NAME="tex2html2069"
+  HREF="node93.html#SECTION001422200000000000000">Dielectric losses</A>
+<LI><A NAME="tex2html2070"
+  HREF="node93.html#SECTION001422300000000000000">Overall losses of the twisted pair configuration</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION001420000000000000000">
+Twisted pair</A>
+</H1>
+
+<P>
+The twisted pair configurations as shown in fig. <A HREF="#fig:twisted">13.2</A>
+provides good low frequency shielding.  Undesired signals tend to be
+coupled equally into eachline of the pair.  A differential receiver
+will therefore completely cancel the interference.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:twisted"></A><A NAME="21734"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 13.2:</STRONG>
+twisted pair configuration</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+ 
+<IMG
+ WIDTH="208" HEIGHT="242" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2528.png"
+ ALT="\includegraphics[width=0.3\linewidth]{twisted}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<H2><A NAME="SECTION001421000000000000000">
+Quasi-static model</A>
+</H2>
+
+<P>
+According to P. Lefferson [<A
+ HREF="node103.html#Lefferson">58</A>] the characteristic
+impedance and effective dielectric constant of a twisted pair can be
+calculated as follows.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2529.png"
+ ALT="$\displaystyle Z_L$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="187" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2530.png"
+ ALT="$\displaystyle = \dfrac{Z_{F0}}{\pi\cdot\sqrt{\varepsilon_{r,eff}}}\cdot\textrm{acosh}\left(\dfrac{D}{d}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">7</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2531.png"
+ ALT="$\displaystyle \varepsilon_{r,eff}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="154" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2532.png"
+ ALT="$\displaystyle = \varepsilon_{r,1} + q\cdot\left(\varepsilon_r - \varepsilon_{r,1}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+<A NAME="eq:TPereff">(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">8</SPAN>)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:TPq"></A><!-- MATH
+ \begin{equation}
+q = 0.25 + 0.0004\cdot \theta^2
+\;\;\;\; \textrm{ and } \;\;\;\;
+\theta = \textrm{atan}\left(T\cdot\pi\cdot D\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="350" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2533.png"
+ ALT="$\displaystyle q = 0.25 + 0.0004\cdot \theta^2 \;\;\;\; \textrm{ and } \;\;\;\; \theta = \textrm{atan}\left(T\cdot\pi\cdot D\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">9</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+whereas <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2534.png"
+ ALT="$ \theta$"></SPAN> is the pitch angle of the twist; the angle between
+the twisted pair's center line and the twist.  It was found to be
+optimal for <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2534.png"
+ ALT="$ \theta$"></SPAN> to be between 20and 45.  <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.png"
+ ALT="$ T$"></SPAN>
+denotes the twists per length.  Eq. (<A HREF="#eq:TPq">13.9</A>) is valid for film
+insulations, for the softer PTFE material it should be modified as
+follows.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+q = 0.25 + 0.001\cdot \theta^2
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="141" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2535.png"
+ ALT="$\displaystyle q = 0.25 + 0.001\cdot \theta^2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">10</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Assuming air as dielectric around the wires yields 1's replacing
+<!-- MATH
+ $\varepsilon_{r,1}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2536.png"
+ ALT="$ \varepsilon_{r,1}$"></SPAN> in eq. (<A HREF="#eq:TPereff">13.8</A>).  The wire's total
+length before twisting in terms of the number of turns <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img720.png"
+ ALT="$ N$"></SPAN> is
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+l = N\cdot\pi\cdot D\cdot\sqrt{1 + \dfrac{1}{\tan^2{\theta}}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="185" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2537.png"
+ ALT="$\displaystyle l = N\cdot\pi\cdot D\cdot\sqrt{1 + \dfrac{1}{\tan^2{\theta}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">11</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION001422000000000000000">
+Transmission losses</A>
+</H2>
+
+<P>
+The propagation constant <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img682.png"
+ ALT="$ \gamma$"></SPAN> of a general transmission line is
+given by
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\gamma = \sqrt{\left(R' + j\omega L'\right)\cdot \left(G' + j\omega C'\right)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="230" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2538.png"
+ ALT="$\displaystyle \gamma = \sqrt{\left(R' + j\omega L'\right)\cdot \left(G' + j\omega C'\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">12</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Using some transformations of the formula gives an expression with and
+without the angular frequency.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:gamma_rlgc"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+\gamma &= \sqrt{\left(R' + j\omega L'\right)\cdot \left(G' + j\omega C'\right)}\\
+&= \sqrt{L'C'}\cdot\sqrt{\dfrac{R'G'}{L'C'} + j\omega\left(\dfrac{R'}{L'} + \dfrac{G'}{C'}\right) - \omega^2}\\
+&= \sqrt{L'C'}\cdot\sqrt{\left(\dfrac{1}{2}\cdot\left(\dfrac{R'}{L'} + \dfrac{G'}{C'}\right) + j\omega\right)^2 - \dfrac{1}{4}\cdot\left(\dfrac{R'}{L'} + \dfrac{G'}{C'}\right)^2 + \dfrac{R'G'}{L'C'}}
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="470" HEIGHT="137" BORDER="0"
+ SRC="img2539.png"
+ ALT="\begin{displaymath}\begin{split}\gamma &amp;= \sqrt{\left(R' + j\omega L'\right)\cdo...
+...L'} + \dfrac{G'}{C'}\right)^2 + \dfrac{R'G'}{L'C'}} \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">13</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+For high frequencies eq.(<A HREF="#eq:gamma_rlgc">13.13</A>) can be approximated to
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\gamma \approx \sqrt{L'C'}\cdot\left(\dfrac{1}{2}\cdot\left(\dfrac{R'}{L'} + \dfrac{G'}{C'}\right) + j\omega\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="261" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2540.png"
+ ALT="$\displaystyle \gamma \approx \sqrt{L'C'}\cdot\left(\dfrac{1}{2}\cdot\left(\dfrac{R'}{L'} + \dfrac{G'}{C'}\right) + j\omega\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">14</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Thus the real part of the propagation constant <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img682.png"
+ ALT="$ \gamma$"></SPAN> yields
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:alpha_freq"></A><!-- MATH
+ \begin{equation}
+\alpha = Re\left\{\gamma\right\} = \sqrt{L'C'}\cdot\dfrac{1}{2}\cdot\left(\dfrac{R'}{L'} + \dfrac{G'}{C'}\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="267" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2541.png"
+ ALT="$\displaystyle \alpha = Re\left\{\gamma\right\} = \sqrt{L'C'}\cdot\dfrac{1}{2}\cdot\left(\dfrac{R'}{L'} + \dfrac{G'}{C'}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">15</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+With
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Z_L = \sqrt{\dfrac{L'}{C'}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="82" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2542.png"
+ ALT="$\displaystyle Z_L = \sqrt{\dfrac{L'}{C'}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">16</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+the expression in eq.(<A HREF="#eq:alpha_freq">13.15</A>) can be written as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\alpha = \alpha_c + \alpha_d = \dfrac{1}{2}\cdot\left(\dfrac{R'}{Z_L} + G'Z_L\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="239" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2543.png"
+ ALT="$\displaystyle \alpha = \alpha_c + \alpha_d = \dfrac{1}{2}\cdot\left(\dfrac{R'}{Z_L} + G'Z_L\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">17</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+whereas <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2544.png"
+ ALT="$ \alpha_c$"></SPAN> denotes the conductor losses and <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2479.png"
+ ALT="$ \alpha_d$"></SPAN> the
+dielectric losses.
+
+<P>
+
+<H3><A NAME="SECTION001422100000000000000">
+Conductor losses</A>
+</H3>
+
+<P>
+The sheet resistance R' of a transmission line conductor is given by
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+R' = \dfrac{\rho}{A_{eff}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="79" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2545.png"
+ ALT="$\displaystyle R' = \dfrac{\rho}{A_{eff}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">18</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+whereas <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2117.png"
+ ALT="$ \rho$"></SPAN> is the specific resistance of the conductor material
+and <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2546.png"
+ ALT="$ A_{eff}$"></SPAN> the effective area of the conductor perpendicular to the
+propagation direction.  At higher frequencies the area of the
+conductor is reduced by the skin effect.  The skin depth is given by
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\delta_s = \sqrt{\dfrac{\rho}{\pi\cdot f\cdot\mu}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="107" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2547.png"
+ ALT="$\displaystyle \delta_s = \sqrt{\dfrac{\rho}{\pi\cdot f\cdot\mu}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">19</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Thus the effective area of a single round wire yields
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+A_{eff} = \pi\cdot\left(r^2 - (r-\delta_s)^2\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="190" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2548.png"
+ ALT="$\displaystyle A_{eff} = \pi\cdot\left(r^2 - (r-\delta_s)^2\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">20</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+whereas <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img725.png"
+ ALT="$ r$"></SPAN> denotes the radius of the wire.  This means the overall
+conductor attenuation constant <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2544.png"
+ ALT="$ \alpha_c$"></SPAN> for a single wire gives
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\alpha_c = \dfrac{R'}{2\cdot Z_L} = \dfrac{\rho}{2\cdot Z_L\cdot\pi\cdot\left(r^2 - (r-\delta_s)^2\right)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="285" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2549.png"
+ ALT="$\displaystyle \alpha_c = \dfrac{R'}{2\cdot Z_L} = \dfrac{\rho}{2\cdot Z_L\cdot\pi\cdot\left(r^2 - (r-\delta_s)^2\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">21</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H3><A NAME="SECTION001422200000000000000">
+Dielectric losses</A>
+</H3>
+
+<P>
+The dielectric losses are determined by the dielectric loss tangent.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:g_dash"></A><!-- MATH
+ \begin{equation}
+\tan{ \delta_d } = \dfrac{G'}{\omega C'}
+\;\;\;\; \rightarrow \;\;\;\;
+G' = \omega C' \cdot \tan{ \delta_d }
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="274" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2550.png"
+ ALT="$\displaystyle \tan{ \delta_d } = \dfrac{G'}{\omega C'} \;\;\;\; \rightarrow \;\;\;\; G' = \omega C' \cdot \tan{ \delta_d }$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">22</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+With
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+C' = \dfrac{1}{\omega}\cdot Im \left\{\dfrac{\gamma}{Z_L}\right\}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="139" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2551.png"
+ ALT="$\displaystyle C' = \dfrac{1}{\omega}\cdot Im \left\{\dfrac{\gamma}{Z_L}\right\}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">23</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+the equation (<A HREF="#eq:g_dash">13.22</A>) can be rewritten to
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{split}
+G' &= \dfrac{\beta}{Z_L}\cdot \tan{ \delta_d } = \dfrac{\omega}{v_{ph}\cdot Z_L}\cdot \tan{ \delta_d } \\
+&= \dfrac{2\pi\cdot f\cdot \sqrt{\varepsilon_{r,eff}}}{c_0\cdot Z_L}\cdot \tan{ \delta_d } = \dfrac{2\pi\cdot \sqrt{\varepsilon_{r,eff}}}{\lambda_0\cdot Z_L}\cdot \tan{ \delta_d }
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="348" HEIGHT="87" BORDER="0"
+ SRC="img2552.png"
+ ALT="\begin{displaymath}\begin{split}G' &amp;= \dfrac{\beta}{Z_L}\cdot \tan{ \delta_d } =...
+...{r,eff}}}{\lambda_0\cdot Z_L}\cdot \tan{ \delta_d } \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">24</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+whereas <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2553.png"
+ ALT="$ v_{ph}$"></SPAN> denotes the phase velocity, <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img691.png"
+ ALT="$ c_0$"></SPAN> the speed of light,
+<!-- MATH
+ $\varepsilon_{r,eff}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2371.png"
+ ALT="$ \varepsilon_{r,eff}$"></SPAN> the effective dielectric constant and
+<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2554.png"
+ ALT="$ \lambda_0$"></SPAN> the freespace wavelength.  With these expressions at hand
+it is possible to find a formula for the dielectric losses of the
+transmission line.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\alpha_d = \dfrac{1}{2}\cdot G'Z_L = \dfrac{\pi\cdot \sqrt{\varepsilon_{r,eff}}}{\lambda_0}\cdot \tan{ \delta_d }
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="250" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2555.png"
+ ALT="$\displaystyle \alpha_d = \dfrac{1}{2}\cdot G'Z_L = \dfrac{\pi\cdot \sqrt{\varepsilon_{r,eff}}}{\lambda_0}\cdot \tan{ \delta_d }$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>.<SPAN CLASS="arabic">25</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H3><A NAME="SECTION001422300000000000000">
+Overall losses of the twisted pair configuration</A>
+</H3>
+
+<P>
+Transmission losses consist of conductor losses, dielectric losses as
+well as radiation losses.  The above expressions for the conductor and
+dielectric losses are considered to be first order approximations.
+The conductor losses have been derived for a single round wire.  The
+overall conductor losses due to the twin wires must be doubled.  The
+dielectric losses can be used as is.  Radiation losses are neglected.
+
+<P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html2065"
+  HREF="node94.html">Synthesizing circuits</A>
+<B>Up:</B> <A NAME="tex2html2061"
+  HREF="node91.html">Other types of transmission</A>
+<B> Previous:</B> <A NAME="tex2html2057"
+  HREF="node92.html">Coaxial cable</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,307 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Coplanar waveguide step</TITLE>
+<META NAME="description" CONTENT="Coplanar waveguide step">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="previous" HREF="node89.html">
+<LINK REL="up" HREF="node85.html">
+<LINK REL="next" HREF="node91.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html2018"
+  HREF="node91.html">Other types of transmission</A>
+<B>Up:</B> <A NAME="tex2html2014"
+  HREF="node85.html">Coplanar components</A>
+<B> Previous:</B> <A NAME="tex2html2010"
+  HREF="node89.html">Coplanar waveguide gap</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001350000000000000000">
+Coplanar waveguide step</A>
+</H1>
+
+<P>
+The coplanar step discontinuity shown in figure <A HREF="#fig:CPWstep">12.6</A> has
+been analysed by C. Sinclair [<A
+ HREF="node103.html#Sinclair">57</A>].
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:CPWstep"></A><A NAME="21219"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 12.6:</STRONG>
+coplanar waveguide impedance step and equivalent circuit</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="573" HEIGHT="240" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2506.png"
+ ALT="\includegraphics[width=0.8\linewidth]{cpstep}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The symmetric step change in width of the centre conductor is
+considered to have a similar equivalent circuit as a step of a
+parallel plate guide - this is a reasonable approximation to the CPW
+step as in the CPW the majority of the field is between the inner and
+outer conductors with some fringing.
+
+<P>
+<P>
+The actual CPW capacitance can be expressed as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+C = \overline{x}\cdot \dfrac{\varepsilon_0}{\pi}\cdot\left(\dfrac{\alpha^2 + 1}{\alpha}\cdot \ln{\left(\dfrac{1 + \alpha}{1 - \alpha}\right)} - 2\cdot \ln{\left(\dfrac{4\cdot \alpha}{1 - \alpha^2}\right)}\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="380" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2507.png"
+ ALT="$\displaystyle C = \overline{x}\cdot \dfrac{\varepsilon_0}{\pi}\cdot\left(\dfrac...
+...}\right)} - 2\cdot \ln{\left(\dfrac{4\cdot \alpha}{1 - \alpha^2}\right)}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">34</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\alpha = \dfrac{s_1}{s_2}, \alpha < 1
+\;\;\;\; \textrm{ and } \;\;\;\;
+\overline{x} = \dfrac{x_1 + x_2}{2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="258" HEIGHT="48" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2508.png"
+ ALT="$\displaystyle \alpha = \dfrac{s_1}{s_2}, \alpha &lt; 1 \;\;\;\; \textrm{ and } \;\;\;\; \overline{x} = \dfrac{x_1 + x_2}{2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">35</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The capacitance per unit length equivalence yields
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+x_1 = \dfrac{C'\left(W_1, s_1\right)\cdot s_1}{\varepsilon_0}
+\;\;\;\; \textrm{ and } \;\;\;\;
+x_2 = \dfrac{C'\left(W_2, s_2\right)\cdot s_2}{\varepsilon_0}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="363" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2509.png"
+ ALT="$\displaystyle x_1 = \dfrac{C'\left(W_1, s_1\right)\cdot s_1}{\varepsilon_0} \;\...
+...m{ and } \;\;\;\; x_2 = \dfrac{C'\left(W_2, s_2\right)\cdot s_2}{\varepsilon_0}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">36</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+C' = \dfrac{\sqrt{\varepsilon_{r,eff}}}{c_0\cdot Z_L}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="97" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2510.png"
+ ALT="$\displaystyle C' = \dfrac{\sqrt{\varepsilon_{r,eff}}}{c_0\cdot Z_L}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">37</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The average equivalent width <!-- MATH
+ $\overline{x}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img180.png"
+ ALT="$ \overline{x}$"></SPAN> of the parallel plate
+guide can be adjusted with an expression that uses weighted average of
+the gaps <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2511.png"
+ ALT="$ s_1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2512.png"
+ ALT="$ s_2$"></SPAN>.  The final expression has not been discussed
+in [<A
+ HREF="node103.html#Sinclair">57</A>].  The given equations are validated over the
+following ranges: <!-- MATH
+ $2 < \varepsilon_r < 14$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="84" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2513.png"
+ ALT="$ 2 &lt; \varepsilon_r &lt; 14$"></SPAN>, <!-- MATH
+ $h > W + 2s$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="86" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2514.png"
+ ALT="$ h &gt; W + 2s$"></SPAN> and <!-- MATH
+ $f <
+40\giga\hertz$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="82" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2515.png"
+ ALT="$ f &lt;
+40\giga\hertz$"></SPAN>.
+
+<P>
+<P>
+The Z-parameters of the equivalent circuit depicted in
+fig. <A HREF="#fig:CPWstep">12.6</A> are
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Z_{11} = Z_{21} = Z_{12} = Z_{22} = \dfrac{1}{j\omega C}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="220" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2516.png"
+ ALT="$\displaystyle Z_{11} = Z_{21} = Z_{12} = Z_{22} = \dfrac{1}{j\omega C}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">38</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The MNA matrix representation for the AC analysis can be derived from
+the Z-parameters in the following way.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+ . & .  & 1  & 0 \\
+ . & .  &  0 & 1 \\
+-1 &  0 & Z_{11} & Z_{12}\\
+ 0 & -1 & Z_{21} & Z_{22}
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}\\
+I_{in}\\
+I_{out}
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_{1}\\
+I_{2}\\
+0\\
+0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="281" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img868.png"
+ ALT="$\displaystyle \begin{bmatrix}. &amp; . &amp; 1 &amp; 0\\ . &amp; . &amp; 0 &amp; 1\\ -1 &amp; 0 &amp; Z_{11} &amp; ...
+...n}\\ I_{out} \end{bmatrix} = \begin{bmatrix}I_{1}\\ I_{2}\\ 0\\ 0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">39</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The above expanded representation using the Z-parameters is necessary
+because the Y-parameters are infinite.  During DC analysis the
+equivalent circuit is a voltage source between both terminals with
+zero voltage.
+
+<P>
+<P>
+The S-parameters of the topology are
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1152.png"
+ ALT="$\displaystyle S_{11} = S_{22}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="94" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2517.png"
+ ALT="$\displaystyle = -\dfrac{Z_0}{2 Z + Z_0}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">40</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1154.png"
+ ALT="$\displaystyle S_{12} = S_{21}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="153" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2518.png"
+ ALT="$\displaystyle = 1 + S_{11} = \dfrac{2 Z}{2 Z + Z_0}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">41</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html2018"
+  HREF="node91.html">Other types of transmission</A>
+<B>Up:</B> <A NAME="tex2html2014"
+  HREF="node85.html">Coplanar components</A>
+<B> Previous:</B> <A NAME="tex2html2010"
+  HREF="node89.html">Coplanar waveguide gap</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,1109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Energy-storage components</TITLE>
+<META NAME="description" CONTENT="Energy-storage components">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node27.html">
+<LINK REL="previous" HREF="node25.html">
+<LINK REL="up" HREF="node23.html">
+<LINK REL="next" HREF="node27.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1037"
+  HREF="node27.html">Special time-domain models</A>
+<B>Up:</B> <A NAME="tex2html1033"
+  HREF="node23.html">Transient Analysis</A>
+<B> Previous:</B> <A NAME="tex2html1027"
+  HREF="node25.html">Predictor-corrector methods</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1038"
+  HREF="node26.html#SECTION00731000000000000000">Capacitor</A>
+<LI><A NAME="tex2html1039"
+  HREF="node26.html#SECTION00732000000000000000">Inductor</A>
+<LI><A NAME="tex2html1040"
+  HREF="node26.html#SECTION00733000000000000000">Coupled Inductors</A>
+<LI><A NAME="tex2html1041"
+  HREF="node26.html#SECTION00734000000000000000">Depletion Capacitance</A>
+<LI><A NAME="tex2html1042"
+  HREF="node26.html#SECTION00735000000000000000">Diffusion Capacitance</A>
+<LI><A NAME="tex2html1043"
+  HREF="node26.html#SECTION00736000000000000000">MOS Gate Capacitances</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00730000000000000000">
+Energy-storage components</A>
+</H1>
+
+<P>
+As already mentioned it is essential for the transient analysis to
+consider the energy storing effects of components.  The following
+section describes how the modified nodal analysis can be used to take
+this into account.
+
+<P>
+
+<H2><A NAME="SECTION00731000000000000000">
+Capacitor</A>
+</H2>
+
+<P>
+The relation between current and voltage in terms of a differential
+equation for an ideal capacitor is
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:ConstCap"></A><!-- MATH
+ \begin{equation}
+I_C(t) = C\cdot \dfrac{d V_C}{d t}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="115" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img572.png"
+ ALT="$\displaystyle I_C(t) = C\cdot \dfrac{d V_C}{d t}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">57</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+With
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\dfrac{I_C(V, t)}{C} = \dfrac{d V_C}{d t} = f(x,t)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="179" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img573.png"
+ ALT="$\displaystyle \dfrac{I_C(V, t)}{C} = \dfrac{d V_C}{d t} = f(x,t)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">58</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+the discussed integration formulas (<A HREF="node24.html#eq:BEInt">6.7</A>), (<A HREF="node24.html#eq:TRInt">6.10</A>),
+(<A HREF="node24.html#eq:GearInt">6.17</A>) and (<A HREF="node24.html#eq:MoultonInt">6.23</A>) can be applied to the
+problem.  Rewriting them in an explicit form regarding the next
+integration current results in
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img574.png"
+ ALT="$\displaystyle I_C^{n+1}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="142" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img575.png"
+ ALT="$\displaystyle = \dfrac{C}{h^{n}} V_C^{n+1} - \dfrac{C}{h^{n}} V_C^{n}$">&nbsp; &nbsp;(backward Euler)</SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+<A NAME="eq:EulerIC">(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">59</SPAN>)</A></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img574.png"
+ ALT="$\displaystyle I_C^{n+1}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="185" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img576.png"
+ ALT="$\displaystyle = \dfrac{2C}{h^{n}} V_C^{n+1} - \dfrac{2C}{h^{n}} V_C^{n} - I_C^n$">&nbsp; &nbsp;(trapezoidal)</SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">60</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img574.png"
+ ALT="$\displaystyle I_C^{n+1}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="493" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img577.png"
+ ALT="$\displaystyle = \dfrac{C}{b_{-1}\cdot h^{n}} V_C^{n+1} - \dfrac{a_0\cdot C}{b_{...
+...{n}} V_C^{n-1} - \ldots - \dfrac{a_{k-1}\cdot C}{b_{-1}\cdot h^{n}} V_C^{n-k+1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">61</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img574.png"
+ ALT="$\displaystyle I_C^{n+1}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="495" HEIGHT="90" ALIGN="MIDDLE" BORDER="0"
+ SRC="img578.png"
+ ALT="$\displaystyle = \underbrace{\dfrac{C}{b_{-1}\cdot h^{n}}}_{g_{eq}} V_C^{n+1} \u...
+...b_1}{b_{-1}} I_C^{n-1} - \ldots - \dfrac{b_{k-2}}{b_{-1}} I_C^{n-k+2}}_{I_{eq}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">62</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Each of these equations can be rewritten as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_C^{n+1} = g_{eq}\cdot V_C^{n+1} + I_{eq}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="165" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img579.png"
+ ALT="$\displaystyle I_C^{n+1} = g_{eq}\cdot V_C^{n+1} + I_{eq}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">63</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+which leads to the following companion model representing a current
+source with its accompanied internal resistance.
+
+<DIV ALIGN="CENTER"><A NAME="fig:TransCap"></A><A NAME="5496"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.5:</STRONG>
+companion equivalent circuit of a capacitor during transient analysis</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="247" HEIGHT="124" ALIGN="BOTTOM" BORDER="0"
+ SRC="img580.png"
+ ALT="\includegraphics[width=0.35\linewidth]{transcap}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Thus the complete MNA matrix equation for an ideal capacitance writes
+as follows.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
++g_{eq} & -g_{eq}\\
+-g_{eq} & +g_{eq}\\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_1^{n+1}\\
+V_2^{n+1}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+-I_{eq}\\
++I_{eq}\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="242" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img581.png"
+ ALT="$\displaystyle \begin{bmatrix}+g_{eq} &amp; -g_{eq}\\ -g_{eq} &amp; +g_{eq}\\ \end{bmatr...
+...\\ V_2^{n+1}\\ \end{bmatrix} = \begin{bmatrix}-I_{eq}\\ +I_{eq}\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">64</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION00732000000000000000">
+Inductor</A>
+</H2>
+
+<P>
+The relation between current and voltage in terms of a differential
+equation for an ideal inductor can be written as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+V_L(t) = L\cdot \dfrac{d I_L}{d t}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="111" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img582.png"
+ ALT="$\displaystyle V_L(t) = L\cdot \dfrac{d I_L}{d t}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">65</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+With
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\dfrac{V_L(I, t)}{L} = \dfrac{d I_L}{d t} = f(x,t)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="174" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img583.png"
+ ALT="$\displaystyle \dfrac{V_L(I, t)}{L} = \dfrac{d I_L}{d t} = f(x,t)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">66</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+the discussed integration formulas (<A HREF="node24.html#eq:BEInt">6.7</A>), (<A HREF="node24.html#eq:TRInt">6.10</A>),
+(<A HREF="node24.html#eq:GearInt">6.17</A>) and (<A HREF="node24.html#eq:MoultonInt">6.23</A>) can be applied to the
+problem.  Rewriting them in an explicit form regarding the next
+integration voltage results in
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img584.png"
+ ALT="$\displaystyle V_L^{n+1}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="133" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img585.png"
+ ALT="$\displaystyle = \dfrac{L}{h^{n}} I_L^{n+1} - \dfrac{L}{h^{n}} I_L^{n}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">67</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img584.png"
+ ALT="$\displaystyle V_L^{n+1}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="176" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img586.png"
+ ALT="$\displaystyle = \dfrac{2L}{h^{n}} I_L^{n+1} - \dfrac{2L}{h^{n}} I_L^{n} - V_L^n$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">68</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img584.png"
+ ALT="$\displaystyle V_L^{n+1}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="473" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img587.png"
+ ALT="$\displaystyle = \dfrac{L}{b_{-1}\cdot h^{n}} I_L^{n+1} - \dfrac{a_0\cdot L}{b_{...
+...{n}} I_L^{n-1} - \ldots - \dfrac{a_{k-1}\cdot L}{b_{-1}\cdot h^{n}} I_L^{n-k+1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">69</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img584.png"
+ ALT="$\displaystyle V_L^{n+1}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="499" HEIGHT="90" ALIGN="MIDDLE" BORDER="0"
+ SRC="img588.png"
+ ALT="$\displaystyle = \underbrace{\dfrac{L}{b_{-1}\cdot h^{n}}}_{r_{eq}} I_L^{n+1} \u...
+...b_1}{b_{-1}} V_L^{n-1} - \ldots - \dfrac{b_{k-2}}{b_{-1}} V_L^{n-k+2}}_{V_{eq}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">70</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Each of these equations can be rewritten as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+V_L^{n+1} = r_{eq}\cdot I_L^{n+1} + V_{eq}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="167" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img589.png"
+ ALT="$\displaystyle V_L^{n+1} = r_{eq}\cdot I_L^{n+1} + V_{eq}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">71</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+which leads to the following companion model representing a voltage
+source with its accompanied internal resistance.
+
+<DIV ALIGN="CENTER"><A NAME="5592"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.6:</STRONG>
+companion equivalent circuit of a inductor during transient analysis</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="265" HEIGHT="65" ALIGN="BOTTOM" BORDER="0"
+ SRC="img590.png"
+ ALT="\includegraphics[width=0.375\linewidth]{transind}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Thus the complete MNA matrix equation for an ideal inductor writes
+as follows.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+0 & 0 & +1\\
+0 & 0 & -1\\
++1 & -1 & -r_{eq}\\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_1^{n+1}\\
+V_2^{n+1}\\
+I_L^{n+1}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+V_{eq}\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="269" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img591.png"
+ ALT="$\displaystyle \begin{bmatrix}0 &amp; 0 &amp; +1\\ 0 &amp; 0 &amp; -1\\ +1 &amp; -1 &amp; -r_{eq}\\ \end...
+...+1}\\ I_L^{n+1}\\ \end{bmatrix} = \begin{bmatrix}0\\ 0\\ V_{eq}\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">72</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+It is also possible to model the ideal inductor as a current source with
+an internal resistance which would yield a similar equivalent circuit
+as for the capacitor.  But with the proposed model it is possible to
+use alike computation schemes for capacitors and inductors.  Charges
+become flues, capacitances become inductances and finally voltages
+become currents and the other way around.  Everything else (especially
+the coeffcients in the integration formulas) can be reused.
+
+<P>
+
+<H2><A NAME="SECTION00733000000000000000">
+Coupled Inductors</A>
+</H2>
+
+<P>
+In a non-ideal transformer, there are two (or more) coupled inductors.
+The model for the transient simulation is not very different from the
+one of a single inductor. In addition to each coil, the mutal inductance
+has to be counted for.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="277" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img592.png"
+ ALT="$\displaystyle V_{L1} = L_1\cdot\dfrac{d I_{L1}}{d t} + M_{12}\cdot\dfrac{d I_{L2}}{d t} + I_{L1}\cdot R_1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">73</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">with<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="134" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img593.png"
+ ALT="$\displaystyle M_{12} = k\cdot\sqrt{L_1\cdot L_2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">74</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">and<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img594.png"
+ ALT="$\displaystyle R_1$">&nbsp; &nbsp;ohmic resistance of coil 1</SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">75</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+So it is:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+V_{L1}^{n+1} = r_{eq11}\cdot I_{L1}^{n+1} + r_{eq12}\cdot I_{L2}^{n+1}
+             + V_{eq}(I_{L1}^n, I_{L2}^n, ...)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="360" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img595.png"
+ ALT="$\displaystyle V_{L1}^{n+1} = r_{eq11}\cdot I_{L1}^{n+1} + r_{eq12}\cdot I_{L2}^{n+1} + V_{eq}(I_{L1}^n, I_{L2}^n, ...)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">76</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Note that <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img596.png"
+ ALT="$ r_{eq11}$"></SPAN> includes the ohmic resistance <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img597.png"
+ ALT="$ R_1$"></SPAN>. For backward
+Euler, it therefore follows:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+V_{L1}^{n+1} = \underbrace{\left(\dfrac{L_1}{h^n} + R_1 \right)}_{r_{eq11}}\cdot I_{L1}^{n+1}
+             + \underbrace{\dfrac{k\cdot\sqrt{L_1\cdot L_2}}{h^n}}_{r_{eq12}}\cdot I_{L2}^{n+1}
+             \underbrace{- \left(\dfrac{L_1}{h^n} + R_1 \right)\cdot I_{L1}^n
+             - \dfrac{k\cdot\sqrt{L_1\cdot L_2}}{h^n}\cdot I_{L2}^n}_{V_{eq1}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="608" HEIGHT="91" ALIGN="MIDDLE" BORDER="0"
+ SRC="img598.png"
+ ALT="$\displaystyle V_{L1}^{n+1} = \underbrace{\left(\dfrac{L_1}{h^n} + R_1 \right)}_...
+...cdot I_{L1}^n - \dfrac{k\cdot\sqrt{L_1\cdot L_2}}{h^n}\cdot I_{L2}^n}_{V_{eq1}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">77</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The voltage across the secondary coil <!-- MATH
+ $V_{L2}^{n+1}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img599.png"
+ ALT="$ V_{L2}^{n+1}$"></SPAN> goes likewise by
+just changing the indices.  Finally, the MNA matrix writes (port
+numbers are according to figure <A HREF="node48.html#fig:trafo">9.2</A>):
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+0 & 0 & 0 & 0 & +1 &  0\\
+0 & 0 & 0 & 0 &  0 & +1\\
+0 & 0 & 0 & 0 &  0 & -1\\
+0 & 0 & 0 & 0 & -1 &  0\\
++1 & 0 & 0 & -1 & -r_{eq11} & -r_{eq12}\\
+0 & +1 & -1 & 0 & -r_{eq21} & -r_{eq22}\\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_1^{n+1}\\
+V_2^{n+1}\\
+V_3^{n+1}\\
+V_4^{n+1}\\
+I_{L1}^{n+1}\\
+I_{L2}^{n+1}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+0\\
+0\\
+V_{eq1}\\
+V_{eq2}\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="421" HEIGHT="136" ALIGN="MIDDLE" BORDER="0"
+ SRC="img600.png"
+ ALT="$\displaystyle \begin{bmatrix}0 &amp; 0 &amp; 0 &amp; 0 &amp; +1 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; +1\\ ...
+...end{bmatrix} = \begin{bmatrix}0\\ 0\\ 0\\ 0\\ V_{eq1}\\ V_{eq2}\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">78</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+These equations can also give an idea on how to model more than two
+coupled inductors. For three coupled inductors, the voltage across
+coil 1 writes:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="370" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img601.png"
+ ALT="$\displaystyle V_{L1} = L_1\cdot\dfrac{d I_{L1}}{d t} + M_{12}\cdot\dfrac{d I_{L2}}{d t} + M_{13}\cdot\dfrac{d I_{L3}}{d t} + I_{L1}\cdot R_1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">79</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="370" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img602.png"
+ ALT="$\displaystyle V_{L2} = L_2\cdot\dfrac{d I_{L2}}{d t} + M_{12}\cdot\dfrac{d I_{L1}}{d t} + M_{23}\cdot\dfrac{d I_{L3}}{d t} + I_{L2}\cdot R_2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">80</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="370" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img603.png"
+ ALT="$\displaystyle V_{L3} = L_3\cdot\dfrac{d I_{L3}}{d t} + M_{13}\cdot\dfrac{d I_{L1}}{d t} + M_{23}\cdot\dfrac{d I_{L2}}{d t} + I_{L3}\cdot R_3$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">81</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">with<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="147" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img604.png"
+ ALT="$\displaystyle M_{12} = k_{12}\cdot\sqrt{L_1\cdot L_2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">82</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">and<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="147" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img605.png"
+ ALT="$\displaystyle M_{13} = k_{13}\cdot\sqrt{L_1\cdot L_3}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">83</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">and<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="147" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img606.png"
+ ALT="$\displaystyle M_{23} = k_{23}\cdot\sqrt{L_2\cdot L_3}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">84</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+This can be easily extended to an arbitrary number of coupled
+inductors.
+
+<P>
+
+<H2><A NAME="SECTION00734000000000000000">
+Depletion Capacitance</A>
+</H2>
+
+<P>
+For non-constant capacitances, especially depletion capacitance used
+in non-linear devices, instead of eq. (<A HREF="#eq:ConstCap">6.57</A>) the
+following equation holds.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_C(t) = \dfrac{d Q}{d t}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="85" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img607.png"
+ ALT="$\displaystyle I_C(t) = \dfrac{d Q}{d t}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">85</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+With
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+d Q = C\cdot d V_C
+\;\;\;\; \textrm{ and } \;\;\;\;
+\left.\dfrac{d V_C}{d Q}\right|_{Q^{(m)}} = \dfrac{1}{C}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="277" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img608.png"
+ ALT="$\displaystyle d Q = C\cdot d V_C \;\;\;\; \textrm{ and } \;\;\;\; \left.\dfrac{d V_C}{d Q}\right\vert _{Q^{(m)}} = \dfrac{1}{C}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">86</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+equation (<A HREF="node16.html#eq:NRgeneral">3.29</A>) can be written as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="203" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img609.png"
+ ALT="$\displaystyle V_C^{(m + 1)} = V_C^{(m)} - \dfrac{Q\left(V_C^{(m)}\right)}{C^{(m)}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">87</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="51" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img610.png"
+ ALT="$\displaystyle \Rightarrow\qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="243" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img611.png"
+ ALT="$\displaystyle \left( V_C^{(m + 1)} - V_C^{(m)} \right) \cdot C^{(m)} = - Q^{(m)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">88</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+yielding a similar iterative algorithm as already used for the
+non-linear DC analysis described in section <A HREF="node16.html#sec:NRmethod">3.3.1</A> on page
+<A HREF="node16.html#sec:NRmethod"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.  The indices <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img612.png"
+ ALT="$ ~^{(m)}$"></SPAN> indicated the <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img56.png"
+ ALT="$ m$"></SPAN>-th
+Newton-Raphson iteration.  With this knowledge at hand it is possible
+to rewrite the explicit formula for the backward Euler integration
+(<A HREF="#eq:EulerIC">6.59</A>), i.e. the next iteration step <SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img613.png"
+ ALT="$ Q^{m+1}$"></SPAN> is replaced by
+the Newton-Raphson formula as follows.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:nl_cap_trans"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+I_C^{n+1,m+1} &= \dfrac{Q^{n+1,m+1} - Q^{n}}{h^{n}}\\
+&= \dfrac{1}{h^{n}}\cdot \left( Q^{n+1,m} + C^{n+1,m}\cdot (V_C^{n+1,m+1} - V_C^{n+1,m}) - Q^{n} \right)
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="464" HEIGHT="79" BORDER="0"
+ SRC="img614.png"
+ ALT="\begin{displaymath}\begin{split}I_C^{n+1,m+1} &amp;= \dfrac{Q^{n+1,m+1} - Q^{n}}{h^{...
+...\cdot (V_C^{n+1,m+1} - V_C^{n+1,m}) - Q^{n} \right) \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">89</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The double indices now indicate the <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img383.png"
+ ALT="$ n$"></SPAN>-th integration step and the
+<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img56.png"
+ ALT="$ m$"></SPAN>-th Newton-Raphson iteration.  The same can be done for the other
+integration formulas and results also in a similar equivalent
+companion model as shown in fig. <A HREF="#fig:TransCap">6.5</A>.
+
+<P>
+<P>
+The capacitance <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img615.png"
+ ALT="$ C$"></SPAN> and the charge <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img616.png"
+ ALT="$ Q$"></SPAN> within the above equations is
+computed according to the appropriate (non-linear) model formulations.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{split}
+Q = C_0\cdot \Biggl(
+& + \dfrac{V_J\cdot \left(1- \left(1 - F\right)^{1-M}\right)}{1-M}\\
+& + \dfrac{1 - F\cdot\left(1 + M\right)}{\left(1-F\right)^{1+M}} \cdot \left(V_C - F\cdot V_J\right)\\
+& + \dfrac{M}{2\cdot V_J \cdot \left(1-F\right)^{1+M}} \cdot\left(V_C^2 - F^2\cdot V_J^2\right) \Biggr)
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="352" HEIGHT="162" BORDER="0"
+ SRC="img617.png"
+ ALT="\begin{displaymath}\begin{split}Q = C_0\cdot \Biggl( &amp; + \dfrac{V_J\cdot \left(1...
+...}} \cdot\left(V_C^2 - F^2\cdot V_J^2\right) \Biggr) \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">90</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+C = \dfrac{d Q}{d V_C} = \dfrac{C_0}{\left(1 - F\right)^M}\cdot \left(1 + \dfrac{M\cdot \left(V_C - F\cdot V_J\right)}{V_J\cdot \left(1 - F\right)}\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="350" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img618.png"
+ ALT="$\displaystyle C = \dfrac{d Q}{d V_C} = \dfrac{C_0}{\left(1 - F\right)^M}\cdot \...
+...dfrac{M\cdot \left(V_C - F\cdot V_J\right)}{V_J\cdot \left(1 - F\right)}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">91</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for a depletion capacitance with <!-- MATH
+ $V_C > F\cdot V_J$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="85" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img619.png"
+ ALT="$ V_C &gt; F\cdot V_J$"></SPAN> and for <!-- MATH
+ $V_C <
+F\cdot V_J$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="85" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img620.png"
+ ALT="$ V_C &lt;
+F\cdot V_J$"></SPAN> those capacitances yield
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Q = \dfrac{C_0\cdot V_J}{1-M}\cdot\left(1-\left(1 - \dfrac{V_C}{V_J}\right)^{1-M}\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="258" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img621.png"
+ ALT="$\displaystyle Q = \dfrac{C_0\cdot V_J}{1-M}\cdot\left(1-\left(1 - \dfrac{V_C}{V_J}\right)^{1-M}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">92</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+C = \dfrac{d Q}{d V_C} = C_{0}\cdot \left(1 - \dfrac{V_{C}}{V_{J}}\right)^{-M}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="220" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img622.png"
+ ALT="$\displaystyle C = \dfrac{d Q}{d V_C} = C_{0}\cdot \left(1 - \dfrac{V_{C}}{V_{J}}\right)^{-M}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">93</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION00735000000000000000">
+Diffusion Capacitance</A>
+</H2>
+
+<P>
+The current through a diffusion capacitance can be approximated by
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_C(t) = \tau_D \dfrac{d I_D}{d t}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="110" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img623.png"
+ ALT="$\displaystyle I_C(t) = \tau_D \dfrac{d I_D}{d t}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">94</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+whence <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img624.png"
+ ALT="$ \tau_D$"></SPAN> specifies the transit time through a pn-junction.  The
+above formula can be rewritten as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_C(t) = \tau_D \dfrac{d I_D}{d V_C}\cdot \dfrac{d V_C}{d t} = \tau_D \cdot g_D \cdot \dfrac{d V_C}{d t}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="263" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img625.png"
+ ALT="$\displaystyle I_C(t) = \tau_D \dfrac{d I_D}{d V_C}\cdot \dfrac{d V_C}{d t} = \tau_D \cdot g_D \cdot \dfrac{d V_C}{d t}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">95</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+which means that eq. (<A HREF="#eqn:nl_cap_trans">6.89</A>) can be used here, too.
+Also the formulas for the other integration methods can be
+easily rewritten and the equivalent companion model shown in
+fig. <A HREF="#fig:TransCap">6.5</A> is valid as well.
+
+<P>
+<P>
+The capacitance <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img615.png"
+ ALT="$ C$"></SPAN> and the charge <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img616.png"
+ ALT="$ Q$"></SPAN> for a diffusion capacitance of
+a pn-junction according to the most model formulations write as
+follows.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img626.png"
+ ALT="$\displaystyle Q$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="67" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img627.png"
+ ALT="$\displaystyle = \tau_D\cdot I_D$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">96</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="69" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img628.png"
+ ALT="$\displaystyle C = \dfrac{d Q}{d V_C}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="68" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img629.png"
+ ALT="$\displaystyle = \tau_D\cdot g_D$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">97</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION00736000000000000000">
+MOS Gate Capacitances</A>
+</H2>
+
+<P>
+The MOS gate capacitances are not constant values with respect to
+voltages (see section <A HREF="node71.html#sec:SmallSignalMOS">10.5.3</A> on page
+<A HREF="node71.html#sec:SmallSignalMOS"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>). The capacitance values can best be
+described by the incremental capacitance:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+C(V) = \dfrac{d Q(V)}{d V}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="112" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img630.png"
+ ALT="$\displaystyle C(V) = \dfrac{d Q(V)}{d V}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">98</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img631.png"
+ ALT="$ Q(V)$"></SPAN> is the charge on the capacitor and <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img322.png"
+ ALT="$ V$"></SPAN> is the voltage
+across the capacitor.
+
+<P>
+<P>
+The formula for calculating the differential is difficult to derive
+(because not given in the Meyer capacitance model).  Furthermore, the
+voltage is required as the accumulated capacitance over time.  The
+timewise charge formula is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Q(V) = \int^{V}_{0} C(V)\cdot dV
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="161" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img632.png"
+ ALT="$\displaystyle Q(V) = \int^{V}_{0} C(V)\cdot dV$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">99</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+And for small intervalls:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Q(V) = \int^{V^{n+1}}_{V^{n}} C(V)\cdot dV
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="182" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img633.png"
+ ALT="$\displaystyle Q(V) = \int^{V^{n+1}}_{V^{n}} C(V)\cdot dV$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">100</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The integral has been approximated in SPICE by:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Q^{n+1} = \left(V^{n+1} - V^{n}\right)\cdot \dfrac{C(V^{n+1}) + C(V^{n})}{2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="300" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img634.png"
+ ALT="$\displaystyle Q^{n+1} = \left(V^{n+1} - V^{n}\right)\cdot \dfrac{C(V^{n+1}) + C(V^{n})}{2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">101</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+This last formula is the trapezoidal rule for integration over two
+points.  The charge is approximated as the average capacitance times
+the change in voltage.  If the capacitance is nonlinear, this
+approximation can be in error.  To estimate the charge accurately, use
+Simpson's numerical integration rule.  This method provides charge
+conservation control.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Q^{n+1} = \left(V^{n+1} - V^{n}\right)\cdot \dfrac{C(V^{n+1}) + 4 C(V^{n}) + C(V^{n-1})}{6}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="390" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img635.png"
+ ALT="$\displaystyle Q^{n+1} = \left(V^{n+1} - V^{n}\right)\cdot \dfrac{C(V^{n+1}) + 4 C(V^{n}) + C(V^{n-1})}{6}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">102</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1037"
+  HREF="node27.html">Special time-domain models</A>
+<B>Up:</B> <A NAME="tex2html1033"
+  HREF="node23.html">Transient Analysis</A>
+<B> Previous:</B> <A NAME="tex2html1027"
+  HREF="node25.html">Predictor-corrector methods</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Voltage and current sources</TITLE>
+<META NAME="description" CONTENT="Voltage and current sources">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node59.html">
+<LINK REL="previous" HREF="node57.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node59.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1491"
+  HREF="node59.html">Noise sources</A>
+<B>Up:</B> <A NAME="tex2html1487"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1481"
+  HREF="node57.html">Gyrator</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION0010170000000000000000">
+Voltage and current sources</A>
+</H1>
+
+<P>
+For an AC analysis, DC sources are short circuit (voltage source)
+or open circuit (current source), respectively. Accordingly,
+for a DC analysis, AC sources are short circuit (voltage source)
+or open circuit (current source), respectively. As these
+sources have no internal resistance, they are noisefree.
+
+<P>
+<P>
+The MNA matrix of a current source is (with short circuit current <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1058.png"
+ ALT="$ I_0$"></SPAN>
+flowing into node 1 and out of node 2):
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+.&.\\
+.&.\\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+ I_0\\
+-I_0\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="158" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1059.png"
+ ALT="$\displaystyle \begin{bmatrix}.&amp;.\\ .&amp;.\\ \end{bmatrix} \cdot \begin{bmatrix}V_{1}\\ V_{2}\\ \end{bmatrix} = \begin{bmatrix}I_0\\ -I_0\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">141</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The MNA matrix of a voltage source is (with open circuit voltage <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1060.png"
+ ALT="$ U_0$"></SPAN>
+across node 1 to node 2):
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+.& .& 1\\
+.& .&-1\\
+1&-1& 0\\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}\\
+I_{in}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+ 0\\
+ 0\\
+ U_0\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="222" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1061.png"
+ ALT="$\displaystyle \begin{bmatrix}.&amp; .&amp; 1\\ .&amp; .&amp;-1\\ 1&amp;-1&amp; 0\\ \end{bmatrix} \cdot ...
+...}\\ V_{2}\\ I_{in}\\ \end{bmatrix} = \begin{bmatrix}0\\ 0\\ U_0\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">142</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The MNA matrix of a power source is (with internal resistance <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img360.png"
+ ALT="$ R$"></SPAN>
+and available power <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img709.png"
+ ALT="$ P$"></SPAN>):
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+ \dfrac{1}{R} & -\dfrac{1}{R} \\
+-\dfrac{1}{R} &  \dfrac{1}{R} \\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+ \sqrt{\dfrac{8\cdot P}{R}}\\
+-\sqrt{\dfrac{8\cdot P}{R}}\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="250" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1062.png"
+ ALT="$\displaystyle \begin{bmatrix}\dfrac{1}{R} &amp; -\dfrac{1}{R} \\ -\dfrac{1}{R} &amp; \d...
+...matrix}\sqrt{\dfrac{8\cdot P}{R}}\\ -\sqrt{\dfrac{8\cdot P}{R}}\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">143</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The factor "8" is because of:
+
+<UL>
+<LI>transforming peak current value into effective value (factor two)
+</LI>
+<LI>at power matching the internal resistance dissipates the same power
+      as the load (gives factor four).
+</LI>
+</UL>
+
+<P>
+The noise current correlation matrix of a power source equals the
+one of a resistor with resistance <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img360.png"
+ ALT="$ R$"></SPAN>.
+
+<P>
+<P>
+All voltage sources (AC and DC) are short circuits and therefore their
+S-parameter matrix equals the one of the DC block.  All current
+sources are open circuits and therefore their S-parameter matrix
+equals the one of the DC feed.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1491"
+  HREF="node59.html">Noise sources</A>
+<B>Up:</B> <A NAME="tex2html1487"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1481"
+  HREF="node57.html">Gyrator</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

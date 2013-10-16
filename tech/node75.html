@@ -1,0 +1,2276 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Single microstrip line</TITLE>
+<META NAME="description" CONTENT="Single microstrip line">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node76.html">
+<LINK REL="previous" HREF="node74.html">
+<LINK REL="up" HREF="node74.html">
+<LINK REL="next" HREF="node76.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1794"
+  HREF="node76.html">Microstrip corner</A>
+<B>Up:</B> <A NAME="tex2html1790"
+  HREF="node74.html">Microstrip components</A>
+<B> Previous:</B> <A NAME="tex2html1784"
+  HREF="node74.html">Microstrip components</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1795"
+  HREF="node75.html#SECTION001211000000000000000">Quasi-static characteristic impedance</A>
+<UL>
+<LI><A NAME="tex2html1796"
+  HREF="node75.html#SECTION001211100000000000000">Wheeler</A>
+<LI><A NAME="tex2html1797"
+  HREF="node75.html#SECTION001211200000000000000">Schneider</A>
+<LI><A NAME="tex2html1798"
+  HREF="node75.html#SECTION001211300000000000000">Hammerstad and Jensen</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1799"
+  HREF="node75.html#SECTION001212000000000000000">Quasi-static effective dielectric constant</A>
+<UL>
+<LI><A NAME="tex2html1800"
+  HREF="node75.html#SECTION001212100000000000000">Wheeler</A>
+<LI><A NAME="tex2html1801"
+  HREF="node75.html#SECTION001212200000000000000">Schneider</A>
+<LI><A NAME="tex2html1802"
+  HREF="node75.html#SECTION001212300000000000000">Hammerstad and Jensen</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1803"
+  HREF="node75.html#SECTION001213000000000000000">Strip thickness correction</A>
+<UL>
+<LI><A NAME="tex2html1804"
+  HREF="node75.html#SECTION001213100000000000000">Wheeler</A>
+<LI><A NAME="tex2html1805"
+  HREF="node75.html#SECTION001213200000000000000">Schneider</A>
+<LI><A NAME="tex2html1806"
+  HREF="node75.html#SECTION001213300000000000000">Hammerstad and Jensen</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1807"
+  HREF="node75.html#SECTION001214000000000000000">Dispersion</A>
+<UL>
+<LI><A NAME="tex2html1808"
+  HREF="node75.html#SECTION001214100000000000000">Kirschning and Jansen</A>
+<LI><A NAME="tex2html1809"
+  HREF="node75.html#SECTION001214200000000000000">Yamashita</A>
+<LI><A NAME="tex2html1810"
+  HREF="node75.html#SECTION001214300000000000000">Kobayashi</A>
+<LI><A NAME="tex2html1811"
+  HREF="node75.html#SECTION001214400000000000000">Getsinger</A>
+<LI><A NAME="tex2html1812"
+  HREF="node75.html#SECTION001214500000000000000">Hammerstad and Jensen</A>
+<LI><A NAME="tex2html1813"
+  HREF="node75.html#SECTION001214600000000000000">Edwards and Owens</A>
+<LI><A NAME="tex2html1814"
+  HREF="node75.html#SECTION001214700000000000000">Pramanick and Bhartia</A>
+<LI><A NAME="tex2html1815"
+  HREF="node75.html#SECTION001214800000000000000">Schneider</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1816"
+  HREF="node75.html#SECTION001215000000000000000">Transmission losses</A>
+<UL>
+<LI><A NAME="tex2html1817"
+  HREF="node75.html#SECTION001215100000000000000">Dielectric losses</A>
+<LI><A NAME="tex2html1818"
+  HREF="node75.html#SECTION001215200000000000000">Conductor losses</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION001210000000000000000">
+Single microstrip line</A>
+</H1>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:MSline"></A><A NAME="17787"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 11.1:</STRONG>
+single microstrip line</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="541" HEIGHT="272" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1934.png"
+ ALT="\includegraphics[width=12cm]{msline}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The electrical parameters of microstrip lines which are required for
+circuit design are impedance, attenuation, wavelength and propagation
+constant.  These parameters are interrelated for all microstrips
+assuming that the propagation mode is a transverse electromagnetic
+mode, or it can be approximated by a transverse electromagnetic mode.
+The Y and S parameters can be found in section <A HREF="node61.html#sec:tl_yparameter">9.20</A>.
+
+<P>
+
+<H2><A NAME="SECTION001211000000000000000">
+Quasi-static characteristic impedance</A>
+</H2>
+
+<P>
+
+<H3><A NAME="SECTION001211100000000000000">
+Wheeler</A>
+</H3>
+
+<P>
+Harold A. Wheeler [<A
+ HREF="node103.html#Wheeler2">16</A>] formulated his synthesis and
+analysis equations based upon a conformal mapping's approximation of
+the dielectric boundary with parallel conductor strips separated by a
+dielectric sheet.
+
+<P>
+<P>
+For wide strips (<SPAN CLASS="MATH"><IMG
+ WIDTH="78" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1935.png"
+ ALT="$ W/h &gt; 3.3$"></SPAN>) he obtains the approximation
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Z_{L}\left(W, h, \varepsilon_{r}\right) =
+\frac{Z_{F0}}{2\sqrt{\varepsilon_{r}}}\cdot\frac{1}{\dfrac{W}{2h} + \dfrac{1}{\pi}\ln{4} + \dfrac{\varepsilon_{r} + 1}{2\pi \varepsilon_{r}} \ln{\left(\dfrac{\pi e}{2}\left(\dfrac{W}{2h} + 0.94\right)\right)} + \dfrac{\varepsilon_{r} - 1}{2\pi \varepsilon_{r}^{2}}\cdot \ln{\dfrac{e\pi^{2}}{16}}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="590" HEIGHT="82" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1936.png"
+ ALT="$\displaystyle Z_{L}\left(W, h, \varepsilon_{r}\right) = \frac{Z_{F0}}{2\sqrt{\v...
+...{\varepsilon_{r} - 1}{2\pi \varepsilon_{r}^{2}}\cdot \ln{\dfrac{e\pi^{2}}{16}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+For narrow strips (<!-- MATH
+ $W/h \le 3.3$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="78" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1937.png"
+ ALT="$ W/h \le 3.3$"></SPAN>) he obtains the approximation
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Z_{L}\left(W, h, \varepsilon_{r}\right) =
+\frac{Z_{F0}}{\pi \sqrt{2 \left(\varepsilon_{r} + 1\right)}} \cdot \left(\ln{\left(\frac{4h}{W} + \sqrt{\left(\frac{4h}{W}\right)^{2} + 2}\right)} - \frac{1}{2}\cdot \frac{\varepsilon_{r} - 1}{\varepsilon_{r} + 1}\left(\ln{\frac{\pi}{2}} + \frac{1}{\varepsilon_{r}} \ln{\frac{4}{\pi}}\right)\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="638" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1938.png"
+ ALT="$\displaystyle Z_{L}\left(W, h, \varepsilon_{r}\right) = \frac{Z_{F0}}{\pi \sqrt...
+...\ln{\frac{\pi}{2}} + \frac{1}{\varepsilon_{r}} \ln{\frac{4}{\pi}}\right)\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The formulae are applicable to alumina-type substrates (<!-- MATH
+ $8 \le
+\varepsilon_r \le 12$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="84" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1939.png"
+ ALT="$ 8 \le
+\varepsilon_r \le 12$"></SPAN>) and have an estimated relative error less than
+1 per cent.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:mszl"></A><A NAME="19585"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 11.2:</STRONG>
+characteristic impedance as approximated by Hammerstad for <!-- MATH
+ $\varepsilon_{r}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$ \varepsilon _{r}$"></SPAN> = <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ 1.0$"></SPAN> (air), <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.png"
+ ALT="$ 3.78$"></SPAN> (quartz) and <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$ 9.5$"></SPAN> (alumina)</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<IMG
+ WIDTH="626" HEIGHT="409" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1940.png"
+ ALT="\includegraphics[width=0.95\linewidth]{mszl}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<H3><A NAME="SECTION001211200000000000000">
+Schneider</A>
+</H3>
+
+<P>
+The following formulas obtained by rational function approximation
+give accuracy of <!-- MATH
+ $\pm 0.25\%$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1941.png"
+ ALT="$ \pm 0.25\%$"></SPAN> for <!-- MATH
+ $0 \le W/h \le 10$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="102" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1942.png"
+ ALT="$ 0 \le W/h \le 10$"></SPAN> which is the
+range of importance for most engineering applications.  M.V. Schneider
+[<A
+ HREF="node103.html#Schneider">17</A>] found these approximations for the complete elliptic
+integrals of the first kind as accurate as <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1943.png"
+ ALT="$ \pm 1\%$"></SPAN> for <SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1944.png"
+ ALT="$ W/h &gt; 10$"></SPAN>.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Z_L = \dfrac{Z_{F0}}{\sqrt{\varepsilon_{r_{eff}}}}\cdot
+\begin{cases}
+\begin{array}{ll}
+\dfrac{1}{2\pi}\cdot \ln{\left(\dfrac{8\cdot h}{W} + \dfrac{W}{4\cdot h}\right)} & \textrm{ for } \dfrac{W}{h} \le 1\\
+&\\
+\dfrac{1}{\dfrac{W}{h} + 2.42 - 0.44\cdot\dfrac{h}{W} + \left(1 - \dfrac{h}{W}\right)^6} & \textrm{ for } \dfrac{W}{h} > 1\\
+\end{array}
+\end{cases}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="501" HEIGHT="140" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1945.png"
+ ALT="$\displaystyle Z_L = \dfrac{Z_{F0}}{\sqrt{\varepsilon_{r_{eff}}}}\cdot \begin{ca...
+...rac{h}{W}\right)^6} &amp; \textrm{ for } \dfrac{W}{h} &gt; 1\\ \end{array} \end{cases}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H3><A NAME="SECTION001211300000000000000">
+Hammerstad and Jensen</A>
+</H3>
+
+<P>
+The equations for the single microstrip line presented by
+E. Hammerstad and &#216;. Jensen [<A
+ HREF="node103.html#Hammerstad">18</A>] are based upon an
+equation for the impedance of microstrip in an homogeneous medium and
+an equation for the microstrip effective dielectric constant.  The
+obtained accuracy gives errors at least less than those caused by
+physical tolerances and is better than <SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1946.png"
+ ALT="$ 0.01\%$"></SPAN> for <SPAN CLASS="MATH"><IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1947.png"
+ ALT="$ W/h \le 1$"></SPAN> and
+<SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1948.png"
+ ALT="$ 0.03\%$"></SPAN> for <!-- MATH
+ $W/h \le 1000$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="89" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1949.png"
+ ALT="$ W/h \le 1000$"></SPAN>.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="76" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1950.png"
+ ALT="$\displaystyle Z_{L1}\left(W, h\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="260" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1951.png"
+ ALT="$\displaystyle = \frac{Z_{F0}}{2\pi}\cdot\ln{\left(f_{u}\frac{h}{W} + \sqrt{1 + \left(\frac{2h}{W}\right)^{2}}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+<A NAME="eq:HandJZL0">(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">4</SPAN>)</A></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="91" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1952.png"
+ ALT="$\displaystyle Z_{L}\left(W, h, \varepsilon_{r}\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="385" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1953.png"
+ ALT="$\displaystyle = \dfrac{Z_{L1} \left(W, h\right)}{\sqrt{\varepsilon_{r}}} = \fra...
+...ot\ln{\left(f_{u}\frac{h}{W} + \sqrt{1 + \left(\frac{2h}{W}\right)^{2}}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+<A NAME="eq:HandJZL0Er">(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">5</SPAN>)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1954.png"
+ ALT="$\displaystyle f_{u}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="322" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1955.png"
+ ALT="$\displaystyle = 6 + \left(2\pi - 6\right)\cdot\exp{\left(-\left(30.666\cdot\frac{h}{W}\right)^{0.7528}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">6</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The comparison of the expression given for the quasi-static impedance
+as shown in fig. <A HREF="#fig:mscomparezl">11.3</A> has been done with respect to
+E. Hammerstad and &#216;. Jensen.  It reveals the advantage of closed-form
+expressions.  The impedance step for Wheelers formulae at <SPAN CLASS="MATH"><IMG
+ WIDTH="78" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1956.png"
+ ALT="$ W/h = 3.3$"></SPAN>
+is approximately <SPAN CLASS="MATH"><IMG
+ WIDTH="35" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1957.png"
+ ALT="$ 0.1\ohm$"></SPAN>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:mscomparezl"></A><A NAME="19599"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 11.3:</STRONG>
+characteristic impedance in comparison for <!-- MATH
+ $\varepsilon_{r} = 9.8$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ \varepsilon _{r} = 9.8$"></SPAN></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<IMG
+ WIDTH="626" HEIGHT="409" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1958.png"
+ ALT="\includegraphics[width=0.95\linewidth]{mscomparezl}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<H2><A NAME="SECTION001212000000000000000">
+Quasi-static effective dielectric constant</A>
+</H2>
+
+<P>
+
+<H3><A NAME="SECTION001212100000000000000">
+Wheeler</A>
+</H3>
+
+<P>
+Harold A. Wheeler [<A
+ HREF="node103.html#Wheeler">19</A>] gives the following approximation for
+narrow strips (<SPAN CLASS="MATH"><IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1959.png"
+ ALT="$ W/h &lt; 3$"></SPAN>) based upon the characteristic impedance
+<SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img684.png"
+ ALT="$ Z_L$"></SPAN>.  The estimated relative error is less than 1%.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{r_{eff}} = \frac{\varepsilon_{r} + 1}{2} + \frac{Z_{F0}}{2\pi Z_{L}}\cdot \frac{\varepsilon_{r} - 1}{2}\cdot \left(\ln{\frac{\pi}{2}} + \frac{1}{\varepsilon_{r}} \ln{\frac{4}{\pi}}\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="355" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1960.png"
+ ALT="$\displaystyle \varepsilon_{r_{eff}} = \frac{\varepsilon_{r} + 1}{2} + \frac{Z_{...
+... \left(\ln{\frac{\pi}{2}} + \frac{1}{\varepsilon_{r}} \ln{\frac{4}{\pi}}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">7</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+For narrow strips (<!-- MATH
+ $W/h \le 1.3$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="78" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1961.png"
+ ALT="$ W/h \le 1.3$"></SPAN>):
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{r_{eff}} = \dfrac{1 + \varepsilon_r}{2}\cdot \left(\dfrac{A}{A - B}\right)^2
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="195" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1962.png"
+ ALT="$\displaystyle \varepsilon_{r_{eff}} = \dfrac{1 + \varepsilon_r}{2}\cdot \left(\dfrac{A}{A - B}\right)^2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">8</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1022.png"
+ ALT="$\displaystyle A$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="192" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1963.png"
+ ALT="$\displaystyle = \ln{\left(8\dfrac{h}{W}\right)} + \dfrac{1}{32}\cdot\left(\dfrac{W}{h}\right)^2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">9</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img170.png"
+ ALT="$\displaystyle B$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="223" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1964.png"
+ ALT="$\displaystyle = \dfrac{1}{2}\cdot \dfrac{\varepsilon_r - 1}{\varepsilon_r + 1} ...
+...t\left(\ln{\dfrac{\pi}{2}} + \dfrac{1}{\varepsilon_r}\ln{\dfrac{4}{\pi}}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">10</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+For wide strips (<SPAN CLASS="MATH"><IMG
+ WIDTH="78" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1965.png"
+ ALT="$ W/h &gt; 1.3$"></SPAN>):
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{r_{eff}} = \varepsilon_r\cdot\left(\dfrac{E - D}{E}\right)^2
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="165" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1966.png"
+ ALT="$\displaystyle \varepsilon_{r_{eff}} = \varepsilon_r\cdot\left(\dfrac{E - D}{E}\right)^2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">11</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1026.png"
+ ALT="$\displaystyle D$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="341" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1967.png"
+ ALT="$\displaystyle = \dfrac{\varepsilon_r - 1}{2\pi \varepsilon_r}\cdot\left(\ln{\le...
+...0.94\right)\right)} - \dfrac{1}{\varepsilon_r} \ln{\dfrac{e\pi^{2}}{16}}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">12</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1968.png"
+ ALT="$\displaystyle E$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="257" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1969.png"
+ ALT="$\displaystyle = \dfrac{1}{2}\cdot\dfrac{W}{h} + \dfrac{1}{\pi}\cdot \ln{\left(\pi e \dfrac{W}{h} + 16.0547\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">13</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H3><A NAME="SECTION001212200000000000000">
+Schneider</A>
+</H3>
+
+<P>
+The approximate function found by M.V. Schneider [<A
+ HREF="node103.html#Schneider">17</A>] is
+meant to have an accuracy of <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1970.png"
+ ALT="$ \pm 2\%$"></SPAN> for <!-- MATH
+ $\varepsilon_{r_{eff}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1971.png"
+ ALT="$ \varepsilon_{r_{eff}}$"></SPAN> and
+an accuracy of <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1943.png"
+ ALT="$ \pm 1\%$"></SPAN> for <!-- MATH
+ $\sqrt{\varepsilon_{r_{eff}}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="50" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1972.png"
+ ALT="$ \sqrt{\varepsilon_{r_{eff}}}$"></SPAN>.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{r_{eff}} = \dfrac{\varepsilon_{r} + 1}{2} + \dfrac{\varepsilon_{r} - 1}{2}\cdot\dfrac{1}{\sqrt{1 + 10\dfrac{h}{W}}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="263" HEIGHT="82" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1973.png"
+ ALT="$\displaystyle \varepsilon_{r_{eff}} = \dfrac{\varepsilon_{r} + 1}{2} + \dfrac{\varepsilon_{r} - 1}{2}\cdot\dfrac{1}{\sqrt{1 + 10\dfrac{h}{W}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">14</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H3><A NAME="SECTION001212300000000000000">
+Hammerstad and Jensen</A>
+</H3>
+
+<P>
+The accuracy of the E. Hammerstad and &#216;. Jensen [<A
+ HREF="node103.html#Hammerstad">18</A>] model
+is better than 0.2% at least for <!-- MATH
+ $\varepsilon_r < 128$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="63" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1974.png"
+ ALT="$ \varepsilon_r &lt; 128$"></SPAN> and <!-- MATH
+ $0.01 \le
+W/h \le 100$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="131" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1975.png"
+ ALT="$ 0.01 \le
+W/h \le 100$"></SPAN>.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:HandJErEff"></A><!-- MATH
+ \begin{equation}
+\varepsilon_{r_{eff}}\left(W, h, \varepsilon_r\right) = \frac{\varepsilon_{r} + 1}{2} + \frac{\varepsilon_{r} - 1}{2}\cdot\left(1 + 10\frac{h}{W}\right)^{-ab}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="360" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1976.png"
+ ALT="$\displaystyle \varepsilon_{r_{eff}}\left(W, h, \varepsilon_r\right) = \frac{\va...
+... 1}{2} + \frac{\varepsilon_{r} - 1}{2}\cdot\left(1 + 10\frac{h}{W}\right)^{-ab}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">15</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1977.png"
+ ALT="$\displaystyle a\left(u\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="402" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1978.png"
+ ALT="$\displaystyle = 1 + \frac{1}{49}\cdot\ln{\left(\frac{u^{4} + \left(u/52\right)^...
+...ht)} + \frac{1}{18.7}\cdot\ln{\left(1 + \left(\frac{u}{18.1}\right)^{3}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+<A NAME="eq:HandJa">(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">16</SPAN>)</A></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1979.png"
+ ALT="$\displaystyle b\left(\varepsilon_r\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="180" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1980.png"
+ ALT="$\displaystyle = 0.564\cdot\left(\frac{\varepsilon_{r} - 0.9}{\varepsilon_{r} + 3}\right)^{0.053}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+<A NAME="eq:HandJb">(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">17</SPAN>)</A></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1981.png"
+ ALT="$\displaystyle u$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1982.png"
+ ALT="$\displaystyle = \frac{W}{h}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">18</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION001213000000000000000">
+Strip thickness correction</A>
+</H2>
+
+<P>
+The formulas given for the quasi-static characteristic impedance and
+effective dielectric constant in the previous sections are based upon
+an infinite thin microstrip line thickness <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1983.png"
+ ALT="$ t = 0$"></SPAN>.  A finite
+thickness <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1984.png"
+ ALT="$ t$"></SPAN> can be compensated by a reduction of width.  That means
+a strip with the width <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1664.png"
+ ALT="$ W$"></SPAN> and the finite thickness <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1984.png"
+ ALT="$ t$"></SPAN> appears to be
+a wider strip.
+
+<P>
+
+<H3><A NAME="SECTION001213100000000000000">
+Wheeler</A>
+</H3>
+
+<P>
+Harold A. Wheeler [<A
+ HREF="node103.html#Wheeler">19</A>] proposes the following equation to
+account for the strip thickness effect based on free space without
+dielectric.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\Delta W_1 = \dfrac{t}{\pi} \ln{\dfrac{4 e}{\sqrt{\left(\dfrac{t}{h}\right)^2 + \left(\dfrac{1/\pi}{W/t + 1.10}\right)}}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="279" HEIGHT="103" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1985.png"
+ ALT="$\displaystyle \Delta W_1 = \dfrac{t}{\pi} \ln{\dfrac{4 e}{\sqrt{\left(\dfrac{t}{h}\right)^2 + \left(\dfrac{1/\pi}{W/t + 1.10}\right)}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">19</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+For the mixed media case with dielectric he obtains the approximation
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\Delta W_r = \dfrac{1}{2} \Delta W_1 \left(1 + \dfrac{1}{\varepsilon_r}\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="179" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1986.png"
+ ALT="$\displaystyle \Delta W_r = \dfrac{1}{2} \Delta W_1 \left(1 + \dfrac{1}{\varepsilon_r}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">20</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H3><A NAME="SECTION001213200000000000000">
+Schneider</A>
+</H3>
+
+<P>
+M.V. Schneider [<A
+ HREF="node103.html#Schneider">17</A>] derived the following approximate
+expressions.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:DeltaSchneider"></A><!-- MATH
+ \begin{equation}
+\Delta W =
+\begin{cases}
+\begin{array}{ll}
+\dfrac{t}{\pi}\cdot\left(1 + \ln{\dfrac{4\cdot\pi\cdot W}{t}}\right) & \textrm{ for } \dfrac{W}{h} \le \dfrac{1}{2\pi}\\
+&\\
+\dfrac{t}{\pi}\cdot\left(1 + \ln{\dfrac{2\cdot h}{t}}\right) & \textrm{ for } \dfrac{W}{h} > \dfrac{1}{2\pi}\\
+\end{array}
+\end{cases}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="363" HEIGHT="117" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1987.png"
+ ALT="$\displaystyle \Delta W = \begin{cases}\begin{array}{ll} \dfrac{t}{\pi}\cdot\lef...
+...ight) &amp; \textrm{ for } \dfrac{W}{h} &gt; \dfrac{1}{2\pi}\\ \end{array} \end{cases}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">21</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Additional restrictions for applying these expressions are <SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1988.png"
+ ALT="$ t \ll h$"></SPAN>,
+<SPAN CLASS="MATH"><IMG
+ WIDTH="62" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1989.png"
+ ALT="$ t &lt; W/2$"></SPAN> and <!-- MATH
+ $t/\Delta W < 0.75$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="97" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1990.png"
+ ALT="$ t/\Delta W &lt; 0.75$"></SPAN>.  Notice also that the ratio <!-- MATH
+ $\Delta
+W / t$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1991.png"
+ ALT="$ \Delta
+W / t$"></SPAN> is divergent for <!-- MATH
+ $t \rightarrow 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1992.png"
+ ALT="$ t \rightarrow 0$"></SPAN>.
+
+<P>
+
+<H3><A NAME="SECTION001213300000000000000">
+Hammerstad and Jensen</A>
+</H3>
+
+<P>
+E. Hammerstad and &#216;. Jensen are using the method described by Wheeler
+[<A
+ HREF="node103.html#Wheeler">19</A>] to account for a non-zero strip thickness.  However,
+some modifications in his equations have been made, which give better
+accuracy for narrow strips and for substrates with low dielectric
+constant.  For the homogeneous media the correction is
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\Delta W_1 = \dfrac{t}{h\cdot\pi} \ln{\left(1 + \dfrac{4e}{\dfrac{t}{h}\cdot \coth^2{\sqrt{6.517 W}}}\right)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="302" HEIGHT="83" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1993.png"
+ ALT="$\displaystyle \Delta W_1 = \dfrac{t}{h\cdot\pi} \ln{\left(1 + \dfrac{4e}{\dfrac{t}{h}\cdot \coth^2{\sqrt{6.517 W}}}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">22</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+and for the mixed media the correction is
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\Delta W_r = \dfrac{1}{2} \Delta W_1 \left(1 + \text{sech} \sqrt{\varepsilon_r - 1}\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="236" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1994.png"
+ ALT="$\displaystyle \Delta W_r = \dfrac{1}{2} \Delta W_1 \left(1 + \text{sech} \sqrt{\varepsilon_r - 1}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">23</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+By defining corrected strip widths, <!-- MATH
+ $W_1 = W + \Delta W_1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="119" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1995.png"
+ ALT="$ W_1 = W + \Delta W_1$"></SPAN> and <!-- MATH
+ $W_r =
+W + \Delta W_r$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="119" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1996.png"
+ ALT="$ W_r =
+W + \Delta W_r$"></SPAN>, the effect of strip thickness may be included in the
+equations (<A HREF="#eq:HandJZL0">11.4</A>) and (<A HREF="#eq:HandJErEff">11.15</A>).
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="104" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1997.png"
+ ALT="$\displaystyle Z_L \left(W, h, t, \varepsilon_r\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="148" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1998.png"
+ ALT="$\displaystyle = \dfrac{Z_{L1} \left(W_r, h\right)}{\sqrt{\varepsilon_{r_{eff}} \left(W_r, h, \varepsilon_r\right)}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">24</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="117" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1999.png"
+ ALT="$\displaystyle \varepsilon_{r_{eff}} \left(W, h, t, \varepsilon_r\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="258" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2000.png"
+ ALT="$\displaystyle = \varepsilon_{r_{eff}} \left(W_r, h, \varepsilon_r\right) \cdot \left(\dfrac{Z_{L1} \left(W_1, h\right)}{Z_{L1} \left(W_r, h\right)}\right)^2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">25</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION001214000000000000000">
+Dispersion</A>
+</H2>
+
+<P>
+Dispersion can be a strong effect in microstrip transmission lines due
+to their inhomogeneity.  Typically, as frequency is increased,
+<!-- MATH
+ $\varepsilon_{r_{eff}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1971.png"
+ ALT="$ \varepsilon_{r_{eff}}$"></SPAN> increases in a non-linear manner, approaching
+an asymptotic value.  Dispersion affects characteristic impedance in a
+similar way.
+
+<P>
+
+<H3><A NAME="SECTION001214100000000000000">
+Kirschning and Jansen</A>
+</H3>
+
+<P>
+The dispersion formulae given by Kirschning and Jansen
+[<A
+ HREF="node103.html#Kirschning3">20</A>] is meant to have an accuracy better than 0.6% in
+the range <!-- MATH
+ $0.1 \le W/h \le 100$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="123" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2001.png"
+ ALT="$ 0.1 \le W/h \le 100$"></SPAN>, <!-- MATH
+ $1\le \varepsilon_r \le 20$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="84" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2002.png"
+ ALT="$ 1\le \varepsilon_r \le 20$"></SPAN> and <!-- MATH
+ $0
+\le h/\lambda_0 \le 0.13$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="116" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2003.png"
+ ALT="$ 0
+\le h/\lambda_0 \le 0.13$"></SPAN>, i.e. up to about <!-- MATH
+ $60\giga\hertz$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="51" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2004.png"
+ ALT="$ 60\giga\hertz$"></SPAN> for
+<!-- MATH
+ $25\milli\meter$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2005.png"
+ ALT="$ 25\milli\meter$"></SPAN> substrates.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:KandJErEff_disp"></A><!-- MATH
+ \begin{equation}
+\varepsilon_{r}(f) = \varepsilon_{r} - \frac{\varepsilon_{r} - \varepsilon_{r_{eff}}}{1 + P(f)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="166" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2006.png"
+ ALT="$\displaystyle \varepsilon_{r}(f) = \varepsilon_{r} - \frac{\varepsilon_{r} - \varepsilon_{r_{eff}}}{1 + P(f)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">26</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2007.png"
+ ALT="$\displaystyle P(f)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="256" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2008.png"
+ ALT="$\displaystyle = P_{1} P_{2} \cdot\left(\left(0.1844 + P_{3} P_{4}\right) \cdot f_{n}\right)^{1.5763}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">27</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img77.png"
+ ALT="$\displaystyle P_{1}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="562" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2009.png"
+ ALT="$\displaystyle = 0.27488 + \left(0.6315 + \frac{0.525}{\left(1 + 0.0157\cdot f_{...
+...}\right)\cdot \frac{W}{h} - 0.065683 \cdot \exp\left(-8.7513\dfrac{W}{h}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">28</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img79.png"
+ ALT="$\displaystyle P_{2}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="253" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2010.png"
+ ALT="$\displaystyle = 0.33622\cdot \left(1 - \exp\left(-0.03442 \cdot \varepsilon_{r}\right)\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">29</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img100.png"
+ ALT="$\displaystyle P_{3}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="395" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2011.png"
+ ALT="$\displaystyle = 0.0363 \cdot \exp\left(-4.6\dfrac{W}{h}\right) \cdot \left(1 - \exp\left(- \left(\dfrac{f_{n}}{38.7}\right)^{4.97}\right)\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">30</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.png"
+ ALT="$\displaystyle P_{4}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="287" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2012.png"
+ ALT="$\displaystyle = 1 + 2.751 \cdot \left(1 - \exp\left(- \left(\frac{\varepsilon_{r}}{15.916}\right)^{8}\right)\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">31</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2013.png"
+ ALT="$\displaystyle f_{n}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="66" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2014.png"
+ ALT="$\displaystyle = f \cdot h =$">&nbsp; &nbsp;normalised frequency in&nbsp;<IMG
+ WIDTH="80" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2015.png"
+ ALT="$\displaystyle \left[\giga\hertz \cdot \milli\meter\right]$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+<A NAME="eq:KirschningFn">(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">32</SPAN>)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Dispersion of the characteristic impedance according to
+[<A
+ HREF="node103.html#Kirschning1">21</A>] can be applied for the range <!-- MATH
+ $0 \le h/\lambda_0 \le
+0.1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="108" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2016.png"
+ ALT="$ 0 \le h/\lambda_0 \le
+0.1$"></SPAN>, <!-- MATH
+ $0.1 \le W/h \le 10$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="115" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2017.png"
+ ALT="$ 0.1 \le W/h \le 10$"></SPAN> and for substrates with <!-- MATH
+ $1 \le
+\varepsilon_r \le 18$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="84" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2018.png"
+ ALT="$ 1 \le
+\varepsilon_r \le 18$"></SPAN> and is is given by the following set of
+equations.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img594.png"
+ ALT="$\displaystyle R_1$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="107" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2019.png"
+ ALT="$\displaystyle = 0.03891\cdot \varepsilon_r^{1.4}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">33</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2020.png"
+ ALT="$\displaystyle R_2$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="93" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2021.png"
+ ALT="$\displaystyle = 0.267\cdot u^{7.0}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">34</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2022.png"
+ ALT="$\displaystyle R_3$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="208" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2023.png"
+ ALT="$\displaystyle = 4.766\cdot \exp{ \left(-3.228\cdot u^{0.641}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">35</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2024.png"
+ ALT="$\displaystyle R_4$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="187" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2025.png"
+ ALT="$\displaystyle = 0.016 + \left(0.0514\cdot \varepsilon_r\right)^{4.524}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">36</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2026.png"
+ ALT="$\displaystyle R_5$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="125" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2027.png"
+ ALT="$\displaystyle = \left(f_n / 28.843\right)^{12.0}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">37</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2028.png"
+ ALT="$\displaystyle R_6$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="99" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2029.png"
+ ALT="$\displaystyle = 22.20\cdot u^{1.92}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">38</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2030.png"
+ ALT="$\displaystyle R_7$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="327" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2031.png"
+ ALT="$\displaystyle = 1.206 - 0.3144\cdot \exp{\left(-R_1\right)}\cdot \left(1 - \exp{\left(-R_2\right)}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">39</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2032.png"
+ ALT="$\displaystyle R_8$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="456" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2033.png"
+ ALT="$\displaystyle = 1 + 1.275\cdot \left(1 - \exp{ \left(-0.004625\cdot R_3\cdot \varepsilon_r^{1.674}\right)} \cdot \left(f_n / 18.365\right)^{2.745}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">40</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2034.png"
+ ALT="$\displaystyle R_9$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="444" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2035.png"
+ ALT="$\displaystyle = 5.086\cdot \dfrac{R_4\cdot R_5}{0.3838 + 0.386\cdot R_4}\cdot \...
+...\left(\varepsilon_r - 1\right)^6}{1 + 10\cdot \left(\varepsilon_r - 1\right)^6}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">41</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2036.png"
+ ALT="$\displaystyle R_{10}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="183" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2037.png"
+ ALT="$\displaystyle = 0.00044\cdot \varepsilon_r^{2.136} + 0.0184$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">42</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2038.png"
+ ALT="$\displaystyle R_{11}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="188" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2039.png"
+ ALT="$\displaystyle = \dfrac{\left(f_n / 19.47\right)^6}{1 + 0.0962\cdot \left(f_n / 19.47\right)^6}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">43</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2040.png"
+ ALT="$\displaystyle R_{12}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="130" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2041.png"
+ ALT="$\displaystyle = \dfrac{1}{1 + 0.00245\cdot u^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">44</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2042.png"
+ ALT="$\displaystyle R_{13}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="191" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2043.png"
+ ALT="$\displaystyle = 0.9408\cdot \varepsilon_{r}(f)^{R_8} - 0.9603$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">45</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2044.png"
+ ALT="$\displaystyle R_{14}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="225" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2045.png"
+ ALT="$\displaystyle = \left(0.9408 - R_9\right)\cdot \varepsilon_{r_{eff}}^{R_8} - 0.9603$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">46</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2046.png"
+ ALT="$\displaystyle R_{15}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="199" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2047.png"
+ ALT="$\displaystyle = 0.707\cdot R_{10}\cdot \left(f_n / 12.3\right)^{1.097}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">47</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2048.png"
+ ALT="$\displaystyle R_{16}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="324" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2049.png"
+ ALT="$\displaystyle = 1 + 0.0503\cdot \varepsilon_r^2\cdot R_{11}\cdot \left(1 - \exp{ \left(- \left(u / 15\right)^6\right)}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">48</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2050.png"
+ ALT="$\displaystyle R_{17}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="396" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2051.png"
+ ALT="$\displaystyle = R_7\cdot \left(1 - 1.1241\cdot \dfrac{R_{12}}{R_{16}}\cdot \exp{ \left(-0.026\cdot f_n^{1.15656} - R_{15}\right)}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+<A NAME="eq:KirschningR17">(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">49</SPAN>)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Finally the frequency-dependent characteristic impedance can be
+written as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:KirschningZLdisp"></A><!-- MATH
+ \begin{equation}
+Z_L(f_n) = Z_L(0)\cdot \left(\dfrac{R_{13}}{R_{14}}\right)^{R_{17}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="202" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2052.png"
+ ALT="$\displaystyle Z_L(f_n) = Z_L(0)\cdot \left(\dfrac{R_{13}}{R_{14}}\right)^{R_{17}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">50</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The abbreviations used in these expressions are <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2053.png"
+ ALT="$ f_n$"></SPAN> for the
+normalized frequency as denoted in eq. (<A HREF="#eq:KirschningFn">11.32</A>) and <SPAN CLASS="MATH"><IMG
+ WIDTH="67" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2054.png"
+ ALT="$ u
+= W/h$"></SPAN> for the microstrip width normalised with respect to the
+substrate height.  The terms <SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2055.png"
+ ALT="$ Z_L(0)$"></SPAN> and <!-- MATH
+ $\varepsilon_{r_{eff}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1971.png"
+ ALT="$ \varepsilon_{r_{eff}}$"></SPAN>
+denote the static values of microstrip characteristic impedance and
+effective dielectric constant.  The value <!-- MATH
+ $\varepsilon_{r}(f)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2056.png"
+ ALT="$ \varepsilon_{r}(f)$"></SPAN> is the
+frequency dependent effective dielectric constant computed according
+to [<A
+ HREF="node103.html#Kirschning3">20</A>].
+
+<P>
+<P>
+R.H. Jansen and M. Kirschning remark in [<A
+ HREF="node103.html#Kirschning1">21</A>] for the
+implementation of the expressions on a computer, <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img597.png"
+ ALT="$ R_1$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img940.png"
+ ALT="$ R_2$"></SPAN> and
+<SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2057.png"
+ ALT="$ R_6$"></SPAN> should be restricted to numerical values less or equal 20 in
+order to prevent overflow.
+
+<P>
+
+<H3><A NAME="SECTION001214200000000000000">
+Yamashita</A>
+</H3>
+
+<P>
+The values obtained by the approximate dispersion formula as given by
+E. Yamashita [<A
+ HREF="node103.html#Yamashita">22</A>] deviate within 1% in a wide frequency
+range compared to the integral equation method used to derive the
+functional approximation.  The formula assumes the knowledge of the
+quasi-static effective dielectric constant.  The applicable ranges of
+the formula are <!-- MATH
+ $2 < \varepsilon_r < 16$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="84" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2058.png"
+ ALT="$ 2 &lt; \varepsilon_r &lt; 16$"></SPAN>, <!-- MATH
+ $0.06 < W/h < 16$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="123" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2059.png"
+ ALT="$ 0.06 &lt; W/h &lt; 16$"></SPAN> and
+<!-- MATH
+ $0.1\giga\hertz < f < 100\giga\hertz$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="163" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2060.png"
+ ALT="$ 0.1\giga\hertz &lt; f &lt; 100\giga\hertz$"></SPAN>.  Though the lowest usable
+frequency is limited by <!-- MATH
+ $0.1\giga\hertz$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="55" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2061.png"
+ ALT="$ 0.1\giga\hertz$"></SPAN>, the propagation constant for
+frequencies less than <!-- MATH
+ $0.1\giga\hertz$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="55" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2061.png"
+ ALT="$ 0.1\giga\hertz$"></SPAN> has been given as the
+quasi-static one.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{r}(f) = \varepsilon_{r_{eff}}\cdot \left(\frac{1 + \dfrac{1}{4}\cdot k\cdot F^{1.5}}{1 + \dfrac{1}{4}\cdot F^{1.5}}\right)^{2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="243" HEIGHT="91" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2062.png"
+ ALT="$\displaystyle \varepsilon_{r}(f) = \varepsilon_{r_{eff}}\cdot \left(\frac{1 + \dfrac{1}{4}\cdot k\cdot F^{1.5}}{1 + \dfrac{1}{4}\cdot F^{1.5}}\right)^{2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">51</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2063.png"
+ ALT="$\displaystyle k$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2064.png"
+ ALT="$\displaystyle = \sqrt{\frac{\varepsilon_{r}}{\varepsilon_{r_{eff}}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">52</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img209.png"
+ ALT="$\displaystyle F$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="386" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2065.png"
+ ALT="$\displaystyle = \frac{4\cdot h\cdot f\cdot \sqrt{\varepsilon_{r} - 1}}{c_{0}} \...
+...left(0.5 + \left(1 + 2 \cdot \log\left(1 + \frac{W}{h}\right)\right)^{2}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">53</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H3><A NAME="SECTION001214300000000000000">
+Kobayashi</A>
+</H3>
+
+<P>
+The dispersion formula presented by M. Kobayashi [<A
+ HREF="node103.html#Kobayashi">23</A>],
+derived by comparison to a numerical model, has a high degree of
+accuracy, better than 0.6% in the range <!-- MATH
+ $0.1 \le W/h \le 10$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="115" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2017.png"
+ ALT="$ 0.1 \le W/h \le 10$"></SPAN>, <!-- MATH
+ $1 <
+\varepsilon_r \le 128$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="92" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2066.png"
+ ALT="$ 1 &lt;
+\varepsilon_r \le 128$"></SPAN> and any <!-- MATH
+ $h/\lambda_0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2067.png"
+ ALT="$ h/\lambda_0$"></SPAN> (no frequency limits).
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{r}(f) = \varepsilon_{r} - \frac{\varepsilon_{r} - \varepsilon_{r_{eff}}}{1 + \left(\dfrac{f}{f_{50}}\right)^{m}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="187" HEIGHT="83" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2068.png"
+ ALT="$\displaystyle \varepsilon_{r}(f) = \varepsilon_{r} - \frac{\varepsilon_{r} - \varepsilon_{r_{eff}}}{1 + \left(\dfrac{f}{f_{50}}\right)^{m}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">54</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2069.png"
+ ALT="$\displaystyle f_{50}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="476" HEIGHT="117" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2070.png"
+ ALT="$\displaystyle = \frac{c_{0}}{2\pi\cdot h \cdot\left(0.75 + \left(0.75 - \dfrac{...
+...\varepsilon_{r_{eff}}}}\right)}{\sqrt{\varepsilon_{r} - \varepsilon_{r_{eff}}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">55</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2071.png"
+ ALT="$\displaystyle m$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="138" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2072.png"
+ ALT="$\displaystyle = m_{0}\cdot m_{c} \;\; (\le 2.32)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">56</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2073.png"
+ ALT="$\displaystyle m_{0}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="279" HEIGHT="99" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2074.png"
+ ALT="$\displaystyle = 1 + \frac{1}{1 + \sqrt{\dfrac{W}{h}}} + 0.32\cdot\left(\frac{1}{1 + \sqrt{\dfrac{W}{h}}}\right)^{3}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">57</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2075.png"
+ ALT="$\displaystyle m_{c}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="516" HEIGHT="93" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2076.png"
+ ALT="$\displaystyle = \begin{cases}\begin{array}{ll} 1 + \dfrac{1.4}{1 + \dfrac{W}{h}...
+... for } W / h \le 0.7\\ 1 &amp; \textrm{ for } W / h \ge 0.7 \end{array} \end{cases}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">58</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H3><A NAME="SECTION001214400000000000000">
+Getsinger</A>
+</H3>
+
+<P>
+Based upon measurements of dispersion curves for microstrip lines on
+alumina substrates 0.025 and 0.050 inch thick W. J. Getsinger
+[<A
+ HREF="node103.html#Getsinger">24</A>] developed a very simple , closed-form expression that
+allow slide-rule prediction of microstrip dispersion.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{r}(f) = \varepsilon_{r} - \frac{\varepsilon_{r} - \varepsilon_{r_{eff}}}{1 + G\cdot \left(\dfrac{f}{f_{p}}\right)^{2}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="201" HEIGHT="88" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2077.png"
+ ALT="$\displaystyle \varepsilon_{r}(f) = \varepsilon_{r} - \frac{\varepsilon_{r} - \varepsilon_{r_{eff}}}{1 + G\cdot \left(\dfrac{f}{f_{p}}\right)^{2}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">59</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2078.png"
+ ALT="$\displaystyle f_{p}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2079.png"
+ ALT="$\displaystyle = \frac{Z_{L}}{2\mu_{0} h}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+<A NAME="eq:GetFp">(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">60</SPAN>)</A></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2080.png"
+ ALT="$\displaystyle G$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="127" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2081.png"
+ ALT="$\displaystyle = 0.6 + 0.009\cdot Z_{L}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+<A NAME="eq:GetG">(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">61</SPAN>)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Also based upon measurements of microstrip lines 0.1, 0.25 and 0.5
+inch in width on a 0.250 inch thick alumina substrate Getsinger
+[<A
+ HREF="node103.html#Getsinger2">25</A>] developed two different dispersion models for the
+characteristic impedance.
+
+<P>
+
+<UL>
+<LI>wave impedance model published in [<A
+ HREF="node103.html#Getsinger2">25</A>]
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Z_{L}(f) = Z_{L}\cdot\sqrt{\frac{\varepsilon_{r_{eff}}}{\varepsilon_{r}(f)}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="153" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2082.png"
+ ALT="$\displaystyle Z_{L}(f) = Z_{L}\cdot\sqrt{\frac{\varepsilon_{r_{eff}}}{\varepsilon_{r}(f)}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">62</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+</LI>
+<LI>group-delay model published in [<A
+ HREF="node103.html#Getsinger3">26</A>]
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Z_{L}(f) = Z_{L}\cdot\sqrt{\frac{\varepsilon_{r}(f)}{\varepsilon_{r_{eff}}}}\cdot\frac{1}{1 + D(f)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="230" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2083.png"
+ ALT="$\displaystyle Z_{L}(f) = Z_{L}\cdot\sqrt{\frac{\varepsilon_{r}(f)}{\varepsilon_{r_{eff}}}}\cdot\frac{1}{1 + D(f)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">63</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2084.png"
+ ALT="$\displaystyle D(f)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="225" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2085.png"
+ ALT="$\displaystyle = \frac{\left(\varepsilon_{r} - \varepsilon_{r}(f)\right)\cdot\le...
+...)}{\varepsilon_{r}(f)\cdot\left(\varepsilon_{r} - \varepsilon_{r_{eff}}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">64</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+</LI>
+</UL>
+
+<P>
+
+<H3><A NAME="SECTION001214500000000000000">
+Hammerstad and Jensen</A>
+</H3>
+
+<P>
+The dispersion formulae of E. Hammerstad and &#216;. Jensen
+[<A
+ HREF="node103.html#Hammerstad">18</A>] give good results for all types of substrates (not
+as limited as Getsinger's formulae).  The impedance dispersion model
+is based upon a parallel-plate model using the theory of dielectrics.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{r}(f) = \varepsilon_{r} - \frac{\varepsilon_{r} - \varepsilon_{r_{eff}}}{1 + G\cdot \left(\dfrac{f}{f_{p}}\right)^{2}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="201" HEIGHT="88" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2077.png"
+ ALT="$\displaystyle \varepsilon_{r}(f) = \varepsilon_{r} - \frac{\varepsilon_{r} - \varepsilon_{r_{eff}}}{1 + G\cdot \left(\dfrac{f}{f_{p}}\right)^{2}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">65</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2078.png"
+ ALT="$\displaystyle f_{p}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2079.png"
+ ALT="$\displaystyle = \frac{Z_{L}}{2\mu_{0} h}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">66</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2080.png"
+ ALT="$\displaystyle G$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="174" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2086.png"
+ ALT="$\displaystyle = \frac{\pi^{2}}{12}\cdot\frac{\varepsilon_{r} - 1}{\varepsilon_{r_{eff}}}\cdot\sqrt{\frac{2\pi\cdot Z_{L}}{Z_{F0}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">67</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Z_{L}(f) = Z_{L}\cdot\sqrt{\frac{\varepsilon_{r_{eff}}}{\varepsilon_{r}(f)}}\cdot\frac{\varepsilon_{r}(f) - 1}{\varepsilon_{r_{eff}} - 1}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="231" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2087.png"
+ ALT="$\displaystyle Z_{L}(f) = Z_{L}\cdot\sqrt{\frac{\varepsilon_{r_{eff}}}{\varepsilon_{r}(f)}}\cdot\frac{\varepsilon_{r}(f) - 1}{\varepsilon_{r_{eff}} - 1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">68</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H3><A NAME="SECTION001214600000000000000">
+Edwards and Owens</A>
+</H3>
+
+<P>
+The authors T. C. Edwards and R. P. Owens [<A
+ HREF="node103.html#Edwards2">27</A>] developed a
+dispersion formula based upon measurements of microstrip lines on
+sapphire in the range <!-- MATH
+ $10\ohm \le Z_L \le 100\ohm$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="129" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2088.png"
+ ALT="$ 10\ohm \le Z_L \le 100\ohm$"></SPAN> and up to
+<!-- MATH
+ $18\giga\hertz$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="51" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2089.png"
+ ALT="$ 18\giga\hertz$"></SPAN>.  The procedure was repeated for several microstrip
+width-to-substrate-height ratios (<SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2090.png"
+ ALT="$ W/h$"></SPAN>) between 0.1 and 10.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{r}(f) = \varepsilon_{r} - \dfrac{\varepsilon_{r} - \varepsilon_{r_{eff}}}{1 + P}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="166" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2091.png"
+ ALT="$\displaystyle \varepsilon_{r}(f) = \varepsilon_{r} - \dfrac{\varepsilon_{r} - \varepsilon_{r_{eff}}}{1 + P}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">69</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+P = \left(\dfrac{h}{Z_{L}}\right)^{1.33}\cdot\left(0.43 f^2 - 0.009 f^3\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="255" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2092.png"
+ ALT="$\displaystyle P = \left(\dfrac{h}{Z_{L}}\right)^{1.33}\cdot\left(0.43 f^2 - 0.009 f^3\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">70</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img442.png"
+ ALT="$ h$"></SPAN> is in millimeters and <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.png"
+ ALT="$ f$"></SPAN> is in gigahertz.  Their new
+dispersion equation involving the polynomial, which was developed to
+predict the fine detail of the experimental <!-- MATH
+ $\varepsilon_{r}(f)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2056.png"
+ ALT="$ \varepsilon_{r}(f)$"></SPAN>
+versus frequency curves, includes two empicical parameters.  However,
+it seems the formula is not too sensitive to changes in substrate
+parameters.
+
+<P>
+
+<H3><A NAME="SECTION001214700000000000000">
+Pramanick and Bhartia</A>
+</H3>
+
+<P>
+P. Bhartia and P. Pramanick [<A
+ HREF="node103.html#Pramanick1">28</A>] developed dispersion
+equations without any empirical quantity.  Their work expresses
+dispersion of the dielectric constant and characteristic impedance in
+terms of a single inflection frequency.
+
+<P>
+<P>
+For the frequency-dependent relative dielectric constant they propose
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{r}(f) = \varepsilon_{r} - \dfrac{\varepsilon_{r} - \varepsilon_{r_{eff}}}{1 + \left(\dfrac{f}{f_T}\right)^2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="178" HEIGHT="89" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2093.png"
+ ALT="$\displaystyle \varepsilon_{r}(f) = \varepsilon_{r} - \dfrac{\varepsilon_{r} - \varepsilon_{r_{eff}}}{1 + \left(\dfrac{f}{f_T}\right)^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">71</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+f_T = \sqrt{\dfrac{\varepsilon_{r}}{\varepsilon_{r_{eff}}}}\cdot \dfrac{Z_L}{2\mu_0 h}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="143" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2094.png"
+ ALT="$\displaystyle f_T = \sqrt{\dfrac{\varepsilon_{r}}{\varepsilon_{r_{eff}}}}\cdot \dfrac{Z_L}{2\mu_0 h}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">72</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Dispersion of the characteristic impedance is accounted by
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Z_L(f) = \dfrac{Z_{F0}\cdot h}{W_e(f)\cdot \sqrt{\varepsilon_r(f)}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2095.png"
+ ALT="$\displaystyle Z_L(f) = \dfrac{Z_{F0}\cdot h}{W_e(f)\cdot \sqrt{\varepsilon_r(f)}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">73</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+whence
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+W_e(f) = W + \dfrac{W_{eff} - W}{1 + \left(\dfrac{f}{f_T}\right)^2}
+\;\;\;\; \textrm{ and } \;\;\;\;
+W_{eff} = \dfrac{Z_{F0}\cdot h}{Z_L\cdot \sqrt{\varepsilon_{r_{eff}}}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="398" HEIGHT="89" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2096.png"
+ ALT="$\displaystyle W_e(f) = W + \dfrac{W_{eff} - W}{1 + \left(\dfrac{f}{f_T}\right)^...
+...\;\;\;\; W_{eff} = \dfrac{Z_{F0}\cdot h}{Z_L\cdot \sqrt{\varepsilon_{r_{eff}}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">74</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H3><A NAME="SECTION001214800000000000000">
+Schneider</A>
+</H3>
+
+<P>
+Martin V. Schneider [<A
+ HREF="node103.html#Schneider1">29</A>] proposed the following equation
+for the dispersion of the effective dielectric constant of a single
+microstrip line.  The estimated error is less than 3%.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_r(f) = \varepsilon_{r_{eff}}\cdot \left(\dfrac{1 + f_n^2}{1 + k\cdot f_n^2}\right)^2
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="204" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2097.png"
+ ALT="$\displaystyle \varepsilon_r(f) = \varepsilon_{r_{eff}}\cdot \left(\dfrac{1 + f_n^2}{1 + k\cdot f_n^2}\right)^2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">75</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+f_n = \dfrac{4 h \cdot f \cdot \sqrt{\varepsilon_r - 1}}{c_0}
+\;\;\;\; \textrm{ and } \;\;\;\;
+k = \sqrt{\dfrac{\varepsilon_{r_{eff}}}{\varepsilon_r}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="301" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2098.png"
+ ALT="$\displaystyle f_n = \dfrac{4 h \cdot f \cdot \sqrt{\varepsilon_r - 1}}{c_0} \;\...
+...\textrm{ and } \;\;\;\; k = \sqrt{\dfrac{\varepsilon_{r_{eff}}}{\varepsilon_r}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">76</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+For the dispersion of the characteristic impedance he uses the same
+wave guide impedance model as Getsinger in his first approach to the
+problem.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Z_L(f) = Z_L\cdot \sqrt{\dfrac{\varepsilon_{r_{eff}}}{\varepsilon_r(f)}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="153" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2099.png"
+ ALT="$\displaystyle Z_L(f) = Z_L\cdot \sqrt{\dfrac{\varepsilon_{r_{eff}}}{\varepsilon_r(f)}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">77</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION001215000000000000000">
+Transmission losses</A>
+</H2>
+
+<P>
+The attenuation of a microstrip line consists of conductor (ohmic)
+losses, dielectric (substrate) losses, losses due to radiation and
+propagation of surface waves and higher order modes.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\alpha = \alpha_c + \alpha_d + \alpha_r + \alpha_s
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="162" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2100.png"
+ ALT="$\displaystyle \alpha = \alpha_c + \alpha_d + \alpha_r + \alpha_s$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">78</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H3><A NAME="SECTION001215100000000000000">
+Dielectric losses</A>
+</H3>
+
+<P>
+Dielectric loss is due to the effects of finite loss tangent
+<!-- MATH
+ $\tan{\delta_d}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2101.png"
+ ALT="$ \tan{\delta_d}$"></SPAN>. Basically the losses rise proportional over the
+operating frequency.  For common microwave substrate materials like
+<SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2102.png"
+ ALT="$ Al_2O_3$"></SPAN> ceramics with a loss tangent <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2103.png"
+ ALT="$ \delta_d$"></SPAN> less than <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2104.png"
+ ALT="$ 10^{-3}$"></SPAN>
+the dielectric losses can be neglected compared to the conductor
+losses.
+
+<P>
+<P>
+For the inhomogeneous line, an effective dielectric filling fraction
+give that proportion of the transmission line's cross section not
+filled by air.  For microstrip lines, the result is
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:alpha_d"></A><!-- MATH
+ \begin{equation}
+\alpha_d = \dfrac{\varepsilon_r}{\sqrt{\varepsilon_{r_{eff}}}}\cdot \dfrac{\varepsilon_{r_{eff}} - 1}{\varepsilon_r - 1}\cdot \dfrac{\pi}{\lambda_0}\cdot \tan{\delta_d}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="249" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2105.png"
+ ALT="$\displaystyle \alpha_d = \dfrac{\varepsilon_r}{\sqrt{\varepsilon_{r_{eff}}}}\cd...
+..._{eff}} - 1}{\varepsilon_r - 1}\cdot \dfrac{\pi}{\lambda_0}\cdot \tan{\delta_d}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">79</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+whereas
+
+<P>
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2103.png"
+ ALT="$ \delta_d$"></SPAN></TD>
+<TD ALIGN="LEFT">dielectric loss tangent</TD>
+</TR>
+</TABLE>
+
+<P>
+
+<H3><A NAME="SECTION001215200000000000000">
+Conductor losses</A>
+</H3>
+
+<P>
+E. Hammerstad and &#216;. Jensen [<A
+ HREF="node103.html#Hammerstad">18</A>] proposed the following
+equation for the conductor losses.  The surface roughness of the
+substrate is necessary to account for an asymptotic increase seen in
+the apparent surface resistance with decreasing skin depth.  This
+effect is considered by the correction factor <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2106.png"
+ ALT="$ K_r$"></SPAN>.  The current
+distribution factor <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2107.png"
+ ALT="$ K_i$"></SPAN> is a very good approximation provided that
+the strip thickness exceeds three skin depths (<!-- MATH
+ $t > 3\delta$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2108.png"
+ ALT="$ t &gt; 3\delta$"></SPAN>).
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\alpha_c = \dfrac{R^{\boxempty}}{Z_L \cdot W}\cdot K_r \cdot K_i
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="151" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2109.png"
+ ALT="$\displaystyle \alpha_c = \dfrac{R^{\boxempty}}{Z_L \cdot W}\cdot K_r \cdot K_i$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">80</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2110.png"
+ ALT="$\displaystyle R^{\boxempty}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="224" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2111.png"
+ ALT="$\displaystyle = \dfrac{\rho}{\delta} = \sqrt{\rho\cdot\dfrac{\omega \cdot \mu}{2}} = \sqrt{\rho\cdot\pi\cdot f \cdot \mu}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+<A NAME="eq:HandJRs">(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">81</SPAN>)</A></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2112.png"
+ ALT="$\displaystyle K_i$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="180" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2113.png"
+ ALT="$\displaystyle = \exp{\left(-1.2\left(\dfrac{Z_L}{Z_{F0}}\right)^{0.7}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+<A NAME="eq:HandJKi">(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">82</SPAN>)</A></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2114.png"
+ ALT="$\displaystyle K_r$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="207" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2115.png"
+ ALT="$\displaystyle = 1 + \dfrac{2}{\pi}\arctan{\left(1.4\left(\dfrac{\Delta}{\delta}\right)^2\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">83</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+whereas
+
+<P>
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="RIGHT"><!-- MATH
+ $R^{\boxempty}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2116.png"
+ ALT="$ R^{\boxempty}$"></SPAN></TD>
+<TD ALIGN="LEFT">sheet resistance of conductor material (skin resistance)</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2117.png"
+ ALT="$ \rho$"></SPAN></TD>
+<TD ALIGN="LEFT">specific resistance of conductor</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2118.png"
+ ALT="$ \delta$"></SPAN></TD>
+<TD ALIGN="LEFT">skin depth</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2107.png"
+ ALT="$ K_i$"></SPAN></TD>
+<TD ALIGN="LEFT">current distribution factor</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2106.png"
+ ALT="$ K_r$"></SPAN></TD>
+<TD ALIGN="LEFT">correction term due to surface roughness</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img120.png"
+ ALT="$ \Delta$"></SPAN></TD>
+<TD ALIGN="LEFT">effective (rms) surface roughness of substrate</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2119.png"
+ ALT="$ Z_{F0}$"></SPAN></TD>
+<TD ALIGN="LEFT">wave impedance in vacuum</TD>
+</TR>
+</TABLE>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1794"
+  HREF="node76.html">Microstrip corner</A>
+<B>Up:</B> <A NAME="tex2html1790"
+  HREF="node74.html">Microstrip components</A>
+<B> Previous:</B> <A NAME="tex2html1784"
+  HREF="node74.html">Microstrip components</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

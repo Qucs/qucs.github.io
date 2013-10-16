@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Introduction and definition</TITLE>
+<META NAME="description" CONTENT="Introduction and definition">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node4.html">
+<LINK REL="previous" HREF="node2.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node4.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html656"
+  HREF="node4.html">Waves on Transmission Lines</A>
+<B>Up:</B> <A NAME="tex2html652"
+  HREF="node2.html">Scattering parameters</A>
+<B> Previous:</B> <A NAME="tex2html646"
+  HREF="node2.html">Scattering parameters</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00210000000000000000">
+Introduction and definition</A>
+</H1>
+
+<P>
+Voltage and current are hard to measure at high frequencies.  Short
+and open circuits (used by definitions of most n-port parameters) are
+hard to realize at high frequencies.  Therefore, microwave engineers
+work with so-called scattering parameters (S parameters), that uses
+waves and matched terminations (normally <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$ 50 \Omega$"></SPAN>).  This procedure
+also minimizes reflection problems.
+
+<P>
+<P>
+A (normalized) wave is defined as ingoing wave <!-- MATH
+ $\underline{a}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$ \underline{a}$"></SPAN> or
+outgoing wave <!-- MATH
+ $\underline{b}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$ \underline{b}$"></SPAN>:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="equ:waves"></A><!-- MATH
+ \begin{equation}
+\underline{a} =
+  \underbrace{\dfrac{\underline{u}+\underline{Z}_0\cdot \underline{i}}{2}}_{\underline{U}_{forward}}
+  \cdot \dfrac{1}{\sqrt{|\text{Re}\underline{Z}_0)|}}
+\qquad\qquad
+\underline{b} =
+  \underbrace{\dfrac{\underline{u}-\underline{Z}_0^*\cdot \underline{i}}{2}}_{\underline{U}_{backward}}
+  \cdot \dfrac{1}{\sqrt{|\text{Re}\underline{Z}_0)|}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="429" HEIGHT="88" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$\displaystyle \underline{a} = \underbrace{\dfrac{\underline{u}+\underline{Z}_0\...
+...line{U}_{backward}} \cdot \dfrac{1}{\sqrt{\vert\text{Re}\underline{Z}_0)\vert}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ $\underline{u}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$ \underline{u}$"></SPAN> is (effective) voltage, <!-- MATH
+ $\underline{i}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.png"
+ ALT="$ \underline{i}$"></SPAN>
+(effective) current flowing into the device and <!-- MATH
+ $\underline{Z}_0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$ \underline{Z}_0$"></SPAN> reference
+impedance. The waves are related to power in the following way.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+P = \left( |\underline{a}|^2 - |\underline{b}|^2 \right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="118" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$\displaystyle P = \left( \vert\underline{a}\vert^2 - \vert\underline{b}\vert^2 \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Sometimes waves are defined with peak voltages and peak currents.
+The only difference that appears then is the relation to power:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+P = \frac{1}{2}\cdot \left( |\underline{a}|^2 - |\underline{b}|^2 \right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="143" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$\displaystyle P = \frac{1}{2}\cdot \left( \vert\underline{a}\vert^2 - \vert\underline{b}\vert^2 \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Now, characterizing an n-port is straight-forward:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{pmatrix}
+\underline{b}_1\\
+\vdots\\
+\underline{b}_n\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+\underline{S}_{11} & \ldots & \underline{S}_{1n}\\
+\vdots & \ddots & \vdots\\
+\underline{S}_{n1} & \ldots & \underline{S}_{nn}\\
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+\underline{a}_1\\
+\vdots\\
+\underline{a}_n\\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="259" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$\displaystyle \begin{pmatrix}\underline{b}_1\\ \vdots\\ \underline{b}_n\\ \end{...
+...\cdot \begin{pmatrix}\underline{a}_1\\ \vdots\\ \underline{a}_n\\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">4</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+One final note: The reference impedance <!-- MATH
+ $\underline{Z}_0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$ \underline{Z}_0$"></SPAN> can be
+arbitrary chosen. It normally is real, and there is no urgent
+reason to use a complex one. The definitions in equation
+<A HREF="#equ:waves">1.1</A>, however, are made form complex impedances. These
+ones stem from [<A
+ HREF="node103.html#Kurokawa">1</A>], where they are named "power waves".
+These power waves are a useful way to define waves with complex
+reference impedances, but they differ from the waves introduced
+in the following chapter. For real reference impedances both
+definitions equal each other.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html656"
+  HREF="node4.html">Waves on Transmission Lines</A>
+<B>Up:</B> <A NAME="tex2html652"
+  HREF="node2.html">Scattering parameters</A>
+<B> Previous:</B> <A NAME="tex2html646"
+  HREF="node2.html">Scattering parameters</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

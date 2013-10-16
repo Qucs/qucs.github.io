@@ -1,0 +1,484 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Noise Parameters</TITLE>
+<META NAME="description" CONTENT="Noise Parameters">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node10.html">
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node10.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html738"
+  HREF="node10.html">Noise Wave Correlation Matrix</A>
+<B>Up:</B> <A NAME="tex2html734"
+  HREF="node7.html">Noise Waves</A>
+<B> Previous:</B> <A NAME="tex2html728"
+  HREF="node8.html">Definition</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00320000000000000000">
+Noise Parameters</A>
+</H1>
+
+<P>
+Having the noise wave correlation matrix, one can easily compute the
+noise parameters [<A
+ HREF="node103.html#Wedge">5</A>].  The following equations calculate them
+with regard to port 1 (input) and port 2 (output).  (If one uses an
+n-port and want to calculate the noise parameters regarding to other
+ports, one has to replace the index numbers of S- and c-parameters
+accordingly.  I.e. replace "1" with the number of the input port and
+"2" with the number of the output port.)
+
+<P>
+<P>
+Noise figure:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:nparamF"></A><!-- MATH
+ \begin{equation}
+F = 1 + \frac{\underline{c}_{22}}{k\cdot T_0\cdot |\underline{S}_{21}|^2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="153" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img190.png"
+ ALT="$\displaystyle F = 1 + \frac{\underline{c}_{22}}{k\cdot T_0\cdot \vert\underline{S}_{21}\vert^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">4</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+NF\,[\text{dB}]\, = 10\cdot\lg F
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img191.png"
+ ALT="$\displaystyle NF\,[$">dB<IMG
+ WIDTH="88" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img192.png"
+ ALT="$\displaystyle ]\, = 10\cdot\lg F$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">5</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+<P>
+Optimal source reflection coefficient (normalized according to the input
+port impedance):
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\Gamma_{opt} = \eta_2\cdot\left( 1-\sqrt{1-\frac{1}{|\eta_2|^2}} \right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="211" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img193.png"
+ ALT="$\displaystyle \Gamma_{opt} = \eta_2\cdot\left( 1-\sqrt{1-\frac{1}{\vert\eta_2\vert^2}} \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">6</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+With
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\eta_1 = \underline{c}_{11}\cdot |\underline{S}_{21}|^2
+       - 2\cdot \text{Re}\left(\underline{c}_{12}\cdot\underline{S}_{21}\cdot\underline{S}_{11}^*\right)
+       + \underline{c}_{22}\cdot|\underline{S}_{11}|^2
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="147" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img194.png"
+ ALT="$\displaystyle \eta_1 = \underline{c}_{11}\cdot \vert\underline{S}_{21}\vert^2 - 2\cdot$">&nbsp; &nbsp;Re<IMG
+ WIDTH="194" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.png"
+ ALT="$\displaystyle \left(\underline{c}_{12}\cdot\underline{S}_{21}\cdot\underline{S}_{11}^*\right) + \underline{c}_{22}\cdot\vert\underline{S}_{11}\vert^2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">7</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\eta_2 = \frac{1}{2}\cdot\frac{\underline{c}_{22} + \eta_1}
+              {\underline{c}_{22}\cdot\underline{S}_{11} - \underline{c}_{12}\cdot\underline{S}_{21}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="193" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img196.png"
+ ALT="$\displaystyle \eta_2 = \frac{1}{2}\cdot\frac{\underline{c}_{22} + \eta_1} {\underline{c}_{22}\cdot\underline{S}_{11} - \underline{c}_{12}\cdot\underline{S}_{21}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">8</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+<P>
+Minimum noise figure:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+F_{min} = 1 + \frac{\underline{c}_{22} - \eta_1\cdot |\Gamma_{opt}|^2}
+                   {k\cdot T_0\cdot |\underline{S}_{21}|^2\cdot (1+|\Gamma_{opt}|^2)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="269" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img197.png"
+ ALT="$\displaystyle F_{min} = 1 + \frac{\underline{c}_{22} - \eta_1\cdot \vert\Gamma_...
+...cdot T_0\cdot \vert\underline{S}_{21}\vert^2\cdot (1+\vert\Gamma_{opt}\vert^2)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">9</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+NF_{min} = 10\cdot \lg F_{min}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="152" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img198.png"
+ ALT="$\displaystyle NF_{min} = 10\cdot \lg F_{min}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">10</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+<P>
+Equivalent noise resistance:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:nparamRn"></A><!-- MATH
+ \begin{equation}
+R_n = \frac{Z_{port,in}}{4\cdot k\cdot T_0}\cdot
+      \left( \underline{c}_{11} - 2\cdot
+      \text{Re}\left( \underline{c}_{12}\cdot\left( \frac{1+\underline{S}_{11}}{\underline{S}_{21}} \right)^*
+      \right)\, + \underline{c}_{22}\cdot
+      \left| \frac{1+\underline{S}_{11}}{\underline{S}_{21}} \right|^2 \right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="489" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img199.png"
+ ALT="$\displaystyle R_n = \frac{Z_{port,in}}{4\cdot k\cdot T_0}\cdot \left( \underlin...
+...left\vert \frac{1+\underline{S}_{11}}{\underline{S}_{21}} \right\vert^2 \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">11</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">With</TD>
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;<!-- MATH
+ $Z_{port,in}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="55" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img200.png"
+ ALT="$ Z_{port,in}$"></SPAN> internal impedance of input port</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;Boltzmann constant <!-- MATH
+ $k = 1.380658\cdot 10^{-23}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="143" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img201.png"
+ ALT="$ k = 1.380658\cdot 10^{-23}$"></SPAN> J/K</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;standard temperature <SPAN CLASS="MATH"><IMG
+ WIDTH="65" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.png"
+ ALT="$ T_0 = 290$"></SPAN>K</TD>
+</TR>
+</TABLE>
+
+<P>
+<P>
+Calculating the noise wave correlation coefficients from the noise
+parameters is straightforward as well.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{c}_{11} = k\cdot T_{min}\cdot (|S_{11}|^2-1) + K_x\cdot |1-S_{11}\cdot\Gamma_{opt}|^2
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="342" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img203.png"
+ ALT="$\displaystyle \underline{c}_{11} = k\cdot T_{min}\cdot (\vert S_{11}\vert^2-1) + K_x\cdot \vert 1-S_{11}\cdot\Gamma_{opt}\vert^2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">12</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{c}_{22} = |S_{21}|^2\cdot\left( k\cdot T_{min} + K_x\cdot|\Gamma_{opt}|^2 \right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="259" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.png"
+ ALT="$\displaystyle \underline{c}_{22} = \vert S_{21}\vert^2\cdot\left( k\cdot T_{min} + K_x\cdot\vert\Gamma_{opt}\vert^2 \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">13</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{c}_{12} =
+\underline{c}_{21}^* = -S_{21}^*\cdot\Gamma_{opt}^*\cdot K_x + \frac{S_{11}}{S_{21}}\cdot\underline{c}_{22}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="268" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img205.png"
+ ALT="$\displaystyle \underline{c}_{12} = \underline{c}_{21}^* = -S_{21}^*\cdot\Gamma_{opt}^*\cdot K_x + \frac{S_{11}}{S_{21}}\cdot\underline{c}_{22}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">14</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+K_x = \frac{4\cdot k\cdot T_0\cdot R_n}{Z_0\cdot|1+\Gamma_{opt}|^2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="150" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img206.png"
+ ALT="$\displaystyle K_x = \frac{4\cdot k\cdot T_0\cdot R_n}{Z_0\cdot\vert 1+\Gamma_{opt}\vert^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">15</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Once having the noise parameters, one can calculate the noise figure for
+every source admittance <!-- MATH
+ $Y_S=G_S+j\cdot B_s$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="120" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img207.png"
+ ALT="$ Y_S=G_S+j\cdot B_s$"></SPAN>, source impedance
+<!-- MATH
+ $Z_S=R_S+j\cdot X_s$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="123" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img208.png"
+ ALT="$ Z_S=R_S+j\cdot X_s$"></SPAN>, or source reflection coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img129.png"
+ ALT="$ r_S$"></SPAN>.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img209.png"
+ ALT="$\displaystyle F$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="168" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.png"
+ ALT="$\displaystyle = \frac{SNR_{in}}{SNR_{out}} = \frac{T_{equi}}{T_0} + 1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">16</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="330" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img211.png"
+ ALT="$\displaystyle = F_{min} + \frac{G_n}{R_S}\cdot\left( (R_S-R_{opt})^2 + (X_S-X_{opt})^2 \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">17</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="201" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img212.png"
+ ALT="$\displaystyle = F_{min} + \frac{G_n}{R_S}\cdot\left\vert \underline{Z}_S - \underline{Z}_{opt} \right\vert ^2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">18</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="329" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img213.png"
+ ALT="$\displaystyle = F_{min} + \frac{R_n}{G_S}\cdot\left( (G_S-G_{opt})^2 + (B_S-B_{opt})^2 \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">19</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="203" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img214.png"
+ ALT="$\displaystyle = F_{min} + \frac{R_n}{G_S}\cdot\left\vert \underline{Y}_S - \underline{Y}_{opt} \right\vert ^2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">20</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="291" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img215.png"
+ ALT="$\displaystyle = F_{min} + 4\cdot\frac{R_n}{Z_0}\cdot\frac{\left\vert \underline...
+...ine{r}_S\vert^2\right)\cdot\left\vert 1+\underline{\Gamma}_{opt}\right\vert ^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">21</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Where <SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img216.png"
+ ALT="$ SNR_{in}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img217.png"
+ ALT="$ SNR_{out}$"></SPAN> are the signal to noise ratios at the
+input and output, respectively, <SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img218.png"
+ ALT="$ T_{equi}$"></SPAN> is the equivalent (input)
+noise temperature.  Note that <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img219.png"
+ ALT="$ G_n$"></SPAN> does not equal <SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img220.png"
+ ALT="$ 1/R_n$"></SPAN>.
+
+<P>
+<P>
+All curves with constant noise figures are circles (in all planes,
+i.e. impedance, admittance and reflection coefficient).  A circle in
+the reflection coefficient plane has the following parameters.
+
+<P>
+<P>
+center point:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{r}_{center} = \frac{\Gamma_{opt}}{1+N}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="116" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img221.png"
+ ALT="$\displaystyle \underline{r}_{center} = \frac{\Gamma_{opt}}{1+N}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">22</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+radius:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+R = \frac{\sqrt{N^2 + N\cdot(1-|\Gamma_{opt}|^2)}}{1+N}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="206" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img222.png"
+ ALT="$\displaystyle R = \frac{\sqrt{N^2 + N\cdot(1-\vert\Gamma_{opt}\vert^2)}}{1+N}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">23</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+N = \frac{Z_0}{4\cdot R_n}\cdot (F-F_{min})\cdot |1+\Gamma_{opt}|^2
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="252" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img223.png"
+ ALT="$\displaystyle N = \frac{Z_0}{4\cdot R_n}\cdot (F-F_{min})\cdot \vert 1+\Gamma_{opt}\vert^2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">24</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html738"
+  HREF="node10.html">Noise Wave Correlation Matrix</A>
+<B>Up:</B> <A NAME="tex2html734"
+  HREF="node7.html">Noise Waves</A>
+<B> Previous:</B> <A NAME="tex2html728"
+  HREF="node8.html">Definition</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

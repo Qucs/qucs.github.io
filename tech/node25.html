@@ -1,0 +1,1161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Predictor-corrector methods</TITLE>
+<META NAME="description" CONTENT="Predictor-corrector methods">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node26.html">
+<LINK REL="previous" HREF="node24.html">
+<LINK REL="up" HREF="node23.html">
+<LINK REL="next" HREF="node26.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1022"
+  HREF="node26.html">Energy-storage components</A>
+<B>Up:</B> <A NAME="tex2html1018"
+  HREF="node23.html">Transient Analysis</A>
+<B> Previous:</B> <A NAME="tex2html1012"
+  HREF="node24.html">Integration methods</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1023"
+  HREF="node25.html#SECTION00721000000000000000">Order and local truncation error</A>
+<LI><A NAME="tex2html1024"
+  HREF="node25.html#SECTION00722000000000000000">Milne's estimate</A>
+<LI><A NAME="tex2html1025"
+  HREF="node25.html#SECTION00723000000000000000">Adaptive step-size control</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00720000000000000000">
+Predictor-corrector methods</A>
+</H1>
+
+<P>
+In section <A HREF="node24.html#sec:IntegrationMethods">6.1</A> on pages
+<A HREF="node24.html#sec:IntegrationMethods"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A> ff. various integration methods have
+been discussed.  The elementary as well as linear multistep methods
+(in order to get more accurate methods) always assumed <!-- MATH
+ $a_{-1} = -1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img497.png"
+ ALT="$ a_{-1} = -1$"></SPAN>
+in its general form.  Explicit methods were encountered by <!-- MATH
+ $b_{-1} =
+0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="57" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img460.png"
+ ALT="$ b_{-1} = 0$"></SPAN> and implicit methods by <!-- MATH
+ $b_{-1} \ne 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="57" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img461.png"
+ ALT="$ b_{-1}
+\ne 0$"></SPAN>.  Implicit methods have been
+shown to have a limited area of stability and explicit methods to have
+a larger range of stability.  With increasing order <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN> the linear
+multistep methods interval of absolute stability (intersection of the
+area of absolute stability in the complex plane with the real axis)
+decreases except for the implicit Gear formulae.
+
+<P>
+<P>
+For these given reasons implicit methods can be used to obtain
+solutions of ordinary differential equation systems describing so
+called stiff problems.  Now considering e.g. the implicit
+Adams-Moulton formulae of order 3
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:AM3"></A><!-- MATH
+ \begin{equation}
+x^{n+1} = x^{n} + h\cdot \dfrac{5}{12}\cdot f^{n+1} + h\cdot \dfrac{8}{12}\cdot f^{n} - h\cdot \dfrac{1}{12}\cdot f^{n-1}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="367" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img498.png"
+ ALT="$\displaystyle x^{n+1} = x^{n} + h\cdot \dfrac{5}{12}\cdot f^{n+1} + h\cdot \dfrac{8}{12}\cdot f^{n} - h\cdot \dfrac{1}{12}\cdot f^{n-1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">30</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+clarifies that <SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img499.png"
+ ALT="$ f^{n+1}$"></SPAN> is necessary to calculate <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img439.png"
+ ALT="$ x^{n+1}$"></SPAN> (and the
+other way around as well).  Every implicit integration method has this
+particular property.  The above equation can be solved using
+iteration.  This iteration is said to be convergent if the integration
+method is consistent and zero-stable.  A linear multistep method that
+is at least first-order is called a consistent method.  Zero-stability
+and consistency are necessary for convergence.  The converse is also
+true.
+
+<P>
+<P>
+The iteration introduces a second index <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img56.png"
+ ALT="$ m$"></SPAN>.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:AM3iterate"></A><!-- MATH
+ \begin{equation}
+x^{n+1,m+1} = x^{n} + h\cdot \dfrac{5}{12}\cdot f^{n+1,m} + h\cdot \dfrac{8}{12}\cdot f^{n} - h\cdot \dfrac{1}{12}\cdot f^{n-1}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="413" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img500.png"
+ ALT="$\displaystyle x^{n+1,m+1} = x^{n} + h\cdot \dfrac{5}{12}\cdot f^{n+1,m} + h\cdot \dfrac{8}{12}\cdot f^{n} - h\cdot \dfrac{1}{12}\cdot f^{n-1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">31</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+This iteration will converge for an arbitrary initial guess
+<SPAN CLASS="MATH"><IMG
+ WIDTH="48" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img501.png"
+ ALT="$ x^{n+1,0}$"></SPAN> only limited by the step size <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img442.png"
+ ALT="$ h$"></SPAN>.  In practice successive
+iterations are processed unless
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\left|x^{n+1,m+1} - x^{n+1,m}\right| < \varepsilon_{abs} + \varepsilon_{rel}\cdot \left|x^{n+1,m}\right|
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="312" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img502.png"
+ ALT="$\displaystyle \left\vert x^{n+1,m+1} - x^{n+1,m}\right\vert &lt; \varepsilon_{abs} + \varepsilon_{rel}\cdot \left\vert x^{n+1,m}\right\vert$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">32</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The disadvantage for this method is that the number of iterations
+until it converges is unknown.  Alternatively it is possible to use a
+fixed number of correction steps.  A cheap way of providing a good
+initial guess <SPAN CLASS="MATH"><IMG
+ WIDTH="48" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img501.png"
+ ALT="$ x^{n+1,0}$"></SPAN> is using an explicit integration method,
+e.g. the Adams-Bashford formula of order 3.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:AB3"></A><!-- MATH
+ \begin{equation}
+x^{n+1,0} = x^{n} + h\cdot \dfrac{23}{12}\cdot f^{n} - h\cdot \dfrac{16}{12}\cdot f^{n-1} + h\cdot \dfrac{5}{12}\cdot f^{n-2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="377" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img503.png"
+ ALT="$\displaystyle x^{n+1,0} = x^{n} + h\cdot \dfrac{23}{12}\cdot f^{n} - h\cdot \dfrac{16}{12}\cdot f^{n-1} + h\cdot \dfrac{5}{12}\cdot f^{n-2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">33</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Equation (<A HREF="#eq:AB3">6.33</A>) requires no iteration process and can be used
+to obtain the initial guess.  The combination of evaluating a single
+explicit integration method (the predictor step) in order to provide a
+good initial guess for the successive evaluation of an implicit method
+(the corrector step) using iteration is called predictor-corrector
+method.  The motivation using an implicit integration method is its
+fitness for solving stiff problems.  The explicit method (though
+possibly unstable) is used to provide a good initial guess for the
+corrector steps.
+
+<P>
+
+<H2><A NAME="SECTION00721000000000000000">
+Order and local truncation error</A>
+</H2>
+
+<P>
+The order of an integration method results from the truncation error
+<!-- MATH
+ $\varepsilon_T$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img441.png"
+ ALT="$ \varepsilon_T$"></SPAN> which is defined as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_T = x\left(t^{n+1}\right) - x^{n+1}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="152" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img504.png"
+ ALT="$\displaystyle \varepsilon_T = x\left(t^{n+1}\right) - x^{n+1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">34</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+meaning the deviation of the exact solution <!-- MATH
+ $x\left(t^{n+1}\right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img505.png"
+ ALT="$ x\left(t^{n+1}\right)$"></SPAN>
+from the approximate solution <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img439.png"
+ ALT="$ x^{n+1}$"></SPAN> obtained by the integration
+method.  For explicit integration methods with <!-- MATH
+ $b_{-1} = 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="57" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img460.png"
+ ALT="$ b_{-1} = 0$"></SPAN> the local
+truncation error <!-- MATH
+ $\varepsilon_{LTE}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img506.png"
+ ALT="$ \varepsilon_{LTE}$"></SPAN> yields
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{LTE} = x\left(t^{n+1}\right) - x^{n+1}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="171" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img507.png"
+ ALT="$\displaystyle \varepsilon_{LTE} = x\left(t^{n+1}\right) - x^{n+1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">35</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+and for implicit integration methods with <!-- MATH
+ $b_{-1} \ne 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="57" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img461.png"
+ ALT="$ b_{-1}
+\ne 0$"></SPAN> it is
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{LTE} \approx x\left(t^{n+1}\right) - x^{n+1}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="171" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img508.png"
+ ALT="$\displaystyle \varepsilon_{LTE} \approx x\left(t^{n+1}\right) - x^{n+1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">36</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Going into equation (<A HREF="node24.html#eq:GenPurposeInt">6.11</A>) and setting <!-- MATH
+ $a_{-1} = -1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img497.png"
+ ALT="$ a_{-1} = -1$"></SPAN>
+the truncation error is defined as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:LTE"></A><!-- MATH
+ \begin{equation}
+\varepsilon_{LTE} = \sum^p_{i=-1} a_i\cdot x\left(t^{n-i}\right) + h \sum^p_{i=-1} b_i\cdot f(x\left(t^{n-i}\right), t^{n-i})
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="375" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img509.png"
+ ALT="$\displaystyle \varepsilon_{LTE} = \sum^p_{i=-1} a_i\cdot x\left(t^{n-i}\right) + h \sum^p_{i=-1} b_i\cdot f(x\left(t^{n-i}\right), t^{n-i})$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">37</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+With the Taylor series expansions
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="59" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img510.png"
+ ALT="$\displaystyle x\left(t^{n+i}\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="282" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img511.png"
+ ALT="$\displaystyle = x\left(t^{n}\right) + \dfrac{\left(ih\right)}{1!} \dot{x}\left(t^{n}\right) + \dfrac{\left(ih\right)^2}{2!} \ddot{x}\left(t^{n}\right) + \ldots$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">38</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="195" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img512.png"
+ ALT="$\displaystyle f(x\left(t^{n+i}\right), t^{n+i}) = \dot{x}\left(t^{n+i}\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="286" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img513.png"
+ ALT="$\displaystyle = \dot{x}\left(t^{n}\right) + \dfrac{\left(ih\right)}{1!} \ddot{x...
+...{n}\right) + \dfrac{\left(ih\right)^2}{2!} \dddot{x}\left(t^{n}\right) + \ldots$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">39</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+the local truncation error as defined by eq. (<A HREF="#eq:LTE">6.37</A>) can be
+written as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{LTE} = C_0\cdot x\left(t^n\right) + C_1 h\cdot \dot{x}\left(t^n\right) + C_2 h^2\cdot \ddot{x}\left(t^n\right) + \ldots
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="364" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img514.png"
+ ALT="$\displaystyle \varepsilon_{LTE} = C_0\cdot x\left(t^n\right) + C_1 h\cdot \dot{x}\left(t^n\right) + C_2 h^2\cdot \ddot{x}\left(t^n\right) + \ldots$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">40</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The error terms <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img515.png"
+ ALT="$ C_0$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img516.png"
+ ALT="$ C_1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img517.png"
+ ALT="$ C_2$"></SPAN> in their general form can then
+be expressed by the following equation.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:ErrorConstant"></A><!-- MATH
+ \begin{equation}
+C_{q} = -\dfrac{1}{q!}\cdot \sum_{i=-1}^{p-1} a_i\cdot \left(p - i\right)^{q} - \dfrac{1}{\left(q - 1\right)!} \sum_{i=-1}^{p-1} b_i\cdot \left(p - i\right)^{q - 1}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="400" HEIGHT="67" ALIGN="MIDDLE" BORDER="0"
+ SRC="img518.png"
+ ALT="$\displaystyle C_{q} = -\dfrac{1}{q!}\cdot \sum_{i=-1}^{p-1} a_i\cdot \left(p - ...
+...c{1}{\left(q - 1\right)!} \sum_{i=-1}^{p-1} b_i\cdot \left(p - i\right)^{q - 1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">41</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+A linear multistep integration method is of order <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN> if
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{LTE} = C_{k+1}\cdot h^{k+1}\cdot x^{(k+1)}\left(t^n\right) + O\left(h^{k+2}\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="304" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img519.png"
+ ALT="$\displaystyle \varepsilon_{LTE} = C_{k+1}\cdot h^{k+1}\cdot x^{(k+1)}\left(t^n\right) + O\left(h^{k+2}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">42</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The error constant <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img520.png"
+ ALT="$ C_{k+1}$"></SPAN> of an <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img521.png"
+ ALT="$ p$"></SPAN>-step integration method of
+order <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN> is then defined as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+C_{k+1} = -\dfrac{1}{\left(k + 1\right)!}\cdot \sum_{i=-1}^{p-1} a_i\cdot \left(p - i\right)^{k+1} - \dfrac{1}{k!} \sum_{i=-1}^{p-1} b_i\cdot \left(p - i\right)^k
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="420" HEIGHT="67" ALIGN="MIDDLE" BORDER="0"
+ SRC="img522.png"
+ ALT="$\displaystyle C_{k+1} = -\dfrac{1}{\left(k + 1\right)!}\cdot \sum_{i=-1}^{p-1} ...
+... i\right)^{k+1} - \dfrac{1}{k!} \sum_{i=-1}^{p-1} b_i\cdot \left(p - i\right)^k$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">43</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The practical computation of these error constants is now going to be
+explained using the Adams-Moulton formula of order 3 given by
+eq. (<A HREF="#eq:AM3">6.30</A>).  For this third order method with <!-- MATH
+ $a_{-1} = -1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img497.png"
+ ALT="$ a_{-1} = -1$"></SPAN>,
+<SPAN CLASS="MATH"><IMG
+ WIDTH="48" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img523.png"
+ ALT="$ a_0=1$"></SPAN>, <!-- MATH
+ $b_{-1}=5/12$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="81" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img524.png"
+ ALT="$ b_{-1}=5/12$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img525.png"
+ ALT="$ b_0=8/12$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="83" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img526.png"
+ ALT="$ b_1=-1/12$"></SPAN> the following
+values are obtained using eq. (<A HREF="#eq:ErrorConstant">6.41</A>).
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img527.png"
+ ALT="$\displaystyle C_0$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="202" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img528.png"
+ ALT="$\displaystyle = -\dfrac{1}{0!}\cdot\left(-1\cdot 2^0 + 1\cdot 1^0\right) = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">44</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img529.png"
+ ALT="$\displaystyle C_1$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="417" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img530.png"
+ ALT="$\displaystyle = -\dfrac{1}{1!}\cdot\left(-1\cdot 2^1 + 1\cdot 1^1\right) -\dfra...
+...\cdot\left(\dfrac{5}{12} 2^0 + \dfrac{8}{12} 1^0 - \dfrac{1}{12} 0^0\right) = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">45</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img531.png"
+ ALT="$\displaystyle C_2$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="417" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img532.png"
+ ALT="$\displaystyle = -\dfrac{1}{2!}\cdot\left(-1\cdot 2^2 + 1\cdot 1^2\right) -\dfra...
+...\cdot\left(\dfrac{5}{12} 2^1 + \dfrac{8}{12} 1^1 - \dfrac{1}{12} 0^1\right) = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">46</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img533.png"
+ ALT="$\displaystyle C_3$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="417" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img534.png"
+ ALT="$\displaystyle = -\dfrac{1}{3!}\cdot\left(-1\cdot 2^3 + 1\cdot 1^3\right) -\dfra...
+...\cdot\left(\dfrac{5}{12} 2^2 + \dfrac{8}{12} 1^2 - \dfrac{1}{12} 0^2\right) = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">47</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img535.png"
+ ALT="$\displaystyle C_4$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="441" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img536.png"
+ ALT="$\displaystyle = -\dfrac{1}{4!}\cdot\left(-1\cdot 2^4 + 1\cdot 1^4\right) -\dfra...
+...frac{5}{12} 2^3 + \dfrac{8}{12} 1^3 - \dfrac{1}{12} 0^3\right) = -\dfrac{1}{24}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">48</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+In similar ways it can be verified for each of the discussed linear
+multistep integration methods that
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+C_p = 0 \;\;\;\; \forall \;\;\;\; 0 \le p \le k
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="163" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img537.png"
+ ALT="$\displaystyle C_p = 0 \;\;\;\; \forall \;\;\;\; 0 \le p \le k$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">49</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The following table summarizes the error constants for the implicit
+Gear formulae (also called BDF - backward differention formulae).
+
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER" COLSPAN=6><SPAN>implicit Gear formulae (BDF)</SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><!-- MATH
+ $\fbox{steps $n$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="72" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img538.png"
+ ALT="\fbox{steps $n$}"></SPAN></TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">2</TD>
+<TD ALIGN="CENTER">3</TD>
+<TD ALIGN="CENTER">4</TD>
+<TD ALIGN="CENTER">5</TD>
+<TD ALIGN="CENTER">6</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><!-- MATH
+ $\fbox{order $k$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img539.png"
+ ALT="\fbox{order $k$}"></SPAN></TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">2</TD>
+<TD ALIGN="CENTER">3</TD>
+<TD ALIGN="CENTER">4</TD>
+<TD ALIGN="CENTER">5</TD>
+<TD ALIGN="CENTER">6</TD>
+</TR>
+<TR><TD ALIGN="RIGHT">error constant <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img520.png"
+ ALT="$ C_{k+1}$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $-\dfrac{1}{2}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img540.png"
+ ALT="$ -\dfrac{1}{2}$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $-\dfrac{2}{9}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img541.png"
+ ALT="$ -\dfrac{2}{9}$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $-\dfrac{3}{22}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img542.png"
+ ALT="$ -\dfrac{3}{22}$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $-\dfrac{12}{125}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img543.png"
+ ALT="$ -\dfrac{12}{125}$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $-\dfrac{10}{137}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img544.png"
+ ALT="$ -\dfrac{10}{137}$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\fbox{$-\dfrac{20}{343}$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="63" HEIGHT="69" ALIGN="MIDDLE" BORDER="0"
+ SRC="img545.png"
+ ALT="\fbox{$-\dfrac{20}{343}$}"></SPAN></TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+The following table summarizes the error constants for the explicit
+Gear formulae.
+
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER" COLSPAN=6><SPAN>explicit Gear formulae</SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><!-- MATH
+ $\fbox{steps $n$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="72" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img538.png"
+ ALT="\fbox{steps $n$}"></SPAN></TD>
+<TD ALIGN="CENTER">2</TD>
+<TD ALIGN="CENTER">3</TD>
+<TD ALIGN="CENTER">4</TD>
+<TD ALIGN="CENTER">5</TD>
+<TD ALIGN="CENTER">6</TD>
+<TD ALIGN="CENTER">7</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><!-- MATH
+ $\fbox{order $k$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img539.png"
+ ALT="\fbox{order $k$}"></SPAN></TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">2</TD>
+<TD ALIGN="CENTER">3</TD>
+<TD ALIGN="CENTER">4</TD>
+<TD ALIGN="CENTER">5</TD>
+<TD ALIGN="CENTER">6</TD>
+</TR>
+<TR><TD ALIGN="RIGHT">error constant <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img520.png"
+ ALT="$ C_{k+1}$"></SPAN></TD>
+<TD ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img546.png"
+ ALT="$ +1$"></SPAN></TD>
+<TD ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img546.png"
+ ALT="$ +1$"></SPAN></TD>
+<TD ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img546.png"
+ ALT="$ +1$"></SPAN></TD>
+<TD ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img546.png"
+ ALT="$ +1$"></SPAN></TD>
+<TD ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img546.png"
+ ALT="$ +1$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\fbox{$+1$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="48" ALIGN="MIDDLE" BORDER="0"
+ SRC="img547.png"
+ ALT="\fbox{$+1$}"></SPAN></TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+The following table summarizes the error constants for the explicit
+Adams-Bashford formulae.
+
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER" COLSPAN=6><SPAN>explicit Adams-Bashford</SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><!-- MATH
+ $\fbox{steps $n$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="72" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img538.png"
+ ALT="\fbox{steps $n$}"></SPAN></TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">2</TD>
+<TD ALIGN="CENTER">3</TD>
+<TD ALIGN="CENTER">4</TD>
+<TD ALIGN="CENTER">5</TD>
+<TD ALIGN="CENTER">6</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><!-- MATH
+ $\fbox{order $k$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img539.png"
+ ALT="\fbox{order $k$}"></SPAN></TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">2</TD>
+<TD ALIGN="CENTER">3</TD>
+<TD ALIGN="CENTER">4</TD>
+<TD ALIGN="CENTER">5</TD>
+<TD ALIGN="CENTER">6</TD>
+</TR>
+<TR><TD ALIGN="RIGHT">error constant <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img520.png"
+ ALT="$ C_{k+1}$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\dfrac{1}{2}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img548.png"
+ ALT="$ \dfrac{1}{2}$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\dfrac{5}{12}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img549.png"
+ ALT="$ \dfrac{5}{12}$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\dfrac{3}{8}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img550.png"
+ ALT="$ \dfrac{3}{8}$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\fbox{$\dfrac{251}{720}$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="50" HEIGHT="69" ALIGN="MIDDLE" BORDER="0"
+ SRC="img551.png"
+ ALT="\fbox{$\dfrac{251}{720}$}"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\dfrac{95}{288}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img552.png"
+ ALT="$ \dfrac{95}{288}$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\dfrac{19087}{60480}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img553.png"
+ ALT="$ \dfrac{19087}{60480}$"></SPAN></TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+The following table summarizes the error constants for the implicit
+Adams-Moulton formulae.
+
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER" COLSPAN=6><SPAN>implicit Adams-Moulton</SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><!-- MATH
+ $\fbox{steps $n$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="72" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img538.png"
+ ALT="\fbox{steps $n$}"></SPAN></TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">2</TD>
+<TD ALIGN="CENTER">3</TD>
+<TD ALIGN="CENTER">4</TD>
+<TD ALIGN="CENTER">5</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><!-- MATH
+ $\fbox{order $k$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img539.png"
+ ALT="\fbox{order $k$}"></SPAN></TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">2</TD>
+<TD ALIGN="CENTER">3</TD>
+<TD ALIGN="CENTER">4</TD>
+<TD ALIGN="CENTER">5</TD>
+<TD ALIGN="CENTER">6</TD>
+</TR>
+<TR><TD ALIGN="RIGHT">error constant <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img520.png"
+ ALT="$ C_{k+1}$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $-\dfrac{1}{2}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img540.png"
+ ALT="$ -\dfrac{1}{2}$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $-\dfrac{1}{12}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img554.png"
+ ALT="$ -\dfrac{1}{12}$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $-\dfrac{1}{24}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img555.png"
+ ALT="$ -\dfrac{1}{24}$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $-\dfrac{19}{720}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img556.png"
+ ALT="$ -\dfrac{19}{720}$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\fbox{$-\dfrac{3}{160}$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="63" HEIGHT="69" ALIGN="MIDDLE" BORDER="0"
+ SRC="img557.png"
+ ALT="\fbox{$-\dfrac{3}{160}$}"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $-\dfrac{863}{60480}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img558.png"
+ ALT="$ -\dfrac{863}{60480}$"></SPAN></TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<H2><A NAME="SECTION00722000000000000000">
+Milne's estimate</A>
+</H2>
+
+<P>
+The locale truncation error of the predictor of order <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img559.png"
+ ALT="$ k^{*}$"></SPAN> may be
+defined as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon^{*}_{LTE} = C^{*}_{k^{*}+1}\cdot h^{k^{*}+1}\cdot x^{(k^{*}+1)}\left(t^n\right) + O\left(h^{k^{*}+2}\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="335" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img560.png"
+ ALT="$\displaystyle \varepsilon^{*}_{LTE} = C^{*}_{k^{*}+1}\cdot h^{k^{*}+1}\cdot x^{(k^{*}+1)}\left(t^n\right) + O\left(h^{k^{*}+2}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">50</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+and that of the corresponding corrector method of order <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{LTE} = C_{k+1}\cdot h^{k+1}\cdot x^{(k+1)}\left(t^n\right) + O\left(h^{k+2}\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="304" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img519.png"
+ ALT="$\displaystyle \varepsilon_{LTE} = C_{k+1}\cdot h^{k+1}\cdot x^{(k+1)}\left(t^n\right) + O\left(h^{k+2}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">51</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+If a predictor and a corrector method with same orders <SPAN CLASS="MATH"><IMG
+ WIDTH="50" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img561.png"
+ ALT="$ k = k^{*}$"></SPAN> are
+used the locale truncation error of the predictor-corrector method
+yields
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{LTE} \approx \dfrac{C_{k+1}}{C^{*}_{k+1} - C_{k+1}}\cdot \left(x^{n+1, m} - x^{n+1, 0}\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="294" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img562.png"
+ ALT="$\displaystyle \varepsilon_{LTE} \approx \dfrac{C_{k+1}}{C^{*}_{k+1} - C_{k+1}}\cdot \left(x^{n+1, m} - x^{n+1, 0}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">52</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+This approximation is called Milne's estimate.
+
+<P>
+
+<H2><A NAME="SECTION00723000000000000000"></A>
+<A NAME="sec:stepsize"></A>
+<BR>
+Adaptive step-size control
+</H2>
+
+<P>
+For all numerical integration methods used for the transient analysis
+of electrical networks the choice of a proper step-size is essential.
+If the step-size is too large, the results become inaccurate or even
+completely wrong when the region of absolute stability is left.  And
+if the step-size is too small the calculation requires more time than
+necessary without raising the accuracy.  Usually a chosen initial
+step-size cannot be used overall the requested time of calculation.
+
+<P>
+<P>
+Basically a step-size <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img442.png"
+ ALT="$ h$"></SPAN> is chosen such that
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{LTE} < \varepsilon_{abs} + \varepsilon_{rel}\cdot \left|x^{n+1,m}\right|
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="204" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img563.png"
+ ALT="$\displaystyle \varepsilon_{LTE} &lt; \varepsilon_{abs} + \varepsilon_{rel}\cdot \left\vert x^{n+1,m}\right\vert$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">53</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Forming a step-error quotient
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+q = \dfrac{\varepsilon_{LTE}}{\varepsilon_{abs} + \varepsilon_{rel}\cdot \left|x^{n+1,m}\right|}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img564.png"
+ ALT="$\displaystyle q = \dfrac{\varepsilon_{LTE}}{\varepsilon_{abs} + \varepsilon_{rel}\cdot \left\vert x^{n+1,m}\right\vert}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">54</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+yields the following algorithm for the step-size control.  The initial
+step size <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.png"
+ ALT="$ h^0$"></SPAN> is chosen sufficiently small.  After each integration
+step every step-error quotient gets computed and the largest <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img566.png"
+ ALT="$ q_{max}$"></SPAN>
+is then checked.
+
+<P>
+<P>
+If <!-- MATH
+ $q_{max} > 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="66" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img567.png"
+ ALT="$ q_{max} &gt; 1$"></SPAN>, then a reduction of the current step-size is
+necessary.  As new step-size the following expression is used
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+h^n = \left(\dfrac{\varepsilon}{q_{max}}\right)^{\tfrac{1}{k + 1}}\cdot h^n
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="161" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img568.png"
+ ALT="$\displaystyle h^n = \left(\dfrac{\varepsilon}{q_{max}}\right)^{\tfrac{1}{k + 1}}\cdot h^n$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">55</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN> denoting the order of the corrector-predictor method and
+<!-- MATH
+ $\varepsilon < 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img569.png"
+ ALT="$ \varepsilon &lt; 1$"></SPAN> (e.g. <!-- MATH
+ $\approx 0.8)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img570.png"
+ ALT="$ \approx 0.8)$"></SPAN>.  If necessary the process must
+be repeated.
+
+<P>
+<P>
+If <!-- MATH
+ $q_{max} > 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="66" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img567.png"
+ ALT="$ q_{max} &gt; 1$"></SPAN>, then the calculated value in the current step gets
+accepted and the new step-size is
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+h^{n+1} = \left(\dfrac{\varepsilon}{q_{max}}\right)^{\tfrac{1}{k + 1}}\cdot h^n
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img571.png"
+ ALT="$\displaystyle h^{n+1} = \left(\dfrac{\varepsilon}{q_{max}}\right)^{\tfrac{1}{k + 1}}\cdot h^n$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">56</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1022"
+  HREF="node26.html">Energy-storage components</A>
+<B>Up:</B> <A NAME="tex2html1018"
+  HREF="node23.html">Transient Analysis</A>
+<B> Previous:</B> <A NAME="tex2html1012"
+  HREF="node24.html">Integration methods</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

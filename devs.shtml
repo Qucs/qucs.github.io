@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Qucs project: developers</title>
+<link href="qucsweb.css" rel="stylesheet"  type="text/css">
+<head>
+<body>
+
+<!-- include the common web page header using Apache Server-Side Includes (SSI) -->
+<!--#include virtual="/qucs-header.html" -->
+
+<div id="main">
+<hr>
+<h3>Developers</h3>
+
+<ul>
+<li>Frans Schreuder <a href="mailto:fransschreuder@gmail.com"><em>&lt;fransschreuder@gmail.com&gt;</em></a> - Admin of the project and gui programmer</li>
+<li>Michael Margraf <a href="mailto:michael.margraf@alumni.tu-berlin.de"><em>&lt;michael.margraf@alumni.tu-berlin.de&gt;</em></a> - founder of the project, GUI programmer (<b>not active anymore</b>)</li>
+<li>Stefan Jahn <a href="mailto:stefan@lkcc.org"><em>&lt;stefan@lkcc.org&gt;</em></a> - Programmer of simulator <b>(Not active anymore</b>)</li>
+<li>Mike Brinson <a href="mailto:mbrin72043@yahoo.co.uk"><em>&lt;mbrin72043@yahoo.co.uk&gt;</em></a> - testing, modelling and documentation, tutorial contributor</li>
+<li>Richard Crozier <a href="mailto:richard.crozier@yahoo.co.uk"><em>&lt;richard.crozier@yahoo.co.uk&gt;</em></a> - testing, modelling, octave.</li>
+<li>Guilherme Brondani Torri <a href="mailto:guitorri@gmail.com"></em>&lt;guitorri@gmail.com&gt;</em></a> - gui programmer / Qt4 devel.</li>
+<li>Clemens Novak <a href="mailto:clemens@familie-novak.net"></em>&lt;clemens@familie-novak.net&gt;</em></a> - gui programmer / Qt4 devel.</li>
+<li>Jens Flucke <a href="mailto:jens.flucke@gmail.com"><em>&lt;jens.flucke@gmail.com&gt;</em></a> - webpages and translator (now retired)</li>
+<li>Raimund Jacob <a href="mailto:raimi@lkcc.org"><em>&lt;raimi@lkcc.org&gt;</em></a> - tester and applyer of Stefan's patches, author of documentation</li>
+<li>Vincent Habchi <a href="mailto:10.50@free.fr"><em>&lt;10.50@free.fr&gt;</em></a> - coplanar line and filter synthesis code, documentation contributor</li>
+<li>Toyoyuki Ishikawa <a href="mailto:toyoishi@gmail.com"><em>&lt;toyoishi@gmail.com&gt;</em></a> - some filter synthesis code and attenuator synthesis</li>
+<li>Gopala Krishna A <a href="mailto:krishna.ggk@gmail.com"><em>&lt;krishna.ggk@gmail.com&gt;</em></a> - GUI programmer, Qt4 porter</li>
+
+<li>Helene Parruitte <a href="mailto:parruit@enseirb.fr"><em>&lt;parruit@enseirb.fr&gt;</em></a> - programmer of the Verilog-AMS interface</li>
+<li>Bastien Roucaries <a href="mailto:roucaries.bastien@gmail.com"><em>&lt;roucaries.bastien@gmail.com&gt;</em></a> - bondwire and rectangular waveguide model implementation</li>
+<li>Gunther Kraut <a href="mailto:gn.kraut@online.de"><em>&lt;gn.kraut@online.de&gt;</em></a> - equation solver contributions, exponential sources, author of documentation</li>
+<li>Andrea Zonca <a href="mailto:andrea.zonca@gmail.com"><em>&lt;andrea.zonca@gmail.com&gt;</em></a> - temperature model for rectangular waveguide</li>
+</ul>
+
+<h3>Translations</h3>
+
+Qucs is multilingual.  The application GUI can be translated into any
+language.  Also the internal help system is meant to be translated.
+Below the list of people helping us to translate the application GUI.
+The translations may not be up-to-date.  That's why you can check your
+favourite one and help to finish it or at least to keep it up-to-date.
+
+<p>
+<table border="0" cellpadding="4">
+<tr><td><ul><li>Radu Circa
+<a href="mailto:circa@mwt.ee.tu-berlin.de"><em>&lt;circa@mwt.ee.tu-berlin.de&gt;</em></a></li></ul></td>
+<td valign=top> - Romanian</td></tr>
+<tr><td><ul><li>Stefan Jahn
+<a href="mailto:stefan@lkcc.org"><em>&lt;stefan@lkcc.org&gt;</em></a></li></ul></td>
+<td valign=top> - German</td></tr>
+<tr><td><ul><li>Giorgio Luparia
+<a href="mailto:bitflesh@autistici.org"><em>&lt;bitflesh@autistici.org&gt;</em></a><br>
+Claudio Girardi
+<a href="mailto:claudio.girardi@virgilio.it"><em>&lt;claudio.girardi@virgilio.it&gt;</em></a></li></ul></td>
+<td valign=top> - Italian</td></tr>
+<tr><td><ul><li>Dariusz Pienkowski
+<a href="mailto:pienkows@mwt.ee.tu-berlin.de"><em>&lt;pienkows@mwt.ee.tu-berlin.de&gt;</em></a></li></ul></td>
+<td valign=top> - Polish</td></tr>
+<tr><td><ul><li>Vincent Habchi, F5RCS
+<a href="mailto:10.50@free.fr"><em>&lt;10.50@free.fr&gt;</em></a></li></ul></td>
+<td valign=top> - French</td></tr>
+<tr><td><ul><li>Luciano Franca
+<a href="mailto:luciano82@gmail.com"><em>&lt;luciano82@gmail.com&gt;</em></a><br>
+Helio de Sousa
+<a href="mailto:heliosp@ymail.com"><em>&lt;heliosp@ymail.com&gt;</em></a></li></ul></td>
+<td valign=top> - Portuguese</td></tr>
+<tr><td><ul><li>Jose L. Redrejo Rodriguez
+<a href="mailto:jredrejo@edu.juntaextremadura.net"><em>&lt;jredrejo@edu.juntaextremadura.net&gt;</em></a></li></ul></td>
+<td valign=top> - Spanish</td></tr>
+<tr><td><ul><li>Toyoyuki Ishikawa
+<a href="mailto:toyoishi@gmail.com"><em>&lt;toyoishi@gmail.com&gt;</em></a></li></ul></td>
+<td valign=top> - Japanese</td></tr>
+<tr><td><ul><li>Jozsef Bus
+<a href="mailto:busjozsi@gmail.com"><em>&lt;busjozsi@gmail.com&gt;</em></a></li></ul></td>
+<td valign=top> - Hungarian</td></tr>
+<tr><td><ul><li>Dotan Nahum
+<a href="mailto:dotanx@gmail.com"><em>&lt;dotanx@gmail.com&gt;</em></a></li></ul></td>
+<td valign=top> - Hebrew</td></tr>
+<tr><td><ul><li>Markus Gothe
+<a href="mailto:nietzschian@gmail.com"><em>&lt;nietzschian@gmail.com&gt;</em></a><br>
+Peter Landgren
+<a href="mailto:peter.talken@telia.com"><em>&lt;peter.talken@telia.com&gt;</em></a></li></ul></td>
+<td valign=top> - Swedish</td></tr>
+<tr><td><ul><li>Ozgur Cobanoglu
+<a href="mailto:ozgur.cobanoglu@cern.ch"><em>&lt;ozgur.cobanoglu@cern.ch&gt;</em></a><br>
+Onur Cobanoglu
+<a href="mailto:olmectheholy@gmail.com"><em>&lt;olmectheholy@gmail.com&gt;</em></a>
+</li></ul></td>
+<td valign=top> - Turkish</td></tr>
+<tr><td><ul><li>Igor Gorbounov
+<a href="mailto:igorbounov@topazelectro.ru"><em>&lt;igorbounov@topazelectro.ru&gt;</em></a></li></ul></td>
+<td valign=top> - Russian</td></tr>
+<tr><td><ul><li>Marek Straka
+<a href="mailto:marek@straka.info"><em>&lt;marek@straka.info&gt;</em></a><br>
+Martin Stejskal
+<a href="mailto:k1ll3r@email.cz"><em>&lt;k1ll3r@email.cz&gt;</em></a>
+</li></ul></td>
+<td valign=top> - Czech</td></tr>
+<tr><td><ul><li>Antoni Subirats
+<a href="mailto:antoni.subirats@gmail.com"><em>&lt;antoni.subirats@gmail.com&gt;</em></a></li></ul></td>
+<td valign=top> - Catalan</td></tr>
+<tr><td><ul><li>Dystryk
+<a href="mailto:dystryk@yandex.ru"><em>&lt;dystryk@yandex.ru&gt;</em></a></li></ul></td>
+<td valign=top> - Ukrainian</td></tr>
+<tr><td><ul><li>Chabane Noureddine
+<a href="mailto:nchabane@mail.cerist.dz"><em>&lt;nchabane@mail.cerist.dz&gt;</em></a></li></ul></td>
+<td valign=top> - Arabic</td></tr>
+<tr><td><ul><li>Erbol Keshubaev
+<a href="mailto:erba@bk.ru"><em>&lt;erba@bk.ru&gt;</em></a></li></ul></td>
+<td valign=top> - Kazakh</td></tr>
+</table>
+
+<h3>Joining us</h3>
+
+For supporting this project it would be very useful you know something
+about the following topics:
+
+<ul>
+<li>Programming C++</li>
+<li>Programming Qt&reg; by <a
+href="http://www.trolltech.com">Trolltech</a>&reg;</li>
+<li>Electrical Engineering (especially microwave technologies)</li>
+<li>numerical circuit simulations (S-Parameters, Harmonic Balance, ...)</li>
+<li>Common higher mathematics</li>
+<li>HTML & Co.</li>
+<li>Building packages for different OS's</li>
+<li>Testing software & Documentation</li>
+<li>... much more</li>
+</ul>
+
+<p>
+But also a lot of other work has to be done.  So please contact us to
+support this project.
+</p>
+
+<hr>
+</div>
+<!-- include the common web page footer using Apache Server-Side Includes (SSI) -->
+  <!--#include virtual="/qucs-footer.html" -->
+</body>
+</html>

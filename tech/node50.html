@@ -1,0 +1,705 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Non-ideal transformer</TITLE>
+<META NAME="description" CONTENT="Non-ideal transformer">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node51.html">
+<LINK REL="previous" HREF="node49.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node51.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1393"
+  HREF="node51.html">Attenuator</A>
+<B>Up:</B> <A NAME="tex2html1389"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1383"
+  HREF="node49.html">Symmetrical transformer</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1394"
+  HREF="node50.html#SECTION001091000000000000000">Mutual inductors with two or three of inductors</A>
+<LI><A NAME="tex2html1395"
+  HREF="node50.html#SECTION001092000000000000000">Mutual inductors with any number of inductors</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION001090000000000000000">
+Non-ideal transformer</A>
+</H1>
+
+<P>
+Many simulators support non-ideal transformers (e.g. mutual inductor
+in SPICE).  An often used model consists of finite inductances and an
+imperfect coupling (straw inductance).  This model has three
+parameters: Inductance of the primary coil <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.png"
+ ALT="$ L_1$"></SPAN>, inductance of the
+secondary coil <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img751.png"
+ ALT="$ L_2$"></SPAN> and the coupling factor <SPAN CLASS="MATH"><IMG
+ WIDTH="63" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img918.png"
+ ALT="$ k=0...1$"></SPAN>.
+
+<P>
+
+<H2><A NAME="SECTION001091000000000000000">
+Mutual inductors with two or three of inductors</A>
+</H2>
+
+<P>
+This model can be replaced by the equivalent circuit depicted in
+figure <A HREF="#fig:nitrafo">9.4</A>.  The values are calculated as follows.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="76" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img919.png"
+ ALT="$\displaystyle \textrm{turn ratio:}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="106" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img920.png"
+ ALT="$\displaystyle \qquad T = \sqrt{\frac{L_1}{L_2}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">42</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="138" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img921.png"
+ ALT="$\displaystyle \textrm{mutual inductance:}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="110" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img922.png"
+ ALT="$\displaystyle \qquad M = k\cdot L_1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">43</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="144" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img923.png"
+ ALT="$\displaystyle \textrm{primary inductance:}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="254" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img924.png"
+ ALT="$\displaystyle \qquad L_{1,new} = L_1 - M = L_1\cdot (1-k)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">44</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="157" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img925.png"
+ ALT="$\displaystyle \textrm{secondary inductance:}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="259" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img926.png"
+ ALT="$\displaystyle \qquad L_{2,new} = L_2 - \frac{M}{T^2} = L_2\cdot (1-k)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">45</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:nitrafo"></A><A NAME="9041"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 9.4:</STRONG>
+equivalent circuit of non-ideal transformer</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="336" HEIGHT="106" ALIGN="BOTTOM" BORDER="0"
+ SRC="img927.png"
+ ALT="\includegraphics[width=7.5cm]{nitrafo}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The Y-parameters of this component are:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="183" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img928.png"
+ ALT="$\displaystyle Y_{11} = Y_{44} = -Y_{41} = -Y_{14}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="135" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img929.png"
+ ALT="$\displaystyle = \frac{1}{j\omega\cdot L_1\cdot (1-k^2)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">46</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="183" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img930.png"
+ ALT="$\displaystyle Y_{22} = Y_{33} = -Y_{23} = -Y_{32}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="135" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img931.png"
+ ALT="$\displaystyle = \frac{1}{j\omega\cdot L_2\cdot (1-k^2)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">47</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="383" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img932.png"
+ ALT="$\displaystyle Y_{13} = Y_{31} = Y_{24} = Y_{42} = -Y_{12} = -Y_{21} = -Y_{34} = -Y_{43}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="176" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img933.png"
+ ALT="$\displaystyle = \frac{k}{j\omega\cdot\sqrt{L_1\cdot L_2}\cdot (1-k^2)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">48</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Furthermore, its S-parameters are:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+D = (k^2 - 1) \cdot \dfrac{\omega^2\cdot L_1\cdot L_2}{2\cdot Z_0} +
+    j\omega L_1 + j\omega L_2 + 2\cdot Z_0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="347" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img934.png"
+ ALT="$\displaystyle D = (k^2 - 1) \cdot \dfrac{\omega^2\cdot L_1\cdot L_2}{2\cdot Z_0} + j\omega L_1 + j\omega L_2 + 2\cdot Z_0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">49</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{14} = S_{41} = \frac{j\omega L_2 + 2\cdot Z_0}{D}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="187" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img935.png"
+ ALT="$\displaystyle S_{14} = S_{41} = \frac{j\omega L_2 + 2\cdot Z_0}{D}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">50</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{11} = S_{44} = 1 - S_{14}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="143" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img936.png"
+ ALT="$\displaystyle S_{11} = S_{44} = 1 - S_{14}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">51</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{23} = S_{32} = \frac{j\omega L_1 + 2\cdot Z_0}{D}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="187" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img937.png"
+ ALT="$\displaystyle S_{23} = S_{32} = \frac{j\omega L_1 + 2\cdot Z_0}{D}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">52</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{22} = S_{33} = 1 - S_{23}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="143" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img938.png"
+ ALT="$\displaystyle S_{22} = S_{33} = 1 - S_{23}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">53</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{12} = -S_{13} = S_{21} = -S_{24} = -S_{31} = S_{34} = -S_{42} = S_{43} =
+         \dfrac{j\omega\cdot k \cdot\sqrt{L_1\cdot L_2}}{D}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="518" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img939.png"
+ ALT="$\displaystyle S_{12} = -S_{13} = S_{21} = -S_{24} = -S_{31} = S_{34} = -S_{42} = S_{43} = \dfrac{j\omega\cdot k \cdot\sqrt{L_1\cdot L_2}}{D}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">54</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Also including an ohmic resistance <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img597.png"
+ ALT="$ R_1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img940.png"
+ ALT="$ R_2$"></SPAN> for each coil,
+leads to the following Y-parameters:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="183" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img928.png"
+ ALT="$\displaystyle Y_{11} = Y_{44} = -Y_{41} = -Y_{14}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="276" HEIGHT="81" ALIGN="MIDDLE" BORDER="0"
+ SRC="img941.png"
+ ALT="$\displaystyle = \dfrac{1}{j\omega\cdot L_1\cdot \left(1-k^2\cdot\dfrac{j\omega L_2}{j\omega L_2 + R_2}\right) + R_1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">55</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="183" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img930.png"
+ ALT="$\displaystyle Y_{22} = Y_{33} = -Y_{23} = -Y_{32}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="276" HEIGHT="81" ALIGN="MIDDLE" BORDER="0"
+ SRC="img942.png"
+ ALT="$\displaystyle = \dfrac{1}{j\omega\cdot L_2\cdot \left(1-k^2\cdot\dfrac{j\omega L_1}{j\omega L_1 + R_1}\right) + R_2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">56</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="214" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img943.png"
+ ALT="$\displaystyle Y_{13} = Y_{31} = Y_{24} = Y_{42} = -Y_{12}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="328" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img944.png"
+ ALT="$\displaystyle = -Y_{21} = -Y_{34} = -Y_{43} = k\cdot\frac{j\omega\sqrt{L_1\cdot L_2}}{j\omega\cdot L_2 + R_2}\cdot Y_{11}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">57</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Building the S-parameters leads to too large equations. Numerically
+converting the Y-parameters into S-parameters is therefore recommended.
+
+<P>
+<P>
+The MNA matrix entries during DC analysis and the noise correlation
+matrices of this transformer are:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{Y}) =
+\begin{pmatrix}
+ 1/R_1 & 0 & 0 & -1/R_1 \\
+ 0 &  1/R_2 & -1/R_2 & 0 \\
+ 0 & -1/R_2 &  1/R_2 & 0 \\
+-1/R_1 & 0 & 0 &  1/R_1 \\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="316" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img945.png"
+ ALT="$\displaystyle (\underline{Y}) = \begin{pmatrix}1/R_1 &amp; 0 &amp; 0 &amp; -1/R_1 \\ 0 &amp; 1/...
+...-1/R_2 &amp; 0 \\ 0 &amp; -1/R_2 &amp; 1/R_2 &amp; 0 \\ -1/R_1 &amp; 0 &amp; 0 &amp; 1/R_1 \\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">58</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{C}_Y) = 4\cdot k\cdot T\cdot
+\begin{pmatrix}
+ 1/R_1 & 0 & 0 & -1/R_1 \\
+ 0 &  1/R_2 & -1/R_2 & 0 \\
+ 0 & -1/R_2 &  1/R_2 & 0 \\
+-1/R_1 & 0 & 0 &  1/R_1 \\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="386" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img946.png"
+ ALT="$\displaystyle (\underline{C}_Y) = 4\cdot k\cdot T\cdot \begin{pmatrix}1/R_1 &amp; 0...
+...-1/R_2 &amp; 0 \\ 0 &amp; -1/R_2 &amp; 1/R_2 &amp; 0 \\ -1/R_1 &amp; 0 &amp; 0 &amp; 1/R_1 \\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">59</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{C}_S) = 4\cdot k\cdot T\cdot Z_0\cdot
+\begin{pmatrix}
+ \tfrac{R_1}{(2\cdot Z_0 + R_1)^2} & 0 & 0 & -\tfrac{R_1}{(2\cdot Z_0 + R_1)^2} \\
+ 0 &  \tfrac{R_2}{(2\cdot Z_0 + R_2)^2} & -\tfrac{R_2}{(2\cdot Z_0 + R_2)^2} & 0 \\
+ 0 & -\tfrac{R_2}{(2\cdot Z_0 + R_2)^2} &  \tfrac{R_2}{(2\cdot Z_0 + R_2)^2} & 0 \\
+-\tfrac{R_1}{(2\cdot Z_0 + R_1)^2} & 0 & 0 &  \tfrac{R_1}{(2\cdot Z_0 + R_1)^2} \\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="574" HEIGHT="107" ALIGN="MIDDLE" BORDER="0"
+ SRC="img947.png"
+ ALT="$\displaystyle (\underline{C}_S) = 4\cdot k\cdot T\cdot Z_0\cdot \begin{pmatrix}...
+...cdot Z_0 + R_1)^2} &amp; 0 &amp; 0 &amp; \tfrac{R_1}{(2\cdot Z_0 + R_1)^2} \\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">60</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+<P>
+A transformer with three coupled inductors has three coupling factors
+<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img948.png"
+ ALT="$ k_{12}$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img949.png"
+ ALT="$ k_{13}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img950.png"
+ ALT="$ k_{23}$"></SPAN>.  Its Y-parameters write as follows
+(port numbers are according to figure <A HREF="node49.html#fig:strafo">9.3</A>).
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="330" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img951.png"
+ ALT="$\displaystyle A = j\omega\cdot (1 - k_{12}^2 - k_{13}^2 - k_{23}^2 + 2\cdot k_{12}\cdot k_{13}\cdot k_{23} )$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">61</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="257" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img952.png"
+ ALT="$\displaystyle Y_{11} = Y_{66} = -Y_{16} = -Y_{61} = \dfrac{1-k_{23}^2}{L_1\cdot A}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">62</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="257" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img953.png"
+ ALT="$\displaystyle Y_{22} = Y_{33} = -Y_{23} = -Y_{32} = \dfrac{1-k_{12}^2}{L_3\cdot A}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">63</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="257" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img954.png"
+ ALT="$\displaystyle Y_{44} = Y_{55} = -Y_{45} = -Y_{54} = \dfrac{1-k_{13}^2}{L_2\cdot A}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">64</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="503" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img955.png"
+ ALT="$\displaystyle Y_{12} = Y_{21} = Y_{36} = Y_{63} = -Y_{13} = -Y_{31} = -Y_{26} = -Y_{62} = \dfrac{k_{12}\cdot k_{23} - k_{13}}{\sqrt{L_1\cdot L_3}\cdot A}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">65</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="503" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img956.png"
+ ALT="$\displaystyle Y_{15} = Y_{51} = Y_{46} = Y_{64} = -Y_{14} = -Y_{41} = -Y_{56} = -Y_{65} = \dfrac{k_{13}\cdot k_{23} - k_{12}}{\sqrt{L_1\cdot L_2}\cdot A}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">66</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="503" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img957.png"
+ ALT="$\displaystyle Y_{25} = Y_{52} = Y_{43} = Y_{34} = -Y_{24} = -Y_{42} = -Y_{53} = -Y_{35} = \dfrac{k_{12}\cdot k_{13} - k_{23}}{\sqrt{L_2\cdot L_3}\cdot A}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">67</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION001092000000000000000">
+Mutual inductors with any number of inductors</A>
+</H2>
+
+<P>
+A more general approach for coupled inductors can be obtained by
+using the induction law:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+V_L = j\omega L\cdot I_L + j\omega\cdot \sum_{n=1}^N k_n\cdot\sqrt{L\cdot L_n}\cdot I_{L,n}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="296" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img958.png"
+ ALT="$\displaystyle V_L = j\omega L\cdot I_L + j\omega\cdot \sum_{n=1}^N k_n\cdot\sqrt{L\cdot L_n}\cdot I_{L,n}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">68</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img959.png"
+ ALT="$ V_L$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img960.png"
+ ALT="$ I_L$"></SPAN> is the voltage across and the current through
+the inductor, respectively.  <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img396.png"
+ ALT="$ L$"></SPAN> is its inductance.  The inductor is
+coupled with <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img720.png"
+ ALT="$ N$"></SPAN> other inductances <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img961.png"
+ ALT="$ L_n$"></SPAN>.  The corresponding coupling
+factors are <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img962.png"
+ ALT="$ k_n$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img963.png"
+ ALT="$ I_{L,n}$"></SPAN> are the currents through the inductors.
+
+<P>
+<P>
+Realizing this approach with the MNA matrix is straight forward: Every
+inductance <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img396.png"
+ ALT="$ L$"></SPAN> needs an additional matrix row.  The corresponding
+element in the <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img964.png"
+ ALT="$ D$"></SPAN> matrix is <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img965.png"
+ ALT="$ j\omega L$"></SPAN>.  If two inductors are
+coupled the cross element in the <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img964.png"
+ ALT="$ D$"></SPAN> matrix is <!-- MATH
+ $j\omega
+k\cdot\sqrt{L_1\cdot L_2}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="99" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img966.png"
+ ALT="$ j\omega
+k\cdot\sqrt{L_1\cdot L_2}$"></SPAN>.  For two coupled inductors this yields:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+. & . & . & . & +1 &  0\\
+. & . & . & . & -1 &  0\\
+. & . & . & . &  0 & +1\\
+. & . & . & . &  0 & -1\\
++1 & -1 & 0 & 0 & j\omega L_1 & j\omega k\cdot\sqrt{L_1\cdot L_2} \\
+0 & 0 & +1 & -1 & j\omega k\cdot\sqrt{L_1\cdot L_2} & j\omega L_2 \\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_1\\
+V_2\\
+V_3\\
+V_4\\
+I_{br1}\\
+I_{br2}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_1\\
+I_2\\
+I_3\\
+I_4\\
+0\\
+0\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="546" HEIGHT="131" ALIGN="MIDDLE" BORDER="0"
+ SRC="img967.png"
+ ALT="$\displaystyle \begin{bmatrix}. &amp; . &amp; . &amp; . &amp; +1 &amp; 0\\ . &amp; . &amp; . &amp; . &amp; -1 &amp; 0\\ ...
+...\\ 0\\ 0\\ \end{bmatrix} = \begin{bmatrix}0\\ 0\\ 0\\ 0\\ 0\\ 0\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">69</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Obviously, this approach has an advantage: It also works for zero
+inductances and for unity coupling factors and is extendible for any
+number of inductors.  It has the disadvantage that it enlarges the MNA
+matrix.
+
+<P>
+<P>
+The S-parameter matrix of this component is obtained by converting the
+Z-parameter matrix of the component.  The Z-parameter matrix can be
+constructed using the following scheme: The self-inductances on the
+main diagonal and the mutual inductances in the off-diagonal entries.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\left(\underline{Z'}\right) =
+j\omega\cdot
+\begin{bmatrix}
+L_1 & k\cdot\sqrt{L_1\cdot L_2} \\
+k\cdot\sqrt{L_1\cdot L_2} & L_2\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="272" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img968.png"
+ ALT="$\displaystyle \left(\underline{Z'}\right) = j\omega\cdot \begin{bmatrix}L_1 &amp; k\cdot\sqrt{L_1\cdot L_2} \\ k\cdot\sqrt{L_1\cdot L_2} &amp; L_2\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">70</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+This matrix representation does not contain the second terminals of
+the inductances.  That's why the Z-parameter matrix must be converted
+into the Y-parameter matrix representation which is then extended to
+contain the additional terminals.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\left(\underline{Z'}\right) \rightarrow
+\left(\underline{Y'}\right) =
+\begin{bmatrix}
+y_{11} & y_{12} \\
+y_{21} & y_{22} \\
+\end{bmatrix} \rightarrow
+\left(\underline{Y}\right) =
+\begin{bmatrix}
++y_{11} & -y_{11} & +y_{12} & -y_{12} \\
+-y_{11} & +y_{11} & -y_{12} & +y_{12} \\
++y_{21} & -y_{21} & +y_{22} & -y_{22} \\
+-y_{21} & +y_{21} & -y_{22} & +y_{22} \\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="458" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img969.png"
+ ALT="$\displaystyle \left(\underline{Z'}\right) \rightarrow \left(\underline{Y'}\righ...
+...} &amp; +y_{22} &amp; -y_{22} \\ -y_{21} &amp; +y_{21} &amp; -y_{22} &amp; +y_{22} \\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">71</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The resulting Y-parameter matrix can be converted into the appropriate
+S-parameters numerically by eqn.&nbsp;(<A HREF="node98.html#eqn:Y2S">15.7</A>).
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1393"
+  HREF="node51.html">Attenuator</A>
+<B>Up:</B> <A NAME="tex2html1389"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1383"
+  HREF="node49.html">Symmetrical transformer</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

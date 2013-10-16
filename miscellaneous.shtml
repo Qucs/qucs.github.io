@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+
+<title>Qucs project: screenshots</title>
+<link href="qucsweb.css" rel="stylesheet"  type="text/css">
+<head>
+
+<body>
+
+<!-- include the common web page header using Apache Server-Side Includes (SSI) -->
+<!--#include virtual="/qucs-header.html" -->
+<div id="main">
+<hr>
+
+<center>
+[
+
+<a href="screenshots.shtml">schematic area</a> -
+
+<a href="dialogs.shtml">dialogs</a> -
+
+<a href="languages.shtml">languages</a> -
+
+miscellaneous -
+
+<a href="tools.shtml">tools</a>
+
+]
+</center>
+
+
+
+<h3>Miscellaneous screenshots</h3>
+
+
+
+The screenshots below show miscellaneous dialogs and menus.
+
+
+
+<center>
+
+<table cellpadding=24 border=0>
+
+<tr>
+
+<td colspan=1 align="left" valign="top"><img src="images/qs01.png" alt="Component Pulldown" border=1><br>
+
+Component pull-down menu.
+
+</td>
+
+<td colspan=1 align="left" valign="top"><img src="images/qs13.png" alt="Simulation"><br>
+
+Simulation in progress.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td colspan=2 align="center"><img src="images/qs04.png" alt="Log File"><br>
+
+Diplaying the simulation logfile.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td colspan=2 align="center"><img src="images/qs05.png" alt="Net File"><br>
+
+Diplaying the simulation netlist.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td colspan=2 align="center"><img src="images/qs07.png" alt="Help System"><br>
+
+Internal help system.
+
+</td>
+
+</tr>
+
+<tr>
+
+</tr>
+
+</table>
+
+</center>
+
+
+
+Please note that the actual appearance depends on the window manager (window
+
+decorations), the selected type of font and its size and the widget set can
+
+be selected by the <tt>qtconfig</tt> program.
+
+<br><br>
+
+
+
+<hr>
+</div>
+<!-- include the common web page footer using Apache Server-Side Includes (SSI) -->
+  <!--#include virtual="/qucs-footer.html" -->
+
+</body>
+
+</html>
+

@@ -1,0 +1,1240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Integration methods</TITLE>
+<META NAME="description" CONTENT="Integration methods">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node25.html">
+<LINK REL="previous" HREF="node23.html">
+<LINK REL="up" HREF="node23.html">
+<LINK REL="next" HREF="node25.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1000"
+  HREF="node25.html">Predictor-corrector methods</A>
+<B>Up:</B> <A NAME="tex2html996"
+  HREF="node23.html">Transient Analysis</A>
+<B> Previous:</B> <A NAME="tex2html990"
+  HREF="node23.html">Transient Analysis</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1001"
+  HREF="node24.html#SECTION00711000000000000000">Properties of numerical integration methods</A>
+<LI><A NAME="tex2html1002"
+  HREF="node24.html#SECTION00712000000000000000">Elementary Methods</A>
+<UL>
+<LI><A NAME="tex2html1003"
+  HREF="node24.html#SECTION00712100000000000000">Implicit Euler Method (Backward Euler)</A>
+<LI><A NAME="tex2html1004"
+  HREF="node24.html#SECTION00712200000000000000">Explicit Euler Method (Forward Euler)</A>
+<LI><A NAME="tex2html1005"
+  HREF="node24.html#SECTION00712300000000000000">Trapezoidal method</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1006"
+  HREF="node24.html#SECTION00713000000000000000">Linear Multistep Methods</A>
+<UL>
+<LI><A NAME="tex2html1007"
+  HREF="node24.html#SECTION00713100000000000000">Gear</A>
+<LI><A NAME="tex2html1008"
+  HREF="node24.html#SECTION00713200000000000000">Adams-Bashford</A>
+<LI><A NAME="tex2html1009"
+  HREF="node24.html#SECTION00713300000000000000">Adams-Moulton</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1010"
+  HREF="node24.html#SECTION00714000000000000000">Stability considerations</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00710000000000000000"></A>
+<A NAME="sec:IntegrationMethods"></A>
+<BR>
+Integration methods
+</H1>
+
+<P>
+The following differential equation is going to be solved.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:IntEquation"></A><!-- MATH
+ \begin{equation}
+\dfrac{d x}{d t} = \dot{x}(t) = f(x,t)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="138" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img434.png"
+ ALT="$\displaystyle \dfrac{d x}{d t} = \dot{x}(t) = f(x,t)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+This differential equation is transformed into an algorithm-dependent
+finite difference equation by quantizing and replacing
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\dot{x}(t) = \lim_{h \rightarrow 0} \dfrac{x(t+h) - x(t)}{h}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="187" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img435.png"
+ ALT="$\displaystyle \dot{x}(t) = \lim_{h \rightarrow 0} \dfrac{x(t+h) - x(t)}{h}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">4</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+by the following equation.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\dot{x}^n = \dfrac{x^{n+1} - x^{n}}{h^{n}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="117" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img436.png"
+ ALT="$\displaystyle \dot{x}^n = \dfrac{x^{n+1} - x^{n}}{h^{n}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">5</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+There are several linear single- and multi-step numerical integration
+methods available, each having advantages and disadvantages concerning
+aspects of stability and accuracy.  Integration methods can also be
+classified into implicit and explicit methods.  Explicit methods are
+inexpensive per step but limited in stability and therefore not used
+in the field of circuit simulation to obtain a correct and stable
+solution.  Implicit methods are more expensive per step, have better
+stability and therefore suitable for circuit simulation.
+
+<P>
+
+<H2><A NAME="SECTION00711000000000000000">
+Properties of numerical integration methods</A>
+</H2>
+
+<P>
+Beforehand some definitions and explanations regarding the terms often
+used in the following sections are made in order to avoid bigger
+confusions later on.
+
+<P>
+
+<UL>
+<LI>step size
+<BR>
+The step size is defined by the arguments difference of successive
+solution vectors, i.e. the time step <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img437.png"
+ ALT="$ h^n$"></SPAN> during transient analysis
+with <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img383.png"
+ ALT="$ n$"></SPAN> being the <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img383.png"
+ ALT="$ n$"></SPAN>-th integration step.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+h^n = t^{n+1} - t ^n
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="107" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img438.png"
+ ALT="$\displaystyle h^n = t^{n+1} - t ^n$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">6</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+</LI>
+<LI>order
+<BR>
+The order <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN> of an integration method is defined as follows: With two
+successive solution vectors <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img439.png"
+ ALT="$ x^{n+1}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.png"
+ ALT="$ x^{n}$"></SPAN> given, the successor
+<SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img439.png"
+ ALT="$ x^{n+1}$"></SPAN> can be expressed by <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.png"
+ ALT="$ x^{n}$"></SPAN> by a finite Taylor series.  The
+order of an integrations method equals the power of the step size up
+to which the approximate solution of the Taylor series differs less
+than <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.png"
+ ALT="$ x^{n}$"></SPAN> from the true solution <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img439.png"
+ ALT="$ x^{n+1}$"></SPAN>.
+
+<P>
+</LI>
+<LI>truncation error
+<BR>
+The truncation error <!-- MATH
+ $\varepsilon_T$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img441.png"
+ ALT="$ \varepsilon_T$"></SPAN> depends on the order <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN> of the
+integration method and results from the remainder term of the Taylor
+series.
+
+<P>
+</LI>
+<LI>stability
+<BR>
+In order to obtain an accurate network solution integration methods
+are required to be stable for a given step size <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img442.png"
+ ALT="$ h$"></SPAN>.  Various
+stability definitions exist.  This property is explained more in
+detail in the following sections.  Basically it determines the
+usability of an integration algorithm.
+
+<P>
+</LI>
+<LI>single- and multistep methods
+<BR>
+Single step methods only use <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img443.png"
+ ALT="$ x^n$"></SPAN> in order to calculate <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img439.png"
+ ALT="$ x^{n+1}$"></SPAN>,
+multi step methods use <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img444.png"
+ ALT="$ x^i$"></SPAN> with <!-- MATH
+ $0 \le i < n$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="69" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img445.png"
+ ALT="$ 0 \le i &lt; n$"></SPAN>.
+
+<P>
+</LI>
+<LI>implicit and explicit methods
+<BR>
+When using explicit integration methods the evaluation of the
+integration formula is sufficient for each integration step.  With
+implicit methods at hand it is necessary to solve an equation system
+(with non-linear networks a non-linear equation system) because for
+the calculation of <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img439.png"
+ ALT="$ x^{n+1}$"></SPAN>, apart from <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img443.png"
+ ALT="$ x^n$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img446.png"
+ ALT="$ \dot{x}^n$"></SPAN>, also
+<!-- MATH
+ $\dot{x}^{n+1}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img447.png"
+ ALT="$ \dot{x}^{n+1}$"></SPAN> is used.  For the transient analysis of electrical
+networks the implicit methods are better qualified than the explicit
+methods.
+</LI>
+</UL>
+
+<P>
+
+<H2><A NAME="SECTION00712000000000000000">
+Elementary Methods</A>
+</H2>
+
+<P>
+
+<H3><A NAME="SECTION00712100000000000000">
+Implicit Euler Method (Backward Euler)</A>
+</H3>
+
+<P>
+In the implicit Euler method the right hand side of
+eq. (<A HREF="#eq:IntEquation">6.3</A>) is substituted by <!-- MATH
+ $f(x^{n+1}, t^{n+1})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="97" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img448.png"
+ ALT="$ f(x^{n+1}, t^{n+1})$"></SPAN>
+which yields
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:BEInt"></A><!-- MATH
+ \begin{equation}
+f(x,t) = f(x^{n+1}, t^{n+1})
+\;\;\;\; \rightarrow \;\;\;\;
+x^{n+1} = x^n + h^n\cdot f(x^{n+1}, t^{n+1})
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="435" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img449.png"
+ ALT="$\displaystyle f(x,t) = f(x^{n+1}, t^{n+1}) \;\;\;\; \rightarrow \;\;\;\; x^{n+1} = x^n + h^n\cdot f(x^{n+1}, t^{n+1})$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">7</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The backward euler integration method is a first order single-step
+method.
+
+<P>
+
+<H3><A NAME="SECTION00712200000000000000">
+Explicit Euler Method (Forward Euler)</A>
+</H3>
+
+<P>
+In the explicit Euler method the right hand side of
+eq. (<A HREF="#eq:IntEquation">6.3</A>) is substituted by <!-- MATH
+ $f(x^{n}, t^{n})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img450.png"
+ ALT="$ f(x^{n}, t^{n})$"></SPAN> which
+yields
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+f(x,t) = f(x^n, t^n)
+\;\;\;\; \rightarrow \;\;\;\;
+x^{n+1} = x^n + h^n\cdot f(x^n, t^n)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="371" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img451.png"
+ ALT="$\displaystyle f(x,t) = f(x^n, t^n) \;\;\;\; \rightarrow \;\;\;\; x^{n+1} = x^n + h^n\cdot f(x^n, t^n)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">8</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The explicit Euler method has stability problems.  The step size is
+limited by stability.  In general explicit time marching integration
+methods are not suitable for circuit analysis where computation with
+large steps may be necessary when the solution changes slowly
+(i.e. when the accuracy does not require small steps).
+
+<P>
+
+<H3><A NAME="SECTION00712300000000000000">
+Trapezoidal method</A>
+</H3>
+
+<P>
+For the bilinear (also called trapezoidal) integration method <SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img452.png"
+ ALT="$ f(x,t)$"></SPAN>
+is substituted by
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+f(x,t) = \dfrac{1}{2}\cdot \left(f(x^{n+1}, t^{n+1}) + f(x^{n}, t^{n})\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="281" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img453.png"
+ ALT="$\displaystyle f(x,t) = \dfrac{1}{2}\cdot \left(f(x^{n+1}, t^{n+1}) + f(x^{n}, t^{n})\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">9</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+which yields
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:TRInt"></A><!-- MATH
+ \begin{equation}
+x^{n+1} = x^n + \dfrac{h^n}{2}\cdot \left(f(x^{n+1}, t^{n+1}) + f(x^{n}, t^{n})\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="318" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img454.png"
+ ALT="$\displaystyle x^{n+1} = x^n + \dfrac{h^n}{2}\cdot \left(f(x^{n+1}, t^{n+1}) + f(x^{n}, t^{n})\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">10</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+In each integration step the average value of the intervals beginning
+and end is taken into account.  The trapezoidal rule integration
+method is a second order single-step method.  There is no more
+accurate second order integration method than the trapezoidal method.
+
+<P>
+<DIV ALIGN="CENTER">
+</DIV>
+<DIV ALIGN="CENTER">
+<TABLE  WIDTH="33%">
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+</DIV><IMG
+ WIDTH="177" HEIGHT="81" ALIGN="BOTTOM" BORDER="0"
+ SRC="img455.png"
+ ALT="\includegraphics[height=1.8cm]{feuler}">
+forward-euler
+</TD></TR>
+</TABLE>
+<TABLE  WIDTH="33%">
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+</DIV><IMG
+ WIDTH="199" HEIGHT="79" ALIGN="BOTTOM" BORDER="0"
+ SRC="img456.png"
+ ALT="\includegraphics[height=1.8cm]{beuler}">
+backward-euler
+</TD></TR>
+</TABLE>
+<TABLE  WIDTH="33%">
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+</DIV><IMG
+ WIDTH="184" HEIGHT="79" ALIGN="BOTTOM" BORDER="0"
+ SRC="img457.png"
+ ALT="\includegraphics[height=1.8cm]{trapez}">
+trapezoidal
+</TD></TR>
+</TABLE>
+</DIV>
+<DIV ALIGN="CENTER">
+
+</DIV>
+
+<P>
+
+<H2><A NAME="SECTION00713000000000000000">
+Linear Multistep Methods</A>
+</H2>
+
+<P>
+For higher order multi-step integration methods the general purpose
+method of resolution for the equation <!-- MATH
+ $\dot{x} = f(x,t)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="78" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img458.png"
+ ALT="$ \dot{x} = f(x,t)$"></SPAN>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:GenPurposeInt"></A><!-- MATH
+ \begin{equation}
+x^{n+1} = \sum^p_{i=0} a_i\cdot x^{n-i} + h \sum^p_{i=-1} b_i\cdot f(x^{n-i}, t^{n-i})
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="316" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img459.png"
+ ALT="$\displaystyle x^{n+1} = \sum^p_{i=0} a_i\cdot x^{n-i} + h \sum^p_{i=-1} b_i\cdot f(x^{n-i}, t^{n-i})$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">11</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+is used.  With <!-- MATH
+ $b_{-1} = 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="57" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img460.png"
+ ALT="$ b_{-1} = 0$"></SPAN> the method is explicit and therefore not
+suitable for obtaining the correct and stable solution.  When <!-- MATH
+ $b_{-1}
+\ne 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="57" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img461.png"
+ ALT="$ b_{-1}
+\ne 0$"></SPAN> the method is implicit and suitable for circuit simulation,
+i.e. suitable for solving stiff problems.  For differential equation
+systems describing electrical networks the eigenvalues strongly vary.
+These kind of differential equation systems are called stiff.
+
+<P>
+<P>
+For a polynom of order <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN> the number of required coefficients is
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:MultiStepCondition"></A><!-- MATH
+ \begin{equation}
+2p + 3 \ge k + 1
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="104" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img462.png"
+ ALT="$\displaystyle 2p + 3 \ge k + 1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">12</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The <SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img463.png"
+ ALT="$ 2p +3$"></SPAN> coeffcients are choosen to satisfy
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+x^{n+1} = x(t^{n+1})
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="111" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img464.png"
+ ALT="$\displaystyle x^{n+1} = x(t^{n+1})$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">13</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+This can be achieved by the following equation system
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:MultiStepSys"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+\sum^p_{i=0} a_i = 1\\
+\sum^p_{i=1} (-i)^j a_i + j \sum^p_{i=-1} (-i)^{j-1} b_i = 1 & \textrm{ for } j = 1\ldots k
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="326" HEIGHT="109" BORDER="0"
+ SRC="img465.png"
+ ALT="\begin{displaymath}\begin{split}\sum^p_{i=0} a_i = 1\\ \sum^p_{i=1} (-i)^j a_i +...
+...} (-i)^{j-1} b_i = 1 &amp; \textrm{ for } j = 1\ldots k \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">14</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The different linear multistep integration methods which can be
+constructed by the equation system (<A HREF="#eq:MultiStepSys">6.14</A>) vary in the
+equality condition corresponding with (<A HREF="#eq:MultiStepCondition">6.12</A>)
+and the choice of coefficients which are set to zero.
+
+<P>
+
+<H3><A NAME="SECTION00713100000000000000">
+Gear</A>
+</H3>
+
+<P>
+The Gear [<A
+ HREF="node103.html#Gear">7</A>] formulae (also called BDF - backward
+differentiation formulae) have great importance within the multi-step
+integration methods used in transient analysis programs.  The
+conditions
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+p = k - 1
+\;\;\;\; \textrm{ and } \;\;\;\;
+b_0 = b_1 = \ldots = b_{k-1} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="311" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img466.png"
+ ALT="$\displaystyle p = k - 1 \;\;\;\; \textrm{ and } \;\;\;\; b_0 = b_1 = \ldots = b_{k-1} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">15</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+due to the following equation system
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:GearCoeff"></A><!-- MATH
+ \begin{equation}
+\left[\begin{array}{lrrrr}
+0 & 1 &  1 &  1 &   1\\
+1 & 0 & -1 & -2 &  -3\\
+2 & 0 &  1 &  4 &   9\\
+3 & 0 & -1 & -8 & -27\\
+4 & 0 &  1 & 16 &  81\\
+\end{array}\right]
+\cdot
+\begin{bmatrix}
+b_{-1}\\
+a_0\\
+a_1\\
+a_2\\
+a_3\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+1\\
+1\\
+1\\
+1\\
+1\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="300" HEIGHT="113" ALIGN="MIDDLE" BORDER="0"
+ SRC="img467.png"
+ ALT="$\displaystyle \left[\begin{array}{lrrrr} 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1\\ 1 &amp; 0 &amp; -1 &amp; -2 &amp; ...
+...\\ a_2\\ a_3\\ \end{bmatrix} = \begin{bmatrix}1\\ 1\\ 1\\ 1\\ 1\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">16</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+for the Gear formulae of order <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img468.png"
+ ALT="$ 4$"></SPAN>.  Order <SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img469.png"
+ ALT="$ k = 1$"></SPAN> yields the implicit
+Euler method.  The example given in the equation system
+(<A HREF="#eq:GearCoeff">6.16</A>) results in the following integration formula.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:GearInt"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+x^{n+1} &= a_0\cdot x^{n} + a_1\cdot x^{n-1} + a_2\cdot x^{n-2} + a_3\cdot x^{n-3} + h\cdot b_{-1}\cdot f(x^{n+1}, t^{n+1})\\
+&= \dfrac{48}{25}\cdot x^{n} - \dfrac{36}{25}\cdot x^{n-1} + \dfrac{16}{25}\cdot x^{n-2} - \dfrac{3}{25}\cdot x^{n-3} + h\cdot \dfrac{12}{25}\cdot f(x^{n+1}, t^{n+1})
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="510" HEIGHT="64" BORDER="0"
+ SRC="img470.png"
+ ALT="\begin{displaymath}\begin{split}x^{n+1} &amp;= a_0\cdot x^{n} + a_1\cdot x^{n-1} + a...
+...3} + h\cdot \dfrac{12}{25}\cdot f(x^{n+1}, t^{n+1}) \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">17</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+There is no more stable second order integration method than the
+Gear's method of second order.  Only implicit Gear methods with order
+<SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img471.png"
+ ALT="$ k \le 6$"></SPAN> are zero stable.
+
+<P>
+
+<H3><A NAME="SECTION00713200000000000000">
+Adams-Bashford</A>
+</H3>
+
+<P>
+The Adams-Bashford algorithm is an explicit multi-step integration
+method whence
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+p = k - 1
+\;\;\;\; \textrm{ and } \;\;\;\;
+a_1 = a_2 = \ldots = a_{k-1} = 0
+\;\;\;\; \textrm{ and } \;\;\;\;
+b_{-1} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="440" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img472.png"
+ ALT="$\displaystyle p = k - 1 \;\;\;\; \textrm{ and } \;\;\;\; a_1 = a_2 = \ldots = a_{k-1} = 0 \;\;\;\; \textrm{ and } \;\;\;\; b_{-1} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">18</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+is set to satisfy the equation system (<A HREF="#eq:MultiStepSys">6.14</A>).  The
+equation system of the Adams-Bashford coefficients of order 4 is as
+follows.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\left[\begin{array}{lrrrr}
+1 & 0 &  0 &   0 &    0\\
+0 & 1 &  1 &   1 &    1\\
+0 & 0 & -2 &  -4 &   -6\\
+0 & 0 &  3 &  12 &   27\\
+0 & 0 & -4 & -32 & -108\\
+\end{array}\right]
+\cdot
+\begin{bmatrix}
+a_0\\
+b_0\\
+b_1\\
+b_2\\
+b_3\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+1\\
+1\\
+1\\
+1\\
+1\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="307" HEIGHT="113" ALIGN="MIDDLE" BORDER="0"
+ SRC="img473.png"
+ ALT="$\displaystyle \left[\begin{array}{lrrrr} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1\...
+...\\ b_2\\ b_3\\ \end{bmatrix} = \begin{bmatrix}1\\ 1\\ 1\\ 1\\ 1\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">19</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+This equation system results in the following integration formula.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{split}
+x^{n+1} &= a_0\cdot x^{n} + h\cdot b_{0}\cdot f^{n} + h\cdot b_{1}\cdot f^{n-1} + h\cdot b_{2}\cdot f^{n-2} + h\cdot b_{3}\cdot f^{n-3}\\
+&= x^{n} + h\cdot \dfrac{55}{24}\cdot f^{n} - h\cdot \dfrac{59}{24}\cdot f^{n-1} + h\cdot \dfrac{37}{24}\cdot f^{n-2} - h\cdot \dfrac{9}{24}\cdot f^{n-3}\\
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="466" HEIGHT="64" BORDER="0"
+ SRC="img474.png"
+ ALT="\begin{displaymath}\begin{split}x^{n+1} &amp;= a_0\cdot x^{n} + h\cdot b_{0}\cdot f^...
+...\cdot f^{n-2} - h\cdot \dfrac{9}{24}\cdot f^{n-3}\\ \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">20</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The Adams-Bashford formula of order 1 yields the (explicit) forward
+Euler integration method.
+
+<P>
+
+<H3><A NAME="SECTION00713300000000000000">
+Adams-Moulton</A>
+</H3>
+
+<P>
+The Adams-Moulton algorithm is an implicit multi-step integration
+method whence
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+p = k - 2
+\;\;\;\; \textrm{ and } \;\;\;\;
+a_1 = a_2 = \ldots = a_{k-2} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="316" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img475.png"
+ ALT="$\displaystyle p = k - 2 \;\;\;\; \textrm{ and } \;\;\;\; a_1 = a_2 = \ldots = a_{k-2} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">21</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+is set to satisfy the equation system (<A HREF="#eq:MultiStepSys">6.14</A>).  The
+equation system of the Adams-Moulton coefficients of order 4 is as
+follows.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\left[\begin{array}{lrrrr}
+1 & 0 &  0 &   0 &    0\\
+0 & 1 &  1 &   1 &    1\\
+0 & 2 &  0 &  -2 &   -4\\
+0 & 3 &  0 &   3 &   12\\
+0 & 4 &  0 &  -4 &  -32\\
+\end{array}\right]
+\cdot
+\begin{bmatrix}
+a_0\\
+b_{-1}\\
+b_0\\
+b_1\\
+b_2\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+1\\
+1\\
+1\\
+1\\
+1\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="287" HEIGHT="113" ALIGN="MIDDLE" BORDER="0"
+ SRC="img476.png"
+ ALT="$\displaystyle \left[\begin{array}{lrrrr} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1\...
+...\\ b_1\\ b_2\\ \end{bmatrix} = \begin{bmatrix}1\\ 1\\ 1\\ 1\\ 1\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">22</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+This equation system results in the following integration formula.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:MoultonInt"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+x^{n+1} &= a_0\cdot x^{n} + h\cdot b_{-1}\cdot f^{n+1} + h\cdot b_{0}\cdot f^{n} + h\cdot b_{1}\cdot f^{n-1} + h\cdot b_{2}\cdot f^{n-2}\\
+&= x^{n} + h\cdot \dfrac{9}{24}\cdot f^{n+1} + h\cdot \dfrac{19}{24}\cdot f^{n} - h\cdot \dfrac{5}{24}\cdot f^{n-1} + h\cdot \dfrac{1}{24}\cdot f^{n-2}\\
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="476" HEIGHT="64" BORDER="0"
+ SRC="img477.png"
+ ALT="\begin{displaymath}\begin{split}x^{n+1} &amp;= a_0\cdot x^{n} + h\cdot b_{-1}\cdot f...
+...\cdot f^{n-1} + h\cdot \dfrac{1}{24}\cdot f^{n-2}\\ \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">23</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The Adams-Moulton formula of order 1 yields the (implicit) backward
+Euler integration method and the formula of order 2 yields the
+trapezoidal rule.
+
+<P>
+
+<H2><A NAME="SECTION00714000000000000000">
+Stability considerations</A>
+</H2>
+
+<P>
+When evaluating the numerical formulations given for both implicit and
+explicit integration formulas once rounding errors are unavoidable.
+For small values of <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img442.png"
+ ALT="$ h$"></SPAN> the evaluation must be repeated very often and
+thus the rounding error possibly accumulates.  With higher order
+algorithms it is possible to enlarge the step width and thereby reduce
+the error accumulation.
+
+<P>
+<P>
+On the other hand it is questionable whether the construction of
+implicit algorithms is really valuable because of the higher
+computation effort caused by the necessary iteration (indices
+<SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img478.png"
+ ALT="$ ~^{n+1}$"></SPAN> on both sides of the equation).  In practice there is a class
+of differential equations which can be reasonably handled by implicit
+algorithms where explicit algorithms completely fail because of the
+impracticable reduction of the step width.  This class of differential
+equations are called stiff problems.  The effect of stiffness causes
+for small variations in the actual solution to be computed very large
+deviations in the solution which get damped.
+
+<P>
+<P>
+The numerical methods used for the transient analysis are required to
+be stiffly stable and accurate as well.  The regions requirements in
+the complex plane are visualized in the following figure.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:StiffStable"></A><A NAME="4955"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.1:</STRONG>
+stability requirements for stiff differential equation systems</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<IMG
+ WIDTH="504" HEIGHT="355" ALIGN="BOTTOM" BORDER="0"
+ SRC="img479.png"
+ ALT="\includegraphics[width=0.7\linewidth]{stiffstable}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+For values of <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img480.png"
+ ALT="$ h\lambda$"></SPAN> in region II the numerical method must be
+stable and accurate, in region I accurate and in region III only
+stable.  The area outside the specified regions are of no particular
+interest.
+
+<P>
+<P>
+For the stability prediction of integration algorithms with regard to
+nonlinear differential equations and equation systems the simple and
+linear test differential equation
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\dot{x} = \lambda x
+\;\;\;\; \textrm{ with } \;\;\;\;
+\lambda \in \mathbb{C}, \text{Re}\left\{\lambda\right\} < 0, x \ge 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="174" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img481.png"
+ ALT="$\displaystyle \dot{x} = \lambda x \;\;\;\; \textrm{ with } \;\;\;\; \lambda \in \mathbb{C},$">&nbsp; &nbsp;Re<IMG
+ WIDTH="103" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img482.png"
+ ALT="$\displaystyle \left\{\lambda\right\} &lt; 0, x \ge 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">24</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+is used.  The condition <!-- MATH
+ $\text{Re}\left\{\lambda\right\} < 0$
+ -->
+<SPAN CLASS="MATH">Re<IMG
+ WIDTH="58" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img483.png"
+ ALT="$ \left\{\lambda\right\} &lt; 0$"></SPAN> ensures
+the solution to be decreasing.  The general purpose method of
+resolution given in (<A HREF="#eq:GenPurposeInt">6.11</A>) can be solved by the
+polynomial method setting
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+x^k = z^k
+\;\;\;\; \textrm{ with } \;\;\;\;
+z \in \mathbb{C}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="174" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img484.png"
+ ALT="$\displaystyle x^k = z^k \;\;\;\; \textrm{ with } \;\;\;\; z \in \mathbb{C}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">25</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Thus we get the characteristic polynom
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img485.png"
+ ALT="$\displaystyle \varphi\left(z\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="160" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img486.png"
+ ALT="$\displaystyle = \varrho\left(z\right) + h\lambda \cdot \eta\left(z\right) = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+<A NAME="eq:characteristicPolynom">(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">26</SPAN>)</A></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="235" HEIGHT="67" ALIGN="MIDDLE" BORDER="0"
+ SRC="img487.png"
+ ALT="$\displaystyle = \sum^{n-1}_{i=-1} a_i\cdot z^{n-i} + h\lambda \sum^{n-1}_{i=-1} b_i\cdot z^{n-i}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">27</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Because of the conditions defined by (<A HREF="#eq:MultiStepSys">6.14</A>) the above
+eq. (<A HREF="#eq:characteristicPolynom">6.26</A>) can only be true for
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\left|z\right| < 1
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="50" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img488.png"
+ ALT="$\displaystyle \left\vert z\right\vert &lt; 1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">28</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+which describes the inner unity circle on the complex plane.  In order
+to compute the boundary of the area of absolute stability it is
+necessary to calculate
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:StabArea"></A><!-- MATH
+ \begin{equation}
+\mu\left(z\right) = h\lambda = -\dfrac{\varrho\left(z\right)}{\eta\left(z\right)}
+\;\;\;\; \textrm{ with } \;\;\;\;
+z = e^{j\vartheta}, 0 \le \vartheta \le 2\pi
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="357" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img489.png"
+ ALT="$\displaystyle \mu\left(z\right) = h\lambda = -\dfrac{\varrho\left(z\right)}{\et...
+... \;\;\;\; \textrm{ with } \;\;\;\; z = e^{j\vartheta}, 0 \le \vartheta \le 2\pi$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">29</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+These equations describe closed loops. The inner of these loops
+describe the area of absolute stability.  Because <!-- MATH
+ $\lambda \le 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img490.png"
+ ALT="$ \lambda \le 0$"></SPAN> and
+<SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img491.png"
+ ALT="$ h \ge 0$"></SPAN> only the left half of the complex plane is of particular
+interest.  An integration algorithm is call zero-stable if the
+stability area encloses <SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img492.png"
+ ALT="$ \mu = 0$"></SPAN>.  Given this condition the algorithm
+is as a matter of principle usable, otherwise not.  If an algorithms
+stability area encloses the whole left half plane it is called
+A-stable.  A-stable algorithms are stable for any <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img442.png"
+ ALT="$ h$"></SPAN> and all <!-- MATH
+ $\lambda
+< 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img493.png"
+ ALT="$ \lambda
+&lt; 0$"></SPAN>.  Any other kind of stability area introduces certain
+restrictions for <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img122.png"
+ ALT="$ \mu$"></SPAN>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:StabGear"></A><A NAME="4999"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.2:</STRONG>
+areas of absolute stability for order 1...6 Gear formulae</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<IMG
+ WIDTH="659" HEIGHT="431" ALIGN="BOTTOM" BORDER="0"
+ SRC="img494.png"
+ ALT="\includegraphics[width=1\linewidth]{stabgear}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:StabMoulton"></A><A NAME="5010"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.3:</STRONG>
+areas of absolute stability for order 1...6 Adams-Moulton formulae</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<IMG
+ WIDTH="659" HEIGHT="431" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.png"
+ ALT="\includegraphics[width=1\linewidth]{stabmoulton}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:StabBashford"></A><A NAME="5021"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.4:</STRONG>
+areas of absolute stability for order 1...6 Adams-Bashford formulae</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<IMG
+ WIDTH="659" HEIGHT="431" ALIGN="BOTTOM" BORDER="0"
+ SRC="img496.png"
+ ALT="\includegraphics[width=1\linewidth]{stabbashford}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The figures <A HREF="#fig:StabGear">6.2</A>, <A HREF="#fig:StabMoulton">6.3</A> and
+<A HREF="#fig:StabBashford">6.4</A> visualize the evaluation of
+eq. (<A HREF="#eq:StabArea">6.29</A>) for the discussed integration methods.  All of
+the implicit formulae are zero-stable, thus principally usable.  The
+(implicit) backward Euler, Gear order 2 and the trapezoidal
+integration methods are A-stable.  Fig. <A HREF="#fig:StabGear">6.2</A> shows why
+the Gear formulae are of such great importance for the transient
+analysis of electrical networks.  With least restrictions for <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img122.png"
+ ALT="$ \mu$"></SPAN>
+they can be stabilized.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1000"
+  HREF="node25.html">Predictor-corrector methods</A>
+<B>Up:</B> <A NAME="tex2html996"
+  HREF="node23.html">Transient Analysis</A>
+<B> Previous:</B> <A NAME="tex2html990"
+  HREF="node23.html">Transient Analysis</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

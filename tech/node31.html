@@ -1,0 +1,343 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Basic Concept</TITLE>
+<META NAME="description" CONTENT="The Basic Concept">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node32.html">
+<LINK REL="previous" HREF="node30.html">
+<LINK REL="up" HREF="node30.html">
+<LINK REL="next" HREF="node32.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1128"
+  HREF="node32.html">Going through each Step</A>
+<B>Up:</B> <A NAME="tex2html1124"
+  HREF="node30.html">Harmonic Balance Analysis</A>
+<B> Previous:</B> <A NAME="tex2html1118"
+  HREF="node30.html">Harmonic Balance Analysis</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00810000000000000000">
+The Basic Concept</A>
+</H1>
+
+<P>
+As the non-linear elements are still modeled in time domain, the circuit
+first must be separated into a linear and a non-linear part. The
+internal impedances <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img775.png"
+ ALT="$ Z_i$"></SPAN> of the voltage sources are put into the
+linear part as well. Figure <A HREF="#fig:hb_concept">7.1</A> illustrates the
+concept. Let us define the following symbols:
+<DL>
+<DT></DT>
+<DD>M = number of (independent) voltage sources
+</DD>
+<DT></DT>
+<DD>N = number of connections between linear and non-linear subcircuit
+</DD>
+<DT></DT>
+<DD>K = number of calculated harmonics
+</DD>
+<DT></DT>
+<DD>L = number of nodes in linear subcircuit
+</DD>
+</DL>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:hb_concept"></A><A NAME="7643"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 7.1:</STRONG>
+circuit partitioning in harmonic balance</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="404" HEIGHT="339" ALIGN="BOTTOM" BORDER="0"
+ SRC="img776.png"
+ ALT="\includegraphics[width=9cm]{hb_concept}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The linear circuit is modeled by two transadmittance matrices:
+The first one <!-- MATH
+ $\tilde{\boldsymbol{Y}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img777.png"
+ ALT="$ \tilde{\boldsymbol{Y}}$"></SPAN>
+relates the source voltages <!-- MATH
+ $v_{S,1}...v_{S,M}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="77" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img778.png"
+ ALT="$ v_{S,1}...v_{S,M}$"></SPAN> to the interconnection
+currents <SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img779.png"
+ ALT="$ i_1...i_N$"></SPAN> and the second one <!-- MATH
+ $\hat{\boldsymbol{Y}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img780.png"
+ ALT="$ \hat{\boldsymbol{Y}}$"></SPAN>
+relates the interconnection
+voltages <SPAN CLASS="MATH"><IMG
+ WIDTH="51" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img781.png"
+ ALT="$ v_1...v_N$"></SPAN> to the interconnection currents <SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img779.png"
+ ALT="$ i_1...i_N$"></SPAN>.
+Taking both, we can express the current flowing through the
+interconnections between linear and non-linear subcircuit:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:HBlin"></A><!-- MATH
+ \begin{equation}
+\boldsymbol{I}
+  = \boldsymbol{\tilde{Y}}_{N\times M}\cdot \boldsymbol{V}_S +
+    \boldsymbol{\hat{Y}}_{N\times N}\cdot \boldsymbol{V}
+  = \boldsymbol{I}_S + \boldsymbol{\hat{Y}}\cdot \boldsymbol{V}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="309" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img782.png"
+ ALT="$\displaystyle \boldsymbol{I} = \boldsymbol{\tilde{Y}}_{N\times M}\cdot \boldsym...
+...ot \boldsymbol{V} = \boldsymbol{I}_S + \boldsymbol{\hat{Y}}\cdot \boldsymbol{V}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Because <!-- MATH
+ $\boldsymbol{V}_S$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img783.png"
+ ALT="$ \boldsymbol{V}_S$"></SPAN> is known and constant, the first term
+can already be computed to give <!-- MATH
+ $\boldsymbol{I}_S$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img784.png"
+ ALT="$ \boldsymbol{I}_S$"></SPAN>. Taking the
+whole linear network as one block is called the "piecewise"
+harmonic balance technique.
+
+<P>
+<P>
+The non-linear circuit is modeled by its current function
+<!-- MATH
+ $i(t) = f_g(v_1, ..., v_P)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="137" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img785.png"
+ ALT="$ i(t) = f_g(v_1, ..., v_P)$"></SPAN>
+and by the charge of its capacitances
+<!-- MATH
+ $q(t) = f_q(v_1, ..., v_Q)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="139" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img786.png"
+ ALT="$ q(t) = f_q(v_1, ..., v_Q)$"></SPAN>.
+These functions must be Fourier-transformed to give the
+frequency-domain vectors <!-- MATH
+ $\boldsymbol{Q}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img787.png"
+ ALT="$ \boldsymbol{Q}$"></SPAN> and <!-- MATH
+ $\boldsymbol{I}_G$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img788.png"
+ ALT="$ \boldsymbol{I}_G$"></SPAN>,
+respectively.
+
+<P>
+<P>
+A simulation result is found if the currents through the
+interconnections are the same for the linear and the non-linear
+subcircuit. This principle actually gave the harmonic balance
+simulation its name, because through the interconnections the
+currents of the linear and non-linear subcircuits have to be
+<SPAN  CLASS="textit">balanced</SPAN> at every <SPAN  CLASS="textit">harmonic</SPAN> frequency. To
+be precise the described method is called Kirchhoff's current
+law harmonic balance (KCL-HB). Theoretically, it would also be
+possible to use an algorithm that tries to balance the voltages
+at the subcircuit interconnections. But then the Z matrix (linear
+subcircuit) and current-dependend voltage laws (non-linear
+subcircuit) have to be used. That doesn't fit the need (see other
+simulation types).
+
+<P>
+<P>
+So, the non-linear equation system that needs to be solved writes:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:HBeqn"></A><!-- MATH
+ \begin{equation}
+\textbf{F}(\textbf{V})
+  = \underbrace{(\boldsymbol{I}_S) + (\boldsymbol{\hat{Y}})\cdot (\boldsymbol{V})}_{\text{linear}}
+  + \underbrace{j\cdot \boldsymbol{\Omega}\cdot \boldsymbol{Q} + \boldsymbol{I}_G}_{\text{non-linear}}
+  = \boldsymbol{0}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="319" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img789.png"
+ ALT="$\displaystyle \textbf{F}(\textbf{V}) = \underbrace{(\boldsymbol{I}_S) + (\bolds...
+...a}\cdot \boldsymbol{Q} + \boldsymbol{I}_G}_{\text{non-linear}} = \boldsymbol{0}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where matrix <!-- MATH
+ $\boldsymbol{\Omega}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img790.png"
+ ALT="$ \boldsymbol{\Omega}$"></SPAN> contains the angular frequencies
+on the first main diagonal and zeros anywhere else, <!-- MATH
+ $\boldsymbol{0}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img791.png"
+ ALT="$ \boldsymbol{0}$"></SPAN>
+is the zero vector.
+
+<P>
+<P>
+After each iteration step, the inverse Fourier transformation must
+be applied to the voltage vector <!-- MATH
+ $\boldsymbol{V}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img792.png"
+ ALT="$ \boldsymbol{V}$"></SPAN>. Then the time domain
+voltages <!-- MATH
+ $v_{0,1}...v_{K,N}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="76" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img793.png"
+ ALT="$ v_{0,1}...v_{K,N}$"></SPAN> are put into <!-- MATH
+ $i(t) = f_g(v_1, ..., v_P)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="137" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img785.png"
+ ALT="$ i(t) = f_g(v_1, ..., v_P)$"></SPAN>
+and <!-- MATH
+ $q(t) = f_q(v_1, ..., v_Q)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="139" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img786.png"
+ ALT="$ q(t) = f_q(v_1, ..., v_Q)$"></SPAN> again. Now, a Fourier transformation
+gives the vectors <!-- MATH
+ $\boldsymbol{Q}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img787.png"
+ ALT="$ \boldsymbol{Q}$"></SPAN> and <!-- MATH
+ $\boldsymbol{I}_G$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img788.png"
+ ALT="$ \boldsymbol{I}_G$"></SPAN> for the
+next iteration step. After repeating this several times, a simulation
+result has hopefully be found.
+
+<P>
+<P>
+Having found this result means having got the voltages <SPAN CLASS="MATH"><IMG
+ WIDTH="51" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img781.png"
+ ALT="$ v_1...v_N$"></SPAN> at
+the interconnections of the two subcircuits. With these values the
+voltages at all nodes can be calculated: Forget about the non-linear
+subcircuit, put current sources at the former interconnections (using
+the calculated values) and perform a normal AC simulation. After that
+the simulation is complete.
+
+<P>
+<P>
+A short note to the construction of the quantities: One big difference
+between the HB and the conventional simulation types like a DC or an
+AC simulation is the structure of the matrices and vectors. A vector
+used in a conventional simulation contains one value for each node.
+In an HB simulation there are many harmonics and thus, a vector contains
+<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img121.png"
+ ALT="$ K$"></SPAN> values for each node. This means that within a matrix, there is a
+<!-- MATH
+ $K \times K$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img794.png"
+ ALT="$ K \times K$"></SPAN> diagonal submatrix for each node. Using this structure,
+all equations can be written in the usual way, i.e. without paying
+attention to the special matrix and vector structure. In a computer
+program, however, a special matrix class is needed in order to not
+waste memory for the off-diagonal zeros.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1128"
+  HREF="node32.html">Going through each Step</A>
+<B>Up:</B> <A NAME="tex2html1124"
+  HREF="node30.html">Harmonic Balance Analysis</A>
+<B> Previous:</B> <A NAME="tex2html1118"
+  HREF="node30.html">Harmonic Balance Analysis</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

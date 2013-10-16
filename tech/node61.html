@@ -1,0 +1,433 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Transmission Line</TITLE>
+<META NAME="description" CONTENT="Transmission Line">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node62.html">
+<LINK REL="previous" HREF="node60.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node62.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1534"
+  HREF="node62.html">Differential Transmission Line</A>
+<B>Up:</B> <A NAME="tex2html1530"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1524"
+  HREF="node60.html">Controlled sources</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION0010200000000000000000"></A>
+<A NAME="sec:tl_yparameter"></A>
+<BR>
+Transmission Line
+</H1>
+
+<P>
+A transmission line is usually described by its ABCD-matrix.  (Note
+that in ABCD-matrices, i.e. the chain matrix representation, the
+current <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1133.png"
+ ALT="$ i_2$"></SPAN> is defined to flow out of the output port.)
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:tl_apara"></A><!-- MATH
+ \begin{equation}
+\left(\underline{A}\right) =
+\begin{pmatrix}
+\cosh{\left(\gamma\cdot l\right)} & Z_L\cdot \sinh{\left(\gamma\cdot l\right)}\\
+\sinh{\left(\gamma\cdot l\right)} / Z_L & \cosh{\left(\gamma\cdot l\right)}
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="283" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1134.png"
+ ALT="$\displaystyle \left(\underline{A}\right) = \begin{pmatrix}\cosh{\left(\gamma\cd...
+...t(\gamma\cdot l\right)} / Z_L &amp; \cosh{\left(\gamma\cdot l\right)} \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">193</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+These can easily be recalculated into impedance parameters.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1002.png"
+ ALT="$\displaystyle Z_{11} = Z_{22}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="95" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1135.png"
+ ALT="$\displaystyle = \frac{Z_L}{\tanh{\left(\gamma\cdot l\right)}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">194</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1004.png"
+ ALT="$\displaystyle Z_{12} = Z_{21}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="92" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1136.png"
+ ALT="$\displaystyle = \frac{Z_L}{\sinh{\left(\gamma\cdot l\right)}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">195</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Or in admittance parameter representation it yields
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:TransLineY"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+Y_{11} = Y_{22} &= \frac{1}{Z_L \cdot \tanh{\left(\gamma\cdot l\right)}}\\
+Y_{12} = Y_{21} &= \frac{-1}{Z_L\cdot \sinh{\left(\gamma\cdot l\right)}}
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="194" HEIGHT="85" BORDER="0"
+ SRC="img1137.png"
+ ALT="\begin{displaymath}\begin{split}Y_{11} = Y_{22} &amp;= \frac{1}{Z_L \cdot \tanh{\lef...
+...rac{-1}{Z_L\cdot \sinh{\left(\gamma\cdot l\right)}} \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">196</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+whence <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img682.png"
+ ALT="$ \gamma$"></SPAN> denotes the propagation constant <!-- MATH
+ $\alpha + j\beta$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="51" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img683.png"
+ ALT="$ \alpha + j\beta$"></SPAN> and
+<SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ l$"></SPAN> is the length of the transmission line.  <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img684.png"
+ ALT="$ Z_L$"></SPAN> represents the
+characteristic impedance of the transmission line.  The Y-parameters
+as defined by eq. (<A HREF="#eq:TransLineY">9.199</A>) can be used for the microstrip
+line.  For an ideal, i.e. lossless, transmission lines they write
+accordingly.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1002.png"
+ ALT="$\displaystyle Z_{11} = Z_{22}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="107" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1138.png"
+ ALT="$\displaystyle = \frac{Z_L}{j\cdot\tan{\left(\beta\cdot l\right)}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">197</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1004.png"
+ ALT="$\displaystyle Z_{12} = Z_{21}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="103" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1139.png"
+ ALT="$\displaystyle = \frac{Z_L}{j\cdot\sin{\left(\beta\cdot l\right)}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">198</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="70" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1006.png"
+ ALT="$\displaystyle Y_{11} = Y_{22}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="137" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1140.png"
+ ALT="$\displaystyle = \frac{1}{j\cdot Z_L \cdot \tan{\left(\beta\cdot l\right)}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">199</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="70" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1008.png"
+ ALT="$\displaystyle Y_{12} = Y_{21}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="116" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1141.png"
+ ALT="$\displaystyle = \frac{j}{Z_L\cdot \sin{\left(\beta\cdot l\right)}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">200</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The scattering matrix of an ideal, lossless transmission line with
+impedance <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img111.png"
+ ALT="$ Z$"></SPAN> and electrical length <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ l$"></SPAN> writes as follows.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+r = \frac{Z-Z_0}{Z+Z_0}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="86" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1142.png"
+ ALT="$\displaystyle r = \frac{Z-Z_0}{Z+Z_0}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">201</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+p = \exp\left(-j\omega\frac{l}{c_0}\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="131" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1143.png"
+ ALT="$\displaystyle p = \exp\left(-j\omega\frac{l}{c_0}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">202</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{11} = S_{22} = \frac{r\cdot(1-p^2)}{1-r^2\cdot p^2} \qquad,\qquad
+S_{12} = S_{21} = \frac{p\cdot(1-r^2)}{1-r^2\cdot p^2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="404" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1144.png"
+ ALT="$\displaystyle S_{11} = S_{22} = \frac{r\cdot(1-p^2)}{1-r^2\cdot p^2} \qquad,\qquad S_{12} = S_{21} = \frac{p\cdot(1-r^2)}{1-r^2\cdot p^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">203</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+With <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img691.png"
+ ALT="$ c_0$"></SPAN> = 299 792 458 m/s being the vacuum light velocity.
+Adding attenuation to the transmission line, the quantity <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img521.png"
+ ALT="$ p$"></SPAN>
+extends to:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+p = \exp\left(-j\omega\frac{l}{c_0} - \alpha\cdot l \right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="176" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1145.png"
+ ALT="$\displaystyle p = \exp\left(-j\omega\frac{l}{c_0} - \alpha\cdot l \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">204</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Another equivalent equation set for the calculation of the
+scattering parameters is the following:
+With the physical length <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ l$"></SPAN> of the component, its impedance
+<SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img684.png"
+ ALT="$ Z_L$"></SPAN> and propagation constant <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img682.png"
+ ALT="$ \gamma$"></SPAN>, the complex propagation
+constant <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img682.png"
+ ALT="$ \gamma$"></SPAN> is given by
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\gamma = \alpha + j\beta
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="81" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1146.png"
+ ALT="$\displaystyle \gamma = \alpha + j\beta$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">205</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img696.png"
+ ALT="$ \alpha$"></SPAN> is the attenuation factor and <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1147.png"
+ ALT="$ \beta$"></SPAN> is the (real)
+propagation constant given by
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\beta = \sqrt{\varepsilon_{r_{eff}}(\omega)} \cdot k_0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="132" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1148.png"
+ ALT="$\displaystyle \beta = \sqrt{\varepsilon_{r_{eff}}(\omega)} \cdot k_0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">206</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where <!-- MATH
+ $\varepsilon_{r_{eff}}(\omega)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1149.png"
+ ALT="$ \varepsilon_{r_{eff}}(\omega)$"></SPAN> is the effective dielectric
+constant and <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1150.png"
+ ALT="$ k_0$"></SPAN> is the TEM propagation constant <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1150.png"
+ ALT="$ k_0$"></SPAN> for the
+equivalent transmission line with an air dielectric.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+k_0 = \omega \sqrt{\varepsilon_0 \mu_0}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="95" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1151.png"
+ ALT="$\displaystyle k_0 = \omega \sqrt{\varepsilon_0 \mu_0}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">207</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The expressions used to calculate the scattering parameters are given
+by
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1152.png"
+ ALT="$\displaystyle S_{11} = S_{22}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="197" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1153.png"
+ ALT="$\displaystyle = \dfrac{\left(z - y\right) \sinh{\gamma l}}{2\cosh{\gamma l} + \left(z + y\right) \sinh{\gamma l}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">208</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1154.png"
+ ALT="$\displaystyle S_{12} = S_{21}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="197" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1155.png"
+ ALT="$\displaystyle = \dfrac{2}{2\cosh{\gamma l} + \left(z + y\right) \sinh{\gamma l}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">209</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img34.png"
+ ALT="$ z$"></SPAN> being the normalized impedance and <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1156.png"
+ ALT="$ y$"></SPAN> is the normalized
+admittance.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1534"
+  HREF="node62.html">Differential Transmission Line</A>
+<B>Up:</B> <A NAME="tex2html1530"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1524"
+  HREF="node60.html">Controlled sources</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

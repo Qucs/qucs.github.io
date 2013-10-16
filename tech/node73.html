@@ -1,0 +1,954 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Equation defined models</TITLE>
+<META NAME="description" CONTENT="Equation defined models">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="previous" HREF="node72.html">
+<LINK REL="up" HREF="node66.html">
+<LINK REL="next" HREF="node74.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1727"
+  HREF="node74.html">Microstrip components</A>
+<B>Up:</B> <A NAME="tex2html1723"
+  HREF="node66.html">Non-linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1719"
+  HREF="node72.html">Models for boolean devices</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1728"
+  HREF="node73.html#SECTION001171000000000000000">Models with Explicit Equations</A>
+<LI><A NAME="tex2html1729"
+  HREF="node73.html#SECTION001172000000000000000">Models with Implicit Equations</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION001170000000000000000"></A>
+<A NAME="sec:eqn_def_models"></A>
+<BR>
+Equation defined models
+</H1>
+
+<P>
+Often it will happen that a user needs to implement his own model.
+Therefore, it is useful to supply devices that are defined by
+arbitrary equations.
+
+<P>
+
+<H2><A NAME="SECTION001171000000000000000">
+Models with Explicit Equations</A>
+</H2>
+
+<P>
+For example the user must enter an equation <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1882.png"
+ ALT="$ i(V)$"></SPAN> describing how the
+port current <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img359.png"
+ ALT="$ I$"></SPAN> depends on the port voltage <SPAN CLASS="MATH"><IMG
+ WIDTH="90" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1883.png"
+ ALT="$ V=V_1-V_2$"></SPAN> and an
+equation <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1884.png"
+ ALT="$ q(V)$"></SPAN> describing how much charge <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img616.png"
+ ALT="$ Q$"></SPAN> is held due to the
+voltage <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img322.png"
+ ALT="$ V$"></SPAN>. These are time domain equations.  The most simple way
+then is a device with two nodes.  Defining
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I = i(V) \qquad\textrm{and}\qquad
+    g = \dfrac{\partial I}{\partial V}
+      = \underset{h\rightarrow 0}{\textrm{lim}}\dfrac{I(V+h) - I(V)}{h}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="375" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1885.png"
+ ALT="$\displaystyle I = i(V) \qquad\textrm{and}\qquad g = \dfrac{\partial I}{\partial V} = \underset{h\rightarrow 0}{\textrm{lim}}\dfrac{I(V+h) - I(V)}{h}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">271</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+as well as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Q = q(V) \qquad\textrm{and}\qquad
+    c = \dfrac{\partial Q}{\partial V}
+      = \underset{h\rightarrow 0}{\textrm{lim}}\dfrac{Q(V+h) - Q(V)}{h}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="389" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1886.png"
+ ALT="$\displaystyle Q = q(V) \qquad\textrm{and}\qquad c = \dfrac{\partial Q}{\partial V} = \underset{h\rightarrow 0}{\textrm{lim}}\dfrac{Q(V+h) - Q(V)}{h}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">272</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+the MNA matrix for a (non-linear) DC analysis writes:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{split}
+\begin{bmatrix}
++g^{(m)} & -g^{(m)}\\
+-g^{(m)} & +g^{(m)}
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}^{(m+1)}\\
+V_{2}^{(m+1)}
+\end{bmatrix}
+&=
+\begin{bmatrix}
+-I^{(m)} + g^{(m)}\cdot V^{(m)}\\
++I^{(m)} - g^{(m)}\cdot V^{(m)}
+\end{bmatrix}\\
+&=
+\begin{bmatrix}
+-I^{(m)} + g^{(m)}\cdot (V_1^{(m)} - V_2^{(m)})\\
++I^{(m)} - g^{(m)}\cdot (V_1^{(m)} - V_2^{(m)})
+\end{bmatrix}
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="438" HEIGHT="108" BORDER="0"
+ SRC="img1887.png"
+ ALT="\begin{displaymath}\begin{split}\begin{bmatrix}+g^{(m)} &amp; -g^{(m)}\\ -g^{(m)} &amp; ...
+... g^{(m)}\cdot (V_1^{(m)} - V_2^{(m)}) \end{bmatrix} \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">273</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+For a transient simulation, equation (<A HREF="node26.html#eqn:nl_cap_trans">6.89</A>) on page
+<A HREF="node26.html#eqn:nl_cap_trans"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A> has to be used with <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img616.png"
+ ALT="$ Q$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img728.png"
+ ALT="$ c$"></SPAN>.
+
+<P>
+<P>
+For an AC analysis the MNA matrix writes:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{Y}) = (g + j\omega\cdot c)\cdot
+\begin{bmatrix}
++1 & -1\\
+-1 & +1
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="210" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1888.png"
+ ALT="$\displaystyle (\underline{Y}) = (g + j\omega\cdot c)\cdot \begin{bmatrix}+1 &amp; -1\\ -1 &amp; +1 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">274</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+And the S-parameter matrix writes:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1152.png"
+ ALT="$\displaystyle S_{11} = S_{22}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="110" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1889.png"
+ ALT="$\displaystyle = \frac{1}{2\cdot Z_0\cdot Y + 1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">275</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1154.png"
+ ALT="$\displaystyle S_{12} = S_{21}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1890.png"
+ ALT="$\displaystyle = 1-S_{11}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">276</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1891.png"
+ ALT="$\displaystyle Y$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="83" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1892.png"
+ ALT="$\displaystyle = g + j\omega\cdot c$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">277</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The simulator needs to create the derivatives <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1893.png"
+ ALT="$ g$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img728.png"
+ ALT="$ c$"></SPAN> by its own.
+This can be done numerically or symbolically.  One might ask why the
+non-linear capacitance is modeled as charge, not as capacitance.
+Indeed this may be changed, but with a computer algorithm, creating
+the derivative is easier than to integrate.
+
+<P>
+<P>
+The component described above can be expanded to one with two ports
+(two pairs of terminals: terminal 1 and 2 and terminal 3 and 4).  That
+is, the currents and charges of both ports depend on both port
+voltages <!-- MATH
+ $V_{12}=V_1-V_2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="100" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1894.png"
+ ALT="$ V_{12}=V_1-V_2$"></SPAN> and <!-- MATH
+ $V_{34}=V_3-V_4$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="100" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1895.png"
+ ALT="$ V_{34}=V_3-V_4$"></SPAN>.  Thus, the defining
+equations are:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_1 = i_1(V_{12}, V_{34}) \qquad\textrm{and}\qquad
+g_{11} = \dfrac{\partial I_1}{\partial V_{12}} \qquad\textrm{and}\qquad
+g_{12} = \dfrac{\partial I_1}{\partial V_{34}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="452" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1896.png"
+ ALT="$\displaystyle I_1 = i_1(V_{12}, V_{34}) \qquad\textrm{and}\qquad g_{11} = \dfra...
+...V_{12}} \qquad\textrm{and}\qquad g_{12} = \dfrac{\partial I_1}{\partial V_{34}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">278</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_2 = i_2(V_{12}, V_{34}) \qquad\textrm{and}\qquad
+g_{21} = \dfrac{\partial I_2}{\partial V_{12}} \qquad\textrm{and}\qquad
+g_{22} = \dfrac{\partial I_2}{\partial V_{34}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="452" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1897.png"
+ ALT="$\displaystyle I_2 = i_2(V_{12}, V_{34}) \qquad\textrm{and}\qquad g_{21} = \dfra...
+...V_{12}} \qquad\textrm{and}\qquad g_{22} = \dfrac{\partial I_2}{\partial V_{34}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">279</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+as well as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Q_1 = q_1(V_{12}, V_{34}) \qquad\textrm{and}\qquad
+c_{11} = \dfrac{\partial Q_1}{\partial V_{12}} \qquad\textrm{and}\qquad
+c_{12} = \dfrac{\partial Q_1}{\partial V_{34}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="457" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1898.png"
+ ALT="$\displaystyle Q_1 = q_1(V_{12}, V_{34}) \qquad\textrm{and}\qquad c_{11} = \dfra...
+...V_{12}} \qquad\textrm{and}\qquad c_{12} = \dfrac{\partial Q_1}{\partial V_{34}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">280</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Q_2 = q_2(V_{12}, V_{34}) \qquad\textrm{and}\qquad
+c_{21} = \dfrac{\partial Q_2}{\partial V_{12}} \qquad\textrm{and}\qquad
+c_{22} = \dfrac{\partial Q_2}{\partial V_{34}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="457" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1899.png"
+ ALT="$\displaystyle Q_2 = q_2(V_{12}, V_{34}) \qquad\textrm{and}\qquad c_{21} = \dfra...
+...V_{12}} \qquad\textrm{and}\qquad c_{22} = \dfrac{\partial Q_2}{\partial V_{34}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">281</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The MNA matrix for the DC analysis writes:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
++g_{11}^{(m)} & -g_{11}^{(m)} & +g_{12}^{(m)} & -g_{12}^{(m)}\\
+-g_{11}^{(m)} & +g_{11}^{(m)} & -g_{12}^{(m)} & +g_{12}^{(m)}\\
++g_{21}^{(m)} & -g_{21}^{(m)} & +g_{22}^{(m)} & -g_{22}^{(m)}\\
+-g_{21}^{(m)} & +g_{21}^{(m)} & -g_{22}^{(m)} & +g_{22}^{(m)}
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}^{(m+1)}\\
+V_{2}^{(m+1)}\\
+V_{3}^{(m+1)}\\
+V_{4}^{(m+1)}
+\end{bmatrix}
+=
+\begin{bmatrix}
+-I_1^{(m)} + g_{11}^{(m)}\cdot V_{12}^{(m)} + g_{12}^{(m)}\cdot V_{34}^{(m)}\\
++I_1^{(m)} - g_{11}^{(m)}\cdot V_{12}^{(m)} - g_{12}^{(m)}\cdot V_{34}^{(m)}\\
+-I_2^{(m)} + g_{21}^{(m)}\cdot V_{12}^{(m)} + g_{22}^{(m)}\cdot V_{34}^{(m)}\\
++I_2^{(m)} - g_{21}^{(m)}\cdot V_{12}^{(m)} - g_{22}^{(m)}\cdot V_{34}^{(m)}\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="604" HEIGHT="107" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1900.png"
+ ALT="$\displaystyle \begin{bmatrix}+g_{11}^{(m)} &amp; -g_{11}^{(m)} &amp; +g_{12}^{(m)} &amp; -g...
+...g_{21}^{(m)}\cdot V_{12}^{(m)} - g_{22}^{(m)}\cdot V_{34}^{(m)}\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">282</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+For a transient simulation, the DC equations have to be extended by
+the non-linear (trans-) capacitances, e.g. for backward Euler:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1901.png"
+ ALT="$\displaystyle I_{C11}^{n+1,m}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="266" HEIGHT="83" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1902.png"
+ ALT="$\displaystyle = \underbrace{\dfrac{c_{11}(V_{12}^{n+1,m})}{h^n}}_{g_{eq,11}}\cd...
+...n+1} \underbrace{- \dfrac{c_{11}(V_{12}^{n})}{h^n}\cdot V_{12}^{n}}_{I_{eq,11}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">283</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1903.png"
+ ALT="$\displaystyle I_{C12}^{n+1,m}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="266" HEIGHT="83" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1904.png"
+ ALT="$\displaystyle = \underbrace{\dfrac{c_{12}(V_{12}^{n+1,m})}{h^n}}_{g_{eq,12}}\cd...
+...n+1} \underbrace{- \dfrac{c_{12}(V_{12}^{n})}{h^n}\cdot V_{12}^{n}}_{I_{eq,12}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">284</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1905.png"
+ ALT="$\displaystyle I_{C21}^{n+1,m}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="266" HEIGHT="83" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1906.png"
+ ALT="$\displaystyle = \underbrace{\dfrac{c_{21}(V_{34}^{n+1,m})}{h^n}}_{g_{eq,21}}\cd...
+...n+1} \underbrace{- \dfrac{c_{21}(V_{34}^{n})}{h^n}\cdot V_{34}^{n}}_{I_{eq,21}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">285</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1907.png"
+ ALT="$\displaystyle I_{C22}^{n+1,m}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="266" HEIGHT="83" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1908.png"
+ ALT="$\displaystyle = \underbrace{\dfrac{c_{22}(V_{34}^{n+1,m})}{h^n}}_{g_{eq,22}}\cd...
+...n+1} \underbrace{- \dfrac{c_{22}(V_{34}^{n})}{h^n}\cdot V_{34}^{n}}_{I_{eq,22}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">286</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+So with <!-- MATH
+ $g_{tr} = g + g_{eq}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="93" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1909.png"
+ ALT="$ g_{tr} = g + g_{eq}$"></SPAN> it is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{split}
+&\begin{bmatrix}
++g_{tr,11}^{(m)} & -g_{tr,11}^{(m)} & +g_{tr,12}^{(m)} & -g_{tr,12}^{(m)}\\
+-g_{tr,11}^{(m)} & +g_{tr,11}^{(m)} & -g_{tr,12}^{(m)} & +g_{tr,12}^{(m)}\\
++g_{tr,21}^{(m)} & -g_{tr,21}^{(m)} & +g_{tr,22}^{(m)} & -g_{tr,22}^{(m)}\\
+-g_{tr,21}^{(m)} & +g_{tr,21}^{(m)} & -g_{tr,22}^{(m)} & +g_{tr,22}^{(m)}
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}^{(n+1,m+1)}\\
+V_{2}^{(n+1,m+1)}\\
+V_{3}^{(n+1,m+1)}\\
+V_{4}^{(n+1,m+1)}
+\end{bmatrix} \\
+&=
+\begin{bmatrix}
+-I_1^{(m)} + g_{11}^{(m)}\cdot V_{12}^{(m)} + g_{12}^{(m)}\cdot V_{34}^{(m)} - I_{eq,11}^{(n)} - I_{eq,12}^{(n)}\\
++I_1^{(m)} - g_{11}^{(m)}\cdot V_{12}^{(m)} - g_{12}^{(m)}\cdot V_{34}^{(m)} + I_{eq,12}^{(n)} + I_{eq,12}^{(n)}\\
+-I_2^{(m)} + g_{21}^{(m)}\cdot V_{12}^{(m)} + g_{22}^{(m)}\cdot V_{34}^{(m)} - I_{eq,21}^{(n)} - I_{eq,22}^{(n)}\\
++I_2^{(m)} - g_{21}^{(m)}\cdot V_{12}^{(m)} - g_{22}^{(m)}\cdot V_{34}^{(m)} + I_{eq,21}^{(n)} + I_{eq,22}^{(n)}
+\end{bmatrix}
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="374" HEIGHT="197" BORDER="0"
+ SRC="img1910.png"
+ ALT="\begin{displaymath}\begin{split}&amp;\begin{bmatrix}+g_{tr,11}^{(m)} &amp; -g_{tr,11}^{(...
+...} + I_{eq,21}^{(n)} + I_{eq,22}^{(n)} \end{bmatrix} \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">287</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+For an AC analysis the MNA matrix writes:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:UDMmna"></A><!-- MATH
+ \begin{equation}
+(\underline{Y}) =
+\begin{bmatrix}
++g_{11} + j\omega\cdot c_{11} & -g_{11} - j\omega\cdot c_{11} & +g_{12} + j\omega\cdot c_{12} & -g_{12} - j\omega\cdot c_{12}\\
+-g_{11} - j\omega\cdot c_{11} & +g_{11} + j\omega\cdot c_{11} & -g_{12} - j\omega\cdot c_{12} & +g_{12} + j\omega\cdot c_{12}\\
++g_{21} + j\omega\cdot c_{21} & -g_{21} - j\omega\cdot c_{21} & +g_{22} + j\omega\cdot c_{22} & -g_{22} - j\omega\cdot c_{22}\\
+-g_{21} - j\omega\cdot c_{21} & +g_{21} + j\omega\cdot c_{21} & -g_{22} - j\omega\cdot c_{22} & +g_{22} + j\omega\cdot c_{22}
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="523" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1911.png"
+ ALT="$\displaystyle (\underline{Y}) = \begin{bmatrix}+g_{11} + j\omega\cdot c_{11} &amp; ...
+...} &amp; -g_{22} - j\omega\cdot c_{22} &amp; +g_{22} + j\omega\cdot c_{22} \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">288</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+As can bee seen, this scheme can be expanded to any number of ports.
+The matrices soon become quite complex, but fortunately modern
+computers are able to cope with this complexity.  S-parameters must be
+obtained numerical by setting equation <A HREF="#eqn:UDMmna">10.288</A> into equation
+<A HREF="node98.html#eqn:Y2S">15.7</A>.
+
+<P>
+
+<H2><A NAME="SECTION001172000000000000000">
+Models with Implicit Equations</A>
+</H2>
+
+<P>
+The above-mentioned explicit models are not useable for all
+components.  If the Y-parameters do not exist or if the equations
+cannot be analytically transformed into the explicit form, then an
+implicit representation must be taken.  hat is, for a one-port
+(two-terminal) component the following formulas are defined by the
+user:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="112" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1912.png"
+ ALT="$\displaystyle 0 = f(V, I) \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH">and<IMG
+ WIDTH="333" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1913.png"
+ ALT="$\displaystyle \qquad g_V = \dfrac{\partial f(V, I)}{\partial V} = \underset{h\rightarrow 0}{\text{lim}}\dfrac{f(V+h, I) - f(V, I)}{h}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">289</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH">and<IMG
+ WIDTH="326" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1914.png"
+ ALT="$\displaystyle \qquad g_I = \dfrac{\partial f(V, I)}{\partial I} = \underset{h\rightarrow 0}{\text{lim}}\dfrac{f(V, I+h) - f(V, I)}{h}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">290</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The MNA matrix for the AC analysis writes as follows:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+ . & . & +1\\
+ . & . & -1\\
++g_V & -g_V &  g_I
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}\\
+I_{out}
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="252" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1915.png"
+ ALT="$\displaystyle \begin{bmatrix}. &amp; . &amp; +1\\ . &amp; . &amp; -1\\ +g_V &amp; -g_V &amp; g_I \end{b...
+...}V_{1}\\ V_{2}\\ I_{out} \end{bmatrix} = \begin{bmatrix}0\\ 0\\ 0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">291</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+As usual, for the DC analysis the last zero on the right hand side has
+to be replaced by the iteration formula:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+g_V\cdot (V_1 - V_2) + g_I\cdot I_{out} - f(V_1-V_2, I_{out})
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="294" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1916.png"
+ ALT="$\displaystyle g_V\cdot (V_1 - V_2) + g_I\cdot I_{out} - f(V_1-V_2, I_{out})$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">292</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The S-parameters are:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1152.png"
+ ALT="$\displaystyle S_{11} = S_{22}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="123" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1917.png"
+ ALT="$\displaystyle = \dfrac{g_I}{g_I - 2\cdot Z_0\cdot g_V}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">293</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1154.png"
+ ALT="$\displaystyle S_{12} = S_{21}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1890.png"
+ ALT="$\displaystyle = 1-S_{11}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">294</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Consequently, for a two-port device two equation are necessary: One for
+first port and one for second port:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">0</SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="143" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1918.png"
+ ALT="$\displaystyle = f_1(V_{12}, V_{34}, I_1, I_2)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">295</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">0</SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="143" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1919.png"
+ ALT="$\displaystyle = f_2(V_{12}, V_{34}, I_1, I_2)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">296</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Building the MNA matrix is again straight forward:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{split}
+&\begin{bmatrix}
+ . & . & . & . & +1 &  0\\
+ . & . & . & . & -1 &  0\\
+ . & . & . & . &  0 & +1\\
+ . & . & . & . &  0 & -1\\
++g_{f1,V12} & -g_{f1,V12} & +g_{f1,V34} & -g_{f1,V34} & g_{f1,I1} & g_{f1,I2}\\
++g_{f2,V12} & -g_{f2,V12} & +g_{f2,V34} & -g_{f2,V34} & g_{f2,I1} & g_{f2,I2}\\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}^{(m+1)}\\
+V_{2}^{(m+1)}\\
+V_{3}^{(m+1)}\\
+V_{4}^{(m+1)}\\
+I_{out1}^{(m+1)}\\
+I_{out2}^{(m+1)}
+\end{bmatrix} \\
+&=
+\begin{bmatrix}
+g_{f1,V12}\cdot V_{12} + g_{f1,V34}\cdot V_{34} + g_{f1,I1}\cdot I_{out1} + g_{f1,I2}\cdot I_{out2} - f_1(V_{12}, V_{34}, I_{out1}, I_{out2})\\
+g_{f2,V12}\cdot V_{12} + g_{f2,V34}\cdot V_{34} + g_{f2,I1}\cdot I_{out1} + g_{f2,I2}\cdot I_{out2} - f_2(V_{12}, V_{34}, I_{out1}, I_{out2})
+\end{bmatrix}
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="591" HEIGHT="185" BORDER="0"
+ SRC="img1920.png"
+ ALT="\begin{displaymath}\begin{split}&amp;\begin{bmatrix}. &amp; . &amp; . &amp; . &amp; +1 &amp; 0\\ . &amp; . &amp;...
+...2(V_{12}, V_{34}, I_{out1}, I_{out2}) \end{bmatrix} \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">297</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Once more, this concept can easily expanded to any number of ports.
+It is also possible mix implicit and explicit definitions, i.e. some
+ports of the device may be defined by explicit equations whereas the
+others are defined by implicit equations.
+
+<P>
+<P>
+The calculation of the S-parameters is not that trival. The
+Y-parameters as well as the Z-parameters might be infinite. A small
+trick can avoid this problem, as will be shown in the following 2-port
+example. First, the small-signal Y-parameters should be derived by
+using the law about implicit functions:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{J}) =
+\begin{pmatrix}
+y_{11} & y_{12}\\
+y_{21} & y_{22}
+\end{pmatrix}
+=
+-{\underbrace{
+\begin{pmatrix}
+\dfrac{\partial f_1}{\partial I_1} & \dfrac{\partial f_1}{\partial I_2}\\
+\dfrac{\partial f_2}{\partial I_1} & \dfrac{\partial f_2}{\partial I_2}
+\end{pmatrix}}_{J_i}}^{-1}\cdot
+\underbrace{
+\begin{pmatrix}
+\dfrac{\partial f_1}{\partial V_1} & \dfrac{\partial f_1}{\partial V_2}\\
+\dfrac{\partial f_2}{\partial V_1} & \dfrac{\partial f_2}{\partial V_2}
+\end{pmatrix}}_{J_v}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="395" HEIGHT="120" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1921.png"
+ ALT="$\displaystyle (\underline{J}) = \begin{pmatrix}y_{11} &amp; y_{12}\\ y_{21} &amp; y_{22...
+...al f_2}{\partial V_1} &amp; \dfrac{\partial f_2}{\partial V_2} \end{pmatrix}}_{J_v}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">298</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The equation reveals immediately the difficulty: The inverse of the current
+Jocobi matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1922.png"
+ ALT="$ J_i$"></SPAN> may not exist. But this problem can be outsourced to
+one single scalar number by using Cramer's rule for matrix inversion:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+J_i^{-1} = \dfrac{1}{\Delta J_i}\cdot A_{Ji}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="118" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1923.png"
+ ALT="$\displaystyle J_i^{-1} = \dfrac{1}{\Delta J_i}\cdot A_{Ji}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">299</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1924.png"
+ ALT="$ A_{Ji}$"></SPAN> is built of the sub-determinantes of <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1922.png"
+ ALT="$ J_i$"></SPAN> in the way that
+<SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1925.png"
+ ALT="$ a_{(n,m)}$"></SPAN> is the determinante of <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1922.png"
+ ALT="$ J_i$"></SPAN> without row <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img56.png"
+ ALT="$ m$"></SPAN> and without column <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img383.png"
+ ALT="$ n$"></SPAN>
+but multiplied with <!-- MATH
+ $(-1)^{n+m}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="66" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1926.png"
+ ALT="$ (-1)^{n+m}$"></SPAN>. It therefore always exists, whereas dividing
+by the determinante of <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1922.png"
+ ALT="$ J_i$"></SPAN> may become infinity. Now parameters can be
+defined as follows:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{J}') =
+\begin{pmatrix}
+y_{11}' & y_{12}'\\
+y_{21}' & y_{22}'
+\end{pmatrix}
+=
+-A_{Ji}\cdot J_v
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="219" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1927.png"
+ ALT="$\displaystyle (\underline{J}') = \begin{pmatrix}y_{11}' &amp; y_{12}'\\ y_{21}' &amp; y_{22}' \end{pmatrix} = -A_{Ji}\cdot J_v$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">300</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Before converting to S-parameters the matrix must be expanded to a 4-port
+matrix, because the 2-ports are not referenced to ground:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{J}'') =
+\begin{pmatrix}
++y_{11}' & -y_{11}' & +y_{12}' & -y_{12}'\\
+-y_{11}' & +y_{11}' & -y_{12}' & +y_{12}'\\
++y_{21}' & -y_{21}' & +y_{22}' & -y_{22}'\\
+-y_{21}' & +y_{21}' & -y_{22}' & +y_{22}'
+\end{pmatrix}
+=
+-A_{Ji}'\cdot J_v'
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="351" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1928.png"
+ ALT="$\displaystyle (\underline{J}'') = \begin{pmatrix}+y_{11}' &amp; -y_{11}' &amp; +y_{12}'...
+...\\ -y_{21}' &amp; +y_{21}' &amp; -y_{22}' &amp; +y_{22}' \end{pmatrix} = -A_{Ji}'\cdot J_v'$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">301</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Finally, equation (<A HREF="node98.html#eqn:Y2S">15.7</A>) converts the parameters to
+S-parameters:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1929.png"
+ ALT="$\displaystyle (\underline{S})$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="272" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1930.png"
+ ALT="$\displaystyle = \left( (E) - Z_0\cdot (\underline{Y}) \right) \cdot \left( (E) + Z_0\cdot (\underline{Y}) \right)^{-1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">302</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="428" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1931.png"
+ ALT="$\displaystyle = \left( (E) + Z_0\cdot \dfrac{1}{\Delta J_i}\cdot A_{Ji}'\cdot J...
+...\left( (E) - Z_0\cdot \dfrac{1}{\Delta J_i}\cdot A_{Ji}'\cdot J_v' \right)^{-1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">303</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="399" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1932.png"
+ ALT="$\displaystyle = \left( \Delta J_i\cdot (E) + Z_0\cdot A_{Ji}'\cdot J_v' \right) \cdot \left( \Delta J_i\cdot (E) - Z_0\cdot A_{Ji}'\cdot J_v' \right)^{-1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">304</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The calculations proofs that the critical factor <!-- MATH
+ $1/\Delta J_i$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1933.png"
+ ALT="$ 1/\Delta J_i$"></SPAN>
+disappears and a solution exists if and only if the S-parameters of
+this device exist.
+
+<P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1727"
+  HREF="node74.html">Microstrip components</A>
+<B>Up:</B> <A NAME="tex2html1723"
+  HREF="node66.html">Non-linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1719"
+  HREF="node72.html">Models for boolean devices</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

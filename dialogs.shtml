@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+
+<title>Qucs project: screenshots</title>
+<link href="qucsweb.css" rel="stylesheet"  type="text/css">
+
+<head>
+
+<body>
+
+<!-- include the common web page header using Apache Server-Side Includes (SSI) -->
+<!--#include virtual="/qucs-header.html" -->
+
+<div id="main">
+<hr>
+
+<center>
+
+[
+
+<a href="screenshots.shtml">schematic area</a> -
+
+dialogs -
+
+<a href="languages.shtml">languages</a> -
+
+<a href="miscellaneous.shtml">miscellaneous</a> -
+
+<a href="tools.shtml">tools</a>
+
+]
+
+</center>
+
+
+
+<h3>Screenshots of dialogs</h3>
+
+
+
+The screenshots below show some of the dialogs the user comes across 
+
+when using the Qucs GUI.
+
+
+
+<center>
+
+<table cellpadding=24 border=0>
+
+<tr>
+
+<td colspan=1 align="left" valign="top"><img src="images/qs08.png" alt="Parameter Sweep"><br>
+
+Parameter sweep dialog.
+
+</td>
+
+<td colspan=1 align="left" valign="top"><img src="images/qs09.png" alt="Node Name"><br>
+
+Wire label dialog.
+
+<br><br>
+
+<img src="images/qs10.png" alt="Qucs Properties"><br>
+
+Application property dialog.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td colspan=2 align="center"><img src="images/q19.png" alt="Component Properties"><br>
+
+Component property dialog.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td colspan=1 align="left" valign="top"><img src="images/qs12.png" alt="Data Marker"><br>
+
+Data marker dialog.
+
+<br><br><br>
+
+<img src="images/q18.png" alt="Document Properties"><br>
+
+File property dialog.
+
+</td>
+
+<td colspan=1 align="left" valign="top"><img src="images/q17.png" alt="Diagram Properties"><br>
+
+Diagram property dialog.
+
+</td>
+
+</tr>
+
+</table>
+
+</center>
+
+
+
+Please note that the actual appearance depends on the window manager (window
+
+decorations), the selected type of font and its size and the widget set can
+
+be selected by the <tt>qtconfig</tt> program.
+
+<br><br>
+
+
+
+<hr>
+</div>
+<!-- include the common web page footer using Apache Server-Side Includes (SSI) -->
+  <!--#include virtual="/qucs-footer.html" -->
+
+</body>
+
+</html>
+

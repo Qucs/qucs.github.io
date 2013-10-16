@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Qucs project: download</title>
+<link href="qucsweb.css" rel="stylesheet"  type="text/css">
+<head>
+<body>
+
+<!-- include the common web page header using Apache Server-Side Includes (SSI) -->
+<!--#include virtual="/qucs-header.html" -->
+
+<div id="main">
+<hr>
+<center>
+[
+<a href="download.shtml">packages</a> -
+<a href="examples.shtml">examples</a> -
+<a href="related.shtml">related</a> -
+<a href="press.shtml">press/education</a>
+]
+</center>
+
+
+<a name="download">
+<h3>Older freehdl versions</h3>
+</a>
+In this section you will find the old freehdl downloads
+<br><br>
+FreeHDL 
+<a href="http://seul.org/~enaroska/freehdl-20050510.tar.gz">preliminary</a> version<br/>
+FreeHDL  version
+<a href="http://seul.org/~enaroska/freehdl-0.0.1.tar.gz">0.0.1</a><br/>
+FreeHDL  version
+<a href="http://seul.org/~enaroska/freehdl-0.0.2.tar.gz">0.0.2</a><br/>
+FreeHDL  version
+<a href="http://seul.org/~enaroska/freehdl-0.0.3.tar.gz">0.0.3</a><br/>
+FreeHDL  version
+<a href="http://seul.org/~enaroska/freehdl-0.0.4.tar.gz">0.0.4</a><br/>
+FreeHDL  version
+<a href="http://seul.org/~enaroska/freehdl-0.0.5.tar.gz">0.0.5</a><br/>
+FreeHDL  version
+<a href="http://seul.org/~enaroska/freehdl-0.0.6.tar.gz">0.0.6</a><br/>
+FreeHDL  version
+<a href="http://seul.org/~enaroska/freehdl-0.0.7.tar.gz">0.0.7</a><br/>
+FreeHDL  version
+<a href="http://seul.org/~enaroska/freehdl-0.0.8.tar.gz">0.0.8</a><br/>
+
+
+
+<hr>
+</div>
+<!-- include the common web page footer using Apache Server-Side Includes (SSI) -->
+  <!--#include virtual="/qucs-footer.html" -->
+</body>
+</html>

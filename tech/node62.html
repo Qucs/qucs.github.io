@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Differential Transmission Line</TITLE>
+<META NAME="description" CONTENT="Differential Transmission Line">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node63.html">
+<LINK REL="previous" HREF="node61.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node63.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1546"
+  HREF="node63.html">Coupled transmission line</A>
+<B>Up:</B> <A NAME="tex2html1542"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1536"
+  HREF="node61.html">Transmission Line</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION0010210000000000000000">
+Differential Transmission Line</A>
+</H1>
+
+<P>
+A differential (4-port) transmission line is not referenced to ground
+potential, i.e. the wave from the input (port 1 and 4) is distributed
+to the output (port 2 and 3). Its admittance parameters are:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Y_{11} = Y_{22} = Y_{33} = Y_{44} = -Y_{14} = -Y_{41} = -Y_{23} = -Y_{32} =
+  \dfrac{1}{Z_L \cdot \tanh(\gamma\cdot l)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="509" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1157.png"
+ ALT="$\displaystyle Y_{11} = Y_{22} = Y_{33} = Y_{44} = -Y_{14} = -Y_{41} = -Y_{23} = -Y_{32} = \dfrac{1}{Z_L \cdot \tanh(\gamma\cdot l)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">210</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Y_{13} = Y_{31} = Y_{24} = Y_{42} = -Y_{12} = -Y_{21} = -Y_{34} = -Y_{43} =
+  \dfrac{1}{Z_L \cdot \sinh(\gamma\cdot l)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="506" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1158.png"
+ ALT="$\displaystyle Y_{13} = Y_{31} = Y_{24} = Y_{42} = -Y_{12} = -Y_{21} = -Y_{34} = -Y_{43} = \dfrac{1}{Z_L \cdot \sinh(\gamma\cdot l)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">211</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The scattering parameters writes:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{11} = S_{22} = S_{33} = S_{44} =
+  Z_L \cdot \dfrac{(2\cdot Z_0 + Z_L)\cdot \exp(2\cdot\gamma\cdot l) + (2\cdot Z_0 - Z_L)}
+                  {(2\cdot Z_0 + Z_L)^2\cdot \exp(2\cdot\gamma\cdot l) - (2\cdot Z_0 - Z_L)^2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="515" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1159.png"
+ ALT="$\displaystyle S_{11} = S_{22} = S_{33} = S_{44} = Z_L \cdot \dfrac{(2\cdot Z_0 ...
+...)} {(2\cdot Z_0 + Z_L)^2\cdot \exp(2\cdot\gamma\cdot l) - (2\cdot Z_0 - Z_L)^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">212</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{14} = S_{41} = S_{23} = S_{32} = 1 - S_{11}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="232" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1160.png"
+ ALT="$\displaystyle S_{14} = S_{41} = S_{23} = S_{32} = 1 - S_{11}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">213</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1161.png"
+ ALT="$\displaystyle S_{12}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="360" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1162.png"
+ ALT="$\displaystyle = S_{21} = S_{34} = S_{43} = -S_{13} = -S_{31} = -S_{24} = -S_{42}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">214</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="324" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1163.png"
+ ALT="$\displaystyle = \dfrac{4\cdot Z_L \cdot Z_0 \cdot \exp(\gamma\cdot l)} {(2\cdot Z_0 + Z_L)^2\cdot \exp(2\cdot\gamma\cdot l) - (2\cdot Z_0 - Z_L)^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">215</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Note: As already stated, this is a pure differential transmission line
+without ground reference. It is <SPAN  CLASS="textit">not</SPAN> a three-wire system. I.e.
+there is only one mode. The next section describes a differential line
+with ground reference.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1546"
+  HREF="node63.html">Coupled transmission line</A>
+<B>Up:</B> <A NAME="tex2html1542"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1536"
+  HREF="node61.html">Transmission Line</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

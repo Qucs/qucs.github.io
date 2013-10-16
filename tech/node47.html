@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Bias T</TITLE>
+<META NAME="description" CONTENT="Bias T">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node48.html">
+<LINK REL="previous" HREF="node46.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node48.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1357"
+  HREF="node48.html">Transformer</A>
+<B>Up:</B> <A NAME="tex2html1353"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1347"
+  HREF="node46.html">DC Feed</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001060000000000000000">
+Bias T</A>
+</H1>
+
+<P>
+An ideal bias t is a combination of a DC block and a DC feed
+(fig. <A HREF="#fig:biast">9.1</A>). During DC simulation the MNA matrix
+of an ideal bias t writes as follows:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+ . & . & .  &  0\\
+ . & . & .  &  1\\
+ . & . & .  & -1\\
+ 0 & 1 & -1 &  0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}\\
+V_{3}\\
+I_{out}
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_{1}\\
+I_{2}\\
+I_{3}\\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+0\\
+0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="299" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img885.png"
+ ALT="$\displaystyle \begin{bmatrix}. &amp; . &amp; . &amp; 0\\ . &amp; . &amp; . &amp; 1\\ . &amp; . &amp; . &amp; -1\\ 0...
+...\\ I_{2}\\ I_{3}\\ 0 \end{bmatrix} = \begin{bmatrix}0\\ 0\\ 0\\ 0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">21</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:biast"></A><A NAME="8766"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 9.1:</STRONG>
+bias t</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="154" HEIGHT="102" ALIGN="BOTTOM" BORDER="0"
+ SRC="img886.png"
+ ALT="\includegraphics[width=3.5cm]{biast}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The MNA entries of the bias t during AC analysis write as
+follows.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+ . & . & .  & -1\\
+ . & . & .  &  1\\
+ . & . & .  &  0\\
+-1 & 1 & 0  &  0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}\\
+V_{3}\\
+I_{out}
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_{1}\\
+I_{2}\\
+I_{3}\\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+0\\
+0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="299" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img887.png"
+ ALT="$\displaystyle \begin{bmatrix}. &amp; . &amp; . &amp; -1\\ . &amp; . &amp; . &amp; 1\\ . &amp; . &amp; . &amp; 0\\ -...
+...\\ I_{2}\\ I_{3}\\ 0 \end{bmatrix} = \begin{bmatrix}0\\ 0\\ 0\\ 0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">22</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The scattering parameters writes as follows.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(S) =
+\begin{pmatrix}
+0 & 1 & 0\\
+1 & 0 & 0\\
+0 & 0 & 1\\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="131" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img888.png"
+ ALT="$\displaystyle (S) = \begin{pmatrix}0 &amp; 1 &amp; 0\\ 1 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 1\\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">23</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+A bias t is noise free. A model for transient simulation does not
+exist. It is common practice to model it as an inductor and a
+capacitance with finite values which are entered by the user.
+
+<P>
+<BR> <HR>
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

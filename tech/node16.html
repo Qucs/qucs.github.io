@@ -1,0 +1,1089 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Non-linear DC Analysis</TITLE>
+<META NAME="description" CONTENT="Non-linear DC Analysis">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node17.html">
+<LINK REL="previous" HREF="node15.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node17.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html858"
+  HREF="node17.html">Overall solution algorithm for</A>
+<B>Up:</B> <A NAME="tex2html854"
+  HREF="node13.html">DC Analysis</A>
+<B> Previous:</B> <A NAME="tex2html848"
+  HREF="node15.html">Extensions to the MNA</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html859"
+  HREF="node16.html#SECTION00431000000000000000">Newton-Raphson method</A>
+<LI><A NAME="tex2html860"
+  HREF="node16.html#SECTION00432000000000000000">Convergence</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00430000000000000000">
+Non-linear DC Analysis</A>
+</H1>
+
+<P>
+Previous sections described using the modified nodal analysis solving
+linear networks including controlled sources.  It can also be used to
+solve networks with non-linear components like diodes and transistors.
+Most methods are based on iterative solutions of a linearised equation
+system.  The best known is the so called Newton-Raphson method.
+
+<P>
+
+<H2><A NAME="SECTION00431000000000000000"></A>
+<A NAME="sec:NRmethod"></A>
+<BR>
+Newton-Raphson method
+</H2>
+
+<P>
+The Newton-Raphson method is going to be introduced using the example
+circuit shown in fig. <A HREF="#fig:NLexample">3.2</A> having a single unknown: the
+voltage at node 1.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:NLexample"></A><A NAME="3103"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.2:</STRONG>
+example circuit for non-linear DC analysis</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="451" HEIGHT="191" ALIGN="BOTTOM" BORDER="0"
+ SRC="img304.png"
+ ALT="\includegraphics[width=10cm]{NLexample}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The 1x1 MNA equation system to be solved can be written as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:NLmatrix"></A><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+G
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_{0}
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="123" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img305.png"
+ ALT="$\displaystyle \begin{bmatrix}G \end{bmatrix} \cdot \begin{bmatrix}V_{1} \end{bmatrix} = \begin{bmatrix}I_{0} \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">23</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+whereas the value for <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img306.png"
+ ALT="$ G$"></SPAN> is now going to be explained.  The current
+through a diode is simply determined by Schockley's approximation
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_{d} = I_{S}\cdot \left(e^{\frac{V_{d}}{V_{T}}} - 1\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="146" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img307.png"
+ ALT="$\displaystyle I_{d} = I_{S}\cdot \left(e^{\frac{V_{d}}{V_{T}}} - 1\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">24</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Thus Kirchhoff's current law at node 1 can be expressed as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_{0} = \dfrac{V}{R} + I_{S}\cdot \left(e^{\frac{V}{V_{T}}} - 1\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img308.png"
+ ALT="$\displaystyle I_{0} = \dfrac{V}{R} + I_{S}\cdot \left(e^{\frac{V}{V_{T}}} - 1\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">25</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+By establishing eq. (<A HREF="#eq:NLfunc">3.26</A>) it is possible to trace the
+problem back to finding the zero point of the function <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.png"
+ ALT="$ f$"></SPAN>.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:NLfunc"></A><!-- MATH
+ \begin{equation}
+f(V) = \dfrac{V}{R} + I_{S}\cdot \left(e^{\frac{V}{V_{T}}} - 1\right) - I_{0}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="232" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img310.png"
+ ALT="$\displaystyle f(V) = \dfrac{V}{R} + I_{S}\cdot \left(e^{\frac{V}{V_{T}}} - 1\right) - I_{0}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">26</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Newton developed a method stating that the zero point of a functions
+derivative (i.e. the tangent) at a given point is nearer to the zero
+point of the function itself than the original point.  In mathematical
+terms this means to linearise the function <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.png"
+ ALT="$ f$"></SPAN> at a starting value
+<SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img311.png"
+ ALT="$ V^{(0)}$"></SPAN>.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:NRapprox"></A><!-- MATH
+ \begin{equation}
+f\left(V^{(0)} + \Delta V\right) \approx f\left(V^{(0)}\right) + \left.\dfrac{\partial f\left(V\right)}{\partial V}\right|_{V^{(0)}}\cdot \Delta V
+\;\;\;\; \text{ with } \;\;\;\;
+\Delta V = V^{(1)} - V^{(0)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="352" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img312.png"
+ ALT="$\displaystyle f\left(V^{(0)} + \Delta V\right) \approx f\left(V^{(0)}\right) + ...
+...rtial f\left(V\right)}{\partial V}\right\vert _{V^{(0)}}\cdot \Delta V \;\;\;\;$">&nbsp; &nbsp; with&nbsp;<IMG
+ WIDTH="148" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.png"
+ ALT="$\displaystyle \;\;\;\; \Delta V = V^{(1)} - V^{(0)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">27</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Setting <!-- MATH
+ $f(V^{(1)}) = 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="85" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.png"
+ ALT="$ f(V^{(1)}) = 0$"></SPAN> gives
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+V^{(1)} = V^{(0)} - \dfrac{f\left(V^{(0)}\right)}{\left.\dfrac{\partial f\left(V\right)}{\partial V}\right|_{V^{(0)}}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="191" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img315.png"
+ ALT="$\displaystyle V^{(1)} = V^{(0)} - \dfrac{f\left(V^{(0)}\right)}{\left.\dfrac{\partial f\left(V\right)}{\partial V}\right\vert _{V^{(0)}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">28</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+or in the general case with <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img56.png"
+ ALT="$ m$"></SPAN> being the number of iteration
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:NRgeneral"></A><!-- MATH
+ \begin{equation}
+V^{(m + 1)} = V^{(m)} - \dfrac{f\left(V^{(m)}\right)}{\left.\dfrac{\partial f\left(V\right)}{\partial V}\right|_{V^{(m)}}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="222" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img316.png"
+ ALT="$\displaystyle V^{(m + 1)} = V^{(m)} - \dfrac{f\left(V^{(m)}\right)}{\left.\dfrac{\partial f\left(V\right)}{\partial V}\right\vert _{V^{(m)}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">29</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+This must be computed until <SPAN CLASS="MATH"><IMG
+ WIDTH="55" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img317.png"
+ ALT="$ V^{(m+1)}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img318.png"
+ ALT="$ V^{(m)}$"></SPAN> differ less than a
+certain barrier.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:NLconvergence"></A><!-- MATH
+ \begin{equation}
+\left|V^{(m+1)} - V^{(m)}\right| < \varepsilon_{abs} + \varepsilon_{rel}\cdot \left|V^{(m)}\right|
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="269" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img319.png"
+ ALT="$\displaystyle \left\vert V^{(m+1)} - V^{(m)}\right\vert &lt; \varepsilon_{abs} + \varepsilon_{rel}\cdot \left\vert V^{(m)}\right\vert$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">30</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+With very small <!-- MATH
+ $\varepsilon_{abs}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img320.png"
+ ALT="$ \varepsilon_{abs}$"></SPAN> the iteration would break too
+early and for little <!-- MATH
+ $\varepsilon_{rel}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img321.png"
+ ALT="$ \varepsilon_{rel}$"></SPAN> values the iteration aims to
+a useless precision for large absolute values of <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img322.png"
+ ALT="$ V$"></SPAN>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:NewtonRaphson"></A><A NAME="3193"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.3:</STRONG>
+Newton-Raphson method for example circuit</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<IMG
+ WIDTH="536" HEIGHT="333" ALIGN="BOTTOM" BORDER="0"
+ SRC="img323.png"
+ ALT="\includegraphics[width=0.75\linewidth]{newton}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+With this theoretical background it is now possible to step back to
+eq. (<A HREF="#eq:NLfunc">3.26</A>) being the determining equation for the example
+circuit.  With
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+g_{d}^{(m)} = \left.\dfrac{\partial I_{d}}{\partial V}\right|_{V^{(m)}} = \dfrac{I_{S}}{V_{T}}\cdot e^{\frac{V^{(m)}}{V_{T}}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="214" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img324.png"
+ ALT="$\displaystyle g_{d}^{(m)} = \left.\dfrac{\partial I_{d}}{\partial V}\right\vert _{V^{(m)}} = \dfrac{I_{S}}{V_{T}}\cdot e^{\frac{V^{(m)}}{V_{T}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">31</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+and
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\left.\dfrac{\partial f\left(V\right)}{\partial V}\right|_{V^{(m)}} = \dfrac{1}{R} + g_{d}^{(m)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="178" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img325.png"
+ ALT="$\displaystyle \left.\dfrac{\partial f\left(V\right)}{\partial V}\right\vert _{V^{(m)}} = \dfrac{1}{R} + g_{d}^{(m)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">32</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+the eq. (<A HREF="#eq:NRgeneral">3.29</A>) can be written as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:NRresult"></A><!-- MATH
+ \begin{equation}
+\left(g_{d}^{(m)} + \dfrac{1}{R}\right)\cdot V^{(m+1)} = I_{0} - \left(I_{d}^{(m)} - g_{d}^{(m)}\cdot V^{(m)}\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="354" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img326.png"
+ ALT="$\displaystyle \left(g_{d}^{(m)} + \dfrac{1}{R}\right)\cdot V^{(m+1)} = I_{0} - \left(I_{d}^{(m)} - g_{d}^{(m)}\cdot V^{(m)}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">33</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+when the expression
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+f\left(V^{(m)}\right) = \dfrac{1}{R}\cdot V^{(m)} + I_{d}^{(m)} - I_{0}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="235" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img327.png"
+ ALT="$\displaystyle f\left(V^{(m)}\right) = \dfrac{1}{R}\cdot V^{(m)} + I_{d}^{(m)} - I_{0}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">34</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+based upon eq. (<A HREF="#eq:NLfunc">3.26</A>) is taken into account.  Comparing the
+introductory MNA equation system in eq. (<A HREF="#eq:NLmatrix">3.23</A>) with
+eq. (<A HREF="#eq:NRresult">3.33</A>) proposes the following equivalent circuit for
+the diode model.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:AccompaniedModel"></A><A NAME="3257"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.4:</STRONG>
+accompanied equivalent circuit for intrinsic diode</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<IMG
+ WIDTH="141" HEIGHT="138" ALIGN="BOTTOM" BORDER="0"
+ SRC="img328.png"
+ ALT="\includegraphics[width=0.2\linewidth]{newtondiode}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<A NAME="sec:DCdiode"></A>
+<P>
+With
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_{eq} = I_{d}^{(m)} - g_{d}^{(m)}\cdot V^{(m)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="169" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img329.png"
+ ALT="$\displaystyle I_{eq} = I_{d}^{(m)} - g_{d}^{(m)}\cdot V^{(m)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">35</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+the MNA matrix entries can finally be written as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+g_{d} & -g_{d}\\
+-g_{d} & g_{d}
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}
+\end{bmatrix}
+=
+\begin{bmatrix}
+-I_{eq}\\
+I_{eq}
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="210" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img330.png"
+ ALT="$\displaystyle \begin{bmatrix}g_{d} &amp; -g_{d}\\ -g_{d} &amp; g_{d} \end{bmatrix} \cdo...
+...rix}V_{1}\\ V_{2} \end{bmatrix} = \begin{bmatrix}-I_{eq}\\ I_{eq} \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">36</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+In analog ways all controlled current sources with non-linear
+current-voltage dependency built into diodes and transistors can be
+modeled.  The left hand side of the MNA matrix (the A matrix) is
+called Jacobian matrix which is going to be build in each iteration
+step.  For the solution vector <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img181.png"
+ ALT="$ x$"></SPAN> possibly containing currents as
+well when voltage sources are in place a likely convergence criteria
+as defined in eq. (<A HREF="#eq:NLconvergence">3.30</A>) must be defined for the
+currents.
+
+<P>
+<P>
+Having understood the one-dimensional example, it is now only a
+small step to the general multi-dimensional algorithm: The node
+voltage becomes a vector <!-- MATH
+ $\boldsymbol{V}^{(m)}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img331.png"
+ ALT="$ \boldsymbol{V}^{(m)}$"></SPAN>, factors become
+the corresponding matrices and differentiations become Jacobian
+matrices.
+
+<P>
+<P>
+The function whose zero must be found is the transformed MNA
+equation <A HREF="#eq:NLmatrix">3.23</A>:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\boldsymbol{f}( \boldsymbol{V}^{(m)} ) =
+    \boldsymbol{G}\cdot \boldsymbol{V}^{(m)} - \boldsymbol{I}_{0}^{(m)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="196" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img332.png"
+ ALT="$\displaystyle \boldsymbol{f}( \boldsymbol{V}^{(m)} ) = \boldsymbol{G}\cdot \boldsymbol{V}^{(m)} - \boldsymbol{I}_{0}^{(m)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">37</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The only difference to the linear case is that the vector <!-- MATH
+ $\boldsymbol{I}_{0}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img333.png"
+ ALT="$ \boldsymbol{I}_{0}$"></SPAN>
+also contains the currents flowing out of the non-linear components.
+The iteration formula of the Newton-Raphson method writes:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:ndimNewton"></A><!-- MATH
+ \begin{equation}
+\boldsymbol{V}^{(m+1)} = \boldsymbol{V}^{(m)} -
+  \left( \left.\frac{\partial\boldsymbol{f}( \boldsymbol{V} )}
+                    {\partial\boldsymbol{V}}\right|_{V^{(m)}} \right)^{-1}
+  \cdot \boldsymbol{f}( \boldsymbol{V}^{(m)} )
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="336" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img334.png"
+ ALT="$\displaystyle \boldsymbol{V}^{(m+1)} = \boldsymbol{V}^{(m)} - \left( \left.\fra...
+...right\vert _{V^{(m)}} \right)^{-1} \cdot \boldsymbol{f}( \boldsymbol{V}^{(m)} )$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">38</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Note that the Jacobian matrix is nothing else but the real
+part of the MNA matrix for the AC analysis:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:ndimJacobi"></A><!-- MATH
+ \begin{equation}
+\boldsymbol{J}^{(m)}
+  = \left.\frac{\partial\boldsymbol{f}( \boldsymbol{V} )}
+               {\partial\boldsymbol{V}}\right|_{\boldsymbol{V}^{(m)}}
+  = \boldsymbol{G} - \left.\frac{\partial\boldsymbol{I}_{0}}
+               {\partial\boldsymbol{V}}\right|_{\boldsymbol{V}^{(m)}}
+  = \boldsymbol{G} - \boldsymbol{J}_{nl}^{(m)}
+  = \text{Re}\left(\boldsymbol{G}_{AC}\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="377" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img335.png"
+ ALT="$\displaystyle \boldsymbol{J}^{(m)} = \left.\frac{\partial\boldsymbol{f}( \bolds...
+...ght\vert _{\boldsymbol{V}^{(m)}} = \boldsymbol{G} - \boldsymbol{J}_{nl}^{(m)} =$">&nbsp; &nbsp;Re<IMG
+ WIDTH="50" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img336.png"
+ ALT="$\displaystyle \left(\boldsymbol{G}_{AC}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">39</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where the index <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img337.png"
+ ALT="$ nl$"></SPAN> denotes only the non-linear terms. Putting equation
+<A HREF="#eq:ndimJacobi">3.39</A> into equation <A HREF="#eq:ndimNewton">3.38</A> and multiplying it
+with the Jacobian matrix leads to
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="100" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img338.png"
+ ALT="$\displaystyle \boldsymbol{J}^{(m)} \cdot \boldsymbol{V}^{(m+1)}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="180" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img339.png"
+ ALT="$\displaystyle = \boldsymbol{J}^{(m)} \cdot \boldsymbol{V}^{(m)} - \boldsymbol{f}( \boldsymbol{V}^{(m)} )$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">40</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="287" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img340.png"
+ ALT="$\displaystyle = \left( \boldsymbol{G} - \boldsymbol{J}_{nl}^{(m)} \right) \cdot...
+...V}^{(m)} - \boldsymbol{G} \cdot \boldsymbol{V}^{(m)} + \boldsymbol{I}_{0}^{(m)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">41</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="164" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img341.png"
+ ALT="$\displaystyle = -\boldsymbol{J}_{nl}^{(m)} \cdot \boldsymbol{V}^{(m)} + \boldsymbol{I}_{0}^{(m)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">42</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+So, bringing the Jacobian back to the right side results in the new
+iteration formula:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\boldsymbol{V}^{(m+1)} = \left( \boldsymbol{J}^{(m)} \right)^{-1} \cdot
+  \left( -\boldsymbol{J}_{nl}^{(m)}\cdot \boldsymbol{V}^{(m)} + \boldsymbol{I}_{0}^{(m)} \right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="325" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img342.png"
+ ALT="$\displaystyle \boldsymbol{V}^{(m+1)} = \left( \boldsymbol{J}^{(m)} \right)^{-1}...
+...mbol{J}_{nl}^{(m)}\cdot \boldsymbol{V}^{(m)} + \boldsymbol{I}_{0}^{(m)} \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">43</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The negative sign in front of <!-- MATH
+ $\boldsymbol{J}_{nl}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img343.png"
+ ALT="$ \boldsymbol{J}_{nl}$"></SPAN> is due to the
+definition of <!-- MATH
+ $\boldsymbol{I}_{0}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img333.png"
+ ALT="$ \boldsymbol{I}_{0}$"></SPAN> flowing out of the component. Note
+that <!-- MATH
+ $\boldsymbol{I}_{0}^{(m)}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="35" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img344.png"
+ ALT="$ \boldsymbol{I}_{0}^{(m)}$"></SPAN> still contains contributions of linear
+and non-linear current sources.
+
+<P>
+
+<H2><A NAME="SECTION00432000000000000000"></A>
+<A NAME="sec:convergenceDC"></A>
+<BR>
+Convergence
+</H2>
+
+<P>
+Numerical as well as convergence problems occur during the
+Newton-Raphson iterations when dealing with non-linear device curves
+as they are used to model the DC behaviour of diodes and transistors.
+
+<P>
+<P>
+Linearising the exponential diode eq. (<A HREF="#eq:curve">3.48</A>) in the forward
+region a numerical overflow can occur.  The diagram in
+fig. <A HREF="#fig:NewtonBad">3.5</A> visualises this situation.  Starting with
+<SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img311.png"
+ ALT="$ V^{(0)}$"></SPAN> the next iteration value gets <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img345.png"
+ ALT="$ V^{(1)}$"></SPAN> which results in an
+indefinite large diode current.  It can be limited by iterating in
+current instead of voltage when the computed voltage exceeds a certain
+value.
+
+<P>
+<P>
+How this works is going to be explained using the diode model shown in
+fig. <A HREF="#fig:AccompaniedModel">3.4</A>.  When iterating in voltage (as
+normally done) the new diode current is
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\hat{I}_{d}^{(m+1)} = g_{d}^{(m)} \left(\hat{V}^{(m+1)} - V^{(m)}\right) + I_{d}^{(m)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="278" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img346.png"
+ ALT="$\displaystyle \hat{I}_{d}^{(m+1)} = g_{d}^{(m)} \left(\hat{V}^{(m+1)} - V^{(m)}\right) + I_{d}^{(m)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">44</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The computed value <!-- MATH
+ $\hat{V}^{(m+1)}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="55" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img347.png"
+ ALT="$ \hat{V}^{(m+1)}$"></SPAN> in iteration step <SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img348.png"
+ ALT="$ m+1$"></SPAN> is not
+going to be used for the following step when <SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img318.png"
+ ALT="$ V^{(m)}$"></SPAN> exceeds the
+critical voltage <SPAN CLASS="MATH"><IMG
+ WIDTH="49" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img349.png"
+ ALT="$ V_{CRIT}$"></SPAN> which gets explained in the below
+paragraphs.  Instead, the value resulting from
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_{d}^{(m+1)} = I_{S}\cdot \left(e^{\frac{V^{(m+1)}}{n V_{T}}} - 1\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="204" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img350.png"
+ ALT="$\displaystyle I_{d}^{(m+1)} = I_{S}\cdot \left(e^{\frac{V^{(m+1)}}{n V_{T}}} - 1\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">45</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+is used (i.e. iterating in current).  With
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\hat{I}_{d}^{(m+1)} \; \shortstack{!\\=} \; I_{d}^{(m+1)}
+\;\;\;\; \text{ and } \;\;\;\;
+g_{d}^{(m)} = \dfrac{I_{S}}{n\cdot V_{T}}\cdot e^{\frac{V^{(m)}}{n\cdot V_{T}}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="135" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img351.png"
+ ALT="$\displaystyle \hat{I}_{d}^{(m+1)} \; \shortstack{!\\ =} \; I_{d}^{(m+1)} \;\;\;\;$">&nbsp; &nbsp; and&nbsp;<IMG
+ WIDTH="168" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img352.png"
+ ALT="$\displaystyle \;\;\;\; g_{d}^{(m)} = \dfrac{I_{S}}{n\cdot V_{T}}\cdot e^{\frac{V^{(m)}}{n\cdot V_{T}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">46</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+the new voltage can be written as
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+V^{(m+1)} = V^{(m)} + n V_{T}\cdot \ln{\left(\dfrac{\hat{V}^{(m+1)} - V^{(m)}}{n V_{T}} + 1\right)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="349" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img353.png"
+ ALT="$\displaystyle V^{(m+1)} = V^{(m)} + n V_{T}\cdot \ln{\left(\dfrac{\hat{V}^{(m+1)} - V^{(m)}}{n V_{T}} + 1\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">47</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Proceeding from Shockley's simplified diode equation the critical
+voltage is going to be defined.  The explained algorithm can be used
+for all exponential DC equations used in diodes and transistors.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img354.png"
+ ALT="$\displaystyle I\left(V\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="130" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img355.png"
+ ALT="$\displaystyle = I_{S}\cdot \left(e^{\frac{V}{n V_{T}}} - 1\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+<A NAME="eq:curve">(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">48</SPAN>)</A></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img356.png"
+ ALT="$\displaystyle y\left(x\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img357.png"
+ ALT="$\displaystyle = f \left(x\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+<A NAME="eq:explicit">(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">49</SPAN>)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:NewtonBad"></A><A NAME="3474"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.5:</STRONG>
+numerical problem with Newton-Raphson algorithm</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<IMG
+ WIDTH="536" HEIGHT="334" ALIGN="BOTTOM" BORDER="0"
+ SRC="img358.png"
+ ALT="\includegraphics[width=0.75\linewidth]{newtonbad}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The critical voltage <SPAN CLASS="MATH"><IMG
+ WIDTH="49" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img349.png"
+ ALT="$ V_{CRIT}$"></SPAN> is the voltage where the curve radius
+of eq. (<A HREF="#eq:curve">3.48</A>) has its minimum with <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img359.png"
+ ALT="$ I$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img322.png"
+ ALT="$ V$"></SPAN> having
+equally units.  The curve radius <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img360.png"
+ ALT="$ R$"></SPAN> for the explicit definition in
+eq. (<A HREF="#eq:explicit">3.49</A>) can be written as
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:radius"></A><!-- MATH
+ \begin{equation}
+R = \left|\dfrac{\left(1+\left(\dfrac{dy}{dx}\right)^{2}\right)^{3/2}}{\dfrac{d^{2}y}{dx^{2}}}\right|
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="176" HEIGHT="125" ALIGN="MIDDLE" BORDER="0"
+ SRC="img361.png"
+ ALT="$\displaystyle R = \left\vert\dfrac{\left(1+\left(\dfrac{dy}{dx}\right)^{2}\right)^{3/2}}{\dfrac{d^{2}y}{dx^{2}}}\right\vert$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">50</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Finding this equations minimum requires the derivative.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:radiusderivative"></A><!-- MATH
+ \begin{equation}
+\dfrac{dR}{dx} = \dfrac{\dfrac{d^{2}y}{dx^{2}} \cdot \dfrac{3}{2}\left(1+\left(\dfrac{dy}{dx}\right)^{2}\right)^{1/2} \cdot 2 \cdot \dfrac{dy}{dx} \cdot \dfrac{d^{2}y}{dx^{2}} - \left(1+\left(\dfrac{dy}{dx}\right)^{2}\right)^{3/2} \cdot \dfrac{d^{3}y}{dx^{3}}}{\left(\dfrac{d^{2}y}{dx^{2}}\right)^{2}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="504" HEIGHT="125" ALIGN="MIDDLE" BORDER="0"
+ SRC="img362.png"
+ ALT="$\displaystyle \dfrac{dR}{dx} = \dfrac{\dfrac{d^{2}y}{dx^{2}} \cdot \dfrac{3}{2}...
+...t)^{3/2} \cdot \dfrac{d^{3}y}{dx^{3}}}{\left(\dfrac{d^{2}y}{dx^{2}}\right)^{2}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">51</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The diagram in fig. <A HREF="#fig:radius">3.6</A> shows the graphs of
+eq. (<A HREF="#eq:radius">3.50</A>) and eq. (<A HREF="#eq:radiusderivative">3.51</A>) with <SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img363.png"
+ ALT="$ n=1$"></SPAN>,
+<!-- MATH
+ $I_{S}=100\nano\ampere$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="86" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img364.png"
+ ALT="$ I_{S}=100\nano\ampere$"></SPAN> and <!-- MATH
+ $V_{T}=25\milli\volt$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="85" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img365.png"
+ ALT="$ V_{T}=25\milli\volt$"></SPAN>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:radius"></A><A NAME="3524"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.6:</STRONG>
+curve radius of exponential diode curve and its derivative</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="489" HEIGHT="358" ALIGN="BOTTOM" BORDER="0"
+ SRC="img366.png"
+ ALT="\includegraphics[width=0.7\linewidth]{radius}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+With the following higher derivatives of eq. (<A HREF="#eq:curve">3.48</A>)
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img367.png"
+ ALT="$\displaystyle \dfrac{d I\left(V\right)}{dV}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="97" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img368.png"
+ ALT="$\displaystyle = \dfrac{I_{S}}{n V_{T}}\cdot e^{\frac{V}{n V_{T}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">52</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="59" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img369.png"
+ ALT="$\displaystyle \dfrac{d^{2} I\left(V\right)}{dV^{2}}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="105" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img370.png"
+ ALT="$\displaystyle = \dfrac{I_{S}}{n^{2} V_{T}^{2}}\cdot e^{\frac{V}{n V_{T}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">53</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="59" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img371.png"
+ ALT="$\displaystyle \dfrac{d^{3} I\left(V\right)}{dV^{3}}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="105" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img372.png"
+ ALT="$\displaystyle = \dfrac{I_{S}}{n^{3} V_{T}^{3}}\cdot e^{\frac{V}{n V_{T}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">54</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+the critical voltage results in
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\dfrac{dR}{dx} \;\shortstack{!\\=}\; 0 = 3 - \dfrac{n^{2} V_{T}^{2}}{I_{S}^{2}}\cdot e^{-2\frac{V}{n V_{T}}} - 1
+\;\;\;\; \rightarrow \;\;\;\;
+V_{CRIT} = n V_{T}\cdot \ln{\left(\dfrac{n V_{T}}{I_{S} \sqrt{2}}\right)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="482" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img373.png"
+ ALT="$\displaystyle \dfrac{dR}{dx} \;\shortstack{!\\ =}\; 0 = 3 - \dfrac{n^{2} V_{T}^...
+...;\;\; V_{CRIT} = n V_{T}\cdot \ln{\left(\dfrac{n V_{T}}{I_{S} \sqrt{2}}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">55</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+In order to avoid numerical errors a minimum value of the
+pn-junction's derivative (i.e. the currents tangent in the operating
+point) <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img374.png"
+ ALT="$ g_{min}$"></SPAN> is defined.  On the one hand this avoids very large
+deviations of the appropriate voltage in the next iteration step in
+the backward region of the pn-junction and on the other hand it avoids
+indefinite large voltages if <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img375.png"
+ ALT="$ g_d$"></SPAN> itself suffers from numerical
+errors and approaches zero.
+
+<P>
+<P>
+The quadratic input I-V curve of field-effect transistors as well as
+the output characteristics of these devices can be handled in similar
+ways.  The limiting (and thereby improving the convergence behaviour)
+algorithm must somehow ensure that the current and/or voltage
+deviation from one iteration step to the next step is not too a large
+value.  Because of the wide range of existing variations how these
+curves are exactly modeled there is no standard strategy to achieve
+this.  Anyway, the threshold voltage <SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img376.png"
+ ALT="$ V_{Th}$"></SPAN> should play an important
+role as well as the direction which the current iteration step
+follows.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html858"
+  HREF="node17.html">Overall solution algorithm for</A>
+<B>Up:</B> <A NAME="tex2html854"
+  HREF="node13.html">DC Analysis</A>
+<B> Previous:</B> <A NAME="tex2html848"
+  HREF="node15.html">Extensions to the MNA</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

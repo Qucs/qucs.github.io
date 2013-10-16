@@ -1,0 +1,1269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>PN-Junction Diode</TITLE>
+<META NAME="description" CONTENT="PN-Junction Diode">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node69.html">
+<LINK REL="previous" HREF="node67.html">
+<LINK REL="up" HREF="node66.html">
+<LINK REL="next" HREF="node69.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1647"
+  HREF="node69.html">Junction FET</A>
+<B>Up:</B> <A NAME="tex2html1643"
+  HREF="node66.html">Non-linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1637"
+  HREF="node67.html">Operational amplifier</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1648"
+  HREF="node68.html#SECTION001121000000000000000">Large signal model</A>
+<LI><A NAME="tex2html1649"
+  HREF="node68.html#SECTION001122000000000000000">Small signal model</A>
+<LI><A NAME="tex2html1650"
+  HREF="node68.html#SECTION001123000000000000000">Noise model</A>
+<LI><A NAME="tex2html1651"
+  HREF="node68.html#SECTION001124000000000000000">Temperature model</A>
+<LI><A NAME="tex2html1652"
+  HREF="node68.html#SECTION001125000000000000000">Area dependence of the model</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION001120000000000000000">
+PN-Junction Diode</A>
+</H1>
+
+<P>
+The following table contains the model parameters for the pn-junction
+diode model.
+
+<P>
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="RIGHT">Name</TD>
+<TD ALIGN="LEFT">Symbol</TD>
+<TD ALIGN="LEFT">Description</TD>
+<TD ALIGN="LEFT">Unit</TD>
+<TD ALIGN="LEFT">Default</TD>
+</TR>
+<TR><TD ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Is</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1219.png"
+ ALT="$ I_{S}$"></SPAN></TD>
+<TD ALIGN="LEFT">saturation current</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1220.png"
+ ALT="$ \ampere$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1221.png"
+ ALT="$ 10^{-14}$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">N</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img720.png"
+ ALT="$ N$"></SPAN></TD>
+<TD ALIGN="LEFT">emission coefficient</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ 1.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Isr</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1222.png"
+ ALT="$ I_{SR}$"></SPAN></TD>
+<TD ALIGN="LEFT">recombination current parameter</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1220.png"
+ ALT="$ \ampere$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Nr</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1224.png"
+ ALT="$ N_{R}$"></SPAN></TD>
+<TD ALIGN="LEFT">emission coefficient for Isr</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1225.png"
+ ALT="$ 2.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Rs</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1226.png"
+ ALT="$ R_{S}$"></SPAN></TD>
+<TD ALIGN="LEFT">ohmic resistance</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1227.png"
+ ALT="$ \ohm$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Cj0</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1228.png"
+ ALT="$ C_{j0}$"></SPAN></TD>
+<TD ALIGN="LEFT">zero-bias junction capacitance</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1229.png"
+ ALT="$ \farad$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">M</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img637.png"
+ ALT="$ M$"></SPAN></TD>
+<TD ALIGN="LEFT">grading coefficient</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1230.png"
+ ALT="$ 0.5$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Vj</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1231.png"
+ ALT="$ V_{j}$"></SPAN></TD>
+<TD ALIGN="LEFT">junction potential</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1232.png"
+ ALT="$ \volt$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1233.png"
+ ALT="$ 0.7$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Fc</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1234.png"
+ ALT="$ F_{c}$"></SPAN></TD>
+<TD ALIGN="LEFT">forward-bias depletion capacitance coefficient</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1230.png"
+ ALT="$ 0.5$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Cp</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1235.png"
+ ALT="$ C_{p}$"></SPAN></TD>
+<TD ALIGN="LEFT">linear capacitance</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1229.png"
+ ALT="$ \farad$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Tt</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img649.png"
+ ALT="$ \tau$"></SPAN></TD>
+<TD ALIGN="LEFT">transit time</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1236.png"
+ ALT="$ \second$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Bv</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1237.png"
+ ALT="$ B_v$"></SPAN></TD>
+<TD ALIGN="LEFT">reverse breakdown voltage</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1232.png"
+ ALT="$ \volt$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1238.png"
+ ALT="$ \infty$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Ibv</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1239.png"
+ ALT="$ I_{Bv}$"></SPAN></TD>
+<TD ALIGN="LEFT">current at reverse breakdown voltage</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1220.png"
+ ALT="$ \ampere$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1240.png"
+ ALT="$ 0.001$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Kf</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1241.png"
+ ALT="$ K_F$"></SPAN></TD>
+<TD ALIGN="LEFT">flicker noise coefficient</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Af</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1242.png"
+ ALT="$ A_F$"></SPAN></TD>
+<TD ALIGN="LEFT">flicker noise exponent</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ 1.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Ffe</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1243.png"
+ ALT="$ F_{FE}$"></SPAN></TD>
+<TD ALIGN="LEFT">flicker noise frequency exponent</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ 1.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Temp</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.png"
+ ALT="$ T$"></SPAN></TD>
+<TD ALIGN="LEFT">device temperature</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $\degree \mathrm{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1244.png"
+ ALT="$ \degree \mathrm{C}$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1245.png"
+ ALT="$ 26.85$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Xti</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1246.png"
+ ALT="$ X_{TI}$"></SPAN></TD>
+<TD ALIGN="LEFT">saturation current exponent</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1247.png"
+ ALT="$ 3.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Eg</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1248.png"
+ ALT="$ E_G$"></SPAN></TD>
+<TD ALIGN="LEFT">energy bandgap</TD>
+<TD ALIGN="LEFT">eV</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1249.png"
+ ALT="$ 1.11$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Tbv</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1250.png"
+ ALT="$ T_{Bv}$"></SPAN></TD>
+<TD ALIGN="LEFT">Bv linear temperature coefficient</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $1/\degree \mathrm{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1251.png"
+ ALT="$ 1/\degree \mathrm{C}$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Trs</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1252.png"
+ ALT="$ T_{RS}$"></SPAN></TD>
+<TD ALIGN="LEFT">Rs linear temperature coefficient</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $1/\degree \mathrm{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1251.png"
+ ALT="$ 1/\degree \mathrm{C}$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Ttt1</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $T_{\tau 1}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1253.png"
+ ALT="$ T_{\tau 1}$"></SPAN></TD>
+<TD ALIGN="LEFT">Tt linear temperature coefficient</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $1/\degree \mathrm{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1251.png"
+ ALT="$ 1/\degree \mathrm{C}$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Ttt2</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $T_{\tau 2}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1254.png"
+ ALT="$ T_{\tau 2}$"></SPAN></TD>
+<TD ALIGN="LEFT">Tt quadratic temperature coefficient</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $1/\degree \mathrm{C}^2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1255.png"
+ ALT="$ 1/\degree \mathrm{C}^2$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Tm1</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1256.png"
+ ALT="$ T_{M1}$"></SPAN></TD>
+<TD ALIGN="LEFT">M linear temperature coefficient</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $1/\degree \mathrm{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1251.png"
+ ALT="$ 1/\degree \mathrm{C}$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Tm2</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1257.png"
+ ALT="$ T_{M2}$"></SPAN></TD>
+<TD ALIGN="LEFT">M quadratic temperature coefficient</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $1/\degree \mathrm{C}^2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1255.png"
+ ALT="$ 1/\degree \mathrm{C}^2$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Tnom</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="48" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1258.png"
+ ALT="$ T_{NOM}$"></SPAN></TD>
+<TD ALIGN="LEFT">temperature at which parameters were extracted</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $\degree \mathrm{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1244.png"
+ ALT="$ \degree \mathrm{C}$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1245.png"
+ ALT="$ 26.85$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Area</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img380.png"
+ ALT="$ A$"></SPAN></TD>
+<TD ALIGN="LEFT">default area for diode</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ 1.0$"></SPAN></TD>
+</TR>
+</TABLE>
+
+<P>
+<P>
+
+<H2><A NAME="SECTION001121000000000000000">
+Large signal model</A>
+</H2>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:diode"></A><A NAME="12054"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 10.2:</STRONG>
+pn-junction diode symbol and large signal model</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="209" HEIGHT="255" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.png"
+ ALT="\includegraphics[width=0.3\linewidth]{diode}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The current equation of the diode and its derivative writes as
+follows:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1260.png"
+ ALT="$\displaystyle I_{d}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="307" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1261.png"
+ ALT="$\displaystyle = I_{S}\cdot \left(e^{\frac{V_{d}}{N\cdot V_{T}}} - 1\right) + I_{SR}\cdot \left(e^{\frac{V_{d}}{N_R\cdot V_{T}}} - 1\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">10</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1262.png"
+ ALT="$\displaystyle g_{d}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="312" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1263.png"
+ ALT="$\displaystyle = \dfrac{\partial I_{d}}{\partial V_{d}} = \dfrac{I_{S}}{N\cdot V...
+... V_{T}}} + \dfrac{I_{SR}}{N_R\cdot V_{T}}\cdot e^{\frac{V_{d}}{N_R\cdot V_{T}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">11</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:dcdiode"></A><A NAME="12081"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 10.3:</STRONG>
+accompanied DC model of intrinsic diode</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="118" HEIGHT="200" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1264.png"
+ ALT="\includegraphics[width=0.17\linewidth]{dcdiode}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The complete MNA matrix entries are:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+g_{d} & -g_{d}\\
+-g_{d} & g_{d}\\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{C}\\
+V_{A}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
++I_{d} - g_{d}\cdot V_{d}\\
+-I_{d} + g_{d}\cdot V_{d}\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="269" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1265.png"
+ ALT="$\displaystyle \begin{bmatrix}g_{d} &amp; -g_{d}\\ -g_{d} &amp; g_{d}\\ \end{bmatrix} \c...
+...n{bmatrix}+I_{d} - g_{d}\cdot V_{d}\\ -I_{d} + g_{d}\cdot V_{d}\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">12</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION001122000000000000000">
+Small signal model</A>
+</H2>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:spdiode"></A><A NAME="12109"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 10.4:</STRONG>
+small signal model of intrinsic diode</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="117" HEIGHT="200" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1266.png"
+ ALT="\includegraphics[width=0.17\linewidth]{spdiode}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The voltage dependent capacitance consists of a diffusion capacitance,
+a junction capacitance and an additional linear capacitance which is
+usually modeled by the following equations.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+C_{d} = C_p + \tau \cdot g_{d} +
+\begin{cases}
+\begin{array}{ll}
+C_{j0}\cdot \left(1 - \dfrac{V_{d}}{V_{j}}\right)^{-M} & \textrm{ for } V_{d} \le F_c\cdot V_j\\
+\dfrac{C_{j0}}{\left(1 - F_c\right)^M}\cdot \left(1 + \dfrac{M\cdot \left(V_{d} - F_c\cdot V_j\right)}{V_{j}\cdot\left(1 - F_c\right)}\right) & \textrm{ for } V_{d} > F_c\cdot V_j
+\end{array}
+\end{cases}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="570" HEIGHT="99" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1267.png"
+ ALT="$\displaystyle C_{d} = C_p + \tau \cdot g_{d} + \begin{cases}\begin{array}{ll} C...
+..._c\right)}\right) &amp; \textrm{ for } V_{d} &gt; F_c\cdot V_j \end{array} \end{cases}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">13</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The S-parameters of the passive circuit shown in
+fig. <A HREF="#fig:spdiode">10.4</A> can be written as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1152.png"
+ ALT="$\displaystyle S_{11} = S_{22}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="78" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1268.png"
+ ALT="$\displaystyle = \dfrac{1}{1 + 2\cdot y}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">14</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1154.png"
+ ALT="$\displaystyle S_{12} = S_{21}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="150" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1269.png"
+ ALT="$\displaystyle = 1 - S_{11} = \dfrac{2\cdot y}{1 + 2\cdot y}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">15</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+y = Z_{0}\cdot \left(g_{d} + j\omega C_{d}\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="147" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1270.png"
+ ALT="$\displaystyle y = Z_{0}\cdot \left(g_{d} + j\omega C_{d}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">16</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION001123000000000000000"></A>
+<A NAME="sec:nw_diode"></A>
+<BR>
+Noise model
+</H2>
+
+<P>
+The thermal noise generated by the series resistor is characterized by
+the following spectral density.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\dfrac{\overline{i_{R_S}^2}}{\Delta f} = \dfrac{4 k_B T}{R_S}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="95" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1271.png"
+ ALT="$\displaystyle \dfrac{\overline{i_{R_S}^2}}{\Delta f} = \dfrac{4 k_B T}{R_S}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">17</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:noisediode"></A><A NAME="12162"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 10.5:</STRONG>
+noise model of intrinsic diode</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="198" HEIGHT="207" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1272.png"
+ ALT="\includegraphics[width=0.28\linewidth]{noisediode}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The shot noise and flicker noise generated by the DC current flow
+through the diode is characterized by the following spectral density.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\dfrac{\overline{i_{d}^2}}{\Delta f} = 2e I_d + K_F \dfrac{I_d^{A_F}}{f^{F_{FE}}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="164" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1273.png"
+ ALT="$\displaystyle \dfrac{\overline{i_{d}^2}}{\Delta f} = 2e I_d + K_F \dfrac{I_d^{A_F}}{f^{F_{FE}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">18</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Thus the noise current correlation matrix can be formed.  This matrix
+can be easily converted to the noise wave correlation matrix
+representation using the formulas given in section
+<A HREF="node11.html#sec:noiseTrans">2.4.2</A> on page <A HREF="node11.html#sec:noiseTrans"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{C}_Y = \Delta f
+\begin{bmatrix}
++\overline{i_{d}^2} & -\overline{i_{d}^2}\\
+-\overline{i_{d}^2} & +\overline{i_{d}^2}\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="159" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1274.png"
+ ALT="$\displaystyle \underline{C}_Y = \Delta f \begin{bmatrix}+\overline{i_{d}^2} &amp; -\overline{i_{d}^2}\\ -\overline{i_{d}^2} &amp; +\overline{i_{d}^2}\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">19</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+An ideal diode (pn- or schottky-diode) generates shot noise.  Both
+types of current (field and diffusion) contribute independently to it.
+That is, even though the two currents flow in different directions
+("minus" in dc current equation), they have to be added in the noise
+equation (current is proportional to noise power spectral density).
+Taking into account the dynamic conductance <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img375.png"
+ ALT="$ g_d$"></SPAN> in parallel to the
+noise current source, the noise wave correlation matrix writes as
+follows.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{split}
+(\underline{C})
+ =  \left| \frac{0.5\cdot Y_0}{g_d+j\omega C_d + 0.5\cdot Y_0}\right|^2  \cdot 2\cdot e\cdot I_S\cdot
+    \left( \exp\left( \frac{V_{d}}{N\cdot V_T} \right) +1 \right) \cdot Z_0\cdot\begin{pmatrix}
+   1 & -1\\
+  -1 &  1\\
+\end{pmatrix} \\
+ = 2\cdot e\cdot Z_0\cdot \left(I_{d} + 2\cdot I_{S}\right)\cdot
+    \left| \frac{1}{2\cdot Z_0\cdot (g_d+j\omega C_d) + 1}\right|^2 \cdot
+\begin{pmatrix}
+   1 & -1\\
+  -1 &  1\\
+\end{pmatrix}
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="546" HEIGHT="96" BORDER="0"
+ SRC="img1275.png"
+ ALT="\begin{displaymath}\begin{split}(\underline{C}) = \left\vert \frac{0.5\cdot Y_0}...
+...cdot \begin{pmatrix}1 &amp; -1\\ -1 &amp; 1\\ \end{pmatrix} \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">20</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Where <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1276.png"
+ ALT="$ e$"></SPAN> is charge of an electron, <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1277.png"
+ ALT="$ V_T$"></SPAN> the temperature voltage,
+<SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img375.png"
+ ALT="$ g_d$"></SPAN> the (dynamic) conductance of the diode and <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1278.png"
+ ALT="$ C_d$"></SPAN> its junction
+capacitance.
+
+<P>
+<P>
+To be very precise, the equation above only holds for diodes whose
+field and diffusion current dominate absolutely (diffusion limited
+diode), i.e. <SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1279.png"
+ ALT="$ N=1$"></SPAN>.  Many diodes also generate a
+generation/recombination current (<!-- MATH
+ $N\approx 2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1280.png"
+ ALT="$ N\approx 2$"></SPAN>), which produces shot
+noise, too.  But depending on where and how the charge carriers
+generate or recombine, their effective charge is somewhat smaller than
+<SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1276.png"
+ ALT="$ e$"></SPAN>.  To take this into account, one needs a further factor <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img121.png"
+ ALT="$ K$"></SPAN>.
+Several opinions exist according the value of <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img121.png"
+ ALT="$ K$"></SPAN>.  Some say 1 and 2/3
+are common values, others say <SPAN CLASS="MATH"><IMG
+ WIDTH="69" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1281.png"
+ ALT="$ K=1/N$"></SPAN> with <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img121.png"
+ ALT="$ K$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img720.png"
+ ALT="$ N$"></SPAN> being bias
+dependent.  Altogether it is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:diode_noise"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+(\underline{C})
+ = 2\cdot e\cdot Z_0\cdot K\cdot \left(I_{d} + 2\cdot I_{S}\right)\cdot
+    \left| \frac{1}{2\cdot Z_0\cdot (g_d+j\omega C_d) + 1}\right|^2 \cdot
+\begin{pmatrix}
+   1 & -1\\
+  -1 &  1\\
+\end{pmatrix}\\
+\text{with}\qquad\frac{1}{2}\le K \le 1
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="501" HEIGHT="86" BORDER="0"
+ SRC="img1282.png"
+ ALT="\begin{displaymath}\begin{split}(\underline{C}) = 2\cdot e\cdot Z_0\cdot K\cdot ...
+...{pmatrix}\\ \text{with}\qquad\frac{1}{2}\le K \le 1 \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">21</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Remark: Believing the diode equation <!-- MATH
+ $I_D = I_S\cdot (\exp(V/(N\cdot
+V_T)) - 1)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="221" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1283.png"
+ ALT="$ I_D = I_S\cdot (\exp(V/(N\cdot
+V_T)) - 1)$"></SPAN> is the whole truth, it is logical to define <SPAN CLASS="MATH"><IMG
+ WIDTH="69" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1281.png"
+ ALT="$ K=1/N$"></SPAN>,
+because at <SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1284.png"
+ ALT="$ V=0$"></SPAN> the conductance <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img375.png"
+ ALT="$ g_d$"></SPAN> of the diode must create
+thermal noise.
+
+<P>
+<P>
+Some special diodes have additional current or noise components
+(tunnel diodes, avalanche diodes etc.).  All these mechanisms are not
+taken into account in equation (<A HREF="#eq:diode_noise">10.21</A>).
+
+<P>
+<P>
+The parasitic ohmic resistance in a non-ideal diode, of course,
+creates thermal noise.
+
+<P>
+Noise current correlation matrix (for details on the parameters
+see above):
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{C}_Y)
+ = 2\cdot e\cdot K\cdot \left(I_{d} + 2\cdot I_{S}\right)\cdot
+\begin{pmatrix}
+   1 & -1\\
+  -1 &  1\\
+\end{pmatrix}\\
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="300" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1285.png"
+ ALT="$\displaystyle (\underline{C}_Y) = 2\cdot e\cdot K\cdot \left(I_{d} + 2\cdot I_{S}\right)\cdot \begin{pmatrix}1 &amp; -1\\ -1 &amp; 1\\ \end{pmatrix}\\ $"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">22</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION001124000000000000000"></A>
+<A NAME="sec:DiodeTemp"></A>
+<BR>
+Temperature model
+</H2>
+
+<P>
+This section mathematically describes the dependencies of the diode
+characterictics on temperature.  For a junction diode a typical value
+for <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1246.png"
+ ALT="$ X_{TI}$"></SPAN> is <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1247.png"
+ ALT="$ 3.0$"></SPAN>, for a Schottky barrier diode it is <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1225.png"
+ ALT="$ 2.0$"></SPAN>.  The
+energy band gap at zero temperature <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1248.png"
+ ALT="$ E_G$"></SPAN> is by default <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1249.png"
+ ALT="$ 1.11$"></SPAN>eV.  For
+other materials than Si, <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1286.png"
+ ALT="$ 0.69$"></SPAN>eV (for a Schottky barrier diode),
+<SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1287.png"
+ ALT="$ 0.67$"></SPAN>eV (for Ge) and <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1288.png"
+ ALT="$ 1.43$"></SPAN>eV (for GaAs) should be used.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1289.png"
+ ALT="$\displaystyle n_i^2\left(T\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="159" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1290.png"
+ ALT="$\displaystyle = B\cdot T^3 \cdot e^{-E_G\left(T\right)/k_B T}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">23</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1291.png"
+ ALT="$\displaystyle n_i\left(T\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="435" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1292.png"
+ ALT="$\displaystyle = 1.45\cdot 10^{10}\cdot \left(\dfrac{T}{300K}\right)^{1.5}\cdot\...
+...ot k_B\cdot 300K} - \dfrac{e\cdot E_G\left(T\right)}{2\cdot k_B\cdot T}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">24</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1293.png"
+ ALT="$\displaystyle E_G\left(T\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="107" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1294.png"
+ ALT="$\displaystyle = E_G - \dfrac{\alpha\cdot T^2}{\beta + T}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">25</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with experimental values for Si given by
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1295.png"
+ ALT="$\displaystyle \alpha$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="91" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1296.png"
+ ALT="$\displaystyle = 7.02\cdot 10^{-4}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1297.png"
+ ALT="$\displaystyle \beta$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1298.png"
+ ALT="$\displaystyle = 1108$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1299.png"
+ ALT="$\displaystyle E_G$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="69" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1300.png"
+ ALT="$\displaystyle = 1.16eV$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The following equations show the temperature dependencies of the diode
+parameters.  The reference temperature <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img905.png"
+ ALT="$ T_1$"></SPAN> in these equations
+denotes the nominal temperature <SPAN CLASS="MATH"><IMG
+ WIDTH="48" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1258.png"
+ ALT="$ T_{NOM}$"></SPAN> specified by the diode
+model.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="51" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1301.png"
+ ALT="$\displaystyle I_S\left(T_2\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="421" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1302.png"
+ ALT="$\displaystyle = I_S\left(T_1\right)\cdot \left(\dfrac{T_2}{T_1}\right)^{X_{TI} ...
+...00K\right)}{N\cdot k_B\cdot T_2}\cdot \left(1 - \dfrac{T_2}{T_1}\right)\right]}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">26</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="51" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1303.png"
+ ALT="$\displaystyle V_j\left(T_2\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="286" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1304.png"
+ ALT="$\displaystyle = \dfrac{T_2}{T_1}\cdot V_j\left(T_1\right) + \dfrac{2\cdot k_B\c...
+..._2}{e} \cdot \ln{\left(\dfrac{n_i\left(T_1\right)}{n_i\left(T_2\right)}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">27</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="474" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1305.png"
+ ALT="$\displaystyle = \dfrac{T_2}{T_1}\cdot V_j\left(T_1\right) - \dfrac{2\cdot k_B\c...
+...- \left(\dfrac{T_2}{T_1} \cdot E_G\left(T_1\right) - E_G\left(T_2\right)\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">28</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="59" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1306.png"
+ ALT="$\displaystyle C_{j0}\left(T_2\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="476" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1307.png"
+ ALT="$\displaystyle = C_{j0}\left(T_1\right)\cdot\left(1 + M\cdot\left(400\cdot 10^{-...
+...c{V_j\left(T_2\right) - V_j\left(T_1\right)}{V_j\left(T_1\right)}\right)\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">29</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Some additionial temperature coefficients determine the temperature
+dependence of even more model parameters.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="55" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1308.png"
+ ALT="$\displaystyle B_{v}\left(T_2\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="195" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1309.png"
+ ALT="$\displaystyle = B_{v}\left(T_1\right) - T_{Bv}\cdot\left(T_2 - T_1\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">30</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1310.png"
+ ALT="$\displaystyle \tau\left(T_2\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="350" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.png"
+ ALT="$\displaystyle = \tau\left(T_1\right)\cdot\left(1 + T_{\tau 1}\cdot\left(T_2 - T_1\right) + T_{\tau 2}\cdot\left(T_2 - T_1\right)^2\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">31</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1312.png"
+ ALT="$\displaystyle M\left(T_2\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="371" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1313.png"
+ ALT="$\displaystyle = M\left(T_1\right)\cdot\left(1 + T_{M1}\cdot\left(T_2 - T_1\right) + T_{M2}\cdot\left(T_2 - T_1\right)^2\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">32</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="56" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1314.png"
+ ALT="$\displaystyle R_S\left(T_2\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="233" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1315.png"
+ ALT="$\displaystyle = R_S\left(T_1\right)\cdot\left(1 + T_{RS}\cdot\left(T_2 - T_1\right)\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">33</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION001125000000000000000">
+Area dependence of the model</A>
+</H2>
+
+<P>
+The area factor <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img380.png"
+ ALT="$ A$"></SPAN> used in the diode model determines the number of
+equivalent parallel devices of the specified model.  The diode model
+parameters affected by the <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img380.png"
+ ALT="$ A$"></SPAN> factor are:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1316.png"
+ ALT="$\displaystyle I_S\left(A\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1317.png"
+ ALT="$\displaystyle = I_S\cdot A$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">34</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="55" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1318.png"
+ ALT="$\displaystyle C_{j0}\left(A\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="66" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1319.png"
+ ALT="$\displaystyle = C_{j0}\cdot A$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">35</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1320.png"
+ ALT="$\displaystyle R_S\left(A\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1321.png"
+ ALT="$\displaystyle = \dfrac{R_S}{A}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">36</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1647"
+  HREF="node69.html">Junction FET</A>
+<B>Up:</B> <A NAME="tex2html1643"
+  HREF="node66.html">Non-linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1637"
+  HREF="node67.html">Operational amplifier</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

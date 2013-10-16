@@ -1,0 +1,330 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Operational amplifier</TITLE>
+<META NAME="description" CONTENT="Operational amplifier">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node68.html">
+<LINK REL="previous" HREF="node66.html">
+<LINK REL="up" HREF="node66.html">
+<LINK REL="next" HREF="node68.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1635"
+  HREF="node68.html">PN-Junction Diode</A>
+<B>Up:</B> <A NAME="tex2html1631"
+  HREF="node66.html">Non-linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1625"
+  HREF="node66.html">Non-linear devices</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001110000000000000000">
+Operational amplifier</A>
+</H1>
+
+<P>
+The ideal operational amplifier, as shown in fig. <A HREF="#fig:opamp">10.1</A>, is
+determined by the following equation which introduces one more unknown
+in the MNA matrix.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:opamp"></A><A NAME="11938"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 10.1:</STRONG>
+ideal operational amplifier</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="179" HEIGHT="79" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1207.png"
+ ALT="\includegraphics[width=4cm]{opamp}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:opamp"></A><!-- MATH
+ \begin{equation}
+V_{1} - V_{3} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="85" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1208.png"
+ ALT="$\displaystyle V_{1} - V_{3} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The new unknown variable <SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1050.png"
+ ALT="$ I_{out}$"></SPAN> must be considered by the three
+remaining simple equations.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_{1} = 0 \quad I_{2} = I_{out} \quad I_{3} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="184" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1209.png"
+ ALT="$\displaystyle I_{1} = 0 \quad I_{2} = I_{out} \quad I_{3} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+And in matrix representation this is (for DC and AC simulation):
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+.&.&.& 0\\
+.&.&.& 1\\
+.&.&.& 0\\
+1 & 0 & -1 & 0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}\\
+V_{3}\\
+I_{out}
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_{1}\\
+I_{2}\\
+I_{3}\\
+0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="236" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1210.png"
+ ALT="$\displaystyle \begin{bmatrix}.&amp;.&amp;.&amp; 0\\ .&amp;.&amp;.&amp; 1\\ .&amp;.&amp;.&amp; 0\\ 1 &amp; 0 &amp; -1 &amp; 0 \e...
+... I_{out} \end{bmatrix} = \begin{bmatrix}I_{1}\\ I_{2}\\ I_{3}\\ 0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The operational amplifier could be considered as a special case of a
+voltage controlled current source with infinite forward
+transconductance <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img306.png"
+ ALT="$ G$"></SPAN>.  Please note that the presented matrix form is
+only valid in cases where there is a finite feedback impedance
+between the output and the inverting input port.
+
+<P>
+<P>
+To allow a feedback circuit to the non-inverting input (e.g.  for a
+Schmitt trigger), one needs a limited output voltage swing.  The
+following equations are often used to model the transmission
+characteristic of operational amplifiers.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_1 = 0 \qquad\qquad I_3 = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="154" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1211.png"
+ ALT="$\displaystyle I_1 = 0 \qquad\qquad I_3 = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">4</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:OPVout"></A><!-- MATH
+ \begin{equation}
+V_2 = V_{max}\cdot\dfrac{2}{\pi}\arctan \left( \dfrac{\pi}{2\cdot V_{max}}\cdot G\cdot (V_1-V_3) \right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="326" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1212.png"
+ ALT="$\displaystyle V_2 = V_{max}\cdot\dfrac{2}{\pi}\arctan \left( \dfrac{\pi}{2\cdot V_{max}}\cdot G\cdot (V_1-V_3) \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">5</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1213.png"
+ ALT="$ V_{max}$"></SPAN> being the maximum output voltage swing and <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img306.png"
+ ALT="$ G$"></SPAN> the
+voltage amplification.  To model the small-signal behaviour (AC
+analysis), it is necessary to differentiate:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+g = \dfrac{\partial V_2}{\partial (V_1-V_3)}
+  = \dfrac{G}{1+\left( \dfrac{\pi}{2\cdot V_{max}}\cdot G\cdot (V_1-V_3) \right)^2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="347" HEIGHT="89" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1214.png"
+ ALT="$\displaystyle g = \dfrac{\partial V_2}{\partial (V_1-V_3)} = \dfrac{G}{1+\left( \dfrac{\pi}{2\cdot V_{max}}\cdot G\cdot (V_1-V_3) \right)^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">6</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+This leads to the following matrix representation being a specialised
+three node voltage controlled voltage source (see section
+<A HREF="node60.html#sec:vcvs">9.19.3</A> on page <A HREF="node60.html#sec:vcvs"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>).
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+.&.&.& 0\\
+.&.&.& 1\\
+.&.&.& 0\\
+g & -1 & -g & 0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}\\
+V_{3}\\
+I_{out}
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_{1}\\
+I_{2}\\
+I_{3}\\
+0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="249" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1215.png"
+ ALT="$\displaystyle \begin{bmatrix}.&amp;.&amp;.&amp; 0\\ .&amp;.&amp;.&amp; 1\\ .&amp;.&amp;.&amp; 0\\ g &amp; -1 &amp; -g &amp; 0 \...
+... I_{out} \end{bmatrix} = \begin{bmatrix}I_{1}\\ I_{2}\\ I_{3}\\ 0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">7</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The above MNA matrix entries are also used during the non-linear DC
+analysis with the 0 in the right hand side vector replaced by an
+equivalent voltage
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+V_{eq} = g\cdot \left(V_1 - V_3\right) - V_{out}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="180" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1216.png"
+ ALT="$\displaystyle V_{eq} = g\cdot \left(V_1 - V_3\right) - V_{out}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">8</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1217.png"
+ ALT="$ V_{out}$"></SPAN> computed using eq. (<A HREF="#eq:OPVout">10.5</A>).
+
+<P>
+<P>
+With the given small-signal matrix representation, building the
+S-parameters is easy.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{S}) =
+\begin{bmatrix}
+ 1  &  0 & 0  \\
+ 4g & -1 & -4g\\
+ 0  &  0 &  1
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="166" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1218.png"
+ ALT="$\displaystyle (\underline{S}) = \begin{bmatrix}1 &amp; 0 &amp; 0 \\ 4g &amp; -1 &amp; -4g\\ 0 &amp; 0 &amp; 1 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">9</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1635"
+  HREF="node68.html">PN-Junction Diode</A>
+<B>Up:</B> <A NAME="tex2html1631"
+  HREF="node66.html">Non-linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1625"
+  HREF="node66.html">Non-linear devices</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

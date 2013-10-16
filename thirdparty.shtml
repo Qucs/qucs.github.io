@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Qucs project: documentation</title>
+<link href="qucsweb.css" rel="stylesheet"  type="text/css">
+<head>
+<body>
+
+<!-- include the common web page header using Apache Server-Side Includes (SSI) -->
+<!--#include virtual="/qucs-header.html" -->
+<div id="main">
+<hr>
+<center>
+[
+<a href="docs.shtml">user manual</a> -
+third party -
+<a href="technical.shtml">technical papers</a> -
+<a href="components.shtml">components</a> -
+<a href="build.shtml">build instructions</a> -
+<a href="install.shtml">install instructions</a>
+]
+</center>
+
+<a name="#thirdparty">
+<h3>Documentation provided by third parties</h3>
+</a>
+<p>
+
+The following list contains hypertext links to documents provided by
+people not directly involved in the development of Qucs.  The authors
+of Qucs do not feel responsible for the documents' content.
+<ul>
+<li>Online tutorial by Ozgur Cobanoglu --
+<a href="http://www.ph.unito.it/~cobanogl/lowlevelstuff/tutivcurve/">
+Qucs Tutorial - DC Parameter Sweep</a>
+</li>
+<li>
+Quite Universal Circuit Simulator White Paper by Brian Clearwaters --
+<a href="http://osddp.org/node/357">White Paper</a>
+</li>
+<li>Turkish online tutorial by Mustafa Baser --
+<a href="http://mbaser.web.ibu.edu.tr/Qucs/">Qucs for beginner physicists</a>
+</li>
+<li>Japanese online introduction --
+<a href="http://www.sp.es.yamanashi.ac.jp/~ohki/qucs/qucs.html">Introduction to Qucs</a>
+<li>Wikipedia entry for Qucs --
+<a href="http://en.wikipedia.org/wiki/Qucs">Qucs - Wikipedia</a>
+</li>
+<li>Publication by Mustafa Baser --
+<a href="http://mbaser.web.ibu.edu.tr/Qucs/mustafa_baser_qucs_research.pdf">Promoting Conceptual Change with Free Open Source Software through Active Learning</a></li>
+<li>Publication by Mustafa Baser --
+<a href="http://dx.doi.org/10.1007/s10956-006-9025-3">Effects of Conceptual Change and Traditional Confirmatory Simulations on Pre-Service Teachers’ Understanding of Direct Current Circuits</a></li>
+<li>Publication by Mike Brinson --
+<a href="http://www.mos-ak.org/premstaetten/">
+GNU Simulators Supporting Verilog-A Compact Model Standardization</a>
+</li>
+<li>Russian tutorial about Qucs by Vladimir Gololobov --
+<a href="http://vgololobov.narod.ru/content/qucs_flowcode/qucs_flowcode.html">
+Qucs and FlowCode</a>
+</li>
+</ul>
+
+<p>
+</p>
+
+<hr>
+</div>
+<!-- include the common web page footer using Apache Server-Side Includes (SSI) -->
+  <!--#include virtual="/qucs-footer.html" -->
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Coupled transmission line</TITLE>
+<META NAME="description" CONTENT="Coupled transmission line">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node64.html">
+<LINK REL="previous" HREF="node62.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node64.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1558"
+  HREF="node64.html">S-parameter container with additional</A>
+<B>Up:</B> <A NAME="tex2html1554"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1548"
+  HREF="node62.html">Differential Transmission Line</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION0010220000000000000000"></A>
+<A NAME="sec:coupledtline"></A>
+<BR>
+Coupled transmission line
+</H1>
+
+<P>
+A coupled transmission line is described by two identical transmission
+line ABCD-matrices, one for the even mode (or common mode) and one
+for the odd mode (or differential mode).
+Because the coupled lines are a symmetrical 3-line system, the
+matrices are completely independent of each other.  Therefore, its
+Y-parameters write as follows.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="158" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1014.png"
+ ALT="$\displaystyle Y_{11} = Y_{22} = Y_{33} = Y_{44}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="322" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1164.png"
+ ALT="$\displaystyle = \frac{1}{2\cdot Z_{L,e} \cdot \tanh\left(\gamma_e\cdot l\right)} + \frac{1}{2\cdot Z_{L,o} \cdot \tanh\left(\gamma_o\cdot l\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">216</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="158" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1016.png"
+ ALT="$\displaystyle Y_{12} = Y_{21} = Y_{34} = Y_{43}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="315" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1165.png"
+ ALT="$\displaystyle = \frac{-1}{2\cdot Z_{L,e} \cdot \sinh\left(\gamma_e\cdot l\right)} + \frac{-1}{2\cdot Z_{L,o} \cdot \sinh\left(\gamma_o\cdot l\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">217</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="158" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1018.png"
+ ALT="$\displaystyle Y_{13} = Y_{31} = Y_{24} = Y_{42}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="315" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1166.png"
+ ALT="$\displaystyle = \frac{-1}{2\cdot Z_{L,e} \cdot \sinh\left(\gamma_e\cdot l\right)} + \frac{1}{2\cdot Z_{L,o} \cdot \sinh\left(\gamma_o\cdot l\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">218</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="158" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1020.png"
+ ALT="$\displaystyle Y_{14} = Y_{41} = Y_{23} = Y_{32}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="322" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1167.png"
+ ALT="$\displaystyle = \frac{1}{2\cdot Z_{L,e} \cdot \tanh\left(\gamma_e\cdot l\right)} + \frac{-1}{2\cdot Z_{L,o} \cdot \tanh\left(\gamma_o\cdot l\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">219</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The S-parameters (according to the port numbering in
+fig. <A HREF="#fig:mscoupled">9.12</A>) are as followed [<A
+ HREF="node103.html#Edwards">11</A>].
+
+<P>
+<P>
+reflection coefficients
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{11} = S_{22} = S_{33} = S_{44} = X_e + X_o
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="241" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1168.png"
+ ALT="$\displaystyle S_{11} = S_{22} = S_{33} = S_{44} = X_e + X_o$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">220</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+through paths
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{12} = S_{21} = S_{34} = S_{43} = Y_e + Y_o
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="233" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1169.png"
+ ALT="$\displaystyle S_{12} = S_{21} = S_{34} = S_{43} = Y_e + Y_o$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">221</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+coupled paths
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{14} = S_{41} = S_{23} = S_{32} = X_e - X_o
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="241" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1170.png"
+ ALT="$\displaystyle S_{14} = S_{41} = S_{23} = S_{32} = X_e - X_o$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">222</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+isolated paths
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{13} = S_{31} = S_{24} = S_{42} = Y_e - Y_o
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="233" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1171.png"
+ ALT="$\displaystyle S_{13} = S_{31} = S_{24} = S_{42} = Y_e - Y_o$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">223</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with the denominator
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+D_{e,o} = 2\cdot Z_{L,e,o}\cdot Z_0\cdot \cosh(\gamma_{e,o}\cdot l)
+         + \left(Z_{L,e,o}^2 + Z_0^2\right)\cdot \sinh\left(\gamma_{e,o}\cdot l\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="447" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1172.png"
+ ALT="$\displaystyle D_{e,o} = 2\cdot Z_{L,e,o}\cdot Z_0\cdot \cosh(\gamma_{e,o}\cdot l) + \left(Z_{L,e,o}^2 + Z_0^2\right)\cdot \sinh\left(\gamma_{e,o}\cdot l\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">224</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+and
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1173.png"
+ ALT="$\displaystyle X_{e,o}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="216" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1174.png"
+ ALT="$\displaystyle = \frac{\left(Z_{L,e,o}^2 - Z_0^2\right)\cdot \sinh\left(\gamma_{e,o}\cdot l\right)}{2\cdot D_{e,o}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">225</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1175.png"
+ ALT="$\displaystyle Y_{e,o}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="92" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1176.png"
+ ALT="$\displaystyle = \frac{Z_{L,e,o}\cdot Z_0}{D_{e,o}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">226</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:mscoupled"></A><A NAME="10719"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 9.12:</STRONG>
+coupled transmission line</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="354" HEIGHT="61" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1177.png"
+ ALT="\includegraphics[width=0.5\linewidth]{mscoupled}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1558"
+  HREF="node64.html">S-parameter container with additional</A>
+<B>Up:</B> <A NAME="tex2html1554"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1548"
+  HREF="node62.html">Differential Transmission Line</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

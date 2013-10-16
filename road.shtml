@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Qucs project: roadmap</title>
+<link href="qucsweb.css" rel="stylesheet"  type="text/css">
+<head>
+<body>
+
+<!-- include the common web page header using Apache Server-Side Includes (SSI) -->
+<!--#include virtual="/qucs-header.html" -->
+<div id="main">
+<hr>
+<a name="#roadmap">
+<h3>Overall roadmap</h3>
+</a>
+
+The development of Qucs goes through several steps.  The following table gives
+a rough outline of these stages.
+
+<ul>
+<li>
+<font color="#000080"><b>
+Stage 5 - Design realization, production, verification.
+</b></font></li>
+<br>
+<br>
+<ul>
+<li>Layout editor for PCB and chip.
+<img src="images/unchecked.png" border=0 align="middle"></li>
+<li>Layout tools: DRC, ERC, LVS, ...
+<img src="images/unchecked.png" border=0 align="middle"></li>
+<li>Monte Carlo simulation (device mismatch and process mismatch) based on real technology data.
+<img src="images/unchecked.png" border=0 align="middle"></li>
+<li>Automated data aquisition from measurement equipment; easy to
+use measurement setups.
+<img src="images/unchecked.png" border=0 align="middle"></li>
+</ul>
+<br>
+<li>
+<font color="#000080"><b>
+Stage 4 - Implementation of industry standard device models.
+</b></font></li>
+<br>
+<br>
+<ul>
+<li>Implementation of BSIM series.
+<img src="images/unchecked.png" border=0 align="middle"></li>
+<li>Implementation of HICUM.
+<img src="images/checked.png" border=0 align="middle"></li>
+<li>Implementation of MEXTRAM.
+<img src="images/unchecked.png" border=0 align="middle"></li>
+<li>Implementation of VBIC.
+<img src="images/unchecked.png" border=0 align="middle"></li>
+<li>Implementation of EPFL-EKV.
+<img src="images/checked.png" border=0 align="middle"></li>
+</ul>
+<br>
+<li>
+<font color="#000080"><b>
+Stage 3 - Support for more design- and synthesis tools.
+</b></font></li>
+<br>
+<br>
+<ul>
+<li>Attenuator design tool.
+<img src="images/checked.png" border=0 align="middle"></li>
+<li>Smith-Chart tool for noise and power matching.
+<img src="images/checked.png" border=0 align="middle"></li>
+<li>Filter synthesis tool.
+<img src="images/checked.png" border=0 align="middle"></li>
+<li>Improve interaction with other software (data conversion).
+<img src="images/unchecked.png" border=0 align="middle"></li>
+<li>Optimizer -- currently using <a href="http://asco.sourceforge.net"/>ASCO</a>.
+<img src="images/checked.png" border=0 align="middle"></li>
+<li>Transmission line calculator.
+<img src="images/checked.png" border=0 align="middle"></li>
+<li>Device model and subcircuit library manager.
+<img src="images/checked.png" border=0 align="middle"></li>
+</ul>
+<br>
+<li>
+<font color="#008000"><b>
+Stage 2 - Implementation of powerful circuit analysis tools.
+</b></font></li>
+<br>
+<br>
+<ul>
+<li>EM field simulator.
+<img src="images/unchecked.png" border=0 align="middle"></li>
+<li>Transient simulation using convolution for devices defined in the
+frequency domain.
+<img src="images/unchecked.png" border=0 align="middle"></li>
+<li>Digital simulation.
+<img src="images/checked.png" border=0 align="middle"></li>
+<li>Improvements in the GUI regarding usability and design.
+<img src="images/unchecked.png" border=0 align="middle"></li>
+<li>Large signal S-parameter simulation (LSSP) based on harmonic balance.
+<img src="images/unchecked.png" border=0 align="middle"></li>
+<li>Symbolically defined devices.
+<img src="images/checked.png" border=0 align="middle"></li>
+<li>Verilog-AMS interface.
+<img src="images/checked.png" border=0 align="middle"></li>
+</ul>
+<br>
+<li>
+<font color="#008000"><b>
+Stage 1 - Setup a simple GUI and a simulator.
+</b></font></li>
+<br>
+<br>
+<ul>
+<li>
+Support for multiple languages.
+<img src="images/checked.png" border=0 align="middle">
+</li>
+<li>
+Support for standard types of simulations.  Each of them implemented in the
+simulation backend.  Communication between GUI and simulator using files or
+pipes.
+</li>
+<ul>
+<li>S-Parameter <img src="images/checked.png" border=0 align="middle"></li>
+<li>AC <img src="images/checked.png" border=0 align="middle"></li>
+<li>DC <img src="images/checked.png" border=0 align="middle"></li>
+<li>Transient <img src="images/checked.png" border=0 align="middle"></li>
+<li>Harmonic Balance <img src="images/unchecked.png" border=0 align="middle"></li>
+<li>AC Noise <img src="images/checked.png" border=0 align="middle"></li>
+<li>S-Parameter Noise <img src="images/checked.png" border=0 align="middle"></li>
+</ul>
+<li>
+Create data representation visualisations (diagrams).
+<img src="images/checked.png" border=0 align="middle">
+</li>
+<li>
+Implement an easy to use schematic editor.
+<img src="images/checked.png" border=0 align="middle" align="middle">
+</li>
+</ul>
+<br>
+</ul>
+</p>
+
+<h3>Legend</h3>
+<blockquote>
+<img src="images/unchecked.png" border=0 align="middle">
+indicates that nothing or very little effort has been made.<br>
+<img src="images/checked.png" border=0 align="middle">
+indicates availability.<br>
+<font color="#008000">Green text</font>
+is currently worked on or even finished.<br>
+<font color="#000080">Blue text</font>
+is future work.
+</blockquote>
+
+<a name="#specific">
+<h3>Specific TODO items</h3>
+We are looking for people who can help us with the following things.  If you
+have even a slight idea about one of these, then please contact us at <a href="mailto:qucs-devel@lists.sourceforge.net"><em>&lt;qucs-devel@lists.sourceforge.net&gt;</em></a>.
+<ul>
+<li><s>model of microstrip cross junction</s></li>
+<li>writing tutorials about how to use Qucs or design guides, see 
+<a href="docs.shtml#manual">here</a> for details</li>
+<li>import/export filters for datasets, netlists schematics of other
+EDA software </li>
+<li>creation of example schematics</li>
+<li>maintenance of the Debian package on a regular basis</li>
+<li>variable step-size coefficients for Adams-Bashford (implicit
+multi-step integrator)</li>
+<li>paint logos and icons for the GUI</li>
+<li>checking Qucs to compile and run on a variety of systems and platforms</li>
+<li>translation of the GUI and the internal help system</li>
+<li>filter transformations: LC filters to microstrip and/or active
+filters</li>
+<li>coplanar models for non-zero metalization thickness</li>
+<li>publications and/or help for harmonic balance noise analysis</li>
+<li>EM field simulator (something like ADS Momentum)</li>
+<li>synthesis tools, e.g. <s>attenuators</s>, active filters</li>
+<li>implementation of transmission lines for transient simulation</li>
+<li>implementations of non-linear models like MOSFETs</li>
+<li><s>digital simulation engine via VHDL</s> -- decided to use FreeHDL for now</li>
+<li>regression test framework and initial test cases for the simulation engine</li>
+<li>maintenance of the FreeBSD (*BSD) package</li>
+</ul>
+</a>
+
+<hr>
+</div>
+<!-- include the common web page footer using Apache Server-Side Includes (SSI) -->
+  <!--#include virtual="/qucs-footer.html" -->
+</body>
+</html>

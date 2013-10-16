@@ -1,0 +1,517 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Noise Wave Correlation Matrix in CAE</TITLE>
+<META NAME="description" CONTENT="Noise Wave Correlation Matrix in CAE">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node11.html">
+<LINK REL="previous" HREF="node9.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node11.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html750"
+  HREF="node11.html">Noise Correlation Matrix Transformations</A>
+<B>Up:</B> <A NAME="tex2html746"
+  HREF="node7.html">Noise Waves</A>
+<B> Previous:</B> <A NAME="tex2html740"
+  HREF="node9.html">Noise Parameters</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00330000000000000000">
+Noise Wave Correlation Matrix in CAE</A>
+</H1>
+
+<P>
+Due to the similar concept of S parameters and noise correlation
+coefficients, the CAE noise analysis can be performed quite alike the
+S parameter analysis (section <A HREF="node5.html#sec:SparameterCAE">1.3.1</A>). As each step
+uses the S parameters to calculate the noise correlation matrix, the
+noise analysis is best done step by step in parallel with the S
+parameter analysis.  Performing each step is as follows: We have the
+noise wave correlation matrices ( <!-- MATH
+ $(\underline{C})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img178.png"
+ ALT="$ (\underline{C})$"></SPAN>, <!-- MATH
+ $(\underline{D})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img224.png"
+ ALT="$ (\underline{D})$"></SPAN>
+) and the S parameter matrices ( <!-- MATH
+ $(\underline{S})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$ (\underline{S})$"></SPAN>, <!-- MATH
+ $(\underline{T})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.png"
+ ALT="$ (\underline{T})$"></SPAN>
+) of two arbitrary circuits and want to know the correlation matrix of
+the special circuit resulting from connecting two circuits at one
+port.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:nconnect"></A><A NAME="1900"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.2:</STRONG>
+connecting two noisy circuits, scheme (left) and signal flow graph (right)</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="713" HEIGHT="492" ALIGN="BOTTOM" BORDER="0"
+ SRC="img225.png"
+ ALT="\includegraphics[width=\linewidth]{nconnect}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+An example is shown in fig. <A HREF="#fig:nconnect">2.2</A>.  What we have to do is
+to transform the inner noise waves <!-- MATH
+ $\underline{b}_{noise,k}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img226.png"
+ ALT="$ \underline{b}_{noise,k}$"></SPAN> and
+<!-- MATH
+ $\underline{b}_{noise,l}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="50" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img227.png"
+ ALT="$ \underline{b}_{noise,l}$"></SPAN> to the open ports.  Let us look upon the
+example.  According to the signal flow graph the resulting noise wave
+<!-- MATH
+ $\underline{b}_{noise,i}'$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="50" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img228.png"
+ ALT="$ \underline{b}_{noise,i}'$"></SPAN> writes as follows:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:bnoiseI"></A><!-- MATH
+ \begin{equation}
+\underline{b}_{noise,i}' = \underline{b}_{noise,i} +
+    \underline{b}_{noise,k}\cdot
+            \frac{\underline{T}_{ll}\cdot \underline{S}_{ik}}{1-\underline{S}_{kk}\cdot\underline{T}_{ll}} +
+    \underline{b}_{noise,l}\cdot
+            \frac{\underline{S}_{ik}}{1-\underline{S}_{kk}\cdot\underline{T}_{ll}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="446" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img229.png"
+ ALT="$\displaystyle \underline{b}_{noise,i}' = \underline{b}_{noise,i} + \underline{b...
+...,l}\cdot \frac{\underline{S}_{ik}}{1-\underline{S}_{kk}\cdot\underline{T}_{ll}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">25</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The noise wave <!-- MATH
+ $\underline{b}_{noise,j}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img230.png"
+ ALT="$ \underline{b}_{noise,j}$"></SPAN> does not contribute to
+<!-- MATH
+ $\underline{b}_{noise,i}'$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="50" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img228.png"
+ ALT="$ \underline{b}_{noise,i}'$"></SPAN>, because no path leads to port <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img53.png"
+ ALT="$ i$"></SPAN>.
+Calculating <!-- MATH
+ $\underline{b}_{noise,j}'$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img231.png"
+ ALT="$ \underline{b}_{noise,j}'$"></SPAN> is quite alike:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:bnoiseJ"></A><!-- MATH
+ \begin{equation}
+\underline{b}_{noise,j}' = \underline{b}_{noise,j} +
+    \underline{b}_{noise,l}\cdot
+            \frac{\underline{T}_{jl}\cdot \underline{S}_{kk}}{1-\underline{S}_{kk}\cdot\underline{T}_{ll}} +
+    \underline{b}_{noise,k}\cdot
+            \frac{\underline{T}_{jl}}{1-\underline{S}_{kk}\cdot\underline{T}_{ll}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="448" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img232.png"
+ ALT="$\displaystyle \underline{b}_{noise,j}' = \underline{b}_{noise,j} + \underline{b...
+...,k}\cdot \frac{\underline{T}_{jl}}{1-\underline{S}_{kk}\cdot\underline{T}_{ll}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">26</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Now we can derive the first element of the new noise correlation
+matrix by multiplying eq. (<A HREF="#eq:bnoiseI">2.25</A>) with eq. (<A HREF="#eq:bnoiseJ">2.26</A>).
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{split}
+\underline{c}_{ij}' = & \quad \overline{\underline{b}_{noise,i}'\cdot\underline{b}_{noise,j}'^*} \\
+ = & \quad\; \overline{\underline{b}_{noise,i}\cdot\underline{b}_{noise,j}^*} \\
+ & + \overline{\underline{b}_{noise,i}\cdot\underline{b}_{noise,l}^*}\cdot
+       \left( \frac{\underline{T}_{jl}\cdot \underline{S}_{kk}}{1-\underline{S}_{kk}\cdot\underline{T}_{ll}}
+                \right)^* +
+       \overline{\underline{b}_{noise,i}\cdot\underline{b}_{noise,k}^*}\cdot
+       \left( \frac{\underline{T}_{jl}}{1-\underline{S}_{kk}\cdot\underline{T}_{ll}} \right) ^* \\
+ & + \overline{\underline{b}_{noise,k}\cdot\underline{b}_{noise,j}^*}\cdot
+       \frac{\underline{T}_{ll}\cdot \underline{S}_{ik}}{1-\underline{S}_{kk}\cdot\underline{T}_{ll}} \\
+ & + \overline{\underline{b}_{noise,k}\cdot\underline{b}_{noise,l}^*}\cdot
+       \frac{\underline{T}_{ll}\cdot \underline{S}_{ik}\cdot \underline{T}_{jl}^* \cdot\underline{S}_{kk}^*}
+            {| 1-\underline{S}_{kk}\cdot\underline{T}_{ll} |^2} +
+       \overline{\underline{b}_{noise,k}\cdot\underline{b}_{noise,k}^*}\cdot
+       \frac{\underline{T}_{ll}\cdot \underline{S}_{ik}\cdot \underline{T}_{jl}^*}
+            {| 1-\underline{S}_{kk}\cdot\underline{T}_{ll} |^2} \\
+ & + \overline{\underline{b}_{noise,l}\cdot\underline{b}_{noise,j}^*}\cdot
+       \frac{\underline{S}_{ik}}{1-\underline{S}_{kk}\cdot\underline{T}_{ll}} \\
+ & + \overline{\underline{b}_{noise,l}\cdot\underline{b}_{noise,l}^*}\cdot
+       \frac{\underline{S}_{ik}\cdot \underline{T}_{jl}^*\cdot \underline{S}_{kk}^*}
+            {| 1-\underline{S}_{kk}\cdot\underline{T}_{ll} |^2} +
+       \overline{\underline{b}_{noise,l}\cdot\underline{b}_{noise,k}^*}\cdot
+       \frac{\underline{S}_{ik}\cdot \underline{T}_{jl}^*}
+            {| 1-\underline{S}_{kk}\cdot\underline{T}_{ll} |^2}
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="541" HEIGHT="280" BORDER="0"
+ SRC="img233.png"
+ ALT="\begin{displaymath}\begin{split}\underline{c}_{ij}' = &amp; \quad \overline{\underli...
+...-\underline{S}_{kk}\cdot\underline{T}_{ll} \vert^2} \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">27</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The noise waves of different circuits are uncorrelated and therefore
+their time average product equals zero (e.g.
+<!-- MATH
+ $\overline{\underline{b}_{noise,i}\cdot\underline{b}_{noise,j}^*} =
+0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="137" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img234.png"
+ ALT="$ \overline{\underline{b}_{noise,i}\cdot\underline{b}_{noise,j}^*} =
+0$"></SPAN>).  Thus, the final result is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{split}
+\underline{c}_{ij}' = (\underline{c}_{ji}')^* =
+   (\underline{c}_{kk}\cdot\underline{T}_{ll} + \underline{d}_{ll}\cdot\underline{S}_{kk}^*)\cdot
+   \frac{\underline{S}_{ik}\cdot\underline{T}_{jl}^*}{|1-\underline{S}_{kk}\cdot\underline{T}_{ll}|^2}
+\\+ \;\underline{c}_{ik}\cdot
+     \left(\frac{\underline{T}_{jl}}{1-\underline{S}_{kk}\cdot\underline{T}_{ll}}\right)^*
+   + \underline{d}_{lj}\cdot
+     \frac{\underline{S}_{ik}}{1-\underline{S}_{kk}\cdot\underline{T}_{ll}}
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="346" HEIGHT="92" BORDER="0"
+ SRC="img235.png"
+ ALT="\begin{displaymath}\begin{split}\underline{c}_{ij}' = (\underline{c}_{ji}')^* = ...
+..._{ik}}{1-\underline{S}_{kk}\cdot\underline{T}_{ll}} \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">28</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+All other cases of connecting circuits can be calculated the same way
+using the signal flow graph.  The results are listed below.
+
+<P>
+<P>
+If index <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img53.png"
+ ALT="$ i$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ j$"></SPAN> are within the same circuit, it results in
+fig. <A HREF="#fig:nconnect2">2.3</A>.  The following formula holds:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{split}
+\underline{c}_{ij}' = (\underline{c}_{ji}')^* = \underline{c}_{ij} +
+   (\underline{c}_{kk}\cdot|\underline{T}_{ll}|^2 + \underline{d}_{ll})\cdot
+   \frac{\underline{S}_{ik}\cdot\underline{S}_{jk}^*}{|1-\underline{S}_{kk}\cdot\underline{T}_{ll}|^2}
+\\+ \;\underline{c}_{ik}\cdot
+     \left(\frac{\underline{T}_{ll}\cdot\underline{S}_{jk}}
+                {1-\underline{S}_{kk}\cdot\underline{T}_{ll}}\right)^*
+   + \underline{c}_{kj}\cdot
+     \frac{\underline{T}_{ll}\cdot\underline{S}_{ik}}{1-\underline{S}_{kk}\cdot\underline{T}_{ll}}
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="364" HEIGHT="92" BORDER="0"
+ SRC="img236.png"
+ ALT="\begin{displaymath}\begin{split}\underline{c}_{ij}' = (\underline{c}_{ji}')^* = ...
+..._{ik}}{1-\underline{S}_{kk}\cdot\underline{T}_{ll}} \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">29</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+This equation is also valid, if <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img53.png"
+ ALT="$ i$"></SPAN> equals <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ j$"></SPAN>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:nconnect2"></A><A NAME="2176"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.3:</STRONG>
+connecting two noisy circuits</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="315" HEIGHT="138" ALIGN="BOTTOM" BORDER="0"
+ SRC="img237.png"
+ ALT="\includegraphics[width=7cm]{nconnect2}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+If the connected ports <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ l$"></SPAN> are from the same circuit, the
+following equations must be applied (see also
+fig. <A HREF="#fig:nconnect3">2.4</A>) to obtain the new correlation matrix
+coefficients.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+M = (1-\underline{S}_{kl})\cdot(1-\underline{S}_{lk}) - \underline{S}_{kk}\cdot\underline{S}_{ll}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="251" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img238.png"
+ ALT="$\displaystyle M = (1-\underline{S}_{kl})\cdot(1-\underline{S}_{lk}) - \underline{S}_{kk}\cdot\underline{S}_{ll}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">30</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+K_1 = \frac{\underline{S}_{il}\cdot(1-\underline{S}_{lk}) + \underline{S}_{ll}\cdot\underline{S}_{ik}} {M}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="213" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img239.png"
+ ALT="$\displaystyle K_1 = \frac{\underline{S}_{il}\cdot(1-\underline{S}_{lk}) + \underline{S}_{ll}\cdot\underline{S}_{ik}} {M}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">31</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+K_2 = \frac{\underline{S}_{ik}\cdot(1-\underline{S}_{kl}) + \underline{S}_{kk}\cdot\underline{S}_{il}} {M}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="219" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img240.png"
+ ALT="$\displaystyle K_2 = \frac{\underline{S}_{ik}\cdot(1-\underline{S}_{kl}) + \underline{S}_{kk}\cdot\underline{S}_{il}} {M}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">32</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+K_3 = \frac{\underline{S}_{jl}\cdot(1-\underline{S}_{lk}) + \underline{S}_{ll}\cdot\underline{S}_{jk}} {M}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="216" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img241.png"
+ ALT="$\displaystyle K_3 = \frac{\underline{S}_{jl}\cdot(1-\underline{S}_{lk}) + \underline{S}_{ll}\cdot\underline{S}_{jk}} {M}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">33</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+K_4 = \frac{\underline{S}_{jk}\cdot(1-\underline{S}_{kl}) + \underline{S}_{kk}\cdot\underline{S}_{jl}} {M}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="222" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img242.png"
+ ALT="$\displaystyle K_4 = \frac{\underline{S}_{jk}\cdot(1-\underline{S}_{kl}) + \underline{S}_{kk}\cdot\underline{S}_{jl}} {M}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">34</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{split}
+\underline{c}_{ij}' = \underline{c}_{ij} &+ \underline{c}_{kj}\cdot K_1 + \underline{c}_{lj}\cdot K_2
+   + K_3^*\cdot(\underline{c}_{ik} + \underline{c}_{kk}\cdot K_1 + \underline{c}_{lk}\cdot K_2) + \\
+    &K_4^*\cdot(\underline{c}_{il} + \underline{c}_{kl}\cdot K_1 + \underline{c}_{ll}\cdot K_2)
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="431" HEIGHT="51" BORDER="0"
+ SRC="img243.png"
+ ALT="\begin{displaymath}\begin{split}\underline{c}_{ij}' = \underline{c}_{ij} &amp;+ \und...
+...ine{c}_{kl}\cdot K_1 + \underline{c}_{ll}\cdot K_2) \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">35</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+These equations are also valid if <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img53.png"
+ ALT="$ i$"></SPAN> equals <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ j$"></SPAN>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:nconnect3"></A><A NAME="2262"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.4:</STRONG>
+connection within a noisy circuits</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="202" HEIGHT="201" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="\includegraphics[width=4.5cm]{nconnect3}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The absolute values of the noise correlation coefficients are very
+small.  To achieve a higher numerical precision, it is recommended to
+normalize the noise matrix with <!-- MATH
+ $k\cdot T_0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img245.png"
+ ALT="$ k\cdot T_0$"></SPAN>. After the simulation
+they do not have to be denormalized, because the noise parameters can
+be calculated by using equation (<A HREF="node9.html#eq:nparamF">2.4</A>) to
+(<A HREF="node9.html#eq:nparamRn">2.11</A>) and omitting all occurrences of <!-- MATH
+ $k\cdot T_0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img245.png"
+ ALT="$ k\cdot T_0$"></SPAN>.
+
+<P>
+<P>
+The transformer concept to deal with different port impedances and
+with differential ports (as described in section <A HREF="node5.html#sec:diffSParam">1.3.2</A>)
+can also be applied to this noise analysis.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html750"
+  HREF="node11.html">Noise Correlation Matrix Transformations</A>
+<B>Up:</B> <A NAME="tex2html746"
+  HREF="node7.html">Noise Waves</A>
+<B> Previous:</B> <A NAME="tex2html740"
+  HREF="node9.html">Noise Parameters</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

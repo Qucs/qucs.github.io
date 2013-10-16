@@ -1,0 +1,352 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Symmetrical transformer</TITLE>
+<META NAME="description" CONTENT="Symmetrical transformer">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node50.html">
+<LINK REL="previous" HREF="node48.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node50.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1381"
+  HREF="node50.html">Non-ideal transformer</A>
+<B>Up:</B> <A NAME="tex2html1377"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1371"
+  HREF="node48.html">Transformer</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001080000000000000000">
+Symmetrical transformer</A>
+</H1>
+
+<P>
+The ideal symmetrical transformer, as shown in fig.
+<A HREF="#fig:strafo">9.3</A>, is determined by the following equations which
+introduce two more unknowns in the MNA matrix.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:strafo"></A><A NAME="8874"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 9.3:</STRONG>
+ideal three winding transformer</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="178" HEIGHT="224" ALIGN="BOTTOM" BORDER="0"
+ SRC="img897.png"
+ ALT="\includegraphics[width=4cm]{acstrafo}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+T_{1}\cdot\left(V_{2} - V_{3}\right) = V_{1} - V_{6}
+\quad \rightarrow \quad
+V_{1} - T_{1}\cdot V_{2} + T_{1}\cdot V_{3} - V_{6} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="433" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img898.png"
+ ALT="$\displaystyle T_{1}\cdot\left(V_{2} - V_{3}\right) = V_{1} - V_{6} \quad \rightarrow \quad V_{1} - T_{1}\cdot V_{2} + T_{1}\cdot V_{3} - V_{6} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">30</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:acstrafo"></A><!-- MATH
+ \begin{equation}
+T_{2}\cdot\left(V_{2} - V_{3}\right) = V_{5} - V_{4}
+\quad \rightarrow \quad
+- T_{2}\cdot V_{2} + T_{2}\cdot V_{3} - V_{4} + V_{5} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="445" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img899.png"
+ ALT="$\displaystyle T_{2}\cdot\left(V_{2} - V_{3}\right) = V_{5} - V_{4} \quad \rightarrow \quad - T_{2}\cdot V_{2} + T_{2}\cdot V_{3} - V_{4} + V_{5} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">31</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The new unknown variables <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img900.png"
+ ALT="$ I_{T1}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img901.png"
+ ALT="$ I_{T2}$"></SPAN> must be considered by
+the six remaining simple equations.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_{2} = T_{1}\cdot I_{T1} + T_{2}\cdot I_{T2} \quad I_{3} = -T_{1}\cdot I_{T1} - T_{2}\cdot I_{T2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="340" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img902.png"
+ ALT="$\displaystyle I_{2} = T_{1}\cdot I_{T1} + T_{2}\cdot I_{T2} \quad I_{3} = -T_{1}\cdot I_{T1} - T_{2}\cdot I_{T2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">32</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_{1} = -I_{T1} \quad I_{4} = I_{T2} \quad I_{5} = -I_{T2} \quad I_{6} = I_{T1}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="311" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img903.png"
+ ALT="$\displaystyle I_{1} = -I_{T1} \quad I_{4} = I_{T2} \quad I_{5} = -I_{T2} \quad I_{6} = I_{T1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">33</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The matrix representation needs to be augmented by two more new rows
+and their corresponding columns. For DC and AC simulation it is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+.&.&.&.&.&.& -1 & 0\\
+.&.&.&.&.&.& T_{1} & T_{2}\\
+.&.&.&.&.&.& -T_{1} & -T_{2}\\
+.&.&.&.&.&.& 0 & 1\\
+.&.&.&.&.&.& 0 & -1\\
+.&.&.&.&.&.& 1 & 0\\
+1 & -T_{1} & T_{1} & 0 & 0 & -1 & 0 & 0\\
+0 & -T_{2} & T_{2} & -1 & 1 & 0 & 0 & 0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}\\
+V_{3}\\
+V_{4}\\
+V_{5}\\
+V_{6}\\
+I_{T1}\\
+I_{T2}
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_{1}\\
+I_{2}\\
+I_{3}\\
+I_{4}\\
+I_{5}\\
+I_{6}\\
+0\\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="462" HEIGHT="169" ALIGN="MIDDLE" BORDER="0"
+ SRC="img904.png"
+ ALT="$\displaystyle \begin{bmatrix}.&amp;.&amp;.&amp;.&amp;.&amp;.&amp; -1 &amp; 0\\ .&amp;.&amp;.&amp;.&amp;.&amp;.&amp; T_{1} &amp; T_{2}\\...
+...\\ 0 \end{bmatrix} = \begin{bmatrix}0\\ 0\\ 0\\ 0\\ 0\\ 0\\ 0\\ 0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">34</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Using the port numbers depicted in fig. <A HREF="#fig:strafo">9.3</A>, the
+scattering parameters of an ideal, symmetrical transformer with
+voltage transformation ratio (number of turns) <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img905.png"
+ ALT="$ T_1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img906.png"
+ ALT="$ T_2$"></SPAN>,
+respectively, writes as follows.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+denom = 1+T_1^2+T_2^2
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="156" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img907.png"
+ ALT="$\displaystyle denom = 1+T_1^2+T_2^2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">35</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray}
+S_{11} = S_{66} = \frac{T_1^2}{denom}  &  \qquad S_{16} = S_{61} = 1-S_{11} \\
+S_{44} = S_{55} = \frac{T_2^2}{denom}  &  \qquad S_{45} = S_{54} = 1-S_{44} \\
+S_{22} = S_{33} = \frac{1}{denom}  &  \qquad S_{23} = S_{32} = 1-S_{22}
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="143" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img908.png"
+ ALT="$\displaystyle S_{11} = S_{66} = \frac{T_1^2}{denom}$"></TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP WIDTH="50%"><IMG
+ WIDTH="175" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img909.png"
+ ALT="$\displaystyle \qquad S_{16} = S_{61} = 1-S_{11}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">36</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="143" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img910.png"
+ ALT="$\displaystyle S_{44} = S_{55} = \frac{T_2^2}{denom}$"></TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP WIDTH="50%"><IMG
+ WIDTH="175" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img911.png"
+ ALT="$\displaystyle \qquad S_{45} = S_{54} = 1-S_{44}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">37</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="143" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img912.png"
+ ALT="$\displaystyle S_{22} = S_{33} = \frac{1}{denom}$"></TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP WIDTH="50%"><IMG
+ WIDTH="175" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img913.png"
+ ALT="$\displaystyle \qquad S_{23} = S_{32} = 1-S_{22}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">38</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{12} = S_{21} = -S_{13} = -S_{31} = -S_{26} = -S_{62} = S_{36} = S_{63}
+       = \frac{T_1}{denom}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="459" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img914.png"
+ ALT="$\displaystyle S_{12} = S_{21} = -S_{13} = -S_{31} = -S_{26} = -S_{62} = S_{36} = S_{63} = \frac{T_1}{denom}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">39</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+-S_{24} = -S_{42} = S_{25} = S_{52} = S_{34} = S_{43} = -S_{35} = -S_{53}
+       = \frac{T_2}{denom}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="459" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img915.png"
+ ALT="$\displaystyle -S_{24} = -S_{42} = S_{25} = S_{52} = S_{34} = S_{43} = -S_{35} = -S_{53} = \frac{T_2}{denom}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">40</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+-S_{14} = -S_{41} = S_{15} = S_{51} = S_{46} = S_{64} = -S_{56} = -S_{65}
+       = \frac{T_1\cdot T_2}{denom}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="459" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img916.png"
+ ALT="$\displaystyle -S_{14} = -S_{41} = S_{15} = S_{51} = S_{46} = S_{64} = -S_{56} = -S_{65} = \frac{T_1\cdot T_2}{denom}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">41</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+An ideal symmetrical transformer is noise free.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1381"
+  HREF="node50.html">Non-ideal transformer</A>
+<B>Up:</B> <A NAME="tex2html1377"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1371"
+  HREF="node48.html">Transformer</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

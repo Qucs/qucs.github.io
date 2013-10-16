@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Definition</TITLE>
+<META NAME="description" CONTENT="Definition">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node9.html">
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html726"
+  HREF="node9.html">Noise Parameters</A>
+<B>Up:</B> <A NAME="tex2html722"
+  HREF="node7.html">Noise Waves</A>
+<B> Previous:</B> <A NAME="tex2html716"
+  HREF="node7.html">Noise Waves</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00310000000000000000">
+Definition</A>
+</H1>
+
+<P>
+In microwave circuits described by scattering parameters, it is
+advantageous to regard noise as noise waves [<A
+ HREF="node103.html#Wedge">5</A>].  The noise
+characteristics of an n-port is then defined completely by one
+outgoing noise wave <!-- MATH
+ $\underline{b}_{noise,n}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img176.png"
+ ALT="$ \underline{b}_{noise,n}$"></SPAN> at each port (see 2-port
+example in fig. <A HREF="#fig:Sparam">2.1</A>) and the correlation between these
+noise sources.  Therefore, mathematically, you can characterize a
+noisy n-port by its <SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img177.png"
+ ALT="$ n\times n$"></SPAN> scattering matrix <!-- MATH
+ $(\underline{S})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$ (\underline{S})$"></SPAN>
+and its <SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img177.png"
+ ALT="$ n\times n$"></SPAN> noise wave correlation matrix <!-- MATH
+ $(\underline{C})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img178.png"
+ ALT="$ (\underline{C})$"></SPAN>.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:NoiseCs"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+(\underline{C}) =
+\begin{pmatrix}
+ \overline{\underline{b}_{noise,1}\cdot \underline{b}_{noise,1}^*} &
+    \overline{\underline{b}_{noise,1}\cdot \underline{b}_{noise,2}^*} &
+    \ldots & \overline{\underline{b}_{noise,1}\cdot \underline{b}_{noise,n}^*}\\
+ \overline{\underline{b}_{noise,2}\cdot \underline{b}_{noise,1}^*} &
+    \overline{\underline{b}_{noise,2}\cdot \underline{b}_{noise,2}^*} & \ldots &
+    \overline{\underline{b}_{noise,2}\cdot \underline{b}_{noise,n}^*}\\
+ \vdots & \vdots & \ddots & \vdots\\
+ \overline{\underline{b}_{noise,n}\cdot \underline{b}_{noise,1}^*} &
+    \overline{\underline{b}_{noise,n}\cdot \underline{b}_{noise,2}^*} &
+    \ldots & \overline{\underline{b}_{noise,n}\cdot \underline{b}_{noise,n}^*}\\
+\end{pmatrix}
+\\=
+\begin{pmatrix}
+  \underline{c}_{11} & \underline{c}_{12} & \ldots & \underline{c}_{1n}\\
+  \underline{c}_{21} & \underline{c}_{22} & \ldots & \underline{c}_{2n}\\
+  \vdots & \vdots & \ddots & \vdots\\
+  \underline{c}_{n1} & \underline{c}_{n2} & \ldots & \underline{c}_{nn}\\
+\end{pmatrix}
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="459" HEIGHT="195" BORDER="0"
+ SRC="img179.png"
+ ALT="\begin{displaymath}\begin{split}(\underline{C}) = \begin{pmatrix}\overline{\unde...
+..._{n2} &amp; \ldots &amp; \underline{c}_{nn}\\ \end{pmatrix} \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Where <!-- MATH
+ $\overline{x}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img180.png"
+ ALT="$ \overline{x}$"></SPAN> is the time average of <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img181.png"
+ ALT="$ x$"></SPAN> and <!-- MATH
+ $\underline{x}^*$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img182.png"
+ ALT="$ \underline{x}^*$"></SPAN>
+is the conjugate complex of <!-- MATH
+ $\underline{x}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img183.png"
+ ALT="$ \underline{x}$"></SPAN>.  Noise correlation
+matrices are hermitian matrices because the following equations hold.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\text{Im}\left(\underline{c}_{nn}\right) = \text{Im}\left(\overline{\left|b_{noise,n}\right|^2}\right) = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH">Im<IMG
+ WIDTH="56" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img184.png"
+ ALT="$\displaystyle \left(\underline{c}_{nn}\right) =$">&nbsp; &nbsp;Im<IMG
+ WIDTH="118" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img185.png"
+ ALT="$\displaystyle \left(\overline{\left\vert b_{noise,n}\right\vert^2}\right) = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{c}_{nm} = \underline{c}_{mn}^*
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="78" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img186.png"
+ ALT="$\displaystyle \underline{c}_{nm} = \underline{c}_{mn}^*$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Where <!-- MATH
+ $\text{Im}(\underline{x})$
+ -->
+<SPAN CLASS="MATH">Im<IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img187.png"
+ ALT="$ (\underline{x})$"></SPAN> is the imaginary part of
+<!-- MATH
+ $\underline{x}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img183.png"
+ ALT="$ \underline{x}$"></SPAN> and <!-- MATH
+ $|\underline{x}|$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img188.png"
+ ALT="$ \vert\underline{x}\vert$"></SPAN> is the magnitude of
+<!-- MATH
+ $\underline{x}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img183.png"
+ ALT="$ \underline{x}$"></SPAN>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:Sparam"></A><A NAME="1707"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.1:</STRONG>
+signal flow graph of a noisy 2-port</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="314" HEIGHT="193" ALIGN="BOTTOM" BORDER="0"
+ SRC="img189.png"
+ ALT="\includegraphics[width=7cm]{sparam}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html726"
+  HREF="node9.html">Noise Parameters</A>
+<B>Up:</B> <A NAME="tex2html722"
+  HREF="node7.html">Noise Waves</A>
+<B> Previous:</B> <A NAME="tex2html716"
+  HREF="node7.html">Noise Waves</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

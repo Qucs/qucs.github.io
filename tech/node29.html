@@ -1,0 +1,494 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Convergence</TITLE>
+<META NAME="description" CONTENT="Convergence">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="previous" HREF="node28.html">
+<LINK REL="up" HREF="node23.html">
+<LINK REL="next" HREF="node30.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1091"
+  HREF="node30.html">Harmonic Balance Analysis</A>
+<B>Up:</B> <A NAME="tex2html1087"
+  HREF="node23.html">Transient Analysis</A>
+<B> Previous:</B> <A NAME="tex2html1083"
+  HREF="node28.html">Components defined in the</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1092"
+  HREF="node29.html#SECTION00761000000000000000">Limiting schemes</A>
+<LI><A NAME="tex2html1093"
+  HREF="node29.html#SECTION00762000000000000000">Continuation schemes</A>
+<UL>
+<LI><A NAME="tex2html1094"
+  HREF="node29.html#SECTION00762100000000000000">Source stepping</A>
+<LI><A NAME="tex2html1095"
+  HREF="node29.html#SECTION00762200000000000000">Minimal derivative <!-- MATH
+ $\mathrm{g_{min}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \mathrm {g_{min}}$"></SPAN> stepping</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00760000000000000000">
+Convergence</A>
+</H1>
+
+<P>
+Similar to the DC analysis convergence problems occur during the
+transient analysis (see section <A HREF="node16.html#sec:convergenceDC">3.3.2</A> on page
+<A HREF="node16.html#sec:convergenceDC"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>) as well.  In order to improve the overall
+convergence behaviour it is possible to improve the models on the one
+hand and/or to improve the algorithms on the other hand.
+
+<P>
+<P>
+The implications during Newton-Raphson iterations solving the linear
+equation system
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\left[A\left(x^k\right)\right] \cdot \left[x^{k+1}\right] = \left[z\left(x^k\right)\right]
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="201" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img742.png"
+ ALT="$\displaystyle \left[A\left(x^k\right)\right] \cdot \left[x^{k+1}\right] = \left[z\left(x^k\right)\right]$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">165</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+are continuous device model equations (with continuous derivatives as
+well), floating nodes (make the Jacobian matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img380.png"
+ ALT="$ A$"></SPAN> singular) and the
+initial guess <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img743.png"
+ ALT="$ x^0$"></SPAN>.  The convergence problems which in fact occur are
+local minimums causing the matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img380.png"
+ ALT="$ A$"></SPAN> to be singular, nearly singular
+matrices and overflow problems.
+
+<P>
+
+<DIV ALIGN="CENTER">
+
+<P><A NAME="fig:ConvProb1"></A></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="641" HEIGHT="185" ALIGN="BOTTOM" BORDER="0"
+ SRC="img744.png"
+ ALT="\includegraphics[width=0.9\linewidth]{convprob1}">
+
+</DIV>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER">
+
+<P><A NAME="fig:ConvProb2"></A></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="641" HEIGHT="185" ALIGN="BOTTOM" BORDER="0"
+ SRC="img745.png"
+ ALT="\includegraphics[width=0.9\linewidth]{convprob2}">
+
+</DIV>
+</DIV>
+
+<P>
+
+<H2><A NAME="SECTION00761000000000000000">
+Limiting schemes</A>
+</H2>
+
+<P>
+The modified (damped) Newton-Raphson schemes are based on the
+limitation of the solution vector <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img746.png"
+ ALT="$ x^k$"></SPAN> in each iteration.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+x^{k+1} = x^k + \alpha\cdot \Delta x^{k+1}
+\;\;\;\; \textrm{ with } \;\;\;\;
+\Delta x^{k+1} = x^{k+1} - x^k
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="374" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img747.png"
+ ALT="$\displaystyle x^{k+1} = x^k + \alpha\cdot \Delta x^{k+1} \;\;\;\; \textrm{ with } \;\;\;\; \Delta x^{k+1} = x^{k+1} - x^k$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">166</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+One possibility to choose a value for <!-- MATH
+ $\alpha \in [0,1]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img748.png"
+ ALT="$ \alpha \in [0,1]$"></SPAN> is
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\alpha = \dfrac{\gamma}{\left\lVert\Delta x^{k+1}\right\rVert_{\infty}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="115" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img749.png"
+ ALT="$\displaystyle \alpha = \dfrac{\gamma}{\left\lVert\Delta x^{k+1}\right\rVert_{\infty}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">167</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+This is a heuristic and does not ensure global convergence, but it can
+help solving some of the discussed problems.  Another possibility is
+to pick a value <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img750.png"
+ ALT="$ \alpha^k$"></SPAN> which minimizes the <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img751.png"
+ ALT="$ L_2$"></SPAN> norm of the right
+hand side vector.  This method performs a one-dimensional (line)
+search into Newton direction and guarantees global convergence.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+x^{k+1} = x^k + \alpha^k \cdot \Delta x^{k+1}
+\;\;\;\; \textrm{ with an } \alpha^k \textrm{ which minimizes } \;\;\;\;
+\left\lVert z\left(x^k + \alpha^k \cdot \Delta x^{k+1}\right)\right\rVert_2
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="574" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img752.png"
+ ALT="$\displaystyle x^{k+1} = x^k + \alpha^k \cdot \Delta x^{k+1} \;\;\;\; \textrm{ w...
+...;\; \left\lVert z\left(x^k + \alpha^k \cdot \Delta x^{k+1}\right)\right\rVert_2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">168</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The one remaining problem about that line search method for
+convergence improvement is its iteration into local minimums where the
+Jacobian matrix is singular.  The damped Newton-Raphson method
+``pushes'' the matrix into singularity as depicted in
+fig. <A HREF="#fig:ConvProb3">6.11</A>.
+
+<DIV ALIGN="CENTER"><A NAME="fig:ConvProb3"></A><A NAME="6354"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.11:</STRONG>
+singular Jacobian problem</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+</DIV><IMG
+ WIDTH="388" HEIGHT="212" ALIGN="BOTTOM" BORDER="0"
+ SRC="img753.png"
+ ALT="\includegraphics[width=0.55\linewidth]{convprob3}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<H2><A NAME="SECTION00762000000000000000"></A>
+<A NAME="sec:continuation"></A>
+<BR>
+Continuation schemes
+</H2>
+
+<P>
+The basic idea behind this Newton-Raphson modification is to generate
+a sequence of problems such that a problem is a good initial guess for
+the following one, because Newton basically converges given a close
+initial guess.
+
+<P>
+<P>
+The template algorithm for this modification is to solve the equation
+system
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="94" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img754.png"
+ ALT="$\displaystyle \left[A\right] \cdot \left[x\right] - \left[z\right]$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img755.png"
+ ALT="$\displaystyle = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">169</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="83" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img756.png"
+ ALT="$\displaystyle F\left(x\left(\lambda\right), \lambda\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img755.png"
+ ALT="$\displaystyle = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">170</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with the parameter <!-- MATH
+ $\lambda \in [0,1]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="64" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img757.png"
+ ALT="$ \lambda \in [0,1]$"></SPAN> given that
+<!-- MATH
+ $x\left(\lambda\right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img758.png"
+ ALT="$ x\left(\lambda\right)$"></SPAN> is sufficiently smooth.
+<!-- MATH
+ $F\left(x\left(0\right), 0\right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="81" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img759.png"
+ ALT="$ F\left(x\left(0\right), 0\right)$"></SPAN> starts the continuation and
+<!-- MATH
+ $F\left(x\left(1\right), 1\right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="81" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img760.png"
+ ALT="$ F\left(x\left(1\right), 1\right)$"></SPAN> ends the continuation.  The
+algorithm outline is as follows: First solve the problem
+<!-- MATH
+ $F\left(x\left(0\right), 0\right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="81" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img759.png"
+ ALT="$ F\left(x\left(0\right), 0\right)$"></SPAN>, e.g. set <!-- MATH
+ $\lambda = \Delta\lambda
+= 0.01$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="106" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img761.png"
+ ALT="$ \lambda = \Delta\lambda
+= 0.01$"></SPAN> and try to solve <!-- MATH
+ $F\left(x\left(\lambda\right),
+\lambda\right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="83" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img762.png"
+ ALT="$ F\left(x\left(\lambda\right),
+\lambda\right)$"></SPAN>.  If Newton-Raphson converged then increase <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img763.png"
+ ALT="$ \lambda$"></SPAN>
+by <!-- MATH
+ $\Delta\lambda$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img764.png"
+ ALT="$ \Delta\lambda$"></SPAN> and double <!-- MATH
+ $\Delta\lambda = 2\cdot \Delta\lambda$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="88" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img765.png"
+ ALT="$ \Delta\lambda = 2\cdot \Delta\lambda$"></SPAN>,
+otherwise half <!-- MATH
+ $\Delta\lambda = 0.5\cdot \Delta\lambda$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="100" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img766.png"
+ ALT="$ \Delta\lambda = 0.5\cdot \Delta\lambda$"></SPAN> and set
+<!-- MATH
+ $\lambda = \lambda_{prev} + \Delta\lambda$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="112" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img767.png"
+ ALT="$ \lambda = \lambda_{prev} + \Delta\lambda$"></SPAN>.  Repeat this until
+<!-- MATH
+ $\lambda = 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img768.png"
+ ALT="$ \lambda = 1$"></SPAN>.
+
+<P>
+
+<H3><A NAME="SECTION00762100000000000000">
+Source stepping</A>
+</H3>
+
+<P>
+Applied to the solution of (non-linear) electrical networks one may
+think of <!-- MATH
+ $\alpha \in [0,1]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img748.png"
+ ALT="$ \alpha \in [0,1]$"></SPAN> as a multiplier for the source vector <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img769.png"
+ ALT="$ S$"></SPAN>
+yielding <!-- MATH
+ $S\left(\alpha\right) = \alpha S$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="82" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img770.png"
+ ALT="$ S\left(\alpha\right) = \alpha S$"></SPAN>.  Varying <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img696.png"
+ ALT="$ \alpha$"></SPAN> form 0
+to 1 and solve at each <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img696.png"
+ ALT="$ \alpha$"></SPAN>.  The actual circuit solution is done
+when <!-- MATH
+ $\alpha = 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img771.png"
+ ALT="$ \alpha = 1$"></SPAN>.  This method is called source stepping.  The
+solution vector <!-- MATH
+ $x\left(\alpha\right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img772.png"
+ ALT="$ x\left(\alpha\right)$"></SPAN> is continuous in <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img696.png"
+ ALT="$ \alpha$"></SPAN>
+(hence the name continuation scheme).
+
+<P>
+
+<H3><A NAME="SECTION00762200000000000000">
+Minimal derivative <!-- MATH
+ $\mathrm{g_{min}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \mathrm {g_{min}}$"></SPAN> stepping</A>
+</H3>
+
+<P>
+Another possibility to improve convergence of almostly singular
+electrical networks is the so called <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img374.png"
+ ALT="$ g_{min}$"></SPAN> stepping, i.e. adding a
+tiny conductance to ground at each node of the Jacobian <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img380.png"
+ ALT="$ A$"></SPAN> matrix.
+The continuation starts e.g. with <!-- MATH
+ $g_{min} = 0.01$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="85" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img773.png"
+ ALT="$ g_{min} = 0.01$"></SPAN> and ends with
+<!-- MATH
+ $g_{min} = 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="65" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img774.png"
+ ALT="$ g_{min} = 0$"></SPAN> reached by the algorithm described in section
+<A HREF="#sec:continuation">6.6.2</A>.  The equation system is slightly modified by
+adding the current <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img374.png"
+ ALT="$ g_{min}$"></SPAN> to each diagonal element of the matrix
+<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img380.png"
+ ALT="$ A$"></SPAN>.
+
+<P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1091"
+  HREF="node30.html">Harmonic Balance Analysis</A>
+<B>Up:</B> <A NAME="tex2html1087"
+  HREF="node23.html">Transient Analysis</A>
+<B> Previous:</B> <A NAME="tex2html1083"
+  HREF="node28.html">Components defined in the</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

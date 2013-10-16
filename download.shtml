@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Qucs project: download</title>
+<link href="qucsweb.css" rel="stylesheet"  type="text/css">
+<head>
+<body>
+
+<!-- include the common web page header using Apache Server-Side Includes (SSI) -->
+<!--#include virtual="/qucs-header.html" -->
+
+<div id="main">
+<hr>
+<center>
+[
+packages -
+<a href="examples.shtml">examples</a> -
+<a href="related.shtml">related</a> -
+<a href="press.shtml">press/education</a>
+]
+</center>
+
+
+<a name="download">
+<h3>Download</h3>
+</a>
+In this section you will find all the versions of Qucs which have been
+released so far.  Also we provide links to the <a
+href="http://www.freehdl.seul.org/">FreeHDL</a> versions.
+
+<br><br>
+<h3>Source code</h3>
+<table border=0 cellpadding=0 width="70%">
+<tr>
+<td valign=top>
+<ul>
+<li>Qucs version
+<a href="http://prdownloads.sourceforge.net/qucs/qucs-0.0.17.tar.gz?download">0.0.17</a></li>
+<li>
+<a href="https://sourceforge.net/projects/qucs/files/qucs/">older versions</a></li>
+</ul>
+</td>
+<td valign=top>
+<ul>
+<li>FreeHDL  version
+<a href="http://seul.org/~enaroska/freehdl-0.0.8.tar.gz">0.0.8</a></li>
+<li> 
+<a href="older-freehdl-versions.shtml">older versions</a></li>
+
+</ul>
+</td>
+</tr>
+</table>
+<h3>Official binaries</h3>
+<ul>
+	<li><a href="https://sourceforge.net/projects/qucs/files/qucs-binary/0.0.17/qucs-0.0.17.exe/download">Qucs 0.0.17 for Windows</a><br/>Mingw build with Qt4.8, includes Freehdl 0.0.8, Mingw and iverilog 0.9.6</li>
+
+<br/>
+
+	<li><a href="http://sourceforge.net/projects/qucs/files/qucs-binary/0.0.17/qucs-0.0.17-macosx-10.5-intel.dmg/download">Qucs 0.0.17 for osx</a><br/>Build with Qt4.8, includes Freehdl 0.0.8 and iverilog 0.9.6</li>
+<br/>
+<li>
+The official package for Ubuntu is provided using a <a href="https://launchpad.net/~qucs/+archive/qucs/">PPA</a> repository:
+<pre>
+	sudo apt-add-repository ppa:qucs/qucs
+	sudo apt-get update
+	sudo apt-get install qucs
+</pre>
+</li>
+</ul>
+<a name="git">
+<h3>GIT repository</h3>
+
+If you are one of the impatient you can use latest <a
+href="https://sourceforge.net/p/qucs/git/">GIT</a>.  GIT can
+have the bugfixes and features you've always wanted, but also be much
+less stable than a release. Be aware of that.<br>
+<br>
+Pulling from GIT:
+<pre>
+
+        $  git clone git://git.code.sf.net/p/qucs/git qucs
+
+</pre>
+To build:
+<pre>
+
+	$ cd qucs/qucs/
+        $ sh autogen.sh
+        $ ./configure --prefix=/tmp/qucs --enable-maintainer-mode
+        $ make && make install
+        $ cd ..
+
+	$ cd qucs/qucs-core/
+        $ sh autogen.sh
+        $ ./configure --prefix=/tmp/qucs --enable-maintainer-mode
+        $ make && make install
+        $ cd ..
+
+	$ cd qucs/qucs-doc/
+        $ sh autogen.sh
+        $ ./configure --prefix=/tmp/qucs --enable-maintainer-mode
+        $ (cd technical/ && make technical)
+        $ (cd tutorial/ && make tutorial)
+        $ (cd tutorial/ && make book)
+        $ cd ..
+
+</pre>
+To run:
+<pre>
+
+        $ cd /tmp/qucs/bin
+        $ ./qucs
+
+</pre>
+To run with a specific language set:
+<pre>
+
+        $ cd /tmp/qucs/bin
+        $ LANG=de ./qucs
+
+</pre>
+
+<a name="nightly">
+<h3>Nightly GIT snapshot</h3>
+</a>
+
+Each day/night a tarball of current anonymous GIT (all qucs, qucs-doc
+and qucs-core included) is made and <a
+href="https://sourceforge.net/p/qucs/git/ci/master/tarball">available
+for download here</a>. 
+
+<a name="unofficial">
+<h3>Unofficial Qucs packages</h3>
+</a>
+
+The following pages are not supported by the Qucs team, but
+interesting none the less.
+
+<br><br>
+<table class="unofficialdownloads" cellpadding=3 width="100%">
+<tr bgcolor="#ff7400">
+<th><font color=white>Logo</font></th>
+<th><font color=white>Link</font></th>
+<th><font color=white>Maintainer / Packager</font></th>
+<th width="20%"><font color=white>Comment</font></th>
+</tr>
+
+<tr>
+<td valign=top align=right><img src="images/logos/MacOSX.png" border="0" alt="Qucs Mac OSX">
+</td>
+<td valign=top>
+<a href="http://sourceforge.net/projects/qucs/files/qucs-binary/0.0.17/qucs-0.0.17-macosx-10.5-intel.dmg/download">Qucs on Mac OSX</a>
+</td>
+<td valign=top>
+Guilherme Brondani Torri
+<a href="mailto:guitorri@gmail.com"><em>&lt;guitorri@gmail.com&gt;</em></a>
+</td>
+<td valign=top>
+native package with Qt4, ASCO, freehdl and iverilog; for Intel and MacOSX 10.5+
+</td>
+</tr>
+
+<tr>
+<td valign=top align=right>
+<img src="images/logos/win.jpg" border="0" alt="Qucs Windows">
+</td>
+<td valign=top>
+<a href="http://sourceforge.net/projects/qucs/files/qucs-binary/0.0.17/qucs-0.0.17.exe/download">Qucs installer for Win32</a>
+</td>
+<td valign=top>
+Frans Schreuder
+<a href="mailto:info@schreuderelectronics.com"><em>&lt;info@schreuderelectronics.com&gt;</em></a>
+</td>
+<td valign=top>
+Qt4/Windows mingw innoSetup
+</td>
+</tr>
+
+<tr>
+<td valign=top align=right>
+<img src="images/logos/kdeapps.png" border="0" alt="Qucs KDE-Apps">
+</td>
+<td valign=top>
+<a href="http://kde-apps.org/content/show.php?content=21644">kde-apps.org</a>
+</td>
+<td valign=top>
+Michael Margraf
+<a href="mailto:michael.margraf@alumni.tu-berlin.de"><em>&lt;michael.margraf@alumni.tu-berlin.de&gt;</em></a>
+</td>
+<td valign=top>
+Qucs is registered at KDE-apps database
+</td>
+</tr>
+
+<tr>
+<td valign=top align=right>
+<img src="images/logos/Gentoo.png" border="0" alt="Qucs Gentoo">
+</td>
+<td valign=top>
+<a href="http://packages.gentoo.org/package/sci-electronics/qucs">Qucs at Gentoo</a>
+</td>
+<td valign=top>
+Marcus D. Hanwell
+<a href="mailto:cryos@gentoo.org"><em>&lt;cryos@gentoo.org&gt;</em></a>
+</td>
+<td valign=top>
+</td>
+</tr>
+
+<tr>
+<td valign=top align=right>
+<img src="images/logos/openlogo-75.png" border="0" alt="Qucs Debian">
+</td>
+<td valign=top>
+<a href="http://packages.qa.debian.org/q/qucs.html">Qucs at Debian</a>
+</td>
+<td valign=top>
+Jose L. Redrejo Rodriguez <a href="mailto:jredrejo@edu.juntaextremadura.net"><em>&lt;jredrejo@edu.juntaextremadura.net&gt;</em></a>
+</td>
+<td valign=top>
+also <a href="http://packages.qa.debian.org/f/freehdl.html">FreeHDL</a>
+and <a href="http://packages.qa.debian.org/v/verilog.html">Icarus Verilog</a>
+available
+</td>
+</tr>
+
+<tr>
+<td valign=top align=right>
+<img src="images/logos/logo-full-thumb.png" border="0" alt="Qucs FreeBSD">
+</td>
+<td valign=top>
+<a href="http://www.freshports.org/cad/qucs/">Qucs at FreeBSD</a>
+</td>
+<td valign=top>
+Dag-Erling Smorgrav <a href="mailto:des@FreeBSD.org"><em>&lt;des@FreeBSD.org&gt;</em></a>
+</td>
+<td>
+</td>
+</tr>
+
+
+<tr>
+<td valign=top align=right>
+<img src="images/logos/suse_logo.gif" border="0" alt="Qucs SuSE">
+</td>
+<td valign=top>
+<a href="http://prdownloads.sourceforge.net/qucs/qucs-0.0.11-1.i586.rpm?download">SuSE RPM</a>
+</td>
+<td valign=top>
+Erasmo Alonso Iglesias <a href="mailto:erasmo1982@gmail.com"><em>&lt;erasmo1982@gmail.com&gt;</em></a>
+</td>
+<td valign=top>
+also the appropriate <a href="http://prdownloads.sourceforge.net/qucs/freehdl-0.0.3-1.i586.rpm?download">FreeHDL</a> package available
+</td>
+</tr>
+
+<tr>
+<td valign=top align=right>
+<img src="images/logos/geeko.jpg" border="0" alt="Qucs OpenSuSE">
+</td>
+<td valign=top>
+<a href="http://software.opensuse.org/download/science/">Qucs at OpenSuSE</a>
+</td>
+<td valign=top>
+Werner Hoch <a href="mailto:werner.ho@gmx.de"><em>&lt;werner.ho@gmx.de&gt;</em></a>
+</td>
+<td valign=top>
+available for OpenSuSE versions 10.2, 10.3 and 11.0
+</td>
+</tr>
+
+<tr>
+<td valign=top align=right>
+<img src="images/logos/mediumubuntulogo.png" border="0" alt="Qucs Ubuntu">
+</td>
+<td valign=top>
+<a href="https://launchpad.net/~qucs/+archive/qucs/+packages">Qucs at Ubuntu</a>
+</td>
+<td valign=top>
+Frans Schreuder <a href="mailto:info@schreuderelectronics.com"><em>&lt;info@schreuderelectronics.com&gt;</em></a>
+</td>
+<td valign=top>
+PPA repository: ppa:qucs/qucs
+</td>
+</tr>
+
+
+<tr>
+<td valign=top align=right>
+<img src="images/logos/puppylogo48.png" border="0" alt="Qucs Puppy Linux">
+</td>
+<td valign=top>
+<a href="http://www.qsl.net/wn2a/qucs.html">Qucs on Puppy Linux</a>
+</td>
+<td valign=top>
+Mike Masterson <a href="mailto:galoof@optonline.net"><em>&lt;galoof@optonline.net&gt;</em></a>
+</td>
+<td valign=top>
+also available <a href="http://wn2a73.googlepages.com/qucs.html">here</a>
+</td>
+</tr>
+
+<tr>
+<td valign=top align=right>
+<img src="images/logos/pkgsrcse.png" border="0" alt="Qucs pkgsrc">
+</td>
+<td valign=top>
+<a href="http://pkgsrc.se/wip/qucs">Qucs at NetBSD</a>
+</td>
+<td valign=top>
+Vincent Habchi <a href="mailto:10.50@free.fr"><em>&lt;10.50@free.fr&gt;</em></a>
+</td>
+<td valign=top>
+</td>
+</tr>
+
+
+<tr>
+<td valign=top align=right>
+<img src="images/logos/nnlogo004.jpg" border="0" alt="Qucs IRIX">
+</td>
+<td valign=top>
+<a href="http://reality.sgiweb.org/nekochan/index.php?path=current/">Qucs on IRIX</a>
+</td>
+<td valign=top>
+Frederick Isaac <a href="mailto:freddyisaac@yahoo.com"><em>&lt;freddyisaac@yahoo.com&gt;</em></a>
+</td>
+<td valign=top>
+part of the nekochan project, native build of freely available packages
+</td>
+</tr>
+
+</table>
+<br>
+
+<a name="win32binary">
+<h3>About the Win32 binary releases</h3>
+</a>
+<p>
+As already mentioned there is an installer package for <b>Qucs</b> for Win32 systems.
+The relocations of the package (the location where the package gets installed)
+is mainly steered by environment variables.  During a normal installation
+the appropriate environment variables are automatically set for the user
+who installed the package.<br><br>
+
+One of them must be emphasised: <b>HOME</b>.  During installation an 
+appropriate file system location will be found.  When it was already set
+then the previous value is assumed.  The location decides where the project,
+intermediate and configuration files will be saved.  So when the user wonders
+about missing project files or lost configuration it's worth to have a look
+at the environment variables.<br><br>
+
+If <b>FreeHDL</b> is meant to be used for digital simulation then also the binary
+package must be downloaded and installed.  It requires the MinGW32 compiler.
+If it is not already installed, it's possible to install a prepared
+binary package for this, too.  It contains the minimal <b>MinGW32</b>
+installation required to work with FreeHDL.
+</p>
+
+<hr>
+</div>
+<!-- include the common web page footer using Apache Server-Side Includes (SSI) -->
+  <!--#include virtual="/qucs-footer.html" -->
+</body>
+</html>

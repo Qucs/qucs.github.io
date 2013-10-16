@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Qucs project: download</title>
+<link href="qucsweb.css" rel="stylesheet"  type="text/css">
+<head>
+<body>
+
+<!-- include the common web page header using Apache Server-Side Includes (SSI) -->
+<!--#include virtual="/qucs-header.html" -->
+<div id="main">
+<hr>
+<center>
+[
+<a href="download.shtml">packages</a> -
+<a href="examples.shtml">examples</a> -
+<a href="related.shtml">related</a> -
+press/education
+]
+</center>
+
+<p>
+<a name="press">
+<h3>In the press</h3>
+</a>
+
+<ul>
+<li>
+<a href="http://cotter.sayre.googlepages.com/home">Complete Wireless Design 2nd Edition</a>
+-- RF Design Book by Cotter W. Sayre
+</li>
+</ul>
+</p>
+
+<p>
+<a name="education">
+<h3>At educational institutes</h3>
+</a>
+
+<ul>
+<li>
+<a href="http://www.londonmet.ac.uk/depts/cctm/research/centre_comms_tech/syssensig_specialisation.cfm">London metropolitan university</a>
+-- Faculty of Computing (System, Sensors & Signal Processing research activities)
+</li>
+<li>
+<a href="http://www.isp.tf.uni-kiel.de/get1.html">Christian-Albrechts-Universit&auml;t zu Kiel</a>
+-- Elektrotechnik und Informationstechnik (Arbeitsgruppe: Integrierte Systeme und Photonik)
+</li>
+<li>
+<a href="http://www.bordsysteme.tu-dortmund.de/de/systemsimulation1/2.html">Technische Universit&auml;t Dortmund</a>
+-- Fakult&auml;t f&uuml;r Elektrotechnik und Informationstechnik (Arbeitsgebiet Bordsysteme)
+</li>
+<li>
+Ph.D. research topic <i>"Macromodelling of sampled data blocks for CMOS technology"</i> using Qucs and the EKV model open for application for all UK and EU nationals until end of November 2009.  <a href="http://www.londonmet.ac.uk/research/the-graduate-school/vice-chancellors-phd-scholarships.cfm">Click here</a> for more details concerning the studentships and the application process.
+</li>
+</ul>
+</p>
+
+<hr>
+</div>
+<!-- include the common web page footer using Apache Server-Side Includes (SSI) -->
+  <!--#include virtual="/qucs-footer.html" -->
+</body>
+</html>

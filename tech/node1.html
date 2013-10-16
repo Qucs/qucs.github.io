@@ -1,0 +1,580 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Contents</TITLE>
+<META NAME="description" CONTENT="Contents">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node2.html">
+<LINK REL="previous" HREF="technical.html">
+<LINK REL="up" HREF="technical.html">
+<LINK REL="next" HREF="node2.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html414"
+  HREF="node2.html">Scattering parameters</A>
+<B>Up:</B> <A NAME="tex2html412"
+  HREF="technical.html">Qucs</A>
+<B> Previous:</B> <A NAME="tex2html406"
+  HREF="technical.html">Qucs</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<BR>
+
+<H2><A NAME="SECTION00100000000000000000">
+Contents</A>
+</H2>
+<!--Table of Contents-->
+
+<UL CLASS="TofC">
+<LI><A NAME="tex2html415"
+  HREF="node2.html">Scattering parameters</A>
+<UL>
+<LI><A NAME="tex2html416"
+  HREF="node3.html">Introduction and definition</A>
+<LI><A NAME="tex2html417"
+  HREF="node4.html">Waves on Transmission Lines</A>
+<LI><A NAME="tex2html418"
+  HREF="node5.html">Computing with S-parameters</A>
+<UL>
+<LI><A NAME="tex2html419"
+  HREF="node5.html#SECTION00231000000000000000">S-parameters in CAE programs</A>
+<LI><A NAME="tex2html420"
+  HREF="node5.html#SECTION00232000000000000000">Differential S-parameter ports</A>
+</UL>
+<LI><A NAME="tex2html421"
+  HREF="node6.html">Applications</A>
+<UL>
+<LI><A NAME="tex2html422"
+  HREF="node6.html#SECTION00241000000000000000">Stability</A>
+<LI><A NAME="tex2html423"
+  HREF="node6.html#SECTION00242000000000000000">Gain</A>
+<LI><A NAME="tex2html424"
+  HREF="node6.html#SECTION00243000000000000000">Two-Port Matching</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html425"
+  HREF="node7.html">Noise Waves</A>
+<UL>
+<LI><A NAME="tex2html426"
+  HREF="node8.html">Definition</A>
+<LI><A NAME="tex2html427"
+  HREF="node9.html">Noise Parameters</A>
+<LI><A NAME="tex2html428"
+  HREF="node10.html">Noise Wave Correlation Matrix in CAE</A>
+<LI><A NAME="tex2html429"
+  HREF="node11.html">Noise Correlation Matrix Transformations</A>
+<UL>
+<LI><A NAME="tex2html430"
+  HREF="node11.html#SECTION00341000000000000000">Forming the noise current correlation matrix</A>
+<LI><A NAME="tex2html431"
+  HREF="node11.html#SECTION00342000000000000000">Transformations</A>
+</UL>
+<LI><A NAME="tex2html432"
+  HREF="node12.html">Noise Wave Correlation Matrix of Components</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html433"
+  HREF="node13.html">DC Analysis</A>
+<UL>
+<LI><A NAME="tex2html434"
+  HREF="node14.html">Modified Nodal Analysis</A>
+<UL>
+<LI><A NAME="tex2html435"
+  HREF="node14.html#SECTION00411000000000000000">Generating the MNA matrices</A>
+<LI><A NAME="tex2html436"
+  HREF="node14.html#SECTION00412000000000000000">The A matrix</A>
+<LI><A NAME="tex2html437"
+  HREF="node14.html#SECTION00413000000000000000">The x matrix</A>
+<LI><A NAME="tex2html438"
+  HREF="node14.html#SECTION00414000000000000000">The z matrix</A>
+<LI><A NAME="tex2html439"
+  HREF="node14.html#SECTION00415000000000000000">A simple example</A>
+</UL>
+<LI><A NAME="tex2html440"
+  HREF="node15.html">Extensions to the MNA</A>
+<LI><A NAME="tex2html441"
+  HREF="node16.html">Non-linear DC Analysis</A>
+<UL>
+<LI><A NAME="tex2html442"
+  HREF="node16.html#SECTION00431000000000000000">Newton-Raphson method</A>
+<LI><A NAME="tex2html443"
+  HREF="node16.html#SECTION00432000000000000000">Convergence</A>
+</UL>
+<LI><A NAME="tex2html444"
+  HREF="node17.html">Overall solution algorithm for DC Analysis</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html445"
+  HREF="node18.html">AC Analysis</A>
+<LI><A NAME="tex2html446"
+  HREF="node19.html">AC Noise Analysis</A>
+<UL>
+<LI><A NAME="tex2html447"
+  HREF="node20.html">Definitions</A>
+<LI><A NAME="tex2html448"
+  HREF="node21.html">The Algorithm</A>
+<UL>
+<LI><A NAME="tex2html449"
+  HREF="node21.html#SECTION00621000000000000000">A Simple Example</A>
+</UL>
+<LI><A NAME="tex2html450"
+  HREF="node22.html">Noise Current Correlation Matrix</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html451"
+  HREF="node23.html">Transient Analysis</A>
+<UL>
+<LI><A NAME="tex2html452"
+  HREF="node24.html">Integration methods</A>
+<UL>
+<LI><A NAME="tex2html453"
+  HREF="node24.html#SECTION00711000000000000000">Properties of numerical integration methods</A>
+<LI><A NAME="tex2html454"
+  HREF="node24.html#SECTION00712000000000000000">Elementary Methods</A>
+<LI><A NAME="tex2html455"
+  HREF="node24.html#SECTION00713000000000000000">Linear Multistep Methods</A>
+<LI><A NAME="tex2html456"
+  HREF="node24.html#SECTION00714000000000000000">Stability considerations</A>
+</UL>
+<LI><A NAME="tex2html457"
+  HREF="node25.html">Predictor-corrector methods</A>
+<UL>
+<LI><A NAME="tex2html458"
+  HREF="node25.html#SECTION00721000000000000000">Order and local truncation error</A>
+<LI><A NAME="tex2html459"
+  HREF="node25.html#SECTION00722000000000000000">Milne's estimate</A>
+<LI><A NAME="tex2html460"
+  HREF="node25.html#SECTION00723000000000000000">Adaptive step-size control</A>
+</UL>
+<LI><A NAME="tex2html461"
+  HREF="node26.html">Energy-storage components</A>
+<UL>
+<LI><A NAME="tex2html462"
+  HREF="node26.html#SECTION00731000000000000000">Capacitor</A>
+<LI><A NAME="tex2html463"
+  HREF="node26.html#SECTION00732000000000000000">Inductor</A>
+<LI><A NAME="tex2html464"
+  HREF="node26.html#SECTION00733000000000000000">Coupled Inductors</A>
+<LI><A NAME="tex2html465"
+  HREF="node26.html#SECTION00734000000000000000">Depletion Capacitance</A>
+<LI><A NAME="tex2html466"
+  HREF="node26.html#SECTION00735000000000000000">Diffusion Capacitance</A>
+<LI><A NAME="tex2html467"
+  HREF="node26.html#SECTION00736000000000000000">MOS Gate Capacitances</A>
+</UL>
+<LI><A NAME="tex2html468"
+  HREF="node27.html">Special time-domain models</A>
+<UL>
+<LI><A NAME="tex2html469"
+  HREF="node27.html#SECTION00741000000000000000">AM modulated AC source</A>
+<LI><A NAME="tex2html470"
+  HREF="node27.html#SECTION00742000000000000000">PM modulated AC source</A>
+</UL>
+<LI><A NAME="tex2html471"
+  HREF="node28.html">Components defined in the frequency domain</A>
+<UL>
+<LI><A NAME="tex2html472"
+  HREF="node28.html#SECTION00751000000000000000">Components with frequency-independent delay times</A>
+<LI><A NAME="tex2html473"
+  HREF="node28.html#SECTION00752000000000000000">Components with frequency-dependent delay times and losses</A>
+</UL>
+<LI><A NAME="tex2html474"
+  HREF="node29.html">Convergence</A>
+<UL>
+<LI><A NAME="tex2html475"
+  HREF="node29.html#SECTION00761000000000000000">Limiting schemes</A>
+<LI><A NAME="tex2html476"
+  HREF="node29.html#SECTION00762000000000000000">Continuation schemes</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html477"
+  HREF="node30.html">Harmonic Balance Analysis</A>
+<UL>
+<LI><A NAME="tex2html478"
+  HREF="node31.html">The Basic Concept</A>
+<LI><A NAME="tex2html479"
+  HREF="node32.html">Going through each Step</A>
+<UL>
+<LI><A NAME="tex2html480"
+  HREF="node32.html#SECTION00821000000000000000">Creating Transadmittance Matrix</A>
+<LI><A NAME="tex2html481"
+  HREF="node32.html#SECTION00822000000000000000">Starting Values</A>
+<LI><A NAME="tex2html482"
+  HREF="node32.html#SECTION00823000000000000000">Solution algorithm</A>
+<LI><A NAME="tex2html483"
+  HREF="node32.html#SECTION00824000000000000000">Termination Criteria</A>
+</UL>
+<LI><A NAME="tex2html484"
+  HREF="node33.html">A Symbolic HB Algorithm</A>
+<LI><A NAME="tex2html485"
+  HREF="node34.html">Large-Signal S-Parameter Simulation</A>
+<LI><A NAME="tex2html486"
+  HREF="node35.html">Autonomous Harmonic Balance</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html487"
+  HREF="node36.html">Harmonic Balance Noise Analysis</A>
+<UL>
+<LI><A NAME="tex2html488"
+  HREF="node37.html">The Linear Subcircuit</A>
+<LI><A NAME="tex2html489"
+  HREF="node38.html">The Non-Linear Subcircuit</A>
+<LI><A NAME="tex2html490"
+  HREF="node39.html">Noise Conversion</A>
+<LI><A NAME="tex2html491"
+  HREF="node40.html">Phase and Amplitude Noise</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html492"
+  HREF="node41.html">Linear devices</A>
+<UL>
+<LI><A NAME="tex2html493"
+  HREF="node42.html">Resistor</A>
+<LI><A NAME="tex2html494"
+  HREF="node43.html">Capacitor</A>
+<LI><A NAME="tex2html495"
+  HREF="node44.html">Inductor</A>
+<LI><A NAME="tex2html496"
+  HREF="node45.html">DC Block</A>
+<LI><A NAME="tex2html497"
+  HREF="node46.html">DC Feed</A>
+<LI><A NAME="tex2html498"
+  HREF="node47.html">Bias T</A>
+<LI><A NAME="tex2html499"
+  HREF="node48.html">Transformer</A>
+<LI><A NAME="tex2html500"
+  HREF="node49.html">Symmetrical transformer</A>
+<LI><A NAME="tex2html501"
+  HREF="node50.html">Non-ideal transformer</A>
+<UL>
+<LI><A NAME="tex2html502"
+  HREF="node50.html#SECTION001091000000000000000">Mutual inductors with two or three of inductors</A>
+<LI><A NAME="tex2html503"
+  HREF="node50.html#SECTION001092000000000000000">Mutual inductors with any number of inductors</A>
+</UL>
+<LI><A NAME="tex2html504"
+  HREF="node51.html">Attenuator</A>
+<LI><A NAME="tex2html505"
+  HREF="node52.html">Amplifier</A>
+<LI><A NAME="tex2html506"
+  HREF="node53.html">Isolator</A>
+<LI><A NAME="tex2html507"
+  HREF="node54.html">Circulator</A>
+<LI><A NAME="tex2html508"
+  HREF="node55.html">Phase shifter</A>
+<LI><A NAME="tex2html509"
+  HREF="node56.html">Coupler</A>
+<LI><A NAME="tex2html510"
+  HREF="node57.html">Gyrator</A>
+<LI><A NAME="tex2html511"
+  HREF="node58.html">Voltage and current sources</A>
+<LI><A NAME="tex2html512"
+  HREF="node59.html">Noise sources</A>
+<UL>
+<LI><A NAME="tex2html513"
+  HREF="node59.html#SECTION0010181000000000000000">Noise current source</A>
+<LI><A NAME="tex2html514"
+  HREF="node59.html#SECTION0010182000000000000000">Noise voltage source</A>
+<LI><A NAME="tex2html515"
+  HREF="node59.html#SECTION0010183000000000000000">Correlated noise sources</A>
+</UL>
+<LI><A NAME="tex2html516"
+  HREF="node60.html">Controlled sources</A>
+<UL>
+<LI><A NAME="tex2html517"
+  HREF="node60.html#SECTION0010191000000000000000">Voltage controlled current source</A>
+<LI><A NAME="tex2html518"
+  HREF="node60.html#SECTION0010192000000000000000">Current controlled current source</A>
+<LI><A NAME="tex2html519"
+  HREF="node60.html#SECTION0010193000000000000000">Voltage controlled voltage source</A>
+<LI><A NAME="tex2html520"
+  HREF="node60.html#SECTION0010194000000000000000">Current controlled voltage source</A>
+</UL>
+<LI><A NAME="tex2html521"
+  HREF="node61.html">Transmission Line</A>
+<LI><A NAME="tex2html522"
+  HREF="node62.html">Differential Transmission Line</A>
+<LI><A NAME="tex2html523"
+  HREF="node63.html">Coupled transmission line</A>
+<LI><A NAME="tex2html524"
+  HREF="node64.html">S-parameter container with additional reference port</A>
+<LI><A NAME="tex2html525"
+  HREF="node65.html">Real-Life Models</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html526"
+  HREF="node66.html">Non-linear devices</A>
+<UL>
+<LI><A NAME="tex2html527"
+  HREF="node67.html">Operational amplifier</A>
+<LI><A NAME="tex2html528"
+  HREF="node68.html">PN-Junction Diode</A>
+<UL>
+<LI><A NAME="tex2html529"
+  HREF="node68.html#SECTION001121000000000000000">Large signal model</A>
+<LI><A NAME="tex2html530"
+  HREF="node68.html#SECTION001122000000000000000">Small signal model</A>
+<LI><A NAME="tex2html531"
+  HREF="node68.html#SECTION001123000000000000000">Noise model</A>
+<LI><A NAME="tex2html532"
+  HREF="node68.html#SECTION001124000000000000000">Temperature model</A>
+<LI><A NAME="tex2html533"
+  HREF="node68.html#SECTION001125000000000000000">Area dependence of the model</A>
+</UL>
+<LI><A NAME="tex2html534"
+  HREF="node69.html">Junction FET</A>
+<UL>
+<LI><A NAME="tex2html535"
+  HREF="node69.html#SECTION001131000000000000000">Large signal model</A>
+<LI><A NAME="tex2html536"
+  HREF="node69.html#SECTION001132000000000000000">Small signal model</A>
+<LI><A NAME="tex2html537"
+  HREF="node69.html#SECTION001133000000000000000">Noise model</A>
+<LI><A NAME="tex2html538"
+  HREF="node69.html#SECTION001134000000000000000">Temperature model</A>
+<LI><A NAME="tex2html539"
+  HREF="node69.html#SECTION001135000000000000000">Area dependence of the model</A>
+</UL>
+<LI><A NAME="tex2html540"
+  HREF="node70.html">Homo-Junction Bipolar Transistor</A>
+<UL>
+<LI><A NAME="tex2html541"
+  HREF="node70.html#SECTION001141000000000000000">Large signal model</A>
+<LI><A NAME="tex2html542"
+  HREF="node70.html#SECTION001142000000000000000">Small signal model</A>
+<LI><A NAME="tex2html543"
+  HREF="node70.html#SECTION001143000000000000000">Noise model</A>
+<LI><A NAME="tex2html544"
+  HREF="node70.html#SECTION001144000000000000000">Temperature model</A>
+<LI><A NAME="tex2html545"
+  HREF="node70.html#SECTION001145000000000000000">Area dependence of the model</A>
+</UL>
+<LI><A NAME="tex2html546"
+  HREF="node71.html">MOS Field-Effect Transistor</A>
+<UL>
+<LI><A NAME="tex2html547"
+  HREF="node71.html#SECTION001151000000000000000">Large signal model</A>
+<LI><A NAME="tex2html548"
+  HREF="node71.html#SECTION001152000000000000000">Physical model</A>
+<LI><A NAME="tex2html549"
+  HREF="node71.html#SECTION001153000000000000000">Small signal model</A>
+<LI><A NAME="tex2html550"
+  HREF="node71.html#SECTION001154000000000000000">Noise model</A>
+<LI><A NAME="tex2html551"
+  HREF="node71.html#SECTION001155000000000000000">Temperature model</A>
+</UL>
+<LI><A NAME="tex2html552"
+  HREF="node72.html">Models for boolean devices</A>
+<LI><A NAME="tex2html553"
+  HREF="node73.html">Equation defined models</A>
+<UL>
+<LI><A NAME="tex2html554"
+  HREF="node73.html#SECTION001171000000000000000">Models with Explicit Equations</A>
+<LI><A NAME="tex2html555"
+  HREF="node73.html#SECTION001172000000000000000">Models with Implicit Equations</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html556"
+  HREF="node74.html">Microstrip components</A>
+<UL>
+<LI><A NAME="tex2html557"
+  HREF="node75.html">Single microstrip line</A>
+<UL>
+<LI><A NAME="tex2html558"
+  HREF="node75.html#SECTION001211000000000000000">Quasi-static characteristic impedance</A>
+<LI><A NAME="tex2html559"
+  HREF="node75.html#SECTION001212000000000000000">Quasi-static effective dielectric constant</A>
+<LI><A NAME="tex2html560"
+  HREF="node75.html#SECTION001213000000000000000">Strip thickness correction</A>
+<LI><A NAME="tex2html561"
+  HREF="node75.html#SECTION001214000000000000000">Dispersion</A>
+<LI><A NAME="tex2html562"
+  HREF="node75.html#SECTION001215000000000000000">Transmission losses</A>
+</UL>
+<LI><A NAME="tex2html563"
+  HREF="node76.html">Microstrip corner</A>
+<LI><A NAME="tex2html564"
+  HREF="node77.html">Parallel coupled microstrip lines</A>
+<UL>
+<LI><A NAME="tex2html565"
+  HREF="node77.html#SECTION001231000000000000000">Characteristic impedance and effective dielectric constant</A>
+<LI><A NAME="tex2html566"
+  HREF="node77.html#SECTION001232000000000000000">Strip thickness correction</A>
+<LI><A NAME="tex2html567"
+  HREF="node77.html#SECTION001233000000000000000">Transmission losses</A>
+</UL>
+<LI><A NAME="tex2html568"
+  HREF="node78.html">Microstrip open</A>
+<LI><A NAME="tex2html569"
+  HREF="node79.html">Microstrip gap</A>
+<LI><A NAME="tex2html570"
+  HREF="node80.html">Microstrip impedance step</A>
+<LI><A NAME="tex2html571"
+  HREF="node81.html">Microstrip tee junction</A>
+<LI><A NAME="tex2html572"
+  HREF="node82.html">Microstrip cross</A>
+<LI><A NAME="tex2html573"
+  HREF="node83.html">Microstrip via hole</A>
+<LI><A NAME="tex2html574"
+  HREF="node84.html">Bondwire</A>
+<UL>
+<LI><A NAME="tex2html575"
+  HREF="node84.html#SECTION0012101000000000000000">Freespace model</A>
+<LI><A NAME="tex2html576"
+  HREF="node84.html#SECTION0012102000000000000000">Mirror model</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html577"
+  HREF="node85.html">Coplanar components</A>
+<UL>
+<LI><A NAME="tex2html578"
+  HREF="node86.html">Coplanar waveguides (CPW)</A>
+<UL>
+<LI><A NAME="tex2html579"
+  HREF="node86.html#SECTION001311000000000000000">Definition</A>
+<LI><A NAME="tex2html580"
+  HREF="node86.html#SECTION001312000000000000000">Quasi-static analysis by conformal mappings</A>
+<LI><A NAME="tex2html581"
+  HREF="node86.html#SECTION001313000000000000000">Effects of metalization thickness</A>
+<LI><A NAME="tex2html582"
+  HREF="node86.html#SECTION001314000000000000000">Effects of dispersion</A>
+<LI><A NAME="tex2html583"
+  HREF="node86.html#SECTION001315000000000000000">Evaluation of losses</A>
+<LI><A NAME="tex2html584"
+  HREF="node86.html#SECTION001316000000000000000">S- and Y-parameters of the single coplanar line</A>
+</UL>
+<LI><A NAME="tex2html585"
+  HREF="node87.html">Coplanar waveguide open</A>
+<LI><A NAME="tex2html586"
+  HREF="node88.html">Coplanar waveguide short</A>
+<LI><A NAME="tex2html587"
+  HREF="node89.html">Coplanar waveguide gap</A>
+<LI><A NAME="tex2html588"
+  HREF="node90.html">Coplanar waveguide step</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html589"
+  HREF="node91.html">Other types of transmission lines</A>
+<UL>
+<LI><A NAME="tex2html590"
+  HREF="node92.html">Coaxial cable</A>
+<UL>
+<LI><A NAME="tex2html591"
+  HREF="node92.html#SECTION001411000000000000000">Characteristic impedance</A>
+<LI><A NAME="tex2html592"
+  HREF="node92.html#SECTION001412000000000000000">Losses</A>
+<LI><A NAME="tex2html593"
+  HREF="node92.html#SECTION001413000000000000000">Cutoff frequencies</A>
+</UL>
+<LI><A NAME="tex2html594"
+  HREF="node93.html">Twisted pair</A>
+<UL>
+<LI><A NAME="tex2html595"
+  HREF="node93.html#SECTION001421000000000000000">Quasi-static model</A>
+<LI><A NAME="tex2html596"
+  HREF="node93.html#SECTION001422000000000000000">Transmission losses</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html597"
+  HREF="node94.html">Synthesizing circuits</A>
+<UL>
+<LI><A NAME="tex2html598"
+  HREF="node95.html">Attenuators</A>
+<LI><A NAME="tex2html599"
+  HREF="node96.html">Filters</A>
+<UL>
+<LI><A NAME="tex2html600"
+  HREF="node96.html#SECTION001521000000000000000">LC ladder filters</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html601"
+  HREF="node97.html">Mathematical background</A>
+<UL>
+<LI><A NAME="tex2html602"
+  HREF="node98.html">N-port matrix conversions</A>
+<UL>
+<LI><A NAME="tex2html603"
+  HREF="node98.html#SECTION001611000000000000000">Renormalization of S-parameters to different port impedances</A>
+<LI><A NAME="tex2html604"
+  HREF="node98.html#SECTION001612000000000000000">Transformations of n-Port matrices</A>
+<LI><A NAME="tex2html605"
+  HREF="node98.html#SECTION001613000000000000000">Two-Port transformations</A>
+</UL>
+<LI><A NAME="tex2html606"
+  HREF="node99.html">Solving linear equation systems</A>
+<UL>
+<LI><A NAME="tex2html607"
+  HREF="node99.html#SECTION001621000000000000000">Matrix inversion</A>
+<LI><A NAME="tex2html608"
+  HREF="node99.html#SECTION001622000000000000000">Gaussian elimination</A>
+<LI><A NAME="tex2html609"
+  HREF="node99.html#SECTION001623000000000000000">Gauss-Jordan method</A>
+<LI><A NAME="tex2html610"
+  HREF="node99.html#SECTION001624000000000000000">LU decomposition</A>
+<LI><A NAME="tex2html611"
+  HREF="node99.html#SECTION001625000000000000000">QR decomposition</A>
+<LI><A NAME="tex2html612"
+  HREF="node99.html#SECTION001626000000000000000">Singular value decomposition</A>
+<LI><A NAME="tex2html613"
+  HREF="node99.html#SECTION001627000000000000000">Jacobi method</A>
+<LI><A NAME="tex2html614"
+  HREF="node99.html#SECTION001628000000000000000">Gauss-Seidel method</A>
+<LI><A NAME="tex2html615"
+  HREF="node99.html#SECTION001629000000000000000">A comparison</A>
+</UL>
+<LI><A NAME="tex2html616"
+  HREF="node100.html">Polynomial approximations</A>
+<UL>
+<LI><A NAME="tex2html617"
+  HREF="node100.html#SECTION001631000000000000000">Cubic splines</A>
+</UL>
+<LI><A NAME="tex2html618"
+  HREF="node101.html">Frequency-Time Domain Transformation</A>
+<UL>
+<LI><A NAME="tex2html619"
+  HREF="node101.html#SECTION001641000000000000000">Fast Fourier Transformation</A>
+<LI><A NAME="tex2html620"
+  HREF="node101.html#SECTION001642000000000000000">Real-Valued FFT</A>
+<LI><A NAME="tex2html621"
+  HREF="node101.html#SECTION001643000000000000000">More-Dimensional FFT</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html623"
+  HREF="node103.html">Bibliography</A>
+</UL>
+<!--End of Table of Contents-->
+<P>
+
+<P>
+
+<P>
+<BR> <HR>
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

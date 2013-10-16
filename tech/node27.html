@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Special time-domain models</TITLE>
+<META NAME="description" CONTENT="Special time-domain models">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node28.html">
+<LINK REL="previous" HREF="node26.html">
+<LINK REL="up" HREF="node23.html">
+<LINK REL="next" HREF="node28.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1055"
+  HREF="node28.html">Components defined in the</A>
+<B>Up:</B> <A NAME="tex2html1051"
+  HREF="node23.html">Transient Analysis</A>
+<B> Previous:</B> <A NAME="tex2html1045"
+  HREF="node26.html">Energy-storage components</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1056"
+  HREF="node27.html#SECTION00741000000000000000">AM modulated AC source</A>
+<LI><A NAME="tex2html1057"
+  HREF="node27.html#SECTION00742000000000000000">PM modulated AC source</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00740000000000000000">
+Special time-domain models</A>
+</H1>
+
+<P>
+
+<H2><A NAME="SECTION00741000000000000000">
+AM modulated AC source</A>
+</H2>
+
+<P>
+An AC voltage source in the time-domain is characterized by its
+frequency <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.png"
+ ALT="$ f$"></SPAN>, the initial phase <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img636.png"
+ ALT="$ \phi$"></SPAN> and the amplitude <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img380.png"
+ ALT="$ A$"></SPAN>.  During
+amplitude modulation the modulation level <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img637.png"
+ ALT="$ M$"></SPAN> must be considered.  The
+output voltage of the source is determined by the following equation.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+V_1\left(t\right) - V_2\left(t\right) = \left(1 + M\cdot V_3\left(t\right)\right)\cdot A\cdot \sin{\left(\omega\cdot t + \phi\right)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="349" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img638.png"
+ ALT="$\displaystyle V_1\left(t\right) - V_2\left(t\right) = \left(1 + M\cdot V_3\left(t\right)\right)\cdot A\cdot \sin{\left(\omega\cdot t + \phi\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">103</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:VAM"></A><A NAME="5870"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.7:</STRONG>
+AM modulated AC source</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="210" HEIGHT="117" ALIGN="BOTTOM" BORDER="0"
+ SRC="img639.png"
+ ALT="\includegraphics[width=0.3\linewidth]{vam}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The appropriate MNA matrix entries during the transient analysis
+decribing a simple linear operation can be written as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+. & . & . & 1\\
+. & . & . & -1\\
+. & . & . & 0\\
+1 & -1 & -M\cdot A\cdot \sin{\left(\omega\cdot t + \phi\right)} & 0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_1\left(t\right)\\
+V_2\left(t\right)\\
+V_3\left(t\right)\\
+J_1\left(t\right)
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_1\left(t\right)\\
+I_2\left(t\right)\\
+I_3\left(t\right)\\
+A\cdot \sin{\left(\omega\cdot t + \phi\right)}
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="504" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img640.png"
+ ALT="$\displaystyle \begin{bmatrix}. &amp; . &amp; . &amp; 1\\ . &amp; . &amp; . &amp; -1\\ . &amp; . &amp; . &amp; 0\\ 1...
+..._3\left(t\right)\\ A\cdot \sin{\left(\omega\cdot t + \phi\right)} \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">104</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION00742000000000000000">
+PM modulated AC source</A>
+</H2>
+
+<P>
+The phase modulated AC source is also characterized by the frequency
+<SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.png"
+ ALT="$ f$"></SPAN>, the amplidude <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img380.png"
+ ALT="$ A$"></SPAN> and by an initial phase <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img636.png"
+ ALT="$ \phi$"></SPAN>.  The output
+voltage in the time-domain is determinded by the following equation
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+V_1\left(t\right) - V_2\left(t\right) = A\cdot\sin{\left(\omega\cdot t + \phi + M\cdot V_3\left(t\right)\right)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="316" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img641.png"
+ ALT="$\displaystyle V_1\left(t\right) - V_2\left(t\right) = A\cdot\sin{\left(\omega\cdot t + \phi + M\cdot V_3\left(t\right)\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">105</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+whereas <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img637.png"
+ ALT="$ M$"></SPAN> denotes the modulation index and <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img642.png"
+ ALT="$ V_3$"></SPAN> the modulating
+voltage.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:VPM"></A><A NAME="5891"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6.8:</STRONG>
+PM modulated AC source</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="210" HEIGHT="117" ALIGN="BOTTOM" BORDER="0"
+ SRC="img643.png"
+ ALT="\includegraphics[width=0.3\linewidth]{vpm}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The component is non-linear in the frequency- as well in the
+time-domain.  In order to prepare the source for subsequent
+Newton-Raphson iterations the derivative
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+g = \dfrac{\partial \left(V_1 - V_2\right)}{\partial V_3} = M\cdot A\cdot\cos{\left(\omega\cdot t + \phi + M\cdot V_3\right)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="340" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img644.png"
+ ALT="$\displaystyle g = \dfrac{\partial \left(V_1 - V_2\right)}{\partial V_3} = M\cdot A\cdot\cos{\left(\omega\cdot t + \phi + M\cdot V_3\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">106</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+is required.  With this at hand the MNA matrix entries of the PM
+modulated AC voltage source during the transient analysis can be
+written as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+. & . & . & +1\\
+. & . & . & -1\\
+. & . & . & 0\\
++1 & -1 & g & 0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_1\left(t\right)\\
+V_2\left(t\right)\\
+V_3\left(t\right)\\
+J_1\left(t\right)
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_1\left(t\right)\\
+I_2\left(t\right)\\
+I_3\left(t\right)\\
+g\cdot V_3 - A\cdot \sin{\left(\omega\cdot t + \phi + M\cdot V_3\right)}
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="488" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img645.png"
+ ALT="$\displaystyle \begin{bmatrix}. &amp; . &amp; . &amp; +1\\ . &amp; . &amp; . &amp; -1\\ . &amp; . &amp; . &amp; 0\\ ...
+...V_3 - A\cdot \sin{\left(\omega\cdot t + \phi + M\cdot V_3\right)} \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>.<SPAN CLASS="arabic">107</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1055"
+  HREF="node28.html">Components defined in the</A>
+<B>Up:</B> <A NAME="tex2html1051"
+  HREF="node23.html">Transient Analysis</A>
+<B> Previous:</B> <A NAME="tex2html1045"
+  HREF="node26.html">Energy-storage components</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

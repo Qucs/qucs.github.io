@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Bondwire</TITLE>
+<META NAME="description" CONTENT="Bondwire">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="previous" HREF="node83.html">
+<LINK REL="up" HREF="node74.html">
+<LINK REL="next" HREF="node85.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1929"
+  HREF="node85.html">Coplanar components</A>
+<B>Up:</B> <A NAME="tex2html1925"
+  HREF="node74.html">Microstrip components</A>
+<B> Previous:</B> <A NAME="tex2html1921"
+  HREF="node83.html">Microstrip via hole</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1930"
+  HREF="node84.html#SECTION0012101000000000000000">Freespace model</A>
+<LI><A NAME="tex2html1931"
+  HREF="node84.html#SECTION0012102000000000000000">Mirror model</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION0012100000000000000000">
+Bondwire</A>
+</H1>
+
+<P>
+Wire inductors, so called bond wire connections, are used to connect
+active and passive circuit components as well as micro devices to the
+real world.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:BondWire"></A><A NAME="19520"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 11.12:</STRONG>
+bond wire and its equivalent circuit</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="609" HEIGHT="217" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2415.png"
+ ALT="\includegraphics[width=13.5cm]{bondwire}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<H2><A NAME="SECTION0012101000000000000000">
+Freespace model</A>
+</H2>
+
+<P>
+The freespace inductance <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img396.png"
+ ALT="$ L$"></SPAN> of a wire of diameter <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2416.png"
+ ALT="$ d$"></SPAN> and length <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ l$"></SPAN>
+is given [<A
+ HREF="node103.html#Bahl">46</A>,<A
+ HREF="node103.html#WikiBond">47</A>] by
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+L = \dfrac{\mu_0}{2\pi} \cdot l \left[
+               \ln\left\{ \frac{2l}{d} 
+	                  + \sqrt{1 + \left(\frac{2l}{d}\right)^2} \right\}
+	       + \frac{d}{2l} - \sqrt{1+\left(\frac{d}{2l}\right)^2}
+	       + C \right]
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="445" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2417.png"
+ ALT="$\displaystyle L = \dfrac{\mu_0}{2\pi} \cdot l \left[ \ln\left\{ \frac{2l}{d} + ...
+...)^2} \right\} + \frac{d}{2l} - \sqrt{1+\left(\frac{d}{2l}\right)^2} + C \right]$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">235</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where the frequency-dependent correction factor <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img615.png"
+ ALT="$ C$"></SPAN> is a function of
+bond wire diameter and its material skin depth <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2118.png"
+ ALT="$ \delta$"></SPAN> is expressed
+as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+C = \dfrac{\mu_r}{4}\cdot \tanh\left( \dfrac{4\delta}{d} \right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="147" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2418.png"
+ ALT="$\displaystyle C = \dfrac{\mu_r}{4}\cdot \tanh\left( \dfrac{4\delta}{d} \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">236</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\delta = \dfrac{1}{\sqrt{\pi\cdot \sigma\cdot f\cdot \mu_0\cdot \mu_r}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="151" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2419.png"
+ ALT="$\displaystyle \delta = \dfrac{1}{\sqrt{\pi\cdot \sigma\cdot f\cdot \mu_0\cdot \mu_r}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">237</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2420.png"
+ ALT="$ \sigma$"></SPAN> is the conductivity of the wire material.  When
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2421.png"
+ ALT="$ \delta/d$"></SPAN> is small, <!-- MATH
+ $C=\delta/d$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="61" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2422.png"
+ ALT="$ C=\delta/d$"></SPAN>.  The wire resistance <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img360.png"
+ ALT="$ R$"></SPAN> is given
+by
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+R = \dfrac{\rho\cdot l}{\pi\cdot r^2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="75" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2423.png"
+ ALT="$\displaystyle R = \dfrac{\rho\cdot l}{\pi\cdot r^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">238</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with <!-- MATH
+ $\rho = 1/\sigma$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="59" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2424.png"
+ ALT="$ \rho = 1/\sigma$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="57" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2425.png"
+ ALT="$ r=d/2$"></SPAN>.
+
+<P>
+
+<H2><A NAME="SECTION0012102000000000000000">
+Mirror model</A>
+</H2>
+
+<P>
+The effect of the ground plane on the inductance valueof a wire has
+also been considered.  If the wire is at a distance <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img442.png"
+ ALT="$ h$"></SPAN> above the
+ground plane, it sees its image at <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2426.png"
+ ALT="$ 2h$"></SPAN> from it.  The wire and its
+image result in a mutual inductance.  Since the image wire carries a
+current opposite to the current flow in the bond wire, the effective
+inductance of the bond wire becomes
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+L = \dfrac{\mu_0}{2\pi}\cdot l \left[
+               \ln\left( \dfrac{4h}{d} \right)
+	       + \ln\left( \dfrac{l+\sqrt{l^2+d^2/4}}{l+\sqrt{l^2+4h^2}}\right)
+	       + \sqrt{1+\dfrac{4h^2}{l^2}} - \sqrt{1+\dfrac{d^2}{4l^2}}
+	       - 2 \dfrac{h}{l} + \dfrac{d}{2l}
+	       \right]			  
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="575" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2427.png"
+ ALT="$\displaystyle L = \dfrac{\mu_0}{2\pi}\cdot l \left[ \ln\left( \dfrac{4h}{d} \ri...
+...^2}{l^2}} - \sqrt{1+\dfrac{d^2}{4l^2}} - 2 \dfrac{h}{l} + \dfrac{d}{2l} \right]$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">239</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Mirror is a strange model that is frequency independent.  Whereas
+computations are valid, hypothesis are arguable.  Indeed, they did the
+assumption that the ground plane is perfect that is really a zero
+order model in the high frequency domain.
+
+<P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1929"
+  HREF="node85.html">Coplanar components</A>
+<B>Up:</B> <A NAME="tex2html1925"
+  HREF="node74.html">Microstrip components</A>
+<B> Previous:</B> <A NAME="tex2html1921"
+  HREF="node83.html">Microstrip via hole</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

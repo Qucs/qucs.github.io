@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+
+<title>Qucs project: screenshots</title>
+<link href="qucsweb.css" rel="stylesheet"  type="text/css">
+
+<head>
+
+<body>
+
+<!-- include the common web page header using Apache Server-Side Includes (SSI) -->
+<!--#include virtual="/qucs-header.html" -->
+
+<div id="main">
+<hr>
+
+<center>
+[
+<a href="screenshots.shtml">schematic area</a> -
+
+<a href="dialogs.shtml">dialogs</a> -
+
+languages -
+
+<a href="miscellaneous.shtml">miscellaneous</a> -
+
+<a href="tools.shtml">tools</a>
+]
+</center>
+
+
+
+<h3>Screenshots of translations</h3>
+
+
+
+The below screenshots visualise how the Qucs GUI changes its appearance with
+
+different languages selected.
+
+
+
+<center>
+
+<table cellpadding=24 border=0>
+
+<tr>
+
+<td align="left"><img src="images/q_de.png" alt="German"><br>
+
+German.</td>
+
+<td align="left"><img src="images/q_es.png" alt="Spanish"><br>
+
+Spanish.</td>
+
+</tr>
+
+<tr>
+
+<td align="left"><img src="images/q_fr.png" alt="French"><br>
+
+French.</td>
+
+<td align="left"><img src="images/q_hu.png" alt="Hungarian"><br>
+
+Hungarian.</td>
+
+</tr>
+
+<tr>
+
+<td align="left"><img src="images/q_it.png" alt="Italian"><br>
+
+Italian.</td>
+
+<td align="left"><img src="images/q_jp.png" alt="Japanese"><br>
+
+Japanese.</td>
+
+</tr>
+
+<tr>
+
+<td align="left"><img src="images/q_pl.png" alt="Polish"><br>
+
+Polish.</td>
+
+<td align="left"><img src="images/q_pt.png" alt="Portuguese"><br>
+
+Portuguese.</td>
+
+</tr>
+
+<tr>
+
+<td align="left"><img src="images/q_ro.png" alt="Romanian"><br>
+
+Romanian.</td>
+
+<td align="left"><img src="images/q_he.png" alt="Hebrew"><br>
+
+Hebrew.</td>
+
+</tr>
+
+<td align="left"><img src="images/q_tr.png" alt="Turkish"><br>
+Turkish.</td>
+<td align="left"><!-- <img src="images/q_he.png" alt="Hebrew"><br>
+Hebrew. --></td>
+</tr>
+
+</table>
+
+</center>
+
+
+
+Please note that the actual appearance depends on the window manager (window
+
+decorations), the selected type of font and its size and the widget set can
+
+be selected by the <tt>qtconfig</tt> program.
+
+<br><br>
+
+
+
+<hr>
+</div>
+
+<!-- include the common web page footer using Apache Server-Side Includes (SSI) -->
+  <!--#include virtual="/qucs-footer.html" -->
+
+</body>
+
+</html>
+

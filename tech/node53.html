@@ -1,0 +1,279 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Isolator</TITLE>
+<META NAME="description" CONTENT="Isolator">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node54.html">
+<LINK REL="previous" HREF="node52.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node54.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1431"
+  HREF="node54.html">Circulator</A>
+<B>Up:</B> <A NAME="tex2html1427"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1421"
+  HREF="node52.html">Amplifier</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION0010120000000000000000">
+Isolator</A>
+</H1>
+
+<P>
+An isolator is a one-way two-port, transporting incoming waves
+lossless from the input (port 1) to the output (port 2), but dissipating
+all waves flowing into the output.
+The ideal isolator with reference impedances <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img984.png"
+ ALT="$ Z_1$"></SPAN> (input) and <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img985.png"
+ ALT="$ Z_2$"></SPAN>
+(output) is determined by the following Z parameters (for DC and
+AC simulation).
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Z_{11} = Z_1  \qquad
+Z_{12} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="152" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img980.png"
+ ALT="$\displaystyle Z_{11} = Z_1 \qquad Z_{12} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">88</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Z_{21} = 2\cdot\sqrt{Z_1\cdot Z_2}  \qquad
+Z_{22} = Z_2
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="224" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img990.png"
+ ALT="$\displaystyle Z_{21} = 2\cdot\sqrt{Z_1\cdot Z_2} \qquad Z_{22} = Z_2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">89</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+A more useful MNA representation is with Y parameters.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{Y}) =
+\begin{pmatrix}
+ \dfrac{1}{Z_1} & 0 \\
+ \dfrac{-2}{\sqrt{Z_1\cdot Z_2}} & \dfrac{1}{Z_2}
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="178" HEIGHT="86" ALIGN="MIDDLE" BORDER="0"
+ SRC="img991.png"
+ ALT="$\displaystyle (\underline{Y}) = \begin{pmatrix}\dfrac{1}{Z_1} &amp; 0 \\ \dfrac{-2}{\sqrt{Z_1\cdot Z_2}} &amp; \dfrac{1}{Z_2} \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">90</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Isolator with reference impedance <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img984.png"
+ ALT="$ Z_1$"></SPAN> (input) and <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img985.png"
+ ALT="$ Z_2$"></SPAN> (output) and
+temperature <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.png"
+ ALT="$ T$"></SPAN>:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{C}_Y) = 4\cdot k\cdot T\cdot
+\begin{pmatrix}
+ \dfrac{1}{Z_1} & 0 \\
+ \dfrac{-2}{\sqrt{Z_1\cdot Z_2}} &  \dfrac{1}{Z_2} \\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="249" HEIGHT="86" ALIGN="MIDDLE" BORDER="0"
+ SRC="img992.png"
+ ALT="$\displaystyle (\underline{C}_Y) = 4\cdot k\cdot T\cdot \begin{pmatrix}\dfrac{1}{Z_1} &amp; 0 \\ \dfrac{-2}{\sqrt{Z_1\cdot Z_2}} &amp; \dfrac{1}{Z_2} \\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">91</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+With the reference impedance of the
+input <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img984.png"
+ ALT="$ Z_1$"></SPAN> and the one of the output <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img985.png"
+ ALT="$ Z_2$"></SPAN>, the scattering parameters
+of an ideal isolator writes as follows.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{11} = \frac{Z_1-Z_0}{Z_1+Z_0}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="107" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img986.png"
+ ALT="$\displaystyle S_{11} = \frac{Z_1-Z_0}{Z_1+Z_0}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">92</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{12} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="56" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img987.png"
+ ALT="$\displaystyle S_{12} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">93</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{22} = \frac{Z_2-Z_0}{Z_2+Z_0}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="107" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img988.png"
+ ALT="$\displaystyle S_{22} = \frac{Z_2-Z_0}{Z_2+Z_0}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">94</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{21} = \sqrt{1-(S_{11})^2}\cdot\sqrt{1-(S_{22})^2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="230" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img993.png"
+ ALT="$\displaystyle S_{21} = \sqrt{1-(S_{11})^2}\cdot\sqrt{1-(S_{22})^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">95</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Being on temperature <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.png"
+ ALT="$ T$"></SPAN>, the noise wave correlation matrix of an
+ideal isolator with reference impedance <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img984.png"
+ ALT="$ Z_1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img985.png"
+ ALT="$ Z_2$"></SPAN> (input and
+output) writes as follows.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{C}) = \frac{4\cdot k\cdot T\cdot Z_0}{(Z_1+Z_0)^2}\cdot
+\begin{pmatrix}
+  Z_1 & \sqrt{Z_1\cdot Z_2}\cdot\dfrac{Z_0-Z_1}{Z_0+Z_2}\\
+  \sqrt{Z_1\cdot Z_2}\cdot\dfrac{Z_0-Z_1}{Z_0+Z_2} & Z_2\cdot\left(\dfrac{Z_1-Z_0}{Z_2+Z_0}\right)^2\\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="441" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img994.png"
+ ALT="$\displaystyle (\underline{C}) = \frac{4\cdot k\cdot T\cdot Z_0}{(Z_1+Z_0)^2}\cd...
+...Z_1}{Z_0+Z_2} &amp; Z_2\cdot\left(\dfrac{Z_1-Z_0}{Z_2+Z_0}\right)^2\\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">96</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1431"
+  HREF="node54.html">Circulator</A>
+<B>Up:</B> <A NAME="tex2html1427"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1421"
+  HREF="node52.html">Amplifier</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>
