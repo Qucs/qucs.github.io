@@ -5,7 +5,9 @@ Repository for the Qucs website.
 
 [http://qucs.sourceforge.net/](http://qucs.sourceforge.net)
 
-Check the wesite pages on the branch **gh-pages**.
+---
+
+Check the website pages on the branch [gh-pages](https://github.com/guitorri/qucs-web/tree/gh-pages).
 
 GitHub-Pages preview at:
 
