@@ -12,3 +12,8 @@ Check the website pages on the branch [gh-pages](https://github.com/guitorri/quc
 GitHub-Pages preview at:
 
 [http://guitorri.github.io/qucs-web/](http://guitorri.github.io/qucs-web/)
+
+
+---
+Note:
+ * Large binary files currently hosted on the website space where not added to this repository.
