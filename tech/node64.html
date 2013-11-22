@@ -1,0 +1,306 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>S-parameter container with additional reference port</TITLE>
+<META NAME="description" CONTENT="S-parameter container with additional reference port">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node65.html">
+<LINK REL="previous" HREF="node63.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node65.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1570"
+  HREF="node65.html">Real-Life Models</A>
+<B>Up:</B> <A NAME="tex2html1566"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1560"
+  HREF="node63.html">Coupled transmission line</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION0010230000000000000000"></A>
+<A NAME="sec:spfile"></A>
+<BR>
+S-parameter container with additional reference port
+</H1>
+
+<P>
+The Y-parameters of a multi-port component defined by its S-parameters
+required for a small signal AC analysis can be obtained by converting
+the S-parameters into Y-parameters.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:spnfile"></A><A NAME="10728"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 9.13:</STRONG>
+S-parameter container with noise wave correlation matrix</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="428" HEIGHT="151" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1178.png"
+ ALT="\includegraphics[width=0.6\linewidth]{spnfile}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+In order to extend a <SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1179.png"
+ ALT="$ m - 1$"></SPAN>-port to have a S-parameter device with
+<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img56.png"
+ ALT="$ m$"></SPAN> ports assuming that the original reference port had a reflection
+coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1180.png"
+ ALT="$ \Gamma_m$"></SPAN> the new S-parameters are according to
+T. O. Grosch and L. A. Carpenter [<A
+ HREF="node103.html#Grosch">12</A>]:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1181.png"
+ ALT="$\displaystyle S_{mm}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="205" HEIGHT="123" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1182.png"
+ ALT="$\displaystyle = \dfrac{2 - \Gamma_m - m + {\displaystyle\sum_{i=1}^{m-1}}\, {\d...
+..._m - {\displaystyle\sum_{i=1}^{m-1}}\, {\displaystyle\sum_{j=1}^{m-1}} S'_{ij}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">227</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1183.png"
+ ALT="$\displaystyle S_{im}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="261" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1184.png"
+ ALT="$\displaystyle = \left(\dfrac{1 - \Gamma_m\cdot S_{mm}}{1 - \Gamma_m}\right)\cdot \left(1 - \sum_{j=1}^{m-1} S'_{ij}\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="148" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1185.png"
+ ALT="$\displaystyle \textrm{ for } i = 1,2 \ldots m - 1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">228</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1186.png"
+ ALT="$\displaystyle S_{mj}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="259" HEIGHT="67" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1187.png"
+ ALT="$\displaystyle = \left(\dfrac{1 - \Gamma_m\cdot S_{mm}}{1 - \Gamma_m}\right)\cdot \left(1 - \sum_{i=1}^{m-1} S'_{ij}\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="150" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1188.png"
+ ALT="$\displaystyle \textrm{ for } j = 1,2 \ldots m - 1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">229</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1189.png"
+ ALT="$\displaystyle S_{ij}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="184" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1190.png"
+ ALT="$\displaystyle = S'_{ij} - \left(\dfrac{\Gamma_m\cdot S_{im}\cdot S_{mj}}{1 - \Gamma_m\cdot S_{mm}}\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="163" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1191.png"
+ ALT="$\displaystyle \textrm{ for } i,j = 1,2 \ldots m - 1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">230</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+If the reference port has been ground potential, then <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1180.png"
+ ALT="$ \Gamma_m$"></SPAN>
+simply folds to -1.  The reverse transformation by connecting a
+termination with a reflection coefficient of <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1180.png"
+ ALT="$ \Gamma_m$"></SPAN> to the <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img56.png"
+ ALT="$ m$"></SPAN>th
+port writes as follows.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S'_{ij} = S_{ij} + \left(\dfrac{\Gamma_m\cdot S_{im}\cdot S_{mj}}{1 - \Gamma_m\cdot S_{mm}}\right)
+\;\;\;\; \textrm{ for } i,j = 1,2 \ldots m - 1
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="388" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1192.png"
+ ALT="$\displaystyle S'_{ij} = S_{ij} + \left(\dfrac{\Gamma_m\cdot S_{im}\cdot S_{mj}}{1 - \Gamma_m\cdot S_{mm}}\right) \;\;\;\; \textrm{ for } i,j = 1,2 \ldots m - 1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">231</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+With the S-parameter transformation done the <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img56.png"
+ ALT="$ m$"></SPAN>-port noise wave
+correlation matrix is
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+C_m = \left|\dfrac{1}{1 - \Gamma_m}\right|^2 \cdot \left(K\cdot C_{m-1}\cdot K^+ -T_s\cdot k_B \cdot\left|1 - \left|\Gamma_m\right|^2\right|\cdot D\cdot D^+\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="465" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1193.png"
+ ALT="$\displaystyle C_m = \left\vert\dfrac{1}{1 - \Gamma_m}\right\vert^2 \cdot \left(...
+...left\vert 1 - \left\vert\Gamma_m\right\vert^2\right\vert\cdot D\cdot D^+\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">232</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1194.png"
+ ALT="$\displaystyle K$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="501" HEIGHT="122" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1195.png"
+ ALT="$\displaystyle = \begin{bmatrix}1 + \Gamma_m\left(S_{1m} -1\right) &amp; \Gamma_m S_...
+...m S_{mm} - 1 &amp; \Gamma_m S_{mm} - 1 &amp; \ldots &amp; \Gamma_m S_{mm} - 1 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">233</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1026.png"
+ ALT="$\displaystyle D$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="102" HEIGHT="122" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1196.png"
+ ALT="$\displaystyle = \begin{bmatrix}S_{1m}\\ S_{2m}\\ \vdots\\ S_{(m-1)m}\\ S_{mm} - 1 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">234</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+whence <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1197.png"
+ ALT="$ T_s$"></SPAN> denotes the equivalent noise temperature of the original
+reference port and the <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img260.png"
+ ALT="$ ^{+}$"></SPAN> operator indicates the transposed
+conjugate matrix (also called adjoint or adjugate).
+
+<P>
+<P>
+The reverse transformation can be written as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+C_{m-1} = K'\cdot C_m\cdot K'^+ +T_s\cdot k_B \cdot\dfrac{\left|1 - \left|\Gamma_m\right|^2\right|}{\left|1 - \Gamma_m S_{mm}\right|^2}\cdot D'\cdot D'^+
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="397" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1198.png"
+ ALT="$\displaystyle C_{m-1} = K'\cdot C_m\cdot K'^+ +T_s\cdot k_B \cdot\dfrac{\left\v...
+...rt^2\right\vert}{\left\vert 1 - \Gamma_m S_{mm}\right\vert^2}\cdot D'\cdot D'^+$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">235</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1199.png"
+ ALT="$\displaystyle K'$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="234" HEIGHT="153" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1200.png"
+ ALT="$\displaystyle = \begin{bmatrix}1 &amp; 0 &amp; \ldots &amp; 0 &amp; \dfrac{\Gamma_m S_{1m}}{1 -...
+...&amp; \ldots &amp; 1 &amp; \dfrac{\Gamma_m S_{(m-1)m}}{1 - \Gamma_m S_{mm}}\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">236</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1201.png"
+ ALT="$\displaystyle D'$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="101" HEIGHT="103" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1202.png"
+ ALT="$\displaystyle = \begin{bmatrix}S_{1m}\\ S_{2m}\\ \vdots\\ S_{(m-1)m} \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">237</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1570"
+  HREF="node65.html">Real-Life Models</A>
+<B>Up:</B> <A NAME="tex2html1566"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1560"
+  HREF="node63.html">Coupled transmission line</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

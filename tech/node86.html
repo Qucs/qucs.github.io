@@ -1,0 +1,943 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Coplanar waveguides (CPW)</TITLE>
+<META NAME="description" CONTENT="Coplanar waveguides (CPW)">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node87.html">
+<LINK REL="previous" HREF="node85.html">
+<LINK REL="up" HREF="node85.html">
+<LINK REL="next" HREF="node87.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1966"
+  HREF="node87.html">Coplanar waveguide open</A>
+<B>Up:</B> <A NAME="tex2html1962"
+  HREF="node85.html">Coplanar components</A>
+<B> Previous:</B> <A NAME="tex2html1956"
+  HREF="node85.html">Coplanar components</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1967"
+  HREF="node86.html#SECTION001311000000000000000">Definition</A>
+<LI><A NAME="tex2html1968"
+  HREF="node86.html#SECTION001312000000000000000">Quasi-static analysis by conformal mappings</A>
+<LI><A NAME="tex2html1969"
+  HREF="node86.html#SECTION001313000000000000000">Effects of metalization thickness</A>
+<LI><A NAME="tex2html1970"
+  HREF="node86.html#SECTION001314000000000000000">Effects of dispersion</A>
+<LI><A NAME="tex2html1971"
+  HREF="node86.html#SECTION001315000000000000000">Evaluation of losses</A>
+<LI><A NAME="tex2html1972"
+  HREF="node86.html#SECTION001316000000000000000">S- and Y-parameters of the single coplanar line</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION001310000000000000000">
+Coplanar waveguides (CPW)</A>
+</H1>
+
+<P>
+
+<H2><A NAME="SECTION001311000000000000000">
+Definition</A>
+</H2>
+
+<P>
+A <SPAN  CLASS="textit">coplanar line</SPAN> is a structure in which all the conductors
+supporting wave propagation are located on the same plane,
+i.e. generally the top of a dielectric substrate.  There exist two
+main types of coplanar lines: the first, called <SPAN  CLASS="textit">coplanar
+waveguide (CPW)</SPAN>, that we will study here, is composed of a median
+metallic strip separated by two narrow slits from a infinite ground
+plane, as may be seen on the figure below.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:CoplanarLine"></A><A NAME="20883"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 12.1:</STRONG>
+coplanar waveguide line</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="641" HEIGHT="397" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2428.png"
+ ALT="\includegraphics[width=0.9\linewidth]{cpline}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The characteristic dimensions of a CPW are the central strip width <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1664.png"
+ ALT="$ W$"></SPAN>
+and the width of the slots <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2130.png"
+ ALT="$ s$"></SPAN>.  The structure is obviously
+symmetrical along a vertical plane running in the middle of the
+central strip.
+
+<P>
+
+<DIV ALIGN="CENTER">
+
+<P><A NAME="fig:CoplanarScheme"></A></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="351" HEIGHT="256" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2429.png"
+ ALT="\includegraphics[width=0.5\linewidth]{cpscheme}">
+
+</DIV>
+</DIV>
+
+<P>
+The other coplanar line, called a <SPAN  CLASS="textit">coplanar slot (CPS)</SPAN> is the
+complementary of that topology, consisting of two strips running side
+by side.
+
+<P>
+
+<H2><A NAME="SECTION001312000000000000000">
+Quasi-static analysis by conformal mappings</A>
+</H2>
+
+<P>
+A CPW can be quasi-statically analysed by the use of
+<SPAN  CLASS="textit">conformal mappings</SPAN>.  Briefly speaking, it consists in
+transforming the geometry of the PCB into another conformation, whose
+properties make the computations straightforward.  The interested
+reader can consult the pp. 886&nbsp;-&nbsp;910 of [<A
+ HREF="node103.html#Collin">48</A>] which has a
+correct coverage of both the theoretical and applied methods.  The
+French reader interested in the mathematical arcanes involved is
+referred to the second chapter of [<A
+ HREF="node103.html#Mir">49</A>] (which may be out of
+print nowadays), for an extensive review of all the theoretical
+framework.  The following analysis is mainly borrowed from
+[<A
+ HREF="node103.html#Gupta1">39</A>], pp.&nbsp;375 <SPAN  CLASS="textit">et seq</SPAN>. with additions from
+[<A
+ HREF="node103.html#Collin">48</A>].
+
+<P>
+<P>
+The CPW of negligible thickness located on top of an infinitely deep
+substrate, as shown on the left of the figure below, can be mapped
+into a parallel plate capacitor filled with dielectric <SPAN CLASS="MATH"><IMG
+ WIDTH="55" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2430.png"
+ ALT="$ ABCD$"></SPAN> using
+the conformal function:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+w = \int_{z_0}^{z} \dfrac{dz}{\sqrt{(z-W/2)(z-W/2-s)}}.
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="261" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2431.png"
+ ALT="$\displaystyle w = \int_{z_0}^{z} \dfrac{dz}{\sqrt{(z-W/2)(z-W/2-s)}}.$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV ALIGN="CENTER">
+
+<P><A NAME="fig:CoplanarConformal"></A></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="497" HEIGHT="254" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2432.png"
+ ALT="\includegraphics[width=0.7\linewidth]{cpconform}">
+
+</DIV>
+</DIV>
+
+<P>
+To further simplify the analysis, the original dielectric boundary is
+assumed to constitute a magnetic wall, so that <SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2433.png"
+ ALT="$ BC$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2434.png"
+ ALT="$ AD$"></SPAN> become
+magnetic walls too and there is no resulting fringing field in the
+resulting capacitor.  With that assumption, the capacitance per unit
+length is merely the sum of the top (air filled) and bottom
+(dielectric filled) partial capacitances.  The latter is given by:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+C_d = 2\cdot \varepsilon_0\cdot \varepsilon_r\cdot \dfrac{K(k_1)}{K'(k_1)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="160" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2435.png"
+ ALT="$\displaystyle C_d = 2\cdot \varepsilon_0\cdot \varepsilon_r\cdot \dfrac{K(k_1)}{K'(k_1)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+while the former is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+C_a = 2\cdot \varepsilon_0\cdot \dfrac{K(k_1)}{K'(k_1)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="137" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2436.png"
+ ALT="$\displaystyle C_a = 2\cdot \varepsilon_0\cdot \dfrac{K(k_1)}{K'(k_1)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+In both formulae <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2437.png"
+ ALT="$ K(k)$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2438.png"
+ ALT="$ K'(k)$"></SPAN> represent the complete elliptic
+integral of the first kind and its complement, and <!-- MATH
+ $k_1=
+\tfrac{W}{W+2s}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="80" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2439.png"
+ ALT="$ k_1=
+\tfrac{W}{W+2s}$"></SPAN>.  While the separate evaluation of <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img121.png"
+ ALT="$ K$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2440.png"
+ ALT="$ K'$"></SPAN> is
+more or less tricky, the <SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2441.png"
+ ALT="$ K/K'$"></SPAN> ratio lets itself compute efficiently
+through the following formulae:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\dfrac{K(k)}{K'(k)} =
+\dfrac{\pi}{\ln\left(2\tfrac{1+\sqrt{k'}}{1-\sqrt{k'}}\right)}
+\;\;\;\; \textrm{ for } \;\;\;\;
+0 \le k \le \dfrac{1}{\sqrt{2}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="307" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2442.png"
+ ALT="$\displaystyle \dfrac{K(k)}{K'(k)} = \dfrac{\pi}{\ln\left(2\tfrac{1+\sqrt{k'}}{1...
+...t{k'}}\right)} \;\;\;\; \textrm{ for } \;\;\;\; 0 \le k \le \dfrac{1}{\sqrt{2}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">4</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\dfrac{K(k)}{K'(k)} =
+\dfrac{\ln\left(2\tfrac{1+\sqrt{k}}{1-\sqrt{k}}\right)}{\pi}
+\;\;\;\; \textrm{ for } \;\;\;\;
+\dfrac{1}{\sqrt{2}} \le k \le 1
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="302" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2443.png"
+ ALT="$\displaystyle \dfrac{K(k)}{K'(k)} = \dfrac{\ln\left(2\tfrac{1+\sqrt{k}}{1-\sqrt{k}}\right)}{\pi} \;\;\;\; \textrm{ for } \;\;\;\; \dfrac{1}{\sqrt{2}} \le k \le 1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">5</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2444.png"
+ ALT="$ k'$"></SPAN> being the complementary modulus: <!-- MATH
+ $k'=\sqrt{1-k^2}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="95" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2445.png"
+ ALT="$ k'=\sqrt{1-k^2}$"></SPAN>.  While
+[<A
+ HREF="node103.html#Collin">48</A>] states that the accuracy of the above formulae is close
+to <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2446.png"
+ ALT="$ 10^{-5}$"></SPAN>, [<A
+ HREF="node103.html#Gupta1">39</A>] claims it to be <!-- MATH
+ $3\cdot10^{-6}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2447.png"
+ ALT="$ 3\cdot10^{-6}$"></SPAN>.  It can
+be considered as exact for any practical purposes.
+
+<P>
+<P>
+The total line capacitance is thus the sum of <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1278.png"
+ ALT="$ C_d$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2448.png"
+ ALT="$ C_a$"></SPAN>.  The
+effective permittivity is therefore:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{re} = \dfrac{\varepsilon_r+1}{2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="91" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2449.png"
+ ALT="$\displaystyle \varepsilon_{re} = \dfrac{\varepsilon_r+1}{2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">6</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+and the impedance:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:CoplanarZL"></A><!-- MATH
+ \begin{equation}
+Z=\dfrac{30\pi}{\sqrt{\varepsilon_{re}}}\cdot\dfrac{K'(k_1)}{K(k_1)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="135" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2450.png"
+ ALT="$\displaystyle Z=\dfrac{30\pi}{\sqrt{\varepsilon_{re}}}\cdot\dfrac{K'(k_1)}{K(k_1)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">7</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:coplanarzl"></A><A NAME="21304"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 12.2:</STRONG>
+characteristic impedance as approximated by eq. (<A HREF="#eq:CoplanarZL">12.7</A>) for <!-- MATH
+ $\varepsilon_{r}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$ \varepsilon _{r}$"></SPAN> = <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ 1.0$"></SPAN> (air), <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.png"
+ ALT="$ 3.78$"></SPAN> (quartz) and <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$ 9.5$"></SPAN> (alumina)</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<IMG
+ WIDTH="626" HEIGHT="409" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2451.png"
+ ALT="\includegraphics[width=0.95\linewidth]{coplanarzl}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+In practical cases, the substrate has a finite thickness <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img442.png"
+ ALT="$ h$"></SPAN>.  To
+carry out the analysis of this conformation, a preliminary conformal
+mapping transforms the finite thickness dielectric into an infinite
+thickness one.  Only the effective permittivity is altered; it
+becomes:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{re}=1+\dfrac{\varepsilon_r-1}{2}\cdot\dfrac{K(k_2)}{K'(k_2)}\cdot\dfrac{K'(k_1)}{K(k_1)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="239" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2452.png"
+ ALT="$\displaystyle \varepsilon_{re}=1+\dfrac{\varepsilon_r-1}{2}\cdot\dfrac{K(k_2)}{K'(k_2)}\cdot\dfrac{K'(k_1)}{K(k_1)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">8</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2453.png"
+ ALT="$ k_1$"></SPAN> is given above and
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+k_2=\dfrac{\sinh\left(\dfrac{\pi W}{4h}\right)}{\sinh\left(\dfrac{\pi\cdot\left(W+2s\right)}{4h}\right)}.
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="193" HEIGHT="97" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2454.png"
+ ALT="$\displaystyle k_2=\dfrac{\sinh\left(\dfrac{\pi W}{4h}\right)}{\sinh\left(\dfrac{\pi\cdot\left(W+2s\right)}{4h}\right)}.$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">9</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Finally, let us consider a CPW over a finite thickness dielectric
+backed by an infinite ground plane.  In this case, the quasi-TEM wave
+is an hybrid between microstrip and true CPW mode.  The equations then
+become:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{re} =1 + q\cdot\left(\varepsilon_r - 1\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="147" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2455.png"
+ ALT="$\displaystyle \varepsilon_{re} =1 + q\cdot\left(\varepsilon_r - 1\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">10</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1345.png"
+ ALT="$ q$"></SPAN>, called <SPAN  CLASS="textit">filling factor</SPAN> is given by:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+q = \dfrac{\dfrac{K(k_3)}{K'(k_3)}}{\dfrac{K(k_1)}{K'(k_1)}+\dfrac{K(k_3)}{K'(k_3)}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="157" HEIGHT="96" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2456.png"
+ ALT="$\displaystyle q = \dfrac{\dfrac{K(k_3)}{K'(k_3)}}{\dfrac{K(k_1)}{K'(k_1)}+\dfrac{K(k_3)}{K'(k_3)}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">11</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+and
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+k_3 = \dfrac{\tanh\left(\dfrac{\pi W}{4h}\right)}{\tanh\left(\dfrac{\pi\cdot\left(W+2s\right)}{4h}\right)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="192" HEIGHT="97" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2457.png"
+ ALT="$\displaystyle k_3 = \dfrac{\tanh\left(\dfrac{\pi W}{4h}\right)}{\tanh\left(\dfrac{\pi\cdot\left(W+2s\right)}{4h}\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">12</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The impedance of this line amounts to:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Z=\dfrac{60\pi}{\sqrt{\varepsilon_{re}}}\cdot\dfrac{1}{\dfrac{K(k_1)}{K'(k_1)}+\dfrac{K(k_3)}{K'(k_3)}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="209" HEIGHT="80" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2458.png"
+ ALT="$\displaystyle Z=\dfrac{60\pi}{\sqrt{\varepsilon_{re}}}\cdot\dfrac{1}{\dfrac{K(k_1)}{K'(k_1)}+\dfrac{K(k_3)}{K'(k_3)}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">13</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION001313000000000000000">
+Effects of metalization thickness</A>
+</H2>
+
+<P>
+In most practical cases, the strips are very thin, yet their thickness
+cannot be entirely neglected.  A first order correction to take into
+account the non-zero thickness of the conductor is given by
+[<A
+ HREF="node103.html#Gupta1">39</A>]:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+s_e = s - \Delta
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="79" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2459.png"
+ ALT="$\displaystyle s_e = s - \Delta$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">14</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+and
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+W_e = W + \Delta
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="97" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2460.png"
+ ALT="$\displaystyle W_e = W + \Delta$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">15</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\Delta = \dfrac{1.25t}{\pi}\cdot\left(1 + \ln\left(\dfrac{4 \pi W}{t}\right)\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="217" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2461.png"
+ ALT="$\displaystyle \Delta = \dfrac{1.25t}{\pi}\cdot\left(1 + \ln\left(\dfrac{4 \pi W}{t}\right)\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">16</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+In the computation of the impedance, both the <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2453.png"
+ ALT="$ k_1$"></SPAN> and the effective
+dielectric constant are affected, wherefore <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2453.png"
+ ALT="$ k_1$"></SPAN> must be substituted
+by an ``effective'' modulus <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2462.png"
+ ALT="$ k_e$"></SPAN>, with:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+k_e = \dfrac {W_e}{W_e + 2 s_e} \approx k_1 + \left(1 - k_1^2\right)\cdot \dfrac{\Delta}{2s}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="253" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2463.png"
+ ALT="$\displaystyle k_e = \dfrac {W_e}{W_e + 2 s_e} \approx k_1 + \left(1 - k_1^2\right)\cdot \dfrac{\Delta}{2s}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">17</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+and
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\varepsilon_{re}^{t} = \varepsilon_{re} - \dfrac{0.7\cdot\left(\varepsilon_{re} - 1\right)\cdot\dfrac{t}{s}}{\dfrac{K(k_1)}{K'(k_1)} + 0.7\cdot \dfrac{t}{s}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="206" HEIGHT="85" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2464.png"
+ ALT="$\displaystyle \varepsilon_{re}^{t} = \varepsilon_{re} - \dfrac{0.7\cdot\left(\v...
+...} - 1\right)\cdot\dfrac{t}{s}}{\dfrac{K(k_1)}{K'(k_1)} + 0.7\cdot \dfrac{t}{s}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">18</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION001314000000000000000">
+Effects of dispersion</A>
+</H2>
+
+<P>
+The effects of dispersion in CPW are similar to those encountered in
+the microstrip lines, though the net effect on impedance is somewhat
+different.  [<A
+ HREF="node103.html#Gupta1">39</A>] gives a closed form expression to compute
+<!-- MATH
+ $\varepsilon_{re}(f)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2465.png"
+ ALT="$ \varepsilon_{re}(f)$"></SPAN> from its quasi-static value:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\sqrt{\varepsilon_{re}(f)}=\sqrt{\varepsilon_{re}(0)} + \dfrac{\sqrt{\varepsilon_r} - \sqrt{\varepsilon_{re}(0)}}{1+G\cdot\left(\dfrac{f}{f_{TE}}\right)^{-1.8}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="298" HEIGHT="89" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2466.png"
+ ALT="$\displaystyle \sqrt{\varepsilon_{re}(f)}=\sqrt{\varepsilon_{re}(0)} + \dfrac{\s...
+...r} - \sqrt{\varepsilon_{re}(0)}}{1+G\cdot\left(\dfrac{f}{f_{TE}}\right)^{-1.8}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">19</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2080.png"
+ ALT="$\displaystyle G$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="107" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2467.png"
+ ALT="$\displaystyle = e^{u\cdot \ln\left(\tfrac{W}{s}\right)+v}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">20</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1981.png"
+ ALT="$\displaystyle u$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="175" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2468.png"
+ ALT="$\displaystyle = 0.54 - 0.64p + 0.015p^2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">21</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2134.png"
+ ALT="$\displaystyle v$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="167" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2469.png"
+ ALT="$\displaystyle = 0.43-0.86p+0.54p^2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">22</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2470.png"
+ ALT="$\displaystyle p$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="68" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2471.png"
+ ALT="$\displaystyle = \ln\left(\tfrac{W}{h}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">23</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+and <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2472.png"
+ ALT="$ f_{TE}$"></SPAN> is the cut-off frequency of the <SPAN CLASS="MATH"><IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2473.png"
+ ALT="$ {TE}_{0}$"></SPAN> mode, defined by:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+f_{TE} = \dfrac{c}{4h\cdot\sqrt{\varepsilon_r - 1}}.
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="143" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2474.png"
+ ALT="$\displaystyle f_{TE} = \dfrac{c}{4h\cdot\sqrt{\varepsilon_r - 1}}.$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">24</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+This dispersion expression was first reported by [<A
+ HREF="node103.html#Frankel">50</A>] and
+has been reused and extended in [<A
+ HREF="node103.html#Gevorgian">51</A>].  The accuracy of
+this expression is claimed to be better than 5% for <!-- MATH
+ $0.1 \le W/h \le
+5$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="107" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2475.png"
+ ALT="$ 0.1 \le W/h \le
+5$"></SPAN>, <!-- MATH
+ $0.1 \le W/s \le 5$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="105" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2476.png"
+ ALT="$ 0.1 \le W/s \le 5$"></SPAN>, <!-- MATH
+ $1.5 \le \varepsilon_r \le 50$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="97" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2477.png"
+ ALT="$ 1.5 \le \varepsilon_r \le 50$"></SPAN> and <!-- MATH
+ $0 \le
+f/f_{TE} \le 10$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="115" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2478.png"
+ ALT="$ 0 \le
+f/f_{TE} \le 10$"></SPAN>.
+
+<P>
+
+<H2><A NAME="SECTION001315000000000000000">
+Evaluation of losses</A>
+</H2>
+
+<P>
+As for microstrip lines, the losses in CPW results of at least two
+factors: a dielectric loss <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2479.png"
+ ALT="$ \alpha_d$"></SPAN> and conductor losses
+<!-- MATH
+ $\alpha_c^{CW}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2480.png"
+ ALT="$ \alpha_c^{CW}$"></SPAN>.  The dielectric loss <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2479.png"
+ ALT="$ \alpha_d$"></SPAN> is identical to the
+microstrip case, see eq. (<A HREF="node75.html#eq:alpha_d">11.79</A>) on page
+<A HREF="node75.html#eq:alpha_d"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.
+
+<P>
+<P>
+The <!-- MATH
+ $\alpha_c^{CW}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2480.png"
+ ALT="$ \alpha_c^{CW}$"></SPAN> part of the losses is more complex to evaluate.  As
+a general rule, it might be written:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\alpha_c^{CW} = 0.023\cdot \dfrac{R_s}{Z_{0cp}}\left[\dfrac{\partial Z^a_{0cp}}{\partial s} - \dfrac{\partial Z^a_{0cp}}{\partial W} - \dfrac{\partial Z^a_{0cp}}{\partial t}\right]
+\textrm{ in dB/unit length }
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="465" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2481.png"
+ ALT="$\displaystyle \alpha_c^{CW} = 0.023\cdot \dfrac{R_s}{Z_{0cp}}\left[\dfrac{\part...
+...W} - \dfrac{\partial Z^a_{0cp}}{\partial t}\right] \textrm{ in dB/unit length }$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">25</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2482.png"
+ ALT="$ Z^a_{0cp}$"></SPAN> stands for the impedance of the coplanar waveguide
+with air as dielectric and <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2483.png"
+ ALT="$ R_s$"></SPAN> is the surface resistivity of the
+conductors (see eq. (<A HREF="node75.html#eq:HandJRs">11.81</A>) on page <A HREF="node75.html#eq:HandJRs"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>).
+
+<P>
+<P>
+Through a direct approach evaluating the losses by conformal mapping
+of the current density, one obtains [<A
+ HREF="node103.html#Gupta1">39</A>], first reported in
+[<A
+ HREF="node103.html#Owyang">52</A>] and finally applied to coplanar lines by [<A
+ HREF="node103.html#Ghione1">53</A>]:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{split}
+\alpha_c^{CW} = &\; \dfrac{R_s\cdot \sqrt{\varepsilon_{re}}}{480 \pi\cdot K(k_1)\cdot K'(k_1)\cdot \left(1 - k_1^2\right)} \cdot\\
+& \left(\dfrac{1}{a}\left[\pi + \ln \dfrac {8 \pi a\cdot \left(1-k_1\right)}{t\cdot\left(1+k_1\right)}\right]+\dfrac{1}{b}\left[\pi + \ln \dfrac {8 \pi b\cdot \left(1-k_1\right)}{t\cdot\left(1+k_1\right)}\right]\right)
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="438" HEIGHT="89" BORDER="0"
+ SRC="img2484.png"
+ ALT="\begin{displaymath}\begin{split}\alpha_c^{CW} = &amp;\; \dfrac{R_s\cdot \sqrt{\varep...
+...k_1\right)}{t\cdot\left(1+k_1\right)}\right]\right) \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">26</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+In the formula above, <!-- MATH
+ $a = W/2, b = s + W/2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="158" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2485.png"
+ ALT="$ a = W/2, b = s + W/2$"></SPAN> and it is assumed that
+<!-- MATH
+ $t~>~3 \delta, t \ll W$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="111" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2486.png"
+ ALT="$ t~&gt;~3 \delta, t \ll W$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2487.png"
+ ALT="$ t \ll s$"></SPAN>.
+
+<P>
+
+<H2><A NAME="SECTION001316000000000000000">
+S- and Y-parameters of the single coplanar line</A>
+</H2>
+
+<P>
+The computation of the coplanar waveguide lines S- and Y-parameters is
+equal to all transmission lines (see section
+section <A HREF="node61.html#sec:tl_yparameter">9.20</A> on page <A HREF="node61.html#sec:tl_yparameter"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>).
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1966"
+  HREF="node87.html">Coplanar waveguide open</A>
+<B>Up:</B> <A NAME="tex2html1962"
+  HREF="node85.html">Coplanar components</A>
+<B> Previous:</B> <A NAME="tex2html1956"
+  HREF="node85.html">Coplanar components</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

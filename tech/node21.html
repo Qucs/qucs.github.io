@@ -1,0 +1,757 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Algorithm</TITLE>
+<META NAME="description" CONTENT="The Algorithm">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node22.html">
+<LINK REL="previous" HREF="node20.html">
+<LINK REL="up" HREF="node19.html">
+<LINK REL="next" HREF="node22.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html922"
+  HREF="node22.html">Noise Current Correlation Matrix</A>
+<B>Up:</B> <A NAME="tex2html918"
+  HREF="node19.html">AC Noise Analysis</A>
+<B> Previous:</B> <A NAME="tex2html912"
+  HREF="node20.html">Definitions</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html923"
+  HREF="node21.html#SECTION00621000000000000000">A Simple Example</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00620000000000000000"></A>
+<A NAME="sec:acnoise_algo"></A>
+<BR>
+The Algorithm
+</H1>
+
+<P>
+To calculate the small signal noise of a circuit, the AC noise
+analysis has to be applied [<A
+ HREF="node103.html#Blum">6</A>].  This technique uses the
+principle of the AC analysis described in chapter <A HREF="node18.html#sec:acMNA">4</A> on
+page <A HREF="node18.html#sec:acMNA"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.  In addition to the MNA matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img380.png"
+ ALT="$ A$"></SPAN> one needs
+the noise current correlation matrix <!-- MATH
+ $\underline{C}_Y$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img246.png"
+ ALT="$ \underline{C}_Y$"></SPAN> of the circuit,
+that contains the equivalent noise current sources for every node on
+its main diagonal and their correlation on the other positions.
+
+<P>
+<P>
+The basic concept of the AC noise analysis is as follows: The
+noise voltage at node <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img53.png"
+ ALT="$ i$"></SPAN> should be calculated, so the voltage arising
+due to the noise source at node <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ j$"></SPAN> is calculated first. This has to
+be done for every <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img383.png"
+ ALT="$ n$"></SPAN> nodes and after that adding all the noise
+voltages (by paying attention to their correlation) leads to the
+overall voltage. But that would mean to solve the MNA equation <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img383.png"
+ ALT="$ n$"></SPAN>
+times.  Fortunately there is a more easy way.  One can perform the
+above-mentioned <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img383.png"
+ ALT="$ n$"></SPAN> steps in one single step, if the reciprocal MNA
+matrix is used. This matrix equals the MNA matrix itself, if the
+network is reciprocal.  A network that only contains resistors,
+capacitors, inductors, gyrators and transformers is reciprocal.
+
+<P>
+<P>
+The question that needs to be answered now is: How to get the
+reciprocal MNA matrix for an arbitrary network? This is equivalent to
+the question: How to get the MNA matrix of the adjoint network.
+The answer is quite simple: Just transpose the MNA matrix!
+
+<P>
+<P>
+For any network, calculating the noise voltage at node <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img53.png"
+ ALT="$ i$"></SPAN> is done by
+the following three steps:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="187" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img386.png"
+ ALT="$\displaystyle \textrm{1. Solving MNA equation:}$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="303" HEIGHT="171" ALIGN="MIDDLE" BORDER="0"
+ SRC="img388.png"
+ ALT="$\displaystyle \left[A\right]^T \cdot \left[x\right] = \left[A\right]^T \cdot \b...
+...ts \\ 0 \\ -1 \\ 0 \\ \vdots \\ 0 \\ \end{bmatrix} \leftarrow i\textrm{-th row}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="259" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img389.png"
+ ALT="$\displaystyle \textrm{2. Creating noise correlation matrix:}$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img390.png"
+ ALT="$\displaystyle \left( \underline{C}_Y \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">4</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="202" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img391.png"
+ ALT="$\displaystyle \textrm{3. Calculating noise voltage:}$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="206" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img392.png"
+ ALT="$\displaystyle v_{noise,i} = \sqrt{\left[v\right]^T \cdot \left( \underline{C}_Y \right) \cdot \left[v\right]^*}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">5</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+If the correlation between several noise voltages is also wanted, the
+procedure is straight forward: Perform step 1 for every desired node,
+put the results into a matrix and replace the vector <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img393.png"
+ ALT="$ [v]$"></SPAN> in step 3
+by this matrix. This results in the complete correlation matrix.
+Indeed, the above-mentioned algorithm is only a specialisation of
+transforming the noise correlation matrices (see section
+<A HREF="node11.html#sec:noiseTrans">2.4.2</A>).
+
+<P>
+<P>
+If the normal AC analysis has already be done with LU decomposition,
+then the most time consuming work of step 1 has already be done.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\textrm{instead of} \qquad Y = L\cdot U \qquad \textrm{we have} \qquad
+Y^T = U^T \cdot L^T
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="386" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img394.png"
+ ALT="$\displaystyle \textrm{instead of} \qquad Y = L\cdot U \qquad \textrm{we have} \qquad Y^T = U^T \cdot L^T$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">6</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+I.e. <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img395.png"
+ ALT="$ U^T$"></SPAN> becomes the new <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img396.png"
+ ALT="$ L$"></SPAN> matrix and <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img397.png"
+ ALT="$ L^T$"></SPAN> becomes the new <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img398.png"
+ ALT="$ U$"></SPAN>
+matrix, and the matrix equation do not need to be solved again, because
+only the right-hand side was changed.  So altogether this is a quickly
+done task.  (Note that in step 3, only the subvector <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img393.png"
+ ALT="$ [v]$"></SPAN> of vector
+<SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img399.png"
+ ALT="$ [x]$"></SPAN> is used.  See section <A HREF="node14.html#sec:xmatrix">3.1.3</A> for details on this.)
+
+<P>
+<P>
+If the noise voltage at another node needs to be known, only the
+right-hand side of step 1 changes.  That is, a new LU decomposition is
+not needed.
+
+<P>
+<P>
+Reusing the LU decomposed MNA matrix of the usual AC analysis is
+possible if there has been no pivoting necessary during the
+decomposition.
+
+<P>
+<P>
+When using either Crout's or Doolittle's definition of the LU
+decomposition during the AC analysis the decomposition representation
+changes during the AC noise analysis as the matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img380.png"
+ ALT="$ A$"></SPAN> gets
+transposed.  This means:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+A = L\cdot U \;\text{ with }\;
+L =
+\begin{bmatrix}
+l_{11} & 0 & \ldots & 0\\
+l_{21} & l_{22} & \ddots & \vdots\\
+\vdots &  & \ddots & 0\\
+l_{n1} & \ldots & \ldots & l_{nn}
+\end{bmatrix}
+\;\text{ and }\;
+U =
+\begin{bmatrix}
+1 & u_{12} & \ldots & u_{1n}\\
+0 & 1 &  & \vdots\\
+\vdots & \ddots & \ddots & \vdots\\
+0 & \ldots & 0 & 1
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="74" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img400.png"
+ ALT="$\displaystyle A = L\cdot U \;$"> with&nbsp;<IMG
+ WIDTH="192" HEIGHT="115" ALIGN="MIDDLE" BORDER="0"
+ SRC="img401.png"
+ ALT="$\displaystyle \; L = \begin{bmatrix}l_{11} &amp; 0 &amp; \ldots &amp; 0\\ l_{21} &amp; l_{22} &amp;...
+...ts\\ \vdots &amp; &amp; \ddots &amp; 0\\ l_{n1} &amp; \ldots &amp; \ldots &amp; l_{nn} \end{bmatrix} \;$"> and&nbsp;<IMG
+ WIDTH="184" HEIGHT="115" ALIGN="MIDDLE" BORDER="0"
+ SRC="img402.png"
+ ALT="$\displaystyle \; U = \begin{bmatrix}1 &amp; u_{12} &amp; \ldots &amp; u_{1n}\\ 0 &amp; 1 &amp; &amp; \vdots\\ \vdots &amp; \ddots &amp; \ddots &amp; \vdots\\ 0 &amp; \ldots &amp; 0 &amp; 1 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">7</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+becomes
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+A^T = U^T\cdot L^T \;\text{ with }\;
+L =
+\begin{bmatrix}
+1 & 0 & \ldots & 0\\
+l_{21} & 1 & \ddots & \vdots\\
+\vdots &  & \ddots & 0\\
+l_{n1} & \ldots & \ldots & 1
+\end{bmatrix}
+\;\text{ and }\;
+U =
+\begin{bmatrix}
+u_{11} & u_{12} & \ldots & u_{1n}\\
+0 & u_{22} &  & \vdots\\
+\vdots & \ddots & \ddots & \vdots\\
+0 & \ldots & 0 & u_{nn}
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="104" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img403.png"
+ ALT="$\displaystyle A^T = U^T\cdot L^T \;$"> with&nbsp;<IMG
+ WIDTH="178" HEIGHT="115" ALIGN="MIDDLE" BORDER="0"
+ SRC="img404.png"
+ ALT="$\displaystyle \; L = \begin{bmatrix}1 &amp; 0 &amp; \ldots &amp; 0\\ l_{21} &amp; 1 &amp; \ddots &amp; \vdots\\ \vdots &amp; &amp; \ddots &amp; 0\\ l_{n1} &amp; \ldots &amp; \ldots &amp; 1 \end{bmatrix} \;$"> and&nbsp;<IMG
+ WIDTH="200" HEIGHT="115" ALIGN="MIDDLE" BORDER="0"
+ SRC="img405.png"
+ ALT="$\displaystyle \; U = \begin{bmatrix}u_{11} &amp; u_{12} &amp; \ldots &amp; u_{1n}\\ 0 &amp; u_{...
+...ots\\ \vdots &amp; \ddots &amp; \ddots &amp; \vdots\\ 0 &amp; \ldots &amp; 0 &amp; u_{nn} \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">8</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Thus the forward substitution (as described in section
+<A HREF="node99.html#sec:CroutFSubst">15.2.4</A>) and the backward substitution (as described in
+section <A HREF="node99.html#sec:CroutBSubst">15.2.4</A>) must be slightly modified.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img406.png"
+ ALT="$\displaystyle y_{i}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="121" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img407.png"
+ ALT="$\displaystyle = z_{i} - \sum_{k=1}^{i-1} y_{k}\cdot l_{ik}$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="83" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img408.png"
+ ALT="$\displaystyle i = 1,\ldots,n$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">9</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img409.png"
+ ALT="$\displaystyle x_{i}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="155" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img410.png"
+ ALT="$\displaystyle = \frac{y_{i}}{u_{ii}} - \sum_{k=i+1}^{n} x_{k}\cdot \frac{u_{ik}}{u_{ii}}$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="83" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img411.png"
+ ALT="$\displaystyle i = n,\ldots,1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">10</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Now the diagonal elements <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img412.png"
+ ALT="$ l_{ii}$"></SPAN> can be neglected in the forward
+substitution but the <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img413.png"
+ ALT="$ u_{ii}$"></SPAN> elements must be considered in the
+backward substitution.
+
+<P>
+
+<H2><A NAME="SECTION00621000000000000000">
+A Simple Example</A>
+</H2>
+
+<P>
+The network that is depicted in figure <A HREF="#fig:mna_noise1">5.1</A> is given.
+The MNA equation is (see chapter <A HREF="node14.html#sec:MNA">3.1</A>):
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+[A]\cdot [x] =
+\begin{bmatrix}
+1/R_1 & 0\\
+  G   & 1/R_2
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_1\\
+V_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="270" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img414.png"
+ ALT="$\displaystyle [A]\cdot [x] = \begin{bmatrix}1/R_1 &amp; 0\\ G &amp; 1/R_2 \end{bmatrix} \cdot \begin{bmatrix}V_1\\ V_2 \end{bmatrix} = \begin{bmatrix}0\\ 0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">11</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:mna_noise1"></A><A NAME="4411"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.1:</STRONG>
+simple non-reciprocal network</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="314" HEIGHT="178" ALIGN="BOTTOM" BORDER="0"
+ SRC="img415.png"
+ ALT="\includegraphics[width=7cm]{MNAnoise1}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Because of the controlled current source, the circuit is not
+reciprocal.  The noise voltage at node 2 is the one to search
+for.  Yes, this
+is very easy to calculate, because it is a simple example, but
+the algorithm described above should be used.  This can be achived
+by solving the equations
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+1/R_1 & 0\\
+  G   & 1/R_2
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+Z_{11}\\
+Z_{21}
+\end{bmatrix}
+=
+\begin{bmatrix}
+-1\\
+0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="221" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img416.png"
+ ALT="$\displaystyle \begin{bmatrix}1/R_1 &amp; 0\\ G &amp; 1/R_2 \end{bmatrix} \cdot \begin{bmatrix}Z_{11}\\ Z_{21} \end{bmatrix} = \begin{bmatrix}-1\\ 0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">12</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+1/R_1 & 0\\
+  G   & 1/R_2
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+Z_{12}\\
+Z_{22}
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+-1
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="221" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img417.png"
+ ALT="$\displaystyle \begin{bmatrix}1/R_1 &amp; 0\\ G &amp; 1/R_2 \end{bmatrix} \cdot \begin{bmatrix}Z_{12}\\ Z_{22} \end{bmatrix} = \begin{bmatrix}0\\ -1 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">13</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+So, the MNA matrix must be solved two times: First to get the
+transimpedance from node 1 to node 2 (i.e. <SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img418.png"
+ ALT="$ Z_{21}$"></SPAN>) and second to get
+the transimpedance from node 2 to node 2 (i.e.  <SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img419.png"
+ ALT="$ Z_{22}$"></SPAN>).  But why
+solving it two times, if only one voltage should be calculated? With every
+step transimpedances are calculated that are not need.  Is there no more
+effective way?
+
+<P>
+<P>
+Fortunately, there is Tellegen's Theorem: A network and its adjoint
+network are reciprocal to each other.  That is, transposing
+the MNA matrix leads to the one of the reciprocal
+network.  To check it out:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+[A]^T\cdot [x] =
+\begin{bmatrix}
+1/R_1 & G\\
+  0   & 1/R_2
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_1\\
+V_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="280" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img420.png"
+ ALT="$\displaystyle [A]^T\cdot [x] = \begin{bmatrix}1/R_1 &amp; G\\ 0 &amp; 1/R_2 \end{bmatri...
+...dot \begin{bmatrix}V_1\\ V_2 \end{bmatrix} = \begin{bmatrix}0\\ 0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">14</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:mna_noise2"></A><A NAME="4449"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.2:</STRONG>
+simple network to compare with adjoint network</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="314" HEIGHT="178" ALIGN="BOTTOM" BORDER="0"
+ SRC="img421.png"
+ ALT="\includegraphics[width=7cm]{MNAnoise2}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Compare the transposed matrix with the reciprocal network in figure
+<A HREF="#fig:mna_noise2">5.2</A>.  It is true!  But now it is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+1/R_1 & G\\0 & 1/R_2
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+Z_{12,reciprocal}\\
+Z_{22,reciprocal}
+\end{bmatrix}
+=
+\begin{bmatrix}
+1/R_1 & G\\
+  0   & 1/R_2
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+Z_{21}\\
+Z_{22}
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+-1
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="463" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img422.png"
+ ALT="$\displaystyle \begin{bmatrix}1/R_1 &amp; G\\ 0 &amp; 1/R_2 \end{bmatrix} \cdot \begin{b...
+...gin{bmatrix}Z_{21}\\ Z_{22} \end{bmatrix} = \begin{bmatrix}0\\ -1 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">15</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Because <SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img418.png"
+ ALT="$ Z_{21}$"></SPAN> of the original network equals <SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img423.png"
+ ALT="$ Z_{12}$"></SPAN> of the
+reciprocal network, the one step delivers exactly what is needed.
+So the next step is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+([A]^T)^{-1}\cdot
+\begin{bmatrix}
+  0\\
+ -1
+\end{bmatrix}
+=
+\begin{bmatrix}
+R_1 & -G\cdot R_1\cdot R_2\\
+  0 & R2
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+  0\\
+ -1
+\end{bmatrix}
+=
+\begin{bmatrix}
+G\cdot R_1\cdot R_2\\
+-R_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+Z_{21}\\
+Z_{22}
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="492" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img424.png"
+ ALT="$\displaystyle ([A]^T)^{-1}\cdot \begin{bmatrix}0\\ -1 \end{bmatrix} = \begin{bm...
+..._1\cdot R_2\\ -R_2 \end{bmatrix} = \begin{bmatrix}Z_{21}\\ Z_{22} \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">16</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Now, as the transimpedances are known, the noise voltage
+at node 2 can be computed. As there is no correlation, it writes
+as follows:
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray}
+<v_{node2}^2> & = & <v_{R1,node2}^2> + <v_{R2,node2}^2> \\
+  & = & <i_{R1}^2>\cdot Z_{21}\cdot Z_{21}^* + <i_{R2}^2>\cdot Z_{22}\cdot Z_{22}^* \\
+  & = & \frac{4\cdot k\cdot T\cdot \Delta f}{R_1} \cdot (G\cdot R_1\cdot R_2)^2 +
+        \frac{4\cdot k\cdot T\cdot \Delta f}{R_2} \cdot (-R_2)^2 \\
+  & = & 4\cdot k\cdot T\cdot \Delta f\cdot \left( R_1\cdot (G\cdot R_2)^2 + R_2 \right)
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="79" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img425.png"
+ ALT="$\displaystyle &lt;v_{node2}^2&gt;$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img426.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP WIDTH="50%"><IMG
+ WIDTH="215" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img427.png"
+ ALT="$\displaystyle &lt;v_{R1,node2}^2&gt; + &lt;v_{R2,node2}^2&gt;$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">17</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img426.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP WIDTH="50%"><IMG
+ WIDTH="277" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img428.png"
+ ALT="$\displaystyle &lt;i_{R1}^2&gt;\cdot Z_{21}\cdot Z_{21}^* + &lt;i_{R2}^2&gt;\cdot Z_{22}\cdot Z_{22}^*$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">18</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img426.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP WIDTH="50%"><IMG
+ WIDTH="352" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img429.png"
+ ALT="$\displaystyle \frac{4\cdot k\cdot T\cdot \Delta f}{R_1} \cdot (G\cdot R_1\cdot R_2)^2 +
+\frac{4\cdot k\cdot T\cdot \Delta f}{R_2} \cdot (-R_2)^2$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">19</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img426.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP WIDTH="50%"><IMG
+ WIDTH="239" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img430.png"
+ ALT="$\displaystyle 4\cdot k\cdot T\cdot \Delta f\cdot \left( R_1\cdot (G\cdot R_2)^2 + R_2 \right)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>.<SPAN CLASS="arabic">20</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+<P>
+That's it. Yes, this could have be computed more easily, but now
+the universal algorithm is also clear.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html922"
+  HREF="node22.html">Noise Current Correlation Matrix</A>
+<B>Up:</B> <A NAME="tex2html918"
+  HREF="node19.html">AC Noise Analysis</A>
+<B> Previous:</B> <A NAME="tex2html912"
+  HREF="node20.html">Definitions</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

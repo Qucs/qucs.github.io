@@ -1,0 +1,813 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Noise sources</TITLE>
+<META NAME="description" CONTENT="Noise sources">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node60.html">
+<LINK REL="previous" HREF="node58.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node60.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1503"
+  HREF="node60.html">Controlled sources</A>
+<B>Up:</B> <A NAME="tex2html1499"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1493"
+  HREF="node58.html">Voltage and current sources</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1504"
+  HREF="node59.html#SECTION0010181000000000000000">Noise current source</A>
+<LI><A NAME="tex2html1505"
+  HREF="node59.html#SECTION0010182000000000000000">Noise voltage source</A>
+<LI><A NAME="tex2html1506"
+  HREF="node59.html#SECTION0010183000000000000000">Correlated noise sources</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION0010180000000000000000">
+Noise sources</A>
+</H1>
+
+<P>
+To implement the frequency dependencies of all common noise PSDs the
+following equation can be used.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+PSD = \frac{PSD_0}{a+b\cdot f^c}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="126" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1063.png"
+ ALT="$\displaystyle PSD = \frac{PSD_0}{a+b\cdot f^c}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">144</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Where <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.png"
+ ALT="$ f$"></SPAN> is frequency and <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1064.png"
+ ALT="$ a$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1065.png"
+ ALT="$ b$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img728.png"
+ ALT="$ c$"></SPAN> are the parameters.  The
+following PSDs appear in electric devices.
+
+<P>
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">white noise (thermal noise, shot noise):</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.png"
+ ALT="$ a=0$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1067.png"
+ ALT="$ b=1$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1068.png"
+ ALT="$ c=0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="LEFT">pink noise (flicker noise):</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.png"
+ ALT="$ a=0$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1067.png"
+ ALT="$ b=1$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1069.png"
+ ALT="$ c=1$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Lorentzian PSD (generation-recombination noise):</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1070.png"
+ ALT="$ a=1$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="64" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1071.png"
+ ALT="$ b=1/f_c^2$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.png"
+ ALT="$ c=2$"></SPAN></TD>
+</TR>
+</TABLE>
+
+<P>
+
+<H2><A NAME="SECTION0010181000000000000000">
+Noise current source</A>
+</H2>
+
+<P>
+Noise current source with a current power spectral density of <SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1073.png"
+ ALT="$ cPSD$"></SPAN>:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{C}_Y) = cPSD \cdot
+\begin{pmatrix}
+ 1 & -1 \\
+-1 &  1 \\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="197" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1074.png"
+ ALT="$\displaystyle (\underline{C}_Y) = cPSD \cdot \begin{pmatrix}1 &amp; -1 \\ -1 &amp; 1 \\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">145</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The MNA matrix entries for DC and AC analysis are all zero.
+
+<P>
+<P>
+The noise wave correlation matrix of a noise current source with
+current power spectral density <SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1073.png"
+ ALT="$ cPSD$"></SPAN> and its S parameter matrix
+write as follows.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{C}) = cPSD\cdot Z_0\cdot
+\begin{pmatrix}
+   1 & -1\\
+  -1 &  1\\
+\end{pmatrix}
+\qquad
+(\underline{S}) =
+\begin{pmatrix}
+   1 &  0\\
+   0 &  1\\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="347" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1075.png"
+ ALT="$\displaystyle (\underline{C}) = cPSD\cdot Z_0\cdot \begin{pmatrix}1 &amp; -1\\ -1 &amp;...
+...{pmatrix} \qquad (\underline{S}) = \begin{pmatrix}1 &amp; 0\\ 0 &amp; 1\\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">146</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION0010182000000000000000">
+Noise voltage source</A>
+</H2>
+
+<P>
+A noise voltage source (voltage power spectral density <SPAN CLASS="MATH"><IMG
+ WIDTH="49" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1076.png"
+ ALT="$ vPSD$"></SPAN>) cannot
+be modeled with the noise current matrix.  That is why one has to use
+a noise current source (current power spectral density <SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1073.png"
+ ALT="$ cPSD$"></SPAN>)
+connected to a gyrator (transimpedance <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img360.png"
+ ALT="$ R$"></SPAN>) satisfying the equation
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+vPSD = cPSD \cdot R^2
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="142" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1077.png"
+ ALT="$\displaystyle vPSD = cPSD \cdot R^2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">147</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Figure <A HREF="#fig:Unoise">9.7</A> shows an example.
+
+<DIV ALIGN="CENTER"><A NAME="fig:Unoise"></A><A NAME="9907"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 9.7:</STRONG>
+noise voltage source (left-hand side) and its equivalent circuit (right-hand side)</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="405" HEIGHT="118" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1078.png"
+ ALT="\includegraphics[width=9cm]{Unoise}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The MNA matrix entries of the above construct (gyrator ratio <SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1079.png"
+ ALT="$ R=1$"></SPAN>) is
+similiar to a voltage source with zero voltage.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+.&.& -1\\
+.&.& 1\\
+1 & -1 & 0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}\\
+I_x
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_{1}\\
+I_{2}\\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="265" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1080.png"
+ ALT="$\displaystyle \begin{bmatrix}.&amp;.&amp; -1\\ .&amp;.&amp; 1\\ 1 &amp; -1 &amp; 0 \end{bmatrix} \cdot ...
+...matrix}I_{1}\\ I_{2}\\ 0 \end{bmatrix} = \begin{bmatrix}0\\ 0\\ 0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">148</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The appropriate noise current correlation matrix yields:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{C}_Y) = cPSD \cdot
+\begin{pmatrix}
+ 0 & 0 & 0\\
+ 0 & 0 & 0\\
+ 0 & 0 & 1\\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="200" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1081.png"
+ ALT="$\displaystyle (\underline{C}_Y) = cPSD \cdot \begin{pmatrix}0 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 1\\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">149</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The noise wave correlation matrix of a noise voltage source with
+voltage power spectral density <SPAN CLASS="MATH"><IMG
+ WIDTH="49" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1076.png"
+ ALT="$ vPSD$"></SPAN> and its S parameter matrix
+write as follows.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{C}) = \frac{vPSD}{4\cdot Z_0}\cdot
+\begin{pmatrix}
+   1 & -1\\
+  -1 &  1\\
+\end{pmatrix}
+\qquad
+(\underline{S}) =
+\begin{pmatrix}
+   0 &  1\\
+   1 &  0\\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="325" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1082.png"
+ ALT="$\displaystyle (\underline{C}) = \frac{vPSD}{4\cdot Z_0}\cdot \begin{pmatrix}1 &amp;...
+...{pmatrix} \qquad (\underline{S}) = \begin{pmatrix}0 &amp; 1\\ 1 &amp; 0\\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">150</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION0010183000000000000000">
+Correlated noise sources</A>
+</H2>
+
+<P>
+For two correlated noise current sources the (normalized) correlation
+coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img121.png"
+ ALT="$ K$"></SPAN> must be known (with <!-- MATH
+ $|K|=0\dots 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="88" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1083.png"
+ ALT="$ \vert K\vert=0\dots 1$"></SPAN>). If the first
+noise source has the current power spectral
+density <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1084.png"
+ ALT="$ S_{i1}$"></SPAN> and is connected to node 1 and 2, and if furthermore
+the second noise source has the spectral density <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1085.png"
+ ALT="$ S_{i2}$"></SPAN> and is connected
+to node 3 and 4, then the correlation matrix writes:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{C}_Y) =
+\begin{pmatrix}
+ S_{i1} & -S_{i1} &  K\cdot\sqrt{S_{i1}\cdot S_{i2}} & -K\cdot\sqrt{S_{i1}\cdot S_{i2}} \\
+-S_{i1} &  S_{i1} & -K\cdot\sqrt{S_{i1}\cdot S_{i2}} &  K\cdot\sqrt{S_{i1}\cdot S_{i2}} \\
+ K\cdot\sqrt{S_{i1}\cdot S_{i2}} & -K\cdot\sqrt{S_{i1}\cdot S_{i2}} &  S_{i2} & -S_{i2} \\
+-K\cdot\sqrt{S_{i1}\cdot S_{i2}} &  K\cdot\sqrt{S_{i1}\cdot S_{i2}} & -S_{i2} &  S_{i2} \\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="546" HEIGHT="93" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1086.png"
+ ALT="$\displaystyle (\underline{C}_Y) = \begin{pmatrix}S_{i1} &amp; -S_{i1} &amp; K\cdot\sqrt...
+...t S_{i2}} &amp; K\cdot\sqrt{S_{i1}\cdot S_{i2}} &amp; -S_{i2} &amp; S_{i2} \\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">151</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The MNA matrix entries for DC and AC analysis are all zero.
+
+<P>
+<P>
+The noise wave correlation matrix of two correlated noise current
+sources with current power spectral densities <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1084.png"
+ ALT="$ S_{i1}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1085.png"
+ ALT="$ S_{i2}$"></SPAN>
+and correlation coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img121.png"
+ ALT="$ K$"></SPAN> writes as follows.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{C}) = Z_0\cdot
+\begin{pmatrix}
+ S_{i1} & -S_{i1} &  K\cdot\sqrt{S_{i1}\cdot S_{i2}} & -K\cdot\sqrt{S_{i1}\cdot S_{i2}} \\
+-S_{i1} &  S_{i1} & -K\cdot\sqrt{S_{i1}\cdot S_{i2}} &  K\cdot\sqrt{S_{i1}\cdot S_{i2}} \\
+ K\cdot\sqrt{S_{i1}\cdot S_{i2}} & -K\cdot\sqrt{S_{i1}\cdot S_{i2}} &  S_{i2} & -S_{i2} \\
+-K\cdot\sqrt{S_{i1}\cdot S_{i2}} &  K\cdot\sqrt{S_{i1}\cdot S_{i2}} & -S_{i2} &  S_{i2} \\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="566" HEIGHT="93" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1087.png"
+ ALT="$\displaystyle (\underline{C}) = Z_0\cdot \begin{pmatrix}S_{i1} &amp; -S_{i1} &amp; K\cd...
+...t S_{i2}} &amp; K\cdot\sqrt{S_{i1}\cdot S_{i2}} &amp; -S_{i2} &amp; S_{i2} \\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">152</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{S}) =
+\begin{pmatrix}
+ 1 & 0 & 0 & 0 \\
+ 0 & 1 & 0 & 0 \\
+ 0 & 0 & 1 & 0 \\
+ 0 & 0 & 0 & 1 \\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="155" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1088.png"
+ ALT="$\displaystyle (\underline{S}) = \begin{pmatrix}1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">153</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+For two correlated noise voltage sources two extra
+rows and columns are needed in the MNA matrix:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+.&.&.&.& -1 &  0 \\
+.&.&.&.&  1 &  0 \\
+.&.&.&.&  0 & -1 \\
+.&.&.&.&  0 &  1 \\
+1 & -1 & 0 &  0 & 0 & 0 \\
+0 &  0 & 1 & -1 & 0 & 0 \\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}\\
+V_{3}\\
+V_{4}\\
+I_{x1}\\
+I_{x2}
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_{1}\\
+I_{2}\\
+I_{3}\\
+I_{4}\\
+0\\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+0\\
+0\\
+0\\
+0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="366" HEIGHT="132" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1089.png"
+ ALT="$\displaystyle \begin{bmatrix}.&amp;.&amp;.&amp;.&amp; -1 &amp; 0 \\ .&amp;.&amp;.&amp;.&amp; 1 &amp; 0 \\ .&amp;.&amp;.&amp;.&amp; 0 &amp; ...
+..._{4}\\ 0\\ 0 \end{bmatrix} = \begin{bmatrix}0\\ 0\\ 0\\ 0\\ 0\\ 0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">154</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The appropriate noise current correlation matrix (with the noise
+voltage power spectral densities <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1090.png"
+ ALT="$ S_{v1}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1091.png"
+ ALT="$ S_{v2}$"></SPAN> and the
+correlation coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img121.png"
+ ALT="$ K$"></SPAN>) yields:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{C}_Y) =
+\begin{pmatrix}
+ 0 & 0 & 0 & 0 & 0 & 0\\
+ 0 & 0 & 0 & 0 & 0 & 0\\
+ 0 & 0 & 0 & 0 & 0 & 0\\
+ 0 & 0 & 0 & 0 & 0 & 0\\
+ 0 & 0 & 0 & 0 & S_{v1} & K\cdot\sqrt{S_{v1}\cdot S_{v2}}\\
+ 0 & 0 & 0 & 0 & K\cdot\sqrt{S_{v1}\cdot S_{v2}} & S_{v2}\\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="389" HEIGHT="131" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1092.png"
+ ALT="$\displaystyle (\underline{C}_Y) = \begin{pmatrix}0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; 0 ...
+...v2}}\\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; K\cdot\sqrt{S_{v1}\cdot S_{v2}} &amp; S_{v2}\\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">155</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The noise wave correlation matrix of two correlated noise voltage
+sources with voltage power spectral densities <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1090.png"
+ ALT="$ S_{v1}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1091.png"
+ ALT="$ S_{v2}$"></SPAN>
+and correlation coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img121.png"
+ ALT="$ K$"></SPAN> and its S parameter matrix write as
+follows.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{C}) = \frac{1}{4\cdot Z_0}\cdot
+\begin{pmatrix}
+ S_{v1} & -S_{v1} &  K\cdot\sqrt{S_{v1}\cdot S_{v2}} & -K\cdot\sqrt{S_{v1}\cdot S_{v2}} \\
+-S_{v1} &  S_{v1} & -K\cdot\sqrt{S_{v1}\cdot S_{v2}} &  K\cdot\sqrt{S_{v1}\cdot S_{v2}} \\
+ K\cdot\sqrt{S_{v1}\cdot S_{v2}} & -K\cdot\sqrt{S_{v1}\cdot S_{v2}} &  S_{v2} & -S_{v2} \\
+-K\cdot\sqrt{S_{v1}\cdot S_{v2}} &  K\cdot\sqrt{S_{v1}\cdot S_{v2}} & -S_{v2} &  S_{v2} \\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="605" HEIGHT="93" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1093.png"
+ ALT="$\displaystyle (\underline{C}) = \frac{1}{4\cdot Z_0}\cdot \begin{pmatrix}S_{v1}...
+...t S_{v2}} &amp; K\cdot\sqrt{S_{v1}\cdot S_{v2}} &amp; -S_{v2} &amp; S_{v2} \\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">156</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{S}) =
+\begin{pmatrix}
+ 0 & 1 & 0 & 0 \\
+ 1 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 1 \\
+ 0 & 0 & 1 & 0 \\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="155" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1094.png"
+ ALT="$\displaystyle (\underline{S}) = \begin{pmatrix}0 &amp; 1 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">157</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+If a noise current source (ports 1 and 2) and a noise voltage
+source (ports 3 and 4) are correlated, the MNA matrix entries
+are as follows.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+.&.&.&.&  0 \\
+.&.&.&.&  0 \\
+.&.&.&.& -1 \\
+.&.&.&.&  1 \\
+0 &  0 & 1 & -1 & 0 \\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}\\
+V_{3}\\
+V_{4}\\
+I_x
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_{1}\\
+I_{2}\\
+I_{3}\\
+I_{4}\\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+0\\
+0\\
+0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="313" HEIGHT="113" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1095.png"
+ ALT="$\displaystyle \begin{bmatrix}.&amp;.&amp;.&amp;.&amp; 0 \\ .&amp;.&amp;.&amp;.&amp; 0 \\ .&amp;.&amp;.&amp;.&amp; -1 \\ .&amp;.&amp;.&amp;....
+..._{3}\\ I_{4}\\ 0 \end{bmatrix} = \begin{bmatrix}0\\ 0\\ 0\\ 0\\ 0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">158</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The appropriate noise current correlation matrix (with the noise
+power spectral densities <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1084.png"
+ ALT="$ S_{i1}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1091.png"
+ ALT="$ S_{v2}$"></SPAN> and the
+correlation coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img121.png"
+ ALT="$ K$"></SPAN>) yields:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{C}_Y) =
+\begin{pmatrix}
+ S_{i1} & -S_{i1} & 0 & 0 & K\cdot\sqrt{S_{i1}\cdot S_{v2}}\\
+-S_{i1} & S_{i1} & 0 & 0 & 0\\
+ 0 & 0 & 0 & 0 & 0\\
+ 0 & 0 & 0 & 0 & 0\\
+ K\cdot\sqrt{S_{i1}\cdot S_{v2}} & 0 & 0 & 0 & S_{v2}\\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="387" HEIGHT="112" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1096.png"
+ ALT="$\displaystyle (\underline{C}_Y) = \begin{pmatrix}S_{i1} &amp; -S_{i1} &amp; 0 &amp; 0 &amp; K\c...
+... &amp; 0 &amp; 0\\ K\cdot\sqrt{S_{i1}\cdot S_{v2}} &amp; 0 &amp; 0 &amp; 0 &amp; S_{v2}\\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">159</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Note: Because the gyrator factor (It is unity.) has been omitted
+in the above matrix the units are not correct. This can be ignored.
+
+<P>
+<P>
+The noise wave correlation matrix of one correlated noise current
+source <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1084.png"
+ ALT="$ S_{i1}$"></SPAN> and one noise voltage source <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1091.png"
+ ALT="$ S_{v2}$"></SPAN> with
+correlation coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img121.png"
+ ALT="$ K$"></SPAN> writes as follows.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{C}) =
+\begin{pmatrix}
+ Z_0\cdot S_{i1} & -Z_0\cdot S_{i1} &  K/2\cdot\sqrt{S_{i1}\cdot S_{v2}} & -K/2\cdot\sqrt{S_{i1}\cdot S_{v2}} \\
+-Z_0\cdot S_{i1} &  Z_0\cdot S_{i1} & -K/2\cdot\sqrt{S_{i1}\cdot S_{v2}} &  K/2\cdot\sqrt{S_{i1}\cdot S_{v2}} \\
+ K/2\cdot\sqrt{S_{i1}\cdot S_{v2}} & -K/2\cdot\sqrt{S_{i1}\cdot S_{v2}} &  S_{v2}/4/Z_0 & -S_{v2}/4/Z_0 \\
+-K/2\cdot\sqrt{S_{i1}\cdot S_{v2}} &  K/2\cdot\sqrt{S_{i1}\cdot S_{v2}} & -S_{v2}/4/Z_0 &  S_{v2}/4/Z_0 \\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="605" HEIGHT="93" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1097.png"
+ ALT="$\displaystyle (\underline{C}) = \begin{pmatrix}Z_0\cdot S_{i1} &amp; -Z_0\cdot S_{i...
+...2\cdot\sqrt{S_{i1}\cdot S_{v2}} &amp; -S_{v2}/4/Z_0 &amp; S_{v2}/4/Z_0 \\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">160</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{S}) =
+\begin{pmatrix}
+ 1 & 0 & 0 & 0 \\
+ 0 & 1 & 0 & 0 \\
+ 0 & 0 & 0 & 1 \\
+ 0 & 0 & 1 & 0 \\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="155" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1098.png"
+ ALT="$\displaystyle (\underline{S}) = \begin{pmatrix}1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">161</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1503"
+  HREF="node60.html">Controlled sources</A>
+<B>Up:</B> <A NAME="tex2html1499"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1493"
+  HREF="node58.html">Voltage and current sources</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

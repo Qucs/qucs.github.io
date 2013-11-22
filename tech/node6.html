@@ -1,0 +1,825 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Applications</TITLE>
+<META NAME="description" CONTENT="Applications">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node7.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html692"
+  HREF="node7.html">Noise Waves</A>
+<B>Up:</B> <A NAME="tex2html688"
+  HREF="node2.html">Scattering parameters</A>
+<B> Previous:</B> <A NAME="tex2html684"
+  HREF="node5.html">Computing with S-parameters</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html693"
+  HREF="node6.html#SECTION00241000000000000000">Stability</A>
+<LI><A NAME="tex2html694"
+  HREF="node6.html#SECTION00242000000000000000">Gain</A>
+<LI><A NAME="tex2html695"
+  HREF="node6.html#SECTION00243000000000000000">Two-Port Matching</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00240000000000000000">
+Applications</A>
+</H1>
+
+<P>
+
+<H2><A NAME="SECTION00241000000000000000">
+Stability</A>
+</H2>
+
+<P>
+A very important task in microwave design (especially for amplifiers)
+is the question, whether the circuit tends to unwanted oscillations.
+A two-port oscillates if, despite of no signal being fed into it, AC
+power issues from at least one of its ports.  This condition can be
+easily expressed in terms of RF quantities, so a circuit is stable
+if:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+|\underline{r}_1| < 1  \qquad \text{and} \qquad  |\underline{r}_2| < 1
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="56" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img114.png"
+ ALT="$\displaystyle \vert\underline{r}_1\vert &lt; 1$">&nbsp; &nbsp;and<IMG
+ WIDTH="88" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle \qquad \vert\underline{r}_2\vert &lt; 1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">39</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with <!-- MATH
+ $\underline{r}_1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img116.png"
+ ALT="$ \underline{r}_1$"></SPAN> being reflexion coefficient of port 1 and
+<!-- MATH
+ $\underline{r}_2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img117.png"
+ ALT="$ \underline{r}_2$"></SPAN> the one of port 2.
+
+<P>
+<P>
+A further question can be asked: What conditions must be fulfilled to have a
+two-port be stable for all combinations of passive impedance terminations at
+port 1 and port 2?  Such a circuit is called unconditionally stable.
+[<A
+ HREF="node103.html#Edwards3">3</A>] is one of the best discussions dealing with this subject.
+
+<P>
+<P>
+A circuit is unconditionally stable if the following two relations
+hold:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+K = \frac{1-|S_{11}|^2-|S_{22}|^2+|\Delta|^2}{2\cdot |S_{12}\cdot S_{21}|} > 1
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="246" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img118.png"
+ ALT="$\displaystyle K = \frac{1-\vert S_{11}\vert^2-\vert S_{22}\vert^2+\vert\Delta\vert^2}{2\cdot \vert S_{12}\cdot S_{21}\vert} &gt; 1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">40</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+|\Delta| = |S_{11}\cdot S_{22} - S_{12}\cdot S_{21}| < 1
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="217" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img119.png"
+ ALT="$\displaystyle \vert\Delta\vert = \vert S_{11}\cdot S_{22} - S_{12}\cdot S_{21}\vert &lt; 1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">41</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img120.png"
+ ALT="$ \Delta$"></SPAN> being the determinant of the S parameter matrix of the
+two port.  <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img121.png"
+ ALT="$ K$"></SPAN> is called Rollet stability factor.  Two relations must
+be fulfilled to have a necessary and sufficient criterion.
+
+<P>
+<P>
+A more practical criterion (necessary and sufficient) for
+unconditional stability is obtained with the <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img122.png"
+ ALT="$ \mu$"></SPAN>-factor:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\mu = \frac{1-|S_{11}|^2}{|S_{22}-S_{11}^*\cdot \Delta| + |S_{12}\cdot S_{21}|} > 1
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="250" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$\displaystyle \mu = \frac{1-\vert S_{11}\vert^2}{\vert S_{22}-S_{11}^*\cdot \Delta\vert + \vert S_{12}\cdot S_{21}\vert} &gt; 1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">42</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Because of symmetry reasons, a second stability factor must exist that
+also gives a necessary and sufficient criterion for unconditional
+stability:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\mu' = \frac{1-|S_{22}|^2}{|S_{11}-S_{22}^*\cdot \Delta| + |S_{12}\cdot S_{21}|} > 1
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="254" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img124.png"
+ ALT="$\displaystyle \mu' = \frac{1-\vert S_{22}\vert^2}{\vert S_{11}-S_{22}^*\cdot \Delta\vert + \vert S_{12}\cdot S_{21}\vert} &gt; 1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">43</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+<P>
+For conditional stable two-ports it is interesting which which load
+and which source impedance may cause instability.  This can be seen
+using stability circles [<A
+ HREF="node103.html#Michel1">4</A>].  A disadvantage of this method
+is that the radius of the below-mentioned circles can become infinity.
+(A circle with infinite radius is a line.)
+
+<P>
+<P>
+Within the reflexion coefficient plane of the load (<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.png"
+ ALT="$ r_L$"></SPAN>-plane), the
+stability circle is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{r}_{center} = \frac{S_{22}^* - S_{11}\cdot \Delta^*}{|S_{22}|^2 - |\Delta|^2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="170" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img126.png"
+ ALT="$\displaystyle \underline{r}_{center} = \frac{S_{22}^* - S_{11}\cdot \Delta^*}{\vert S_{22}\vert^2 - \vert\Delta\vert^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">44</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\text{Radius} = \frac{|S_{12}|\cdot |S_{21}|}{|S_{22}|^2 - |\Delta|^2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH">Radius<IMG
+ WIDTH="112" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img127.png"
+ ALT="$\displaystyle = \frac{\vert S_{12}\vert\cdot \vert S_{21}\vert}{\vert S_{22}\vert^2 - \vert\Delta\vert^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">45</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+If the center of the <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.png"
+ ALT="$ r_L$"></SPAN>-plane lies within this circle and <!-- MATH
+ $|S_{11}|
+\le 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.png"
+ ALT="$ \vert S_{11}\vert
+\le 1$"></SPAN> then the circuit is stable for all reflexion coefficients
+inside the circle.  If the center of the <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.png"
+ ALT="$ r_L$"></SPAN>-plane lies outside the
+circle and <!-- MATH
+ $|S_{11}| \le 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.png"
+ ALT="$ \vert S_{11}\vert
+\le 1$"></SPAN> then the circuit is stable for all
+reflexion coefficients outside the circle.
+
+<P>
+<P>
+Very similar is the situation for reflexion coefficients in the source
+plane (<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img129.png"
+ ALT="$ r_S$"></SPAN>-plane).  The stability circle is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{r}_{center} = \frac{S_{11}^* - S_{22}\cdot \Delta^*}{|S_{11}|^2 - |\Delta|^2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="170" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img130.png"
+ ALT="$\displaystyle \underline{r}_{center} = \frac{S_{11}^* - S_{22}\cdot \Delta^*}{\vert S_{11}\vert^2 - \vert\Delta\vert^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">46</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\text{Radius} = \frac{|S_{12}|\cdot |S_{21}|}{|S_{11}|^2 - |\Delta|^2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH">Radius<IMG
+ WIDTH="112" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img131.png"
+ ALT="$\displaystyle = \frac{\vert S_{12}\vert\cdot \vert S_{21}\vert}{\vert S_{11}\vert^2 - \vert\Delta\vert^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">47</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+If the center of the <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img129.png"
+ ALT="$ r_S$"></SPAN>-plane lies within this circle and <!-- MATH
+ $|S_{22}|
+\le 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img132.png"
+ ALT="$ \vert S_{22}\vert
+\le 1$"></SPAN> then the circuit is stable for all reflexion coefficients
+inside the circle.  If the center of the <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img129.png"
+ ALT="$ r_S$"></SPAN>-plane lies outside the
+circle and <!-- MATH
+ $|S_{22}| \le 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img132.png"
+ ALT="$ \vert S_{22}\vert
+\le 1$"></SPAN> then the circuit is stable for all
+reflexion coefficients outside the circle.
+
+<P>
+
+<H2><A NAME="SECTION00242000000000000000">
+Gain</A>
+</H2>
+
+<P>
+Maximum available and stable power gain (only for unconditional stable
+2-ports) [<A
+ HREF="node103.html#Michel1">4</A>]:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+G_{max} = \left| \frac{S_{21}}{S_{12}} \right| \cdot \left( K - \sqrt{K^2-1} \right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="234" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img133.png"
+ ALT="$\displaystyle G_{max} = \left\vert \frac{S_{21}}{S_{12}} \right\vert \cdot \left( K - \sqrt{K^2-1} \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">48</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img121.png"
+ ALT="$ K$"></SPAN> is Rollet stability factor.
+
+<P>
+<P>
+The (bilateral) transmission power gain of a two-port can be split
+into three parts [<A
+ HREF="node103.html#Michel1">4</A>]:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+G = G_S \cdot G_0 \cdot G_L
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="120" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img134.png"
+ ALT="$\displaystyle G = G_S \cdot G_0 \cdot G_L$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">49</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+G_S = \frac{(1 - |r_S|^2) \cdot (1 - |r_1|^2)}{|1 - r_S\cdot r_1|^2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="202" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img135.png"
+ ALT="$\displaystyle G_S = \frac{(1 - \vert r_S\vert^2) \cdot (1 - \vert r_1\vert^2)}{\vert 1 - r_S\cdot r_1\vert^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">50</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+G_0 = |S_{21}|^2
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="84" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img136.png"
+ ALT="$\displaystyle G_0 = \vert S_{21}\vert^2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">51</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+G_L = \frac{1 - |r_L|^2}{|1 - r_L\cdot S_{22}|^2 \cdot (1 - |r_1|^2)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="224" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img137.png"
+ ALT="$\displaystyle G_L = \frac{1 - \vert r_L\vert^2}{\vert 1 - r_L\cdot S_{22}\vert^2 \cdot (1 - \vert r_1\vert^2)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">52</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img138.png"
+ ALT="$ r_1$"></SPAN> is reflexion coefficient of the two-port input.
+
+<P>
+<P>
+The curves of constant gain are circles in the reflexion coefficient
+plane.  The circle for the load-mismatched two-port with gain <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img139.png"
+ ALT="$ G_L$"></SPAN> is
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{r}_{center} = \frac{(S_{22}^* - S_{11}\cdot \Delta^*) \cdot G_L}{G_L\cdot (|S_{22}|^2 - |\Delta|^2) + 1}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="233" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img140.png"
+ ALT="$\displaystyle \underline{r}_{center} = \frac{(S_{22}^* - S_{11}\cdot \Delta^*) \cdot G_L}{G_L\cdot (\vert S_{22}\vert^2 - \vert\Delta\vert^2) + 1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">53</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\text{Radius} =
+   \frac{\sqrt{1 - G_L\cdot (1-|S_{11}|^2-|S_{22}|^2+|\Delta|^2) + G_L^2\cdot |S_{12}\cdot S_{21}|^2}}
+        {G_L\cdot (|S_{22}|^2 - |\Delta|^2) + 1}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH">Radius<IMG
+ WIDTH="409" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img141.png"
+ ALT="$\displaystyle = \frac{\sqrt{1 - G_L\cdot (1-\vert S_{11}\vert^2-\vert S_{22}\ve...
+...\cdot S_{21}\vert^2}} {G_L\cdot (\vert S_{22}\vert^2 - \vert\Delta\vert^2) + 1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">54</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The circle for the source-mismatched two-port with gain <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img142.png"
+ ALT="$ G_S$"></SPAN> is
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{r}_{center} = \frac{G_S\cdot r_1^*}{1 - |r_1|^2\cdot (1-G_S)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="203" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img143.png"
+ ALT="$\displaystyle \underline{r}_{center} = \frac{G_S\cdot r_1^*}{1 - \vert r_1\vert^2\cdot (1-G_S)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">55</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\text{Radius} =
+   \frac{\sqrt{1 - G_S}\cdot (1-|r_1|^2)}{1 - |r_1|^2\cdot (1-G_S)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH">Radius<IMG
+ WIDTH="166" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img144.png"
+ ALT="$\displaystyle = \frac{\sqrt{1 - G_S}\cdot (1-\vert r_1\vert^2)}{1 - \vert r_1\vert^2\cdot (1-G_S)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">56</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+r_1 = S_{11} + \frac{S_{12}\cdot S_{21}\cdot r_L}{1 - r_L\cdot S_{22}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="168" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img145.png"
+ ALT="$\displaystyle r_1 = S_{11} + \frac{S_{12}\cdot S_{21}\cdot r_L}{1 - r_L\cdot S_{22}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">57</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+<P>
+The available power gain <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img146.png"
+ ALT="$ G_A$"></SPAN> of a two-port is reached when the load is
+conjugately matched to the output port. It is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+G_A = \frac{|S_{21}|^2\cdot (1-|r_S|^2)}{|1-S_{11}\cdot r_S|^2 - |S_{22}-\Delta\cdot r_S|^2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="262" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$\displaystyle G_A = \frac{\vert S_{21}\vert^2\cdot (1-\vert r_S\vert^2)}{\vert 1-S_{11}\cdot r_S\vert^2 - \vert S_{22}-\Delta\cdot r_S\vert^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">58</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with <!-- MATH
+ $\Delta = S_{11}S_{22} - S_{12}S_{21}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="150" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img148.png"
+ ALT="$ \Delta = S_{11}S_{22} - S_{12}S_{21}$"></SPAN>. The curves with constant
+gain <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img146.png"
+ ALT="$ G_A$"></SPAN> are circles in the source reflexion coefficient plane (<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img129.png"
+ ALT="$ r_S$"></SPAN>-plane).
+The center <SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img149.png"
+ ALT="$ r_{S,c}$"></SPAN> and the radius <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$ R_S$"></SPAN> are:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img151.png"
+ ALT="$\displaystyle r_{S,c}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="180" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img152.png"
+ ALT="$\displaystyle = \frac{g_A\cdot C_1^*}{1 + g_A\cdot(\vert S_{11}\vert^2 - \vert\Delta\vert^2)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">59</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img153.png"
+ ALT="$\displaystyle R_S$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="302" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img154.png"
+ ALT="$\displaystyle = \frac{\sqrt{1 - 2\cdot K\cdot g_A\cdot\vert S_{12}S_{21}\vert +...
+...1}\vert^2}} {\vert 1 + g_A\cdot(\vert S_{11}\vert^2 - \vert\Delta\vert^2)\vert}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">60</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with <!-- MATH
+ $C_1 = S_{11} - S_{22}^*\cdot\Delta$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="132" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img155.png"
+ ALT="$ C_1 = S_{11} - S_{22}^*\cdot\Delta$"></SPAN>, <!-- MATH
+ $g_A = G_A / |S_{21}|^2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="113" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img156.png"
+ ALT="$ g_A = G_A / \vert S_{21}\vert^2$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img121.png"
+ ALT="$ K$"></SPAN> Rollet stability factor.
+
+<P>
+<P>
+The operating power gain <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$ G_P$"></SPAN> of a two-port is the power delivered
+to the load divided by the input power of the amplifier. It is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+G_P = \frac{|S_{21}|^2\cdot (1-|r_L|^2)}{|1-S_{22}\cdot r_L|^2 - |S_{11}-\Delta\cdot r_L|^2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="263" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img158.png"
+ ALT="$\displaystyle G_P = \frac{\vert S_{21}\vert^2\cdot (1-\vert r_L\vert^2)}{\vert 1-S_{22}\cdot r_L\vert^2 - \vert S_{11}-\Delta\cdot r_L\vert^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">61</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with <!-- MATH
+ $\Delta = S_{11}S_{22} - S_{12}S_{21}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="150" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img148.png"
+ ALT="$ \Delta = S_{11}S_{22} - S_{12}S_{21}$"></SPAN>. The curves with constant
+gain <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$ G_P$"></SPAN> are circles in the load reflexion coefficient plane (<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.png"
+ ALT="$ r_L$"></SPAN>-plane).
+The center <SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img159.png"
+ ALT="$ r_{L,c}$"></SPAN> and the radius <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img160.png"
+ ALT="$ R_L$"></SPAN> are:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.png"
+ ALT="$\displaystyle r_{L,c}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="180" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img162.png"
+ ALT="$\displaystyle = \frac{g_P\cdot C_2^*}{1 + g_P\cdot(\vert S_{22}\vert^2 - \vert\Delta\vert^2)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">62</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img163.png"
+ ALT="$\displaystyle R_L$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="303" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img164.png"
+ ALT="$\displaystyle = \frac{\sqrt{1 - 2\cdot K\cdot g_P\cdot\vert S_{12}S_{21}\vert +...
+...1}\vert^2}} {\vert 1 + g_P\cdot(\vert S_{22}\vert^2 - \vert\Delta\vert^2)\vert}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">63</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with <!-- MATH
+ $C_2 = S_{22} - S_{11}^*\cdot\Delta$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="132" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img165.png"
+ ALT="$ C_2 = S_{22} - S_{11}^*\cdot\Delta$"></SPAN>, <!-- MATH
+ $g_P = G_P / |S_{21}|^2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="113" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img166.png"
+ ALT="$ g_P = G_P / \vert S_{21}\vert^2$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img121.png"
+ ALT="$ K$"></SPAN> Rollet stability factor.
+
+<P>
+
+<H2><A NAME="SECTION00243000000000000000">
+Two-Port Matching</A>
+</H2>
+
+<P>
+Obtaining concurrent power matching of input and output in a bilateral
+circuit is not such simple, due to the backward transmission <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img167.png"
+ ALT="$ S_{12}$"></SPAN>.
+However, in linear circuits, this task can be easily solved by the
+following equations:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img168.png"
+ ALT="$\displaystyle \Delta$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="152" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img169.png"
+ ALT="$\displaystyle = S_{11}\cdot S_{22} - S_{12}\cdot S_{21}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">64</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img170.png"
+ ALT="$\displaystyle B$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="194" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img171.png"
+ ALT="$\displaystyle = 1 + \vert S_{11}\vert^2 - \vert S_{22}\vert^2 - \vert\Delta\vert^2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">65</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img172.png"
+ ALT="$\displaystyle C$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="109" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img173.png"
+ ALT="$\displaystyle = S_{11} - S_{22}^* \cdot \Delta$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">66</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img174.png"
+ ALT="$\displaystyle r_S$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="220" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img175.png"
+ ALT="$\displaystyle = \frac{1}{2\cdot C} \cdot \left( B - \sqrt{B^2 - \vert 2\cdot C\vert^2 } \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">67</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Here <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img129.png"
+ ALT="$ r_S$"></SPAN> is the reflexion coefficient that the circuit needs to see
+at the input port in order to reach concurrently matched in- and
+output.  For the reflexion coefficient at the output <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.png"
+ ALT="$ r_L$"></SPAN> the same
+equations hold by simply changing the indices (exchange 1 by 2 and
+vice versa).
+
+<P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html692"
+  HREF="node7.html">Noise Waves</A>
+<B>Up:</B> <A NAME="tex2html688"
+  HREF="node2.html">Scattering parameters</A>
+<B> Previous:</B> <A NAME="tex2html684"
+  HREF="node5.html">Computing with S-parameters</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

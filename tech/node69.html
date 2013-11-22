@@ -1,0 +1,1468 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Junction FET</TITLE>
+<META NAME="description" CONTENT="Junction FET">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node70.html">
+<LINK REL="previous" HREF="node68.html">
+<LINK REL="up" HREF="node66.html">
+<LINK REL="next" HREF="node70.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1664"
+  HREF="node70.html">Homo-Junction Bipolar Transistor</A>
+<B>Up:</B> <A NAME="tex2html1660"
+  HREF="node66.html">Non-linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1654"
+  HREF="node68.html">PN-Junction Diode</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1665"
+  HREF="node69.html#SECTION001131000000000000000">Large signal model</A>
+<LI><A NAME="tex2html1666"
+  HREF="node69.html#SECTION001132000000000000000">Small signal model</A>
+<LI><A NAME="tex2html1667"
+  HREF="node69.html#SECTION001133000000000000000">Noise model</A>
+<LI><A NAME="tex2html1668"
+  HREF="node69.html#SECTION001134000000000000000">Temperature model</A>
+<LI><A NAME="tex2html1669"
+  HREF="node69.html#SECTION001135000000000000000">Area dependence of the model</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION001130000000000000000">
+Junction FET</A>
+</H1>
+
+<P>
+The following table contains the model parameters for the JFET model.
+
+<P>
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="RIGHT">Name</TD>
+<TD ALIGN="LEFT">Symbol</TD>
+<TD ALIGN="LEFT">Description</TD>
+<TD ALIGN="LEFT">Unit</TD>
+<TD ALIGN="LEFT">Default</TD>
+</TR>
+<TR><TD ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Vt0</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img376.png"
+ ALT="$ V_{Th}$"></SPAN></TD>
+<TD ALIGN="LEFT">zero -bias threshold voltage</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1232.png"
+ ALT="$ \volt$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1322.png"
+ ALT="$ -2.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Beta</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1147.png"
+ ALT="$ \beta$"></SPAN></TD>
+<TD ALIGN="LEFT">transconductance parameter</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $\ampere / \volt^{2}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1323.png"
+ ALT="$ \ampere / \volt^{2}$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1324.png"
+ ALT="$ 10^{-4}$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Lambda</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img763.png"
+ ALT="$ \lambda$"></SPAN></TD>
+<TD ALIGN="LEFT">channel-length modulation parameter</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1325.png"
+ ALT="$ 1/\volt$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Rd</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1326.png"
+ ALT="$ R_{D}$"></SPAN></TD>
+<TD ALIGN="LEFT">drain ohmic resistance</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1227.png"
+ ALT="$ \ohm$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Rs</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1226.png"
+ ALT="$ R_{S}$"></SPAN></TD>
+<TD ALIGN="LEFT">source ohmic resistance</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1227.png"
+ ALT="$ \ohm$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Is</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1219.png"
+ ALT="$ I_{S}$"></SPAN></TD>
+<TD ALIGN="LEFT">gate-junction saturation current</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1220.png"
+ ALT="$ \ampere$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1221.png"
+ ALT="$ 10^{-14}$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">N</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img720.png"
+ ALT="$ N$"></SPAN></TD>
+<TD ALIGN="LEFT">gate P-N emission coefficient</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ 1.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Isr</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1222.png"
+ ALT="$ I_{SR}$"></SPAN></TD>
+<TD ALIGN="LEFT">gate-junction recombination current parameter</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1220.png"
+ ALT="$ \ampere$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Nr</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1224.png"
+ ALT="$ N_{R}$"></SPAN></TD>
+<TD ALIGN="LEFT">Isr emission coefficient</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1225.png"
+ ALT="$ 2.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Cgs</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1327.png"
+ ALT="$ C_{gs}$"></SPAN></TD>
+<TD ALIGN="LEFT">zero-bias gate-source junction capacitance</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1229.png"
+ ALT="$ \farad$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Cgd</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1328.png"
+ ALT="$ C_{gd}$"></SPAN></TD>
+<TD ALIGN="LEFT">zero-bias gate-drain junction capacitance</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1229.png"
+ ALT="$ \farad$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Pb</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1329.png"
+ ALT="$ P_{b}$"></SPAN></TD>
+<TD ALIGN="LEFT">gate-junction potential</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1232.png"
+ ALT="$ \volt$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ 1.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Fc</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1234.png"
+ ALT="$ F_{c}$"></SPAN></TD>
+<TD ALIGN="LEFT">forward-bias junction capacitance coefficient</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1230.png"
+ ALT="$ 0.5$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">M</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img637.png"
+ ALT="$ M$"></SPAN></TD>
+<TD ALIGN="LEFT">gate P-N grading coefficient</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1230.png"
+ ALT="$ 0.5$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Kf</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1241.png"
+ ALT="$ K_F$"></SPAN></TD>
+<TD ALIGN="LEFT">flicker noise coefficient</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Af</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1242.png"
+ ALT="$ A_F$"></SPAN></TD>
+<TD ALIGN="LEFT">flicker noise exponent</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ 1.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Ffe</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1243.png"
+ ALT="$ F_{FE}$"></SPAN></TD>
+<TD ALIGN="LEFT">flicker noise frequency exponent</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ 1.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Temp</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.png"
+ ALT="$ T$"></SPAN></TD>
+<TD ALIGN="LEFT">device temperature</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $\degree \mathrm{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1244.png"
+ ALT="$ \degree \mathrm{C}$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1245.png"
+ ALT="$ 26.85$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Xti</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1246.png"
+ ALT="$ X_{TI}$"></SPAN></TD>
+<TD ALIGN="LEFT">saturation current exponent</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1247.png"
+ ALT="$ 3.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Vt0tc</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $V_{Th_{TC}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="48" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1330.png"
+ ALT="$ V_{Th_{TC}}$"></SPAN></TD>
+<TD ALIGN="LEFT">Vt0 temperature coefficient</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $\volt/\degree \mathrm{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1331.png"
+ ALT="$ \volt/\degree \mathrm{C}$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Betatce</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $\beta_{TCE}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1332.png"
+ ALT="$ \beta_{TCE}$"></SPAN></TD>
+<TD ALIGN="LEFT">Beta exponential temperature coefficient</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $\%/\degree \mathrm{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1333.png"
+ ALT="$ \%/\degree \mathrm{C}$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1223.png"
+ ALT="$ 0.0$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Tnom</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="48" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1258.png"
+ ALT="$ T_{NOM}$"></SPAN></TD>
+<TD ALIGN="LEFT">temperature at which parameters were extracted</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $\degree \mathrm{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1244.png"
+ ALT="$ \degree \mathrm{C}$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1245.png"
+ ALT="$ 26.85$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT">Area</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img380.png"
+ ALT="$ A$"></SPAN></TD>
+<TD ALIGN="LEFT">default area for JFET</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ 1.0$"></SPAN></TD>
+</TR>
+</TABLE>
+
+<P>
+<P>
+
+<H2><A NAME="SECTION001131000000000000000">
+Large signal model</A>
+</H2>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:jfet"></A><A NAME="12324"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 10.6:</STRONG>
+junction FET symbol and large signal model</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="351" HEIGHT="375" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1334.png"
+ ALT="\includegraphics[width=0.5\linewidth]{jfet}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The current equation of the gate source diode and its derivative
+writes as follows:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1335.png"
+ ALT="$\displaystyle I_{GS}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="307" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1336.png"
+ ALT="$\displaystyle = I_{S}\cdot \left(e^{\frac{V_{GS}}{N\cdot V_{T}}} - 1\right) + I_{SR}\cdot \left(e^{\frac{V_{GS}}{N_{R}\cdot V_{T}}} - 1\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">37</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1337.png"
+ ALT="$\displaystyle g_{gs}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="324" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1338.png"
+ ALT="$\displaystyle = \dfrac{\partial I_{GS}}{\partial V_{GS}} = \dfrac{I_{S}}{N\cdot...
+...}}} + \dfrac{I_{SR}}{N_{R}\cdot V_{T}}\cdot e^{\frac{V_{GS}}{N_{R}\cdot V_{T}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">38</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The current equation of the gate drain diode and its derivative writes
+as follows:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1339.png"
+ ALT="$\displaystyle I_{GD}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="307" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1340.png"
+ ALT="$\displaystyle = I_{S}\cdot \left(e^{\frac{V_{GD}}{N\cdot V_{T}}} - 1\right) + I_{SR}\cdot \left(e^{\frac{V_{GD}}{N_{R}\cdot V_{T}}} - 1\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">39</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1341.png"
+ ALT="$\displaystyle g_{gd}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="326" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1342.png"
+ ALT="$\displaystyle = \dfrac{\partial I_{GD}}{\partial V_{GD}} = \dfrac{I_{S}}{N\cdot...
+...}}} + \dfrac{I_{SR}}{N_{R}\cdot V_{T}}\cdot e^{\frac{V_{GD}}{N_{R}\cdot V_{T}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">40</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Both equations contain the gate-junction saturation current <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1219.png"
+ ALT="$ I_{S}$"></SPAN>,
+the gate P-N emission coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img720.png"
+ ALT="$ N$"></SPAN> and the temperature voltage
+<SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1343.png"
+ ALT="$ V_{T}$"></SPAN> with the Boltzmann's constant <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1344.png"
+ ALT="$ k_{B}$"></SPAN> and the electron charge
+<SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1345.png"
+ ALT="$ q$"></SPAN>.  The operating temperature <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.png"
+ ALT="$ T$"></SPAN> must be specified in Kelvin.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+V_{T} = \dfrac{k_{B}\cdot T}{q}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="88" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1346.png"
+ ALT="$\displaystyle V_{T} = \dfrac{k_{B}\cdot T}{q}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">41</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The controlled drain currents have been defined by Shichman and Hodges
+[<A
+ HREF="node103.html#Shichman">13</A>] for different modes of operations.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+g_{m} = \dfrac{\partial I_{d}}{\partial V_{GS}}
+\;\;\;\; \text{ and } \;\;\;\;
+g_{ds} = \dfrac{\partial I_{d}}{\partial V_{DS}}
+\;\;\;\; \text{ with } \;\;\;\;
+V_{GD} = V_{GS} - V_{DS}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="104" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1347.png"
+ ALT="$\displaystyle g_{m} = \dfrac{\partial I_{d}}{\partial V_{GS}} \;\;\;\;$">&nbsp; &nbsp; and&nbsp;<IMG
+ WIDTH="124" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1348.png"
+ ALT="$\displaystyle \;\;\;\; g_{ds} = \dfrac{\partial I_{d}}{\partial V_{DS}} \;\;\;\;$">&nbsp; &nbsp; with&nbsp;<IMG
+ WIDTH="150" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1349.png"
+ ALT="$\displaystyle \;\;\;\; V_{GD} = V_{GS} - V_{DS}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">42</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<UL>
+<LI>normal mode: <!-- MATH
+ $V_{DS} > 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="62" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1350.png"
+ ALT="$ V_{DS} &gt; 0$"></SPAN>
+
+<UL>
+<LI>normal mode, cutoff region: <!-- MATH
+ $V_{GS} - V_{Th} < 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="107" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1351.png"
+ ALT="$ V_{GS} - V_{Th} &lt; 0$"></SPAN>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1260.png"
+ ALT="$\displaystyle I_{d}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img755.png"
+ ALT="$\displaystyle = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">43</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1352.png"
+ ALT="$\displaystyle g_{m}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img755.png"
+ ALT="$\displaystyle = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">44</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1353.png"
+ ALT="$\displaystyle g_{ds}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img755.png"
+ ALT="$\displaystyle = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">45</SPAN>)</TD></TR>
+<TR>
+<TD COLSPAN=3 ALIGN="LEFT">
+<BR>
+normal mode, saturation region: <!-- MATH
+ $0 < V_{GS} - V_{Th} < V_{DS}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="158" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1354.png"
+ ALT="$ 0 &lt; V_{GS} - V_{Th} &lt; V_{DS}$"></SPAN><P>
+<BR></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1260.png"
+ ALT="$\displaystyle I_{d}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="230" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1355.png"
+ ALT="$\displaystyle = \beta \cdot\left(1 + \lambda V_{DS}\right) \cdot\left(V_{GS} - V_{Th}\right)^{2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">46</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1352.png"
+ ALT="$\displaystyle g_{m}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="231" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1356.png"
+ ALT="$\displaystyle = \beta \cdot\left(1 + \lambda V_{DS}\right) \cdot 2\left(V_{GS} - V_{Th}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">47</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1353.png"
+ ALT="$\displaystyle g_{ds}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="146" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1357.png"
+ ALT="$\displaystyle = \beta \cdot \lambda\left(V_{GS} - V_{Th}\right)^{2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">48</SPAN>)</TD></TR>
+<TR>
+<TD COLSPAN=3 ALIGN="LEFT">
+<BR>
+normal mode, linear region: <!-- MATH
+ $V_{DS} < V_{GS} - V_{Th}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="129" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1358.png"
+ ALT="$ V_{DS} &lt; V_{GS} - V_{Th}$"></SPAN><P>
+<BR></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1260.png"
+ ALT="$\displaystyle I_{d}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="336" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1359.png"
+ ALT="$\displaystyle = \beta\cdot\left(1 + \lambda V_{DS}\right)\cdot\left(2 \left(V_{GS} - V_{Th}\right) - V_{DS}\right)\cdot V_{DS}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">49</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1352.png"
+ ALT="$\displaystyle g_{m}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="180" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1360.png"
+ ALT="$\displaystyle = \beta\cdot\left(1 + \lambda V_{DS}\right)\cdot 2\cdot V_{DS}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">50</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1353.png"
+ ALT="$\displaystyle g_{ds}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="528" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1361.png"
+ ALT="$\displaystyle = \beta\cdot\left(1 + \lambda V_{DS}\right)\cdot 2\left(V_{GS} - ...
+...ta \cdot \lambda V_{DS}\cdot\left(2\left(V_{GS} - V_{Th}\right) - V_{DS}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">51</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+</LI>
+</UL>
+</LI>
+<LI>inverse mode: <!-- MATH
+ $V_{DS} < 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="62" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1362.png"
+ ALT="$ V_{DS} &lt; 0$"></SPAN>
+
+<UL>
+<LI>inverse mode, cutoff region: <!-- MATH
+ $V_{GD} - V_{Th} < 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="110" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1363.png"
+ ALT="$ V_{GD} - V_{Th} &lt; 0$"></SPAN>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1260.png"
+ ALT="$\displaystyle I_{d}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img755.png"
+ ALT="$\displaystyle = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">52</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1352.png"
+ ALT="$\displaystyle g_{m}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img755.png"
+ ALT="$\displaystyle = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">53</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1353.png"
+ ALT="$\displaystyle g_{ds}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img755.png"
+ ALT="$\displaystyle = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">54</SPAN>)</TD></TR>
+<TR>
+<TD COLSPAN=3 ALIGN="LEFT">
+<BR>
+inverse mode, saturation region: <!-- MATH
+ $0 < V_{GD} - V_{Th} < -V_{DS}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="173" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1364.png"
+ ALT="$ 0 &lt; V_{GD} - V_{Th} &lt; -V_{DS}$"></SPAN><P>
+<BR></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1260.png"
+ ALT="$\displaystyle I_{d}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="245" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1365.png"
+ ALT="$\displaystyle = -\beta \cdot\left(1 - \lambda V_{DS}\right) \cdot\left(V_{GD} - V_{Th}\right)^{2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">55</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1352.png"
+ ALT="$\displaystyle g_{m}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="246" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1366.png"
+ ALT="$\displaystyle = -\beta \cdot\left(1 - \lambda V_{DS}\right) \cdot 2\left(V_{GD} - V_{Th}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">56</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1353.png"
+ ALT="$\displaystyle g_{ds}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="381" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1367.png"
+ ALT="$\displaystyle = \beta \cdot\lambda \left(V_{GD} - V_{Th}\right)^{2} + \beta\cdot\left(1 - \lambda V_{DS}\right) \cdot 2\left(V_{GD} - V_{Th}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">57</SPAN>)</TD></TR>
+<TR>
+<TD COLSPAN=3 ALIGN="LEFT">
+<BR>
+inverse mode, linear region: <!-- MATH
+ $-V_{DS} < V_{GD} - V_{Th}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="143" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1368.png"
+ ALT="$ -V_{DS} &lt; V_{GD} - V_{Th}$"></SPAN><P>
+<BR></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1260.png"
+ ALT="$\displaystyle I_{d}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="339" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1369.png"
+ ALT="$\displaystyle = \beta\cdot\left(1 - \lambda V_{DS}\right)\cdot\left(2 \left(V_{GD} - V_{Th}\right) + V_{DS}\right)\cdot V_{DS}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">58</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1352.png"
+ ALT="$\displaystyle g_{m}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="180" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1370.png"
+ ALT="$\displaystyle = \beta\cdot\left(1 - \lambda V_{DS}\right)\cdot 2\cdot V_{DS}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">59</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1353.png"
+ ALT="$\displaystyle g_{ds}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="484" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1371.png"
+ ALT="$\displaystyle = \beta\cdot\left(1 - \lambda V_{DS}\right)\cdot 2\left(V_{GD} - ...
+...ta \cdot \lambda V_{DS}\cdot\left(2\left(V_{GD} - V_{Th}\right) + V_{DS}\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">60</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+</LI>
+</UL>
+</LI>
+</UL>
+
+<P>
+The MNA matrix entries for the voltage controlled drain current source
+can be written as:
+
+<P>
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=43>
+<DIV ALIGN="RIGHT"></TD>
+<TD ALIGN="LEFT">
+<DIV ALIGN="CENTER">
+
+</DIV>
+G</TD>
+<TD ALIGN="LEFT">
+<DIV ALIGN="CENTER">
+
+</DIV>
+S</TD>
+<TD ALIGN="LEFT">controlling nodes</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=43>
+<DIV ALIGN="RIGHT">D</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1372.png"
+ ALT="$ +g_{m}$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1373.png"
+ ALT="$ -g_{m}$"></SPAN></TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=43>
+<DIV ALIGN="RIGHT">S</TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1373.png"
+ ALT="$ -g_{m}$"></SPAN></TD>
+<TD ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1372.png"
+ ALT="$ +g_{m}$"></SPAN></TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=43>
+<DIV ALIGN="RIGHT">controlled nodes</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+<P>
+With the accompanied DC model shown in fig. <A HREF="#fig:dcjfet">10.7</A> using the
+same principles as explained in section <A HREF="node16.html#sec:DCdiode">3.3.1</A> on page
+<A HREF="node16.html#sec:DCdiode"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A> it is possible to build the complete MNA matrix
+of the intrinsic JFET.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:dcjfet"></A><A NAME="12511"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 10.7:</STRONG>
+accompanied DC model of intrinsic JFET</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="354" HEIGHT="303" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1374.png"
+ ALT="\includegraphics[width=0.5\linewidth]{dcjfet}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Applying the rules for creating the MNA matrix of an arbitrary network
+the complete MNA matrix entries (admittance matrix and current vector)
+for the intrinsic junction FET are:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+g_{gd} + g_{gs} & -g_{gd} & -g_{gs}\\
+-g_{gd} + g_{m} & g_{ds} + g_{gd} & -g_{ds} - g_{m}\\
+-g_{gs} - g_{m} & -g_{ds} & g_{gs} + g_{ds} + g_{m}
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{G}\\
+V_{D}\\
+V_{S}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+-I_{GD_{eq}} - I_{GS_{eq}}\\
++I_{GD_{eq}} - I_{DS_{eq}}\\
++I_{GS_{eq}} + I_{DS_{eq}}
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="502" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1375.png"
+ ALT="$\displaystyle \begin{bmatrix}g_{gd} + g_{gs} &amp; -g_{gd} &amp; -g_{gs}\\ -g_{gd} + g_...
+...S_{eq}}\\ +I_{GD_{eq}} - I_{DS_{eq}}\\ +I_{GS_{eq}} + I_{DS_{eq}} \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">61</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1376.png"
+ ALT="$\displaystyle I_{GS_{eq}}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="125" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1377.png"
+ ALT="$\displaystyle = I_{GS} - g_{gs}\cdot V_{GS}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">62</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1378.png"
+ ALT="$\displaystyle I_{GD_{eq}}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="130" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1379.png"
+ ALT="$\displaystyle = I_{GD} - g_{gd}\cdot V_{GD}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">63</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1380.png"
+ ALT="$\displaystyle I_{DS_{eq}}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="191" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1381.png"
+ ALT="$\displaystyle = I_{d} - g_{m}\cdot V_{GS} - g_{ds}\cdot V_{DS}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">64</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION001132000000000000000">
+Small signal model</A>
+</H2>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:spjfet"></A><A NAME="12568"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 10.8:</STRONG>
+small signal model of intrinsic junction FET</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="318" HEIGHT="326" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1382.png"
+ ALT="\includegraphics[width=0.45\linewidth]{spjfet}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The small signal Y-parameter matrix of the intrinsic junction FET
+writes as follows.  It can be converted to S-parameters.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Y =
+\begin{bmatrix}
+Y_{GD} + Y_{GS} & -Y_{GD} & -Y_{GS}\\
+g_{m} - Y_{GD} & Y_{GD} + Y_{DS} & -Y_{DS} - g_{m}\\
+-g_{m} - Y_{GS} & -Y_{DS} & Y_{GS} + Y_{DS} + g_{m}\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="366" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1383.png"
+ ALT="$\displaystyle Y = \begin{bmatrix}Y_{GD} + Y_{GS} &amp; -Y_{GD} &amp; -Y_{GS}\\ g_{m} - ...
+...} - g_{m}\\ -g_{m} - Y_{GS} &amp; -Y_{DS} &amp; Y_{GS} + Y_{DS} + g_{m}\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">65</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1384.png"
+ ALT="$\displaystyle Y_{GD}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="112" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1385.png"
+ ALT="$\displaystyle = g_{gd} + j\omega C_{GD}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">66</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1386.png"
+ ALT="$\displaystyle Y_{GS}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="109" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1387.png"
+ ALT="$\displaystyle = g_{gs} + j\omega C_{GS}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">67</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1388.png"
+ ALT="$\displaystyle Y_{DS}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1389.png"
+ ALT="$\displaystyle = g_{ds}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">68</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The junction capacitances are modeled with the following equations.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1390.png"
+ ALT="$\displaystyle C_{GD}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="485" HEIGHT="99" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1391.png"
+ ALT="$\displaystyle = \begin{cases}\begin{array}{ll} C_{gd}\cdot \left(1 - \dfrac{V_{...
+...ght)}\right) &amp; \textrm{ for } V_{GD} &gt; F_{c}\cdot P_{b} \end{array} \end{cases}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">69</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1392.png"
+ ALT="$\displaystyle C_{GS}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="481" HEIGHT="99" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1393.png"
+ ALT="$\displaystyle = \begin{cases}\begin{array}{ll} C_{gs}\cdot \left(1 - \dfrac{V_{...
+...ght)}\right) &amp; \textrm{ for } V_{GS} &gt; F_{c}\cdot P_{b} \end{array} \end{cases}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">70</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION001133000000000000000">
+Noise model</A>
+</H2>
+
+<P>
+Both the drain and source resistance <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1394.png"
+ ALT="$ R_D$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$ R_S$"></SPAN> generate thermal
+noise characterized by the following spectral density.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\dfrac{\overline{i_{R_D}^2}}{\Delta f} = \dfrac{4 k_B T}{R_D}
+\;\;\;\; \textrm{ and } \;\;\;\;
+\dfrac{\overline{i_{R_S}^2}}{\Delta f} = \dfrac{4 k_B T}{R_S}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="260" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1395.png"
+ ALT="$\displaystyle \dfrac{\overline{i_{R_D}^2}}{\Delta f} = \dfrac{4 k_B T}{R_D} \;\...
+...m{ and } \;\;\;\; \dfrac{\overline{i_{R_S}^2}}{\Delta f} = \dfrac{4 k_B T}{R_S}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">71</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:noisejfet"></A><A NAME="12671"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 10.9:</STRONG>
+noise model of intrinsic junction FET</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="412" HEIGHT="330" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1396.png"
+ ALT="\includegraphics[width=0.58\linewidth]{noisejfet}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Channel noise and flicker noise generated by the DC transconductance
+<SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1397.png"
+ ALT="$ g_m$"></SPAN> and current flow from drain to source is characterized by the
+following spectral density.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\dfrac{\overline{i_{ds}^2}}{\Delta f} = \dfrac{8 k_B T g_m}{3} + K_F\dfrac{I_{DS}^{A_F}}{f^{F_{FE}}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="197" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1398.png"
+ ALT="$\displaystyle \dfrac{\overline{i_{ds}^2}}{\Delta f} = \dfrac{8 k_B T g_m}{3} + K_F\dfrac{I_{DS}^{A_F}}{f^{F_{FE}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">72</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The noise current correlation matrix (admittance representation) of
+the intrinsic junction FET can be expressed by
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{C}_Y = \Delta f
+\begin{bmatrix}
+0 & 0 & 0\\
+0 & +\overline{i_{ds}^2} & -\overline{i_{ds}^2}\\
+0 & -\overline{i_{ds}^2} & +\overline{i_{ds}^2}\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="197" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1399.png"
+ ALT="$\displaystyle \underline{C}_Y = \Delta f \begin{bmatrix}0 &amp; 0 &amp; 0\\ 0 &amp; +\overl...
+...ine{i_{ds}^2}\\ 0 &amp; -\overline{i_{ds}^2} &amp; +\overline{i_{ds}^2}\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">73</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+This matrix representation can be easily converted to the noise-wave
+representation <!-- MATH
+ $\underline{C}_S$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img251.png"
+ ALT="$ \underline{C}_S$"></SPAN> if the small signal S-parameter
+matrix is known.
+
+<P>
+
+<H2><A NAME="SECTION001134000000000000000">
+Temperature model</A>
+</H2>
+
+<P>
+Temperature appears explicitly in the exponential terms of the JFET
+model equations.  In addition, saturation current, gate-junction
+potential and zero-bias junction capacitances have built-in
+temperature dependence.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="51" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1301.png"
+ ALT="$\displaystyle I_S\left(T_2\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="421" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1302.png"
+ ALT="$\displaystyle = I_S\left(T_1\right)\cdot \left(\dfrac{T_2}{T_1}\right)^{X_{TI} ...
+...00K\right)}{N\cdot k_B\cdot T_2}\cdot \left(1 - \dfrac{T_2}{T_1}\right)\right]}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">74</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="61" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1400.png"
+ ALT="$\displaystyle I_{SR}\left(T_2\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="439" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1401.png"
+ ALT="$\displaystyle = I_{SR}\left(T_1\right)\cdot \left(\dfrac{T_2}{T_1}\right)^{X_{T...
+...K\right)}{N_R\cdot k_B\cdot T_2}\cdot \left(1 - \dfrac{T_2}{T_1}\right)\right]}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">75</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1402.png"
+ ALT="$\displaystyle P_{b}\left(T_2\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="474" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1403.png"
+ ALT="$\displaystyle = \dfrac{T_2}{T_1}\cdot P_{b}\left(T_1\right) - \dfrac{2\cdot k_B...
+...- \left(\dfrac{T_2}{T_1} \cdot E_G\left(T_1\right) - E_G\left(T_2\right)\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">76</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1404.png"
+ ALT="$\displaystyle C_{gs}\left(T_2\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="478" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1405.png"
+ ALT="$\displaystyle = C_{gs}\left(T_1\right)\cdot\left(1 + M\cdot\left(400\cdot 10^{-...
+...}\left(T_2\right) - P_{b}\left(T_1\right)}{P_{b}\left(T_1\right)}\right)\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">77</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1406.png"
+ ALT="$\displaystyle C_{gd}\left(T_2\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="479" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1407.png"
+ ALT="$\displaystyle = C_{gd}\left(T_1\right)\cdot\left(1 + M\cdot\left(400\cdot 10^{-...
+...}\left(T_2\right) - P_{b}\left(T_1\right)}{P_{b}\left(T_1\right)}\right)\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">78</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where the <!-- MATH
+ $E_G\left(T\right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1408.png"
+ ALT="$ E_G\left(T\right)$"></SPAN> dependency has already been described in
+section <A HREF="node68.html#sec:DiodeTemp">10.2.4</A> on page <A HREF="node68.html#sec:DiodeTemp"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.  Also the
+threshold voltage as well as the transconductance parameter have a
+temperature dependence determined by
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="62" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1409.png"
+ ALT="$\displaystyle V_{Th}\left(T_2\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="219" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1410.png"
+ ALT="$\displaystyle = V_{Th}\left(T_1\right) + V_{Th_{TC}}\cdot\left(T_2 - T_1\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">79</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1411.png"
+ ALT="$\displaystyle \beta\left(T_2\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="192" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1412.png"
+ ALT="$\displaystyle = \beta\left(T_1\right)\cdot 1.01^{\beta_{TCE}\cdot\left(T_2 - T_1\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">80</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION001135000000000000000">
+Area dependence of the model</A>
+</H2>
+
+<P>
+The area factor <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img380.png"
+ ALT="$ A$"></SPAN> used for the JFET model determines the number of
+equivalent parallel devices of a specified model.  The following
+parameters are affected by the area factor.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1413.png"
+ ALT="$\displaystyle \beta\left(A\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1414.png"
+ ALT="$\displaystyle = \beta\cdot A$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1316.png"
+ ALT="$\displaystyle I_S\left(A\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1317.png"
+ ALT="$\displaystyle = I_S\cdot A$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">81</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1415.png"
+ ALT="$\displaystyle R_D\left(A\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="48" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1416.png"
+ ALT="$\displaystyle = \dfrac{R_D}{A}$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1320.png"
+ ALT="$\displaystyle R_S\left(A\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1321.png"
+ ALT="$\displaystyle = \dfrac{R_S}{A}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">82</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="55" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1417.png"
+ ALT="$\displaystyle C_{gs}\left(A\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="67" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1418.png"
+ ALT="$\displaystyle = C_{gs}\cdot A$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="56" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1419.png"
+ ALT="$\displaystyle C_{gd}\left(A\right)$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="67" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1420.png"
+ ALT="$\displaystyle = C_{gd}\cdot A$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">83</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1664"
+  HREF="node70.html">Homo-Junction Bipolar Transistor</A>
+<B>Up:</B> <A NAME="tex2html1660"
+  HREF="node66.html">Non-linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1654"
+  HREF="node68.html">PN-Junction Diode</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

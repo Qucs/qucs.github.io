@@ -1,0 +1,353 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Microstrip cross</TITLE>
+<META NAME="description" CONTENT="Microstrip cross">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node83.html">
+<LINK REL="previous" HREF="node81.html">
+<LINK REL="up" HREF="node74.html">
+<LINK REL="next" HREF="node83.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1907"
+  HREF="node83.html">Microstrip via hole</A>
+<B>Up:</B> <A NAME="tex2html1903"
+  HREF="node74.html">Microstrip components</A>
+<B> Previous:</B> <A NAME="tex2html1897"
+  HREF="node81.html">Microstrip tee junction</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001280000000000000000">
+Microstrip cross</A>
+</H1>
+
+<P>
+The most useful model of a microstrip cross have been published in
+[<A
+ HREF="node103.html#Gupta1">39</A>,<A
+ HREF="node103.html#Garg1">40</A>]. Fig. <A HREF="#fig:mscross">11.10</A> shows the equivalent
+circuit (right-hand side) and the scheme with dimensions (left-hand
+side). The hatched area in the scheme marks the area modeled by the
+equivalent circuit. As can be seen the model require the microstrip
+width of line 1 and 3, as well as the one of line 2 and 4 to equal
+each other. Furthermore the permittivity of the substrat must be
+<!-- MATH
+ $\epsilon_r = 9.9$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="59" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2392.png"
+ ALT="$ \epsilon_r = 9.9$"></SPAN>. The component values are calculated as follows:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:mscross_cx"></A><!-- MATH
+ \begin{equation}
+X = \log_{10}\left(\dfrac{W_1}{h}\right)\cdot \left( 86.6\cdot\dfrac{W_2}{h}
+    -30.9\cdot\sqrt{\dfrac{W_2}{h}} + 367 \right) +
+    \left( \dfrac{W_2}{h} \right)^3 + 74\cdot\dfrac{W_2}{h} + 130
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="563" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2393.png"
+ ALT="$\displaystyle X = \log_{10}\left(\dfrac{W_1}{h}\right)\cdot \left( 86.6\cdot\df...
+...} + 367 \right) + \left( \dfrac{W_2}{h} \right)^3 + 74\cdot\dfrac{W_2}{h} + 130$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">226</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:mscross_c1"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+C_1 &= C_2 = C_3 = C_4 \\
+    &= 10^{-12}\cdot W_1\cdot \left(
+    0.25\cdot X\cdot\left( \dfrac{h}{W_1} \right)^{1/3} - 60 +
+    \dfrac{h}{2\cdot W_2} - 0.375\cdot\dfrac{W_1}{h}\cdot
+    \left( 1-\dfrac{W_2}{h} \right) \right)
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="557" HEIGHT="80" BORDER="0"
+ SRC="img2394.png"
+ ALT="\begin{displaymath}\begin{split}C_1 &amp;= C_2 = C_3 = C_4 \\ &amp;= 10^{-12}\cdot W_1\c...
+..._1}{h}\cdot \left( 1-\dfrac{W_2}{h} \right) \right) \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">227</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:mscross_ly"></A><!-- MATH
+ \begin{equation}
+Y = 165.6\cdot\dfrac{W_2}{h} + 31.2\sqrt{\dfrac{W_2}{h}}
+    -11.8\cdot\left( \dfrac{W_2}{h} \right)^2
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="316" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2395.png"
+ ALT="$\displaystyle Y = 165.6\cdot\dfrac{W_2}{h} + 31.2\sqrt{\dfrac{W_2}{h}} -11.8\cdot\left( \dfrac{W_2}{h} \right)^2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">228</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:mscross_l1"></A><!-- MATH
+ \begin{equation}
+L_1 = 10^{-9}\cdot h\cdot \left( Y\cdot\dfrac{W_1}{h}
+    - 32\cdot\dfrac{W_2}{h} + 3 \right) \cdot \left(
+    \dfrac{h}{W_1} \right)^{1.5}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="359" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2396.png"
+ ALT="$\displaystyle L_1 = 10^{-9}\cdot h\cdot \left( Y\cdot\dfrac{W_1}{h} - 32\cdot\dfrac{W_2}{h} + 3 \right) \cdot \left( \dfrac{h}{W_1} \right)^{1.5}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">229</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:mscross_l3"></A><!-- MATH
+ \begin{equation}
+L_3 = 10^{-9}\cdot h\cdot \left( 5\cdot\dfrac{W_2}{h}\cdot
+      \cos{\left( \dfrac{\pi}{2}\cdot \left( 1.5 - \dfrac{W_1}{h}
+      \right) \right)} - \left( 1+\dfrac{7\cdot h}{W_1}\right)\cdot
+      \dfrac{h}{W_2} - 337.5 \right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="544" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2397.png"
+ ALT="$\displaystyle L_3 = 10^{-9}\cdot h\cdot \left( 5\cdot\dfrac{W_2}{h}\cdot \cos{\...
+...t)} - \left( 1+\dfrac{7\cdot h}{W_1}\right)\cdot \dfrac{h}{W_2} - 337.5 \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">230</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The equation of <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img751.png"
+ ALT="$ L_2$"></SPAN> is obtained from the one of <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.png"
+ ALT="$ L_1$"></SPAN> by
+exchanging the indices (<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2398.png"
+ ALT="$ W_1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2366.png"
+ ALT="$ W_2$"></SPAN>). Note that <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2399.png"
+ ALT="$ L_3$"></SPAN> is
+negative, so the model is unphysical without external microstrip
+lines. The above-mentioned equations are accurate to within 5%
+for <!-- MATH
+ $0.3\le W_1/h \le 3$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="114" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2400.png"
+ ALT="$ 0.3\le W_1/h \le 3$"></SPAN> and <!-- MATH
+ $0.1\le W_2/h \le 3$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="114" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2401.png"
+ ALT="$ 0.1\le W_2/h \le 3$"></SPAN> (value of
+<!-- MATH
+ $C_1 \dots C_4$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="64" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2402.png"
+ ALT="$ C_1 \dots C_4$"></SPAN>) or for <!-- MATH
+ $0.5\le W_{1,2}/h \le 2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="124" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2403.png"
+ ALT="$ 0.5\le W_{1,2}/h \le 2$"></SPAN> (value of
+<!-- MATH
+ $L_1 \dots L_3$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="63" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2404.png"
+ ALT="$ L_1 \dots L_3$"></SPAN>), respectively.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:mscross"></A><A NAME="19466"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 11.10:</STRONG>
+single-symmetrical microstrip cross and its model</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="403" HEIGHT="182" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2405.png"
+ ALT="\includegraphics[width=9cm]{mscross}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Some improvement should be added to the original model:
+
+<OL>
+<LI>Comparisons with real life show that the value of <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2399.png"
+ ALT="$ L_3$"></SPAN> is
+      too large. Multiplying it by 0.8 leads to much better results.
+</LI>
+<LI>The model can be expanded for substrates with <!-- MATH
+ $\epsilon_r \neq 9.9$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="59" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2406.png"
+ ALT="$ \epsilon_r \neq 9.9$"></SPAN>
+      by modifying the values of the capacitances:
+      <P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+C_x = C_x(\epsilon_r=9.9)\cdot
+          \dfrac{Z_0(\epsilon_r=9.9, W=W_x)}{Z_0(\epsilon_r=\epsilon_{r,sub}, W=W_x)}
+          \cdot
+          \sqrt{\dfrac{\epsilon_{eff}(\epsilon_r=\epsilon_{r,sub}, W=W_x)}
+               {\epsilon_{eff}(\epsilon_r=9.9, W=W_x)}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="523" HEIGHT="69" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2407.png"
+ ALT="$\displaystyle C_x = C_x(\epsilon_r=9.9)\cdot \dfrac{Z_0(\epsilon_r=9.9, W=W_x)}...
+...}(\epsilon_r=\epsilon_{r,sub}, W=W_x)} {\epsilon_{eff}(\epsilon_r=9.9, W=W_x)}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">231</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The equations of <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img113.png"
+ ALT="$ Z_0$"></SPAN> and <!-- MATH
+ $\epsilon_{eff}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2408.png"
+ ALT="$ \epsilon_{eff}$"></SPAN> are the ones from the
+      microstrip lines.
+</LI>
+</OL>
+
+<P>
+A useful model for an unsymmetrical cross junction has never been
+published. Nonetheless, as long as the lines that lie opposite are not
+to different in width, the model described here can be used as a first
+order approximation. This is perfomred by replacing <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2398.png"
+ ALT="$ W_1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2366.png"
+ ALT="$ W_2$"></SPAN> by the
+arithmetic mean of the line widths that lie opposite. This is done:
+
+<UL>
+<LI>In equation (<A HREF="#eqn:mscross_cx">11.226</A>) and (<A HREF="#eqn:mscross_c1">11.227</A>) for <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2366.png"
+ ALT="$ W_2$"></SPAN>
+      only, whereas <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2398.png"
+ ALT="$ W_1$"></SPAN> is replaced by the width of the line.
+</LI>
+<LI>In equation (<A HREF="#eqn:mscross_ly">11.228</A>) and (<A HREF="#eqn:mscross_l1">11.229</A>) for <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2366.png"
+ ALT="$ W_2$"></SPAN>
+      only, whereas <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2398.png"
+ ALT="$ W_1$"></SPAN> is replaced by the width of the line.
+</LI>
+<LI>In equation (<A HREF="#eqn:mscross_l3">11.230</A>) for <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2398.png"
+ ALT="$ W_1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2366.png"
+ ALT="$ W_2$"></SPAN>.
+</LI>
+</UL>
+
+<P>
+<P>
+Another closed-form expression describing the non-ideal behaviour of a
+microstrip cross junction was published by [<A
+ HREF="node103.html#Akello">41</A>].
+Additionally there have been published papers [<A
+ HREF="node103.html#Silvester1">42</A>,<A
+ HREF="node103.html#Gopinath">43</A>,<A
+ HREF="node103.html#Easter">44</A>] giving analytic (but not closed-form) expressions or
+just simple equivalent circuits with only a few expressions for
+certain topologies and dielectric constants which are actually of no
+pratical use.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1907"
+  HREF="node83.html">Microstrip via hole</A>
+<B>Up:</B> <A NAME="tex2html1903"
+  HREF="node74.html">Microstrip components</A>
+<B> Previous:</B> <A NAME="tex2html1897"
+  HREF="node81.html">Microstrip tee junction</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

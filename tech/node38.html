@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Non-Linear Subcircuit</TITLE>
+<META NAME="description" CONTENT="The Non-Linear Subcircuit">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node39.html">
+<LINK REL="previous" HREF="node37.html">
+<LINK REL="up" HREF="node36.html">
+<LINK REL="next" HREF="node39.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1218"
+  HREF="node39.html">Noise Conversion</A>
+<B>Up:</B> <A NAME="tex2html1214"
+  HREF="node36.html">Harmonic Balance Noise Analysis</A>
+<B> Previous:</B> <A NAME="tex2html1208"
+  HREF="node37.html">The Linear Subcircuit</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00920000000000000000">
+The Non-Linear Subcircuit</A>
+</H1>
+
+<P>
+The noise in the non-linear part of the circuit is calculated
+by using the quasi-static approach, i.e. for every moment in
+time the voltages and currents are regarded as a time-dependend
+bias point. The noise properties of these bias points are
+used for the noise calculation.
+
+<P>
+<P>
+Remark: It is not clear whether this approach creates a valid result
+for noise with long-time correlation (e.g. 1/f noise), too. But up
+to now, no other methods were proposed and some publications
+reported to have achieved reasonable results with this approach
+and 1/f noise.
+
+<P>
+<P>
+Calculating the noise-current correlation matrix <!-- MATH
+ $(\underline{C}_{Y,nl})_{N\times N}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="86" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img854.png"
+ ALT="$ (\underline{C}_{Y,nl})_{N\times N}$"></SPAN>
+needs several steps. The DC bias point taken from the result of the
+HB simulation is the beginning. Its values are the bias used to build
+the correlation matrix <!-- MATH
+ $(\underline{C}_{Y,DC})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="62" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img855.png"
+ ALT="$ (\underline{C}_{Y,DC})$"></SPAN>. Each part is a <SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img794.png"
+ ALT="$ K \times K$"></SPAN>
+diagonal submatrix. The values are the power-spectral densities (PSD)
+for each harmonic frequency:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+C_{Y,DC}(\omega_R) \qquad C_{Y,DC}(\omega_0 + \omega_R) \qquad
+C_{Y,DC}(2\cdot\omega_0 + \omega_R) \qquad \dots
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="446" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img856.png"
+ ALT="$\displaystyle C_{Y,DC}(\omega_R) \qquad C_{Y,DC}(\omega_0 + \omega_R) \qquad C_{Y,DC}(2\cdot\omega_0 + \omega_R) \qquad \dots$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">8</SPAN>.<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img857.png"
+ ALT="$ \omega_R$"></SPAN> is the desired noise frequency.
+
+<P>
+<P>
+The second step creates the cyclostationary modulation that is applied
+to the DC correlation matrix. The modulation factor <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img858.png"
+ ALT="$ M(t)$"></SPAN> originates
+from the current power spectral density <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img859.png"
+ ALT="$ S_i$"></SPAN> of each time step
+normalized to its DC bias value:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+M(t) = \dfrac{S_i\left( u(t) \right)}{S_i(u_{DC})}
+     = \dfrac{S_i\left( u(t) \right)}{C_{Y,DC}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="204" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.png"
+ ALT="$\displaystyle M(t) = \dfrac{S_i\left( u(t) \right)}{S_i(u_{DC})} = \dfrac{S_i\left( u(t) \right)}{C_{Y,DC}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">8</SPAN>.<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Note that this equation only holds if the frequency dependency of
+<SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img859.png"
+ ALT="$ S_i$"></SPAN> is the same for every bias, so that <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img858.png"
+ ALT="$ M(t)$"></SPAN> is frequency
+independent. This demand is fullfilled for all practical models.
+So the above-mentioned equation can be derived for an arbitrary
+noise frequency <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img857.png"
+ ALT="$ \omega_R$"></SPAN>.
+
+<P>
+<P>
+The third step transforms <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img858.png"
+ ALT="$ M(t)$"></SPAN> into frequency domain. This is done
+by the procedure described in equation <A HREF="node32.html#eqn:sMatFFT">7.13</A>, resulting
+in a Toeplitz matrix.
+<BR>
+The fourth and final step calculates the desired correlation matrix:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{C}_{Y,nl}) = M \cdot (\underline{C}_{Y,DC}) \cdot M^+
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="197" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img861.png"
+ ALT="$\displaystyle (\underline{C}_{Y,nl}) = M \cdot (\underline{C}_{Y,DC}) \cdot M^+$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">8</SPAN>.<SPAN CLASS="arabic">4</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1218"
+  HREF="node39.html">Noise Conversion</A>
+<B>Up:</B> <A NAME="tex2html1214"
+  HREF="node36.html">Harmonic Balance Noise Analysis</A>
+<B> Previous:</B> <A NAME="tex2html1208"
+  HREF="node37.html">The Linear Subcircuit</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,3625 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 25 March 2009), see www.w3.org" />
+  <meta http-equiv="content-type" content=
+  "text/html; charset=us-ascii" />
+
+  <title>Qucs project: documentation</title>
+  <link href="qucsweb.css" rel="stylesheet" type="text/css" />
+  <!-- header and footer include scripts -->
+
+  <script src="headerfooter.js" type="text/javascript">
+</script>
+</head>
+
+<body>
+  <!-- include the common web page header -->
+  <script type="text/javascript">
+//<![CDATA[
+  header()
+  //]]>
+  </script>
+
+  <div id="main">
+    <hr />
+
+    <center>
+      [ <a href="docs.html">user manual</a> - <a href=
+      "thirdparty.html">third party</a> - <a href=
+      "technical.html">technical papers</a> - components - <a href=
+      "build.html">build instructions</a> - <a href=
+      "install.html">install instructions</a> ]
+    </center>
+
+    <h3><a name="#list">Available components</a></h3>
+
+    <p>The following table shows which components are supported by
+    the simulator for which kind of simulations.</p>
+
+    <table border="1" cellpadding="3" width="100%">
+      <tr bgcolor="blue">
+        <th><font color="white">component</font></th>
+
+        <th><font color="white">symbol</font></th>
+
+        <th><font color="white">DC analysis</font></th>
+
+        <th><font color="white">S-Parameter<br />
+        analysis</font></th>
+
+        <th><font color="white">Noise waves</font></th>
+
+        <th><font color="white">AC analysis</font></th>
+
+        <th><font color="white">AC noise</font></th>
+
+        <th><font color="white">Transient<br />
+        analysis</font></th>
+
+        <th><font color="white">Harmonic<br />
+        Balance</font></th>
+
+        <th><font color="white">Digital<br />
+        simulation</font></th>
+
+        <th><font color="white">comment</font></th>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">resistor</td>
+
+        <td align="center"><img src="images/res.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">capacitor</td>
+
+        <td align="center"><img src="images/cap.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">inductor</td>
+
+        <td align="center"><img src="images/ind.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">ground</td>
+
+        <td align="center"><img src="images/gnd.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">required in analog simulations</td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">DC block</td>
+
+        <td align="center"><img src="images/dcblock.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">DC feed</td>
+
+        <td align="center"><img src="images/dcfeed.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">bias T</td>
+
+        <td align="center"><img src="images/biast.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">attenuator</td>
+
+        <td align="center"><img src="images/atten.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">isolator</td>
+
+        <td align="center"><img src="images/iso.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">circulator</td>
+
+        <td align="center"><img src="images/circ.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">phase shifter</td>
+
+        <td align="center"><img src="images/phase.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">DC model: short</td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">ideal coupler</td>
+
+        <td align="center"><img src="images/coupler.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">time controlled switch</td>
+
+        <td align="center"><img src="images/switch.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">relais</td>
+
+        <td align="center"><img src="images/relais.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">current probe</td>
+
+        <td align="center"><img src="images/iprobe.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">voltage probe</td>
+
+        <td align="center"><img src="images/vprobe.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">ideal transmission<br />
+        line</td>
+
+        <td align="center"><img src="images/tline.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">4-terminal transmission<br />
+        line</td>
+
+        <td align="center"><img src="images/tline4p.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">twisted pair<br />
+        line</td>
+
+        <td align="center"><img src="images/twistedpair.png"
+        border="0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">coaxial line</td>
+
+        <td align="center"><img src="images/coax.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">rectangular waveguide</td>
+
+        <td align="center"><img src="images/rectangular.png"
+        border="0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">microstrip line</td>
+
+        <td align="center"><img src="images/msline.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">microstrip open</td>
+
+        <td align="center"><img src="images/msopen.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">microstrip cross</td>
+
+        <td align="center"><img src="images/mscross.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">microstrip<br />
+        mitered bend</td>
+
+        <td align="center"><img src="images/msmbend.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">microstrip step</td>
+
+        <td align="center"><img src="images/msstep.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">microstrip tee</td>
+
+        <td align="center"><img src="images/mstee.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">microstrip corner</td>
+
+        <td align="center"><img src="images/mscorner.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">microstrip gap</td>
+
+        <td align="center"><img src="images/msgap.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">coupled microstrip<br />
+        line</td>
+
+        <td align="center"><img src="images/mscoupled.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">microstrip via</td>
+
+        <td align="center"><img src="images/msvia.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">microstrip radial stub</td>
+
+        <td align="center"><img src="images/msrstub.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">coplanar line</td>
+
+        <td align="center"><img src="images/coplanar.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">coplanar open</td>
+
+        <td align="center"><img src="images/cpwopen.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">coplanar short</td>
+
+        <td align="center"><img src="images/cpwshort.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">coplanar series gap</td>
+
+        <td align="center"><img src="images/cpwgap.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">coplanar step</td>
+
+        <td align="center"><img src="images/cpwstep.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">bond wire</td>
+
+        <td align="center"><img src="images/bondwire.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">transformer</td>
+
+        <td align="center"><img src="images/trafo.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">symmetrical<br />
+        transformer</td>
+
+        <td align="center"><img src="images/strafo.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">voltage controlled<br />
+        current source</td>
+
+        <td align="center"><img src="images/vccs.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">gyrator</td>
+
+        <td align="center"><img src="images/gyra.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">current controlled<br />
+        current source</td>
+
+        <td align="center"><img src="images/cccs.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">voltage controlled<br />
+        voltage source</td>
+
+        <td align="center"><img src="images/vcvs.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">current controlled<br />
+        voltage source</td>
+
+        <td align="center"><img src="images/ccvs.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">DC voltage</td>
+
+        <td align="center"><img src="images/vdc.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">DC current</td>
+
+        <td align="center"><img src="images/idc.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">AC voltage</td>
+
+        <td align="center"><img src="images/vac.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">AC current</td>
+
+        <td align="center"><img src="images/iac.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">AC power</td>
+
+        <td align="center"><img src="images/pac.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">s-parameter port</td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">AM modulated voltage source</td>
+
+        <td align="center"><img src="images/am_mod.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">PM modulated voltage source</td>
+
+        <td align="center"><img src="images/pm_mod.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">noise voltage</td>
+
+        <td align="center"><img src="images/vnoise.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">noise current</td>
+
+        <td align="center"><img src="images/inoise.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">diode</td>
+
+        <td align="center"><img src="images/diode.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">diac (bidirectional trigger diode)</td>
+
+        <td align="center"><img src="images/diac.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">thyristor (silicon controlled
+        rectifier)</td>
+
+        <td align="center"><img src="images/thyristor.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">triac (bidirectional thyristor)</td>
+
+        <td align="center"><img src="images/triac.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">junction fet</td>
+
+        <td align="center"><img src="images/jfet.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">homo junction<br />
+        bipolar transistor</td>
+
+        <td align="center"><img src="images/bjt.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">homo junction bipolar<br />
+        transistor with substrate</td>
+
+        <td align="center"><img src="images/bjt_sub.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">mosfet</td>
+
+        <td align="center"><img src="images/mosfet.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">depletion mosfet</td>
+
+        <td align="center"><img src="images/mosfet_dep.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">mosfet with<br />
+        substrate, i.e. bulk</td>
+
+        <td align="center"><img src="images/mosfet_sub.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">FBH HBT verilog device</td>
+
+        <td align="center"><img src="images/hbt.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">HICUM Level 2 v2.1 verilog device</td>
+
+        <td align="center"><img src="images/hicuml2v21.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">HICUM Level 2 v2.22 verilog device</td>
+
+        <td align="center"><img src="images/hicuml2v22.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">HICUM Level 2 v2.23 verilog device</td>
+
+        <td align="center"><img src="images/hicuml2v22.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">HICUM Level 0 v1.12 verilog device</td>
+
+        <td align="center"><img src="images/hicuml0.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">npn and pnp type</td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">HICUM Level 0 v1.2 verilog device</td>
+
+        <td align="center"><img src="images/hicuml0.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">npn and pnp type</td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">MESFET verilog device</td>
+
+        <td align="center"><img src="images/jfet.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">Curtice, Statz, TOM-1 and TOM-2
+        included<br />
+        nfet only</td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">EPFL EKV v2.6 verilog device</td>
+
+        <td align="center"><img src="images/ekv26.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">nmos and pmos type</td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">equation defined device</td>
+
+        <td align="center"><img src="images/edd.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">1 to 8 branches possible (more
+        necessary?)</td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">equation defined RF device</td>
+
+        <td align="center"><img src="images/rfedd.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">1 to 8 ports possible; S-, Y- and
+        Z-parameters</td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">equation defined 2-port RF device</td>
+
+        <td align="center"><img src="images/rfedd2p.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">A-, G-, H-, T-, S-, Y- and
+        Z-parameters</td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">S-parameter<br />
+        file data</td>
+
+        <td align="center"><img src="images/spfile.png" border=
+        "0" /></td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">1- to 40-port including an<br />
+        additional reference port definitions<br />
+        possible (more necessary?)</td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">SPICE netlist</td>
+
+        <td align="center"><img src="images/spice.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">subcircuit as<br />
+        well as plain netlist<br />
+        supported</td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">single voltage<br />
+        pulse source</td>
+
+        <td align="center"><img src="images/vpulse.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">single current<br />
+        pulse source</td>
+
+        <td align="center"><img src="images/ipulse.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">periodic rectangular<br />
+        voltage pulse source</td>
+
+        <td align="center"><img src="images/vrect.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">periodic rectangular<br />
+        current pulse source</td>
+
+        <td align="center"><img src="images/irect.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">exponential voltage pulse source</td>
+
+        <td align="center"><img src="images/vexp.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">exponential current pulse source</td>
+
+        <td align="center"><img src="images/iexp.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">file based voltage source</td>
+
+        <td align="center"><img src="images/vfile.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">file based current source</td>
+
+        <td align="center"><img src="images/ifile.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">amplifier</td>
+
+        <td align="center"><img src="images/amp.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">operational<br />
+        amplifier</td>
+
+        <td align="center"><img src="images/opamp.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">modular operational amplifier verilog
+        device</td>
+
+        <td align="center"><img src="images/mod_amp.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">logarithmic amplifier verilog device</td>
+
+        <td align="center"><img src="images/log_amp.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">potentiometer verilog device</td>
+
+        <td align="center"><img src="images/poti.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">photodiode verilog device</td>
+
+        <td align="center"><img src="images/photodiode.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">phototransistor verilog device</td>
+
+        <td align="center"><img src="images/phototransistor.png"
+        border="0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">npn-type only</td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">mutual<br />
+        inductors</td>
+
+        <td align="center"><img src="images/mutual.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">three mutual<br />
+        inductors</td>
+
+        <td align="center"><img src="images/mutual2.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">correlated<br />
+        noise sources</td>
+
+        <td align="center"><img src="images/ivnoise.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">correlated noise<br />
+        voltage sources</td>
+
+        <td align="center"><img src="images/vvnoise.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">correlated noise<br />
+        current sources</td>
+
+        <td align="center"><img src="images/iinoise.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">digital<br />
+        source</td>
+
+        <td align="center"><img src="images/digisrc.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">logical<br />
+        OR</td>
+
+        <td align="center"><img src="images/or.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">logical<br />
+        NOR</td>
+
+        <td align="center"><img src="images/nor.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">logical<br />
+        AND</td>
+
+        <td align="center"><img src="images/and.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">logical<br />
+        NAND</td>
+
+        <td align="center"><img src="images/nand.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">logical<br />
+        XOR</td>
+
+        <td align="center"><img src="images/xor.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">logical<br />
+        XNOR</td>
+
+        <td align="center"><img src="images/xnor.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">inverter</td>
+
+        <td align="center"><img src="images/inverter.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">buffer</td>
+
+        <td align="center"><img src="images/buffer.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">D-flipflop</td>
+
+        <td align="center"><img src="images/dflipflop.png" border=
+        "0" /></td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">only for digital simulations</td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">RS-flipflop</td>
+
+        <td align="center"><img src="images/rsflipflop.png" border=
+        "0" /></td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">only for digital simulations</td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">JK-flipflop</td>
+
+        <td align="center"><img src="images/jkflipflop.png" border=
+        "0" /></td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">only for digital simulations</td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">logic 0</td>
+
+        <td align="center"><img src="images/logic0.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">logic 1</td>
+
+        <td align="center"><img src="images/logic1.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">T-flipflop w/ SR</td>
+
+        <td align="center"><img src="images/tff_sr.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">JK-flipflop w/ SR</td>
+
+        <td align="center"><img src="images/jkff_sr.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">D-flipflop w/ SR</td>
+
+        <td align="center"><img src="images/dff_sr.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">highest priority encoder</td>
+
+        <td align="center"><img src="images/hpribin.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">grey to binary code converter</td>
+
+        <td align="center"><img src="images/grey2bin.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">binary to grey code converter</td>
+
+        <td align="center"><img src="images/bin2grey.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">gated D-latch</td>
+
+        <td align="center"><img src="images/gated_dlatch.png"
+        border="0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">digital to analog voltage level
+        shifter</td>
+
+        <td align="center"><img src="images/d2a.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">analog to digital voltage level
+        shifter</td>
+
+        <td align="center"><img src="images/a2d.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">2to1 multiplexer</td>
+
+        <td align="center"><img src="images/2to1mux.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">4to1 multiplexer</td>
+
+        <td align="center"><img src="images/4to1mux.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">8to1 multiplexer</td>
+
+        <td align="center"><img src="images/8to1mux.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">2to4 demultiplexer</td>
+
+        <td align="center"><img src="images/2to4dmux.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">3to8 demultiplexer</td>
+
+        <td align="center"><img src="images/3to8dmux.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">4to16 demultiplexer</td>
+
+        <td align="center"><img src="images/4to16dmux.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">4x2 and/or</td>
+
+        <td align="center"><img src="images/4x2andor.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">4x3 and/or</td>
+
+        <td align="center"><img src="images/4x3andor.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">4x4 and/or</td>
+
+        <td align="center"><img src="images/4x4andor.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">2bit pattern generator</td>
+
+        <td align="center"><img src="images/2bit_pattern.png"
+        border="0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">3bit pattern generator</td>
+
+        <td align="center"><img src="images/3bit_pattern.png"
+        border="0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">4bit pattern generator</td>
+
+        <td align="center"><img src="images/4bit_pattern.png"
+        border="0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">1bit comparator</td>
+
+        <td align="center"><img src="images/1bitcomp.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">2bit comparator</td>
+
+        <td align="center"><img src="images/2bitcomp.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">4bit comparator</td>
+
+        <td align="center"><img src="images/4bitcomp.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">1bit half adder</td>
+
+        <td align="center"><img src="images/1bitha.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">1bit full adder</td>
+
+        <td align="center"><img src="images/1bitfa.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">2bit full adder</td>
+
+        <td align="center"><img src="images/2bitfa.png" border=
+        "0" /></td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top"></td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">VHDL file</td>
+
+        <td align="center"><img src="images/vhdl.png" border=
+        "0" /></td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">only for digital VHDL simulations</td>
+      </tr>
+
+      <tr bgcolor="white">
+        <td valign="top">Verilog-HDL file</td>
+
+        <td align="center"><img src="images/verilog.png" border=
+        "0" /></td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">no</td>
+
+        <td valign="top">yes</td>
+
+        <td valign="top">only for digital Verilog-HDL
+        simulations</td>
+      </tr>
+    </table>
+    <hr />
+  </div><!-- include the common web page header -->
+  <script type="text/javascript">
+//<![CDATA[
+  footer()
+  //]]>
+  </script>
+</body>
+</html>

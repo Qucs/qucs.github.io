@@ -1,0 +1,437 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Waves on Transmission Lines</TITLE>
+<META NAME="description" CONTENT="Waves on Transmission Lines">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html668"
+  HREF="node5.html">Computing with S-parameters</A>
+<B>Up:</B> <A NAME="tex2html664"
+  HREF="node2.html">Scattering parameters</A>
+<B> Previous:</B> <A NAME="tex2html658"
+  HREF="node3.html">Introduction and definition</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00220000000000000000">
+Waves on Transmission Lines</A>
+</H1>
+
+<P>
+This section should derive the existence of the voltage and current
+waves on a transmission line.  This way, it also proofs that the
+definitions from the last section make sense.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:tlpiece"></A><A NAME="153"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.1:</STRONG>
+Infinite short piece of transmission line</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="270" HEIGHT="172" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="\includegraphics[width=6cm]{TLpiece}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Figure <A HREF="#fig:tlpiece">1.1</A> shows the equivalent circuit of an infinite
+short piece of an arbitrary transmission line.  The names of the
+components all carry a single quotation mark which indicates a per-length
+quantity. Thus, the units are ohms/m for <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$ R'$"></SPAN>, henry/m for <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.png"
+ ALT="$ L'$"></SPAN>,
+siemens/m for <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ G'$"></SPAN> and farad/m for <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ C'$"></SPAN>. Writing down the change of
+voltage and current across a piece with length <!-- MATH
+ $\partial z$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.png"
+ ALT="$ \partial z$"></SPAN> results
+in the transmission line equations.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\dfrac{\partial u}{\partial z} = - R' \cdot i(z) - L' \cdot \dfrac{\partial i}{\partial t}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="175" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$\displaystyle \dfrac{\partial u}{\partial z} = - R' \cdot i(z) - L' \cdot \dfrac{\partial i}{\partial t}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">5</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\dfrac{\partial i}{\partial z} = - G' \cdot u(z) - C' \cdot \dfrac{\partial u}{\partial t}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="183" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$\displaystyle \dfrac{\partial i}{\partial z} = - G' \cdot u(z) - C' \cdot \dfrac{\partial u}{\partial t}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">6</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Transforming these equations into frequency domain leads to:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:tlf1"></A><!-- MATH
+ \begin{equation}
+\dfrac{\partial\underline{U}}{\partial z} = -\underline{I}(z)\cdot (R' + j\omega L')
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="183" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$\displaystyle \dfrac{\partial\underline{U}}{\partial z} = -\underline{I}(z)\cdot (R' + j\omega L')$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">7</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:tlf2"></A><!-- MATH
+ \begin{equation}
+\dfrac{\partial\underline{I}}{\partial z} = -\underline{U}(z)\cdot (G' + j\omega C')
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="185" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$\displaystyle \dfrac{\partial\underline{I}}{\partial z} = -\underline{U}(z)\cdot (G' + j\omega C')$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">8</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Taking equation <A HREF="#eqn:tlf2">1.8</A> and setting it into the first derivative of
+equation <A HREF="#eqn:tlf1">1.7</A> creates the wave equation:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\dfrac{\partial^2\underline{U}}{\partial z^2} = \underline{\gamma}^2 \cdot \underline{U}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="96" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$\displaystyle \dfrac{\partial^2\underline{U}}{\partial z^2} = \underline{\gamma}^2 \cdot \underline{U}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">9</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with <!-- MATH
+ $\underline{\gamma}^2 = (\alpha+j\beta)^2 = (R'+j\omega L')\cdot(G'+j\omega C')$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="304" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.png"
+ ALT="$ \underline{\gamma}^2 = (\alpha+j\beta)^2 = (R'+j\omega L')\cdot(G'+j\omega C')$"></SPAN>.
+The complete solution of the wave equation is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:usolution"></A><!-- MATH
+ \begin{equation}
+\underline{U}(z) =
+   \underbrace{\underline{U}_1 \cdot \exp(-\underline{\gamma}\cdot z)}_{\underline{U}_f(z)}
+ + \underbrace{\underline{U}_2 \cdot \exp(\underline{\gamma}\cdot z)}_{\underline{U}_b(z)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="279" HEIGHT="79" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.png"
+ ALT="$\displaystyle \underline{U}(z) = \underbrace{\underline{U}_1 \cdot \exp(-\under...
+...ace{\underline{U}_2 \cdot \exp(\underline{\gamma}\cdot z)}_{\underline{U}_b(z)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">10</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+As can be seen, there is a voltage wave <!-- MATH
+ $\underline{U}_f(z)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.png"
+ ALT="$ \underline{U}_f(z)$"></SPAN> traveling forward
+(in positive <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img34.png"
+ ALT="$ z$"></SPAN> direction) and there is a voltage wave <!-- MATH
+ $\underline{U}_b(z)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="$ \underline{U}_b(z)$"></SPAN>
+traveling backwards (in negative <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img34.png"
+ ALT="$ z$"></SPAN> direction). By setting equation
+<A HREF="#eqn:usolution">1.10</A> into equation <A HREF="#eqn:tlf1">1.7</A>, it becomes clear that
+the current behaves in the same way:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:isolution"></A><!-- MATH
+ \begin{equation}
+\underline{I}(z) =
+  \underbrace{\dfrac{\underline{\gamma}}{R'+j\omega L'}}_{\underline{Y}_L} \cdot
+  \left( \underline{U}_f(z) - \underline{U}_b(z) \right)
+   =: \underline{I}_f(z) + \underline{I}_b(z)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="374" HEIGHT="90" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.png"
+ ALT="$\displaystyle \underline{I}(z) = \underbrace{\dfrac{\underline{\gamma}}{R'+j\om...
+...U}_f(z) - \underline{U}_b(z) \right) =: \underline{I}_f(z) + \underline{I}_b(z)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">11</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Note that both current waves are counted positive in positive <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img34.png"
+ ALT="$ z$"></SPAN> direction.
+In literature, the backward flowing current wave <!-- MATH
+ $\underline{I}_b(z)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.png"
+ ALT="$ \underline{I}_b(z)$"></SPAN> is
+sometime counted the otherway around which would avoid the negative sign
+within some of the following equations.
+<BR>
+Equation <A HREF="#eqn:isolution">1.11</A> introduces the characteristic admittance
+<!-- MATH
+ $\underline{Y}_L$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$ \underline{Y}_L$"></SPAN>.  The propagation constant <!-- MATH
+ $\underline{\gamma}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.png"
+ ALT="$ \underline{\gamma}$"></SPAN> and the
+characteristic impedance <!-- MATH
+ $\underline{Z}_L$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$ \underline{Z}_L$"></SPAN> are the two fundamental properties
+describing a transmission line.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{Z}_L = \dfrac{1}{\underline{Y}_L}
+ = \dfrac{\underline{U}_f}{\underline{I}_f} = -\dfrac{\underline{U}_b}{\underline{I}_b}
+ = \sqrt{\dfrac{R'+j\omega L'}{G'+j\omega C'}} \approx \sqrt{\dfrac{L'}{C'}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="345" HEIGHT="69" ALIGN="MIDDLE" BORDER="0"
+ SRC="img41.png"
+ ALT="$\displaystyle \underline{Z}_L = \dfrac{1}{\underline{Y}_L} = \dfrac{\underline{...
+..._b} = \sqrt{\dfrac{R'+j\omega L'}{G'+j\omega C'}} \approx \sqrt{\dfrac{L'}{C'}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">12</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Note that <!-- MATH
+ $\underline{Z}_L$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$ \underline{Z}_L$"></SPAN> is a real value if the line loss (due to
+<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$ R'$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ G'$"></SPAN>) is small. This is often the case in reality.
+A further very important quantity is the reflexion coefficient
+<!-- MATH
+ $\underline{r}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.png"
+ ALT="$ \underline{r}$"></SPAN> which is defined as follows:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{r}
+ = \dfrac{\underline{U}_b}{\underline{U}_f} = -\dfrac{\underline{I}_b}{\underline{I}_f}
+ = \dfrac{\underline{Z}_e - \underline{Z}_L}{\underline{Z}_e + \underline{Z}_L}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="196" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img43.png"
+ ALT="$\displaystyle \underline{r} = \dfrac{\underline{U}_b}{\underline{U}_f} = -\dfra...
+... = \dfrac{\underline{Z}_e - \underline{Z}_L}{\underline{Z}_e + \underline{Z}_L}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">13</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The equation shows that a part of the voltage and current wave is reflected
+back if the end of a transmission line is not terminated by an impedance
+that equals <!-- MATH
+ $\underline{Z}_L$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$ \underline{Z}_L$"></SPAN>. The same effect occurs in the middle of a
+transmission line, if its characteristic impedance changes.
+
+<P>
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER"><!-- MATH
+ $\fbox{$\underline{U} = \underline{U}_f + \underline{U}_b$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="106" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img44.png"
+ ALT="\fbox{$\underline{U} = \underline{U}_f + \underline{U}_b$}"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\fbox{$\underline{I} = \underline{I}_f + \underline{I}_b$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="93" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img45.png"
+ ALT="\fbox{$\underline{I} = \underline{I}_f + \underline{I}_b$}"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><!-- MATH
+ $\fbox{$\underline{U}_f = \frac{1}{2}\cdot (\underline{U} + \underline{I}\cdot\underline{Z}_L)$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="159" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img46.png"
+ ALT="\fbox{$\underline{U}_f = \frac{1}{2}\cdot (\underline{U} + \underline{I}\cdot\underline{Z}_L)$}"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\fbox{$\underline{I}_f = \frac{1}{2}\cdot (\underline{U}/\underline{Z}_L +  \underline{I})$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="153" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img47.png"
+ ALT="\fbox{$\underline{I}_f = \frac{1}{2}\cdot (\underline{U}/\underline{Z}_L + \underline{I})$}"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><!-- MATH
+ $\fbox{$\underline{U}_b = \frac{1}{2}\cdot (\underline{U} - \underline{I}\cdot\underline{Z}_L)$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="157" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img48.png"
+ ALT="\fbox{$\underline{U}_b = \frac{1}{2}\cdot (\underline{U} - \underline{I}\cdot\underline{Z}_L)$}"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\fbox{$\underline{I}_b = \frac{1}{2}\cdot (\underline{I} - \underline{U}/\underline{Z}_L)$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="151" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img49.png"
+ ALT="\fbox{$\underline{I}_b = \frac{1}{2}\cdot (\underline{I} - \underline{U}/\underline{Z}_L)$}"></SPAN></TD>
+</TR>
+</TABLE>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html668"
+  HREF="node5.html">Computing with S-parameters</A>
+<B>Up:</B> <A NAME="tex2html664"
+  HREF="node2.html">Scattering parameters</A>
+<B> Previous:</B> <A NAME="tex2html658"
+  HREF="node3.html">Introduction and definition</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

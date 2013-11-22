@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Mathematical background</TITLE>
+<META NAME="description" CONTENT="Mathematical background">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node102.html">
+<LINK REL="previous" HREF="node94.html">
+<LINK REL="up" HREF="technical.html">
+<LINK REL="next" HREF="node98.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html2126"
+  HREF="node98.html">N-port matrix conversions</A>
+<B>Up:</B> <A NAME="tex2html2122"
+  HREF="technical.html">Qucs</A>
+<B> Previous:</B> <A NAME="tex2html2116"
+  HREF="node96.html">Filters</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001600000000000000000">
+Mathematical background</A>
+</H1>
+
+<P>
+<BR> <HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html2127"
+  HREF="node98.html">N-port matrix conversions</A>
+<UL>
+<LI><A NAME="tex2html2128"
+  HREF="node98.html#SECTION001611000000000000000">Renormalization of S-parameters to different port impedances</A>
+<LI><A NAME="tex2html2129"
+  HREF="node98.html#SECTION001612000000000000000">Transformations of n-Port matrices</A>
+<LI><A NAME="tex2html2130"
+  HREF="node98.html#SECTION001613000000000000000">Two-Port transformations</A>
+<UL>
+<LI><A NAME="tex2html2131"
+  HREF="node98.html#SECTION001613100000000000000">Two-Port matrix conversion based on current and voltage</A>
+<LI><A NAME="tex2html2132"
+  HREF="node98.html#SECTION001613200000000000000">Two-Port matrix conversion based on signal waves</A>
+<LI><A NAME="tex2html2133"
+  HREF="node98.html#SECTION001613300000000000000">Mixed Two-Port matrix conversions</A>
+<LI><A NAME="tex2html2134"
+  HREF="node98.html#SECTION001613400000000000000">Two-Port parameters of passive devices</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html2135"
+  HREF="node99.html">Solving linear equation systems</A>
+<UL>
+<LI><A NAME="tex2html2136"
+  HREF="node99.html#SECTION001621000000000000000">Matrix inversion</A>
+<LI><A NAME="tex2html2137"
+  HREF="node99.html#SECTION001622000000000000000">Gaussian elimination</A>
+<UL>
+<LI><A NAME="tex2html2138"
+  HREF="node99.html#SECTION001622100000000000000">Step 1: Forward elimination</A>
+<LI><A NAME="tex2html2139"
+  HREF="node99.html#SECTION001622200000000000000">Finding an appropriate pivot element</A>
+<LI><A NAME="tex2html2140"
+  HREF="node99.html#SECTION001622300000000000000">Step 2: Backward substitution</A>
+</UL>
+<LI><A NAME="tex2html2141"
+  HREF="node99.html#SECTION001623000000000000000">Gauss-Jordan method</A>
+<LI><A NAME="tex2html2142"
+  HREF="node99.html#SECTION001624000000000000000">LU decomposition</A>
+<UL>
+<LI><A NAME="tex2html2143"
+  HREF="node99.html#SECTION001624100000000000000">Step 1: LU decomposition</A>
+<LI><A NAME="tex2html2144"
+  HREF="node99.html#SECTION001624200000000000000">Step 2: Forward substitution</A>
+<LI><A NAME="tex2html2145"
+  HREF="node99.html#SECTION001624300000000000000">Step 3: Backward substitution</A>
+</UL>
+<LI><A NAME="tex2html2146"
+  HREF="node99.html#SECTION001625000000000000000">QR decomposition</A>
+<UL>
+<LI><A NAME="tex2html2147"
+  HREF="node99.html#SECTION001625100000000000000">Step 1: QR decomposition</A>
+<LI><A NAME="tex2html2148"
+  HREF="node99.html#SECTION001625200000000000000">Step 2: Forming the new right hand side</A>
+<LI><A NAME="tex2html2149"
+  HREF="node99.html#SECTION001625300000000000000">Step 3: Backward substitution</A>
+<LI><A NAME="tex2html2150"
+  HREF="node99.html#SECTION001625400000000000000">Motivation</A>
+<LI><A NAME="tex2html2151"
+  HREF="node99.html#SECTION001625500000000000000">QR decomposition with column pivoting</A>
+<LI><A NAME="tex2html2152"
+  HREF="node99.html#SECTION001625600000000000000">Least norm problem</A>
+</UL>
+<LI><A NAME="tex2html2153"
+  HREF="node99.html#SECTION001626000000000000000">Singular value decomposition</A>
+<UL>
+<LI><A NAME="tex2html2154"
+  HREF="node99.html#SECTION001626100000000000000">Notation</A>
+<LI><A NAME="tex2html2155"
+  HREF="node99.html#SECTION001626200000000000000">Householder reflector</A>
+<UL>
+<LI><A NAME="tex2html2156"
+  HREF="node99.html#SECTION001626210000000000000">Specific case</A>
+<LI><A NAME="tex2html2157"
+  HREF="node99.html#SECTION001626220000000000000">General case</A>
+</UL>
+<LI><A NAME="tex2html2158"
+  HREF="node99.html#SECTION001626300000000000000">Givens rotation</A>
+<LI><A NAME="tex2html2159"
+  HREF="node99.html#SECTION001626400000000000000">Eigenvalues of a 2-by-2 matrix</A>
+<LI><A NAME="tex2html2160"
+  HREF="node99.html#SECTION001626500000000000000">Step 1: Bidiagonalization</A>
+<LI><A NAME="tex2html2161"
+  HREF="node99.html#SECTION001626600000000000000">Step 2: Matrix reconstructions</A>
+<LI><A NAME="tex2html2162"
+  HREF="node99.html#SECTION001626700000000000000">Step 3: Diagonalization - shifted QR iteration</A>
+<UL>
+<LI><A NAME="tex2html2163"
+  HREF="node99.html#SECTION001626710000000000000">Single shifted QR step.</A>
+<LI><A NAME="tex2html2164"
+  HREF="node99.html#SECTION001626720000000000000">Computation of the Wilkinson shift.</A>
+<LI><A NAME="tex2html2165"
+  HREF="node99.html#SECTION001626730000000000000">Zeros on the diagonal or super-diagonal.</A>
+</UL>
+<LI><A NAME="tex2html2166"
+  HREF="node99.html#SECTION001626800000000000000">Step 4: Solving the equation system</A>
+</UL>
+<LI><A NAME="tex2html2167"
+  HREF="node99.html#SECTION001627000000000000000">Jacobi method</A>
+<LI><A NAME="tex2html2168"
+  HREF="node99.html#SECTION001628000000000000000">Gauss-Seidel method</A>
+<LI><A NAME="tex2html2169"
+  HREF="node99.html#SECTION001629000000000000000">A comparison</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2170"
+  HREF="node100.html">Polynomial approximations</A>
+<UL>
+<LI><A NAME="tex2html2171"
+  HREF="node100.html#SECTION001631000000000000000">Cubic splines</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2172"
+  HREF="node101.html">Frequency-Time Domain Transformation</A>
+<UL>
+<LI><A NAME="tex2html2173"
+  HREF="node101.html#SECTION001641000000000000000">Fast Fourier Transformation</A>
+<LI><A NAME="tex2html2174"
+  HREF="node101.html#SECTION001642000000000000000">Real-Valued FFT</A>
+<LI><A NAME="tex2html2175"
+  HREF="node101.html#SECTION001643000000000000000">More-Dimensional FFT</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<BR> <HR>
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

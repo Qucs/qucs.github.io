@@ -1,0 +1,980 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Controlled sources</TITLE>
+<META NAME="description" CONTENT="Controlled sources">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node61.html">
+<LINK REL="previous" HREF="node59.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node61.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1518"
+  HREF="node61.html">Transmission Line</A>
+<B>Up:</B> <A NAME="tex2html1514"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1508"
+  HREF="node59.html">Noise sources</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1519"
+  HREF="node60.html#SECTION0010191000000000000000">Voltage controlled current source</A>
+<LI><A NAME="tex2html1520"
+  HREF="node60.html#SECTION0010192000000000000000">Current controlled current source</A>
+<LI><A NAME="tex2html1521"
+  HREF="node60.html#SECTION0010193000000000000000">Voltage controlled voltage source</A>
+<LI><A NAME="tex2html1522"
+  HREF="node60.html#SECTION0010194000000000000000">Current controlled voltage source</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION0010190000000000000000">
+Controlled sources</A>
+</H1>
+
+<P>
+The models of the controlled sources contain the transfer factor <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img306.png"
+ ALT="$ G$"></SPAN>.
+It is complex because of the delay time <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.png"
+ ALT="$ T$"></SPAN> and frequency <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.png"
+ ALT="$ f$"></SPAN>.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{G} = G\cdot e^{j\omega T} = G\cdot e^{j\cdot 2\pi f\cdot T}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="197" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1099.png"
+ ALT="$\displaystyle \underline{G} = G\cdot e^{j\omega T} = G\cdot e^{j\cdot 2\pi f\cdot T}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">162</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+During a DC analysis (frequency zero) it becomes real because the
+exponent factor is unity.
+
+<P>
+
+<H2><A NAME="SECTION0010191000000000000000"></A>
+<A NAME="sec:vccs"></A>
+<BR>
+Voltage controlled current source
+</H2>
+
+<P>
+The voltage-dependent current source (VCCS), as shown in fig.
+<A HREF="#fig:vccs">9.8</A>, is determined by the following equation which
+introduces one more unknown in the MNA matrix.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:vccs"></A><A NAME="10163"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 9.8:</STRONG>
+voltage controlled current source</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="178" HEIGHT="107" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1100.png"
+ ALT="\includegraphics[width=4cm]{vccs}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:vccs"></A><!-- MATH
+ \begin{equation}
+I_{out} = G\cdot\left(V_{1} - V_{4}\right)
+\quad \rightarrow \quad
+V_{1} - V_{4} - \frac{1}{G}\cdot I_{out} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="351" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1101.png"
+ ALT="$\displaystyle I_{out} = G\cdot\left(V_{1} - V_{4}\right) \quad \rightarrow \quad V_{1} - V_{4} - \frac{1}{G}\cdot I_{out} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">163</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The new unknown variable <SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1050.png"
+ ALT="$ I_{out}$"></SPAN> must be considered by the four
+remaining simple equations.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_{1} = 0 \quad I_{2} = I_{out} \quad I_{3} = -I_{out} \quad I_{4} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="274" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1102.png"
+ ALT="$\displaystyle I_{1} = 0 \quad I_{2} = I_{out} \quad I_{3} = -I_{out} \quad I_{4} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">164</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+And in matrix representation this is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:vccsStamp"></A><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+.&.&.&.& 0\\
+.&.&.&.& 1\\
+.&.&.&.& -1\\
+.&.&.&.& 0\\
+1 & 0 & 0 & -1 & -\frac{1}{G}
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}\\
+V_{3}\\
+V_{4}\\
+I_{out}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_{1}\\
+I_{2}\\
+I_{3}\\
+I_{4}\\
+0\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+0\\
+0\\
+0\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="328" HEIGHT="113" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1103.png"
+ ALT="$\displaystyle \begin{bmatrix}.&amp;.&amp;.&amp;.&amp; 0\\ .&amp;.&amp;.&amp;.&amp; 1\\ .&amp;.&amp;.&amp;.&amp; -1\\ .&amp;.&amp;.&amp;.&amp; 0...
+...\\ I_{4}\\ 0\\ \end{bmatrix} = \begin{bmatrix}0\\ 0\\ 0\\ 0\\ 0\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">165</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+As you can see the last row which has been added by the VCCS
+represents the determining equation (<A HREF="#eq:vccs">9.166</A>).  The additional
+right hand column in the matrix keeps the system consistent.
+
+<P>
+<P>
+When pivotising the above MNA stamp (<A HREF="#eq:vccsStamp">9.168</A>) the
+additional row and column can be saved ensuring <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img306.png"
+ ALT="$ G$"></SPAN> keeps finite (the
+pivot element must be non-zero).  Both representations are equivalent.
+If <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img306.png"
+ ALT="$ G$"></SPAN> is zero the below representation must be used.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+0&0&0&0\\
+G&0&0&-G\\
+-G&0&0&G\\
+0&0&0&0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}\\
+V_{3}\\
+V_{4}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_{1}\\
+I_{2}\\
+I_{3}\\
+I_{4}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+0\\
+0\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="298" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1104.png"
+ ALT="$\displaystyle \begin{bmatrix}0&amp;0&amp;0&amp;0\\ G&amp;0&amp;0&amp;-G\\ -G&amp;0&amp;0&amp;G\\ 0&amp;0&amp;0&amp;0 \end{bmatr...
+...\\ I_{3}\\ I_{4}\\ \end{bmatrix} = \begin{bmatrix}0\\ 0\\ 0\\ 0\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">166</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The scattering matrix of the voltage controlled current source
+writes as follows (<SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img649.png"
+ ALT="$ \tau$"></SPAN> is time delay).
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{11} = S_{22} = S_{33} = S_{44} = 1
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="189" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1105.png"
+ ALT="$\displaystyle S_{11} = S_{22} = S_{33} = S_{44} = 1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">167</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{12} = S_{13} = S_{14} = S_{23} = S_{32} = S_{41} = S_{42} = S_{43} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="367" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1106.png"
+ ALT="$\displaystyle S_{12} = S_{13} = S_{14} = S_{23} = S_{32} = S_{41} = S_{42} = S_{43} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">168</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{21} = S_{34} = -2\cdot G\cdot \exp\left(-j\omega\tau\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="226" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1107.png"
+ ALT="$\displaystyle S_{21} = S_{34} = -2\cdot G\cdot \exp\left(-j\omega\tau\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">169</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{24} = S_{31} = 2\cdot G\cdot \exp\left(-j\omega\tau\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="213" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1108.png"
+ ALT="$\displaystyle S_{24} = S_{31} = 2\cdot G\cdot \exp\left(-j\omega\tau\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">170</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION0010192000000000000000"></A>
+<A NAME="sec:cccs"></A>
+<BR>
+Current controlled current source
+</H2>
+
+<P>
+The current-dependent current source (CCCS), as shown in fig.
+<A HREF="#fig:cccs">9.9</A>, is determined by the following equation which
+introduces one more unknown in the MNA matrix.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:cccs"></A><A NAME="10260"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 9.9:</STRONG>
+current controlled current source</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="178" HEIGHT="108" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1109.png"
+ ALT="\includegraphics[width=4cm]{cccs}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:cccs"></A><!-- MATH
+ \begin{equation}
+V_{1} - V_{4} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="85" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1110.png"
+ ALT="$\displaystyle V_{1} - V_{4} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">171</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The new unknown variable <SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1050.png"
+ ALT="$ I_{out}$"></SPAN> must be considered by the four
+remaining simple equations.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_{1} = +\frac{1}{G}\cdot I_{out} \quad I_{2} = I_{out} \quad I_{3} = -I_{out} \quad I_{4} = -\frac{1}{G}\cdot I_{out}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="388" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1111.png"
+ ALT="$\displaystyle I_{1} = +\frac{1}{G}\cdot I_{out} \quad I_{2} = I_{out} \quad I_{3} = -I_{out} \quad I_{4} = -\frac{1}{G}\cdot I_{out}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">172</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+And in matrix representation this is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+.&.&.&.& \frac{1}{G}\\
+.&.&.&.& 1\\
+.&.&.&.& -1\\
+.&.&.&.& -\frac{1}{G}\\
+1 & 0 & 0 & -1 & 0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}\\
+V_{3}\\
+V_{4}\\
+I_{out}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_{1}\\
+I_{2}\\
+I_{3}\\
+I_{4}\\
+0\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+0\\
+0\\
+0\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="328" HEIGHT="113" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1112.png"
+ ALT="$\displaystyle \begin{bmatrix}.&amp;.&amp;.&amp;.&amp; \frac{1}{G}\\ .&amp;.&amp;.&amp;.&amp; 1\\ .&amp;.&amp;.&amp;.&amp; -1\\ ...
+...\\ I_{4}\\ 0\\ \end{bmatrix} = \begin{bmatrix}0\\ 0\\ 0\\ 0\\ 0\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">173</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The scattering matrix of the current controlled current source
+writes as follows (<SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img649.png"
+ ALT="$ \tau$"></SPAN> is time delay).
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{14} = S_{22} = S_{33} = S_{41} = 1
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="189" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1113.png"
+ ALT="$\displaystyle S_{14} = S_{22} = S_{33} = S_{41} = 1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">174</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{11} = S_{12} = S_{13} = S_{23} = S_{32} = S_{42} = S_{43} = S_{44} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="367" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1114.png"
+ ALT="$\displaystyle S_{11} = S_{12} = S_{13} = S_{23} = S_{32} = S_{42} = S_{43} = S_{44} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">175</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{21} = S_{34} = -G\cdot \exp\left(-j\omega\tau\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="208" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1115.png"
+ ALT="$\displaystyle S_{21} = S_{34} = -G\cdot \exp\left(-j\omega\tau\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">176</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{24} = S_{31} = G\cdot \exp\left(-j\omega\tau\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="196" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1116.png"
+ ALT="$\displaystyle S_{24} = S_{31} = G\cdot \exp\left(-j\omega\tau\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">177</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION0010193000000000000000"></A>
+<A NAME="sec:vcvs"></A>
+<BR>
+Voltage controlled voltage source
+</H2>
+
+<P>
+The voltage-dependent voltage source (VCVS), as shown in fig.
+<A HREF="#fig:vcvs">9.10</A>, is determined by the following equation which
+introduces one more unknown in the MNA matrix.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:vcvs"></A><A NAME="10337"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 9.10:</STRONG>
+voltage controlled voltage source</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="178" HEIGHT="108" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1117.png"
+ ALT="\includegraphics[width=4cm]{vcvs}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:vcvs"></A><!-- MATH
+ \begin{equation}
+V_{2} - V_{3} = G\cdot \left(V_{1} - V_{4}\right)
+\quad \rightarrow \quad
+V_{1}\cdot G - V_{2} + V_{3} - V_{4}\cdot G = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="421" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1118.png"
+ ALT="$\displaystyle V_{2} - V_{3} = G\cdot \left(V_{1} - V_{4}\right) \quad \rightarrow \quad V_{1}\cdot G - V_{2} + V_{3} - V_{4}\cdot G = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">178</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The new unknown variable <SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1050.png"
+ ALT="$ I_{out}$"></SPAN> must be considered by the four
+remaining simple equations.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_{1} = 0 \quad I_{2} = -I_{out} \quad I_{3} = I_{out} \quad I_{4} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="274" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1119.png"
+ ALT="$\displaystyle I_{1} = 0 \quad I_{2} = -I_{out} \quad I_{3} = I_{out} \quad I_{4} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">179</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+And in matrix representation this is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+.&.&.&.& 0\\
+.&.&.&.& -1\\
+.&.&.&.& 1\\
+.&.&.&.& 0\\
+G & -1 & 1 & -G & 0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}\\
+V_{3}\\
+V_{4}\\
+I_{out}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_{1}\\
+I_{2}\\
+I_{3}\\
+I_{4}\\
+0\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+0\\
+0\\
+0\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="344" HEIGHT="113" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1120.png"
+ ALT="$\displaystyle \begin{bmatrix}.&amp;.&amp;.&amp;.&amp; 0\\ .&amp;.&amp;.&amp;.&amp; -1\\ .&amp;.&amp;.&amp;.&amp; 1\\ .&amp;.&amp;.&amp;.&amp; 0...
+...\\ I_{4}\\ 0\\ \end{bmatrix} = \begin{bmatrix}0\\ 0\\ 0\\ 0\\ 0\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">180</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The scattering matrix of the voltage controlled voltage source
+writes as follows (<SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img649.png"
+ ALT="$ \tau$"></SPAN> is time delay).
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{11} = S_{23} = S_{32} = S_{44} = 1
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="189" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1121.png"
+ ALT="$\displaystyle S_{11} = S_{23} = S_{32} = S_{44} = 1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">181</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{12} = S_{13} = S_{14} = S_{22} = S_{33} = S_{41} = S_{42} = S_{43} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="367" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1122.png"
+ ALT="$\displaystyle S_{12} = S_{13} = S_{14} = S_{22} = S_{33} = S_{41} = S_{42} = S_{43} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">182</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{21} = S_{34} = G\cdot \exp\left(-j\omega\tau\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="196" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1123.png"
+ ALT="$\displaystyle S_{21} = S_{34} = G\cdot \exp\left(-j\omega\tau\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">183</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{24} = S_{31} = -G\cdot \exp\left(-j\omega\tau\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="208" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1124.png"
+ ALT="$\displaystyle S_{24} = S_{31} = -G\cdot \exp\left(-j\omega\tau\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">184</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION0010194000000000000000"></A>
+<A NAME="sec:ccvs"></A>
+<BR>
+Current controlled voltage source
+</H2>
+
+<P>
+The current-dependent voltage source (CCVS), as shown in fig.
+<A HREF="#fig:ccvs">9.11</A>, is determined by the following equations which
+introduce two more unknowns in the MNA matrix.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:ccvs"></A><A NAME="10410"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 9.11:</STRONG>
+current controlled voltage source</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="178" HEIGHT="107" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1125.png"
+ ALT="\includegraphics[width=4cm]{ccvs}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+V_{1} - V_{4} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="85" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1110.png"
+ ALT="$\displaystyle V_{1} - V_{4} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">185</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:ccvs"></A><!-- MATH
+ \begin{equation}
+V_{2} - V_{3} = G\cdot I_{in}
+\quad \rightarrow \quad
+V_{2} - V_{3} - I_{in}\cdot G = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="319" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1126.png"
+ ALT="$\displaystyle V_{2} - V_{3} = G\cdot I_{in} \quad \rightarrow \quad V_{2} - V_{3} - I_{in}\cdot G = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">186</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The new unknown variables <SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1050.png"
+ ALT="$ I_{out}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1051.png"
+ ALT="$ I_{in}$"></SPAN> must be considered by
+the four remaining simple equations.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_{1} = I_{in} \quad I_{2} = -I_{out} \quad I_{3} = I_{out} \quad I_{4} = -I_{in}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="311" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1127.png"
+ ALT="$\displaystyle I_{1} = I_{in} \quad I_{2} = -I_{out} \quad I_{3} = I_{out} \quad I_{4} = -I_{in}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">187</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The matrix representation needs to be augmented by two more new rows
+(for the new unknown variables) and their corresponding columns.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+.&.&.&.& 1 & 0\\
+.&.&.&.& 0 & -1\\
+.&.&.&.& 0 & 1\\
+.&.&.&.& -1 & 0\\
+0 & 1 & -1 & 0 & -G & 0\\
+1 & 0 & 0 & -1 & 0 & 0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}\\
+V_{3}\\
+V_{4}\\
+I_{in}\\
+I_{out}
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_{1}\\
+I_{2}\\
+I_{3}\\
+I_{4}\\
+0\\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+0\\
+0\\
+0\\
+0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="376" HEIGHT="132" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1128.png"
+ ALT="$\displaystyle \begin{bmatrix}.&amp;.&amp;.&amp;.&amp; 1 &amp; 0\\ .&amp;.&amp;.&amp;.&amp; 0 &amp; -1\\ .&amp;.&amp;.&amp;.&amp; 0 &amp; 1\...
+..._{4}\\ 0\\ 0 \end{bmatrix} = \begin{bmatrix}0\\ 0\\ 0\\ 0\\ 0\\ 0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">188</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The scattering matrix of the current controlled voltage source
+writes as follows (<SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img649.png"
+ ALT="$ \tau$"></SPAN> is time delay).
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{14} = S_{23} = S_{32} = S_{41} = 1
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="189" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1129.png"
+ ALT="$\displaystyle S_{14} = S_{23} = S_{32} = S_{41} = 1$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">189</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{11} = S_{12} = S_{13} = S_{22} = S_{33} = S_{42} = S_{43} = S_{44} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="367" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1130.png"
+ ALT="$\displaystyle S_{11} = S_{12} = S_{13} = S_{22} = S_{33} = S_{42} = S_{43} = S_{44} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">190</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{21} = S_{34} = \frac{G}{2}\cdot \exp\left(-j\omega\tau\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="200" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1131.png"
+ ALT="$\displaystyle S_{21} = S_{34} = \frac{G}{2}\cdot \exp\left(-j\omega\tau\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">191</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{24} = S_{31} = -\frac{G}{2}\cdot \exp\left(-j\omega\tau\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="212" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1132.png"
+ ALT="$\displaystyle S_{24} = S_{31} = -\frac{G}{2}\cdot \exp\left(-j\omega\tau\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">192</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1518"
+  HREF="node61.html">Transmission Line</A>
+<B>Up:</B> <A NAME="tex2html1514"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1508"
+  HREF="node59.html">Noise sources</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

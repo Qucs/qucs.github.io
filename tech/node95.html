@@ -1,0 +1,297 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Attenuators</TITLE>
+<META NAME="description" CONTENT="Attenuators">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node96.html">
+<LINK REL="previous" HREF="node94.html">
+<LINK REL="up" HREF="node94.html">
+<LINK REL="next" HREF="node96.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html2100"
+  HREF="node96.html">Filters</A>
+<B>Up:</B> <A NAME="tex2html2096"
+  HREF="node94.html">Synthesizing circuits</A>
+<B> Previous:</B> <A NAME="tex2html2090"
+  HREF="node94.html">Synthesizing circuits</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001510000000000000000">
+Attenuators</A>
+</H1>
+
+<P>
+Attenuators are used to damp a signal. Using pure ohmic resistors
+the circuit can be realized for a very high bandwidth, i.e. from
+DC to many GHz. The power attenuation <!-- MATH
+ $0 < L\le 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2556.png"
+ ALT="$ 0 &lt; L\le 1$"></SPAN> is defined as:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:loss"></A><!-- MATH
+ \begin{equation}
+L = \dfrac{P_{in}}{P_{out}}
+  = \dfrac{V_{in}^2}{Z_{in}}\cdot\dfrac{Z_{out}}{V_{out}^2}
+  = \left( \dfrac{V_{in}}{V_{out}}\right)^2 \cdot\dfrac{Z_{out}}{Z_{in}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="293" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2557.png"
+ ALT="$\displaystyle L = \dfrac{P_{in}}{P_{out}} = \dfrac{V_{in}^2}{Z_{in}}\cdot\dfrac...
+...{out}^2} = \left( \dfrac{V_{in}}{V_{out}}\right)^2 \cdot\dfrac{Z_{out}}{Z_{in}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2558.png"
+ ALT="$ P_{in}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2559.png"
+ ALT="$ P_{out}$"></SPAN> are the input and output power and
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2560.png"
+ ALT="$ V_{in}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1217.png"
+ ALT="$ V_{out}$"></SPAN> are the input and output voltages.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:pi_attenuator"></A><A NAME="22066"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 14.1:</STRONG>
+<SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="$ \pi $"></SPAN>-topology of an attenuator</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="225" HEIGHT="113" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2561.png"
+ ALT="\includegraphics[width=5cm]{picircuit}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Fig. <A HREF="#fig:pi_attenuator">14.1</A> shows an attenuator using the
+<SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="$ \pi $"></SPAN>-topology. The conductances can be calculated as follows.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2562.png"
+ ALT="$\displaystyle Y_2$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="140" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2563.png"
+ ALT="$\displaystyle = \dfrac{L - 1}{2\cdot \sqrt{L\cdot Z_{in}\cdot Z_{out}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2564.png"
+ ALT="$\displaystyle Y_1$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="172" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2565.png"
+ ALT="$\displaystyle = Y_2\cdot\left( \sqrt{\dfrac{Z_{out}}{Z_{in}}\cdot L} - 1 \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2566.png"
+ ALT="$\displaystyle Y_3$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="172" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2567.png"
+ ALT="$\displaystyle = Y_2\cdot\left( \sqrt{\dfrac{Z_{in}}{Z_{out}}\cdot L} - 1 \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">4</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2568.png"
+ ALT="$ Z_{in}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2569.png"
+ ALT="$ Z_{out}$"></SPAN> are the input and output reference
+impedances, respectively. The <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="$ \pi $"></SPAN>-attenuator can be used for an
+impedance ratio of:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\dfrac{1}{L} \le \dfrac{Z_{out}}{Z_{in}} \le L
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="106" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2570.png"
+ ALT="$\displaystyle \dfrac{1}{L} \le \dfrac{Z_{out}}{Z_{in}} \le L$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">5</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:t_attenuator"></A><A NAME="22091"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 14.2:</STRONG>
+T-topology of an attenuator</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="225" HEIGHT="113" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2571.png"
+ ALT="\includegraphics[width=5cm]{tcircuit}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Fig. <A HREF="#fig:t_attenuator">14.2</A> shows an attenuator using the
+T-topology. The resistances can be calculated as follows.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2572.png"
+ ALT="$\displaystyle Z_2$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="140" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2573.png"
+ ALT="$\displaystyle = \dfrac{2\cdot \sqrt{L\cdot Z_{in}\cdot Z_{out}}}{L - 1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">6</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2574.png"
+ ALT="$\displaystyle Z_1$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="104" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2575.png"
+ ALT="$\displaystyle = Z_{in}\cdot A - Z_2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">7</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2576.png"
+ ALT="$\displaystyle Z_3$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="110" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2577.png"
+ ALT="$\displaystyle = Z_{out}\cdot A - Z_2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">8</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="78" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2578.png"
+ ALT="$\displaystyle \textrm{with} \qquad A$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="62" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2579.png"
+ ALT="$\displaystyle = \dfrac{L + 1}{L - 1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">9</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img396.png"
+ ALT="$ L$"></SPAN> is the attenuation (<!-- MATH
+ $0 < L\le 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2556.png"
+ ALT="$ 0 &lt; L\le 1$"></SPAN>) according to
+equation <A HREF="#eqn:loss">14.1</A> and <SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2568.png"
+ ALT="$ Z_{in}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2569.png"
+ ALT="$ Z_{out}$"></SPAN>
+are the input and output reference impedance, respectively.
+The T-attenuator can be used for an impedance ratio of:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\dfrac{Z_{out}}{Z_{in}} \le \dfrac{(L+1)^2}{4\cdot L}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="120" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2580.png"
+ ALT="$\displaystyle \dfrac{Z_{out}}{Z_{in}} \le \dfrac{(L+1)^2}{4\cdot L}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>.<SPAN CLASS="arabic">10</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html2100"
+  HREF="node96.html">Filters</A>
+<B>Up:</B> <A NAME="tex2html2096"
+  HREF="node94.html">Synthesizing circuits</A>
+<B> Previous:</B> <A NAME="tex2html2090"
+  HREF="node94.html">Synthesizing circuits</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

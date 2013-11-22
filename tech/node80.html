@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Microstrip impedance step</TITLE>
+<META NAME="description" CONTENT="Microstrip impedance step">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node81.html">
+<LINK REL="previous" HREF="node79.html">
+<LINK REL="up" HREF="node74.html">
+<LINK REL="next" HREF="node81.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1883"
+  HREF="node81.html">Microstrip tee junction</A>
+<B>Up:</B> <A NAME="tex2html1879"
+  HREF="node74.html">Microstrip components</A>
+<B> Previous:</B> <A NAME="tex2html1873"
+  HREF="node79.html">Microstrip gap</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001260000000000000000">
+Microstrip impedance step</A>
+</H1>
+
+<P>
+The equivalent circuit of a microstrip impedance step is the same as
+for the microstrip corner (figure <A HREF="node76.html#fig:MScorner">11.4</A>).  The values are
+according to [<A
+ HREF="node103.html#Gupta">38</A>]:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+C_S \textrm{ [pF] } = \sqrt{W_1\cdot W_2}\cdot\left( (10.1\cdot\log{\varepsilon_r} + 2.33)\cdot
+     \dfrac{W_1}{W_2} - 12.6\cdot\log{\varepsilon_r} - 3.17 \right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="510" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2351.png"
+ ALT="$\displaystyle C_S \textrm{ [pF] } = \sqrt{W_1\cdot W_2}\cdot\left( (10.1\cdot\l...
+..._r} + 2.33)\cdot \dfrac{W_1}{W_2} - 12.6\cdot\log{\varepsilon_r} - 3.17 \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">202</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+for <!-- MATH
+ $\varepsilon_r\le 10$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="55" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2352.png"
+ ALT="$ \varepsilon_r\le 10$"></SPAN> and <!-- MATH
+ $1.5\le W_1/W_2\le 3.5$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="139" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2353.png"
+ ALT="$ 1.5\le W_1/W_2\le 3.5$"></SPAN> the error is
+<SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2354.png"
+ ALT="$ &lt;10$"></SPAN>%.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+L_1 = \frac{L_{W1}}{L_{W1}+L_{W2}}\cdot L_S
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="159" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2355.png"
+ ALT="$\displaystyle L_1 = \frac{L_{W1}}{L_{W1}+L_{W2}}\cdot L_S$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">203</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+L_2 = \frac{L_{W2}}{L_{W1}+L_{W2}}\cdot L_S
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="159" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2356.png"
+ ALT="$\displaystyle L_2 = \frac{L_{W2}}{L_{W1}+L_{W2}}\cdot L_S$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">204</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+L_{W1,2} = \dfrac{Z_{L,1,2}\cdot\sqrt{\varepsilon_{r,eff,1,2}}}{c_0}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="192" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2357.png"
+ ALT="$\displaystyle L_{W1,2} = \dfrac{Z_{L,1,2}\cdot\sqrt{\varepsilon_{r,eff,1,2}}}{c_0}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">205</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\frac{L_S}{h} \textrm{ [nH/m] } = 40.5\cdot\left( \dfrac{W_1}{W_2}-1 \right)
+      - 75\cdot\log{\dfrac{W_1}{W_2}} + 0.2\cdot \left( \dfrac{W_1}{W_2}-1 \right)^2
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="461" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2358.png"
+ ALT="$\displaystyle \frac{L_S}{h} \textrm{ [nH/m] } = 40.5\cdot\left( \dfrac{W_1}{W_2...
+... - 75\cdot\log{\dfrac{W_1}{W_2}} + 0.2\cdot \left( \dfrac{W_1}{W_2}-1 \right)^2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">206</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+With <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img691.png"
+ ALT="$ c_0$"></SPAN> = 299 792 458 m/s being the vacuum light velocity.  The
+error is less than 5% for <!-- MATH
+ $W_1/W_2\le 5$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="85" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2359.png"
+ ALT="$ W_1/W_2\le 5$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="72" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2360.png"
+ ALT="$ W_2/h = 1$"></SPAN>.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1883"
+  HREF="node81.html">Microstrip tee junction</A>
+<B>Up:</B> <A NAME="tex2html1879"
+  HREF="node74.html">Microstrip components</A>
+<B> Previous:</B> <A NAME="tex2html1873"
+  HREF="node79.html">Microstrip gap</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

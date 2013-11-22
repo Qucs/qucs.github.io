@@ -1,0 +1,844 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Going through each Step</TITLE>
+<META NAME="description" CONTENT="Going through each Step">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node33.html">
+<LINK REL="previous" HREF="node31.html">
+<LINK REL="up" HREF="node30.html">
+<LINK REL="next" HREF="node33.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1140"
+  HREF="node33.html">A Symbolic HB Algorithm</A>
+<B>Up:</B> <A NAME="tex2html1136"
+  HREF="node30.html">Harmonic Balance Analysis</A>
+<B> Previous:</B> <A NAME="tex2html1130"
+  HREF="node31.html">The Basic Concept</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1141"
+  HREF="node32.html#SECTION00821000000000000000">Creating Transadmittance Matrix</A>
+<LI><A NAME="tex2html1142"
+  HREF="node32.html#SECTION00822000000000000000">Starting Values</A>
+<LI><A NAME="tex2html1143"
+  HREF="node32.html#SECTION00823000000000000000">Solution algorithm</A>
+<LI><A NAME="tex2html1144"
+  HREF="node32.html#SECTION00824000000000000000">Termination Criteria</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00820000000000000000">
+Going through each Step</A>
+</H1>
+
+<P>
+
+<H2><A NAME="SECTION00821000000000000000">
+Creating Transadmittance Matrix</A>
+</H2>
+
+<P>
+It needs several steps to get the transadmittance matrices <!-- MATH
+ $[\tilde{Y}]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img795.png"
+ ALT="$ [\tilde{Y}]$"></SPAN>
+and <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img796.png"
+ ALT="$ [\hat{Y}]$"></SPAN> mentioned in equation (<A HREF="node31.html#eqn:HBlin">7.1</A>). First the MNA
+matrix of the linear subcircuit (figure <A HREF="node31.html#fig:hb_concept">7.1</A>) is created
+(chapter <A HREF="node14.html#sec:MNA">3.1</A>) without the voltage sources <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img797.png"
+ ALT="$ S_1$"></SPAN>...<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img798.png"
+ ALT="$ S_M$"></SPAN> and
+without the non-linear components. Note that all nodes must appear in the
+matrix, even those where only non-linear components are connected. Then
+the transimpedance matrix is derived by
+exciting one by one the port nodes of the MNA matrix with unity current.
+After that the transadmittance matrix is calculated by inverting the
+transimpedance matrix. Finally the matrices <!-- MATH
+ $[\tilde{Y}]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img795.png"
+ ALT="$ [\tilde{Y}]$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img796.png"
+ ALT="$ [\hat{Y}]$"></SPAN>
+are filled with the corresponding elements of the overall transadmittance
+matrix.
+
+<P>
+<P>
+Note: The MNA matrix of the linear subcircuit has <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img396.png"
+ ALT="$ L$"></SPAN> nodes.
+Every node, that is connected to the non-linear subcircuit or/and is
+connected to a voltage source, is called "port" in the following text.
+So, there are <SPAN CLASS="MATH"><IMG
+ WIDTH="55" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img799.png"
+ ALT="$ M+N$"></SPAN> ports. All these ports need to be differential
+ones, i.e. without ground reference. Otherwise problemes may occur
+due to singular matrices when calculating <!-- MATH
+ $[\tilde{Y}]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img795.png"
+ ALT="$ [\tilde{Y}]$"></SPAN> or <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img796.png"
+ ALT="$ [\hat{Y}]$"></SPAN>.
+
+<P>
+<P>
+Now this should be described in more detail: By use of the MNA matrix
+<SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img800.png"
+ ALT="$ [A]$"></SPAN>, the <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img383.png"
+ ALT="$ n$"></SPAN>-th column of the transimpedance matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img801.png"
+ ALT="$ [Z]$"></SPAN> should be
+calculated. The voltage source at port <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img383.png"
+ ALT="$ n$"></SPAN> is connected to node <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img53.png"
+ ALT="$ i$"></SPAN>
+(positive terminal) and to node <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ j$"></SPAN> (negative terminal). This results
+in the following equation. (If port <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img383.png"
+ ALT="$ n$"></SPAN> is referenced to ground, the
+-1 is simply omitted.)
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:HBtrans"></A><!-- MATH
+ \begin{equation}
+[A]\cdot
+\begin{bmatrix}
+V_1\\
+\vdots\\
+V_L\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+\vdots\\
+1\\
+\vdots\\
+-1\\
+\vdots\\
+0\\
+\end{bmatrix}
+\begin{matrix}
+ \\
+ \\
+\leftarrow i\text{-th row}\\
+ \\
+\leftarrow j\text{-th row}\\
+ \\
+ \\
+\end{matrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="221" HEIGHT="183" ALIGN="MIDDLE" BORDER="0"
+ SRC="img802.png"
+ ALT="$\displaystyle [A]\cdot \begin{bmatrix}V_1\\ \vdots\\ V_L\\ \end{bmatrix} = \beg...
+...\leftarrow i\text{-th row}\\ \\ \leftarrow j\text{-th row}\\ \\ \\ \end{matrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+After having solved it, <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img803.png"
+ ALT="$ Z_{1,n}$"></SPAN>...<SPAN CLASS="MATH"><IMG
+ WIDTH="61" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img804.png"
+ ALT="$ Z_{N+M,n}$"></SPAN> are obtained
+simply by subtraction of the node voltages:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+Z_{m,n} = V_k - V_l
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="110" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img805.png"
+ ALT="$\displaystyle Z_{m,n} = V_k - V_l$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">4</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Here the voltage source at port <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img56.png"
+ ALT="$ m$"></SPAN> is connected to node <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN>
+(positive terminal) and to node <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ l$"></SPAN> (negative terminal).
+
+<P>
+<P>
+The next column of <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img801.png"
+ ALT="$ [Z]$"></SPAN> is obtained by changing the right-hand
+side of equation (<A HREF="#eqn:HBtrans">7.3</A>) appropriately. As this has to
+be done <SPAN CLASS="MATH"><IMG
+ WIDTH="55" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img806.png"
+ ALT="$ N+M$"></SPAN> times, it is strongly recommended to use LU
+decomposition.
+
+<P>
+<P>
+As <!-- MATH
+ $[\tilde{Y}]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img795.png"
+ ALT="$ [\tilde{Y}]$"></SPAN> is not square, problems encounter by trying to
+build its inverse matrix. Therefore, the following procedure is
+recommended:
+
+<UL>
+<LI>Create the transimpedance matrix for all ports (sources
+  and interconnections).
+</LI>
+<LI>Compute the inverse matrix (transadmittance matrix).
+</LI>
+<LI>The upper left and upper right corner contains <!-- MATH
+ $[\tilde{Y}]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img795.png"
+ ALT="$ [\tilde{Y}]$"></SPAN>
+  and <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img796.png"
+ ALT="$ [\hat{Y}]$"></SPAN>.
+</LI>
+<LI>The lower left and lower right corner contains the transadmittance
+  matrices to calculate the currents through the sources. They
+  can be used to simplify the AC simulation at the very end.
+</LI>
+</UL>
+
+<P>
+<P>
+One further thing must be mentioned: Because the non-linear
+components and the sources are missing in the linear MNA matrix,
+there are often components that are completely disconnected from
+the rest of the circuit. The resulting MNA matrix cannot be
+solved. To avoid this problem, shunt each port with a <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img807.png"
+ ALT="$ 100\Omega$"></SPAN>
+resistor, i.e. place a resistor in parallel to each non-linear
+component and to each source. The effect of these resistors can
+be easily removed by subtracting 10mS from the first main diagonal
+of the transadmittance matrix.
+
+<P>
+
+<H2><A NAME="SECTION00822000000000000000">
+Starting Values</A>
+</H2>
+
+<P>
+A difficult question is how to find appropriate start values for the
+harmonic balance simulation. It is recommended to first perform a DC
+analysis and start the algorithm with this result. In many situation
+(perhaps always) an even better starting point can be achieved by
+also using the result of a linear AC simulation. However with a large
+signal strength and strong non-linearities, convergence may still
+fail. Then, the following procedure might succeed: Perform HB
+simulation by applying half of the desired signal levels. If convergence
+is reached, the result can be used as start values for the simulation
+with the full signal levels. Otherwise the amplitude of the signals can
+be further decreased in order to repeat the above-mentioned procedure.
+
+<P>
+
+<H2><A NAME="SECTION00823000000000000000">
+Solution algorithm</A>
+</H2>
+
+<P>
+To perform a HB simulation, the multi-dimensional, non-linear function
+<A HREF="node31.html#eqn:HBeqn">7.2</A> has to be solved. One of the best possibilities to
+do so is the Newton method:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\textbf{V}_{n+1} = \textbf{V}_n - \textbf{J}_F (\textbf{V}_n)^{-1}
+                   \cdot \textbf{F} (\textbf{V}_n)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="233" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img808.png"
+ ALT="$\displaystyle \textbf{V}_{n+1} = \textbf{V}_n - \textbf{J}_F (\textbf{V}_n)^{-1} \cdot \textbf{F} (\textbf{V}_n)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">5</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:HBnewton"></A><!-- MATH
+ \begin{equation}
+\Rightarrow \qquad \textbf{J}_F (\textbf{V}_n) \cdot \textbf{V}_{n+1}
+    = \textbf{J}_F (\textbf{V}_n) \cdot \textbf{V}_n - \textbf{F} (\textbf{V}_n)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="333" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img809.png"
+ ALT="$\displaystyle \Rightarrow \qquad \textbf{J}_F (\textbf{V}_n) \cdot \textbf{V}_{n+1} = \textbf{J}_F (\textbf{V}_n) \cdot \textbf{V}_n - \textbf{F} (\textbf{V}_n)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">6</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with <!-- MATH
+ $\textbf{J}_F$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img810.png"
+ ALT="$ \textbf{J}_F$"></SPAN> being the Jacobian matrix. DC and transient
+simulation also use this technique, but here a problem appears:
+The derivatives of the component models are not given in frequency
+domain. Thus, the Jacobian must be calculated starting at the HB
+equation <A HREF="node31.html#eqn:HBeqn">7.2</A>:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:HBjacobi"></A><!-- MATH
+ \begin{equation}
+\boldsymbol{J}_F (\boldsymbol{V}_n) = \frac{d\boldsymbol{F} (\boldsymbol{V})}{d\boldsymbol{V}}
+    = \boldsymbol{\hat{Y}}_{N \times N} + \frac{\partial \boldsymbol{I}_G}{\partial \boldsymbol{V}}
+     + j\cdot \boldsymbol{\Omega}\frac{\partial \boldsymbol{Q}}{\partial \boldsymbol{V}}
+    = \boldsymbol{\hat{Y}}_{N \times N} + \boldsymbol{J}_{F,G}
+     + j\cdot \boldsymbol{\Omega}\cdot\boldsymbol{J}_{F,Q}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="553" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img811.png"
+ ALT="$\displaystyle \boldsymbol{J}_F (\boldsymbol{V}_n) = \frac{d\boldsymbol{F} (\bol...
+...N} + \boldsymbol{J}_{F,G} + j\cdot \boldsymbol{\Omega}\cdot\boldsymbol{J}_{F,Q}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">7</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+So, two Jacobian matrices have to be built, one for the current
+<!-- MATH
+ $\boldsymbol{I}_G$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img788.png"
+ ALT="$ \boldsymbol{I}_G$"></SPAN> and one for the charge <!-- MATH
+ $\boldsymbol{Q}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img787.png"
+ ALT="$ \boldsymbol{Q}$"></SPAN>. Both resulted
+from a Fourier Transformation. The two operations (Fourier Transformation
+and differentiation) are linear and thus, can be exchanged. Hence, the
+Jacobian matrices
+are built in time domain and transformed into frequency domain afterwards.
+
+<P>
+<P>
+To obtain a practical algorithm of this procedure, the DFT is best written
+as matrix equation. By having a look at equation <A HREF="node101.html#eqn:DFT">15.180</A> and
+<A HREF="node101.html#eqn:IDFT">15.181</A>, it becomes clear how this works. The harmonic factors
+<!-- MATH
+ $\exp(j\omega_k t_n)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="80" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img812.png"
+ ALT="$ \exp(j\omega_k t_n)$"></SPAN> build the matrix <!-- MATH
+ $\boldsymbol{\Gamma}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img813.png"
+ ALT="$ \boldsymbol{\Gamma}$"></SPAN>:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">DFT:<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="119" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img814.png"
+ ALT="$\displaystyle \boldsymbol{U}(j\omega) = \boldsymbol{\Gamma}\cdot \boldsymbol{u}(t)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">8</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">IDFT:<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="136" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img815.png"
+ ALT="$\displaystyle \boldsymbol{u}(t) = \boldsymbol{\Gamma}^{-1}\cdot \boldsymbol{U}(j\omega)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">9</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with <!-- MATH
+ $\boldsymbol{u}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img816.png"
+ ALT="$ \boldsymbol{u}$"></SPAN> and <!-- MATH
+ $\boldsymbol{U}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img817.png"
+ ALT="$ \boldsymbol{U}$"></SPAN> being the vectors of the time
+and frequency values, respectively. Now, it is possible to transform the
+desired Jacobian matrix into frequency domain:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:HB_jacobi"></A><!-- MATH
+ \begin{equation}
+\boldsymbol{J}_{F,G}
+  = \frac{\partial\boldsymbol{I}_G}{\partial\boldsymbol{V}}
+  = \frac{\partial(\boldsymbol{\Gamma}\cdot\boldsymbol{i})}
+         {\partial(\boldsymbol{\Gamma}\cdot\boldsymbol{v})}
+  = \boldsymbol{\Gamma}\cdot\frac{\partial\boldsymbol{i}}{\partial\boldsymbol{v}}
+    \cdot\boldsymbol{\Gamma}^{-1}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="272" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img818.png"
+ ALT="$\displaystyle \boldsymbol{J}_{F,G} = \frac{\partial\boldsymbol{I}_G}{\partial\b...
+...c{\partial\boldsymbol{i}}{\partial\boldsymbol{v}} \cdot\boldsymbol{\Gamma}^{-1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">10</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Here <!-- MATH
+ $\boldsymbol{i}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img819.png"
+ ALT="$ \boldsymbol{i}$"></SPAN> is a vector with length <SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img820.png"
+ ALT="$ K\cdot N$"></SPAN>, i.e. first all
+time values of the first node are inserted, then all time values of the
+second node etc. The Jacobi matrix of <!-- MATH
+ $\boldsymbol{i}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img819.png"
+ ALT="$ \boldsymbol{i}$"></SPAN> is defined as:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\boldsymbol{J}_{F,G}(\boldsymbol{u}) =
+\begin{bmatrix}
+\dfrac{\partial i_1}{\partial u_1} & \hdots & \dfrac{\partial i_1}{\partial u_n} \\
+\vdots & \ddots & \vdots\\
+\dfrac{\partial i_n}{\partial u_1} & \hdots & \dfrac{\partial i_n}{\partial u_n} \\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="214" HEIGHT="116" ALIGN="MIDDLE" BORDER="0"
+ SRC="img821.png"
+ ALT="$\displaystyle \boldsymbol{J}_{F,G}(\boldsymbol{u}) = \begin{bmatrix}\dfrac{\par...
+...n}{\partial u_1} &amp; \hdots &amp; \dfrac{\partial i_n}{\partial u_n} \\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">11</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Hence this matrix consists of
+<!-- MATH
+ $K \times K$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img794.png"
+ ALT="$ K \times K$"></SPAN> blocks (one for each node) that are diagonal matrices with
+time values of the derivatives in it. (Components exists that create
+non-diagonal blocks, but these are so special ones that they do not appear
+in this document.)
+
+<P>
+<P>
+The formula <A HREF="#eqn:HB_jacobi">7.10</A> seems to be quite clear, but it has to be pointed out how
+this works with FFT algorithm. With
+<!-- MATH
+ $\boldsymbol{\Gamma}^{-1} = (\boldsymbol{\Gamma}^{-1})^T$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="103" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img822.png"
+ ALT="$ \boldsymbol{\Gamma}^{-1} = (\boldsymbol{\Gamma}^{-1})^T$"></SPAN>
+(see equation <A HREF="node101.html#eqn:IDFT">15.181</A>) and
+<!-- MATH
+ $(\boldsymbol{A}\cdot\boldsymbol{B})^T = \boldsymbol{B}^T\cdot \boldsymbol{A}^T$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="143" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img823.png"
+ ALT="$ (\boldsymbol{A}\cdot\boldsymbol{B})^T = \boldsymbol{B}^T\cdot \boldsymbol{A}^T$"></SPAN>,
+it follows:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\boldsymbol{J}_{F,G}
+  = \boldsymbol{\Gamma}\cdot\frac{\partial\boldsymbol{i}}{\partial\boldsymbol{v}}
+    \cdot\boldsymbol{\Gamma}^{-1}
+  = \left( \boldsymbol{\Gamma}^{-1}\cdot \left( \boldsymbol{\Gamma} \cdot
+    \frac{\partial\boldsymbol{i}}{\partial\boldsymbol{v}} \right)^T \right)^T
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="314" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img824.png"
+ ALT="$\displaystyle \boldsymbol{J}_{F,G} = \boldsymbol{\Gamma}\cdot\frac{\partial\bol...
+...\cdot \frac{\partial\boldsymbol{i}}{\partial\boldsymbol{v}} \right)^T \right)^T$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">12</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+So, there are two steps to perform an FFT-based transformation of the time
+domain Jacobian matrix into the frequency domain Jacobian:
+
+<OL>
+<LI>Perform an FFT on every column of the Jacobian and build a new matrix
+      <!-- MATH
+ $\boldsymbol{A}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img825.png"
+ ALT="$ \boldsymbol{A}$"></SPAN> with this result, i.e. the first column of
+      <!-- MATH
+ $\boldsymbol{A}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img825.png"
+ ALT="$ \boldsymbol{A}$"></SPAN> is the FFTed first column of the Jacobian and so on.
+</LI>
+<LI>Perform an IFFT on every row of the matrix <!-- MATH
+ $\boldsymbol{A}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img825.png"
+ ALT="$ \boldsymbol{A}$"></SPAN> and build
+      a new matrix <!-- MATH
+ $\boldsymbol{B}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img826.png"
+ ALT="$ \boldsymbol{B}$"></SPAN> with this result, i.e. the first row of
+      <!-- MATH
+ $\boldsymbol{B}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img826.png"
+ ALT="$ \boldsymbol{B}$"></SPAN> is the IFFTed first row of <!-- MATH
+ $\boldsymbol{A}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img825.png"
+ ALT="$ \boldsymbol{A}$"></SPAN> and so on.
+</LI>
+</OL>
+As the Fourier transformation has to be applied to diagonal sub-matrices,
+the whole above-mentioned process can be performed by one single FFT. This
+is done by taking the <!-- MATH
+ $\partial\boldsymbol{i} / \partial\boldsymbol{v}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img827.png"
+ ALT="$ \partial\boldsymbol{i} / \partial\boldsymbol{v}$"></SPAN>
+values in a vector <!-- MATH
+ $\boldsymbol{J}_i$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img828.png"
+ ALT="$ \boldsymbol{J}_i$"></SPAN> and calculating:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:sMatFFT"></A><!-- MATH
+ \begin{equation}
+\dfrac{1}{K}\cdot\text{FFT}\left(\boldsymbol{J}_i\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img829.png"
+ ALT="$\displaystyle \dfrac{1}{K}\cdot$">FFT<IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img830.png"
+ ALT="$\displaystyle \left(\boldsymbol{J}_i\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">13</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The result is the first column of <!-- MATH
+ $\boldsymbol{J}_{F,G}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img831.png"
+ ALT="$ \boldsymbol{J}_{F,G}$"></SPAN>. The second column
+equals the first one rotated down by one element. The third column is the
+second one rotated down by one element etc. A matrix obeying this structure
+is called Toeplitz matrix.
+
+<P>
+<P>
+So, finally the complete HB Newton iteration step can be written down.
+Putting <A HREF="node31.html#eqn:HBeqn">7.2</A> and <A HREF="#eqn:HBjacobi">7.7</A> into  <A HREF="#eqn:HBnewton">7.6</A>
+leads to
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\textbf{J}_F (\textbf{V}_n) \cdot \textbf{V}_{n+1}
+  = \textbf{J}_{F,G} \cdot \textbf{V}_n - \textbf{I}_G +
+    j\cdot \boldsymbol{\Omega}\cdot (\textbf{J}_{F,Q}\cdot\textbf{V}_n - \textbf{Q}) -
+    \textbf{I}_S
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="435" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img832.png"
+ ALT="$\displaystyle \textbf{J}_F (\textbf{V}_n) \cdot \textbf{V}_{n+1} = \textbf{J}_{...
+...ol{\Omega}\cdot (\textbf{J}_{F,Q}\cdot\textbf{V}_n - \textbf{Q}) - \textbf{I}_S$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">14</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+This is important to notice, because many non-linear components
+cannot be processed at every bias point (see figure <A HREF="node16.html#fig:NewtonBad">3.5</A>).
+These components create a new voltage estimate across their nodes,
+whereas the new estimated absolute voltages at their nodes are not
+known. Thus, the term <!-- MATH
+ $\textbf{J}_{F,G} \cdot \textbf{V}_n$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="68" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img833.png"
+ ALT="$ \textbf{J}_{F,G} \cdot \textbf{V}_n$"></SPAN> can
+only be created in one single step, leading to the vector
+<!-- MATH
+ $\textbf{I}_{G,J}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img834.png"
+ ALT="$ \textbf{I}_{G,J}$"></SPAN>. Luckily, this procedure also saves computation
+time, as the matrix multiplication need not to be performed.
+The same is true for the term <!-- MATH
+ $\textbf{J}_{F,Q}\cdot\textbf{V}_n$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="68" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img835.png"
+ ALT="$ \textbf{J}_{F,Q}\cdot\textbf{V}_n$"></SPAN>,
+leading to the vector <!-- MATH
+ $\textbf{Q}_J$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img836.png"
+ ALT="$ \textbf{Q}_J$"></SPAN>. So it is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\textbf{J}_F \cdot \textbf{V}_{n+1}
+  = \textbf{I}_{G,J} - \textbf{I}_G +
+    j\cdot \boldsymbol{\Omega}\cdot (\textbf{Q}_J - \textbf{Q}) -
+    \textbf{I}_S
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="323" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img837.png"
+ ALT="$\displaystyle \textbf{J}_F \cdot \textbf{V}_{n+1} = \textbf{I}_{G,J} - \textbf{I}_G + j\cdot \boldsymbol{\Omega}\cdot (\textbf{Q}_J - \textbf{Q}) - \textbf{I}_S$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">15</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION00824000000000000000">
+Termination Criteria</A>
+</H2>
+
+<P>
+Frequency components with very different magnitude appear in harmonic
+balance simulation. In order to detect when the solver has found an
+accurate solution, an absolute as well as relative criteria must be
+used on all nodes and at all frequencies. The analysis is regarded as
+finished if one of the criteria is satisfied.
+
+<P>
+<P>
+The absolute and relative criteria write as follows:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="87" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img838.png"
+ ALT="$\displaystyle \left\vert \tilde{I}_{n,k} + \hat{I}_{n,k} \right\vert$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img839.png"
+ ALT="$\displaystyle &lt; \varepsilon_{abs}$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img840.png"
+ ALT="$\displaystyle \forall \quad n, k$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">16</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="111" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img841.png"
+ ALT="$\displaystyle 2\cdot \left\vert \frac{\tilde{I}_{n,k} + \hat{I}_{n,k}} {\tilde{I}_{n,k} - \hat{I}_{n,k}} \right\vert$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img842.png"
+ ALT="$\displaystyle &lt; \varepsilon_{rel}$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img840.png"
+ ALT="$\displaystyle \forall \quad n, k$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>.<SPAN CLASS="arabic">17</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ $\tilde{I}_{n,k}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img843.png"
+ ALT="$ \tilde{I}_{n,k}$"></SPAN> is the current of the linear circuit
+partition for node <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img383.png"
+ ALT="$ n$"></SPAN> and frequency <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN> and <!-- MATH
+ $\hat{I}_{n,k}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img844.png"
+ ALT="$ \hat{I}_{n,k}$"></SPAN>
+is the current of the non-linear circuit partition.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1140"
+  HREF="node33.html">A Symbolic HB Algorithm</A>
+<B>Up:</B> <A NAME="tex2html1136"
+  HREF="node30.html">Harmonic Balance Analysis</A>
+<B> Previous:</B> <A NAME="tex2html1130"
+  HREF="node31.html">The Basic Concept</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

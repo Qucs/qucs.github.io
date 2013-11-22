@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Transformer</TITLE>
+<META NAME="description" CONTENT="Transformer">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node49.html">
+<LINK REL="previous" HREF="node47.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node49.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1369"
+  HREF="node49.html">Symmetrical transformer</A>
+<B>Up:</B> <A NAME="tex2html1365"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1359"
+  HREF="node47.html">Bias T</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001070000000000000000">
+Transformer</A>
+</H1>
+
+<P>
+The two winding ideal transformer, as shown in fig.
+<A HREF="#fig:trafo">9.2</A>, is determined by the following equation which
+introduces one more unknown in the MNA matrix.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:trafo"></A><A NAME="8796"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 9.2:</STRONG>
+ideal two winding transformer</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="178" HEIGHT="108" ALIGN="BOTTOM" BORDER="0"
+ SRC="img889.png"
+ ALT="\includegraphics[width=4cm]{actrafo}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:trafo"></A><!-- MATH
+ \begin{equation}
+T\cdot\left(V_{2} - V_{3}\right) = V_{1} -V_{4}
+\quad \rightarrow \quad
+V_{1} - T\cdot V_{2} + T\cdot V_{3} - V_{4} = 0
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="418" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img890.png"
+ ALT="$\displaystyle T\cdot\left(V_{2} - V_{3}\right) = V_{1} -V_{4} \quad \rightarrow \quad V_{1} - T\cdot V_{2} + T\cdot V_{3} - V_{4} = 0$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">24</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The new unknown variable <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img891.png"
+ ALT="$ I_{t}$"></SPAN> must be considered by the four
+remaining simple equations.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+I_{1} = -I_{t} \quad I_{2} = T\cdot I_{t} \quad I_{3} = -T\cdot I_{t} \quad I_{4} = I_{t}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="310" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img892.png"
+ ALT="$\displaystyle I_{1} = -I_{t} \quad I_{2} = T\cdot I_{t} \quad I_{3} = -T\cdot I_{t} \quad I_{4} = I_{t}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">25</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+And in matrix representation this is for DC and for AC simulation:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+.&.&.&.& -1\\
+.&.&.&.& T\\
+.&.&.&.& -T\\
+.&.&.&.& 1\\
+1 & -T & T & -1 & 0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}\\
+V_{3}\\
+V_{4}\\
+I_{t}
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_{1}\\
+I_{2}\\
+I_{3}\\
+I_{4}\\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+0\\
+0\\
+0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="336" HEIGHT="113" ALIGN="MIDDLE" BORDER="0"
+ SRC="img893.png"
+ ALT="$\displaystyle \begin{bmatrix}.&amp;.&amp;.&amp;.&amp; -1\\ .&amp;.&amp;.&amp;.&amp; T\\ .&amp;.&amp;.&amp;.&amp; -T\\ .&amp;.&amp;.&amp;.&amp; ...
+..._{3}\\ I_{4}\\ 0 \end{bmatrix} = \begin{bmatrix}0\\ 0\\ 0\\ 0\\ 0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">26</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+It is noticeable that the additional row (part of the C matrix) and the
+corresponding column (part of the B matrix) are transposed to each
+other.  When considering the turns ratio <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.png"
+ ALT="$ T$"></SPAN> being complex introducing
+an additional phase the transformer can be used as phase-shifting
+transformer.  Both the vectors must be conjugated complex transposed
+in this case.
+
+<P>
+<P>
+Using the port numbers depicted in fig. <A HREF="#fig:trafo">9.2</A>, the
+scattering parameters of an ideal transformer with voltage
+transformation ratio <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.png"
+ ALT="$ T$"></SPAN> (number of turns) writes as follows.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{14} = S_{22} = S_{33} = S_{41} = \frac{1}{T^2+1}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="231" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img894.png"
+ ALT="$\displaystyle S_{14} = S_{22} = S_{33} = S_{41} = \frac{1}{T^2+1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">27</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{12} = -S_{13} = S_{21} = -S_{24} = -S_{31} = S_{34} = -S_{42} = S_{43} = T\cdot S_{22}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="453" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img895.png"
+ ALT="$\displaystyle S_{12} = -S_{13} = S_{21} = -S_{24} = -S_{31} = S_{34} = -S_{42} = S_{43} = T\cdot S_{22}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">28</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{11} = S_{23} = S_{32} = S_{44} = T\cdot S_{12}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="226" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img896.png"
+ ALT="$\displaystyle S_{11} = S_{23} = S_{32} = S_{44} = T\cdot S_{12}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">29</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+An ideal transformer is noise free.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1369"
+  HREF="node49.html">Symmetrical transformer</A>
+<B>Up:</B> <A NAME="tex2html1365"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1359"
+  HREF="node47.html">Bias T</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

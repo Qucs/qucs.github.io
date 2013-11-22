@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Microstrip via hole</TITLE>
+<META NAME="description" CONTENT="Microstrip via hole">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node84.html">
+<LINK REL="previous" HREF="node82.html">
+<LINK REL="up" HREF="node74.html">
+<LINK REL="next" HREF="node84.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1919"
+  HREF="node84.html">Bondwire</A>
+<B>Up:</B> <A NAME="tex2html1915"
+  HREF="node74.html">Microstrip components</A>
+<B> Previous:</B> <A NAME="tex2html1909"
+  HREF="node82.html">Microstrip cross</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001290000000000000000">
+Microstrip via hole</A>
+</H1>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:MSvia"></A><A NAME="19494"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 11.11:</STRONG>
+microstrip via hole to ground</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="406" HEIGHT="200" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2409.png"
+ ALT="\includegraphics[width=9cm]{msvia}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+According to Marc E. Goldfarb and Robert A. Pucel [<A
+ HREF="node103.html#Goldfarb">45</A>] a
+via hole ground in microstrip is a series of a resistance and an
+inductance.  The given model for a cylindrical via hole has been
+verified numerically and experimentally for a range of <!-- MATH
+ $h <
+0.03\cdot\lambda_0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="88" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2410.png"
+ ALT="$ h &lt;
+0.03\cdot\lambda_0$"></SPAN>.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+L = \dfrac{\mu_0}{2\pi}\cdot\left(h\cdot \ln{\left(\dfrac{h + \sqrt{r^2 + h^2}}{r}\right)} + \dfrac{3}{2}\cdot\left(r - \sqrt{r^2 + h^2}\right)\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="410" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2411.png"
+ ALT="$\displaystyle L = \dfrac{\mu_0}{2\pi}\cdot\left(h\cdot \ln{\left(\dfrac{h + \sq...
+... + h^2}}{r}\right)} + \dfrac{3}{2}\cdot\left(r - \sqrt{r^2 + h^2}\right)\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">232</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+whence <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img442.png"
+ ALT="$ h$"></SPAN> is the via length (substrate height) and <SPAN CLASS="MATH"><IMG
+ WIDTH="62" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2412.png"
+ ALT="$ r = D/2$"></SPAN> the
+via's radius.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+R = R\left(f = 0\right)\cdot \sqrt{1 + \dfrac{f}{f_\delta}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2413.png"
+ ALT="$\displaystyle R = R\left(f = 0\right)\cdot \sqrt{1 + \dfrac{f}{f_\delta}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">233</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+f_\delta = \dfrac{\rho}{\pi\cdot \mu_0\cdot t^2}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="102" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2414.png"
+ ALT="$\displaystyle f_\delta = \dfrac{\rho}{\pi\cdot \mu_0\cdot t^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">234</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The relationship for the via resistance can be used as a close
+approximation and is valid independent of the ratio of the
+metalization thickness <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1984.png"
+ ALT="$ t$"></SPAN> to the skin depth.  In the formula <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2117.png"
+ ALT="$ \rho$"></SPAN>
+denotes the specific resistance of the conductor material.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1919"
+  HREF="node84.html">Bondwire</A>
+<B>Up:</B> <A NAME="tex2html1915"
+  HREF="node74.html">Microstrip components</A>
+<B> Previous:</B> <A NAME="tex2html1909"
+  HREF="node82.html">Microstrip cross</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

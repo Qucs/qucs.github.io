@@ -1,0 +1,1029 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Computing with S-parameters</TITLE>
+<META NAME="description" CONTENT="Computing with S-parameters">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node6.html">
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html680"
+  HREF="node6.html">Applications</A>
+<B>Up:</B> <A NAME="tex2html676"
+  HREF="node2.html">Scattering parameters</A>
+<B> Previous:</B> <A NAME="tex2html670"
+  HREF="node4.html">Waves on Transmission Lines</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html681"
+  HREF="node5.html#SECTION00231000000000000000">S-parameters in CAE programs</A>
+<LI><A NAME="tex2html682"
+  HREF="node5.html#SECTION00232000000000000000">Differential S-parameter ports</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00230000000000000000">
+Computing with S-parameters</A>
+</H1>
+
+<P>
+
+<H2><A NAME="SECTION00231000000000000000"></A>
+<A NAME="sec:SparameterCAE"></A>
+<BR>
+S-parameters in CAE programs
+</H2>
+
+<P>
+The most common task of a simulation program is to compute the S
+parameters of an arbitrary network that consists of many elementary
+components connected to each other.  To perform this, one can build a
+large matrix containing the S parameters of all components and then
+use matrix operations to solve it.  However this method needs heavy
+algorithms.  A more elegant possibility was published in
+[<A
+ HREF="node103.html#Compton">2</A>]. Each step computes only one connection and so unites
+two connected components to a single S parameter block.  This
+procedure has to be done with every connection until there is only one
+block left whose S parameters therefore are the simulation result.
+
+<P>
+<P>
+Connecting port <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN> of circuit <!-- MATH
+ $(\underline{S})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$ (\underline{S})$"></SPAN> with port <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ l$"></SPAN> of
+circuit <!-- MATH
+ $(\underline{T})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.png"
+ ALT="$ (\underline{T})$"></SPAN>, the new S-parameters are
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:connectSij"></A><!-- MATH
+ \begin{equation}
+\underline{S}'_{ij} = \underline{S}_{ij} +
+      \frac{\underline{S}_{kj}\cdot \underline{T}_{ll}\cdot \underline{S}_{ik}}
+           {1-\underline{S}_{kk}\cdot \underline{T}_{ll}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="179" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img52.png"
+ ALT="$\displaystyle \underline{S}'_{ij} = \underline{S}_{ij} + \frac{\underline{S}_{k...
+...T}_{ll}\cdot \underline{S}_{ik}} {1-\underline{S}_{kk}\cdot \underline{T}_{ll}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">14</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img53.png"
+ ALT="$ i$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ j$"></SPAN> both being ports of <!-- MATH
+ $(\underline{S})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$ (\underline{S})$"></SPAN>.  Furthermore, it is
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:connectSmj"></A><!-- MATH
+ \begin{equation}
+\underline{S}'_{mj} =
+      \frac{\underline{S}_{kj}\cdot \underline{T}_{ml}}
+           {1-\underline{S}_{kk}\cdot \underline{T}_{ll}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="140" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.png"
+ ALT="$\displaystyle \underline{S}'_{mj} = \frac{\underline{S}_{kj}\cdot \underline{T}_{ml}} {1-\underline{S}_{kk}\cdot \underline{T}_{ll}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">15</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img56.png"
+ ALT="$ m$"></SPAN> being a port of the circuit <!-- MATH
+ $(\underline{T})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.png"
+ ALT="$ (\underline{T})$"></SPAN>.  If two ports
+of the same circuit <!-- MATH
+ $(\underline{S})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$ (\underline{S})$"></SPAN> are connected, the new
+S-parameters are
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:iconnectSij"></A><!-- MATH
+ \begin{equation}
+\underline{S}'_{ij} = \underline{S}_{ij} +
+      \frac{ \underline{S}_{kj}\cdot \underline{S}_{il}\cdot (1-\underline{S}_{lk})
+           + \underline{S}_{lj}\cdot \underline{S}_{ik}\cdot (1-\underline{S}_{kl})
+           + \underline{S}_{kj}\cdot \underline{S}_{ll}\cdot \underline{S}_{ik}
+           + \underline{S}_{lj}\cdot \underline{S}_{kk}\cdot \underline{S}_{il}}
+           {(1-\underline{S}_{kl})\cdot (1-\underline{S}_{lk}) - \underline{S}_{kk}\cdot \underline{S}_{ll}}.
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="580" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$\displaystyle \underline{S}'_{ij} = \underline{S}_{ij} + \frac{ \underline{S}_{...
+...kl})\cdot (1-\underline{S}_{lk}) - \underline{S}_{kk}\cdot \underline{S}_{ll}}.$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">16</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+If more than two ports are connected at a node, one have to insert one
+or more ideal tee components.  Its S-parameters write as follows.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{pmatrix}
+\underline{S}
+\end{pmatrix}
+= \dfrac{1}{3}\cdot
+\begin{pmatrix}
+-1 &  2 &  2\\
+ 2 & -1 &  2\\
+ 2 &  2 & -1\\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="195" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.png"
+ ALT="$\displaystyle \begin{pmatrix}\underline{S} \end{pmatrix} = \dfrac{1}{3}\cdot \begin{pmatrix}-1 &amp; 2 &amp; 2\\ 2 &amp; -1 &amp; 2\\ 2 &amp; 2 &amp; -1\\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">17</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+For optimisation reasons it may be desirable to insert a cross if at
+least four components are connected at one node.  Its S-parameters
+write as follows.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{pmatrix}
+\underline{S}
+\end{pmatrix}
+= \dfrac{1}{2}\cdot
+\begin{pmatrix}
+-1 &  1 &  1 &  1\\
+ 1 & -1 &  1 &  1\\
+ 1 &  1 & -1 &  1\\
+ 1 &  1 &  1 & -1\\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="231" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$\displaystyle \begin{pmatrix}\underline{S} \end{pmatrix} = \dfrac{1}{2}\cdot \b...
+... &amp; 1 &amp; 1 &amp; 1\\ 1 &amp; -1 &amp; 1 &amp; 1\\ 1 &amp; 1 &amp; -1 &amp; 1\\ 1 &amp; 1 &amp; 1 &amp; -1\\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">18</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+<P>
+The formulas (<A HREF="#eq:connectSij">1.14</A>), (<A HREF="#eq:connectSmj">1.15</A>) and
+(<A HREF="#eq:iconnectSij">1.16</A>) were obtained using the ``nontouching-loop''
+rule being an analytical method for solving a flow graph.  A few basic
+definitions have to be understood.
+
+<P>
+<P>
+A ``path'' is a series of branches into the same direction with no
+node touched more than once.  A paths value is the product of the
+coefficients of the branches.  A ``loop'' is formed when a path starts
+and finishes at the same node.  A ``first-order'' loop is a path
+coming to closure with no node passed more than once.  Its value is
+the product of the values of all branches encountered on the route.  A
+``second-order'' loop consists of two first-order loops not touching
+each other at any node.  Its value is calculated as the product of the
+values of the two first-order loops.  Third- and higher-order loops
+are three or more first-order loops not touching each other at any
+node.
+
+<P>
+<P>
+The nontouching-loop rule can be applied to solve any flow graph.  In
+the following equation in symbolic form <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.png"
+ ALT="$ T$"></SPAN> represents the ratio of
+the dependent variable in question and the independent variable.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:ntrule"></A><!-- MATH
+ \begin{equation}
+T = \dfrac{
+\begin{array}{r}
+P_{1}\cdot\left(1 - \Sigma L_{1}^{(1)} + \Sigma L_{2}^{(1)} - \Sigma L_{3}^{(1)} + \ldots\right) +
+P_{2}\cdot\left(1 - \Sigma L_{1}^{(2)} + \Sigma L_{2}^{(2)} - \Sigma L_{3}^{(2)} + \ldots\right)\\
++ P_{3}\cdot\left(1 - \Sigma L_{1}^{(3)} + \Sigma L_{2}^{(3)} - \Sigma L_{3}^{(3)} + \ldots\right) +
+P_{4}\cdot\left(1 - \ldots\right) + \ldots
+\end{array}
+}{1 - \Sigma L_{1} + \Sigma L_{2} - \Sigma L_{3} + \ldots}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="618" HEIGHT="135" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.png"
+ ALT="$\displaystyle T = \dfrac{ \begin{array}{r} P_{1}\cdot\left(1 - \Sigma L_{1}^{(1...
+...+ \ldots \end{array} }{1 - \Sigma L_{1} + \Sigma L_{2} - \Sigma L_{3} + \ldots}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">19</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+In eq. (<A HREF="#eq:ntrule">1.19</A>) <!-- MATH
+ $\Sigma L_{1}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img62.png"
+ ALT="$ \Sigma L_{1}$"></SPAN> stands for the sum of all
+first-order loops, <!-- MATH
+ $\Sigma L_{2}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img63.png"
+ ALT="$ \Sigma L_{2}$"></SPAN> is the sum of all second-order
+loops, and so on.  <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ P_{1}$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img65.png"
+ ALT="$ P_{2}$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img66.png"
+ ALT="$ P_{3}$"></SPAN> etc., stand for the
+values of all paths that can be found from the independent variable to
+the dependent variable.  <!-- MATH
+ $\Sigma L_{1}^{(1)}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img67.png"
+ ALT="$ \Sigma L_{1}^{(1)}$"></SPAN> denotes the sum of those
+first-order loops which do not touch (hence the name) the path of
+<SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ P_{1}$"></SPAN> at any node, <!-- MATH
+ $\Sigma L_{2}^{(1)}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.png"
+ ALT="$ \Sigma L_{2}^{(1)}$"></SPAN> denotes then the sum of
+those second-order loops which do not touch the path <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ P_{1}$"></SPAN> at any
+point, <!-- MATH
+ $\Sigma L_{1}^{(2)}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.png"
+ ALT="$ \Sigma L_{1}^{(2)}$"></SPAN> consequently denotes the sum of those
+first-order loops which do not touch the path of <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img65.png"
+ ALT="$ P_{2}$"></SPAN> at any point.
+Each path is multiplied by the factor in parentheses which involves
+all the loops of all orders that the path does not touch.
+
+<P>
+<P>
+When connecting two different networks the signal flow graph in
+fig. <A HREF="#fig:sconnectgraph">1.2</A> is used to compute the new S-parameters.
+With equally reference impedances on port <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN> and port <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ l$"></SPAN> the
+relations <!-- MATH
+ $\underline{a}_{k} = \underline{b}_{l}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img70.png"
+ ALT="$ \underline{a}_{k} = \underline{b}_{l}$"></SPAN> and
+<!-- MATH
+ $\underline{a}_{l} = \underline{b}_{k}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img71.png"
+ ALT="$ \underline{a}_{l} = \underline{b}_{k}$"></SPAN> are satisfied.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:sconnectgraph"></A><A NAME="456"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.2:</STRONG>
+signal flow graph of a joint between ports <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ l$"></SPAN> on different networks</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="571" HEIGHT="157" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.png"
+ ALT="\includegraphics[width=0.8\linewidth]{sconnectgraph}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+There is only one first-order loop (see fig. <A HREF="#fig:sconnectloop">1.3</A>)
+within this signal flow graph.  This loops value yields to
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+L_{11} = \underline{S}_{kk}\cdot \underline{T}_{ll}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="105" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img73.png"
+ ALT="$\displaystyle L_{11} = \underline{S}_{kk}\cdot \underline{T}_{ll}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">20</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:sconnectloop"></A><A NAME="471"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.3:</STRONG>
+loops in the signal flow graph when connecting ports <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ l$"></SPAN> on different networks</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="201" HEIGHT="136" ALIGN="BOTTOM" BORDER="0"
+ SRC="img74.png"
+ ALT="\includegraphics[height=3.1cm]{sconnectloop}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The paths that can be found from the independent variable
+<!-- MATH
+ $\underline{a}_{j}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img75.png"
+ ALT="$ \underline{a}_{j}$"></SPAN> to the dependent variable <!-- MATH
+ $\underline{b}_{i}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img76.png"
+ ALT="$ \underline{b}_{i}$"></SPAN> (as
+depicted in fig. <A HREF="#fig:sconnectpath">1.4</A>) can be written as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img77.png"
+ ALT="$\displaystyle P_{1}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="108" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img78.png"
+ ALT="$\displaystyle = \underline{S}_{kj}\cdot \underline{T}_{ll} \cdot \underline{S}_{ik}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">21</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img79.png"
+ ALT="$\displaystyle P_{2}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img80.png"
+ ALT="$\displaystyle = \underline{S}_{ij}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">22</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:sconnectpath"></A><A NAME="495"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.4:</STRONG>
+paths in the signal flow graph when connecting ports <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ l$"></SPAN> on different networks</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="611" HEIGHT="136" ALIGN="BOTTOM" BORDER="0"
+ SRC="img81.png"
+ ALT="\includegraphics[height=3.1cm]{sconnectpath}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Applying the nontouching-loop rule, i.e. eq. (<A HREF="#eq:ntrule">1.19</A>), gives
+the new S-parameter <!-- MATH
+ $\underline{S}'_{ij}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.png"
+ ALT="$ \underline{S}'_{ij}$"></SPAN>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{split}
+\underline{S}'_{ij} = \dfrac{\underline{b}_{i}}{\underline{a}_{j}} &= \dfrac{P_{1}\cdot\left(1 - L_{11}\right) + P_{2}\cdot 1}{1 - L_{11}}\\
+&= \dfrac{\underline{S}_{ij}\cdot\left(1 - \underline{S}_{kk}\cdot \underline{T}_{ll}\right) + \underline{S}_{kj}\cdot \underline{T}_{ll}\cdot \underline{S}_{ik}}{1 - \underline{S}_{kk}\cdot \underline{T}_{ll}}
+= \underline{S}_{ij} + \dfrac{\underline{S}_{kj}\cdot \underline{T}_{ll}\cdot \underline{S}_{ik}}{1 - \underline{S}_{kk}\cdot \underline{T}_{ll}}
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="476" HEIGHT="92" BORDER="0"
+ SRC="img83.png"
+ ALT="\begin{displaymath}\begin{split}\underline{S}'_{ij} = \dfrac{\underline{b}_{i}}{...
+...k}}{1 - \underline{S}_{kk}\cdot \underline{T}_{ll}} \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">23</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The only path that can be found from the independent variable
+<!-- MATH
+ $\underline{a}_{j}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img75.png"
+ ALT="$ \underline{a}_{j}$"></SPAN> to the dependent variable <!-- MATH
+ $\underline{b}_{m}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img84.png"
+ ALT="$ \underline{b}_{m}$"></SPAN> (as
+depicted in fig. <A HREF="#fig:sconnectpath">1.4</A>) can be written as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+P_{1} = \underline{S}_{kj}\cdot \underline{T}_{ml}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="104" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img85.png"
+ ALT="$\displaystyle P_{1} = \underline{S}_{kj}\cdot \underline{T}_{ml}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">24</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Thus the new S-parameter <!-- MATH
+ $\underline{S}'_{mj}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \underline{S}'_{mj}$"></SPAN> yields to
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{S}'_{mj} = \dfrac{\underline{b}_{m}}{\underline{a}_{j}}
+= \dfrac{P_{1}\cdot 1}{1 - L_{11}}
+= \dfrac{\underline{S}_{kj}\cdot \underline{T}_{ml}}{1 - \underline{S}_{kk}\cdot \underline{T}_{ll}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="261" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img87.png"
+ ALT="$\displaystyle \underline{S}'_{mj} = \dfrac{\underline{b}_{m}}{\underline{a}_{j}...
+...}_{kj}\cdot \underline{T}_{ml}}{1 - \underline{S}_{kk}\cdot \underline{T}_{ll}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">25</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+When connecting the same network the signal flow graph in
+fig. <A HREF="#fig:siconnectgraph">1.5</A> is used to compute the new S-parameters.
+With equally reference impedances on port <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN> and port <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ l$"></SPAN> the
+relations <!-- MATH
+ $\underline{a}_{k} = \underline{b}_{l}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img70.png"
+ ALT="$ \underline{a}_{k} = \underline{b}_{l}$"></SPAN> and
+<!-- MATH
+ $\underline{a}_{l} = \underline{b}_{k}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img71.png"
+ ALT="$ \underline{a}_{l} = \underline{b}_{k}$"></SPAN> are satisfied.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:siconnectgraph"></A><A NAME="588"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.5:</STRONG>
+signal flow graph of a joint between ports <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ l$"></SPAN> on the same network</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="391" HEIGHT="180" ALIGN="BOTTOM" BORDER="0"
+ SRC="img88.png"
+ ALT="\includegraphics[width=0.55\linewidth]{siconnectgraph}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+There are three first-order loops and a second-order loop (see
+fig. <A HREF="#fig:siconnectloop">1.6</A>) within this signal flow graph.  These
+loops' values yield to
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img89.png"
+ ALT="$\displaystyle L_{11}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="75" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img90.png"
+ ALT="$\displaystyle = \underline{S}_{kk}\cdot \underline{S}_{ll}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">26</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img91.png"
+ ALT="$\displaystyle L_{12}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img92.png"
+ ALT="$\displaystyle = \underline{S}_{kl}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">27</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img93.png"
+ ALT="$\displaystyle L_{13}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img94.png"
+ ALT="$\displaystyle = \underline{S}_{lk}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">28</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img95.png"
+ ALT="$\displaystyle L_{21}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="155" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.png"
+ ALT="$\displaystyle = L_{12}\cdot L_{13} = \underline{S}_{kl}\cdot \underline{S}_{lk}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">29</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:siconnectloop"></A><A NAME="616"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.6:</STRONG>
+loops in the signal flow graph when connecting ports <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ l$"></SPAN> on the same network</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="464" HEIGHT="163" ALIGN="BOTTOM" BORDER="0"
+ SRC="img97.png"
+ ALT="\includegraphics[height=3.7cm]{siconnectloop}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+There are five different paths that can be found from the independent
+variable <!-- MATH
+ $\underline{a}_{j}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img75.png"
+ ALT="$ \underline{a}_{j}$"></SPAN> to the dependent variable
+<!-- MATH
+ $\underline{b}_{i}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img76.png"
+ ALT="$ \underline{b}_{i}$"></SPAN> (as depicted in fig. <A HREF="#fig:siconnectpath">1.7</A>)
+which can be written as
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img77.png"
+ ALT="$\displaystyle P_{1}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="107" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img98.png"
+ ALT="$\displaystyle = \underline{S}_{kj}\cdot \underline{S}_{ll}\cdot \underline{S}_{ik}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">30</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img79.png"
+ ALT="$\displaystyle P_{2}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="75" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img99.png"
+ ALT="$\displaystyle = \underline{S}_{kj}\cdot \underline{S}_{il}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">31</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img100.png"
+ ALT="$\displaystyle P_{3}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="75" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.png"
+ ALT="$\displaystyle = \underline{S}_{lj}\cdot \underline{S}_{ik}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">32</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.png"
+ ALT="$\displaystyle P_{4}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img80.png"
+ ALT="$\displaystyle = \underline{S}_{ij}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">33</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.png"
+ ALT="$\displaystyle P_{5}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="107" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.png"
+ ALT="$\displaystyle = \underline{S}_{lj}\cdot \underline{S}_{kk}\cdot \underline{S}_{il}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">34</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:siconnectpath"></A><A NAME="657"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.7:</STRONG>
+paths in the signal flow graph when connecting ports <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ k$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ l$"></SPAN> on the same network</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="451" HEIGHT="332" ALIGN="BOTTOM" BORDER="0"
+ SRC="img105.png"
+ ALT="\includegraphics[height=7.4cm]{siconnectpath}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Thus the new S-parameter <!-- MATH
+ $\underline{S}'_{ij}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.png"
+ ALT="$ \underline{S}'_{ij}$"></SPAN> yields to
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{split}
+\underline{S}'_{ij}
+&= \dfrac{P_{1} + P_{2}\cdot\left(1 - L_{13}\right) + P_{3}\cdot\left(1 - L_{12}\right) + P_{4}\cdot\left(1 - \left(L_{11} + L_{12} + L_{13}\right) + L_{21}\right) + P_{5}}{1 - \left(L_{11} + L_{12} + L_{13}\right) + L_{21}}\\
+&= P_{4} + \dfrac{P_{1} + P_{2}\cdot\left(1 - L_{13}\right) + P_{3}\cdot\left(1 - L_{12}\right) + P_{5}}{1 - \left(L_{11} + L_{12} + L_{13}\right) + L_{21}}\\
+&= \underline{S}_{ij} + \dfrac{\underline{S}_{kj}\cdot \underline{S}_{ll}\cdot \underline{S}_{ik} + \underline{S}_{kj}\cdot \underline{S}_{il} \cdot\left(1 - \underline{S}_{lk}\right) + \underline{S}_{lj}\cdot \underline{S}_{ik}\cdot\left(1 - \underline{S}_{kl}\right) + \underline{S}_{lj}\cdot \underline{S}_{kk}\cdot \underline{S}_{il}}{1 - \left(\underline{S}_{kk}\cdot \underline{S}_{ll} + \underline{S}_{kl} + \underline{S}_{lk}\right) + \underline{S}_{kl}\cdot \underline{S}_{lk}}\\
+&= \underline{S}_{ij} + \dfrac{\underline{S}_{kj}\cdot \underline{S}_{ll}\cdot \underline{S}_{ik} + \underline{S}_{kj}\cdot \underline{S}_{il} \cdot\left(1 - \underline{S}_{lk}\right) + \underline{S}_{lj}\cdot \underline{S}_{ik}\cdot\left(1 - \underline{S}_{kl}\right) + \underline{S}_{lj}\cdot \underline{S}_{kk}\cdot \underline{S}_{il}}{\left(1 - \underline{S}_{kl}\right)\cdot \left(1 - \underline{S}_{lk}\right) - \underline{S}_{kk}\cdot \underline{S}_{ll}}
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="584" HEIGHT="179" BORDER="0"
+ SRC="img106.png"
+ ALT="\begin{displaymath}\begin{split}\underline{S}'_{ij} &amp;= \dfrac{P_{1} + P_{2}\cdot...
+...ight) - \underline{S}_{kk}\cdot \underline{S}_{ll}} \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">35</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+This short introduction to signal flow graphs and their solution using
+the nontouching-loop rule verifies the initial formulas used to
+compute the new S-parameters for the reduced subnetworks.
+
+<P>
+
+<H2><A NAME="SECTION00232000000000000000"></A>
+<A NAME="sec:diffSParam"></A>
+<BR>
+Differential S-parameter ports
+</H2>
+
+<P>
+The implemented algorithm for the S-parameter analysis calculates
+S-parameters in terms of the ground node.  In order to allow
+differential S-parameters as well it is necessary to insert an ideal
+impedance transformer with a turns ratio of 1:1 between the
+differential port and the device under test.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:differential"></A><A NAME="772"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.8:</STRONG>
+transformation of differential port into single ended port</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="542" HEIGHT="325" ALIGN="BOTTOM" BORDER="0"
+ SRC="img107.png"
+ ALT="\includegraphics[width=12cm]{differential}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The S-parameter matrix of the inserted ideal transformer being a three
+port device can be written as follows.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{pmatrix}
+\underline{S}
+\end{pmatrix}
+= \dfrac{1}{3}\cdot
+\begin{pmatrix}
+1 & 2 & -2\\
+2 & 1 & 2\\
+-2 & 2 & 1\\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="182" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img108.png"
+ ALT="$\displaystyle \begin{pmatrix}\underline{S} \end{pmatrix} = \dfrac{1}{3}\cdot \begin{pmatrix}1 &amp; 2 &amp; -2\\ 2 &amp; 1 &amp; 2\\ -2 &amp; 2 &amp; 1\\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">36</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+This transformation can be applied to each S-parameter port in a
+circuit regardless whether it is actually differential or not.
+
+<P>
+<P>
+It is also possible to do the impedance transformation within this step
+(for S-parameter ports with impedances different than <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img109.png"
+ ALT="$ 50\ohm$"></SPAN>). This can
+be done by using a transformer with an impedance ration of
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+r=T^2=\frac{50\ohm}{Z}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="104" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img110.png"
+ ALT="$\displaystyle r=T^2=\frac{50\ohm}{Z}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">37</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+With <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img111.png"
+ ALT="$ Z$"></SPAN> being the S-parameter port impedance. The S-parameter matrix of
+the inserted ideal transformer now writes as follows.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{pmatrix}
+\underline{S}
+\end{pmatrix}
+= \dfrac{1}{2\cdot Z_0+Z}\cdot
+\begin{pmatrix}
+2\cdot Z_0-Z              & 2\cdot\sqrt{Z_0\cdot Z}  & -2\cdot\sqrt{Z_0\cdot Z}\\
+2\cdot\sqrt{Z_0\cdot Z}   & Z                        & 2\cdot Z_0\\
+-2\cdot\sqrt{Z_0\cdot Z}  & 2\cdot Z_0               & Z\\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="430" HEIGHT="74" ALIGN="MIDDLE" BORDER="0"
+ SRC="img112.png"
+ ALT="$\displaystyle \begin{pmatrix}\underline{S} \end{pmatrix} = \dfrac{1}{2\cdot Z_0...
+...Z} &amp; Z &amp; 2\cdot Z_0\\ -2\cdot\sqrt{Z_0\cdot Z} &amp; 2\cdot Z_0 &amp; Z\\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">1</SPAN>.<SPAN CLASS="arabic">38</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+With <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img111.png"
+ ALT="$ Z$"></SPAN> being the new S-parameter port impedance and <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img113.png"
+ ALT="$ Z_0$"></SPAN> being <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img109.png"
+ ALT="$ 50\ohm$"></SPAN>.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html680"
+  HREF="node6.html">Applications</A>
+<B>Up:</B> <A NAME="tex2html676"
+  HREF="node2.html">Scattering parameters</A>
+<B> Previous:</B> <A NAME="tex2html670"
+  HREF="node4.html">Waves on Transmission Lines</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

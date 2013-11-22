@@ -1,0 +1,395 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Noise Correlation Matrix Transformations</TITLE>
+<META NAME="description" CONTENT="Noise Correlation Matrix Transformations">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node12.html">
+<LINK REL="previous" HREF="node10.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node12.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html762"
+  HREF="node12.html">Noise Wave Correlation Matrix</A>
+<B>Up:</B> <A NAME="tex2html758"
+  HREF="node7.html">Noise Waves</A>
+<B> Previous:</B> <A NAME="tex2html752"
+  HREF="node10.html">Noise Wave Correlation Matrix</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html763"
+  HREF="node11.html#SECTION00341000000000000000">Forming the noise current correlation matrix</A>
+<LI><A NAME="tex2html764"
+  HREF="node11.html#SECTION00342000000000000000">Transformations</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00340000000000000000">
+Noise Correlation Matrix Transformations</A>
+</H1>
+
+<P>
+The noise wave correlation matrix of a passive linear circuit
+generating thermal noise can simply be calculated using Bosma's theorem.
+The noise wave correlation matrices of active devices can be
+determined by forming the noise current correlation matrix and then
+transforming it to the equivalent noise wave correlation matrix.
+
+<P>
+<P>
+The noise current correlation matrix (also called the admittance
+representation) <!-- MATH
+ $\underline{C}_Y$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img246.png"
+ ALT="$ \underline{C}_Y$"></SPAN> is an <!-- MATH
+ $n \times n$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img177.png"
+ ALT="$ n\times n$"></SPAN> matrix.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{C}_Y =
+\begin{pmatrix}
+\overline{\underline{i}_{1}\cdot \underline{i}_{1}^*} &
+    \overline{\underline{i}_{1}\cdot \underline{i}_{2}^*} &
+    \ldots & \overline{\underline{i}_{1}\cdot \underline{i}_{n}^*}\\
+ \overline{\underline{i}_{2}\cdot \underline{i}_{1}^*} &
+    \overline{\underline{i}_{2}\cdot \underline{i}_{2}^*} & \ldots &
+    \overline{\underline{i}_{2}\cdot \underline{i}_{n}^*}\\
+ \vdots & \vdots & \ddots & \vdots\\
+ \overline{\underline{i}_{n}\cdot \underline{i}_{1}^*} &
+    \overline{\underline{i}_{n}\cdot \underline{i}_{2}^*} &
+    \ldots & \overline{\underline{i}_{n}\cdot \underline{i}_{n}^*}\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+  \underline{c}_{11} & \underline{c}_{12} & \ldots & \underline{c}_{1n}\\
+  \underline{c}_{21} & \underline{c}_{22} & \ldots & \underline{c}_{2n}\\
+  \vdots & \vdots & \ddots & \vdots\\
+  \underline{c}_{n1} & \underline{c}_{n2} & \ldots & \underline{c}_{nn}\\
+\end{pmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="436" HEIGHT="108" ALIGN="MIDDLE" BORDER="0"
+ SRC="img247.png"
+ ALT="$\displaystyle \underline{C}_Y = \begin{pmatrix}\overline{\underline{i}_{1}\cdot...
+...line{c}_{n1} &amp; \underline{c}_{n2} &amp; \ldots &amp; \underline{c}_{nn}\\ \end{pmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">36</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+This definition is very likely the one made by eq. (<A HREF="node8.html#eq:NoiseCs">2.1</A>).
+The matrix has the same properties as well.  Because in most
+transistor models the noise behaviour is expressed as the sum of
+effects of noise current sources it is easier to form this matrix
+representation.
+
+<P>
+
+<H2><A NAME="SECTION00341000000000000000">
+Forming the noise current correlation matrix</A>
+</H2>
+
+<P>
+Each element in the diagonal matrix is equal to the sum of the noise
+current of each element connected to the corresponding node.  So the
+first diagonal element is the sum of noise currents connected to node
+1, the second diagonal element is the sum of noise currents connected
+to node 2, and so on.
+
+<P>
+<P>
+The off diagonal elements are the negative noise current of the
+element connected to the pair of corresponding node.  Therefore a
+noise current source between nodes 1 and 2 goes into the matrix at
+location (1,2) and locations (2,1).
+
+<P>
+<P>
+If a noise current source is grounded, it will only have contribute to
+one entry in the noise correlation matrix - at the appropriate
+location on the diagonal.  If it is ungrounded it will contribute to
+four entries in the matrix - two diagonal entries (corresponding to
+the two nodes) and two off-diagonal entries.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:CYexample"></A><A NAME="2341"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.5:</STRONG>
+example circuit applied to noise analysis</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="362" HEIGHT="255" ALIGN="BOTTOM" BORDER="0"
+ SRC="img248.png"
+ ALT="\includegraphics[width=8cm]{CYexample}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Once having defined the spectral noise current densities of the noise
+currents within a transistor model the above rules for forming the
+<!-- MATH
+ $\underline{C}_Y$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img246.png"
+ ALT="$ \underline{C}_Y$"></SPAN> matrix can be applied to the example circuit
+depicted in fig. <A HREF="#fig:CYexample">2.5</A>.  The noise current
+correlation matrix is accordingly
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{C}_Y =
+\begin{bmatrix}
++\overline{i_1^2} & -\overline{i_1^2}\\
+-\overline{i_1^2} & \overline{i_1^2} + \overline{i_2^2}\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="152" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img249.png"
+ ALT="$\displaystyle \underline{C}_Y = \begin{bmatrix}+\overline{i_1^2} &amp; -\overline{i_1^2}\\ -\overline{i_1^2} &amp; \overline{i_1^2} + \overline{i_2^2}\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">37</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION00342000000000000000"></A>
+<A NAME="sec:noiseTrans"></A>
+<BR>
+Transformations
+</H2>
+
+<P>
+There are three usable noise correlation matrix representations for
+multiport circuits.
+
+<P>
+
+<UL>
+<LI>admittance representation <!-- MATH
+ $\underline{C}_Y$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img246.png"
+ ALT="$ \underline{C}_Y$"></SPAN> - based on noise currents
+</LI>
+<LI>impedance representation <!-- MATH
+ $\underline{C}_Z$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img250.png"
+ ALT="$ \underline{C}_Z$"></SPAN> - based on noise voltages
+</LI>
+<LI>wave representation <!-- MATH
+ $\underline{C}_S$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img251.png"
+ ALT="$ \underline{C}_S$"></SPAN> - based on noise waves
+</LI>
+</UL>
+
+<P>
+According to Scott W. Wedge and David B. Rutledge [<A
+ HREF="node103.html#Wedge">5</A>] the
+transformations between these representations write as follows.
+
+<P>
+<DIV ALIGN="CENTER">
+ 
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\fbox{$\underline{C}_Y$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img252.png"
+ ALT="\fbox{$\underline{C}_Y$}"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\underline{C}_Z$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img250.png"
+ ALT="$ \underline{C}_Z$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\underline{C}_S$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img251.png"
+ ALT="$ \underline{C}_S$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><!-- MATH
+ $\underline{C}_Y$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img246.png"
+ ALT="$ \underline{C}_Y$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\underline{C}_Y$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img246.png"
+ ALT="$ \underline{C}_Y$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $Y\cdot \underline{C}_Z\cdot Y^{+}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="82" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img253.png"
+ ALT="$ Y\cdot \underline{C}_Z\cdot Y^{+}$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\fbox{$\left(E + Y\right)\cdot \underline{C}_S\cdot \left(E + Y\right)^{+}$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="185" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img254.png"
+ ALT="\fbox{$\left(E + Y\right)\cdot \underline{C}_S\cdot \left(E + Y\right)^{+}$}"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><!-- MATH
+ $\underline{C}_Z$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img250.png"
+ ALT="$ \underline{C}_Z$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $Z\cdot \underline{C}_Y\cdot Z^{+}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="81" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img255.png"
+ ALT="$ Z\cdot \underline{C}_Y\cdot Z^{+}$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\underline{C}_Z$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img250.png"
+ ALT="$ \underline{C}_Z$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\fbox{$\left(E + Z\right)\cdot \underline{C}_S\cdot \left(E + Z\right)^{+}$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="183" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img256.png"
+ ALT="\fbox{$\left(E + Z\right)\cdot \underline{C}_S\cdot \left(E + Z\right)^{+}$}"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><!-- MATH
+ $\underline{C}_S$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img251.png"
+ ALT="$ \underline{C}_S$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\fbox{$\dfrac{1}{4} \left(E + S\right)\cdot \underline{C}_Y\cdot \left(E + S\right)^{+}$}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="197" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img257.png"
+ ALT="\fbox{$\dfrac{1}{4} \left(E + S\right)\cdot \underline{C}_Y\cdot \left(E + S\right)^{+}$}"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\dfrac{1}{4} \left(E - S\right)\cdot \underline{C}_Z\cdot \left(E - S\right)^{+}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="186" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img258.png"
+ ALT="$ \dfrac{1}{4} \left(E - S\right)\cdot \underline{C}_Z\cdot \left(E - S\right)^{+}$"></SPAN></TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\underline{C}_S$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img251.png"
+ ALT="$ \underline{C}_S$"></SPAN></TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+The signal as well as correlation matrices in impedance and admittance
+representations are assumed to be normalized in the above table.  <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img259.png"
+ ALT="$ E$"></SPAN>
+denotes the identity matrix and the <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img260.png"
+ ALT="$ ^{+}$"></SPAN> operator indicates the
+transposed conjugate matrix (also called adjoint or adjugate).
+
+<P>
+<P>
+Each noise correlation matrix transformation requires the appropriate
+signal matrix representation which can be obtained using the formulas
+given in section <A HREF="node98.html#sec:SparameterConversion">15.1</A> on page
+<A HREF="node98.html#sec:SparameterConversion"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.png"></A>.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html762"
+  HREF="node12.html">Noise Wave Correlation Matrix</A>
+<B>Up:</B> <A NAME="tex2html758"
+  HREF="node7.html">Noise Waves</A>
+<B> Previous:</B> <A NAME="tex2html752"
+  HREF="node10.html">Noise Wave Correlation Matrix</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

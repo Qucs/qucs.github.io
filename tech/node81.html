@@ -1,0 +1,588 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Microstrip tee junction</TITLE>
+<META NAME="description" CONTENT="Microstrip tee junction">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node82.html">
+<LINK REL="previous" HREF="node80.html">
+<LINK REL="up" HREF="node74.html">
+<LINK REL="next" HREF="node82.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1895"
+  HREF="node82.html">Microstrip cross</A>
+<B>Up:</B> <A NAME="tex2html1891"
+  HREF="node74.html">Microstrip components</A>
+<B> Previous:</B> <A NAME="tex2html1885"
+  HREF="node80.html">Microstrip impedance step</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001270000000000000000">
+Microstrip tee junction</A>
+</H1>
+
+<P>
+A model of a microstrip tee junction is published in
+[<A
+ HREF="node103.html#Hammerstad2">36</A>].  Figure <A HREF="#fig:mstee2">11.8</A> shows a unsymmetrical
+microstrip tee with the main arms consisting of port a and b and with
+the side arm consisting of port 2.  The following model describes the
+gray area.  The equivalent circuit is depicted in figure
+<A HREF="#fig:mstee">11.9</A>.  It consists of a shunt reactance <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2361.png"
+ ALT="$ B_T$"></SPAN>, one
+transformer in each main arm (ratios <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2362.png"
+ ALT="$ T_a$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2363.png"
+ ALT="$ T_b$"></SPAN>) and a microstrip
+line in each arm (width <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2364.png"
+ ALT="$ W_a$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2365.png"
+ ALT="$ W_b$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2366.png"
+ ALT="$ W_2$"></SPAN>).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:mstee2"></A><A NAME="19198"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 11.8:</STRONG>
+unsymmetrical microstrip tee (see text)</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="312" HEIGHT="198" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2367.png"
+ ALT="\includegraphics[width=7cm]{mstee2}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:mstee"></A><A NAME="19205"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 11.9:</STRONG>
+equivalent circuit of unsymmetrical microstrip tee</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="583" HEIGHT="283" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2368.png"
+ ALT="\includegraphics[width=13cm]{mstee}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+First, let us define some quantities.  Each of them is used in the
+equations below with an index of the arm they belong to (<SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1064.png"
+ ALT="$ a$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1065.png"
+ ALT="$ b$"></SPAN> or
+<SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2369.png"
+ ALT="$ 2$"></SPAN>).
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\text{equivalent parallel plate line width:}\qquad
+  D = \frac{Z_{F0}}{\sqrt{\varepsilon_{r,eff}}} \cdot \frac{h}{Z_L}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH">equivalent parallel plate line width:<IMG
+ WIDTH="160" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2370.png"
+ ALT="$\displaystyle \qquad D = \frac{Z_{F0}}{\sqrt{\varepsilon_{r,eff}}} \cdot \frac{h}{Z_L}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">207</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2119.png"
+ ALT="$ Z_{F0}$"></SPAN> is vacuum field impedance, <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img442.png"
+ ALT="$ h$"></SPAN> height of substrate,
+<!-- MATH
+ $\varepsilon_{r,eff}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2371.png"
+ ALT="$ \varepsilon_{r,eff}$"></SPAN> effective, relative dielectric constant, <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img684.png"
+ ALT="$ Z_L$"></SPAN>
+microstrip line impedance.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\text{first higher order mode cut-off frequency:}\qquad  f_p = 4\cdot 10^5 \cdot\frac{Z_L}{h}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH">first higher order mode cut-off frequency:<IMG
+ WIDTH="146" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2372.png"
+ ALT="$\displaystyle \qquad f_p = 4\cdot 10^5 \cdot\frac{Z_L}{h}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">208</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\text{effective wave length of the microstrip quasi-TEM mode:}\qquad
+  \lambda = \frac{c_0}{\sqrt{\varepsilon_{r,eff}}\cdot f}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH">effective wave length of the microstrip quasi-TEM mode:<IMG
+ WIDTH="141" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2373.png"
+ ALT="$\displaystyle \qquad \lambda = \frac{c_0}{\sqrt{\varepsilon_{r,eff}}\cdot f}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">209</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The main arm displacements of the reference planes from the center
+lines are (index <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img181.png"
+ ALT="$ x$"></SPAN> stand for <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1064.png"
+ ALT="$ a$"></SPAN> or <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1065.png"
+ ALT="$ b$"></SPAN>):
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:MSTee_dx"></A><!-- MATH
+ \begin{equation}
+d_x = 0.055\cdot D_2\cdot \frac{Z_{L,x}}{Z_{L,2}}\cdot
+      \left( 1 - 2\cdot\frac{Z_{L,x}}{Z_{L,2}}\cdot \left( \frac{f}{f_{p,x}} \right)^2 \right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="343" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2374.png"
+ ALT="$\displaystyle d_x = 0.055\cdot D_2\cdot \frac{Z_{L,x}}{Z_{L,2}}\cdot \left( 1 - 2\cdot\frac{Z_{L,x}}{Z_{L,2}}\cdot \left( \frac{f}{f_{p,x}} \right)^2 \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">210</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The length of the line in the main arms is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+L_x = 0.5\cdot W_2 - d_x
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="132" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2375.png"
+ ALT="$\displaystyle L_x = 0.5\cdot W_2 - d_x$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">211</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.png"
+ ALT="$ f$"></SPAN> is frequency.
+
+<P>
+<P>
+The side arm displacement of the reference planes from the center
+lines is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:MSTee_d2"></A><!-- MATH
+ \begin{equation}
+d_2 = \sqrt{D_a \cdot D_b}\cdot \left( 0.5 - R\cdot
+      \left( 0.05 + 0.7\cdot\exp\left(-1.6\cdot R\right) + 0.25\cdot R\cdot Q - 0.17\cdot \ln R \right) \right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="562" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2376.png"
+ ALT="$\displaystyle d_2 = \sqrt{D_a \cdot D_b}\cdot \left( 0.5 - R\cdot \left( 0.05 +...
+...\left(-1.6\cdot R\right) + 0.25\cdot R\cdot Q - 0.17\cdot \ln R \right) \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">212</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The length of the line in the side arm is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+L_2 = 0.5\cdot \text{max}\left(W_a, W_b\right) - d_2
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2377.png"
+ ALT="$\displaystyle L_2 = 0.5\cdot$">&nbsp; &nbsp;max<IMG
+ WIDTH="102" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2378.png"
+ ALT="$\displaystyle \left(W_a, W_b\right) - d_2$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">213</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ $\text{max}\left(x, y\right)$
+ -->
+<SPAN CLASS="MATH">max<IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2379.png"
+ ALT="$ \left(x, y\right)$"></SPAN> is the larger of the both
+quantities, <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img360.png"
+ ALT="$ R$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img616.png"
+ ALT="$ Q$"></SPAN> are:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+R = \frac{\sqrt{Z_{L,a}\cdot Z_{L,b}}}{Z_{L,2}} \qquad Q = \frac{f^2}{f_{p,a}\cdot f_{p,b}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="257" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2380.png"
+ ALT="$\displaystyle R = \frac{\sqrt{Z_{L,a}\cdot Z_{L,b}}}{Z_{L,2}} \qquad Q = \frac{f^2}{f_{p,a}\cdot f_{p,b}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">214</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Turn ratio of transformers in the side arms:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:MSTee_Tx2"></A><!-- MATH
+ \begin{equation}
+T_x^2 = 1 - \pi\cdot \left( \frac{f}{f_{p,x}} \right)^2 \cdot \left( \frac{1}{12}\cdot
+        \left( \frac{Z_{L,x}}{Z_{L,2}} \right)^2
+        + \left( 0.5 - \frac{d_2}{D_x} \right)^2 \right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="406" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2381.png"
+ ALT="$\displaystyle T_x^2 = 1 - \pi\cdot \left( \frac{f}{f_{p,x}} \right)^2 \cdot \le...
+...ac{Z_{L,x}}{Z_{L,2}} \right)^2 + \left( 0.5 - \frac{d_2}{D_x} \right)^2 \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">215</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Shunt susceptance:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{split}
+B_T &= 5.5\cdot \sqrt{\frac{D_a\cdot D_b}{\lambda_a\cdot \lambda_b}}\cdot \frac{\varepsilon_r+2}{\varepsilon_r}
+      \cdot \frac{1}{Z_{L,2}\cdot T_a\cdot T_b}\cdot \frac{\sqrt{d_a\cdot d_b}}{D_2} \\
+   &  \cdot \left( 1+0.9\cdot\ln R +4.5\cdot R\cdot Q
+       -4.4\cdot\exp\left(-1.3\cdot R\right) -20\cdot \left( \frac{Z_{L,2}}{Z_{F0}} \right)^2 \right)
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="487" HEIGHT="101" BORDER="0"
+ SRC="img2382.png"
+ ALT="\begin{displaymath}\begin{split}B_T &amp;= 5.5\cdot \sqrt{\frac{D_a\cdot D_b}{\lambd...
+...dot \left( \frac{Z_{L,2}}{Z_{F0}} \right)^2 \right) \end{split}\end{displaymath}"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">216</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+For better implementation of the microstrip tee (figure <A HREF="#fig:mstee">11.9</A>)
+the device parameter of the internal equivalent circuit (two transformers
+and the shunt susceptance) are given below. The port numbering for them
+is port a = 1, port b = 2 and port 2 = 3.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{Y}) = \text{infinity}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2383.png"
+ ALT="$\displaystyle (\underline{Y}) =$">&nbsp; &nbsp;infinity</SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">217</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{Z}) = \frac{1}{j\cdot B_T}\cdot
+\begin{bmatrix}
+\dfrac{1}{n_a^2}        & \dfrac{1}{n_a\cdot n_b} & \dfrac{1}{n_a} \\
+\dfrac{1}{n_a\cdot n_b} & \dfrac{1}{n_b^2}        & \dfrac{1}{n_b} \\
+\dfrac{1}{n_a}          & \dfrac{1}{n_b}          & 1 \\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="272" HEIGHT="123" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2384.png"
+ ALT="$\displaystyle (\underline{Z}) = \frac{1}{j\cdot B_T}\cdot \begin{bmatrix}\dfrac...
+...n_b^2} &amp; \dfrac{1}{n_b} \\ \dfrac{1}{n_a} &amp; \dfrac{1}{n_b} &amp; 1 \\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">218</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{S}_{11} = \frac{1 - n_a^2\cdot (j\cdot B_T\cdot Z_0 + \frac{1}{n_b^2} + 1)}
+                          {1 + n_a^2\cdot (j\cdot B_T\cdot Z_0 + \frac{1}{n_b^2} + 1)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="251" HEIGHT="67" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2385.png"
+ ALT="$\displaystyle \underline{S}_{11} = \frac{1 - n_a^2\cdot (j\cdot B_T\cdot Z_0 + \frac{1}{n_b^2} + 1)} {1 + n_a^2\cdot (j\cdot B_T\cdot Z_0 + \frac{1}{n_b^2} + 1)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">219</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{S}_{22} = \frac{1 - n_b^2\cdot (j\cdot B_T\cdot Z_0 + \frac{1}{n_a^2} + 1)}
+                          {1 + n_b^2\cdot (j\cdot B_T\cdot Z_0 + \frac{1}{n_a^2} + 1)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="251" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2386.png"
+ ALT="$\displaystyle \underline{S}_{22} = \frac{1 - n_b^2\cdot (j\cdot B_T\cdot Z_0 + \frac{1}{n_a^2} + 1)} {1 + n_b^2\cdot (j\cdot B_T\cdot Z_0 + \frac{1}{n_a^2} + 1)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">220</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{S}_{33} = \frac{1 - \left( \frac{1}{n_a^2} + \frac{1}{n_b^2} + j\cdot B_T\cdot Z_0 \right)}
+                          {1 + \left( \frac{1}{n_a^2} + \frac{1}{n_b^2} + j\cdot B_T\cdot Z_0 \right)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="242" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2387.png"
+ ALT="$\displaystyle \underline{S}_{33} = \frac{1 - \left( \frac{1}{n_a^2} + \frac{1}{...
+...)} {1 + \left( \frac{1}{n_a^2} + \frac{1}{n_b^2} + j\cdot B_T\cdot Z_0 \right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">221</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{S}_{13} = \underline{S}_{31} =
+    \frac{2\cdot n_a}{n_a^2\cdot \left( \frac{1}{n_b^2} + j\cdot B_T\cdot Z_0 + 1\right) + 1}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="306" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2388.png"
+ ALT="$\displaystyle \underline{S}_{13} = \underline{S}_{31} = \frac{2\cdot n_a}{n_a^2\cdot \left( \frac{1}{n_b^2} + j\cdot B_T\cdot Z_0 + 1\right) + 1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">222</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{S}_{23} = \underline{S}_{32} =
+    \frac{2\cdot n_b}{n_b^2\cdot \left( \frac{1}{n_a^2} + j\cdot B_T\cdot Z_0 + 1\right) + 1}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="306" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2389.png"
+ ALT="$\displaystyle \underline{S}_{23} = \underline{S}_{32} = \frac{2\cdot n_b}{n_b^2\cdot \left( \frac{1}{n_a^2} + j\cdot B_T\cdot Z_0 + 1\right) + 1}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">223</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{S}_{12} = \underline{S}_{21} =
+    \frac{2}{n_a\cdot n_b\cdot \left( j\cdot B_T\cdot Z_0 + 1\right) + \frac{n_a}{n_b} + \frac{n_b}{n_a}}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="336" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2390.png"
+ ALT="$\displaystyle \underline{S}_{12} = \underline{S}_{21} = \frac{2}{n_a\cdot n_b\cdot \left( j\cdot B_T\cdot Z_0 + 1\right) + \frac{n_a}{n_b} + \frac{n_b}{n_a}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">224</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The MNA matrix representation can be derived from the Z parameters in the
+following way.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+ . & .  & .  &  1 & 0 & 0\\
+ . & .  & .  &  0 & 1 & 0\\
+ . & .  & .  &  0 & 0 & 1\\
+-1 &  0 & 0  & Z_{11} & Z_{12} & Z_{13}\\
+ 0 & -1 & 0  & Z_{21} & Z_{22} & Z_{23}\\
+ 0 & 0  & -1 & Z_{31} & Z_{32} & Z_{33}
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{1}\\
+V_{2}\\
+V_{3}\\
+I_{1,in}\\
+I_{2,in}\\
+I_{3,in}
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_{1}\\
+I_{2}\\
+I_{3}\\
+0\\
+0\\
+0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="361" HEIGHT="132" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2391.png"
+ ALT="$\displaystyle \begin{bmatrix}. &amp; . &amp; . &amp; 1 &amp; 0 &amp; 0\\ . &amp; . &amp; . &amp; 0 &amp; 1 &amp; 0\\ . ...
+... \end{bmatrix} = \begin{bmatrix}I_{1}\\ I_{2}\\ I_{3}\\ 0\\ 0\\ 0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>.<SPAN CLASS="arabic">225</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Please note that the main arm displacements in eq. (<A HREF="#eq:MSTee_dx">11.210</A>)
+yield two small microstrip lines at each main arm and the side arm
+displacement of eq. (<A HREF="#eq:MSTee_d2">11.212</A>) results in a small microstrip
+strip line as well, but with negative length, i.e. kind of
+phaseshifter here.
+
+<P>
+<P>
+The transformer ratios defined in eq. (<A HREF="#eq:MSTee_Tx2">11.215</A>) are going
+to be negative with increasing frequency which produces complex values
+in the Z-parameter matrix as well as in the S-parameter matrix.  That
+is why the ratios are delimited to a minimum value.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1895"
+  HREF="node82.html">Microstrip cross</A>
+<B>Up:</B> <A NAME="tex2html1891"
+  HREF="node74.html">Microstrip components</A>
+<B> Previous:</B> <A NAME="tex2html1885"
+  HREF="node80.html">Microstrip impedance step</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

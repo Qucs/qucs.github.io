@@ -1,0 +1,1195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Modified Nodal Analysis</TITLE>
+<META NAME="description" CONTENT="Modified Nodal Analysis">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node15.html">
+<LINK REL="previous" HREF="node13.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node15.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html819"
+  HREF="node15.html">Extensions to the MNA</A>
+<B>Up:</B> <A NAME="tex2html815"
+  HREF="node13.html">DC Analysis</A>
+<B> Previous:</B> <A NAME="tex2html809"
+  HREF="node13.html">DC Analysis</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html820"
+  HREF="node14.html#SECTION00411000000000000000">Generating the MNA matrices</A>
+<LI><A NAME="tex2html821"
+  HREF="node14.html#SECTION00412000000000000000">The A matrix</A>
+<UL>
+<LI><A NAME="tex2html822"
+  HREF="node14.html#SECTION00412100000000000000">Rules for making the G matrix</A>
+<LI><A NAME="tex2html823"
+  HREF="node14.html#SECTION00412200000000000000">Rules for making the B matrix</A>
+<LI><A NAME="tex2html824"
+  HREF="node14.html#SECTION00412300000000000000">Rules for making the C matrix</A>
+<LI><A NAME="tex2html825"
+  HREF="node14.html#SECTION00412400000000000000">Rules for making the D matrix</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html826"
+  HREF="node14.html#SECTION00413000000000000000">The x matrix</A>
+<UL>
+<LI><A NAME="tex2html827"
+  HREF="node14.html#SECTION00413100000000000000">Rules for making the v matrix</A>
+<LI><A NAME="tex2html828"
+  HREF="node14.html#SECTION00413200000000000000">Rules for making the j matrix</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html829"
+  HREF="node14.html#SECTION00414000000000000000">The z matrix</A>
+<UL>
+<LI><A NAME="tex2html830"
+  HREF="node14.html#SECTION00414100000000000000">Rules for making the i matrix</A>
+<LI><A NAME="tex2html831"
+  HREF="node14.html#SECTION00414200000000000000">Rules for making the e matrix</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html832"
+  HREF="node14.html#SECTION00415000000000000000">A simple example</A>
+<UL>
+<LI><A NAME="tex2html833"
+  HREF="node14.html#SECTION00415100000000000000">Going through the MNA algorithm</A>
+<LI><A NAME="tex2html834"
+  HREF="node14.html#SECTION00415200000000000000">How the algorithm relates to basic equations in circuit analysis</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00410000000000000000"></A>
+<A NAME="sec:MNA"></A>
+<BR>
+Modified Nodal Analysis
+</H1>
+
+<P>
+Many different kinds of network element are encountered in network
+analysis.  For circuit analysis it is necessary to formulate equations
+for circuits containing as many different types of network elements as
+possible.  There are various methods for equation formulation for a
+circuit.  These are based on three types of equations found in circuit
+theory:
+
+<P>
+
+<UL>
+<LI>equations based on Kirchhoff's voltage law (KVL)
+</LI>
+<LI>equations based on Kirchhoff's current law (KCL)
+</LI>
+<LI>branch constitutive equations
+</LI>
+</UL>
+
+<P>
+The equations have to be formulated (represented in a computer
+program) automatically in a simple, comprehensive manner.  Once
+formulated, the system of equations has to be solved.  There are two
+main aspects to be considered when choosing algorithms for this
+purpose: accuracy and speed.  The MNA, briefly for <SPAN  CLASS="textbf">M</SPAN>odified
+<SPAN  CLASS="textbf">N</SPAN>odal <SPAN  CLASS="textbf">A</SPAN>nalysis, has been proved to accomplish these
+tasks.
+
+<P>
+MNA applied to a circuit with passive elements, independent current
+and voltage sources and active elements results in a matrix equation
+of the form:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\left[A\right] \cdot \left[x\right] = \left[z\right]
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="95" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img267.png"
+ ALT="$\displaystyle \left[A\right] \cdot \left[x\right] = \left[z\right]$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+For a circuit with N nodes and M independent voltage sources:
+
+<P>
+
+<UL>
+<LI>The A matrix
+
+<UL>
+<LI>is (N+M)<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>(N+M) in size, and consists only of known quantities
+</LI>
+<LI>the N<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>N part of the matrix in the upper left:
+
+<UL>
+<LI>has only passive elements
+</LI>
+<LI>elements connected to ground appear only on the diagonal
+</LI>
+<LI>elements not connected to ground are both on the diagonal and
+off-diagonal terms
+</LI>
+</UL>
+</LI>
+<LI>the rest of the A matrix (not included in the N<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>N upper left
+part) contains only 1, -1 and 0 (other values are possible if there
+are dependent current and voltage sources)
+</LI>
+</UL>
+
+<P>
+</LI>
+<LI>The x matrix
+
+<UL>
+<LI>is an (N+M)<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>1 vector that holds the unknown quantities (node
+voltages and the currents through the independent voltage sources)
+</LI>
+<LI>the top N elements are the n node voltages
+</LI>
+<LI>the bottom M elements represent the currents through the M independent
+voltage sources in the circuit
+</LI>
+</UL>
+
+<P>
+</LI>
+<LI>The z matrix
+
+<UL>
+<LI>is an (N+M)<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>1 vector that holds only known quantities
+</LI>
+<LI>the top N elements are either zero or the sum and difference of
+independent current sources in the circuit
+</LI>
+<LI>the bottom M elements represent the M independent voltage sources in
+the circuit
+</LI>
+</UL>
+</LI>
+</UL>
+
+<P>
+The circuit is solved by a simple matrix manipulation:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\left[x\right] = \left[A\right]^{-1} \cdot \left[z\right]
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="113" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.png"
+ ALT="$\displaystyle \left[x\right] = \left[A\right]^{-1} \cdot \left[z\right]$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Though this may be difficult by hand, it is straightforward and so is
+easily done by computer.
+
+<P>
+
+<H2><A NAME="SECTION00411000000000000000">
+Generating the MNA matrices</A>
+</H2>
+
+<P>
+The following section is an algorithmic approach to the concept of the
+Modified Nodal Analysis.  There are three matrices we need to
+generate, the A matrix, the x matrix and the z matrix.  Each of these
+will be created by combining several individual sub-matrices.
+
+<P>
+
+<H2><A NAME="SECTION00412000000000000000">
+The A matrix</A>
+</H2>
+
+<P>
+The A matrix will be developed as the combination of 4 smaller
+matrices, G, B, C, and D.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+A =
+\begin{bmatrix}
+G & B\\
+C & D
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="96" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img270.png"
+ ALT="$\displaystyle A = \begin{bmatrix}G &amp; B\\ C &amp; D \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The A matrix is (M+N)<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>(M+N) (N is the number of nodes, and M is the
+number of independent voltage sources) and:
+
+<P>
+
+<UL>
+<LI>the G matrix is N<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>N and is determined by the interconnections
+between the circuit elements
+</LI>
+<LI>the B matrix is N<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>M and is determined by the connection of the voltage
+sources
+</LI>
+<LI>the C matrix is M<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>N and is determined by the connection of
+the voltage sources (B and C are closely related, particularly when
+only independent sources are considered)
+</LI>
+<LI>the D matrix is M<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>M and is zero if only independent sources are
+considered
+</LI>
+</UL>
+
+<P>
+
+<H3><A NAME="SECTION00412100000000000000">
+Rules for making the G matrix</A>
+</H3>
+
+<P>
+The G matrix is an N<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>N matrix formed in two steps.
+
+<P>
+
+<OL>
+<LI>Each element in the diagonal matrix is equal to the sum of the
+conductance (one over the resistance) of each element connected to the
+corresponding node.  So the first diagonal element is the sum of
+conductances connected to node 1, the second diagonal element is the
+sum of conductances connected to node 2, and so on.
+</LI>
+<LI>The off diagonal elements are the negative conductance of the element
+connected to the pair of corresponding node.  Therefore a resistor
+between nodes 1 and 2 goes into the G matrix at location (1,2) and
+locations (2,1).
+</LI>
+</OL>
+
+<P>
+If an element is grounded, it will only have contribute to one entry
+in the G matrix - at the appropriate location on the diagonal.  If it
+is ungrounded it will contribute to four entries in the matrix - two
+diagonal entries (corresponding to the two nodes) and two off-diagonal
+entries.
+
+<P>
+
+<H3><A NAME="SECTION00412200000000000000">
+Rules for making the B matrix</A>
+</H3>
+
+<P>
+The B matrix is an N<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>M matrix with only 0, 1 and -1 elements.
+Each location in the matrix corresponds to a particular voltage source
+(first dimension) or a node (second dimension).  If the positive
+terminal of the ith voltage source is connected to node k, then the
+element (k,i) in the B matrix is a 1.  If the negative terminal of the
+ith voltage source is connected to node k, then the element (k,i) in
+the B matrix is a -1.  Otherwise, elements of the B matrix are zero.
+
+<P>
+<P>
+If a voltage source is ungrounded, it will have two elements in the B
+matrix (a 1 and a -1 in the same column).  If it is grounded it will
+only have one element in the matrix.
+
+<P>
+
+<H3><A NAME="SECTION00412300000000000000">
+Rules for making the C matrix</A>
+</H3>
+
+<P>
+The C matrix is an M<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>N matrix with only 0, 1 and -1 elements.
+Each location in the matrix corresponds to a particular node (first
+dimension) or voltage source (second dimension).  If the positive
+terminal of the ith voltage source is connected to node k, then the
+element (i,k) in the C matrix is a 1.  If the negative terminal of the
+ith voltage source is connected to node k, then the element (i,k) in
+the C matrix is a -1.  Otherwise, elements of the C matrix are zero.
+
+<P>
+<P>
+In other words, the C matrix is the transpose of the B matrix.  This
+is not the case when dependent sources are present.
+
+<P>
+
+<H3><A NAME="SECTION00412400000000000000">
+Rules for making the D matrix</A>
+</H3>
+
+<P>
+The D matrix is an M<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>M matrix that is composed entirely of
+zeros.  It can be non-zero if dependent sources are considered.
+
+<P>
+
+<H2><A NAME="SECTION00413000000000000000"></A>
+<A NAME="sec:xmatrix"></A>
+<BR>
+The x matrix
+</H2>
+
+<P>
+The x matrix holds our unknown quantities and will be developed as the
+combination of 2 smaller matrices v and j.  It is considerably easier
+to define than the A matrix.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+x =
+\begin{bmatrix}
+v\\
+j
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="59" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img271.png"
+ ALT="$\displaystyle x = \begin{bmatrix}v\\ j \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">4</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The x matrix is 1<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>(M+N) (N is the number of nodes, and M is the
+number of independent voltage sources) and:
+
+<P>
+
+<UL>
+<LI>the v matrix is 1<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>N and hold the unknown voltages
+</LI>
+<LI>the j matrix is 1<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>M and holds the unknown currents through the
+voltage sources
+</LI>
+</UL>
+
+<P>
+
+<H3><A NAME="SECTION00413100000000000000">
+Rules for making the v matrix</A>
+</H3>
+
+<P>
+The v matrix is an 1<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>N matrix formed of the node voltages.
+Each element in v corresponds to the voltage at the equivalent node in
+the circuit (there is no entry for ground - node 0).
+
+<P>
+<P>
+For a circuit with N nodes we get:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+v =
+\begin{bmatrix}
+v_{1}\\
+v_{2}\\
+\vdots\\
+v_{N}\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="74" HEIGHT="103" ALIGN="MIDDLE" BORDER="0"
+ SRC="img272.png"
+ ALT="$\displaystyle v = \begin{bmatrix}v_{1}\\ v_{2}\\ \vdots\\ v_{N}\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">5</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H3><A NAME="SECTION00413200000000000000">
+Rules for making the j matrix</A>
+</H3>
+
+<P>
+The j matrix is an 1<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>M matrix, with one entry for the current
+through each voltage source.  So if there are M voltage sources
+<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img273.png"
+ ALT="$ V_{1}$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img274.png"
+ ALT="$ V_{2}$"></SPAN> through <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img275.png"
+ ALT="$ V_{M}$"></SPAN>, the j matrix will be:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+j =
+\begin{bmatrix}
+i_{V_{1}}\\
+i_{V_{2}}\\
+\vdots\\
+i_{V_{M}}\\
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="79" HEIGHT="103" ALIGN="MIDDLE" BORDER="0"
+ SRC="img276.png"
+ ALT="$\displaystyle j = \begin{bmatrix}i_{V_{1}}\\ i_{V_{2}}\\ \vdots\\ i_{V_{M}}\\ \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">6</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<H2><A NAME="SECTION00414000000000000000">
+The z matrix</A>
+</H2>
+
+<P>
+The z matrix holds our independent voltage and current sources and
+will be developed as the combination of 2 smaller matrices i and e.
+It is quite easy to formulate.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+z =
+\begin{bmatrix}
+i\\
+e
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="57" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img277.png"
+ ALT="$\displaystyle z = \begin{bmatrix}i\\ e \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">7</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The z matrix is 1<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>(M+N) (N is the number of nodes, and M is the
+number of independent voltage sources) and:
+
+<P>
+
+<UL>
+<LI>the i matrix is 1<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>N and contains the sum of the currents through the
+passive elements into the corresponding node (either zero, or the sum
+of independent current sources)
+</LI>
+<LI>the e matrix is 1<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>M and holds the values of the independent
+voltage sources
+</LI>
+</UL>
+
+<P>
+
+<H3><A NAME="SECTION00414100000000000000">
+Rules for making the i matrix</A>
+</H3>
+
+<P>
+The i matrix is an 1<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>N matrix with each element of the matrix
+corresponding to a particular node.  The value of each element of i is
+determined by the sum of current sources into the corresponding node.
+If there are no current sources connected to the node, the value is
+zero.
+
+<P>
+
+<H3><A NAME="SECTION00414200000000000000">
+Rules for making the e matrix</A>
+</H3>
+
+<P>
+The e matrix is an 1<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>M matrix with each element of the matrix
+equal in value to the corresponding independent voltage source.
+
+<P>
+
+<H2><A NAME="SECTION00415000000000000000">
+A simple example</A>
+</H2>
+
+<P>
+The example given in fig. <A HREF="#fig:MNAexample">3.1</A> illustrates applying
+the rules for building the MNA matrices and how this relates to basic
+equations used in circuit analysis.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:MNAexample"></A><A NAME="2927"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.1:</STRONG>
+example circuit applied to modified nodal analysis</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="452" HEIGHT="210" ALIGN="BOTTOM" BORDER="0"
+ SRC="img278.png"
+ ALT="\includegraphics[width=10cm]{MNAexample}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<H3><A NAME="SECTION00415100000000000000">
+Going through the MNA algorithm</A>
+</H3>
+
+<P>
+The G matrix is a 2<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>2 matrix because there are 2 different
+nodes apart from ground which is the reference node.  On the diagonal
+you find the sum of the elements conductances connected to the nodes 1
+and 2.  The off-diagonal matrix entries contain the negative
+conductances of the elements connected between two nodes.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+G =
+\begin{bmatrix}
+\frac{1}{R_{1}} & -\frac{1}{R_{1}}\\
+-\frac{1}{R_{1}} & \frac{1}{R_{1}} + \frac{1}{R_{2}}
+\end{bmatrix}
+=
+\begin{bmatrix}
+0.2 & -0.2\\
+-0.2 & 0.3
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="280" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img279.png"
+ ALT="$\displaystyle G = \begin{bmatrix}\frac{1}{R_{1}} &amp; -\frac{1}{R_{1}}\\ -\frac{1}...
+...{1}{R_{2}} \end{bmatrix} = \begin{bmatrix}0.2 &amp; -0.2\\ -0.2 &amp; 0.3 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">8</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The B matrix (which is transposed to C) is a 1<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>2 matrix because
+there is one voltage source and 2 nodes.  The positive terminal of the
+voltage source <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img273.png"
+ ALT="$ V_{1}$"></SPAN> is connected to node 1.  That is why
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+B = C^{T} =
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="106" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img280.png"
+ ALT="$\displaystyle B = C^{T} = \begin{bmatrix}1\\ 0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">9</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+and the D matrix is filled with zeros only because there are no dependent
+(active and controlled) devices in the example circuit.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+D =
+\begin{bmatrix}
+0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img281.png"
+ ALT="$\displaystyle D = \begin{bmatrix}0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">10</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The x matrix is a 1<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>3 matrix.  The MNA equations deliver a
+solution for the unknown voltages at each node in a circuit except the
+reference node and the currents through each voltage source.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+x =
+\begin{bmatrix}
+v_{1}\\
+v_{2}\\
+i_{V_{1}}
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="75" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img282.png"
+ ALT="$\displaystyle x = \begin{bmatrix}v_{1}\\ v_{2}\\ i_{V_{1}} \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">11</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The z matrix is according to the rules for building it a 1<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \times$"></SPAN>3
+matrix.  The upper two entries are the sums of the currents flowing
+into node 1 and node 2.  The lower entry is the voltage value of the
+voltage source <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img273.png"
+ ALT="$ V_{1}$"></SPAN>.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+z =
+\begin{bmatrix}
+0\\
+I_{1}\\
+U_{1}
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+1\\
+1
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="123" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img283.png"
+ ALT="$\displaystyle z = \begin{bmatrix}0\\ I_{1}\\ U_{1} \end{bmatrix} = \begin{bmatrix}0\\ 1\\ 1 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">12</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+According to the MNA algorithm the equation system is represented by
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\left[A\right] \cdot \left[x\right] = \left[z\right]
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="95" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img267.png"
+ ALT="$\displaystyle \left[A\right] \cdot \left[x\right] = \left[z\right]$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">13</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+which is equivalent to
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:MNAexample"></A><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+G & B\\
+C & D
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+x
+\end{bmatrix}
+=
+\begin{bmatrix}
+z
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="142" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img284.png"
+ ALT="$\displaystyle \begin{bmatrix}G &amp; B\\ C &amp; D \end{bmatrix} \cdot \begin{bmatrix}x \end{bmatrix} = \begin{bmatrix}z \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">14</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+In the example eq. (<A HREF="#eq:MNAexample">3.14</A>) expands to:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:MNAfull"></A><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+\frac{1}{R_{1}} & -\frac{1}{R_{1}} & 1\\
+-\frac{1}{R_{1}} & \frac{1}{R_{1}} + \frac{1}{R_{2}} & 0\\
+1 & 0 & 0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+v_{1}\\
+v_{2}\\
+i_{V_{1}}
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+I_{1}\\
+U_{1}
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="272" HEIGHT="76" ALIGN="MIDDLE" BORDER="0"
+ SRC="img285.png"
+ ALT="$\displaystyle \begin{bmatrix}\frac{1}{R_{1}} &amp; -\frac{1}{R_{1}} &amp; 1\\ -\frac{1}...
+..._{2}\\ i_{V_{1}} \end{bmatrix} = \begin{bmatrix}0\\ I_{1}\\ U_{1} \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">15</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The equation systems to be solved is now defined by the following
+matrix representation.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+0.2 & -0.2 & 1\\
+-0.2 & 0.3 & 0\\
+1 & 0 & 0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+v_{1}\\
+v_{2}\\
+i_{V_{1}}
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+1\\
+1
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="237" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img286.png"
+ ALT="$\displaystyle \begin{bmatrix}0.2 &amp; -0.2 &amp; 1\\ -0.2 &amp; 0.3 &amp; 0\\ 1 &amp; 0 &amp; 0 \end{b...
+..._{1}\\ v_{2}\\ i_{V_{1}} \end{bmatrix} = \begin{bmatrix}0\\ 1\\ 1 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">16</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Using matrix inversion the solution vector x writes as follows:
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:MNAresult"></A><!-- MATH
+ \begin{equation}
+\left[x\right] =
+\left[A\right]^{-1}\cdot \left[z\right] = 
+\begin{bmatrix}
+v_{1}\\
+v_{2}\\
+i_{V_{1}}
+\end{bmatrix}
+=
+\begin{bmatrix}
+1\\
+4\\
+0.6
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="238" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img287.png"
+ ALT="$\displaystyle \left[x\right] = \left[A\right]^{-1}\cdot \left[z\right] = \begin...
+...1}\\ v_{2}\\ i_{V_{1}} \end{bmatrix} = \begin{bmatrix}1\\ 4\\ 0.6 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">17</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The result in eq. (<A HREF="#eq:MNAresult">3.17</A>) denotes the current through the
+voltage source <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img273.png"
+ ALT="$ V_{1}$"></SPAN> is <!-- MATH
+ $0.6\ampere$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img288.png"
+ ALT="$ 0.6\ampere$"></SPAN>, the voltage at node 1 is
+<SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img289.png"
+ ALT="$ 1\volt$"></SPAN> and the voltage at node 2 is <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img290.png"
+ ALT="$ 4\volt$"></SPAN>.
+
+<P>
+
+<H3><A NAME="SECTION00415200000000000000">
+How the algorithm relates to basic equations in circuit analysis</A>
+</H3>
+
+<P>
+Expanding the matrix representation in eq. (<A HREF="#eq:MNAfull">3.15</A>) to a set
+of equations denotes the following equation system consisting of 3 of
+them.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img291.png"
+ ALT="$\displaystyle \rm {I:}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="219" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img292.png"
+ ALT="$\displaystyle \qquad 0 = \frac{1}{R_{1}}\cdot v_{1} - \frac{1}{R_{1}}\cdot v_{2} + i_{V_{1}}$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">KCL at node 1</SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">18</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img293.png"
+ ALT="$\displaystyle \rm {II:}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="266" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img294.png"
+ ALT="$\displaystyle \qquad I_{1} = -\frac{1}{R_{1}}\cdot v_{1} + \left(\frac{1}{R_{1}} + \frac{1}{R_{2}}\right)\cdot v_{2}$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">KCL at node 2</SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">19</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img295.png"
+ ALT="$\displaystyle \rm {III:}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="89" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img296.png"
+ ALT="$\displaystyle \qquad U_{1} = v_{1}$"></SPAN></TD>
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">constitutive equation</SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">20</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Apparently eq. I and eq. II conform to Kirchhoff's current law at the
+nodes 1 and 2.  The last equation is just the constitutive equation
+for the voltage source <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img273.png"
+ ALT="$ V_{1}$"></SPAN>.  There are three unknowns (<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img297.png"
+ ALT="$ v_{1}$"></SPAN>,
+<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img298.png"
+ ALT="$ v_{2}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img299.png"
+ ALT="$ i_{V_{1}}$"></SPAN>) and three equations, thus the system should
+be solvable.
+
+<P>
+<P>
+Equation III indicates the voltage at node 1 is <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img289.png"
+ ALT="$ 1\volt$"></SPAN>.  Applying
+this result to eq. II and transposing it to <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img298.png"
+ ALT="$ v_{2}$"></SPAN> (the voltage at
+node 2) gives
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+v_{2} = \frac{I_{1} + \frac{1}{R_{1}}\cdot U_{1}}{\frac{1}{R_{1}} + \frac{1}{R_{2}}} = 4\volt
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="166" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img300.png"
+ ALT="$\displaystyle v_{2} = \frac{I_{1} + \frac{1}{R_{1}}\cdot U_{1}}{\frac{1}{R_{1}} + \frac{1}{R_{2}}} = 4\volt$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">21</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The missing current through the voltage source <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img273.png"
+ ALT="$ V_{1}$"></SPAN> can be computed
+using both the results <!-- MATH
+ $v_{2} = 4\volt$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img301.png"
+ ALT="$ v_{2} = 4\volt$"></SPAN> and <!-- MATH
+ $v_{1} = 1\volt$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img302.png"
+ ALT="$ v_{1} = 1\volt$"></SPAN> by
+transforming equation I.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+i_{V_{1}} = \frac{1}{R_{1}}\cdot v_{2} - \frac{1}{R_{1}}\cdot v_{1} = 0.6\ampere
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="213" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img303.png"
+ ALT="$\displaystyle i_{V_{1}} = \frac{1}{R_{1}}\cdot v_{2} - \frac{1}{R_{1}}\cdot v_{1} = 0.6\ampere$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>.<SPAN CLASS="arabic">22</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The small example, shown in fig. <A HREF="#fig:MNAexample">3.1</A>, and the
+excursus into artless math verifies that the MNA algorithm and classic
+electrical handiwork tend to produce the same results.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html819"
+  HREF="node15.html">Extensions to the MNA</A>
+<B>Up:</B> <A NAME="tex2html815"
+  HREF="node13.html">DC Analysis</A>
+<B> Previous:</B> <A NAME="tex2html809"
+  HREF="node13.html">DC Analysis</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

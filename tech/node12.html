@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Noise Wave Correlation Matrix of Components</TITLE>
+<META NAME="description" CONTENT="Noise Wave Correlation Matrix of Components">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="previous" HREF="node11.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node13.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html774"
+  HREF="node13.html">DC Analysis</A>
+<B>Up:</B> <A NAME="tex2html770"
+  HREF="node7.html">Noise Waves</A>
+<B> Previous:</B> <A NAME="tex2html766"
+  HREF="node11.html">Noise Correlation Matrix Transformations</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00350000000000000000">
+Noise Wave Correlation Matrix of Components</A>
+</H1>
+
+<P>
+Many components do not produce any noise.  Every element of their
+noise correlation matrix therefore equals exactly zero.  Examples are
+lossless, passive components, i.e. capacitors, inductors,
+transformers, circulators, phase shifters.  Furthermore ideal voltage
+and current sources (without internal resistance) as well as gyrators
+also do not produce any noise.
+
+<P>
+<P>
+If one wants to calculate the noise wave correlation matrix of a
+component, the most universal method is to take noise voltages and
+noise currents and then derive the noise waves by the use of equation
+(<A HREF="node3.html#equ:waves">1.1</A>).  However, this can be very difficult.
+
+<P>
+<P>
+A passive, linear circuit produces only thermal noise and thus its
+noise waves can be calculated with Bosma's theorem (assuming
+thermodynamic equilibrium).
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:bosma"></A><!-- MATH
+ \begin{equation}
+(\underline{C}) = k\cdot T\cdot \left( (\underline{E}) - (\underline{S})\cdot(\underline{S})^{*T} \right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="224" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.png"
+ ALT="$\displaystyle (\underline{C}) = k\cdot T\cdot \left( (\underline{E}) - (\underline{S})\cdot(\underline{S})^{*T} \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">38</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with <!-- MATH
+ $(\underline{S})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$ (\underline{S})$"></SPAN> being the S parameter matrix and <!-- MATH
+ $(\underline{E})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img262.png"
+ ALT="$ (\underline{E})$"></SPAN> identity matrix.
+Of course, this theorem can also be written with impedance and admittance representation
+of the noise correlation matrix:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{C}_Z = 4\cdot k\cdot T\cdot \text{Re}(\underline{Z})
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="105" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img263.png"
+ ALT="$\displaystyle \underline{C}_Z = 4\cdot k\cdot T\cdot$">&nbsp; &nbsp;Re<IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img264.png"
+ ALT="$\displaystyle (\underline{Z})$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">39</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{C}_Y = 4\cdot k\cdot T\cdot \text{Re}(\underline{Y})
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="106" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img265.png"
+ ALT="$\displaystyle \underline{C}_Y = 4\cdot k\cdot T\cdot$">&nbsp; &nbsp;Re<IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img266.png"
+ ALT="$\displaystyle (\underline{Y})$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">2</SPAN>.<SPAN CLASS="arabic">40</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html774"
+  HREF="node13.html">DC Analysis</A>
+<B>Up:</B> <A NAME="tex2html770"
+  HREF="node7.html">Noise Waves</A>
+<B> Previous:</B> <A NAME="tex2html766"
+  HREF="node11.html">Noise Correlation Matrix Transformations</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

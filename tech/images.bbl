@@ -1,0 +1,560 @@
+\begin{thebibliography}{100}
+
+\bibitem{Kurokawa}
+K.~Kurokawa, ``{Power Waves and the Scattering Matrix},'' \emph{IEEE
+  Transactions on Microwave Theory and Techniques}, pp. 194--202, Mar. 1965.
+
+\bibitem{Compton}
+R.~C. Compton and D.~B. Rutledge, ``{Perspectives in Microwave Circuit
+  Analysis},'' in \emph{Proceedings of the 32nd Midwest Symposium on Circuits
+  and Systems}, vol.~2.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, Aug. 1989,
+  pp. 716--718.
+
+\bibitem{Edwards3}
+M.~L. Edwards and J.~H. Sinsky, ``{A New Criterion for Linear 2-Port Stability
+  Using a Single Geometrically Derived Parameter},'' \emph{IEEE Transactions on
+  Microwave Theory and Techniques}, vol.~40, no.~12, pp. 2303--2311, Dec. 1992.
+
+\bibitem{Michel1}
+H.-J. Michel, \emph{{Zweitoranalyse mit Leitungswellen}}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Teubner, 1981.
+
+\bibitem{Wedge}
+S.~W. Wedge and D.~B. Rutledge, ``{Wave Techniques for Noise Modeling and
+  Measurement},'' \emph{IEEE Transactions on Microwave Theory and Techniques},
+  vol.~40, no.~11, pp. 2004--2012, Nov. 1992.
+
+\bibitem{Blum}
+A.~Blum, \emph{{Skriptum zur Vorlesung Elektronik IV \"uber
+  Schaltungssimulation}}.\hskip 1em plus 0.5em minus 0.4em\relax Universit\"at
+  des Saarlandes: Universitas Saraviensis, 2001.
+
+\bibitem{Gear}
+C.~W. Gear, ``{Simultaneous Numerical Solution of Differential-Algebraic
+  Equations},'' \emph{IEEE Transactions on Circuit Theory}, vol.~18, no.~1, pp.
+  89--95, Jan. 1971.
+
+\bibitem{Maas1}
+S.~Maas, \emph{{Nonlinear Microwave and RF Circuits}}, second edition~ed.\hskip
+  1em plus 0.5em minus 0.4em\relax www.artechhouse.com, 2003.
+
+\bibitem{Roychowdhury}
+D.~L. Jaijeet~Roychowdhury and P.~Feldmann, ``{Cyclostationary Noise Analysis
+  of Large RF Circuits with Multitone Excitations},'' \emph{IEEE Journal of
+  Solid-State Circuits}, pp. 324--336, Mar. 1998.
+
+\bibitem{Rizzoli}
+V.~Rizzoli and A.~Neri, ``{State of the Art and Present Trends in Nonlinear
+  Microwave CAD Techniques},'' \emph{IEEE Transactions on Microwave Theory and
+  Techniques}, pp. 343--365, Feb. 1988.
+
+\bibitem{Edwards}
+T.~Edwards, \emph{{Foundations for Microstrip Circuit Design}}, 2nd~ed.\hskip
+  1em plus 0.5em minus 0.4em\relax John Wiley \& Sons, 1991.
+
+\bibitem{Grosch}
+T.~O. Grosch and L.~A. Carpenter, ``{Two-Port to Three-Port Noise-Wave
+  Transformation for CAD Applications},'' \emph{IEEE Transactions on Microwave
+  Theory and Techniques}, vol.~41, no.~9, pp. 1543--1548, Sept. 1993.
+
+\bibitem{Shichman}
+H.~Shichman and D.~A. Hodges, ``{Modeling and Simulation of Insulated-Gate
+  Field-Effect Transistor Switching Circuits},'' \emph{IEEE Journal of
+  Solid-State Circuits}, vol.~3, no.~3, pp. 285--289, Sept. 1968.
+
+\bibitem{Weil}
+P.~B. Weil and L.~P. McNamee, ``{Simulation of Excess Phase in Bipolar
+  Transistors},'' \emph{IEEE Transactions on Circuits and Systems}, vol.~25,
+  no.~2, pp. 114--116, Feb. 1978.
+
+\bibitem{Meyer}
+J.~E. Meyer, ``{MOS Models and Circuit Simulation},'' \emph{RCA Review},
+  vol.~32, pp. 42--63, Mar. 1971.
+
+\bibitem{Wheeler2}
+H.~A. Wheeler, ``{Transmission-Line Properties of Parallel Strips Separated by
+  a Dielectric Sheet},'' \emph{IEEE Transactions on Microwave Theory and
+  Techniques}, vol.~13, no.~2, pp. 172--185, Mar. 1965.
+
+\bibitem{Schneider}
+M.~V. Schneider, ``{Microstrip Lines for Microwave Integrated Circuits},''
+  \emph{The Bell System Technical Journal}, vol.~48, pp. 1421--1444, May 1969.
+
+\bibitem{Hammerstad}
+E.~Hammerstad and {\O}.~Jensen, ``{Accurate Models for Microstrip
+  Computer-Aided Design},'' \emph{Symposium on Microwave Theory and
+  Techniques}, pp. 407--409, June 1980.
+
+\bibitem{Wheeler}
+H.~A. Wheeler, ``{Transmission-Line Properties of a Strip on a Dielectric Sheet
+  on a Plane},'' \emph{IEEE Transactions on Microwave Theory and Techniques},
+  vol.~25, no.~8, pp. 631--647, Aug. 1977.
+
+\bibitem{Kirschning3}
+M.~Kirschning and R.~H. Jansen, ``{Accurate Model for Effective Dielectric
+  Constant of Microstrip with Validity up to Millimeter-Wave Frequencies},''
+  \emph{Electronics Letters}, vol.~8, no.~6, pp. 272--273, Mar. 1982.
+
+\bibitem{Kirschning1}
+R.~H. Jansen and M.~Kirschning, ``{Arguments and an accurate Model for the
+  Power-Current Formulation of Microstrip Characteristic Impedance},''
+  \emph{{Archiv f\"ur Elektronik und \"Ubertragungstechnik (AE\"U)}}, vol.~37,
+  pp. 108--112, 1983.
+
+\bibitem{Yamashita}
+E.~Yamashita, K.~Atsuki, and T.~Ueda, ``{An Approximate Dispersion Formula of
+  Microstrip Lines for Computer Aided Design of Microwave Integrated
+  Circuits},'' \emph{IEEE Transactions on Microwave Theory and Techniques},
+  vol.~27, pp. 1036--1038, Dec. 1979.
+
+\bibitem{Kobayashi}
+M.~Kobayashi, ``{A Dispersion Formula Satisfying Recent Requirements in
+  Microstrip CAD},'' \emph{IEEE Transactions on Microwave Theory and
+  Techniques}, vol.~36, no.~8, pp. 1246--1250, Aug. 1988.
+
+\bibitem{Getsinger}
+W.~J. Getsinger, ``{Microstrip Dispersion Model},'' \emph{IEEE Transactions on
+  Microwave Theory and Techniques}, vol.~21, no.~1, pp. 34--39, Jan. 1973.
+
+\bibitem{Getsinger2}
+------, ``{Microstrip Characteristic Impedance},'' \emph{IEEE Transactions on
+  Microwave Theory and Techniques}, vol.~27, no.~5, p. 293, Apr. 1979.
+
+\bibitem{Getsinger3}
+------, ``{Measurement and Modeling of the Apparent Characteristic Impedance of
+  Microstrip},'' \emph{IEEE Transactions on Microwave Theory and Techniques},
+  vol.~31, no.~8, pp. 624--632, Aug. 1983.
+
+\bibitem{Edwards2}
+T.~C. Edwards and R.~P. Owens, ``{2-18-GHz Dispersion Measurements on
+  10-100-$\ohm$ Microstrip Lines on Sapphire},'' \emph{IEEE Transactions on
+  Microwave Theory and Techniques}, vol.~24, no.~8, pp. 506--513, Aug. 1976.
+
+\bibitem{Pramanick1}
+P.~Pramanick and P.~Bhartia, ``{An Accurate Description of Dispersion in
+  Microstrip},'' \emph{Microwave Journal}, pp. 89--96, Dec. 1983.
+
+\bibitem{Schneider1}
+M.~V. Schneider, ``{Microstrip Dispersion},'' in \emph{Proceedings of the IEEE,
+  Letters}, vol.~60, Jan. 1972, pp. 144--146.
+
+\bibitem{Kirschning4}
+M.~Kirschning, R.~H. Jansen, and N.~H.~L. Koster, ``{Measurement and
+  Computer-Aided Modeling of Microstrip Discontinuities by an Improved
+  Resonator Method},'' \emph{IEEE MTT-S International Microwave Symposium
+  Digest}, pp. 495--497, May 1983.
+
+\bibitem{Kirschning2}
+M.~Kirschning and R.~H. Jansen, ``{Accurate Wide-Range Design Equations for the
+  Frequency-Dependent Characteristic of Parallel Coupled Microstrip Lines},''
+  \emph{IEEE Transactions on Microwave Theory and Techniques}, vol.~32, no.~1,
+  pp. 83--90, Jan. 1984.
+
+\bibitem{Kirschning6}
+------, ``{Corrections to "Accurate Wide-Range Design Equations for the
+  Frequency-Dependent Characteristic of Parallel Coupled Microstrip Lines"},''
+  \emph{IEEE Transactions on Microwave Theory and Techniques}, vol.~33, no.~3,
+  p. 288, Mar. 1985.
+
+\bibitem{Getsinger4}
+W.~J. Getsinger, ``{Dispersion of Parallel-Coupled Microstrip},'' \emph{IEEE
+  Transactions on Microwave Theory and Techniques}, pp. 144--145, Mar. 1973,
+  {Short Papers}.
+
+\bibitem{Jansen}
+R.~H. Jansen, ``{High-Speed Computation of Single and Coupled Microstrip
+  Parameters Including Dispersion, High-Order Modes, Loss and Finite Strip},''
+  \emph{IEEE Transactions on Microwave Theory and Techniques}, vol.~26, no.~2,
+  pp. 75--82, Feb. 1978.
+
+\bibitem{Kirschning7}
+M.~Kirschning, R.~H. Jansen, and N.~H.~L. Koster, ``{Accurate Model for open
+  end effect of microstrip lines},'' \emph{Electronics Letters}, vol.~17,
+  no.~3, pp. 123--125, Feb. 1981.
+
+\bibitem{Hammerstad2}
+E.~Hammerstad, ``{Computer-Aided Design of Microstrip Couplers with Accurate
+  Discontinuity Models},'' \emph{Symposium on Microwave Theory and Techniques},
+  pp. 54--56, June 1981.
+
+\bibitem{Kirschning8}
+M.~Kirschning, \emph{{Entwicklung von N\"aherungsmodellen f\"ur den
+  rechnergest\"utzten Entwurf von hybriden und monolithischen Schaltungen in
+  Mikrostreifenleitungstechnik}}.\hskip 1em plus 0.5em minus 0.4em\relax
+  Dissertation, Universit\"at Duisburg, 1984.
+
+\bibitem{Gupta}
+K.~C. Gupta, R.~Garg, and I.~J. Bahl, \emph{{Microstrip Lines and
+  Slotlines}}.\hskip 1em plus 0.5em minus 0.4em\relax Artech House, Inc., 1979.
+
+\bibitem{Gupta1}
+K.~C. Gupta, R.~Garg, I.~J. Bahl, and P.~Bhartia, \emph{{Microstrip Lines and
+  Slotlines}}, 2nd~ed.\hskip 1em plus 0.5em minus 0.4em\relax Artech House,
+  Inc., 1996.
+
+\bibitem{Garg1}
+R.~Garg and I.~J. Bahl, ``{Microstrip discontinuities},'' \emph{International
+  Journal of Electronics}, vol.~45, no.~1, pp. 81--87, 1978.
+
+\bibitem{Akello}
+R.~J. Akello, B.~Easter, and I.~M. Stephenson, ``{Equivalent circuit of the
+  asymmetric crossover junction},'' \emph{Electronics Letters}, vol.~13, no.~4,
+  pp. 117--118, Feb. 1977.
+
+\bibitem{Silvester1}
+P.~Silvester and P.~Benedek, ``{Microstrip Discontinuity Capacitances for
+  Right-Angle Bends, T Junctions, and Crossings},'' \emph{IEEE Transactions on
+  Microwave Theory and Techniques}, vol.~21, no.~5, pp. 341--346, May 1973.
+
+\bibitem{Gopinath}
+A.~Gopinath, A.~F. Thomson, and I.~M. Stephenson, ``{Equivalent Circuit
+  Parameters of Microstrip Step Change in Width and Cross Junctions},''
+  \emph{IEEE Transactions on Microwave Theory and Techniques}, pp. 142--144,
+  Mar. 1976, {Short Papers}.
+
+\bibitem{Easter}
+B.~Easter, ``{The Equivalent Circuit of Some Microstrip Discontinuities},''
+  \emph{IEEE Transactions on Microwave Theory and Techniques}, vol.~23, no.~8,
+  pp. 655--660, Aug. 1975.
+
+\bibitem{Goldfarb}
+M.~E. Goldfarb and R.~A. Pucel, ``{Modeling Via Hole Grounds in Microstrip},''
+  \emph{IEEE Microwave and Guided Wave Letters}, vol.~1, no.~6, pp. 135--137,
+  June 1991.
+
+\bibitem{Bahl}
+I.~Bahl and P.~Barthia, \emph{{Microwave Solid State Circuit Design}},
+  2nd~ed.\hskip 1em plus 0.5em minus 0.4em\relax Wiley Interscience, 2003.
+
+\bibitem{WikiBond}
+\BIBentryALTinterwordspacing
+{Wikibook}. (2006, Nov.) {Electronics/Inductors}. [Online]. Available:
+  \url{{http://en.wikibooks.org/w/index.php?title=Electronics/Inductors}}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Collin}
+R.~E. Collin, \emph{{Foundations for Microwave Engineering}}, 2nd~ed.\hskip 1em
+  plus 0.5em minus 0.4em\relax New York: Mc Graw-Hill, 1992.
+
+\bibitem{Mir}
+M.~Lavrentiev and B.~Chabat, \emph{{M\'ethodes de la th\'eorie des fonctions
+  d'une variable complexe}}, Moscow, 1972.
+
+\bibitem{Frankel}
+M.~Y. Frankel, S.~Gupta, J.~A. Valdmanis, and G.~A. Mourou, ``{Terahertz
+  Attenuation and Dispersion Characteristics of Coplanar Transmission Lines},''
+  \emph{IEEE Transactions on Microwave Theory and Techniques}, vol.~39, no.~6,
+  pp. 910--916, June 1991.
+
+\bibitem{Gevorgian}
+S.~Gevorgian, T.~Martinsson, A.~Deleniv, E.~Kollberg, and I.~Vendik, ``{Simple
+  and accurate dispersion expression for the effective dielectric constant of
+  coplanar waveguides},'' in \emph{Proceedings of Microwaves, Antennas and
+  Propagation}, vol. 144, no.~2.\hskip 1em plus 0.5em minus 0.4em\relax IEE,
+  Apr. 1997, pp. 145--148.
+
+\bibitem{Owyang}
+G.~H. Owyang and T.~T. Wu, ``{The Approximate Parameters of Slot Lines and
+  Their Complement},'' \emph{IRE Transactions on Antennas and Propagation}, pp.
+  49--55, Jan. 1958.
+
+\bibitem{Ghione1}
+G.~Ghione, ``{A CAD-Oriented Analytical Model for the Losses of General
+  Asymmetric Coplanar Lines in Hybrid and Monolithic MICs},'' \emph{IEEE
+  Transactions on Microwave Theory and Techniques}, vol.~41, no.~9, pp.
+  1499--1510, Sept. 1993.
+
+\bibitem{Beilenhoff}
+K.~Beilenhoff, H.~Klingbeil, W.~Heinrich, and H.~L. Hartnagel, ``{Open and
+  Short Circuits in Coplanar MMIC's},'' \emph{IEEE Transactions on Microwave
+  Theory and Techniques}, vol.~41, no.~9, pp. 1534--1537, Sept. 1993.
+
+\bibitem{Getsinger6}
+W.~J. Getsinger, ``{End-Effects in Quasi-TEM Transmission Lines},'' \emph{IEEE
+  Transactions on Microwave Theory and Techniques}, vol.~41, no.~4, pp.
+  666--671, Apr. 1993.
+
+\bibitem{Getsinger5}
+------, ``{Circuit Duals on Planar Transmission Media},'' \emph{IEEE MTT-S
+  International Microwave Symposium Digest}, pp. 154--156, 1983.
+
+\bibitem{Sinclair}
+C.~Sinclair and S.~J. Nightgale, ``{An Equivalent Circuit Model for the
+  Coplanar Waveguide Step Discontinuity},'' \emph{IEEE MTT-S International
+  Microwave Symposium Digest}, pp. 1461--1464, Sept. 1992.
+
+\bibitem{Lefferson}
+P.~Lefferson, ``{Twisted Magnet Wire Transmission Line},'' \emph{IEEE
+  Transactions on Parts, Hybrids, and Packaging}, vol. PHP-7, no.~4, pp.
+  148--154, Dec. 1971.
+
+\bibitem{Dobrowolski}
+J.~A. Dobrowolski, \emph{{Introduction to Computer Methods for Microwave
+  Circuit Analysis and Design}}.\hskip 1em plus 0.5em minus 0.4em\relax Warsaw
+  University of Technology: Artech House, 1991.
+
+\bibitem{Weissgerber}
+W.~Wei{\ss}gerber, \emph{{Elektrotechnik f\"ur Ingenieure}},
+  {Ausgleichsvorg\"ange, Fourieranalyse, Vierpoltheorie}~ed.\hskip 1em plus
+  0.5em minus 0.4em\relax Vieweg Verlag, 1999, vol.~3.
+
+\bibitem{Press}
+W.~H. Press, S.~A. Teukolsky, and W.~T. Vetterling, \emph{{Numerical Recipes in
+  C: The Art of Scientific Computing}}.\hskip 1em plus 0.5em minus 0.4em\relax
+  Cambridge University Press, 1988-1992.
+
+\bibitem{Zverev}
+A.~I. Zverev, \emph{{Handbook of Filter Synthesis}}.\hskip 1em plus 0.5em minus
+  0.4em\relax New York: John Wiley \& Sons, 1967.
+
+\bibitem{Thede}
+L.~Thede, \emph{{Analog and Digital Filter Design using C}}.\hskip 1em plus
+  0.5em minus 0.4em\relax New Jersey: Prentice Hall, 1996.
+
+\bibitem{Sedra}
+A.~S. Sedra and P.~O. Brackett, \emph{{Filter Theory and Design: Active and
+  Passive}}, ser. {Matrix Series in Circuits and Systems}, A.~P. Sage,
+  Ed.\hskip 1em plus 0.5em minus 0.4em\relax Portland, Oregon: Matrix
+  Publishers, Inc., 1978.
+
+\bibitem{Hoffmann}
+R.~K. Hoffmann, \emph{{Integrierte Mikrowellenschaltungen}}, {Elektrische
+  Grundlagen, Dimensionierung, technische Ausf\"uhrung, Technologien}~ed.\hskip
+  1em plus 0.5em minus 0.4em\relax Berlin Heidelberg: Springer Verlag, 1983.
+
+\bibitem{Wadell}
+B.~C. Wadell, \emph{{Transmission Line Design Handbook}}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Boston London: Artech House, Inc., 1991.
+
+\bibitem{Abramowitz}
+M.~Abramowitz and I.~A. Segun, \emph{{Handbook of Mathematical Functions with
+  Formulas, Graphs, and Mathematical Tables}}.\hskip 1em plus 0.5em minus
+  0.4em\relax New York: Dover Publications, Inc., May 1968.
+
+\bibitem{Stoecker}
+H.~St\"ocker, \emph{{Taschenbuch mathematischer Formeln und moderner
+  Verfahren}}, 3rd~ed.\hskip 1em plus 0.5em minus 0.4em\relax Frankfurt am
+  Main: Verlag Harri Deutsch, 1995.
+
+\bibitem{Mackenzie}
+J.~A. Mackenzie, \emph{{The Numerical Solution of Ordinary Differential
+  Equations}}.\hskip 1em plus 0.5em minus 0.4em\relax University of
+  Strathclyde: Department of Mathematics, 2001.
+
+\bibitem{Nardi}
+A.~Sangiovanni-Vincentelli and A.~Nardi, \emph{{Computer-Aided Verification of
+  Electronic Circuits and Systems}}.\hskip 1em plus 0.5em minus 0.4em\relax
+  University of Berkeley: Department of Electrical Engineering and Computer
+  Sciences, 2002.
+
+\bibitem{templates}
+R.~Barrett, M.~Berry, T.~Chan, J.~Demmel, J.~Donato, J.~Dongarra, V.~Eijkhout,
+  R.~Pozo, C.~Romine, and H.~V. der Vorst, \emph{{Templates for the Solution of
+  Linear Systems: Building Blocks for Iterative Methods}}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Philadelphia, PA: SIAM, 1994.
+
+\bibitem{Berkner}
+J.~Berkner, \emph{{Kompaktmodelle f\"ur Bipolartransistoren}}, {Praxis der
+  Modellierung, Messung und Parameterbestimmung - SGP, VBIC, HICUM und
+  MEXTRAM}~ed.\hskip 1em plus 0.5em minus 0.4em\relax expert Verlag, 2002.
+
+\bibitem{Hoefer}
+E.~E.~E. Hoefer and H.~Nielinger, \emph{{SPICE - Analyseprogramm f\"ur
+  elektronische Schaltungen}}.\hskip 1em plus 0.5em minus 0.4em\relax Berlin
+  Heidelberg: Springer Verlag, 1985.
+
+\bibitem{Sze}
+S.~M. Sze, \emph{{Semiconductor Devices}}, {Physics and Technology}~ed.\hskip
+  1em plus 0.5em minus 0.4em\relax New York: John Wiley \& Sons, 1985.
+
+\bibitem{Engeln}
+G.~Engeln-M\"ullges and F.~Uhlig, \emph{{Numerical Algorithms with C}}.\hskip
+  1em plus 0.5em minus 0.4em\relax Berlin: Springer Verlag, Feb. 1996.
+
+\bibitem{Golub}
+G.~H. Golub and C.~F. van Loan, \emph{{Matrix Computations}}, 3rd~ed.\hskip 1em
+  plus 0.5em minus 0.4em\relax London: The Johns Hopkins University Press,
+  1996.
+
+\bibitem{Massobrio}
+G.~Massobrio and P.~Antognetti, \emph{{Semiconductor Device Modeling with
+  SPICE}}, 2nd~ed.\hskip 1em plus 0.5em minus 0.4em\relax New York: Mc
+  Graw-Hill, 1993.
+
+\bibitem{Hart}
+J.~F. Hart and et~al., \emph{{Computer Approximations}}, ser. {The SIAM Series
+  in Applied Mathematics}.\hskip 1em plus 0.5em minus 0.4em\relax New York:
+  John Wiley \& Sons, Inc., 1968.
+
+\bibitem{Constants}
+\BIBentryALTinterwordspacing
+{National Institute of Standards and Technology}. (2003, Dec.) {Fundamental
+  Physical Constants from NIST}. [Online]. Available:
+  \url{{http://physics.nist.gov/cuu/Constants/index.html}}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Queiroz}
+A.~C.~M. de~Queiroz, ``{Compact Nodal Analysis With Controlled Sources Modeled
+  by Operational Amplifiers},'' in \emph{Proceedings of the 38th Midwest
+  Symposium on Circuits and Systems}, vol.~2.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, Aug. 1995, pp. 1205--1208.
+
+\bibitem{Wedepohl}
+L.~M. Wedepohl and L.~Jackson, ``{Modified nodal analysis: an essential
+  addition to electrical circuit theory and analysis},'' \emph{Engineering
+  Science and Education Journal}, vol.~11, pp. 84--92, June 1992.
+
+\bibitem{Monaco}
+V.~A. Monaco and P.~Tiberio, ``{Computer-Aided Analysis of Microwave
+  Circuits},'' \emph{IEEE Transactions on Microwave Theory and Techniques},
+  vol.~22, no.~3, pp. 249--263, Mar. 1974.
+
+\bibitem{Yamashita2}
+E.~Yamashita, K.~Atsuki, and T.~Hirahata, ``{Microstrip Dispersion in a
+  Wide-Frequency Range},'' \emph{IEEE Transactions on Microwave Theory and
+  Techniques}, vol.~29, no.~6, pp. 610--611, June 1981.
+
+\bibitem{Kirschning}
+M.~Kirschning, R.~H. Jansen, and N.~H.~L. Koster, ``{Measurement and
+  Computer-Aided Modeling of Microstrip Discontinuities by an Improved
+  Resonator Method},'' \emph{Symposium on Microwave Theory and Techniques}, pp.
+  495--497, May 1983.
+
+\bibitem{Kobayashi2}
+M.~Kobayashi, ``{Important Role of Inflection Frequency in the Dispersive
+  Property of Microstrip Lines},'' \emph{IEEE Transactions on Microwave Theory
+  and Techniques}, vol.~30, no.~11, pp. 2057--2059, Nov. 1982.
+
+\bibitem{Pramanick}
+P.~Bhartia and P.~Pramanick, ``{A New Microstrip Dispersion Model},''
+  \emph{IEEE Transactions on Microwave Theory and Techniques}, vol.~32, no.~10,
+  pp. 1379--1384, Oct. 1984.
+
+\bibitem{Kobayashi3}
+M.~Kobayashi, ``{Frequency Dependent Characteristics of Microstrips on
+  Anisotropic Substrates},'' \emph{IEEE Transactions on Microwave Theory and
+  Techniques}, vol.~30, no.~11, pp. 2054--2057, Nov. 1982.
+
+\bibitem{Atwater}
+H.~A. Atwater, ``{Tests of Microstrip Dispersion Formulas},'' \emph{IEEE
+  Transactions on Microwave Theory and Techniques}, vol.~36, no.~3, pp.
+  619--621, Mar. 1988.
+
+\bibitem{Denlinger}
+E.~J. Denlinger, ``{Losses of Microstrip Lines},'' \emph{IEEE Transactions on
+  Microwave Theory and Techniques}, vol.~28, no.~6, pp. 513--522, June 1980.
+
+\bibitem{Wheeler3}
+H.~A. Wheeler, ``{Transmission-Line Properties of Parallel Wide Strips by a
+  Conformal-Mapping Approximation},'' \emph{IEEE Transactions on Microwave
+  Theory and Techniques}, vol.~12, no.~3, pp. 280--289, May 1964.
+
+\bibitem{Owens}
+R.~P. Owens, J.~E. Aitken, and T.~C. Edwards, ``{Quasi-Static Characteristics
+  of Microstrip on an Anisotropic Sapphire Substrate},'' \emph{IEEE
+  Transactions on Microwave Theory and Techniques}, vol.~24, no.~8, pp.
+  499--505, Aug. 1976.
+
+\bibitem{Kirschning9}
+M.~Kirschning, R.~H. Jansen, and N.~H.~L. Koster, ``{Coupled Mircrostrip
+  Parallel-Gap Model for Improved Filter and Coupler Design},''
+  \emph{Electronics Letters}, vol.~19, no.~10, pp. 377--379, May 1983.
+
+\bibitem{Ghione}
+G.~Ghione and C.~U. Naldi, ``{Coplanar Waveguides for MMIC Applications: Effect
+  of Upper Shielding, Conductor Backing, Finite-Extent Ground Planes, and
+  Line-to-Line Coupling},'' \emph{IEEE Transactions on Microwave Theory and
+  Techniques}, vol.~35, no.~3, pp. 260--267, Mar. 1987.
+
+\bibitem{Ghione2}
+------, ``{Analytical Formulas for Coplanar Lines and Monolithic MICs},''
+  \emph{Electronics Letters}, vol.~20, no.~4, pp. 179--181, Feb. 1984.
+
+\bibitem{Bedair}
+S.~S. Bedair and I.~Wolff, ``{Fast, Accurate and Simple Approximate Analytic
+  Formulas for Calculating the Parameters of Supported Coplanar Waveguides for
+  (M)MIC's},'' \emph{IEEE Transactions on Microwave Theory and Techniques},
+  vol.~40, no.~1, pp. 41--48, Jan. 1992.
+
+\bibitem{Walker}
+J.~L.~B. Walker, ``{A Survey of European Activity on Coplanar Waveguide},''
+  \emph{IEEE MTT-S International Microwave Symposium Digest}, pp. 693--696,
+  1993.
+
+\bibitem{Veyres}
+C.~Veyres and V.~F. Hanna, ``{Extension of the application of conformal mapping
+  techniques to coplanar lines with finite dimensions},'' \emph{International
+  Journal of Electronics}, vol.~48, no.~1, pp. 47--56, 1980.
+
+\bibitem{Russer}
+P.~Russer and S.~M\"uller, ``{Noise Analysis of Microwave Circuits with General
+  Topology},'' \emph{Symposium on Microwave Theory and Techniques}, pp.
+  1481--1484, 1992.
+
+\bibitem{Russer1}
+------, ``{Noise Analysis of Microwave Circuits with General Topology and
+  Arbitrary Representation},'' \emph{Asia-Pacific Microwave Conference}, pp.
+  819--822, 1992.
+
+\bibitem{Hillbrand}
+H.~Hillbrand and P.~H. Russer, ``{An Efficient Method for Computer Aided Noise
+  Analysis of Linear Amplifier Networks},'' \emph{IEEE Transactions on Circuits
+  and Systems}, vol.~23, no.~4, pp. 235--238, Apr. 1976.
+
+\bibitem{Hillbrand1}
+------, ``{Correction to "An Efficient Method for Computer Aided Noise Analysis
+  of Linear Amplifier Networks"},'' \emph{{Letters to the Editor}}, p. 691,
+  July 1976.
+
+\bibitem{York}
+R.~A. York and R.~C. Compton, ``{Experimental Evaluation of Existing CAD Models
+  for Microstrip Dispersion},'' \emph{IEEE Transactions on Microwave Theory and
+  Techniques}, vol.~38, no.~3, pp. 327--328, Sept. 1990.
+
+\bibitem{Kobayashi4}
+M.~Kobayashi and N.~Sawada, ``{Analysis and Synthesis of Tapered Microstrip
+  Transmission Lines},'' \emph{IEEE Transactions on Microwave Theory and
+  Techniques}, vol.~40, no.~8, pp. 1642--1646, Aug. 1992.
+
+\bibitem{Carlin}
+H.~J. Carlin, ``{A Simplified Circuit Model for Microstrip},'' \emph{IEEE
+  Transactions on Microwave Theory and Techniques}, pp. 589--591, Apr. 1973,
+  {Short Papers}.
+
+\bibitem{Carlin1}
+H.~J. Carlin and P.~P. Civalleri, ``{A Coupled-Line Model for Dispersion in
+  Parallel-Coupled Microstrips},'' \emph{IEEE Transactions on Microwave Theory
+  and Techniques}, pp. 444--446, May 1975.
+
+\bibitem{Garg}
+R.~Garg and I.~J. Bahl, ``{Characteristics of Coupled Microstriplines},''
+  \emph{IEEE Transactions on Microwave Theory and Techniques}, vol.~27, no.~7,
+  pp. 700--705, July 1979.
+
+\bibitem{Cory}
+H.~Cory, ``{Dispersion Characteristics of Microstrip Lines},'' \emph{IEEE
+  Transactions on Microwave Theory and Techniques}, vol.~29, no.~1, pp. 59--61,
+  Jan. 1981.
+
+\bibitem{Alexopoulos}
+N.~G. Alexopoulos and S.-C. Wu, ``{Frequency-Independent Equivalent Circuit
+  Model for Microstrip Open-End and Gap Discontinuities},'' \emph{IEEE
+  Transactions on Microwave Theory and Techniques}, vol.~42, no.~7, pp.
+  1268--1272, July 1994, {Short Papers}.
+
+\bibitem{Silvester}
+P.~Silvester and P.~Benedek, ``{Equivalent Capacitances of Microstrip Open
+  Circuits},'' \emph{IEEE Transactions on Microwave Theory and Techniques},
+  vol.~20, no.~8, pp. 511--516, Aug. 1972.
+
+\bibitem{Hoefer1}
+W.~J.~R. Hoefer, ``{Equivalent Series Inductivity of a Narrow Transverse Slit
+  in Microstrip},'' \emph{IEEE Transactions on Microwave Theory and
+  Techniques}, vol.~25, no.~10, pp. 822--824, Oct. 1977.
+
+\bibitem{Descharles}
+C.~Descharles, C.~Algani, B.~Mercier, and G.~Alquie, ``{Physical and Electrical
+  Modelling of Bonding Wires up to 110 GHz},'' \emph{33rd European Microwave
+  Conference}, vol.~2, pp. 639--624, 2003.
+
+\end{thebibliography}

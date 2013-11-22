@@ -1,0 +1,831 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Frequency-Time Domain Transformation</TITLE>
+<META NAME="description" CONTENT="Frequency-Time Domain Transformation">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="previous" HREF="node100.html">
+<LINK REL="up" HREF="node97.html">
+<LINK REL="next" HREF="node103.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html2263"
+  HREF="node103.html">Bibliography</A>
+<B>Up:</B> <A NAME="tex2html2259"
+  HREF="node97.html">Mathematical background</A>
+<B> Previous:</B> <A NAME="tex2html2255"
+  HREF="node100.html">Polynomial approximations</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html2264"
+  HREF="node101.html#SECTION001641000000000000000">Fast Fourier Transformation</A>
+<LI><A NAME="tex2html2265"
+  HREF="node101.html#SECTION001642000000000000000">Real-Valued FFT</A>
+<LI><A NAME="tex2html2266"
+  HREF="node101.html#SECTION001643000000000000000">More-Dimensional FFT</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION001640000000000000000">
+Frequency-Time Domain Transformation</A>
+</H1>
+
+<P>
+Any signal can completely be described in time or in frequency domain.
+As both representations are equivalent, it is possible to transform them
+into each other. This is done by the so-called Fourier Transformation and
+the inverse Fourier Transformation, respectively:
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray}
+\text{Fourier Transformation:} & \qquad &
+     \underline{U}(j\omega) =
+     \int\limits_{-\infty}^{\infty} u(t)\cdot e^{-j\omega\cdot t} \; dt \\
+\text{inverse Fourier Transformation:} & \qquad &
+     u(t) = \frac{1}{2\pi} \cdot \int\limits_{-\infty}^{\infty}
+            \underline{U}(j\omega)\cdot e^{j\omega\cdot t} \; d\omega
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT">Fourier Transformation:</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></TD>
+<TD ALIGN="LEFT" NOWRAP WIDTH="50%"><IMG
+ WIDTH="194" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3058.png"
+ ALT="$\displaystyle \underline{U}(j\omega) =
+\int\limits_{-\infty}^{\infty} u(t)\cdot e^{-j\omega\cdot t} \; dt$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">15</SPAN>.<SPAN CLASS="arabic">178</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT">inverse Fourier Transformation:</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></TD>
+<TD ALIGN="LEFT" NOWRAP WIDTH="50%"><IMG
+ WIDTH="223" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3059.png"
+ ALT="$\displaystyle u(t) = \frac{1}{2\pi} \cdot \int\limits_{-\infty}^{\infty}
+\underline{U}(j\omega)\cdot e^{j\omega\cdot t} \; d\omega$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">15</SPAN>.<SPAN CLASS="arabic">179</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+In digital systems the data <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3060.png"
+ ALT="$ u(t)$"></SPAN> or <!-- MATH
+ $\underline{U}(j\omega)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3061.png"
+ ALT="$ \underline{U}(j\omega)$"></SPAN>,
+respectively, consists of a finite number <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img720.png"
+ ALT="$ N$"></SPAN> of samples <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3062.png"
+ ALT="$ u_k$"></SPAN> and
+<!-- MATH
+ $\underline{U}_n$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3063.png"
+ ALT="$ \underline{U}_n$"></SPAN>. This leads to the discrete Fourier Transformation
+(DFT) and its inverse operation (IDFT):
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:DFT"></A><A NAME="eqn:IDFT"></A><!-- MATH
+ \begin{eqnarray}
+\text{DFT:} & \qquad &
+     \underline{U}_n =
+     \sum_{k=0}^{N-1} u_k\cdot \exp\left( -j\cdot n\frac{2\pi\cdot k}{N} \right) \\
+\text{IDFT:} & \qquad &
+     u_k = \frac{1}{N} \cdot \sum_{n=0}^{N}
+            \underline{U}_n\cdot \exp\left( j\cdot k\frac{2\pi\cdot n}{N} \right)
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT">DFT:</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></TD>
+<TD ALIGN="LEFT" NOWRAP WIDTH="50%"><IMG
+ WIDTH="235" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3064.png"
+ ALT="$\displaystyle \underline{U}_n =
+\sum_{k=0}^{N-1} u_k\cdot \exp\left( -j\cdot n\frac{2\pi\cdot k}{N} \right)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">15</SPAN>.<SPAN CLASS="arabic">180</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT">IDFT:</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></TD>
+<TD ALIGN="LEFT" NOWRAP WIDTH="50%"><IMG
+ WIDTH="250" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3065.png"
+ ALT="$\displaystyle u_k = \frac{1}{N} \cdot \sum_{n=0}^{N}
+\underline{U}_n\cdot \exp\left( j\cdot k\frac{2\pi\cdot n}{N} \right)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">15</SPAN>.<SPAN CLASS="arabic">181</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+The absolute time and frequency values do not appear anymore in the DFT.
+They depend on the sample frequency <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3066.png"
+ ALT="$ f_T$"></SPAN> and the number of samples <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img720.png"
+ ALT="$ N$"></SPAN>.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\Delta f = \frac{1}{N\cdot\Delta t} = \frac{f_T}{N}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="137" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3067.png"
+ ALT="$\displaystyle \Delta f = \frac{1}{N\cdot\Delta t} = \frac{f_T}{N}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">15</SPAN>.<SPAN CLASS="arabic">182</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Where <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1547.png"
+ ALT="$ \Delta t$"></SPAN> is distance between time samples and <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3068.png"
+ ALT="$ \Delta f$"></SPAN>
+distance between frequency samples.
+
+<P>
+<P>
+With DFT the <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img720.png"
+ ALT="$ N$"></SPAN> time samples are transformed into <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img720.png"
+ ALT="$ N$"></SPAN> frequency samples.
+This also holds if the time data are real numbers, as is always
+the case in "real life": The complex frequency samples are conjugate
+complex symmetrical and so equalizing the score:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\underline{U}_{N-n} = \underline{U}_n^*
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="89" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3069.png"
+ ALT="$\displaystyle \underline{U}_{N-n} = \underline{U}_n^*$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">15</SPAN>.<SPAN CLASS="arabic">183</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+<P>
+That is, knowing the input data has no imaginary part, only half of
+the Fourier data must be computed.
+
+<P>
+
+<H2><A NAME="SECTION001641000000000000000">
+Fast Fourier Transformation</A>
+</H2>
+
+<P>
+As can be seen in equation <A HREF="#eqn:DFT">15.180</A> the computing time of the
+DFT rises with <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3070.png"
+ ALT="$ N^2$"></SPAN>. This is really huge, so it is
+very important to reduce the time consumption. Using a strongly
+optimized algorithm, the so-called Fast Fourier Transformation (FFT),
+the DFT is reduced to an <!-- MATH
+ $N\cdot\log_2 N$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="75" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3071.png"
+ ALT="$ N\cdot\log_2 N$"></SPAN> time rise.
+The following information stems from [<A
+ HREF="node103.html#Press">61</A>],
+where the theoretical background is explained comprehensively.
+
+<P>
+<P>
+The fundamental trick of the FFT is to cut the DFT into two parts,
+one with data having even indices and the other with odd indices:
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray}
+\underline{U}_n & = &
+  \sum_{k=0}^{N-1} u_k\cdot \exp\left( -j\cdot n\frac{2\pi\cdot k}{N} \right) \\
+  & = & \sum_{k=0}^{N/2-1} u_{2k}\cdot
+        \exp\left( -j\cdot n\frac{2\pi\cdot 2k}{N} \right) +
+        \sum_{k=0}^{N/2-1} u_{2k+1}\cdot
+        \exp\left( -j\cdot n\frac{2\pi\cdot (2k+1)}{N} \right) \\
+  & = & \underbrace{ \sum_{k=0}^{N/2-1} u_{2k}\cdot
+        \exp\left( -j\cdot n\frac{2\pi\cdot k}{N/2} \right) }_{F_{even}} +
+        W_{n,N}\cdot \underbrace{ \sum_{k=0}^{N/2-1} u_{2k+1}\cdot
+        \exp\left( -j\cdot n\frac{2\pi\cdot k}{N/2} \right) }_{F_{odd}} \\
+\text{with} & & W_{n,N} = \exp\left( 2\pi\cdot j\cdot \frac{n}{N} \right)
+        \qquad \text{(so-called 'twiddle factor')}
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3072.png"
+ ALT="$\displaystyle \underline{U}_n$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img426.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP WIDTH="50%"><IMG
+ WIDTH="193" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3073.png"
+ ALT="$\displaystyle \sum_{k=0}^{N-1} u_k\cdot \exp\left( -j\cdot n\frac{2\pi\cdot k}{N} \right)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">15</SPAN>.<SPAN CLASS="arabic">184</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img426.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP WIDTH="50%"><IMG
+ WIDTH="509" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3074.png"
+ ALT="$\displaystyle \sum_{k=0}^{N/2-1} u_{2k}\cdot
+\exp\left( -j\cdot n\frac{2\pi\cdo...
+...0}^{N/2-1} u_{2k+1}\cdot
+\exp\left( -j\cdot n\frac{2\pi\cdot (2k+1)}{N} \right)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">15</SPAN>.<SPAN CLASS="arabic">185</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img426.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP WIDTH="50%"><IMG
+ WIDTH="500" HEIGHT="101" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3075.png"
+ ALT="$\displaystyle \underbrace{ \sum_{k=0}^{N/2-1} u_{2k}\cdot
+\exp\left( -j\cdot n\...
+...} u_{2k+1}\cdot
+\exp\left( -j\cdot n\frac{2\pi\cdot k}{N/2} \right) }_{F_{odd}}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">15</SPAN>.<SPAN CLASS="arabic">186</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT">with</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP WIDTH="50%"><IMG
+ WIDTH="172" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3076.png"
+ ALT="$\displaystyle W_{n,N} = \exp\left( 2\pi\cdot j\cdot \frac{n}{N} \right)$">&nbsp; &nbsp;(so-called 'twiddle factor')</TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">15</SPAN>.<SPAN CLASS="arabic">187</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+<P>
+The new formula shows no speed advantages. The important thing is that
+the even as well as the odd part each is again a Fourier series. Thus
+the same procedure can be repeated again and again until the equation
+consists of <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img720.png"
+ ALT="$ N$"></SPAN> terms. Then, each term contains only one data <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3062.png"
+ ALT="$ u_k$"></SPAN>
+with factor <SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3077.png"
+ ALT="$ e^0=1$"></SPAN>. This works if the number of data is a power of
+two (2, 4, 8, 16, 32, ...).
+So finally, the FFT method performs <SPAN CLASS="MATH"><IMG
+ WIDTH="48" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3078.png"
+ ALT="$ \log_2 N$"></SPAN> times the operation
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eqn:FFTstep"></A><!-- MATH
+ \begin{equation}
+u_{k1,even} + W_{n,x}\cdot u_{k2,odd}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="168" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3079.png"
+ ALT="$\displaystyle u_{k1,even} + W_{n,x}\cdot u_{k2,odd}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">15</SPAN>.<SPAN CLASS="arabic">188</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+to get one data of <!-- MATH
+ $\underline{U}_n$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3063.png"
+ ALT="$ \underline{U}_n$"></SPAN>. This is called the
+Danielson-Lanzcos algorithm.
+The question now arises which data values of <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3062.png"
+ ALT="$ u_k$"></SPAN>
+needs to be combined according to equation (<A HREF="#eqn:FFTstep">15.188</A>).
+The answer is quite easy. The data array must be reordered by the
+bit-reversal method. This means the value at index <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2453.png"
+ ALT="$ k_1$"></SPAN> is swapped
+with the value at index <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3080.png"
+ ALT="$ k_2$"></SPAN> where <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3080.png"
+ ALT="$ k_2$"></SPAN> is obtained by mirroring
+the binary number <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2453.png"
+ ALT="$ k_1$"></SPAN>, i.e. the most significant bit becomes the
+least significant one and so on. Example for <SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3081.png"
+ ALT="$ N=8$"></SPAN>:
+
+<P>
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="CENTER">000</TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\leftrightarrow$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3082.png"
+ ALT="$ \leftrightarrow$"></SPAN></TD>
+<TD ALIGN="CENTER">000</TD>
+<TD ALIGN="CENTER">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+<TD ALIGN="CENTER">011</TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\leftrightarrow$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3082.png"
+ ALT="$ \leftrightarrow$"></SPAN></TD>
+<TD ALIGN="CENTER">110</TD>
+<TD ALIGN="CENTER">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+<TD ALIGN="CENTER">110</TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\leftrightarrow$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3082.png"
+ ALT="$ \leftrightarrow$"></SPAN></TD>
+<TD ALIGN="CENTER">011</TD>
+</TR>
+<TR><TD ALIGN="CENTER">001</TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\leftrightarrow$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3082.png"
+ ALT="$ \leftrightarrow$"></SPAN></TD>
+<TD ALIGN="CENTER">100</TD>
+<TD ALIGN="CENTER">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+<TD ALIGN="CENTER">100</TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\leftrightarrow$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3082.png"
+ ALT="$ \leftrightarrow$"></SPAN></TD>
+<TD ALIGN="CENTER">001</TD>
+<TD ALIGN="CENTER">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+<TD ALIGN="CENTER">111</TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\leftrightarrow$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3082.png"
+ ALT="$ \leftrightarrow$"></SPAN></TD>
+<TD ALIGN="CENTER">111</TD>
+</TR>
+<TR><TD ALIGN="CENTER">010</TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\leftrightarrow$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3082.png"
+ ALT="$ \leftrightarrow$"></SPAN></TD>
+<TD ALIGN="CENTER">010</TD>
+<TD ALIGN="CENTER">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+<TD ALIGN="CENTER">101</TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\leftrightarrow$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3082.png"
+ ALT="$ \leftrightarrow$"></SPAN></TD>
+<TD ALIGN="CENTER">101</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+</TR>
+</TABLE>
+
+<P>
+<P>
+Having this new indexing, the values to combine according to
+equation <A HREF="#eqn:FFTstep">15.188</A> are the adjacent values. So, performing
+the Danielson-Lanzcos algorithm has now become very easy.
+
+<P>
+<P>
+Figure <A HREF="#fig:fft">15.4</A> illustrates the whole FFT algorithm starting with the
+input data <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3062.png"
+ ALT="$ u_k$"></SPAN> and ending with one value of the output data
+<!-- MATH
+ $\underline{U}_n$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3063.png"
+ ALT="$ \underline{U}_n$"></SPAN>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:fft"></A><A NAME="25019"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 15.4:</STRONG>
+principle of a FFT with data length 8</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="582" HEIGHT="268" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3083.png"
+ ALT="\includegraphics[width=13cm]{fft}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+This scheme alone gives no advantage. But it can compute all output
+values within, i.e. no temporary memory is needed and the periodicity
+of <SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3084.png"
+ ALT="$ W_{n,N}$"></SPAN> is best exploited. To understand this, let's have a look
+on the first Danielson-Lanczos step in figure <A HREF="#fig:fft">15.4</A>. The four
+multiplications and additions have to be performed for each output
+value (here 8 times!). But indeed this is not true, because <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3085.png"
+ ALT="$ W_{n,2}$"></SPAN>
+is 2-periodical in <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img383.png"
+ ALT="$ n$"></SPAN> and furthermore <!-- MATH
+ $W_{n,2} = -W_{n+1,2}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="121" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3086.png"
+ ALT="$ W_{n,2} = -W_{n+1,2}$"></SPAN>. So now,
+<!-- MATH
+ $u_0 + W_{0,2}\cdot u_4$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="98" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3087.png"
+ ALT="$ u_0 + W_{0,2}\cdot u_4$"></SPAN> replaces the old <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3088.png"
+ ALT="$ u_0$"></SPAN> value and
+<!-- MATH
+ $u_0 - W_{0,2}\cdot u_4$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="98" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3089.png"
+ ALT="$ u_0 - W_{0,2}\cdot u_4$"></SPAN> replaces the old <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3090.png"
+ ALT="$ u_4$"></SPAN> value. Doing this for
+all values, four multiplications and eight additions were performed
+in order to calculate the first Danielson-Lanczos step for all (!!!)
+output values. This goes on, as <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3091.png"
+ ALT="$ W_{n,4}$"></SPAN> is 4-periodical in <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img383.png"
+ ALT="$ n$"></SPAN> and
+<!-- MATH
+ $W_{n,4} = -W_{n+2,4}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="121" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3092.png"
+ ALT="$ W_{n,4} = -W_{n+2,4}$"></SPAN>. So this time, two loop iterations (for <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3091.png"
+ ALT="$ W_{n,4}$"></SPAN>
+and for <SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3093.png"
+ ALT="$ W_{n+1,4}$"></SPAN>) are necessary to compute the current
+Danielson-Lanczos step for all output values. This concept continues
+until the last step.
+
+<P>
+<P>
+Finally, a complete FFT source code in C should be presented. The original
+version was taken from [<A
+ HREF="node103.html#Press">61</A>]. It is a radix-2 algorithm,
+known as the Cooley-Tukey Algorithm. Here, several changes were made
+that gain about 10% speed improvement.
+
+<P>
+<P>
+<BR>
+<IMG
+ WIDTH="754" HEIGHT="1289" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3094.png"
+ ALT="\begin{lstlisting}[language=C++,
+caption={1D-FFT algorithm in C},
+numbers=left...
+...?
+for (i=0; i&lt;num; i++)
+data[i] /= num; // normalize result
+}
+\end{lstlisting}">
+<BR>
+
+<P>
+<P>
+There are many other FFT algorithms mainly aiming at higher speed
+(radix-8 FFT, split-radix FFT, Winograd FFT). These algorithms are
+much more complex, but on modern processors with numerical co-processors
+they gain no or hardly no speed advantage, because the reduced FLOPS
+are equalled by the far more complex indexing.
+
+<P>
+
+<H2><A NAME="SECTION001642000000000000000">
+Real-Valued FFT</A>
+</H2>
+
+<P>
+All physical systems are real-valued in time domain. As already
+mentioned above, this fact leads to a symmetry in frequency
+domain, which can be exploited to save 50% memory usage and
+about 30% computation time. Rewriting the C listing from above
+to a real-valued FFT routine creates the following function.
+As this scheme is not symmetric anymore, an extra procedure
+for the inverse transformation is needed. It is also depicted
+below.
+
+<P>
+<BR>
+<IMG
+ WIDTH="754" HEIGHT="1569" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3095.png"
+ ALT="\begin{lstlisting}[language=C++,
+caption={real-valued FFT algorithm in C},
+num...
+...+1] = t2 + t3;
+data[l] -= t1;
+data[l+1] = t2 - t3;
+}
+}
+}
+}
+\end{lstlisting}">
+<BR>
+
+<P>
+<BR>
+<IMG
+ WIDTH="754" HEIGHT="1587" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3096.png"
+ ALT="\begin{lstlisting}[language=C++,
+caption={real-valued inverse FFT algorithm in ...
+...wap second half ?
+SWAP (data[num-j-1], data[num-i-1]);
+}
+}
+}
+\end{lstlisting}">
+<BR>
+
+<P>
+
+<H2><A NAME="SECTION001643000000000000000">
+More-Dimensional FFT</A>
+</H2>
+
+<P>
+A standard Fourier Transformation is not useful in harmonic balance
+methods, because with multi-tone excitation many mixing products appear.
+The best way to cope with this problem is to use multi-dimensional
+FFT.
+
+<P>
+<P>
+Fourier Transformations in more than one dimension soon become
+very time consuming. Using FFT mechanisms is therefore mandatory.
+A more-dimensional Fourier Transformation consists of many
+one-dimensional Fourier Transformations (1D-FFT). First, 1D-FFTs
+are performed for the data of the first dimension at every index
+of the second dimension. The results are used as input data for
+the second dimension that is performed the same way with respect
+to the third dimension. This procedure is continued until all
+dimensions are calculated. The following equations shows this
+for two dimensions.
+
+<P>
+<BR>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{eqnarray}
+\underline{U}_{n1,n2} & = & \sum_{k_2=0}^{N_2-1} \sum_{k_1=0}^{N_1-1}
+   u_{k_1,k_2}\cdot \exp\left( -j\cdot n_1\frac{2\pi\cdot k_1}{N_1} \right)
+              \cdot \exp\left( -j\cdot n_2\frac{2\pi\cdot k_2}{N_2} \right) \\
+ & = & \sum_{k_2=0}^{N_2-1} \exp\left( -j\cdot n_2\frac{2\pi\cdot k_2}{N_2} \right)
+       \cdot \underbrace{ \sum_{k_1=0}^{N_1-1}
+   u_{k_1,k_2}\cdot \exp\left( -j\cdot n_1\frac{2\pi\cdot k_1}{N_1} \right) }_\text{1D-FFT}
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="49" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3097.png"
+ ALT="$\displaystyle \underline{U}_{n1,n2}$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img426.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP WIDTH="50%"><IMG
+ WIDTH="427" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3098.png"
+ ALT="$\displaystyle \sum_{k_2=0}^{N_2-1} \sum_{k_1=0}^{N_1-1}
+u_{k_1,k_2}\cdot \exp\l...
+...k_1}{N_1} \right)
+\cdot \exp\left( -j\cdot n_2\frac{2\pi\cdot k_2}{N_2} \right)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">15</SPAN>.<SPAN CLASS="arabic">189</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img426.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP WIDTH="50%"><IMG
+ WIDTH="427" HEIGHT="101" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3099.png"
+ ALT="$\displaystyle \sum_{k_2=0}^{N_2-1} \exp\left( -j\cdot n_2\frac{2\pi\cdot k_2}{N...
+...2}\cdot \exp\left( -j\cdot n_1\frac{2\pi\cdot k_1}{N_1} \right) }_\text{1D-FFT}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">15</SPAN>.<SPAN CLASS="arabic">190</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+<P>
+Finally, a complete <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img383.png"
+ ALT="$ n$"></SPAN>-dimensional FFT source code should be
+presented. It was taken from [<A
+ HREF="node103.html#Press">61</A>] and somewhat speed
+improved.
+
+<P>
+<P>
+Parameters:
+<BR><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><TT>ndim</TT></TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="LEFT">number of dimensions</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>num[]</TT></TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="LEFT">array containing the number of complex samples for every dimension</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>data[]</TT></TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="LEFT">array containing the data samples,</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="LEFT">real and imaginary part in alternating order (length: 2*sum of <TT>num[]</TT>),</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="LEFT">going through the array, the first dimension changes least rapidly !</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="LEFT">all subscripts range from 1 to maximum value !</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>isign</TT></TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="LEFT">is 1 to calculate FFT and -1 to calculate inverse FFT</TD>
+</TR>
+</TABLE>
+
+<P>
+<P>
+<BR>
+<IMG
+ WIDTH="754" HEIGHT="1114" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3100.png"
+ ALT="\begin{lstlisting}[language=C++,
+caption={multidimensional FFT algorithm in C},...
+...*wpi;
+wi = wi*wpr + wt*wpi;
+}
+ifp1 = ifp2;
+}
+nprev *= n;
+}
+\end{lstlisting}">
+<BR>
+
+<P>
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html2263"
+  HREF="node103.html">Bibliography</A>
+<B>Up:</B> <A NAME="tex2html2259"
+  HREF="node97.html">Mathematical background</A>
+<B> Previous:</B> <A NAME="tex2html2255"
+  HREF="node100.html">Polynomial approximations</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

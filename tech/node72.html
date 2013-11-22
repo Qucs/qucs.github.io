@@ -1,0 +1,390 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Models for boolean devices</TITLE>
+<META NAME="description" CONTENT="Models for boolean devices">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node73.html">
+<LINK REL="previous" HREF="node71.html">
+<LINK REL="up" HREF="node66.html">
+<LINK REL="next" HREF="node73.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1717"
+  HREF="node73.html">Equation defined models</A>
+<B>Up:</B> <A NAME="tex2html1713"
+  HREF="node66.html">Non-linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1707"
+  HREF="node71.html">MOS Field-Effect Transistor</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001160000000000000000"></A>
+<A NAME="sec:DClogic"></A>
+<BR>
+Models for boolean devices
+</H1>
+
+<P>
+Logical (boolean) functions (OR, AND, XOR etc.) can be modeled using
+macro models.  Here, each input gets the transfer characteristic and
+its derivative described as follows:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1857.png"
+ ALT="$\displaystyle u_i$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="165" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1858.png"
+ ALT="$\displaystyle = \tanh (10\cdot (u_{in} - 0.5))$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">252</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1859.png"
+ ALT="$\displaystyle u_i'$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="242" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1860.png"
+ ALT="$\displaystyle = 10\cdot \left( 1- \tanh^2 (10\cdot (u_{in} - 0.5)) \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">253</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The resulting voltages <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1861.png"
+ ALT="$ u_i$"></SPAN> for each input are combined to create
+the wanted function for a device with <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img720.png"
+ ALT="$ N$"></SPAN> inputs:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">Inverter:<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="138" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1862.png"
+ ALT="$\displaystyle u_{out} = 0.5\cdot(1 - u_i)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+<A NAME="eq:logout1">(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">254</SPAN>)</A></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">NOR:<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="137" HEIGHT="79" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1863.png"
+ ALT="$\displaystyle u_{out} = \dfrac{N}{\sum\limits_m \dfrac{2}{1 - u_{i,m}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">255</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">OR:<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="144" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1864.png"
+ ALT="$\displaystyle u_{out} = 1 - u_{out,NOR}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">256</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">AND:<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="137" HEIGHT="79" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1865.png"
+ ALT="$\displaystyle u_{out} = \dfrac{N}{\sum\limits_m \dfrac{2}{1 + u_{i,m}}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">257</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">NAND:<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="145" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1866.png"
+ ALT="$\displaystyle u_{out} = 1 - u_{out,AND}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">258</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">XOR:<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="203" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1867.png"
+ ALT="$\displaystyle u_{out} = 0.5\cdot\left( 1 - \prod_m -u_{i,m} \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">259</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">XNOR:<IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.png"
+ ALT="$\displaystyle \qquad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="191" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1868.png"
+ ALT="$\displaystyle u_{out} = 0.5\cdot\left( 1 + \prod_m u_{i,m} \right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+<A NAME="eq:logout2">(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">260</SPAN>)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The above-mentioned functions model devices with 0V as logical
+low-level and 1V as logical high-level.  Of course, they can be easily
+transformed into higher voltage levels by multiplying the desired
+high-level voltage to the output voltage <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1869.png"
+ ALT="$ u_{out}$"></SPAN> and dividing the
+input voltages <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1870.png"
+ ALT="$ u_{in}$"></SPAN> by the desired high-level voltage.  Note: The
+derivatives also get <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1870.png"
+ ALT="$ u_{in}$"></SPAN> divided by the desired high-level
+voltage, but they are not multiplied by the desired high-level
+voltage.
+
+<P>
+<P>
+To perform a simulation on these devices, the first derivatives are also
+needed:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">Inverter:<IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1871.png"
+ ALT="$\displaystyle \quad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="123" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1872.png"
+ ALT="$\displaystyle \dfrac{\partial u_{out}}{\partial u_{in}} = -0.5\cdot u_i'$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">261</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">OR:<IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1871.png"
+ ALT="$\displaystyle \quad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="265" HEIGHT="88" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1873.png"
+ ALT="$\displaystyle \dfrac{\partial u_{out}}{\partial u_{in,n}} = \dfrac{2\cdot N\cdot u_{i,n}'}{\left( (1-u_{i,n})\cdot\sum\limits_m \dfrac{2}{1-u_{i,m}} \right)^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">262</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">NOR:<IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1871.png"
+ ALT="$\displaystyle \quad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="161" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1874.png"
+ ALT="$\displaystyle \dfrac{\partial u_{out}}{\partial u_{in,n}} = - \left.\dfrac{\partial u_{out}}{\partial u_{in,n}}\right\vert _{\text{OR}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">263</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">AND:<IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1871.png"
+ ALT="$\displaystyle \quad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="265" HEIGHT="88" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1875.png"
+ ALT="$\displaystyle \dfrac{\partial u_{out}}{\partial u_{in,n}} = \dfrac{2\cdot N\cdot u_{i,n}'}{\left( (1+u_{i,n})\cdot\sum\limits_m \dfrac{2}{1+u_{i,m}} \right)^2}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">264</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">NAND:<IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1871.png"
+ ALT="$\displaystyle \quad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="170" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1876.png"
+ ALT="$\displaystyle \dfrac{\partial u_{out}}{\partial u_{in,n}} = - \left.\dfrac{\partial u_{out}}{\partial u_{in,n}}\right\vert _{\text{AND}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">265</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">XOR:<IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1871.png"
+ ALT="$\displaystyle \quad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="214" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1877.png"
+ ALT="$\displaystyle \dfrac{\partial u_{out}}{\partial u_{in,n}} = 0.5\cdot u_{i,n}' \cdot\prod_{m\ne n} -u_{i,m}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">266</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH">XNOR:<IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1871.png"
+ ALT="$\displaystyle \quad$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="201" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1878.png"
+ ALT="$\displaystyle \dfrac{\partial u_{out}}{\partial u_{in,n}} = 0.5\cdot u_{i,n}' \cdot\prod_{m\ne n} u_{i,m}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">267</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+A problem of these macro models are the numbers of input ports.
+The output voltage levels worsen with increasing number of ports.
+The practical limit lies around eight input ports.
+
+<P>
+<P>
+With that knowledge it is now easy to create the MNA matrix.  The
+first port is the output port of the device.  So, for a 2-input port
+device, it is:
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:DClogicMNA"></A><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+.&.&.& 1\\
+.&.&.& 0\\
+.&.&.& 0\\
+-1 & \partial u_{out}/ \partial u_{in,1} & \partial u_{out}/ \partial u_{in,1} & 0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_{out}\\
+V_{in,1}\\
+V_{in,2}\\
+I_{out}
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_{0}\\
+I_{1}\\
+I_{2}\\
+0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="401" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1879.png"
+ ALT="$\displaystyle \begin{bmatrix}.&amp;.&amp;.&amp; 1\\ .&amp;.&amp;.&amp; 0\\ .&amp;.&amp;.&amp; 0\\ -1 &amp; \partial u_{...
+... I_{out} \end{bmatrix} = \begin{bmatrix}I_{0}\\ I_{1}\\ I_{2}\\ 0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">268</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The above MNA matrix entries are also used during the non-linear DC
+and transient analysis with the 0 in the right hand side vector
+replaced by an equivalent voltage
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+V_{eq} = \dfrac{\partial u_{out}}{\partial u_{in,1}}\cdot V_{in,1} +
+         \dfrac{\partial u_{out}}{\partial u_{in,2}}\cdot V_{in,2} - u_{out}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="290" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1880.png"
+ ALT="$\displaystyle V_{eq} = \dfrac{\partial u_{out}}{\partial u_{in,1}}\cdot V_{in,1} + \dfrac{\partial u_{out}}{\partial u_{in,2}}\cdot V_{in,2} - u_{out}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">269</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1869.png"
+ ALT="$ u_{out}$"></SPAN> computed using equations (<A HREF="#eq:logout1">10.254</A>) to
+(<A HREF="#eq:logout2">10.260</A>).
+
+<P>
+<P>
+With the given small-signal matrix representation, building the
+S-parameters is easy.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+(\underline{S}) =
+\begin{bmatrix}
+ -1 & 4\cdot\partial u_{out}/ \partial u_{in,1} & 4\cdot\partial u_{out}/ \partial u_{in,2} \\
+ 0  &  1 & 0\\
+ 0  &  0 &  1
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="332" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1881.png"
+ ALT="$\displaystyle (\underline{S}) = \begin{bmatrix}-1 &amp; 4\cdot\partial u_{out}/ \pa...
+...\cdot\partial u_{out}/ \partial u_{in,2} \\ 0 &amp; 1 &amp; 0\\ 0 &amp; 0 &amp; 1 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>.<SPAN CLASS="arabic">270</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+These matrices can easily extended to any number of input ports.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1717"
+  HREF="node73.html">Equation defined models</A>
+<B>Up:</B> <A NAME="tex2html1713"
+  HREF="node66.html">Non-linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1707"
+  HREF="node71.html">MOS Field-Effect Transistor</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Phase shifter</TITLE>
+<META NAME="description" CONTENT="Phase shifter">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node56.html">
+<LINK REL="previous" HREF="node54.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node56.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1455"
+  HREF="node56.html">Coupler</A>
+<B>Up:</B> <A NAME="tex2html1451"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1445"
+  HREF="node54.html">Circulator</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION0010140000000000000000">
+Phase shifter</A>
+</H1>
+
+<P>
+A phase shifter alters the phase of the input signal independently on
+the frequency.  As a result the relation between input and output
+signal is complex.  To get the DC model, some simulators use the AC
+formulas and create the real part or the magnitude.  This procedure
+has no physical reason, because it uses an operation that is not
+defined for DC.  But one can think in the following direction: As a DC
+quantity is constant, it doesn't change if it is phase-shifted.  (An
+AC quantity doesn't change its magnitude, too.)  Or to say it with
+other words, for a DC simulation the phase to shift is always zero.
+That leads to the result that the phase shifter is a short circuit for
+DC.  So, this is true for all reference impedances.
+
+<P>
+<P>
+For an AC simulation, the Z-parameters of a phase shifter writes
+as follows.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1002.png"
+ ALT="$\displaystyle Z_{11} = Z_{22}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1003.png"
+ ALT="$\displaystyle = \frac{j\cdot Z_{ref}}{\tan(\phi)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">103</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1004.png"
+ ALT="$\displaystyle Z_{12} = Z_{21}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1005.png"
+ ALT="$\displaystyle = \frac{j\cdot Z_{ref}}{\sin(\phi)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">104</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The admittance parameters required for the AC analysis result in
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="70" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1006.png"
+ ALT="$\displaystyle Y_{11} = Y_{22}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="115" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1007.png"
+ ALT="$\displaystyle = \frac{j}{Z_{ref} \cdot \tan{\left(\phi\right)}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">105</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><SPAN CLASS="MATH"><IMG
+ WIDTH="70" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1008.png"
+ ALT="$\displaystyle Y_{12} = Y_{21}$"></SPAN></TD>
+<TD NOWRAP ALIGN="LEFT"><SPAN CLASS="MATH"><IMG
+ WIDTH="129" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1009.png"
+ ALT="$\displaystyle = \frac{1}{j\cdot Z_{ref}\cdot \sin{\left(\phi\right)}}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">106</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img636.png"
+ ALT="$ \phi$"></SPAN> denotes the actual phase shift of the device.  For a zero
+phase shift (<SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1010.png"
+ ALT="$ \phi = 0$"></SPAN>) neither the Z- nor the Y-parameters are
+defined.  That is why during AC analysis a phase shifter with zero
+phase shift represents an ideal short circuit regardless its reference
+impedance.
+
+<P>
+<P>
+The MNA matrix entries of an ideal short circuit during AC and DC
+analysis correspond to a voltage source with zero voltage.  The
+complete MNA matrix representation writes as follows
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{bmatrix}
+. & . & +1\\
+. & . & -1\\
++1 & -1 & 0\\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+V_1\\
+V_2\\
+I_{br}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_1\\
+I_2\\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+0
+\end{bmatrix}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="280" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img880.png"
+ ALT="$\displaystyle \begin{bmatrix}. &amp; . &amp; +1\\ . &amp; . &amp; -1\\ +1 &amp; -1 &amp; 0\\ \end{bmatr...
+...in{bmatrix}I_1\\ I_2\\ 0 \end{bmatrix} = \begin{bmatrix}0\\ 0\\ 0 \end{bmatrix}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">107</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+whence <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1011.png"
+ ALT="$ I_{br}$"></SPAN> denote the branch current through the voltage source.
+
+<P>
+<P>
+The scattering parameters of an ideal phase shifter with phase shift
+<SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img636.png"
+ ALT="$ \phi$"></SPAN> and reference impedance <SPAN CLASS="MATH"><IMG
+ WIDTH="35" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img973.png"
+ ALT="$ Z_{ref}$"></SPAN> writes as follows.
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+r = \frac{Z_{ref}-Z_0}{Z_{ref}+Z_0}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="105" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img979.png"
+ ALT="$\displaystyle r=\frac{Z_{ref}-Z_0}{Z_{ref}+Z_0}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">108</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{11} = S_{22} = \frac{r\cdot\left(1-\exp\left(j\cdot 2\phi\right)\right)}{1-r^2\cdot\exp\left(j\cdot 2\phi\right)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="230" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1012.png"
+ ALT="$\displaystyle S_{11} = S_{22} = \frac{r\cdot\left(1-\exp\left(j\cdot 2\phi\right)\right)}{1-r^2\cdot\exp\left(j\cdot 2\phi\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">109</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+S_{12} = S_{21} = \frac{(1-r^2)\cdot\exp\left(j\cdot\phi\right)}{1-r^2\cdot\exp\left(j\cdot 2\phi\right)}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="229" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1013.png"
+ ALT="$\displaystyle S_{12} = S_{21} = \frac{(1-r^2)\cdot\exp\left(j\cdot\phi\right)}{1-r^2\cdot\exp\left(j\cdot 2\phi\right)}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>.<SPAN CLASS="arabic">110</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+An ideal phase shifter is noise free.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1455"
+  HREF="node56.html">Coupler</A>
+<B>Up:</B> <A NAME="tex2html1451"
+  HREF="node41.html">Linear devices</A>
+<B> Previous:</B> <A NAME="tex2html1445"
+  HREF="node54.html">Circulator</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>

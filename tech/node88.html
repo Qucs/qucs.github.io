@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Coplanar waveguide short</TITLE>
+<META NAME="description" CONTENT="Coplanar waveguide short">
+<META NAME="keywords" CONTENT="technical">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="technical.css">
+
+<LINK REL="next" HREF="node89.html">
+<LINK REL="previous" HREF="node87.html">
+<LINK REL="up" HREF="node85.html">
+<LINK REL="next" HREF="node89.html">
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<DIV CLASS="navigation"><B> Next:</B> <A NAME="tex2html1996"
+  HREF="node89.html">Coplanar waveguide gap</A>
+<B>Up:</B> <A NAME="tex2html1992"
+  HREF="node85.html">Coplanar components</A>
+<B> Previous:</B> <A NAME="tex2html1986"
+  HREF="node87.html">Coplanar waveguide open</A>
+<BR> <P>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION001330000000000000000">
+Coplanar waveguide short</A>
+</H1>
+
+<P>
+There is a similar simple approximation for a coplanar waveguide
+short-circuit, also given in [<A
+ HREF="node103.html#Beilenhoff">54</A>].  The short circuit is
+inductive in nature.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:CPWshort"></A><A NAME="21151"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 12.4:</STRONG>
+coplanar waveguide short-circuit</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="426" HEIGHT="232" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2495.png"
+ ALT="\includegraphics[width=0.6\linewidth]{cpshort}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The equivalent length extension <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2322.png"
+ ALT="$ \Delta l$"></SPAN> associated with the
+fringing fields is
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><A NAME="eq:CPWshort"></A><!-- MATH
+ \begin{equation}
+\Delta l_{short} = \dfrac{L_{short}}{L'} \approx \dfrac{W + 2s}{8}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="198" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2496.png"
+ ALT="$\displaystyle \Delta l_{short} = \dfrac{L_{short}}{L'} \approx \dfrac{W + 2s}{8}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">29</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Equation (<A HREF="#eq:CPWshort">12.29</A>) is valid when the metalization thickness
+<SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1984.png"
+ ALT="$ t$"></SPAN> does not become too large (<SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2497.png"
+ ALT="$ t &lt; s/3$"></SPAN>).
+
+<P>
+<P>
+The short end inductance <SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2498.png"
+ ALT="$ L_{short}$"></SPAN> can be written in terms of the
+inductance per unit length and the wave resistance.
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+L_{short} = L'\cdot \Delta l_{short} = \dfrac{\sqrt{\varepsilon_{r,eff}}\cdot Z_L}{c_0} \cdot \Delta l_{short}
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="308" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2499.png"
+ ALT="$\displaystyle L_{short} = L'\cdot \Delta l_{short} = \dfrac{\sqrt{\varepsilon_{r,eff}}\cdot Z_L}{c_0} \cdot \Delta l_{short}$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">30</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+<P>
+According to W.J.Getsinger [<A
+ HREF="node103.html#Getsinger6">55</A>] the CPW short-circuit
+inductance per unit length can also be modeled by
+<P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+L_{short} = \dfrac{2}{\pi}\cdot \varepsilon_0 \cdot \varepsilon_{r,eff} \cdot \left(W + s\right)\cdot Z_L^2\cdot \left(1 - \text{sech} \left(\dfrac{\pi\cdot Z_{F0}}{2\cdot Z_L\cdot \sqrt{\varepsilon_{r,eff}}}\right)\right)
+\end{equation}
+ -->
+<TABLE CLASS="equation" CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><SPAN CLASS="MATH"><IMG
+ WIDTH="476" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2500.png"
+ ALT="$\displaystyle L_{short} = \dfrac{2}{\pi}\cdot \varepsilon_0 \cdot \varepsilon_{...
+...frac{\pi\cdot Z_{F0}}{2\cdot Z_L\cdot \sqrt{\varepsilon_{r,eff}}}\right)\right)$"></SPAN></TD>
+<TD NOWRAP CLASS="eqno" WIDTH="10" ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>.<SPAN CLASS="arabic">31</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+based on his duality [<A
+ HREF="node103.html#Getsinger5">56</A>] theory.
+
+<P>
+
+<DIV CLASS="navigation"><HR><B> Next:</B> <A NAME="tex2html1996"
+  HREF="node89.html">Coplanar waveguide gap</A>
+<B>Up:</B> <A NAME="tex2html1992"
+  HREF="node85.html">Coplanar components</A>
+<B> Previous:</B> <A NAME="tex2html1986"
+  HREF="node87.html">Coplanar waveguide open</A>
+</DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<br>This document was generated by <i>Stefan Jahn</i> on <i>2007-12-30</i> using <a href="http://www.latex2html.org">latex2html</a>.
+</ADDRESS>
+</BODY>
+</HTML>
