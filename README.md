@@ -7,13 +7,11 @@ Repository for the Qucs website.
 
 ---
 
-Check the website pages on the branch [gh-pages](https://github.com/guitorri/qucs-web/tree/gh-pages).
-
 GitHub-Pages preview at:
 
-[http://guitorri.github.io/qucs-web/](http://guitorri.github.io/qucs-web/)
+[http://qucs.github.io/](http://qucs.github.io/)
 
 ---
 
 Note:
- * Large binary files currently hosted on the website space where not added to this repository.
+ * Large binary files currently hosted on the SourceForge website space were not added to this repository.
