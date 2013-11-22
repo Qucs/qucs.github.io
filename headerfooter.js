@@ -15,7 +15,6 @@ function header()
       <li><a class="navbutton" href="road.html">roadmap</a></li> \
       <li><a class="navbutton" href="devs.html">developers</a></li> \
       <li><a class="navbutton" href="faq.html">FAQ</a></li> \
-      <li><a class="navbutton" href="contact.html">contact</a></li> \
     </ul> \
   </div>';
 
