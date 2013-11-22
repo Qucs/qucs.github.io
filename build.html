@@ -35,21 +35,84 @@
       <a href="install.html">install instructions</a> ]
     </center><a name="#build"></a>
 
-    <h3><a name="#build">Build From Source</a></h3>
+    <h3><a name="#build_svn">Build Prerequisites</a></h3>
 
     <ul>
       <li>
-        <h4>Requirements</h4>
+        <h4>Source Build Requirements</h4>
       </li>
 
       <li style="list-style: none; display: inline">
-        <p>Qucs needs Qt&reg; by <a href=
-        "http://qt.digia.com/">Digia</a>&reg;. The current version
-        requires Qt 4 or later.</p>
+        <ul>
+          <li>Linux, Macintosh OS (64-bit), Windows</li>
+
+          <li>Qt4 installation, version &gt;= 4.6 (with Qt3Support)</li>
+
+          <li>C++ compiler</li>
+
+          <li>Autoconf version 2.64 (at least)</li>
+
+          <li>GNU automake 1.7.0 (at least)</li>
+
+          <li>flex 2.5.31 (but at least 2.5.9)</li>
+
+          <li>GNU Bison 1.875d</li>
+
+          <li>GNU M4 (any version)</li>
+
+          <li>GNU gperf 3.0.1</li>
+
+          <li>ADMS 2.3.0 (included in Qucs source)</li>
+          <ul>
+            <li>Perl (modules XML-LibXML, GD)</li>
+            <li>GNU Libtool</li>
+          </ul>
+        </ul>
       </li>
 
       <li>
-        <h4>Installation From Distibutable Sources</h4>
+        <h4>Documentation Build Requirements</h4>
+      </li>
+
+      <li style="list-style: none; display: inline">
+        <ul>
+
+          <li>Autoconf</li>
+
+          <li>Automake</li>
+
+          <li>LaTex installation.</li>
+          <ul>
+            <li> IEEEtran bibstyle </li>
+            <li> savesym </li>
+            <li> hyperref </li>
+          </ul>
+
+          <li>GNU Octave</li>
+
+          <li>epsTk 2.0.1 (at least)</li>
+
+        </ul>
+      </li>
+    </ul>
+
+    <h3><a name="#build">Build Current Release From Source</a></h3>
+
+    <ul>
+      <li>
+        <h4>Get The Latest Source Tarball</h4>
+      </li>
+      <ul>
+
+          <li>Qucs version <a href=
+          "http://prdownloads.sourceforge.net/qucs/qucs-0.0.17.tar.gz?download">
+          0.0.17</a></li>
+
+      </ul>
+
+
+      <li>
+        <h4>Build From Distibutable Sources</h4>
       </li>
 
       <li style="list-style: none; display: inline">
@@ -81,41 +144,51 @@ distribution.<br />
       </li>
     </ul><a name="#build_svn"></a>
 
-    <h3><a name="#build_svn">Build Development Sources from Git
-    Repository</a></h3>
+<h3><a name="#build_svn">Build Development Sources From Git
+Repository</a></h3>
 
-    <ul>
+<p> Please make sure you have Git installed. </p>
+
+      <ul>
       <li>
-        <h4>Requirements</h4>
-      </li>
-
-      <li style="list-style: none; display: inline">
-        <ul>
-          <li>Autoconf version 2.64 (at least)</li>
-
-          <li>GNU automake 1.7.0 (at least)</li>
-
-          <li>flex 2.5.31 (but at least 2.5.9)</li>
-
-          <li>GNU Bison 1.875d</li>
-
-          <li>Qt installation &gt;= version 4 (by Digia)</li>
-
-          <li>GNU M4 (any version)</li>
-
-          <li>GNU gperf 3.0.1</li>
-        </ul>
-      </li>
-
+        <h4>Cloning for the first time</h4>
+        <pre>
+$ cd ~
+$ git clone git://git.code.sf.net/p/qucs/git qucs-git
+        </pre>
+      </ul>
+    <ul>
       <li>
         <h4>Building</h4>
       </li>
 
-      <li style="list-style: none">For each of the main source
-      directories, qucs, qucs-core and qucs-doc it is necessary to:
-        <pre>
+      <li style="list-style: none">Build the Qucs GUI applications:
+<pre>
+$ cd ~/git/qucs-git/qucs
 $ sh autogen.sh
 $ ./configure --enable-maintainer-mode --prefix=/installation/path
+$ make
+$ make install
+</pre>
+      </li>
+
+      <li style="list-style: none">Build the Qucs core:
+<pre>
+$ cd ~/git/qucs-git/qucs-core
+$ sh bootstrap.sh
+$ ./configure --enable-maintainer-mode --prefix=/installation/path
+$ make
+$ make install
+</pre>
+      </li>
+
+      <li style="list-style: none">Build the Qucs documentation:
+<pre>
+$cd ~/git/qucs-git/qucs-doc/
+$sh autogen.sh
+$ ./configure --enable-maintainer-mode --prefix=/installation/path
+$make
+$make install
 </pre>
       </li>
 
@@ -123,19 +196,22 @@ $ ./configure --enable-maintainer-mode --prefix=/installation/path
         <h4>Testing</h4>
       </li>
 
-      <li style="list-style: none">For testing purposes the user
-      has to install the package previously.
-        <pre>
-$ make install
+      <li style="list-style: none">For testing the installation the user
+      can the to installed binaries.
+<pre>
 $ cd /installation/path/bin
+$ qucs
+$ qucsator
 </pre>
       </li>
-    </ul>Note that Qucs comes bundled with a version of ADMS known
+    </ul>
+    Note that Qucs comes bundled with a version of ADMS known
     to be compatible. By default, this version is built and
     installed with the commands above. If you would prefer to use a
-    different version of ADMS, you may supply the --diable-adms
-    option to configure. <a name="#build_Win32"></a>
+    different version of ADMS, you may supply the --disable-adms
+    option to configure.
 
+    <a name="#build_Win32"></a>
     <h3><a name="#build_Win32">Build instructions for
     Win32</a></h3>There are different methods how to compile the
     package for Win32:
@@ -179,80 +255,46 @@ $ sh autodsp.sh
 QTDIR appropriately it is possible to use the qucs.dsw and
 qucscore.dsw files to compile Qucs with MSVC.
       </li>
-    </ul><a name="#build_MacOS"></a>
-
-    <h3><a name="#build_MacOS">Build instructions for
-    MacOSX</a></h3><a name="#build_MacOS">The following
-    instructions are relevant for Qucs version 0.0.16. Newer
-    versions have not been tested on Mac. If you do so and find
-    problems, or even better, solutions, contact the Qucs team so
-    we can update these instructions. Newer versions of Qucs
-    require Qt4.</a>
-
-    <p>In order to build Qucs on a MacOSX you need to have Apple's
-    X11 installed. Also a native build of Qt3/Mac is necessary.
-    This will make the native Aqua widget set available for
-    Qucs.</p>
-
-    <ul>
-      <li>
-        <h4>Build Qt3/Mac</h4>
-      </li>
-
-      <li style="list-style: none; display: inline">
-        <p>First download latest Qt3/Mac (version 3.3.8) from e.g.
-        <a href=
-        "http://wftp.tu-chemnitz.de/pub/Qt/qt/source/qt-mac-free-3.3.8.tar.gz">
-        qt-mac-free-3.3.8.tar.gz</a>. Then unpack it:</p>
-        <pre>
-    $ cd /Developer
-    $ tar xvzf ~/qt-mac-free-3.3.8.tar.gz
-    $ mv qt-mac-free-3.3.8 qt3
-    $ cd qt3
-    
-</pre>For MacOSX 10.5 (Leopard) you need to apply a
-        <a href="docs/qt3-leopard.diff">patch</a>.
-        <pre>
-    $ patch &lt; ~/qt3-leopard.diff
-    
-</pre>Then configure and build Qt.
-        <pre>
-    $ export QTDIR=/Developer/qt3
-    $ export PATH=$PATH:$QTDIR/bin
-    $ export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$QTDIR/lib
-    $ ./configure -shared -release -thread
-    $ make
-    
-</pre>This takes some time now. After that you have a working
-Qt3/Mac on your computer.
-      </li>
-
-      <li>
-        <h4>Build Qucs</h4>
-      </li>
-
-      <li style="list-style: none">In order to build and install
-      Qucs you use now the previously built Qt3/Mac.
-        <pre>
-    $ tar xvzf qucs-&lt;version&gt;.tar.gz
-    $ cd qucs-&lt;version&gt;
-    $ ./configure --prefix=/usr/local
-    $ make
-    $ make install
-    
-</pre>Under MacOSX applications are actually directory structures
-where the binaries, icons, etc. are stored. These are created
-during the last Makefile install step from Qucs version 0.0.15
-on.<br />
-        <br />
-        Finally you can link the main Qucs application into your
-        Applications folder by running the following command.
-        <pre>
-    $ ln -s /usr/local/bin/qucs.app /Applications/qucs.app
-    
-</pre>You're finally done!
-      </li>
     </ul>
+
+    <a name="#build_MacOS"></a>
+    <h3><a name="#build_MacOS">Build Instructions For
+    MacOSX</a></h3><a name="#build_MacOS">
+    The following
+    instructions are apply for Qucs version 0.0.17 and greater.</a>
+
+    <p> Mac OS 10.5 64-bit is the minimum version supported by Qt4.</p>
+
+    <p>In order to build Qucs on a Mac OS you need to have Apple's
+    latest Xcode and/or Command Line Tools.
+    The compilation toolchain can be obtained by downloading <a href="http://developer.apple.com/xcode/">Xcode</a>
+    (free Apple account required). The Command Line Tools can be installed from within Xcode preferences. </p>
+
+    <p> The apple shipped version of requirements (autoconf, automake, ...) might need to be updated.
+    For that we recommend the <a href="http://www.macports.org/">MacPorts</a> and
+    <a href="http://brew.sh/">Homebrew</a> package managers. </p>
+
+    <p> Note that there is a
+    <a href="https://trac.macports.org/browser/trunk/dports/science/qucs/Portfile">MacPorts Port</a>
+    and a
+    <a href="https://github.com/guitorri/homebrew-tap/blob/master/qucs.rb">Homebrew Formula</a>
+    available to build and install Qucs. </p>
+
+
+    <p> With all dependencies in place, the build process is similar to the steps outlined above.</p>
+
+    <p> Under Mac OS applications are actually directory structures (bundles)
+    where the binaries, icons, etc. are  all stored. These are created
+    during the make install step (starting from Qucs version 0.0.15 on).
+
+    <p>
+    Finally you can link the main Qucs application into your
+    Applications folder by running the following command.
+
+    <pre>
+    $ ln -s /usr/local/bin/qucs.app /Applications/qucs.app
+    </pre>
+
     <hr />
   </div><!-- include the common web page header -->
   <script type="text/javascript">
