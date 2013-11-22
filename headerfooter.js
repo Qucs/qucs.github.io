@@ -3,6 +3,7 @@ function header()
 {
   // Multiline header string
   var string = '\
+  <link rel="shortcut icon" href="qucs-tab.ico" > \
   <!-- comon qucs header --> \
   <div id="header"></div> \
   <div id="navpane" class="nav"> \
