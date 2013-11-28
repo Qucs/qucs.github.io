@@ -1,0 +1,14 @@
+.git
+.gitignore
+.DS_Store
+deploy
+rsync_exclude.txt
+
+freehdl-0.0.7-macosx-10.5-intel.pkg
+freehdl-0.0.7.tar.gz
+qucs-0.0.15-macosx-10.5-intel-test.pkg
+qucs-0.0.15-macosx-10.5-intel.pkg
+qucs-0.0.5-Win32.zip
+qucs-nightly.tar.gz
+qucs-qt4-nightly.tar.gz
+

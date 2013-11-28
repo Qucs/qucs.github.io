@@ -1,0 +1,71 @@
+#!/bin/bash
+
+# Script lifted from:
+# https://coderwall.com/p/moabdw
+
+# Better if run in two steps:
+#
+# ./deploy local       # dry-run
+# ./deploy local go    # copy from source to destination locally
+#
+# ./deploy live [SF username]       # dry-run
+# ./deploy live go [SF username]    # Password is requested, rsynch over SSH from local to SourceForge webspace
+
+
+ERRORSTRING="Error. Please make sure you've indicated correct parameters"
+
+if [ $# -eq 0 ]
+  then
+    echo $ERRORSTRING;
+
+# To test rsync locally
+# Rsync to a local directory, ex. ~/qucs-website
+elif [ $1 == "local" ]
+  then
+    if [[ -z $2 ]]
+        then
+            echo "Running dry-run"
+            rsync --dry-run -az --force --delete --progress --exclude-from=rsync_exclude.txt  ./ ~/qucs-website
+    elif [ $2 == "go" ]
+        then
+            echo "Running actual deploy"
+            rsync -az --force --delete --progress --exclude-from=rsync_exclude.txt ./ ~/qucs-website
+    else
+        echo $ERRORSTRING;
+    fi
+
+# Rsync to SourceForge over SSH
+elif [ $1 == "live" ]
+  then
+    if [[ $2 != "go" ]]
+      then
+        if [ "$#" -ne 2 ]
+          then
+            echo "Usage: ./deploy live [username]"
+            exit 1
+        else
+
+          username=$2
+
+          echo "Running dry-run"
+          rsync --dry-run -az --force --delete --progress --exclude-from=rsync_exclude.txt -e ssh ./ $username,qucs@web.sourceforge.net:htdocs/
+        fi
+
+    elif [[ $2 == "go" ]]
+      then
+
+        if [ "$#" -ne 3 ]
+          then
+            echo "Usage: ./deploy live go [username]"
+            exit 1
+        fi
+
+        username=$3
+
+        echo "Running actual deploy"
+        rsync -az --force --delete --progress --exclude-from=rsync_exclude.txt -e ssh ./ $username,qucs@web.sourceforge.net:htdocs/
+    else
+      echo $ERRORSTRING;
+    fi
+fi
+
