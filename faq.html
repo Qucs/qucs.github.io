@@ -28,35 +28,27 @@ alink="#0000FF">
   <div id="main">
     <hr />
 
-    <h3>Frequently asked Questions</h3><a href="#q001">1. On which
-    OS will Qucs run?</a><br />
-    <a href="#q002">2. What kind of software is need to be
-    installed on my system to run Qucs?</a><br />
-    <a href="#q003">3. Why don't you use Spice to simulate the
-    schematics?</a><br />
-    <a href="#q004">4. Compiling Qucs ends with something like
-    "g++: ./componentdialog.moc.cpp: Can't find file or
-    directory".</a><br />
-    <a href="#q005">5. The ./configure script finds Qt&reg;
-    headers, but cannot locate the libraries. What's
-    wrong?</a><br />
-    <a href="#q006">6. I downloaded and installed the Qucs package
-    on MacOSX, and then when I try to start it the Qucs icon
-    appears in my dock briefly and then disappears and the program
-    quits. What's wrong?</a><br />
-    <a href="#q007">7. How can I set the language for
-    Qucs?</a><br />
-    <a href="#q008">8. Qucs does not start on my MacOSX. What's
-    wrong?</a><br />
-    <a href="#q009">9. I try to run the ASCO optimizer and it gave
+    <h3>Frequently asked Questions</h3>
+
+    <a href="#q001">1. On which OS will Qucs run?</a><br />
+    <a href="#q002">2. What kind of software is need to be installed on my system to run Qucs?</a><br />
+    <a href="#q003">3. Why don't you use Spice to simulate the schematics?</a><br />
+
+    <a href="#q004">4. How can I set the language for Qucs?</a><br />
+
+    <a href="#q005">5. Qucs does not start on my MacOSX. What's wrong?</a><br />
+
+    <a href="#q006">6. I try to run the ASCO optimizer and it gave
     me the following error: 'qucsator' is not recognized as an
     internal or external command, operable program or batch
     file.</a><br />
-    <a href="#q010">10. I use the Windows version of Qucs. After
+
+    <a href="#q007">7. I use the Windows version of Qucs. After
     installing it, I can't use it when logged in as different user.
     Simulation cannot be started, projects are away and/or icons
     don't appear properly in the GUI. What's wrong?</a><br />
-    <a href="#q999">11. What do I do if my question isn't answered
+
+    <a href="#q008">8. What do I do if my question isn't answered
     here?</a><br />
 
     <h3>Answers</h3>
@@ -64,21 +56,22 @@ alink="#0000FF">
     <p><a name="q001" id="q001"><b>1. On which OS will Qucs
     run?</b></a><br />
     Qucs is currently developed on GNU/Linux systems using the GNU
-    autotools. For this reason it is very likely that Qucs runs on
+    autotools (and CMake experimentally).
+    For this reason it is very likely that Qucs runs on
     all kinds of Unix systems supporting an appropriate system
     interface and an installed Qt&reg; environment. It has been
     verified that Qucs can be installed on GNU/Linux, Solaris 2.9,
-    MacOS 10.3, NetBSD, FreeBSD and Cygwin (Unix emulation layer
-    for Windows). With the QT3/Windows Free Edition at hand Qucs is
-    also available natively on Win32 (NT/2000/XP) systems.</p>
+    MacOS 10.5, NetBSD, FreeBSD and Cygwin (Unix emulation layer
+    for Windows).
+    Qucs is
+    also available natively on x86 Windows (XP/Vista/7/8) systems
+    and experimentaly on x86_64 versions of these. </p>
 
     <p><a name="q002" id="q002"><b>2. What kind of software is need
     to be installed on my system to run Qucs?</b></a><br />
-    The main branch uses Qt4, the old (and for now more stable)
-    qucs-qt3 branch depends on Qt&reg; &gt;= 3.1 (and &lt; 4.0.0)
-    by <a href="http://qt.digia.com/">Digia</a>&reg;<br />
-    to compile qucs you will need some additional packages like
-    qt4-dev-tools, bison, flex, gperf and adms-2.3.0</p>
+    Currently Qt4 (version 4.6 and higher) are known to work well.
+    To compile qucs you will need some additional packages like
+    qt4-dev-tools, bison, flex, gperf and adms-2.3.0 (included into Qucs)</p>
 
     <p><a name="q003" id="q003"><b>3. Why don't you use Spice to
     simulate the schematics?</b></a><br />
@@ -113,63 +106,7 @@ alink="#0000FF">
       <li>the frontend isn't as good as it could be</li>
     </ul>
 
-    <p><a name="q004" id="q004"><b>4. Compiling Qucs ends with
-    something like "g++: ./componentdialog.moc.cpp: Can't find file
-    or directory".</b></a><br />
-    If <tt>*.moc.cpp</tt> files cannot be compiled the Meta Object
-    Compiler is missing. There was surely the message<br /></p>
-    <pre>
-...
-checking for moc... :
-checking for uic... /usr/bin/uic
-configure: WARNING:
-  The qucs package needs the 'Qt Meta Object Compiler' to compile properly.
-  Though Qt itself may be properly installed including headers and libraries
-  the 'moc' program is missing.  Possibly you need to install the full
-  development package of Qt.
-...
-</pre>during ./configure run. Either <tt>moc</tt> is not on the
-system (should not be the case if Qt&reg; is installed) or the
-environment variable <tt>MOC</tt> does not exist. Find the location
-of <tt>moc</tt> (for Knoppix <tt>/usr/bin/moc-qt3</tt> or
-<tt>/usr/share/qt3/bin/moc</tt>) and type<br />
-    <pre>
-        $ export MOC=/usr/bin/moc-qt3
-</pre>just before calling ./configure.
-
-    <p><a name="q005" id="q005"><b>5. The ./configure script finds
-    Qt&reg; headers, but cannot locate the libraries. What's
-    wrong?</b></a><br />
-    Though the <tt>QTDIR</tt> environment variable is setup
-    correctly, it may happen that the configure script cannot find
-    the Qt&reg; libraries because it is initially looking for the
-    threaded libraries (the <tt>libqt-mt.so</tt> link). If you have
-    installed the non-threaded library (the <tt>libqt.so</tt> link)
-    configure fails. This can be worked around by</p>
-    <pre>
-        $ ./configure --disable-mt
-</pre>On the other hand it may happen that ./configure finds the
-Qt&reg; headers by chance if the <tt>QTDIR</tt> environment
-variable is not setup at all but fails to find the libraries then.
-Try
-    <pre>
-        $ export QTDIR=/path/to/qt
-</pre>
-
-    <p><a name="q006" id="q006"><b>6. I downloaded and installed
-    the Qucs package on MacOSX, and then when I try to start it the
-    Qucs icon appears in my dock briefly and then disappears and
-    the program quits. What's wrong?</b></a><br />
-    The Qucs package for MacOSX requires the QT3.x libraries. The
-    MacOSX versions of the QT3.x libraries are available on the
-    same download site as "minimal" and "complete" package. The
-    "minimal" version is for users who want to use the Qt-based
-    applications available at <a href=
-    "http://naranja.umh.es/~atg">http://naranja.umh.es/~atg</a>.
-    The "complete" versions is for developers, i.e. including Qt
-    Designer, all example programs and documentation.</p>
-
-    <p><a name="q007" id="q007"><b>7. How can I set the language
+    <p><a name="q004" id="q004"><b>4. How can I set the language
     for Qucs?</b></a><br />
     If you want to change the language for the Qucs GUI you need to
     quit Qucs and then</p>
@@ -179,26 +116,12 @@ Try
 change the language in the application settings dialog (in the file
 menu).
 
-    <p><a name="q008" id="q008"><b>8. Qucs does not start on my
+    <p><a name="q005" id="q005"><b>5. Qucs does not start on my
     MacOSX. What's wrong?</b></a><br />
-    Qucs relies in parts on libraries which are not delivered with
-    MacOSX, but with the X11-installer Apple provides. This does
-    not mean that Qucs on MacOSX runs under X-Windows, the binary
-    installer provided on <a href=
-    "http://naranja.umh.es/~atg">http://naranja.umh.es/~atg</a> is
-    based on the native version of Trolltech's Qt3.3 framework, but
-    some libs from the X11-packages are used. This is a requirement
-    under MacOSX 10.3 as well as 10.4.x (and it is displayed by the
-    installer before starting the installation). The X11-installer
-    from Apple, which installs the missing libraries, is available
-    from the MacOSX installation CDs/DVD (well, and it is not
-    installed as default when doing a "standard" MacOSX
-    installation). The X11-installer package is available within
-    the optional packages accessible from the MacOSX System
-    installer. If X11 is installed from at least the Apple provided
-    installer, the libs are available.</p>
+    Please contact the developers. Provide details and if available a
+    crash report.</p>
 
-    <p><a name="q009" id="q009"><b>9. I try to run the ASCO
+    <p><a name="q006" id="q006"><b>6. I try to run the ASCO
     optimizer and it gave me the following error: 'qucsator' is not
     recognized as an internal or external command, operable program
     or batch file.</b></a><br />
@@ -216,7 +139,7 @@ click the "Environment Variables" button. There edit or add the
 <tt>PATH</tt> environment variable to point to the path where
 'qucsator.exe' resides.
 
-    <p><a name="q010" id="q010"><b>10. I use the Windows version of
+    <p><a name="q007" id="q007"><b>7. I use the Windows version of
     Qucs. After installing it, I can't use it when logged in as
     different user. Simulation cannot be started, projects are away
     and/or icons don't appear properly in the GUI. What's
@@ -241,7 +164,7 @@ click the "Environment Variables" button. There edit or add the
     <tt>.qucs/</tt> is created and used to store project related
     files.</p>
 
-    <p><a name="q999" id="q999"><b>11. What do I do if my question
+    <p><a name="q008" id="q008"><b>8. What do I do if my question
     isn't answered here?</b></a><br />
     You may go through the <a href=
     "http://sourceforge.net/mail/?group_id=90337">mailing list
