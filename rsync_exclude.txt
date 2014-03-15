@@ -3,6 +3,7 @@
 .DS_Store
 deploy
 rsync_exclude.txt
+build_copy_docs.sh
 
 freehdl-0.0.7-macosx-10.5-intel.pkg
 freehdl-0.0.7.tar.gz
