@@ -38,46 +38,6 @@
     <h3><a name="#install">Installation Instructions</a></h3>
 
     <ul>
-      <li>
-        <h4>Requirements</h4>
-      </li>
-
-      <li style="list-style: none; display: inline">
-        <p>Qucs needs Qt&reg; by <a href=
-        "http://qt.digia.com/">Digia</a>&reg;. The current version
-        is known to work with Qt 4.6.3 and later.</p>
-      </li>
-
-      <li>
-        <h4>Usual GNU/Linux installation</h4>
-      </li>
-
-      <li style="list-style: none; display: inline">
-        <p>Unpack the distribution tarball:</p>
-        <pre>
-    $ tar xvzf qucs-&lt;version&gt;.tar.gz               (using GNU tar)
-    $ gzip -cd qucs-&lt;version&gt;.tar.gz | tar xvf -   (using another tar)
-</pre>Change into the source directory:
-        <pre>
-    $ cd qucs-&lt;version&gt;
-</pre>Configure the source package for your system:
-        <pre>
-    $ ./configure
-</pre>Now compile the package:
-        <pre>
-    $ make
-</pre>Install Qucs:
-        <pre>
-    $ make install
-</pre>You must have root privileges if you want to install the
-package in the standard location (/usr/local) or in any location
-that is only writable by root. For further information on
-installing the package, please consult the file INSTALL included in
-the distribution.<br />
-        <br />
-        <b>Please note</b>: Users of the FreeBSD OS may use a GNU
-        make (probably gmake) to compile and install the package.
-      </li>
 
       <li>
         <h4><a name="#install_Win32">Install instructions for
@@ -150,130 +110,44 @@ can be obtained at <a href=
 
           <li style="list-style: none">
             <br />
-            To build Qucs from source, you need to install X11 and
+            To build Qucs from source, you need to install Xcode, Command Line Toos and
             Qt first.<br />
             <br />
 
             <ol>
               <li>
-                <i>Installing X11</i>
+                <i>Installing Xcode</i>
 
-                <p>To install X11 (if you do not already have it),
-                insert your MacOS installation DVD, scroll down,
-                open "Optional Installs" and choose the package
-                "X11" for installation. Finish the
-                installation.</p>
               </li>
-
               <li>
                 <i>Installing Qt</i>
 
-                <p>An easy way of installing Qt3 is using
-                DarwinPorts. With DarwinPorts you can install MacOS
-                versions of many known open source projects by
-                using simple commands.<br />
-                <br />
-                Get it here: <a href=
-                "http://darwinports.com/">http://darwinports.com/</a><br />
-
-                <br />
-                Download the .dmg file from there, open it and
-                install the DarwinPorts package. After that,
-                DarwinPorts needs to be updated to the most recent
-                version. Open a shell and type the following
-                commmand (you will be asked for your password):</p>
-                <pre>
-        $ sudo port -d selfupdate
-</pre>Now it is time to get Qt3. In the shell, type this command:
-                <pre>
-        $ sudo port install qt3
-</pre>Now DarwinPorts will fetch a lot of packages which are needed
-to install Qt3. Be patient, this will take some time. Once
-finished, you need to export a new environment variable. Do this by
-typing the following two lines into your shell:
-                <pre>
-        $ QTDIR=/opt/local/lib/qt3
-        $ export QTDIR
-</pre>Do not close the shell, we'll need it with the above
-environment variable for the installation of Qucs.
               </li>
-
               <li>
                 <i>Compiling Qucs</i>
 
-                <p>You should get the latest version of Qucs now. I
-                wrote this article using qucs-0.0.11, but this
-                should work for future versions, too.<br />
-                <br />
-                I assume you have downloaded the Qucs source code
-                to Documents/qucs-0.0.11.tar.gz, so we can use our
-                shell to extract the source files with the
-                following commands:</p>
-                <pre>
-        $ cd Documents
-        $ tar &shy;xvzf qucs-0.0.11.tar.gz
-</pre>Now compile Qucs:
-                <pre>
-        $ cd qucs-0.0.11
-        $ ./configure
-        $ make
-        $ sudo make install
-        $ sudo ln -s /usr/local/bin/qucs /Applications/qucs
-</pre>
+            <br />
+                 Please constact the developers for details.
+            <br />
+
               </li>
-            </ol>If everything went ok, you should now have a link
-            to the binary "qucs" in your Applications. You're done!
+            </ol>
           </li>
+
+          <br />
 
           <li><b>Building using MacPorts</b></li>
 
           <li style="list-style: none">
             <br />
-            To install Qucs, you need to install X11, XCode and
-            MacPorts first.<br />
+            To install Qucs, you need to install MacPorts (after Xcode and Command Line Tools, see below).<br />
             <br />
 
             <ol>
-              <li><i>Installing X11</i><br />
-              To install X11 (if you do not already have it),
-              insert your MacOS installation DVD, scroll down, open
-              "Optional Installs" and choose the package "X11" for
-              installation. Finish the installation.<br />
-              <br /></li>
-
-              <li>
-                <i>Installing XCode</i><br />
-                XCode is a mighty package for software developers.
-                It comes with a fully fledged GUI, several
-                programming languages and lots of documentation. We
-                only need the C compiler (gcc) and its support
-                files which come with this installation.<br />
-                <br />
-                To check if XCode is already installed, open your
-                Finder, then your "Macintosh HD" and look for a
-                folder "Developer". If it's there, XCode is
-                installed and you can skip the following
-                step.<br />
-                <br />
-                You have two choices:
-
-                <ol type="a">
-                  <li>download the newest version (over 900 MB for
-                  v2.4.1!)Goto <a href=
-                  "http://developer.apple.com/tools/xcode/index.html">
-                  http://developer.apple.com/tools/xcode/index.html</a>.
-                  After download, open the .dmg image and run the
-                  installer.<br /></li>
-
-                  <li>use the older version from DVDLook through
-                  your Tiger installation media for "XCode tools".
-                  Install it.</li>
-                </ol><br />
-              </li>
 
               <li>
                 <i>Installing MacPorts and Qucs</i><br />
-                With MacPorts (formerly DarwinPorts) you can
+                With MacPorts you can
                 install MacOS versions of many known open source
                 projects by using simple commands.<br />
                 <br />
@@ -281,27 +155,36 @@ environment variable for the installation of Qucs.
                 "http://www.macports.org/">http://www.macports.org/</a><br />
 
                 <br />
-                Download the latest .dmg file from there, open it
-                and install the MacPorts package. After that,
+
+                Please follow the installation instructions to get Xcode and the Command Line Tools.
+
+                After its installation,
                 MacPorts needs to be updated to the most recent
-                version. Open a shell and type the following
+                version. Open a Terminal shell and type the following
                 commmand (you will be asked for your password):
-                <pre>
+        <pre>
         $ sudo port -d selfupdate
-</pre>Now it is time to get Qucs. In the shell, type this command:
-                <pre>
+        </pre>
+
+               Now it is time to get Qucs. In the shell, type this command:
+        <pre>
         $ sudo port install qucs
-</pre>MacPorts will fetch, decompress, compile and install a lot of
+        </pre>
+
+              MacPorts will fetch, decompress, compile and install a lot of
 packages which are needed to install Qucs. Be patient, this will
-take some time.<br />
-                <br />
+take some time.
+
+<br />
+<br />
                 After installation Qucs will be placed into
                 /opt/local/bin. If you want, you can create a link
                 to your Applications folder with the following
                 command:
-                <pre>
+
+        <pre>
         $ sudo ln -s /opt/local/bin/qucs /Applications/qucs
-</pre>
+        </pre>
               </li>
             </ol>You're done!<br />
             <br />
