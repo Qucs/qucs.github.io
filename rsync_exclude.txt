@@ -13,3 +13,4 @@ qucs-0.0.5-Win32.zip
 qucs-nightly.tar.gz
 qucs-qt4-nightly.tar.gz
 
+doxygen/
