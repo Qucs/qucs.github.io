@@ -13,7 +13,7 @@ function header()
       <li><a class="navbutton" href="docs.html">support</a><li> \
       <li><a class="navbutton" href="download.html">download</a></li> \
       <li><a class="navbutton" href="road.html">roadmap</a></li> \
-      <li><a class="navbutton" href="devs.html">developers</a></li> \
+      <li><a class="navbutton" href="devs.html">development</a></li> \
       <li><a class="navbutton" href="faq.html">FAQ</a></li> \
     </ul> \
   </div>';
