@@ -245,13 +245,6 @@ $ LANG=de ./qucs
     package for Win32:
 
     <ul>
-      <li><b>Cygwin natively</b> -- tested</li>
-
-      <li style="list-style: none; display: inline">
-        <p>This works out of the box very likely on a usual
-        GNU/Linux system. Of course Qt&reg; and the X-Server
-        including development files must be installed.</p>
-      </li>
 
       <li><b>MinGW32 natively</b> -- tested (Windows XP, Qt 4.8.5, Qucs Git master post 0.0.17)</li>
 
@@ -261,9 +254,10 @@ $ LANG=de ./qucs
         In this instructions pre-compiled binaries are used to reduce dependencies and save time.</p>
       </li>
 
-      <li><b>MinGW32 cross-compiling</b> -- tested</li>
+      <li><b>MinGW32 cross-compiling</b> -- tested (used for Win32 release build)</li>
 
       <li style="list-style: none; display: inline">
+        <p> For latest information consult release scritps ont the repository (qucs/qucs/contrib) </p>
         <p>This is the preferred method to build Qucs for Win32. On
         an Debian system the mingw32-cross compiler is available.
         The Q../Free version can be built using either
@@ -277,7 +271,15 @@ $ make install
 </pre>
       </li>
 
-      <li><b>MSVC natively</b> -- tested</li>
+      <li><b>Cygwin natively</b> -- not tested recently</li>
+
+      <li style="list-style: none; display: inline">
+        <p>This works out of the box very likely on a usual
+        GNU/Linux system. Of course Qt&reg; and the X-Server
+        including development files must be installed.</p>
+      </li>
+
+      <li><b>MSVC natively</b> -- not teste recently</li>
 
       <li style="list-style: none; display: inline">
         <p>The Git sources contain some extra *.ap files and a perl
@@ -294,12 +296,24 @@ $ sh autodsp.sh
       </li>
     </ul>
 
-    <h3><a name="build_mac">Build Instructions For
-    MacOSX</a></h3> The following
-    instructions are apply for Qucs version 0.0.17 and greater.
 
-    <p>Mac OS 10.5 64-bit is the minimum version supported by
-    Qt4.</p>
+    <h3><a name="build_mac">Build Instructions For MacOSX</a></h3>
+
+    The distributed binary package for Mac OSX only includes the Qucs suite and ASCO.
+    <br/>
+    <br/>
+    Users interested in using FreeHDL, and the Verilog-A dynamic loader they will need to install a compiler (Apple Xcode).
+
+    <br/>
+    <br/>
+
+    For such users we recommend the use of package managers to handle the instalation of the toolchaing.
+    We recoment either
+    <a href="http://www.macports.org/">MacPorts</a> or
+    <a href="http://brew.sh/">Homebrew</a>. Please contact the package maintainer if it is not yet updated to the latest version of Qucs.
+
+
+    <p>Note that due to limitation in Qt4 your platfomr should be newer thatn Mac OS 10.5 64-bit.</p>
 
     <p>In order to build Qucs on a Mac OS you need to have Apple's
     latest Xcode and/or Command Line Tools. The compilation
@@ -308,30 +322,124 @@ $ sh autodsp.sh
     account required). The Command Line Tools can be installed from
     within Xcode preferences.</p>
 
-    <p>The apple shipped version of requirements (autoconf,
-    automake, ...) might need to be updated. For that we recommend
+    <p>
+    Follow the package manager instructions on how to get it set up and running.
     the <a href="http://www.macports.org/">MacPorts</a> and
     <a href="http://brew.sh/">Homebrew</a> package managers.</p>
 
-    <p>Note that there is a <a href=
+    <p>Note that there is a MacPorts <a href=
     "https://trac.macports.org/browser/trunk/dports/science/qucs/Portfile">
-    MacPorts Port</a> and a <a href=
-    "https://github.com/guitorri/homebrew-tap/blob/master/qucs.rb">Homebrew
-    Formula</a> available to build and install Qucs.</p>
+    Port</a>
+    and a Homebrew <a href=
+    "https://github.com/guitorri/homebrew-tap/blob/master/qucs.rb">
+    Formula</a> available to manage the build and install of Qucs.</p>
 
-    <p>With all dependencies in place, the build process is similar
-    to the steps outlined above.</p>
 
-    <p>Under Mac OS applications are actually directory structures
-    (bundles) where the binaries, icons, etc. are all stored. These
-    are created during the make install step (starting from Qucs
-    version 0.0.15 on).</p>
+    <ul>
+    <li><b>Building using MacPorts</b></li>
+          <li style="list-style: none">
+            <br />
+            To install Qucs, you need to install MacPorts (after Xcode and Command Line Tools, see below).<br />
+            <br />
 
-    <p>Finally you can link the main Qucs application into your
-    Applications folder by running the following command.</p>
-    <pre>
-    $ ln -s /usr/local/bin/qucs.app /Applications/qucs.app
+            <ol>
+
+              <li>
+                <i>Installing MacPorts and Qucs</i><br />
+                With MacPorts you can
+                install MacOS versions of many known open source
+                projects by using simple commands.<br />
+                <br />
+                Get it here: <a href=
+                "http://www.macports.org/">http://www.macports.org/</a><br />
+
+                <br />
+
+                Please follow the installation instructions to get Xcode and the Command Line Tools.
+
+                After its installation,
+                MacPorts needs to be updated to the most recent
+                version. Open a Terminal shell and type the following
+                commmand (you will be asked for your password):
+        <pre>
+        $ sudo port -d selfupdate
+        </pre>
+
+               Now it is time to get Qucs. In the shell, type this command:
+        <pre>
+        $ sudo port install qucs
+        </pre>
+
+              MacPorts will fetch, decompress, compile and install a lot of
+packages which are needed to install Qucs. Be patient, this will
+take some time.
+
+<br />
+<br />
+                After installation Qucs will be placed into
+                /opt/local/bin. If you want, you can create a link
+                to your Applications folder with the following
+                command:
+
+        <pre>
+        $ sudo ln -s /opt/local/bin/qucs /Applications/qucs
+        </pre>
+              </li>
+            </ol>You're done with MacPorts!<br />
+            <br />
+          </li>
+    </li> <!--MacPorts-->
+    </ul>
+
+
+
+    <ul>
+    <li><b>Building using Homebrew</b></li>
+
+
+      <li style="list-style: none">
+        <br />
+        To install Qucs, you need to install Homebrew (after Xcode and Command Line Tools, see instructions).<br />
+        <br />
+        <ol>
+          <li>
+            <i>Installing Homebrew and Qucs</i><br />
+             Follow the instruction to install Homebrew: <a href=
+             "http://brew.sh/">http://brew.sh/</a><br />
+                <br />
+          </li>
+
+Update the homebrew formulas, add a homebrew tap containing the Qucs formula.
+
+<pre>
+$ brew update
+$ brew tap guitorri/tap
 </pre>
+
+It is necessary to rebuild Qt4 with Qt3Support. The default prebuild Qt bottle does not include it.
+This step might take ~20min depending on your machine.
+
+<pre>
+$ brew install qt --with-qt3support
+</pre>
+
+Build and install Qucs.
+
+<pre>
+$ brew install qucs
+</pre>
+
+Homebrew can create symbolic links of installed packages into /Applications, run:
+
+<pre>
+$ brew linkapps
+</pre>
+
+        </ol>
+            You're done with Homebrew!<br />
+      </li>
+    </ul>
+
     <hr />
   </div><!-- include the common web page header -->
   <script type="text/javascript">
