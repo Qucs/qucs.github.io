@@ -37,8 +37,7 @@
     <h3><a name="download" id="download">Download</a></h3>
     In this
     section you will find all the versions of Qucs which have been
-    released so far. Also we provide links to the <a href=
-    "http://www.freehdl.seul.org/">FreeHDL</a> versions.<br />
+    released so far.
     <br />
 
     <h3>Source code</h3>
@@ -69,9 +68,11 @@
       </tr>
     </table>
 
+<!--
     <h3>Official binaries</h3>
 
     <ul>
+
       <li><a href=
       "http://sourceforge.net/projects/qucs/files/qucs-binary/0.0.18/qucs-0.0.18-win32.exe/download">
       Qucs 0.0.18 for Windows</a><br />
@@ -100,6 +101,7 @@
 </pre>
       </li>
     </ul>
+-->
 
     <h3><a name="git" id="git">Build instructions</a></h3><a name="git"
     id="git">
@@ -113,60 +115,198 @@
     <h3><a name="nightly" id="nightly">Repository
     Snapshot</a></h3>A copy of the current source code
     (qucs, qucs-doc and qucs-core included) in the repository.
-    <a href=
-    "https://sourceforge.net/p/qucs/git/ci/master/tarball">Available
-    for download here</a>.
+    Available for download
+    <a href= "https://sourceforge.net/p/qucs/git/ci/master/tarball">here</a>.
 
-    <h3><a name="unofficial" id="unofficial">Unofficial Qucs
-    packages</a></h3>The following pages are not supported by the
-    Qucs team, but interesting none the less.<br />
+
+    <br />
     <br />
 
-    <table class="unofficialdownloads" cellpadding="3" width=
-    "100%">
-      <tr bgcolor="#FF7400">
+    <h3><a name="official" id="official">Official Qucs
+    packages</a></h3>
+    The following packages are currently maintained by the
+    Qucs team.<br />
+    <br />
+
+    <table class="unofficialdownloads" cellpadding="3" width= "100%"> <tr bgcolor="#FF7400">
         <th><font color="white">Logo</font></th>
 
-        <th><font color="white">Link</font></th>
+        <th width="25%"><font color="white">Link</font></th>
 
-        <th><font color="white">Maintainer / Packager</font></th>
+        <th><font color="white">Maintainer</font></th>
 
-        <th width="20%"><font color="white">Comment</font></th>
+        <th><font color="white">Comment</font></th>
       </tr>
 
       <tr>
-        <td valign="top" align="right"><img src=
+        <td valign="top" align="center"><img src=
+        "images/logos/mediumubuntulogo.png" border="0" alt=
+        "Qucs Ubuntu" /></td>
+
+        <td valign="top"><a href=
+        "install.html#install_ubuntu">Qucs
+        at Ubuntu PPA</a></td>
+
+        <td valign="top"> Qucs Team </td>
+
+        <td valign="top">Ubundu Utopic, Trusty, Raring, Quantal, and Precise. PPA repository: ppa:qucs/qucs</td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="center"><img src=
         "images/logos/MacOSX.png" border="0" alt=
         "Qucs Mac OSX" /></td>
 
-        <td valign="top"><a href=
-        "http://sourceforge.net/projects/qucs/files/qucs-binary/0.0.17/qucs-0.0.17-macosx-10.5-intel.dmg/download">
-        Qucs on Mac OSX</a></td>
+        <td valign="top">
+        <a href= "http://sourceforge.net/projects/qucs/files/qucs-binary/">Qucs Mac OSX installer</a> </br>
+        <a href="build.html#build_mac">Qucs at Homebrew</a>
+        </td>
 
-        <td valign="top">Guilherme Brondani Torri <a href=
-        "mailto:guitorri@gmail.com"><em>&lt;guitorri@gmail.com&gt;</em></a></td>
+        <td valign="top"> Qucs Team </td>
 
-        <td valign="top">native package with Qt4, ASCO, freehdl and
-        iverilog; for Intel and MacOSX 10.5+</td>
+        <td valign="top"> MacOSX 10.7+ package installer, Qt4.8.6, ASCO</td>
+
       </tr>
 
       <tr>
-        <td valign="top" align="right"><img src=
+        <td valign="top" align="center"><img src=
         "images/logos/win.jpg" border="0" alt=
         "Qucs Windows" /></td>
 
         <td valign="top"><a href=
-        "http://sourceforge.net/projects/qucs/files/qucs-binary/0.0.17/qucs-0.0.17.exe/download">
+        "http://sourceforge.net/projects/qucs/files/qucs-binary">
         Qucs installer for Win32</a></td>
 
-        <td valign="top">Frans Schreuder <a href=
-        "mailto:info@schreuderelectronics.com"><em>&lt;info@schreuderelectronics.com&gt;</em></a></td>
+        <td valign="top"> Qucs Team </td>
 
-        <td valign="top">Qt4/Windows mingw innoSetup</td>
+        <td valign="top"> Windows (32bit) installer,
+      built with Mingw-w64-i686 v4.8.2, Qt4.8.6, includes ADMS 2.3.4, Freehdl 0.0.8,
+      iverilog 0.9.6 (20130827) and Mingw-w64 </td>
+      </tr>
+
+
+    </table><br />
+
+
+<!-- ------------------------------------------------------------------------ -->
+
+    <h3><a name="unofficial" id="unofficial">Unofficial Qucs
+    packages</a></h3>
+    The following pages are not direclty maintainted by the
+    Qucs team.
+    <br />
+    Some are abandoned and listed in the hope someone takes over the maintanence.<br />
+    If you are a maintainer and updated your package, we apreciate if you let us know.
+    <br />
+    <br />
+
+    <table class="unofficialdownloads" cellpadding="3" width= "100%"> <tr bgcolor="#FF7400">
+        <th><font color="white">Logo</font></th>
+
+        <th width="25%"><font color="white">Link</font></th>
+
+        <th><font color="white">Maintainer</font></th>
+
+        <th><font color="white">Comment</font></th>
+      </tr>
+
+
+      <tr>
+        <td valign="top" align="center"><img src=
+        "images/logos/MacOSX.png" border="0" alt=
+        "Qucs Mac OSX" /></td>
+
+        <td valign="top">
+        <a href= "https://www.macports.org/ports.php?by=name&substr=qucs">MacPorts</a> </br>
+        <a href="build.html#build_mac">Qucs at MacPorts</a>
+        </td>
+
+        <td valign="top"> -- </td>
+
+        <td valign="top"> Qucs 0.0.17 is available with MacPorts </td>
+
       </tr>
 
       <tr>
-        <td valign="top" align="right"><img src=
+        <td valign="top" align="center"><img src=
+        "images/logos/archlinux.jpg" width="80" border="0" alt=
+        "Qucs Arch Linux" /></td>
+
+        <td valign="top"><a href=
+        "https://www.archlinux.org/packages/?q=qucs">Qucs at Arch Linux</a></td>
+
+        <td valign="top">Sergej Pupykin</td>
+
+        <td valign="top">Qucs 0.0.18 is available</td>
+      </tr>
+
+
+      <tr>
+        <td valign="top" align="center"><img src=
+        "images/logos/fedora-linux-logo.jpg" width="80" border="0" alt=
+        "Qucs Arch Linux" /></td>
+
+        <td valign="top"><a href=
+        "https://apps.fedoraproject.org/packages/qucs">Qucs at Fedora</a></td>
+
+        <td valign="top"> Jcapik </td>
+
+        <td valign="top">Qucs 0.0.17 is available</td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="center"><img src=
+        "images/logos/geeko.jpg" border="0" alt=
+        "Qucs OpenSuSE" /></td>
+
+        <td valign="top"><a href=
+        "http://software.opensuse.org/package/qucs?search_term=qucs">Qucs at
+        OpenSuSE</a></td>
+        <!--
+        <td valign="top">Werner Hoch <a href=
+        "mailto:werner.ho@gmx.de"><em>&lt;werner.ho@gmx.de&gt;</em></a></td>
+        -->
+        <td valign="top">openSuse Build Service </td>
+
+        <td valign="top">Qucs 0.0.17 available for OpenSuSE 13.1, 12.3</td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="center"><img src=
+        "images/logos/Gentoo.png" border="0" alt=
+        "Qucs Gentoo" height="80" /></td>
+
+        <td valign="top"><a href=
+        "http://packages.gentoo.org/package/sci-electronics/qucs">Qucs
+        at Gentoo</a></td>
+
+        <td valign="top">Marcus D. Hanwell <a href=
+        "mailto:cryos@gentoo.org"><em>&lt;cryos@gentoo.org&gt;</em></a></td>
+
+        <td valign="top"> 0.0.17 snapshot (?)</td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="center"><img src=
+        "images/logos/puppylogo48.png" border="0" alt=
+        "Qucs Puppy Linux" /></td>
+
+        <td valign="top"><a href=
+        "http://www.qsl.net/wn2a/qucs.html">Qucs on Puppy
+        Linux</a></td>
+
+        <td valign="top">Mike Masterson <a href=
+        "mailto:galoof@optonline.net"><em>&lt;galoof@optonline.net&gt;</em></a></td>
+
+        <td valign="top">
+        Qucs 0.0.18 snapshot. </br>
+        also available
+        <a href= "http://wn2a73.googlepages.com/qucs.html">here</a></td>
+      </tr>
+
+<!--
+      <tr>
+        <td valign="top" align="center"><img src=
         "images/logos/kdeapps.png" border="0" alt=
         "Qucs KDE-Apps" /></td>
 
@@ -179,24 +319,10 @@
         <td valign="top">Qucs is registered at KDE-apps
         database</td>
       </tr>
+-->
 
       <tr>
-        <td valign="top" align="right"><img src=
-        "images/logos/Gentoo.png" border="0" alt=
-        "Qucs Gentoo" /></td>
-
-        <td valign="top"><a href=
-        "http://packages.gentoo.org/package/sci-electronics/qucs">Qucs
-        at Gentoo</a></td>
-
-        <td valign="top">Marcus D. Hanwell <a href=
-        "mailto:cryos@gentoo.org"><em>&lt;cryos@gentoo.org&gt;</em></a></td>
-
-        <td valign="top"></td>
-      </tr>
-
-      <tr>
-        <td valign="top" align="right"><img src=
+        <td valign="top" align="center"><img src=
         "images/logos/openlogo-75.png" border="0" alt=
         "Qucs Debian" /></td>
 
@@ -207,7 +333,9 @@
         <td valign="top">Jose L. Redrejo Rodriguez <a href=
         "mailto:jredrejo@edu.juntaextremadura.net"><em>&lt;jredrejo@edu.juntaextremadura.net&gt;</em></a></td>
 
-        <td valign="top">also <a href=
+        <td valign="top">
+        Qucs 0.0.15 (abandoned?) </br>
+        also <a href=
         "http://packages.qa.debian.org/f/freehdl.html">FreeHDL</a>
         and <a href=
         "http://packages.qa.debian.org/v/verilog.html">Icarus
@@ -215,7 +343,7 @@
       </tr>
 
       <tr>
-        <td valign="top" align="right"><img src=
+        <td valign="top" align="center"><img src=
         "images/logos/logo-full-thumb.png" border="0" alt=
         "Qucs FreeBSD" /></td>
 
@@ -226,11 +354,12 @@
         <td valign="top">Dag-Erling Smorgrav <a href=
         "mailto:des@FreeBSD.org"><em>&lt;des@FreeBSD.org&gt;</em></a></td>
 
-        <td></td>
+        <td> Qucs 0.0.16 </td>
       </tr>
 
+<!--
       <tr>
-        <td valign="top" align="right"><img src=
+        <td valign="top" align="center"><img src=
         "images/logos/suse_logo.gif" border="0" alt=
         "Qucs SuSE" /></td>
 
@@ -245,56 +374,13 @@
         "http://prdownloads.sourceforge.net/qucs/freehdl-0.0.3-1.i586.rpm?download">
         FreeHDL</a> package available</td>
       </tr>
+-->
+
+
+
 
       <tr>
-        <td valign="top" align="right"><img src=
-        "images/logos/geeko.jpg" border="0" alt=
-        "Qucs OpenSuSE" /></td>
-
-        <td valign="top"><a href=
-        "http://software.opensuse.org/download/science/">Qucs at
-        OpenSuSE</a></td>
-
-        <td valign="top">Werner Hoch <a href=
-        "mailto:werner.ho@gmx.de"><em>&lt;werner.ho@gmx.de&gt;</em></a></td>
-
-        <td valign="top">available for OpenSuSE versions 10.2, 10.3
-        and 11.0</td>
-      </tr>
-
-      <tr>
-        <td valign="top" align="right"><img src=
-        "images/logos/mediumubuntulogo.png" border="0" alt=
-        "Qucs Ubuntu" /></td>
-
-        <td valign="top"><a href=
-        "https://launchpad.net/~qucs/+archive/qucs/+packages">Qucs
-        at Ubuntu</a></td>
-
-        <td valign="top">Frans Schreuder <a href=
-        "mailto:info@schreuderelectronics.com"><em>&lt;info@schreuderelectronics.com&gt;</em></a></td>
-
-        <td valign="top">PPA repository: ppa:qucs/qucs</td>
-      </tr>
-
-      <tr>
-        <td valign="top" align="right"><img src=
-        "images/logos/puppylogo48.png" border="0" alt=
-        "Qucs Puppy Linux" /></td>
-
-        <td valign="top"><a href=
-        "http://www.qsl.net/wn2a/qucs.html">Qucs on Puppy
-        Linux</a></td>
-
-        <td valign="top">Mike Masterson <a href=
-        "mailto:galoof@optonline.net"><em>&lt;galoof@optonline.net&gt;</em></a></td>
-
-        <td valign="top">also available <a href=
-        "http://wn2a73.googlepages.com/qucs.html">here</a></td>
-      </tr>
-
-      <tr>
-        <td valign="top" align="right"><img src=
+        <td valign="top" align="center"><img src=
         "images/logos/pkgsrcse.png" border="0" alt=
         "Qucs pkgsrc" /></td>
 
@@ -304,11 +390,11 @@
         <td valign="top">Vincent Habchi <a href=
         "mailto:10.50@free.fr"><em>&lt;10.50@free.fr&gt;</em></a></td>
 
-        <td valign="top"></td>
+        <td valign="top"> Qucs 0.0.13 (abandoned?)</td>
       </tr>
 
       <tr>
-        <td valign="top" align="right"><img src=
+        <td valign="top" align="center"><img src=
         "images/logos/nnlogo004.jpg" border="0" alt=
         "Qucs IRIX" /></td>
 
@@ -322,6 +408,7 @@
         <td valign="top">part of the nekochan project, native build
         of freely available packages</td>
       </tr>
+
     </table><br />
 
     <h3><a name="win32binary" id="win32binary">About the Win32
