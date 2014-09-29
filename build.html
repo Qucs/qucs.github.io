@@ -313,7 +313,7 @@ $ sh autodsp.sh
     <a href="http://brew.sh/">Homebrew</a>. Please contact the package maintainer if it is not yet updated to the latest version of Qucs.
 
 
-    <p>Note that due to limitation in Qt4 your platfomr should be newer than Mac OS 10.5 64-bit.</p>
+    <p>Note that due to limitation in Qt4 your platform should be newer than Mac OS 10.5 64-bit.</p>
 
     <p>In order to build Qucs on a Mac OS you need to have Apple's
     latest Xcode and/or Command Line Tools. The compilation
@@ -370,20 +370,24 @@ $ sh autodsp.sh
         $ sudo port install qucs
         </pre>
 
+
+               Users willing to install the ASCO version shipped with Qucs (instaed of the one available in MacPorts) can use the command:
+        <pre>
+        $ sudo port install qucs +shipped_asco
+        </pre>
+
               MacPorts will fetch, decompress, compile and install a lot of
 packages which are needed to install Qucs. Be patient, this will
 take some time.
 
 <br />
 <br />
-                After installation Qucs will be placed into
-                /opt/local/bin. If you want, you can create a link
-                to your Applications folder with the following
-                command:
+                After installation Qucs will be placed into: <pre>/opt/local/bin</pre>
+<br />
 
-        <pre>
-        $ sudo ln -s /opt/local/bin/qucs /Applications/qucs
-        </pre>
+                Symbolic links to the applications are created into: <pre>/Applications/MacPorts</pre>
+<br />
+
               </li>
             </ol>You're done with MacPorts!<br />
             <br />
