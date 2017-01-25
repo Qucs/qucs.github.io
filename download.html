@@ -165,7 +165,7 @@
 
         <td valign="top"><a href=
         "http://sourceforge.net/projects/qucs/files/qucs-binary">
-        Qucs portable for Win32</a></td>
+        Qucs portable for Windows</a></td>
 
         <td valign="top"> Qucs Team </td>
 
@@ -177,6 +177,18 @@
 
     </table><br />
 
+
+    <h3><a name="win32binary" id="win32binary">About the Windows portable package</a></h3>
+
+    To use <b>FreeHDL</b> for VHDL simulation or <b>ADMS</b> for Verilog-A compilation
+    a compiler is necessary.
+    <br>
+    The required MinGW compiler can be found
+<a href="http://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/4.8.2/threads-posix/dwarf/i686-4.8.2-release-posix-dwarf-rt_v3-rev3.7z/">
+        here</a>.
+     <br>
+    Please follow the README.md file distributed along
+    with the Windows package for further information.
 
 <!-- ------------------------------------------------------------------------ -->
 
@@ -402,31 +414,9 @@
 
     </table><br />
 
-    <h3><a name="win32binary" id="win32binary">About the Win32
-    binary releases</a></h3>
-
-    <p>As already mentioned there is an installer package for
-    <b>Qucs</b> for Win32 systems. The relocations of the package
-    (the location where the package gets installed) is mainly
-    steered by environment variables. During a normal installation
-    the appropriate environment variables are automatically set for
-    the user who installed the package.<br />
-    <br />
-    One of them must be emphasised: <b>HOME</b>. During
-    installation an appropriate file system location will be found.
-    When it was already set then the previous value is assumed. The
-    location decides where the project, intermediate and
-    configuration files will be saved. So when the user wonders
-    about missing project files or lost configuration it's worth to
-    have a look at the environment variables.<br />
-    <br />
-    If <b>FreeHDL</b> is meant to be used for digital simulation
-    then also the binary package must be downloaded and installed.
-    It requires the MinGW32 compiler. If it is not already
-    installed, it's possible to install a prepared binary package
-    for this, too. It contains the minimal <b>MinGW32</b>
-    installation required to work with FreeHDL.</p>
     <hr />
+
+
   </div><!-- include the common web page header -->
   <script type="text/javascript">
 //<![CDATA[
