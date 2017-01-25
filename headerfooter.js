@@ -30,7 +30,7 @@ function footer()
   <!-- common footer element for qucs web pages --> \
   <div id="footer"> \
     <center> \
-      &copy; 2004 -- 2015 Qucs team \
+      &copy; 2004 - 2017 Qucs team \
     </center> \
   </div>'
 
