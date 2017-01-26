@@ -43,7 +43,7 @@
 
       <li style="list-style: none; display: inline">
         <ul>
-          <li>Linux, Macintosh OS (64-bit), Windows</li>
+          <li>Linux, macOS, Windows, FreeBSD</li>
 
           <li>Qt4 installation, version &gt;= 4.6 (with
           Qt3Support)</li>
@@ -62,15 +62,8 @@
 
           <li>GNU gperf 3.0.1</li>
 
-          <li>ADMS 2.3.0 (included in Qucs source)</li>
+          <li>ADMS 2.3.6</li>
 
-          <li style="list-style: none; display: inline">
-            <ul>
-              <li>Perl (modules XML-LibXML, GD)</li>
-
-              <li>GNU Libtool</li>
-            </ul>
-          </li>
         </ul>
       </li>
 
@@ -107,220 +100,50 @@
 
     <ul>
       <li>
-        <h4>Updtaded build instructions for: 
-         <a href= "https://github.com/Qucs/qucs/wiki/Build-Darwin">Darwin (Mac OSX)</a>,
-         <a href= "https://github.com/Qucs/qucs/wiki/Build-Linux">Linux </a>,
-         <a href= "https://github.com/Qucs/qucs/wiki/Build-Windows">Windows</a>
-        </h4>
-
-      </li>
-      <li>
         <h4>Get The Latest Source Tarball: 
           <a href=
           "https://sourceforge.net/projects/qucs/files/qucs/">
           Qucs Source</a>
           </h4>
       </li>
-
-
       <li>
-        <h4>Build From Distributable Sources</h4>
+        <h4>Updated build instructions for: 
+         <a href= "https://github.com/Qucs/qucs/wiki/Build-Darwin">Darwin (Mac OSX)</a>,
+         <a href= "https://github.com/Qucs/qucs/wiki/Build-Linux">Linux </a>,
+         <a href= "https://github.com/Qucs/qucs/wiki/Build-Windows">Windows</a>
+        </h4>
+
       </li>
 
-      <li style="list-style: none; display: inline">
-        <p>Unpack the distribution tarball:</p>
-        <pre>
-$ tar xvzf qucs-&lt;version&gt;.tar.gz               (using GNU tar)
-$ gzip -cd qucs-&lt;version&gt;.tar.gz | tar xvf -   (using another tar)
-</pre>
-
-        <p>Change into the source directory:</p>
-        <pre>
-$ cd qucs-&lt;version&gt;
-</pre>Configure the source package for your system:
-        <pre>
-$ ./configure
-</pre>Now compile the package:
-        <pre>
-$ make
-</pre>Install Qucs:
-        <pre>
-$ make install
-</pre>
-
-        <p>You must have root privileges if you want to install the
-        package in the standard location (/usr/local) or in any
-        location that is only writable by root. Run configure
-        --help for information on installing elswhere. For further
-        information on installing the package, please consult the
-        file INSTALL included in the distribution.<br />
-        <br />
-        <b>Please note</b>: Users of the FreeBSD OS may use a GNU
-        make (probably gmake) to compile and install the
-        package.</p>
-      </li>
     </ul>
 
     <h3><a name="build_git">Build Development Sources From Git
     Repository</a></h3>
 
-    <p>Please make sure you have Git installed.</p>
-
     <ul>
       <li>
-        <h4>Cloning for the first time</h4>
-        <pre>
-$ cd ~
-$ git clone git://git.code.sf.net/p/qucs/git qucs-git
-</pre>
+        <h4>Follow the instruction in:
+          <a href=
+          "https://github.com/Qucs/qucs/blob/master/README.md">
+          README.md</a>
+          </h4>
       </li>
     </ul>
 
-    <ul>
-      <li>
-        <h4>Building</h4>
-      </li>
 
-      <li style="list-style: none">Build the Qucs GUI applications:
-        <pre>
-$ cd ~/git/qucs-git/qucs
-$ sh autogen.sh
-$ ./configure --enable-maintainer-mode --prefix=/installation/path
-$ make
-$ make install
-</pre>
-      </li>
-
-      <li style="list-style: none">Build the Qucs core:
-        <pre>
-$ cd ~/git/qucs-git/qucs-core
-$ sh bootstrap.sh
-$ ./configure --enable-maintainer-mode --prefix=/installation/path
-$ make
-$ make install
-</pre>
-      </li>
-
-      <li style="list-style: none">Build the Qucs documentation:
-        <pre>
-$cd ~/git/qucs-git/qucs-doc/
-$sh autogen.sh
-$ ./configure --enable-maintainer-mode --prefix=/installation/path
-$make
-$make install
-</pre>
-      </li>
-
-      <li>
-        <h4>Testing</h4>
-      </li>
-
-      <li style="list-style: none">For testing the installation the
-      user can the to installed binaries.
-        <pre>
-$ cd /installation/path/bin
-$ qucs
-$ qucsator
-</pre>
-
-
-</pre>To run with a specific language set:
-    <pre>
-
-$ cd /tmp/qucs/bin
-$ LANG=de ./qucs
-
-</pre>
-</pre>
-
-      </li>
-    </ul>Note that Qucs comes bundled with a version of ADMS known
-    to be compatible. By default, this version is built and
-    installed with the commands above. If you would prefer to use a
-    different version of ADMS, you may supply the <code>--disable-adms</code>
-    option to configure.
-
-    <h3><a name="build_win32">Build instructions for
-    Win32</a></h3>There are different methods how to compile the
-    package for Win32:
-
-    <ul>
-
-      <li><b>MinGW32 natively</b> -- tested (Windows XP, Qt 4.8.5, Qucs Git master post 0.0.17)</li>
-
-      <li style="list-style: none; display: inline">
-        <p>A draft for the build instructions can be found
-        <a href="https://github.com/guitorri/qucs/wiki/Compiling-qucs-on-windows-%28mingw32-native%29">here</a>.<br>
-        In this instructions pre-compiled binaries are used to reduce dependencies and save time.</p>
-      </li>
-
-      <li><b>MinGW32 cross-compiling</b> -- tested (used for Win32 release build)</li>
-
-      <li style="list-style: none; display: inline">
-        <p> For latest information consult release scritps ont the repository (qucs/qucs/contrib) </p>
-        <p>This is the preferred method to build Qucs for Win32. On
-        an Debian system the mingw32-cross compiler is available.
-        The Q../Free version can be built using either
-        cross-compiling or also natively. Once this has been
-        accomplished it is possible to compile Qucs.</p>
-        <pre>
-$ QTDIR=/path/to/qt <a href=
-"i386-mingw32-configure">i386-mingw32-configure</a> --prefix=/mingw
-$ make
-$ make install
-</pre>
-      </li>
-
-      <li><b>Cygwin natively</b> -- not tested recently</li>
-
-      <li style="list-style: none; display: inline">
-        <p>This works out of the box very likely on a usual
-        GNU/Linux system. Of course Qt&reg; and the X-Server
-        including development files must be installed.</p>
-      </li>
-
-      <li><b>MSVC natively</b> -- not teste recently</li>
-
-      <li style="list-style: none; display: inline">
-        <p>The Git sources contain some extra *.ap files and a perl
-        script which produces the appropriate project files (*.dsp
-        and *.dsw).</p>
-        <pre>
-$ sh autodsp.sh
-</pre>
-
-        <p>With the Q../Free version compiled using MSVC and
-        setting QTDIR appropriately it is possible to use the
-        qucs.dsw and qucscore.dsw files to compile Qucs with
-        MSVC.</p>
-      </li>
-    </ul>
 
 
     <h3><a name="build_mac">Build Instructions For MacOSX</a></h3>
 
-    The distributed binary package for Mac OSX only includes the Qucs suite and ASCO.
-    <br/>
-    <br/>
-    Users interested in using FreeHDL, and the Verilog-A dynamic loader will need to install a compiler (Apple Xcode).
 
-    <br/>
-    <br/>
-
-    In such case we recommend the use of a package manager to handle the instalation of the dependencies and build the tools.
-    We recoment either
+    <p>It is recommended the use of a package manager to handle the instalation of the dependencies and build the tools.
+    
+    <p>We recoment either
     <a href="http://www.macports.org/">MacPorts</a> or
     <a href="http://brew.sh/">Homebrew</a>. Please contact the package maintainer if it is not yet updated to the latest version of Qucs.
 
 
     <p>Note that due to limitation in Qt4 your platform should be newer than Mac OS 10.5 64-bit.</p>
-
-    <p>In order to build Qucs on a Mac OS you need to have Apple's
-    latest Xcode and/or Command Line Tools. The compilation
-    toolchain can be obtained by downloading <a href=
-    "http://developer.apple.com/xcode/">Xcode</a> (free Apple
-    account required). The Command Line Tools can be installed from
-    within Xcode preferences.</p>
 
     <p>
     Follow the package manager instructions on how to get it set up and running.
@@ -424,6 +247,8 @@ It is necessary to rebuild Qt4 with Qt3Support. The default prebuild Qt bottle d
 This step might take ~20min depending on your machine.
 
 <pre>
+$ brew tap cartr/qt4
+$ brew tap-pin cartr/qt4
 $ brew install qt --with-qt3support
 </pre>
 
