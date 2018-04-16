@@ -1,0 +1,11 @@
+New function
+############
+
+:date: 2008-Sep-13 12:00
+:modified: 2008-Sep-13 12:00
+:tags: news
+:slug: 2008-Sep-13
+:category: news
+:authors: Qucs Team
+
+Implementation of ddx() operator in equations.

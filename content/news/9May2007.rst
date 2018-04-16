@@ -1,0 +1,11 @@
+Component library update
+########################
+
+:date: 2007-May-9 12:00
+:modified: 2007-May-9 12:00
+:tags: news
+:slug: 2007-May-9
+:category: news
+:authors: Qucs Team
+
+Component library can now contain analogue as well as digital (Verilog and VHDL) subcircuits.

@@ -1,0 +1,11 @@
+Singular value decomposition
+############################
+
+:date: 2006-Jul-1 12:00
+:modified: 2006-Jul-1 12:00
+:tags: news
+:slug: 2006-Jul-1
+:category: news
+:authors: Qucs Team
+
+Singular value decomposition (SVD) is now available for solving linear (real as well as complex) equation systems.

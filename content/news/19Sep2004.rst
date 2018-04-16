@@ -1,0 +1,11 @@
+Transient analysis
+##################
+
+:date: 2004-Sep-19 12:00
+:modified: 2004-Sep-19 12:00
+:tags: news
+:slug: 2004-Sep-19
+:category: news
+:authors: Qucs Team
+
+Transient analysis of linear RCL networks.

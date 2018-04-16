@@ -1,0 +1,11 @@
+Filter synthesis
+################
+
+:date: 2009-May-10 12:00
+:modified: 2009-May-10 12:00
+:tags: news
+:slug: 2009-May-10
+:category: news
+:authors: Qucs Team
+
+Preliminary new filter synthesis application (including Blinchikoff, Legendre, optimized Cauer, ZigZag and inverse Chebychev filter types) added. Thanks a lot to Vincent!

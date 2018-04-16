@@ -1,0 +1,11 @@
+Rectangular waveguide update
+############################
+
+:date: 2008-Oct-9 12:00
+:modified: 2008-Oct-9 12:00
+:tags: news
+:slug: 2008-Oct-9
+:category: news
+:authors: Qucs Team
+
+Added temperature dependent model for gold, copper and stainless steel of rectangular waveguide. Thanks to Andrea Zonca!

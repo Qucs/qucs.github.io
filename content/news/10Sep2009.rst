@@ -1,0 +1,13 @@
+Ph.D. research
+##############
+
+:date: 2009-Sep-10 12:00
+:modified: 2009-Sep-10 12:00
+:tags: news
+:slug: 2009-Sep-10
+:category: news
+:authors: Qucs Team
+
+Ph.D. research topic open for application. `Click here`_ for more information.
+
+.. _Click here: press.html

@@ -1,0 +1,13 @@
+New publication
+###############
+
+:date: 2011-Feb-3 12:00
+:modified: 2011-Feb-3 12:00
+:tags: news
+:slug: 2011-Feb-3
+:category: news
+:authors: Qucs Team
+
+Publication "*A tabular source approach to modelling and simulating device and circuit noise in the time domain*" now online_. Thank you again Mike Brinson!
+
+.. _online: http://onlinelibrary.wiley.com/doi/10.1002/jnm.801/abstract

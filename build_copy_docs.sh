@@ -3,7 +3,7 @@
 if [ $# -ne 2 ]
 then
   echo Need REPOSITORY and TARGET paths as parameters
-  echo 'e.g., $ sh build_copy_docs.sh ~/git/qucs `pwd`'
+  echo 'e.g., $ sh build_copy_docs.sh ~/git/qucs ./content'
   exit
 else
   REPO="$1"

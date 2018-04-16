@@ -1,0 +1,11 @@
+Global nodes
+############
+
+:date: 2009-Apr-16 12:00
+:modified: 2009-Apr-16 12:00
+:tags: news
+:slug: 2009-Apr-16
+:category: news
+:authors: Qucs Team
+
+Introduced global nodes (e.g. subst!) in analogue simulator.

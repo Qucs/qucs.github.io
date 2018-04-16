@@ -1,0 +1,13 @@
+Components list
+###############
+
+:date: 2004-Jun-25 12:00
+:modified: 2004-Jun-25 12:00
+:tags: news
+:slug: 2004-Jun-25
+:category: news
+:authors: Qucs Team
+
+Added `list of available components`_ on homepage.
+
+.. _list of available components: docs.html#list

@@ -1,0 +1,13 @@
+New publication
+###############
+
+:date: 2009-Jan-20 12:00
+:modified: 2009-Jan-20 12:00
+:tags: news
+:slug: 2009-Jan-20
+:category: news
+:authors: Qucs Team
+
+Publication "*Compact macromodelling of operational amplifiers with equation defined devices*" at IJE is now online_. Thanks a lot to Mike Brinson!
+
+.. _online: http://www.informaworld.com/smpp/content~content=a907515497

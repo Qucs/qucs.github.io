@@ -1,0 +1,11 @@
+Updates
+#######
+
+:date: 2006-Jul-17 12:00
+:modified: 2006-Jul-17 12:00
+:tags: news
+:slug: 2006-Jul-17
+:category: news
+:authors: Qucs Team
+
+ZVR (R&S network analyzer) ascii files can be converted into Qucs datasets with the Qucs-Converter. A4 page frame can be used in schematics for displaying and printing.

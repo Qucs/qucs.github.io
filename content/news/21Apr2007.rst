@@ -1,0 +1,11 @@
+Symbolically defined devices
+############################
+
+:date: 2007-Apr-21 12:00
+:modified: 2007-Apr-21 12:00
+:tags: news
+:slug: 2007-Apr-21
+:category: news
+:authors: Qucs Team
+
+Support for symbolically defined devices. Explicit equations allowed.

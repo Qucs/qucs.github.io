@@ -1,0 +1,13 @@
+Released Qucs 0.0.7!
+####################
+
+:date: 2005-Jul-22 12:00
+:modified: 2005-Jul-22 12:00
+:tags: news
+:slug: 2005-Jul-22
+:category: news
+:authors: Qucs Team
+
+**Released Qucs 0.0.7 !** Also updated the installer for Win32_.
+
+.. _Win32: download.html#unofficial

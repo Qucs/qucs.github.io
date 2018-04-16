@@ -1,0 +1,11 @@
+Digital simulation
+##################
+
+:date: 2009-Mar-3 12:00
+:modified: 2009-Mar-3 12:00
+:tags: news
+:slug: 2009-Mar-3
+:category: news
+:authors: Qucs Team
+
+Added many new digital primitives defined in analogue, Verilog and VHDL simulations. Thanks to Mike.

@@ -1,0 +1,14 @@
+Released Qucs 0.0.10!
+#####################
+
+:date: 2006-Sep-1 12:00
+:modified: 2006-Sep-1 12:00
+:tags: news
+:slug: 2006-Sep-1
+:category: news
+:authors: Qucs Team
+
+|  **Released Qucs 0.0.10 !**
+|  Also updated the WorkBook_. Added the tutorial update for digital simulation provided by Mike Brinson.
+
+.. _WorkBook: docs.html

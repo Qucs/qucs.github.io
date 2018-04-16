@@ -1,0 +1,16 @@
+Updates
+#######
+
+:date: 2006-Jan-25 12:00
+:modified: 2006-Jan-25 12:00
+:tags: news
+:slug: 2006-Jan-25
+:category: news
+:authors: Qucs Team
+
+|  Updated the installer for Win32_, the technical online_ documentation as well as the ready-to-read postscript and pdf document.
+|  Also uploaded the preliminary WorkBook_.
+
+.. _Win32: download.html#unofficial
+.. _online: tech/technical.html
+.. _WorkBook: http://qucs.sourceforge.net/docs.html

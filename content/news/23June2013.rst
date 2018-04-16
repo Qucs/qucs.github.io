@@ -1,0 +1,11 @@
+Released Qucs 0.0.17
+####################
+
+:date: 2013-June-23 12:00
+:modified: 2013-June-23 12:00
+:tags: news
+:category: news
+:slug: 2013-June-23
+:authors: Qucs Team
+
+**Released Qucs 0.0.17**

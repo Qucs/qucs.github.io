@@ -1,0 +1,13 @@
+Optimization support
+####################
+
+:date: 2006-Aug-30 12:00
+:modified: 2006-Aug-30 12:00
+:tags: news
+:slug: 2006-Aug-30
+:category: news
+:authors: Qucs Team
+
+Preliminary support for analog circuit optimizations using ASCO_. Version 0.4.4 required.
+
+.. _ASCO: http://asco.sourceforge.net

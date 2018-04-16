@@ -1,0 +1,11 @@
+Harmonic Balance
+################
+
+:date: 2006-Apr-24 12:00
+:modified: 2006-Apr-24 12:00
+:tags: news
+:slug: 2006-Apr-24
+:category: news
+:authors: Qucs Team
+
+Harmonic Balance: Linear networks (R, L and C) with voltage excitations (Vac and Vdc) working. Stay tuned.

@@ -1,0 +1,13 @@
+CVS logger
+##########
+
+:date: 2005-Sep-26 12:00
+:modified: 2005-Sep-26 12:00
+:tags: news
+:slug: 2005-Sep-26
+:category: news
+:authors: Qucs Team
+
+Setup automatic `CVS logger`_ recording individual file changes in CVS.
+
+.. _CVS logger: http://sourceforge.net/mailarchive/forum.php?forum_id=46405

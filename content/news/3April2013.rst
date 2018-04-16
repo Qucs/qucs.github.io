@@ -1,0 +1,13 @@
+Git migration
+#############
+
+:date: 2013-April-3 12:00
+:modified: 2013-April-3 12:00
+:tags: news
+:slug: 2013-April-3
+:category: news
+:authors: Qucs Team
+
+Migrated repository to `Git on Sourceforge`_. Old trunk is moved to the branch qucs-qt3.
+
+.. _Git on Sourceforge: https://sourceforge.net/p/qucs/git/

@@ -1,0 +1,11 @@
+Improvements
+############
+
+:date: 2006-Feb-3 12:00
+:modified: 2006-Feb-3 12:00
+:tags: news
+:slug: 2006-Feb-3
+:category: news
+:authors: Qucs Team
+
+Implementation of temperature dependencies of resistor. Output of characteristic values (e.g. ErEff or Zl) during S-parameter simulation possible.

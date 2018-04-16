@@ -1,0 +1,14 @@
+Radiometer model
+################
+
+:date: 2007-Oct-31 12:00
+:modified: 2007-Oct-31 12:00
+:tags: news
+:slug: 2007-Oct-31
+:category: news
+:authors: Qucs Team
+
+New `radiometer model`_ added to the example section (provided by `Andrea Zonca`_).
+
+.. _radiometer model: examples.html#example
+.. _Andrea Zonca: http://staff.fisica.unimi.it/zonca

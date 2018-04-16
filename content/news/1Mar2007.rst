@@ -1,0 +1,11 @@
+Diode model
+###########
+
+:date: 2007-Mar-1 12:00
+:modified: 2007-Mar-1 12:00
+:tags: news
+:slug: 2007-Mar-1
+:category: news
+:authors: Qucs Team
+
+Implemented high-injection knee current parameter for the diode.

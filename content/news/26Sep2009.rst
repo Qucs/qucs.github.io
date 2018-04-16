@@ -1,0 +1,13 @@
+FreeHDL MacOSX package
+######################
+
+:date: 2009-Sep-26 12:00
+:modified: 2009-Sep-26 12:00
+:tags: news
+:slug: 2009-Sep-26
+:category: news
+:authors: Qucs Team
+
+Created FreeHDL MacOSX package. Please check this installer_ and give feedback if it works as expected.
+
+.. _installer: freehdl-0.0.7-macosx-10.5-intel.pkg

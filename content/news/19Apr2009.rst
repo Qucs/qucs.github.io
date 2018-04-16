@@ -1,0 +1,11 @@
+Updates
+#######
+
+:date: 2009-Apr-19 12:00
+:modified: 2009-Apr-19 12:00
+:tags: news
+:slug: 2009-Apr-19
+:category: news
+:authors: Qucs Team
+
+Matrix exponentation for integral positive and negative powers available in equation solver. Implemented parameters in Verilog-HDL subcircuits.

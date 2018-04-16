@@ -1,0 +1,11 @@
+AC noise analysis
+#################
+
+:date: 2005-Jan-30 12:00
+:modified: 2005-Jan-30 12:00
+:tags: news
+:slug: 2005-Jan-30
+:category: news
+:authors: Qucs Team
+
+Basic AC noise analysis available.

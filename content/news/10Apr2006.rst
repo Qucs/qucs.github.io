@@ -1,0 +1,11 @@
+VHDL  editor
+############
+
+:date: 2006-Apr-10 12:00
+:modified: 2006-Apr-10 12:00
+:tags: news
+:slug: 2006-Apr-10
+:category: news
+:authors: Qucs Team
+
+VHDL text editor in the GUI for simulating VHDL directly.

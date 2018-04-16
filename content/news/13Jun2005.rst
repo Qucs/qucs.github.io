@@ -1,0 +1,13 @@
+FreeBSD
+#######
+
+:date: 2005-Jun-13 12:00
+:modified: 2005-Jun-13 12:00
+:tags: news
+:slug: 2005-Jun-13
+:category: news
+:authors: Qucs Team
+
+Qucs package for FreeBSD_.
+
+.. _FreeBSD: download.html#unofficial

@@ -1,0 +1,11 @@
+Ukrainian translations
+######################
+
+:date: 2007-May-10 12:00
+:modified: 2007-May-10 12:00
+:tags: news
+:slug: 2007-May-10
+:category: news
+:authors: Qucs Team
+
+Added Ukrainian translations. Thanks to Dystryk.

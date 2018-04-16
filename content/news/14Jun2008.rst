@@ -1,0 +1,11 @@
+New Verilog-A devices
+#####################
+
+:date: 2008-Jun-14 12:00
+:modified: 2008-Jun-14 12:00
+:tags: news
+:slug: 2008-Jun-14
+:category: news
+:authors: Qucs Team
+
+New Verilog-A devices EPFL-EKV NMOS/PMOS V2.6 implemented. Thanks a very lot to Mike Brinson! Also added an appropriate ReportBook chapter.

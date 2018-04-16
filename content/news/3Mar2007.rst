@@ -1,0 +1,13 @@
+Updated documentation
+#####################
+
+:date: 2007-Mar-3 12:00
+:modified: 2007-Mar-3 12:00
+:tags: news
+:slug: 2007-Mar-3
+:category: news
+:authors: Qucs Team
+
+Updated documentation section on homepage. Added some `build instructions`_.
+
+.. _build instructions: build.html

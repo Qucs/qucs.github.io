@@ -1,0 +1,13 @@
+New report
+##########
+
+:date: 2007-Jun-2 12:00
+:modified: 2007-Jun-2 12:00
+:tags: news
+:slug: 2007-Jun-2
+:category: news
+:authors: Qucs Team
+
+New report: Curtice level 1 MESFET model published_. Thanks to Mike Brinson.
+
+.. _published: docs.html

@@ -1,0 +1,12 @@
+VHDL support
+############
+
+:date: 2006-Jul-3 12:00
+:modified: 2006-Jul-3 12:00
+:tags: news
+:slug: 2006-Jul-3
+:category: news
+:authors: Qucs Team
+
+Support for nine-valued VHDL logic. Data import and export interface for the command line tool Qucs-Converter.
+Project package files for data exchange are now supported.

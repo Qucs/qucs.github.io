@@ -1,0 +1,13 @@
+FreeHDL
+#######
+
+:date: 2005-Dec-1 12:00
+:modified: 2005-Dec-1 12:00
+:tags: news
+:slug: 2005-Dec-1
+:category: news
+:authors: Qucs Team
+
+Started to communicate usage of the FreeHDL_ compiler in Qucs with the developers. FreeHDL is planned to perform digital simulations in Qucs.
+
+.. _FreeHDL: http://www.freehdl.seul.org/

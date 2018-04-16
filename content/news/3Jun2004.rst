@@ -1,0 +1,11 @@
+Released Qucs 0.0.2!
+####################
+
+:date: 2004-Jun-3 12:00
+:modified: 2004-Jun-3 12:00
+:tags: news
+:slug: 2004-Jun-3
+:category: news
+:authors: Qucs Team
+
+**Released Qucs 0.0.2 !**

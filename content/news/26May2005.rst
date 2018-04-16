@@ -1,0 +1,14 @@
+Win32 update
+############
+
+:date: 2005-May-26 12:00
+:modified: 2005-May-26 12:00
+:tags: news
+:slug: 2005-May-26
+:category: news
+:authors: Qucs Team
+
+Updated installer for Win32_ according to the 0.0.6 release.
+Rotated text as well as filenames with spaces finally work in Qt®.
+
+.. _Win32: download.html#unofficial

@@ -1,0 +1,13 @@
+Russian translation
+###################
+
+:date: 2006-Oct-18 12:00
+:modified: 2006-Oct-18 12:00
+:tags: news
+:slug: 2006-Oct-18
+:category: news
+:authors: Qucs Team
+
+Added the Russian translation of the WorkBook_ provided by Vladimir. Thanks a lot!
+
+.. _WorkBook: docs.html

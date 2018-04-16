@@ -1,0 +1,11 @@
+Russian translations
+####################
+
+:date: 2006-Apr-17 12:00
+:modified: 2006-Apr-17 12:00
+:tags: news
+:slug: 2006-Apr-17
+:category: news
+:authors: Qucs Team
+
+New translations into Russian. Thanks to Igor Gorbounov.

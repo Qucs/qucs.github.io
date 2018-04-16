@@ -1,0 +1,13 @@
+Phototransistor
+###############
+
+:date: 2009-Mar-29 12:00
+:modified: 2009-Mar-29 12:00
+:tags: news
+:slug: 2009-Mar-29
+:category: news
+:authors: Qucs Team
+
+Added phototransistor Verilog-A model presented at COMON meeting demonstration_. Thanks to Mike Brinson!
+
+.. _demonstration: http://www.mos-ak.org/frankfurt_o/papers/M_Brinson_Qucs_COMON_April_2_2009_final.pdf

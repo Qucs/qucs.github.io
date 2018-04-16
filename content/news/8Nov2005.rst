@@ -1,0 +1,14 @@
+qucs-doc
+########
+
+:date: 2005-Nov-8 12:00
+:modified: 2005-Nov-8 12:00
+:tags: news
+:slug: 2005-Nov-8
+:category: news
+:authors: Qucs Team
+
+Moved tutorials and technical documentation into its own qucs-doc CVS_.
+Thanks to Thierry Scordilis for the initial idea of the "*Work Book*" and thanks to Raimund for setting up the new CVS tree.
+
+.. _CVS: http://sourceforge.net/cvs/?group_id=90337

@@ -1,0 +1,14 @@
+adms
+####
+
+:date: 2006-Oct-31 12:00
+:modified: 2006-Oct-31 12:00
+:tags: news
+:slug: 2006-Oct-31
+:category: news
+:authors: Qucs Team
+
+Using adms_ to translate Verilog-AMS device models into C++ code for use in Qucs.
+Two preliminary models for testing purposes: HICUM L2 v2.11 and FBH-HBT. Thanks to Helene Parruitte and Bertrand Ardouin.
+
+.. _adms: http://mot-adms.sourceforge.net/

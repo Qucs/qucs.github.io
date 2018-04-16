@@ -1,0 +1,11 @@
+Updates
+#######
+
+:date: 2007-Apr-29 12:00
+:modified: 2007-Apr-29 12:00
+:tags: news
+:slug: 2007-Apr-29
+:category: news
+:authors: Qucs Team
+
+Added arcsec(), arccosec(), arsech() and arcosech() functions to the equati$ solver. Also support for logical and rational operators as well as the ternary ?: construct.

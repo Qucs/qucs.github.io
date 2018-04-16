@@ -1,0 +1,13 @@
+New publication
+###############
+
+:date: 2008-Sep-5 12:00
+:modified: 2008-Sep-5 12:00
+:tags: news
+:slug: 2008-Sep-5
+:category: news
+:authors: Qucs Team
+
+Publication "*Qucs: A GPL software package for circuit simulation, compact device modelling and circuit macromodelling from DC to RF and beyond*" at IJNM is now online_. Thanks a lot to Mike Brinson!
+
+.. _online: http://www3.interscience.wiley.com/journal/121397825/abstract

@@ -1,0 +1,13 @@
+RPM packages
+############
+
+:date: 2005-Aug-2 12:00
+:modified: 2005-Aug-2 12:00
+:tags: news
+:slug: 2005-Aug-2
+:category: news
+:authors: Qucs Team
+
+Setup link for Qucs RPM_ packages.
+
+.. _RPM: download.html#unofficial

@@ -1,0 +1,13 @@
+New publication
+###############
+
+:date: 2010-Nov-29 12:00
+:modified: 2010-Nov-29 12:00
+:tags: news
+:slug: 2010-Nov-29
+:category: news
+:authors: Qucs Team
+
+Publication "*Modeling the frequency response of microwave radiometers with QUCS*" now online_. Thanks a lot to Andrea!
+
+.. _online: http://arxiv.org/abs/1011.6363

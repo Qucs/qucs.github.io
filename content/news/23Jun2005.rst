@@ -1,0 +1,11 @@
+Updates
+#######
+
+:date: 2005-Jun-23 12:00
+:modified: 2005-Jun-23 12:00
+:tags: news
+:slug: 2005-Jun-23
+:category: news
+:authors: Qucs Team
+
+New library manager for often used subcircuits, devices and substrates. LaTex-like mnemonics (e.g. \alpha or \pm) can be used in diagram labels as well as in graphic texts.

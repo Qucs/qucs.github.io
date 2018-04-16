@@ -1,0 +1,13 @@
+MacOSX installer
+################
+
+:date: 2008-Nov-27 12:00
+:modified: 2008-Nov-27 12:00
+:tags: news
+:slug: 2008-Nov-27
+:category: news
+:authors: Qucs Team
+
+Added post install script for MacOSX as well as appropriate icons. Thanks to Dirk for friendly machine support. Please check this installer_ and give feedback if it works as expected.
+
+.. _installer: qucs-0.0.15-macosx-10.5-intel-test.pkg

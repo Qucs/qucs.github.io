@@ -1,0 +1,12 @@
+Project renamed
+###############
+
+:date: 2005-Jul-4 12:00
+:modified: 2005-Jul-4 12:00
+:tags: news
+:slug: 2005-Jul-4
+:category: news
+:authors: Qucs Team
+
+Project renaming to "Quite Universal Circuit Simulator" according to Trolltech`s request.
+

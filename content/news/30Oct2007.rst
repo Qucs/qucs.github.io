@@ -1,0 +1,13 @@
+New example
+###########
+
+:date: 2007-Oct-30 12:00
+:modified: 2007-Oct-30 12:00
+:tags: news
+:slug: 2007-Oct-30
+:category: news
+:authors: Qucs Team
+
+Added new example_ provided by Fredy Konig showing how to use AC and S-parameter simulations and some equations to obtain the group delay of a Butterworth filter.
+
+.. _example: examples.html#example

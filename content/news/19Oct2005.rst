@@ -1,0 +1,12 @@
+Updates
+#######
+
+:date: 2005-Oct-19 12:00
+:modified: 2005-Oct-19 12:00
+:tags: news
+:slug: 2005-Oct-19
+:category: news
+:authors: Qucs Team
+
+Cubic spline interpolation in S-parameter file data possible.
+Added dft(), idft(), fft() and ifft() functionality in equation solver.

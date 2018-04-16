@@ -1,0 +1,11 @@
+VCD to Qucs dataset conversion
+##############################
+
+:date: 2006-Jan-9 12:00
+:modified: 2006-Jan-9 12:00
+:tags: news
+:slug: 2006-Jan-9
+:category: news
+:authors: Qucs Team
+
+Finished VCD to Qucs dataset conversion in the Qucs-Converter command line tool (necessary for digital simulations using FreeHDL).

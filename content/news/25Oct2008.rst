@@ -1,0 +1,13 @@
+New report chapter
+##################
+
+:date: 2008-Oct-25 12:00
+:modified: 2008-Oct-25 12:00
+:tags: news
+:slug: 2008-Oct-25
+:category: news
+:authors: Qucs Team
+
+Added new report_ chapter about the Verilog-A photodiode model contributed by Mike Brinson.
+
+.. _report: docs.html

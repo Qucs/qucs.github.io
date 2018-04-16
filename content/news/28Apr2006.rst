@@ -1,0 +1,11 @@
+New VHDL file component
+#######################
+
+:date: 2006-Apr-28 12:00
+:modified: 2006-Apr-28 12:00
+:tags: news
+:slug: 2006-Apr-28
+:category: news
+:authors: Qucs Team
+
+New VHDL file component. Hand crafted VHDL components (files) can be used as subcircuits.

@@ -1,0 +1,11 @@
+New library
+###########
+
+:date: 2008-May-29 12:00
+:modified: 2008-May-29 12:00
+:tags: news
+:slug: 2008-May-29
+:category: news
+:authors: Qucs Team
+
+New library containing some voltage regulators like, e.g., LM140 added.

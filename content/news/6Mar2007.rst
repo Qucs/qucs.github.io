@@ -1,0 +1,13 @@
+WorkBook
+########
+
+:date: 2007-Mar-6 12:00
+:modified: 2007-Mar-6 12:00
+:tags: news
+:slug: 2007-Mar-6
+:category: news
+:authors: Qucs Team
+
+Updated the WorkBook_. Added the tutorial update for operational amplifier modelling provided by Mike Brinson.
+
+.. _WorkBook: docs.html

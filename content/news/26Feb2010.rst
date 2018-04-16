@@ -1,0 +1,14 @@
+New publication
+###############
+
+:date: 2010-Feb-26 12:00
+:modified: 2010-Feb-26 12:00
+:tags: news
+:slug: 2010-Feb-26
+:category: news
+:authors: Qucs Team
+
+Publication "*Z Domain Delay Subcircuits and Compact Verilog-A Macromodels for Mixed-mode Sampled Data Circuit Simulation*" at Radioelectronics & Informatics Journal is now online_.
+Thanks a lot to M.E. Brinson and H. Nabijou!
+
+.. _online: http://www.ewdtest.com/ri/ri-2009-2.htm
