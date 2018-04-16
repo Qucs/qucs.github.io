@@ -1,0 +1,11 @@
+Diac
+####
+
+:date: 2008-Jan-16 12:00
+:modified: 2008-Jan-16 12:00
+:tags: news
+:slug: 2008-Jan-16
+:category: news
+:authors: Qucs Team
+
+Added working Diac implementation.

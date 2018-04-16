@@ -1,0 +1,11 @@
+New components
+##############
+
+:date: 2007-Apr-15 12:00
+:modified: 2007-Apr-15 12:00
+:tags: news
+:slug: 2007-Apr-15
+:category: news
+:authors: Qucs Team
+
+Two new components: exponential voltage and current pulse sources. Thanks to Gunther.

@@ -1,0 +1,11 @@
+Equations update
+################
+
+:date: 2007-Sep-23 12:00
+:modified: 2007-Sep-23 12:00
+:tags: news
+:slug: 2007-Sep-23
+:category: news
+:authors: Qucs Team
+
+Allowing immediate vectors [v1, v2, ...] and matrices [m11, m12, ...; m21, m22, ...] in equations.

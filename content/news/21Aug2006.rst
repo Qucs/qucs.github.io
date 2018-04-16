@@ -1,0 +1,11 @@
+Updates
+#######
+
+:date: 2006-Aug-21 12:00
+:modified: 2006-Aug-21 12:00
+:tags: news
+:slug: 2006-Aug-21
+:category: news
+:authors: Qucs Team
+
+IC-CAP model files files can be converted into Qucs datasets with the Qucs-Converter. Support of delay, rise and fall times in the rectangular voltage and current sources. Started implementaion of the optimization component.

@@ -1,0 +1,14 @@
+New publication
+###############
+
+:date: 2007-Apr-20 12:00
+:modified: 2007-Apr-20 12:00
+:tags: news
+:slug: 2007-Apr-20
+:category: news
+:authors: Qucs Team
+
+Publication "*GNU Simulators Supporting Verilog-A Compact Model Standardization*" at MOS-AK_ meeting.
+Thanks to Mike Brinson and Wladek Grabinski.
+
+.. _MOS-AK: http://www.mos-ak.org/premstaetten/

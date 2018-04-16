@@ -1,0 +1,13 @@
+Qucs packages
+#############
+
+:date: 2008-Jun-5 12:00
+:modified: 2008-Jun-5 12:00
+:tags: news
+:slug: 2008-Jun-5
+:category: news
+:authors: Qucs Team
+
+Improved overview about unofficial_ (binary) Qucs packages.
+
+.. _unofficial: download.html#unofficial

@@ -1,0 +1,13 @@
+New tutorial
+############
+
+:date: 2007-Mar-21 12:00
+:modified: 2007-Mar-21 12:00
+:tags: news
+:slug: 2007-Mar-21
+:category: news
+:authors: Qucs Team
+
+Finished the introductory tutorial `Getting Started with Qucs`_.
+
+.. _Getting Started with Qucs: docs/getstarted.pdf

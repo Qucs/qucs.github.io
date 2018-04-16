@@ -1,0 +1,13 @@
+MacOSX installer
+################
+
+:date: 2009-Sep-14 12:00
+:modified: 2009-Sep-14 12:00
+:tags: news
+:slug: 2009-Sep-14
+:category: news
+:authors: Qucs Team
+
+Released bugfixed `MacOSX binary installer`_. Please download the package if the previous one didn`t work for you.
+
+.. _MacOSX binary installer: http://sourceforge.net/projects/qucs/files/qucs-binary/0.0.15/qucs-0.0.15-macosx-10.5-intel.pkg/download

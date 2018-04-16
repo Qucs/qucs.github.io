@@ -1,0 +1,11 @@
+Sourceforge update
+##################
+
+:date: 2012-Dec-15 12:00
+:modified: 2012-Dec-15 12:00
+:tags: news
+:slug: 2012-Dec-15
+:category: news
+:authors: Qucs Team
+
+Upgrade to new Sourceforge platform (code-named Allura)

@@ -1,0 +1,11 @@
+HICUM L2 v2.22
+##############
+
+:date: 2007-Dec-20 12:00
+:modified: 2007-Dec-20 12:00
+:tags: news
+:slug: 2007-Dec-20
+:category: news
+:authors: Qucs Team
+
+Added new Verilog-A transistor model HICUM L2 v2.22 to the available components.

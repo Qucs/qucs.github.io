@@ -1,0 +1,13 @@
+New MediaWiki section
+#####################
+
+:date: 2009-May-19 12:00
+:modified: 2009-May-19 12:00
+:tags: news
+:slug: 2009-May-19
+:category: news
+:authors: Qucs Team
+
+New section about `time domain simulation`_ using a simple LC tank example in the MediaWiki.
+
+.. _time domain simulation: http://apps.sourceforge.net/mediawiki/qucs/index.php?title=Time_Domain_Simulation

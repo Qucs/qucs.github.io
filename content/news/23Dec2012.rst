@@ -1,0 +1,13 @@
+Qt4 port
+########
+
+:date: 2012-Dec-23 12:00
+:modified: 2012-Dec-23 12:00
+:tags: news
+:slug: 2012-Dec-23
+:category: news
+:authors: Qucs Team
+
+Qucs ported to qt4, code can be found on `Sourceforge / Git`_
+
+.. _Sourceforge / Git: https://sourceforge.net/p/qucs/git/

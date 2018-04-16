@@ -1,0 +1,11 @@
+Equations
+#########
+
+:date: 2007-Feb-24 12:00
+:modified: 2007-Feb-24 12:00
+:tags: news
+:slug: 2007-Feb-24
+:category: news
+:authors: Qucs Team
+
+Input parameters of components can be used in equations.

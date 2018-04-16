@@ -1,0 +1,14 @@
+CVS
+###
+
+:date: 2006-May-15 12:00
+:modified: 2006-May-15 12:00
+:tags: news
+:slug: 2006-May-15
+:category: news
+:authors: Qucs Team
+
+|  Anonymous CVS instructions_ have been updated.
+|  Cross-compiling to the mingw32 target using a GNU/Linux box is now possible (both the qucs and qucs-core package).
+
+.. _instructions: download.html#cvs

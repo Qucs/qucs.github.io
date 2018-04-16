@@ -1,0 +1,11 @@
+HICUM L0
+########
+
+:date: 2010-Nov-6 12:00
+:modified: 2010-Nov-6 12:00
+:tags: news
+:slug: 2010-Nov-6
+:category: news
+:authors: Qucs Team
+
+New HICUM L0 v1.2g Verilog-A transistor model added.

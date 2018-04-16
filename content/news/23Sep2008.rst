@@ -1,0 +1,11 @@
+HICUM L0 v1.2
+#############
+
+:date: 2008-Sep-23 12:00
+:modified: 2008-Sep-23 12:00
+:tags: news
+:slug: 2008-Sep-23
+:category: news
+:authors: Qucs Team
+
+Added preliminary implementation of HICUM L0 v1.2 Verilog-A transistor model.

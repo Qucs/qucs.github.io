@@ -1,0 +1,11 @@
+Mutual inductances
+##################
+
+:date: 2007-May-17 12:00
+:modified: 2007-May-17 12:00
+:tags: news
+:slug: 2007-May-17
+:category: news
+:authors: Qucs Team
+
+Implementation of mutual inductances with a virtually unlimited number of inductors. Available in the SPICE to Qucs conversion program.

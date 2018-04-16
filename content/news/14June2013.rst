@@ -1,0 +1,11 @@
+BSIM 4.30
+#########
+
+:date: 2013-June-14 12:00
+:modified: 2013-June-14 12:00
+:tags: news
+:category: news
+:slug: 2013-June-14
+:authors: Qucs Team
+
+Added BSIM 4.30 nMOS and pMOS models

@@ -1,0 +1,13 @@
+Matrix calculations
+###################
+
+:date: 2013-July-03 13:00
+:modified: 2013-July-03 13:00
+:tags: news
+:category: news
+:slug: 2013-July-03_2
+:authors: Qucs Team
+
+New implementation of matrix calculations using Libeigen3. Files are in branch `local_complex_20130624`_
+
+.. _local_complex_20130624: https://sourceforge.net/p/qucs/git/ci/local_complex_20130624/tree/

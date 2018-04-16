@@ -1,0 +1,13 @@
+New publication
+###############
+
+:date: 2010-Mar-3 12:00
+:modified: 2010-Mar-3 12:00
+:tags: news
+:slug: 2010-Mar-3
+:category: news
+:authors: Qucs Team
+
+Publication "*A Hybrid Verilog-A and Equation-defined Device Approach to MOS Switched Current Analog Cell Modeling and Simulation in the Transient and Large Signal AC Domains*" has been accepted at `MIXDES 2010`_ in Wrocław. Thanks a lot to Mike Brinson!
+
+.. _MIXDES 2010: https://www.mixdes.org/Special_sessions.htm

@@ -1,0 +1,11 @@
+New functions
+#############
+
+:date: 2007-Nov-1 12:00
+:modified: 2007-Nov-1 12:00
+:tags: news
+:slug: 2007-Nov-1
+:category: news
+:authors: Qucs Team
+
+New functions in the equation solver: StabMeasure() for the stability measure B1 of a 2-port network and StabFactor() as an alias for Rollet().

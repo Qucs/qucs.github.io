@@ -1,0 +1,13 @@
+New publication
+###############
+
+:date: 2009-Apr-21 12:00
+:modified: 2009-Apr-21 12:00
+:tags: news
+:slug: 2009-Apr-21
+:category: news
+:authors: Qucs Team
+
+Publication "*Compact device modelling for established and emerging technologies with the Qucs GPL circuit simulator*" has been accepted at `MIXDES 2009` in Łódź. Thanks a lot to Mike Brinson!
+
+.. _MIXDES 2009: https://www.mixdes.org/Special_sessions.htm

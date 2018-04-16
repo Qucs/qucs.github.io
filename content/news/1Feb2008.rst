@@ -1,0 +1,11 @@
+Graphical text
+##############
+
+:date: 2008-Feb-1 12:00
+:modified: 2008-Feb-1 12:00
+:tags: news
+:slug: 2008-Feb-1
+:category: news
+:authors: Qucs Team
+
+Support for sub- and super-script in graphical text paintings.

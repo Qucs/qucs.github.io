@@ -1,0 +1,11 @@
+VHDL modules support
+####################
+
+:date: 2009-Oct-9 12:00
+:modified: 2009-Oct-9 12:00
+:tags: news
+:slug: 2009-Oct-9
+:category: news
+:authors: Qucs Team
+
+Added support for pre-compiled VHDL modules and libraries made from user-written VHDL code.

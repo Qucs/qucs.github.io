@@ -1,0 +1,13 @@
+New publication
+###############
+
+:date: 2009-Mar-18 12:00
+:modified: 2009-Mar-18 12:00
+:tags: news
+:slug: 2009-Mar-18
+:category: news
+:authors: Qucs Team
+
+Publication "*Advances in compact semiconductor device modelling and circuit macromodelling with the Qucs GPL circuit simulator*" has been accepted for oral presentation at `MOS-AK Meeting`_ 2009 in Frankfurt/O. Thanks to Mike!
+
+.. _MOS-AK Meeting: http://www.mos-ak.org/frankfurt_o/

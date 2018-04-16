@@ -1,0 +1,11 @@
+Updates
+#######
+
+:date: 2006-May-24 12:00
+:modified: 2006-May-24 12:00
+:tags: news
+:slug: 2006-May-24
+:category: news
+:authors: Qucs Team
+
+Update of the introductory tutorial about digital simulations. Thanks to Mike. New functions in the equation solver: Time2Freq() and Freq2Time(), also modified the dft(), idft(), fft() and ifft() functions.

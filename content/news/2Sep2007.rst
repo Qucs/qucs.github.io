@@ -1,0 +1,11 @@
+Engineering notation
+####################
+
+:date: 2007-Sep-2 12:00
+:modified: 2007-Sep-2 12:00
+:tags: news
+:slug: 2007-Sep-2
+:category: news
+:authors: Qucs Team
+
+Allowing engineering notation of numbers (e.g. 1u instead of 1e-6) in equations (pre- and post-processing as well as EDD).

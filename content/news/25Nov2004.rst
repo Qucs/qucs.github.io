@@ -1,0 +1,11 @@
+New components
+##############
+
+:date: 2004-Nov-25 12:00
+:modified: 2004-Nov-25 12:00
+:tags: news
+:slug: 2004-Nov-25
+:category: news
+:authors: Qucs Team
+
+New components: Operational amplifier, Amplifier and Microstrip Via.

@@ -1,0 +1,13 @@
+Book
+####
+
+:date: 2008-Jul-5 12:00
+:modified: 2008-Jul-5 12:00
+:tags: news
+:slug: 2008-Jul-5
+:category: news
+:authors: Qucs Team
+
+Cotter W. Sayre`s RF Design Book "*Complete Wireless Design 2nd Edition*" has been published. He uses Qucs for demonstration purposes about how it can be used to design RF devices. Have a look here_.
+
+.. _here: http://cotter.sayre.googlepages.com/home

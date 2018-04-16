@@ -1,0 +1,13 @@
+FreeHDL
+#######
+
+:date: 2007-May-7 12:00
+:modified: 2007-May-7 12:00
+:tags: news
+:slug: 2007-May-7
+:category: news
+:authors: Qucs Team
+
+FreeHDL_ (used by Qucs for digital VHDL simulations) has finally been accepted in Debian.
+
+.. _FreeHDL: http://packages.qa.debian.org/f/freehdl.html

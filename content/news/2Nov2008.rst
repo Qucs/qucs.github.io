@@ -1,0 +1,11 @@
+Time switch bug fix
+###################
+
+:date: 2008-Nov-2 12:00
+:modified: 2008-Nov-2 12:00
+:tags: news
+:slug: 2008-Nov-2
+:category: news
+:authors: Qucs Team
+
+**Attention:** Fixed severe bug in time switch. It represented a negative resistor previously.

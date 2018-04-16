@@ -1,2 +1,27 @@
+# OS generated files #
+######################
 .DS_Store
+
+# emacs #
+#########
+# dot hash files (write locks)
+.\#*
+
+# temp files #
+##############
+*~
+*.bak
+
+# generated files #
+###################
 doxygen/
+output/
+
+# python bytecode files #
+#########################
+*.pyc
+
+# pelican/server PID file #
+###########################
+pelican.pid
+srv.pid

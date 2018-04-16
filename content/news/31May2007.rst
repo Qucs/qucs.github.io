@@ -1,0 +1,11 @@
+SPICE preprocessor
+##################
+
+:date: 2007-May-31 12:00
+:modified: 2007-May-31 12:00
+:tags: news
+:slug: 2007-May-31
+:category: news
+:authors: Qucs Team
+
+Preprocessor selectable in SPICE file component.

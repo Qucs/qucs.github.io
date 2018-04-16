@@ -1,0 +1,11 @@
+VHDL support
+############
+
+:date: 2009-Mar-15 12:00
+:modified: 2009-Mar-15 12:00
+:tags: news
+:slug: 2009-Mar-15
+:category: news
+:authors: Qucs Team
+
+Allowing VHDL files on schematic with arbitrary in/out signal types.

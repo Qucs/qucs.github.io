@@ -1,0 +1,11 @@
+New component
+#############
+
+:date: 2006-Jan-4 12:00
+:modified: 2006-Jan-4 12:00
+:tags: news
+:slug: 2006-Jan-4
+:category: news
+:authors: Qucs Team
+
+New component: ideal coupler implemented (can also be used as hybrid).

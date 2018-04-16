@@ -1,0 +1,13 @@
+Icarus Verilog
+##############
+
+:date: 2007-Mar-30 12:00
+:modified: 2007-Mar-30 12:00
+:tags: news
+:slug: 2007-Mar-30
+:category: news
+:authors: Qucs Team
+
+Started support for Verilog-HDL using `Icarus Verilog`_ as an alternative to VHDL regarding digital simulations.
+
+.. _Icarus Verilog: http://www.icarus.com/eda/verilog/

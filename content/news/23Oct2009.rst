@@ -1,0 +1,11 @@
+Updates
+#######
+
+:date: 2009-Oct-23 12:00
+:modified: 2009-Oct-23 12:00
+:tags: news
+:slug: 2009-Oct-23
+:category: news
+:authors: Qucs Team
+
+Added Verilog-HDL syntax highlighting in text documents. Support for direct association of symbol drawings to Verilog-HDL and VHDL code.

@@ -1,0 +1,11 @@
+BSIM 3.34
+#########
+
+:date: 2013-May-20 12:00
+:modified: 2013-May-20 12:00
+:tags: news
+:category: news
+:slug: 2013-May-20
+:authors: Qucs Team
+
+Added BSIM 3.34 nMOS and pMOS models

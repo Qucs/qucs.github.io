@@ -1,0 +1,11 @@
+Updates
+#######
+
+:date: 2006-Jun-6 12:00
+:modified: 2006-Jun-6 12:00
+:tags: news
+:slug: 2006-Jun-6
+:category: news
+:authors: Qucs Team
+
+Touchstone files as well as CITIfiles can now be converted into Qucs datasets using the command line converter Qucs-Converter. Creating a user library from subcircuits is now possible.

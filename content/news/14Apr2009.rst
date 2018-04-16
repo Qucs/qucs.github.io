@@ -1,0 +1,11 @@
+VHDL support
+############
+
+:date: 2009-Apr-14 12:00
+:modified: 2009-Apr-14 12:00
+:tags: news
+:slug: 2009-Apr-14
+:category: news
+:authors: Qucs Team
+
+VHDL files and subcircuits can handle typed generic variables as parameters.

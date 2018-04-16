@@ -1,0 +1,13 @@
+WorkBook update
+###############
+
+:date: 2006-May-7 12:00
+:modified: 2006-May-7 12:00
+:tags: news
+:slug: 2006-May-7
+:category: news
+:authors: Qucs Team
+
+Updated the WorkBook_. Added the tutorial about the flip-flop models provided by Mike Brinson. Thanks a lot.
+
+.. _WorkBook: docs.html

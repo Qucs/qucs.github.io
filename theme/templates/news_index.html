@@ -1,0 +1,22 @@
+{% extends "news_base.html" %}
+
+{% block content %}
+
+<h3>Latest News</h3>
+
+<table cellspacing="2" cellpadding="2">
+  {% for article in articles_page.object_list %}
+    <tr>
+      <td valign="top"><b> {{ article.locale_date }} </b></td>
+      <td> {{ article.summary }} </td>
+    </tr>
+  {% endfor %}
+</table>
+
+{% if articles_page.has_other_pages() %}
+    {% include 'pagination.html' %}
+{% endif %}
+
+<hr>
+
+{% endblock %}

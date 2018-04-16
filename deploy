@@ -25,11 +25,11 @@ elif [ $1 == "local" ]
     if [[ -z $2 ]]
         then
             echo "Running dry-run"
-            rsync --dry-run -az --force --delete --progress --exclude-from=rsync_exclude.txt  ./ ~/qucs-website
+            rsync --dry-run -az --force --delete --progress --exclude-from=rsync_exclude.txt  ./output/ ~/qucs-website
     elif [ $2 == "go" ]
         then
             echo "Running actual deploy"
-            rsync -az --force --delete --progress --exclude-from=rsync_exclude.txt ./ ~/qucs-website
+            rsync -az --force --delete --progress --exclude-from=rsync_exclude.txt ./output/ ~/qucs-website
     else
         echo $ERRORSTRING;
     fi
@@ -48,7 +48,7 @@ elif [ $1 == "live" ]
           username=$2
 
           echo "Running dry-run"
-          rsync --dry-run -az --force --delete --progress --exclude-from=rsync_exclude.txt -e ssh ./ $username,qucs@web.sourceforge.net:htdocs/
+          rsync --dry-run -az --force --delete --progress --exclude-from=rsync_exclude.txt -e ssh ./output/ $username,qucs@web.sourceforge.net:htdocs/
         fi
 
     elif [[ $2 == "go" ]]
@@ -63,7 +63,7 @@ elif [ $1 == "live" ]
         username=$3
 
         echo "Running actual deploy"
-        rsync -az --force --delete --progress --exclude-from=rsync_exclude.txt -e ssh ./ $username,qucs@web.sourceforge.net:htdocs/
+        rsync -az --force --delete --progress --exclude-from=rsync_exclude.txt -e ssh ./output/ $username,qucs@web.sourceforge.net:htdocs/
     else
       echo $ERRORSTRING;
     fi

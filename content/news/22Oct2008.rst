@@ -1,0 +1,11 @@
+Schematic frame
+###############
+
+:date: 2008-Oct-22 12:00
+:modified: 2008-Oct-22 12:00
+:tags: news
+:slug: 2008-Oct-22
+:category: news
+:authors: Qucs Team
+
+Support of US letter formats for schematic frame.

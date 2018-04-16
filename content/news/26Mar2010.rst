@@ -1,0 +1,11 @@
+HICUM L2 v2.24
+##############
+
+:date: 2010-Mar-26 12:00
+:modified: 2010-Mar-26 12:00
+:tags: news
+:slug: 2010-Mar-26
+:category: news
+:authors: Qucs Team
+
+New HICUM L2 v2.24 Verilog-A transistor model added.

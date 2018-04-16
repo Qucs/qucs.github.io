@@ -1,0 +1,12 @@
+Updates
+#######
+
+:date: 2006-Sep-4 12:00
+:modified: 2006-Sep-4 12:00
+:tags: news
+:slug: 2006-Sep-4
+:category: news
+:authors: Qucs Team
+
+New Czech translation. Thanks to Marek.
+Gopala started to port the GUI to Qt4 in a new CVS branch.

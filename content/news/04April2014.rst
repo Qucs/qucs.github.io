@@ -1,0 +1,15 @@
+Updated build instruction
+#########################
+
+:date: 2014-April-04 12:00
+:modified: 2014-April-04 12:00
+:tags: news
+:category: news
+:slug: 2014-April-04
+:authors: Qucs Team
+
+Updated build instruction for `Darwin (Mac OSX)`_, Linux_, Windows_
+
+.. _Darwin (Mac OSX): https://github.com/Qucs/qucs/wiki/Build-Darwin
+.. _Linux: https://github.com/Qucs/qucs/wiki/Build-Linux
+.. _Windows: https://github.com/Qucs/qucs/wiki/Build-Windows

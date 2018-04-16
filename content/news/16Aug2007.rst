@@ -1,0 +1,11 @@
+CVS conversion
+##############
+
+:date: 2007-Aug-16 12:00
+:modified: 2007-Aug-16 12:00
+:tags: news
+:slug: 2007-Aug-16
+:category: news
+:authors: Qucs Team
+
+CSV files files can be converted into Qucs datasets with the Qucs-Converter.

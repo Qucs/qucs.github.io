@@ -1,0 +1,13 @@
+User tutorials
+##############
+
+:date: 2005-Jun-22 12:00
+:modified: 2005-Jun-22 12:00
+:tags: news
+:slug: 2005-Jun-22
+:category: news
+:authors: Qucs Team
+
+Started to add user tutorials in CVS. Thanks to Chris Pitcher. Available here_.
+
+.. _here: docs.html#manual

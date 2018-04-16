@@ -1,0 +1,13 @@
+Released Qucs 0.0.18
+####################
+
+:date: 2014-August-31 12:00
+:modified: 2014-August-31 12:00
+:tags: news
+:category: news
+:slug: 2014-August-31
+:authors: Qucs Team
+
+**Released Qucs 0.0.18**, News_
+
+.. _News: https://github.com/Qucs/qucs/blob/qucs-0.0.18/qucs/NEWS.md

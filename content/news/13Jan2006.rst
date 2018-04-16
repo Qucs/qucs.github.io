@@ -1,0 +1,11 @@
+Cauer filters
+#############
+
+:date: 2006-Jan-13 12:00
+:modified: 2006-Jan-13 12:00
+:tags: news
+:slug: 2006-Jan-13
+:category: news
+:authors: Qucs Team
+
+Preliminary support for (elliptic) Cauer filters in the filter synthesis tool. Thanks to Vincent.

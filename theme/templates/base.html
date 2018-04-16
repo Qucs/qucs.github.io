@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+  <meta charset="utf-8" />
+  <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
+
+  <!--[if IE]>
+    <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/headerfooter.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <!-- include the common web page header -->
+  <script type="text/javascript">
+//<![CDATA[
+  header()
+  //]]>
+  </script>
+
+  <div id="main">
+    {% block content %}
+    {% endblock %}
+  </div> <!-- id="main" -->
+    <script type="text/javascript">
+//<![CDATA[
+  footer()
+  //]]>
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+Potentiometer Verilog-A model
+#############################
+
+:date: 2008-Feb-8 12:00
+:modified: 2008-Feb-8 12:00
+:tags: news
+:slug: 2008-Feb-8
+:category: news
+:authors: Qucs Team
+
+New component: Potentiometer Verilog-A model. Thanks a lot to Mike Brinson!

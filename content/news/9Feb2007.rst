@@ -1,0 +1,11 @@
+Graphs improvements
+###################
+
+:date: 2007-Feb-9 12:00
+:modified: 2007-Feb-9 12:00
+:tags: news
+:slug: 2007-Feb-9
+:category: news
+:authors: Qucs Team
+
+Improved visualization and selection of graphs and paintings at zoom levels != 1. No more grainy diagrams.

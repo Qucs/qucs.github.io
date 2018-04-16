@@ -1,0 +1,11 @@
+Digital buffer component
+########################
+
+:date: 2008-Nov-8 12:00
+:modified: 2008-Nov-8 12:00
+:tags: news
+:slug: 2008-Nov-8
+:category: news
+:authors: Qucs Team
+
+New digital buffer component added (VHDL, Verilog and analog model).

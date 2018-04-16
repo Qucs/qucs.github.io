@@ -1,0 +1,13 @@
+New poster
+##########
+
+:date: 2007-Sep-14 12:00
+:modified: 2007-Sep-14 12:00
+:tags: news
+:slug: 2007-Sep-14
+:category: news
+:authors: Qucs Team
+
+Poster `Interactive Compact Device Modeling Using Qucs Equation Defined Devices`_ presented during ESSDERC/ESSCIRC MOS-AK Workshop in Munich by Mike Brinson. Thanks for coming from London.
+
+.. _Interactive Compact Device Modeling Using Qucs Equation Defined Devices: http://www.mos-ak.org/munich/posters/P04_MOS-AK_Brinson.pdf

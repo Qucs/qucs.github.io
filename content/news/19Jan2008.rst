@@ -1,0 +1,14 @@
+New component
+#############
+
+:date: 2008-Jan-19 12:00
+:modified: 2008-Jan-19 12:00
+:tags: news
+:slug: 2008-Jan-19
+:category: news
+:authors: Qucs Team
+
+New component: Logarithmic Amplifier Verilog-A device.
+Thanks to Mike Brinson! Added a report_ chapter about the new component, also provided by Mike Brinson.
+
+.. _report: docs.html

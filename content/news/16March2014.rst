@@ -1,0 +1,11 @@
+Updated manuals
+###############
+
+:date: 2014-March-16 12:00
+:modified: 2014-March-16 12:00
+:tags: news
+:category: news
+:slug: 2014-March-16
+:authors: Qucs Team
+
+Updated manuals, developers and FAQ webpages

@@ -1,0 +1,11 @@
+Coplanar line
+#############
+
+:date: 2005-Feb-4 12:00
+:modified: 2005-Feb-4 12:00
+:tags: news
+:slug: 2005-Feb-4
+:category: news
+:authors: Qucs Team
+
+Preliminary coplanar line implementation finished. Thanks to Vincent Habchi.

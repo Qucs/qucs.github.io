@@ -1,0 +1,11 @@
+S-parameter file component
+##########################
+
+:date: 2006-May-3 12:00
+:modified: 2006-May-3 12:00
+:tags: news
+:slug: 2006-May-3
+:category: news
+:authors: Qucs Team
+
+S-parameter file component can be open/short during DC analysis. Disabled components are either open or shorted.

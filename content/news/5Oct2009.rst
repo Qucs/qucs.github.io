@@ -1,0 +1,11 @@
+Matlab v4 file format
+#####################
+
+:date: 2009-Oct-5 12:00
+:modified: 2009-Oct-5 12:00
+:tags: news
+:slug: 2009-Oct-5
+:category: news
+:authors: Qucs Team
+
+Support for Matlab v4 as an export file format in the Qucs-Converter command line tool.

@@ -1,0 +1,11 @@
+PlotVs() update
+###############
+
+:date: 2008-Jan-18 12:00
+:modified: 2008-Jan-18 12:00
+:tags: news
+:slug: 2008-Jan-18
+:category: news
+:authors: Qucs Team
+
+Implemented 3- and more argument versions of PlotVs() in the equation solver.

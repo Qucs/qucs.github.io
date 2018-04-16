@@ -1,0 +1,11 @@
+HICUM L2 v2.23 model
+####################
+
+:date: 2008-Oct-2 12:00
+:modified: 2008-Oct-2 12:00
+:tags: news
+:slug: 2008-Oct-2
+:category: news
+:authors: Qucs Team
+
+New HICUM L2 v2.23 Verilog-A transistor model added.

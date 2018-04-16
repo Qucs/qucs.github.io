@@ -1,0 +1,11 @@
+Non-linear models update
+########################
+
+:date: 2005-Dec-19 12:00
+:modified: 2005-Dec-19 12:00
+:tags: news
+:slug: 2005-Dec-19
+:category: news
+:authors: Qucs Team
+
+Implementation of temperature/area models of existing non-linear device models.

@@ -1,0 +1,14 @@
+Released Qucs 0.0.19
+####################
+
+:date: 2017-January-22 12:00
+:modified: 2017-January-22 12:00
+:tags: news
+:category: news
+:slug: 2017-January-22
+:authors: Qucs Team
+
+Released Qucs 0.0.19, News_
+
+.. _News: https://github.com/Qucs/qucs/blob/qucs-0.0.19/NEWS.md
+

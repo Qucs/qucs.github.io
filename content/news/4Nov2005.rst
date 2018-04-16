@@ -1,0 +1,11 @@
+Fedora Extras
+#############
+
+:date: 2005-Nov-4 12:00
+:modified: 2005-Nov-4 12:00
+:tags: news
+:slug: 2005-Nov-4
+:category: news
+:authors: Qucs Team
+
+Qucs accepted at Fedora Extras. Thanks to Eric Tanguy.

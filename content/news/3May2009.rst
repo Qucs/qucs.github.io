@@ -1,0 +1,11 @@
+Equations in subcircuits
+########################
+
+:date: 2009-May-3 12:00
+:modified: 2009-May-3 12:00
+:tags: news
+:slug: 2009-May-3
+:category: news
+:authors: Qucs Team
+
+Limited support for equations in Verilog-HDL and VHDL subcircuits.
